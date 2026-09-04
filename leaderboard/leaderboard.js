@@ -13,6 +13,32 @@
     { key: "problems", label: "Problem View" },
   ];
 
+  // Display-only relabeling — filtering still runs on the real dataset/category
+  // values (DATASETS entries, and the category strings in leaderboard_details.json).
+  const DATASET_LABELS = {
+    QiskitHumanEval: "Qiskit HumanEval",
+    QiskitHumanEvalHard: "Qiskit HumanEval Hard",
+    QuanBench44: "QuanBench-44",
+    QuanBench117: "QuanBench-117",
+  };
+
+  const CATEGORY_LABELS = {
+    "Advanced Circuit Manipulation": "Circuit Manipulation",
+    "Algorithm Implementation": "Algorithms",
+    "Backend and Runtime": "Backend / Runtime",
+    "Gate Operations and Manipulation": "Gate Operations",
+    "Quantum Circuit Generation": "Circuit Generation",
+    "Quantum Circuit Serialization": "Serialization",
+    "Quantum Information": "Quantum Information",
+    "Simulation and Execution": "Simulation / Execution",
+    "State Preparation and Analysis": "State Preparation",
+    "Visualization and Post-Processing": "Visualization",
+    Uncategorized: "Other",
+  };
+
+  const datasetLabel = (ds) => DATASET_LABELS[ds] || ds;
+  const categoryLabel = (cat) => CATEGORY_LABELS[cat] || cat;
+
   const state = {
     summary: [],
     details: null, // lazy-loaded
@@ -187,7 +213,7 @@
     dsWrap.innerHTML = "";
     for (const ds of dsList) {
       const btn = document.createElement("button");
-      btn.textContent = ds;
+      btn.textContent = datasetLabel(ds);
       btn.className = ds === state.dataset ? "active" : "";
       btn.addEventListener("click", () => {
         state.dataset = ds;
@@ -206,7 +232,7 @@
     catWrap.innerHTML = "";
     for (const cat of catOptions) {
       const btn = document.createElement("button");
-      btn.textContent = cat;
+      btn.textContent = cat === "All" ? "All" : categoryLabel(cat);
       btn.className = cat === state.category ? "active" : "";
       btn.addEventListener("click", () => {
         state.category = cat;
@@ -356,7 +382,7 @@
 
     const byCat = new Map();
     for (const r of rows) {
-      const key = `${datasetFilter ? "" : r.dataset + " / "}${r.category}`;
+      const key = `${datasetFilter ? "" : datasetLabel(r.dataset) + " / "}${categoryLabel(r.category)}`;
       if (!byCat.has(key)) byCat.set(key, { n: 0, passed: 0, sum1: 0 });
       const c = byCat.get(key);
       c.n += 1;
