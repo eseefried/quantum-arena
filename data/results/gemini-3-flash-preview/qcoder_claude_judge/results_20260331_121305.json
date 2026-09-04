@@ -1,0 +1,2055 @@
+{
+  "assistant": "gemini-3-flash-preview",
+  "judge_model": "claude-sonnet-4-20250514",
+  "timestamp": "20260331_121305",
+  "config": {
+    "num_samples": 5,
+    "temperature": 0.8,
+    "max_tokens": 2048
+  },
+  "pass_at_k": {
+    "pass_at_k": {
+      "1": 0.023880597014925366,
+      "3": 0.06716417910447761,
+      "5": 0.1044776119402985
+    },
+    "statistics": {
+      "pass@1": {
+        "mean": 0.023880597014925366,
+        "std": 0.07348378283636518,
+        "min": 0.0,
+        "max": 0.4,
+        "median": 0.0
+      },
+      "pass@3": {
+        "mean": 0.06716417910447761,
+        "std": 0.19954280556857185,
+        "min": 0.0,
+        "max": 0.9,
+        "median": 0.0
+      },
+      "pass@5": {
+        "mean": 0.1044776119402985,
+        "std": 0.30587912734207756,
+        "min": 0.0,
+        "max": 1.0,
+        "median": 0.0
+      }
+    },
+    "per_task": {
+      "QPC001_A1": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "QPC001_A2": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "QPC001_A3": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "QPC001_A4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC001_A5": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC001_B1": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "QPC001_B2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC001_B3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC001_B4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC001_C1": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC001_C2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_A1": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_A2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_A3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_A4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_A5": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_B1": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "QPC002_B2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_B3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_B4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_B5": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_B6": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_B7": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_B8": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_Ex": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_A1": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_A2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_A3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_A4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_A5": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_A6": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_B1": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_B2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_B3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_B4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_B5": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_B6": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_B7": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_B8": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_Ex1": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_Ex2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_A1": {
+        "1": 0.4,
+        "3": 0.9,
+        "5": 1.0
+      },
+      "QPC004_A2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_A3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_A4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_A5": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_A6": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_A7": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_B1": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "QPC004_B2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_B3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_B4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_B5": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_C1": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_C2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_C3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_C4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_C5": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_A1": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_A2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_A3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_A4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_A5": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_B1": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_B2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_B3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_Ex": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      }
+    },
+    "num_tasks": 67
+  },
+  "results": [
+    {
+      "task_id": "QPC001_A1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.h(0)\n    return qc",
+          "passed": true
+        },
+        {
+          "code": "Wait, the user said \"Attempt 1: qc.h(0) ... was incorrect.\" This is very strange for a problem asking for the plus state. Usually, this means either",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.ry(np.pi / 2, 0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "qc.u(1.57",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # Applying an alternative sequence to achieve the plus state:\n    # Rx(pi/2) maps |0> to (|0> - i|1>)/sqrt(2)\n    # S gate maps (|0> -",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_A2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.h(i)\n\n    return qc",
+          "passed": true
+        },
+        {
+          "code": "10\\rangle + 0.5|11\\rangle$.\n    *   This matches the sample exactly.\n    *   Why would Attempt 1 be \"incorrect\"?\n    *   Perhaps the environment requires `qc.h(i)` to be applied in a specific order (like `range(n-1, -1, -1)`)? Unlikely.",
+          "passed": false
+        },
+        {
+          "code": "): qc.h(i)` is wrong, could it be that the solution requires a recursive construction or some other weird way? Unlikely for \"uniform superposition\".\n\n    *   Let's try `qc.ry(1.5707963267948966, range(n))`. This produces $\\frac{1}{\\sqrt",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Applying the Hadamard gate to each qubit results in the uniform superposition state.\n    # To provide a variation that achieves the same result, we use the U gate\n    # which is the general single-qu",
+          "passed": false
+        },
+        {
+          "code": "= \\frac{1}{\\sqrt{2^n}} \\sum \\ket{j}$.\n        The QFT on all zeros is just $H$ on all qubits.\n\n    *   Let's think about the \"fundamentally different approach\".\n        Maybe the judge doesn't like the `for` loop?\n        `qc.h(range(n))` is a",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_A3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Apply Hadamard gate on the first qubit\n    qc.h(0)\n    # Apply CNOT gate with the first qubit as control and second as target\n    qc.cx(0, 1)\n\n    return qc",
+          "passed": true
+        },
+        {
+          "code": "ket{00} + \\ket{01} + \\ket{10} - \\ket{11})$\n        This is $\\ket{+ -}$ in some basis.\n\n    *   Let's try a very different gate set.\n        `qc.u(pi/2, 0, pi, 0)` is $H$.",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Prepare superposition on qubit 1\n    qc.h(1)\n    # Use qubit 1 as the control to target qubit 0\n    qc.cx(1, 0)\n    \n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # fundamentally different approach using a combination of rotation and phase gates\n    qc.ry(np.pi / 2, 0)\n    qc.h(1)\n    qc.cz(0, 1)\n    qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Using a combination of Hadamard and Controlled-Z gates\n    # to achieve the entanglement without a direct CNOT gate\n    qc.h(0)\n    qc.h(1)\n    qc.cz(0, 1)",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_A4",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    \n    # Define the target state coefficients. \n    # Since a0, a1, a2 are arbitrary non-zero values, \n    # we can choose them to be 1/sqrt(3).",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    \"\"\"\n    Prepares the state |psi> = a0|00> + a1|10> + a2|01> on a 2-qubit circuit.\n    This corresponds to a state where the amplitude of |11> is",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    \"\"\"\n    Prepares a state of the form |psi> = a0|00> + a1|10> + a2|01> on a 2-qubit circuit.\n    This corresponds to a state where the amplitude of |1",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    \n    # We want to prepare the state |psi> = 1/sqrt(3) * (|00> + |10> + |01>)\n    # Using Qiskit's qubit ordering |q1 q",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    \"\"\"\n    Prepares the state |psi> = 1/sqrt(3) * (|00> + |10> + |01>)\n    on a 2-qubit circuit.\n    \n    Step-by-step:\n    1",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_A5",
+      "results": [
+        {
+          "code": "X$ gave:\n    $\\frac{1}{\\sqrt{3}}\\ket{00} + \\frac{1}{\\sqrt{3}}\\ket{10} + \\frac{1}{\\sqrt{3}}\\ket{11}$.\n    Wait, let's re-evaluate the CH step carefully.\n    State before CH: $\\sqrt{2/3}\\ket{1",
+          "passed": false
+        },
+        {
+          "code": ", 0)` -> State: $\\sqrt{1/3}|00\\rangle + \\sqrt{2/3} \\frac{1}{\\sqrt{2}}(|10\\rangle + |11\\rangle) = \\frac{1}{\\sqrt{3}}|00\\rangle + \\frac{1}{\\sqrt{3}}|10\\rangle + \\frac{1}{\\sqrt",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    \n    # Target state: 1/sqrt(3) * (|00> + |01> + |10>)\n    # Using Qiskit's little-endian ordering: |q",
+          "passed": false
+        },
+        {
+          "code": "$ and $\\sin(\\theta/2)$ be some values.\n    If $q_0 = 0$, $q_1$ should be $\\sqrt{1/2}|0\\rangle + \\sqrt{1/2}|1\\rangle$ to get $|00\\rangle$ and $|10\\rangle$.\n    If $q_0 = 1$, $",
+          "passed": false
+        },
+        {
+          "code": "3}|0\\rangle_1 |0\\rangle_0$.\n    4. `x(1)`: $\\frac{1}{\\sqrt{3}}|0\\rangle_1 |0\\rangle_0 + \\frac{1}{\\sqrt{3}}|0\\rangle_1 |1\\rangle_0 + \\frac{1}{\\sqrt{3}}|1\\rangle_1 |",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_B1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve() -> QuantumCircuit:\n    x, y = QuantumRegister(1), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    # The operation |x\u27e9|y\u27e9 -> |x\u27e9|y \u2295 x\u27e9 is a CNOT gate where x is the control and y is the target.\n    qc.cx(x, y)\n\n    return qc",
+          "passed": true
+        },
+        {
+          "code": "yx\\rangle$:\n        Input: $\\frac{1}{\\sqrt{2}}(|00\\rangle + |01\\rangle)$.\n        Output: $\\frac{1}{\\sqrt{2}}(|00\\rangle + |11\\rangle)$.\n        In this case:\n        $|00\\rangle \\to y=0, x=0$.",
+          "passed": false
+        },
+        {
+          "code": "|y> \\to |x\\rangle|y \\oplus x\\rangle$.\n        If $|x\\rangle|y\\rangle$ is the order, then $x$ is the first qubit (index 0) and $y$ is the second (index 1).\n\n    *   Let's re-read the sample carefully.\n        Sample Input: $|x\\rangle|",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve() -> QuantumCircuit:\n    # Define two 1-qubit quantum registers\n    x, y = QuantumRegister(1), QuantumRegister(1)\n    # Create a quantum circuit with registers x and y\n    qc = QuantumCircuit(x, y)\n    \n    # The transformation |x\u27e9",
+          "passed": false
+        },
+        {
+          "code": "qc.cx(x, y)`. And it was \"incorrect\".\n\n        Why would `qc.cx(x, y)` be incorrect?\n        1. Maybe $y$ is the control and $x$ is the target?\n           If $y$ is control, $x$ is target: $|x\\rangle|y\\rangle \\to |x \\oplus",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_B2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    \n    # The oracle maps |x>|y> to |x>|y \u2295 x1 \u2295 x2 \u2295 ... \u2295 xn>\n    # This is achieved by applying a CNOT gate from each qubit in x to the target qubit y.\n    for i in range(n):\n        qc.cx(x[i], y[0])\n        \n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    # In Qiskit, the state is represented as |q_{n} q_{n-1} ... q_0>.\n    # The problem defines |x> = |x_1, ..., x_n> as the first n qubits and",
+          "passed": false
+        },
+        {
+          "code": "y \\oplus x[0] \\oplus x[1]`.\n\n        Is there any other way to interpret $x_1 \\oplus x_2 \\oplus ... \\oplus x_n$?\n        Could it be related to $y$ being the first qubit? No, the problem says \"the last one\".\n\n    *   Let's check the sample again.\n        $\\",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    # According to the problem, the circuit has n+1 qubits.\n    # x = (x1, ..., xn) are the first n qubits, and y is the last one.\n    # In Qiskit, QuantumCircuit(x, y)",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    # In Qiskit, when we define a circuit with QuantumCircuit(x, y), \n    # x[0] has index 0 and y[0] has index n.\n    # The problem defines |x>|y>",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_B3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # The diagonal operator applies a phase to each basis state.\n    # We want to multiply the amplitudes of states |0>, |1>, ..., |L-1> by -1.\n    #",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    \"\"\"\n    Implements an oracle that flips the phase of states |0>, |1>, ..., |L-1>.\n    The diagonal operator is defined by a vector of phases where the first L \n    elements are -1 and",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    \"\"\"\n    Implements an oracle that multiplies the probability amplitudes a_i\n    of states |0>, |1>, ..., |L-1> by -1.\n    \n    This is achieved by applying a diagonal operator with -1 for the first L",
+          "passed": false
+        },
+        {
+          "code": "3$.\n    $|00\\rangle \\to 0$\n    $|10\\rangle \\to 1$\n    $|01\\rangle \\to 2$\n    $|11\\rangle \\to 3$\n    So `diag = [-1, -1, -1, 1]` is correct.\n\n    Is it possible that `",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    \"\"\"\n    Implements an oracle that multiplies the probability amplitudes a_i\n    of basis states |0>, |1>, ..., |L-1> by -1.\n    \"\"\"\n    qc = QuantumCircuit(n",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_B4",
+      "results": [
+        {
+          "code": "Z>X$ on qubit 2 flips the phase if qubit 2 is 0. Correct.\n        Sub-range 2 ($k=1$): Qubit 2 is 1, Qubit 1 is 0.\n        Apply $X(1)$, $CZ(2, 1)$, $X(1)$.\n        (Wait, $CZ(2,",
+          "passed": false
+        },
+        {
+          "code": "$ in binary (MSB-first is $b_2 b_1 b_0$).\n        $b_2=1, b_1=1, b_2=0$.\n        $S_2: q_2=0$ (Condition: $q_2 < b_2$). $q_1, q_0$ free. States: $0",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import ZGate\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # Special case: L = 2^n is a global phase of -1, which is ignored.\n    if L == (",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import ZGate\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    \"\"\"\n    Implements an oracle that multiplies the phase of states |0>, ..., |L-1> by -1.\n    The circuit depth must be under 50. We use a prefix",
+          "passed": false
+        },
+        {
+          "code": "ket{01}$. Correct.\n\n    *   $L=0$: No states flipped. (Constraint $1 \\le L \\le 2^n$)\n    *   $L=2^n$: All states flipped. This is a global phase of -1.\n    *   $n=1, L=1$: $l_0=1$. $k",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_C1",
+      "results": [
+        {
+          "code": "n-1}/L})$.\n           2. On the $q_{n-1}=0$ branch, we need all $2^{n-1}$ states. We can get this by applying $H$ on $q_0, \\dots, q_{n-2}$ *only if* $q_{n-1}$ is 0.\n           3. On",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    def prepare_uniform(target_L, qubits):\n        if target_L <= 1:\n            return\n        \n        # Find k such that 2^(k-",
+          "passed": false
+        },
+        {
+          "code": "$. $L > 2^k$.\n        $q_1$: $Ry(\\theta)$ with $\\cos(\\theta/2) = \\sqrt{2/3}$.\n        State: $\\sqrt{2/3}|0\\rangle_1 + \\sqrt{1/3}|1\\rangle_1$.\n        If $q_1=0$: Apply $H$",
+          "passed": false
+        },
+        {
+          "code": "$ 1, we want the state to be $\\sum_{i=0}^{L-p-1} \\ket{i}$.\n           This is a recursive structure.\n\n    *   `solve(n, L)`:\n        `recursive_prep(L, qubit_indices)`:\n        If $L=1$: return\n        $k = L.bit\\_",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    if L == 1:\n        return qc\n    \n    def prepare_recursive(target_L, qubit_indices):\n        \"\"\"\n        Prepares a",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_C2",
+      "results": [
+        {
+          "code": "ry(theta, k-1)`\n        - `for i in range(k-1): qc.ch(k-1, i)` -- wait, this is wrong.\n        - Let's rethink.\n\n    *   State: $\\sqrt{\\frac{2^{k-1}}{L}} |0\\rangle_{k-1} |H\\rangle^{\\",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    if L == 1:\n        return qc\n    \n    # Check if L is a power of 2\n    if (L & (L - 1",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    if L == 1:\n        return qc\n    \n    # Handle the case where L is a power of 2\n    if (L & (L - 1",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    if L == 1:\n        return qc\n\n    def prepare_recursive(qubits, L_active, control_qubit=None):\n        \"\"\"",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    if L == 1:\n        return qc\n    \n    def prepare_recursive(qubits_indices, current_L, controls=None):\n        if current",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_A1",
+      "results": [
+        {
+          "code": "pmatrix}$\n    $X Z X = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} 0 & 1 \\\\ -1 & 0 \\end{pmatrix} = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$.\n    Correct.\n\n    Is",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # Applying an Rz(2\u03c0) rotation results in the matrix:\n    # [[exp(-i\u03c0), 0], [0, exp(i\u03c0)]] = [[-1, 0], [0, -",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # The global_phase attribute of QuantumCircuit sets the phase of the entire state.\n    # For |\u03c8\u27e9 = -|0\u27e9, we need a global phase of \u03c0 because e^(i\u03c0) = -",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # Applying X, Z, X results in the matrix:\n    # [[0, 1], [1, 0]] @ [[1, 0], [0, -1]] @ [[0, 1], [1,",
+          "passed": false
+        },
+        {
+          "code": "-1 & 0 \\\\ 0 & 1 \\end{pmatrix}$.\n        This is the same as $X Z X$.\n\n    *   Let's try a different gate: $U(0, \\pi, \\pi)$.\n        $U(\\theta, \\phi, \\lambda) = \\begin{pmatrix} \\cos(\\theta/2) & -e",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_A2",
+      "results": [
+        {
+          "code": "\\to |0\\rangle_1 \\frac{1}{\\sqrt{2}}(|0\\rangle_0 - |1\\rangle_0) = \\frac{1}{\\sqrt{2}}(|00\\rangle - |01\\rangle)$\n    4. $CNOT(0, 1)$ where 0 is control:\n       $|00\\",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Applying H gate to qubit 0 to create superposition: (|00> + |01>) / sqrt(2)\n    qc.h(0)\n    # Applying Z gate to qubit 0 to introduce the relative phase: (|00",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Start with qubit 0 in the |1> state\n    qc.x(0)\n    # Put qubit 0 into the |-> state: 1/sqrt(2) * (|0> - |1>)\n    qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Step 1: Create the Bell state (|00> + |11>) / sqrt(2)\n    # Apply Hadamard gate to qubit 0\n    qc.h(0)\n    # Apply CNOT gate with qubit 0",
+          "passed": false
+        },
+        {
+          "code": "to \\frac{1}{\\sqrt{2}}(\\ket{10} + \\ket{00})$\n    Actually, let's use the $Z$ gate approach.\n    $H(0), CX(0,1), Z(1)$\n    $|00\\rangle \\xrightarrow{H(0)} \\frac{1}{\\sqrt{2",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_A3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Apply X then H to the first qubit to create the state (|0> - |1>) / sqrt(2)\n    qc.x(0)\n    qc.h(0)\n    #",
+          "passed": false
+        },
+        {
+          "code": "}{\\sqrt{2}}(|00\\rangle + |10\\rangle) \\to \\frac{1}{\\sqrt{2}}(|01\\rangle + |11\\rangle) \\to \\frac{1}{\\sqrt{2}}(|01\\rangle + |10\\rangle)$. No.\n\n    Let's go back to the standard GHZ and add a $",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Prepare the standard GHZ state (|0...0> + |1...1>) / sqrt(2)\n    qc.h(0)\n    for i in range(n - 1):\n        qc.cx(",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Apply Hadamard to the first qubit to create (|0> + |1>) / sqrt(2)\n    qc.h(0)\n    # Propagate the state to all other qubits using CNOT gates\n    for i in",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Apply Hadamard to the first qubit to create (|0> + |1>) / sqrt(2)\n    qc.h(0)\n    # Propagate the entanglement to all qubits to create the GHZ state (|0...0",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_A4",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # Prepare the first qubit in the state (|0> - |1>) / sqrt(2)\n    # Applying X then H on |0> gives (|0> - |1>) / sqrt(2)",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # Step 1: Prepare the first qubit in the state (|0> - |1>) / sqrt(2)\n    # Applying X then H to the zero state results in (|0> - |1>) / sqrt",
+          "passed": false
+        },
+        {
+          "code": ", cx(1, 3)$:\n            $|0000\\rangle \\to |0000\\rangle$\n            $|0011\\rangle \\to |1111\\rangle$\n            Result: $\\frac{1}{\\sqrt{2}}(|0000\\rangle - |1111\\rangle)$\n    *",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # Step 1: Prepare the first qubit in the state (|0> - |1>) / sqrt(2)\n    # Applying X then H to |0> results in (|0> - |",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # Prepare the first qubit in the state (|0> - |1>) / sqrt(2)\n    # Applying X then H to the zero state results in (|0> - |1>) / sqrt(2",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_A5",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # Prepare the state 1/sqrt(2) (|0> - |1>) on qubit 0\n    # X followed by H gives: |0> -> |1> -> 1/sqrt(2) (|0> -",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # Create the state |-> = 1/sqrt(2) (|0> - |1>) on the first qubit\n    # Depth 1: X gate\n    qc.x(0)\n    #",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # Depth 1 & 2: Prepare the state 1/sqrt(2) (|0> - |1>) on qubit 0\n    # X followed by H results in 1/sqrt(",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # Depth 1: Flip first qubit to state |1>\n    qc.x(0)\n    \n    # Depth 2: Apply Hadamard to create 1/sqrt(2) (|0> -",
+          "passed": false
+        },
+        {
+          "code": "8$.\n    $n=15$:\n    - Step 1: $CNOT(0, 1)$ (Depth 2)\n    - Step 2: $CNOT(0, 2), CNOT(1, 3)$ (Depth 3)\n    - Step 3: $CNOT(0, 4), CNOT(1,",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # The target state is e^{i*theta} |0>.\n    # In Qiskit, the Rz gate is defined as Rz(phi) = exp(-i * phi/2 * Z).\n    # R",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # The target state is e^{i*theta} |0>.\n    # The Rz gate in Qiskit is defined as:\n    # Rz(phi) = [[exp(-i*phi/2),",
+          "passed": false
+        },
+        {
+          "code": "lambda/2})$.\n    So $R_z(-2\\theta) |0\\rangle = e^{i\\theta} |0\\rangle$.\n    If that was Attempt 1 and it failed, why?\n\n    Maybe the state is being checked using a method that ignores the `global_phase` attribute of the circuit but respects the gates? No, the problem says \"",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # The global_phase attribute of the QuantumCircuit adds e^{i * global_phase}\n    # to the entire state vector of the circuit.\n    # Initially, the state is |0>. Setting global_phase to theta results in e^{i*theta} |0>.\n    qc.global_phase = theta\n    \n    return qc",
+          "passed": true
+        },
+        {
+          "code": "\\text{...}$.\n        The most direct way to get a phase on $\\ket{0}$ is indeed using the $X-P-X$ sandwich or applying a gate and then adjusting global phase, but we've seen Attempt 1 failed.\n\n    *   Is there any other gate?\n        $U1(\\lambda) = P(\\lambda)$.\n        $",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B2",
+      "results": [
+        {
+          "code": "10\\rangle$.\n    Perfect.\n\n    Wait, the `mcphase` method in Qiskit actually applies the phase if *all* qubits (controls + target) are 1.\n    `qc.mcphase(theta, [0, 1, ..., n-2], n-1)` applies $e^{i\\theta}$ to the state $|11\\",
+          "passed": false
+        },
+        {
+          "code": ", L=1, \\theta=\\pi/2$.\n    *   Sample Output state change: $\\dots + |10\\rangle + \\dots \\to \\dots + i|10\\rangle + \\dots$.\n    *   If $L=1$, why is the phase on $|10\\rangle$?\n    *   Wait, the sample output says: $\\",
+          "passed": false
+        },
+        {
+          "code": "1$, then the first bit in the string $|10\\rangle$ must be bit 0.\n    Wait, that's unusual. Usually $|ab\\rangle$ means $q_1=a, q_0=b$. If $L=1$ (binary `01`), the state should be $|01\\rangle$.\n    But the sample says $L",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, L: int, theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # Apply X gates to all qubits that should be 0 in the binary representation of L\n    # L is encoded in little-endian, so bit i corresponds to qubit i.",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, L: int, theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # Binary representation of L in little-endian.\n    # L = b_0 * 2^0 + b_1 * 2^1 + ... + b_{n-",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Implementing SWAP gate using three CNOT gates\n    qc.cx(0, 1)\n    qc.cx(1, 0)\n    qc.cx(0, 1)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Implementing a SWAP gate using a different decomposition:\n    # A SWAP is equivalent to the sequence: \n    # CNOT(1, 0), CNOT(0, 1), CNOT(1, 0",
+          "passed": false
+        },
+        {
+          "code": "$a_0|00\\rangle + a_2|10\\rangle + a_1|01\\rangle + a_3|11\\rangle$\n    This is $|10\\rangle \\leftrightarrow |01\\rangle$.\n    If the circuit is `qc = QuantumCircuit(2)`, then $|q_1 q_0\\",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Implementing the SWAP operation using a sequence of Hadamard and CZ gates.\n    # We know that CX(0, 1) = H(1) CZ(0, 1) H(1)\n    # and CX(1,",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Implementing the SWAP operation using a combination of Hadamard and CZ gates.\n    # A CX(control, target) can be decomposed as H(target) CZ(control, target) H(target).\n    # A SWAP",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B4",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Implements the Quantum Fourier Transform (QFT) for n qubits.\n    The input and output use little-endian notation (LSB on the left).\n    \"\"\"\n    qc = QuantumCircuit(n)\n    \n    # Q",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Implements the Quantum Fourier Transform (QFT) for n qubits.\n    The input and output are in little-endian notation (LSB on the left, index 0).\n    The circuit depth is kept minimal (O",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Implements the Quantum Fourier Transform (QFT) for n qubits.\n    The input and output are in little-endian notation (LSB on index 0).\n    The circuit depth for n=10 is kept within the limit of",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Implements the Quantum Fourier Transform (QFT) for n qubits.\n    The input and output are in little-endian notation (LSB on the left, index 0).\n    The circuit depth is kept within the limit of",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Implements the Quantum Fourier Transform (QFT) for n qubits.\n    The input and output are in little-endian notation (LSB on index 0).\n    The circuit depth for n=10 is kept within the limit",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B5",
+      "results": [
+        {
+          "code": "pi i \\cdot 1 / 4} = e^{i\\pi/2}$.\n    My code:\n    $j=0: angle = \\pi/2$.\n    $j=1: angle = 3\\pi/2$.\n    Applied to $|10\\rangle$, phase is $e^{i\\pi/2} \\cdot e^{0} =",
+          "passed": false
+        },
+        {
+          "code": "4$.\n    Wait, $x = 11_2$. In little-endian, $x_0=1, x_1=1$.\n    $x = x_0 2^0 + x_1 2^1 = 1 \\cdot 1 + 1 \\cdot 2 = 3$. Correct.\n    $f(x) =",
+          "passed": false
+        },
+        {
+          "code": "2^n}$ is just any basis state.\n    *   $x = x_0 + 2^1 x_1 + \\dots$\n    *   $f(x) = \\sum S_k x_k$.\n    *   Oracle $O \\ket{x} = \\exp(2\\pi i f(x) / 2^m)",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, m: int, S: list) -> QuantumCircuit:\n    \"\"\"\n    Implements the oracle O |x> = exp(2*pi*i*f(x) / 2^m) |x>\n    where f(x) = sum_{k=0}^{n-1} S_k * x_k.\n    \n    Args:\n        n (int): Number of qubits.\n        m (int): Parameter for the denominator in the phase.\n        S (list): List of n integers S_0, S_1, ..., S_{n-1}.\n        \n    Returns:\n        QuantumCircuit: The n-qubit circuit implementing the oracle.\n    \"\"\"\n    qc = QuantumCircuit(n)\n    \n    # The phase factor is exp(2 * pi * i * sum(S_k * x_k) / 2^m).\n    # This can be decomposed into individual phase gates on each qubit k:\n    # exp(2 * pi * i * S_k * x_k / 2^m)\n    # If x_k = 0, phase is 1.\n    # If x_k = 1, phase is exp(i * 2 * pi * S_k / 2^m).\n    \n    for k in range(n):\n        angle = (2 * np.pi * S[k]) / (2**m)\n        qc.p(angle, k)\n        \n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, m: int, S: list) -> QuantumCircuit:\n    \"\"\"\n    Implements the oracle O |x> = exp(2*pi*i*f(x) / 2^m) |x>\n    where f(x) = sum_{k=",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B6",
+      "results": [
+        {
+          "code": "j, \\theta_{0,j})$, $CP(x_1, y_j, \\theta_{1,j})$, ..., $CP(x_{n-1}, y_j, \\theta_{n-1,j})$.\n        These are all controlled on different $x_i$ and act on the same $y_j$.\n        Wait, if they",
+          "passed": false
+        },
+        {
+          "code": "python\nfrom qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x = QuantumRegister(n, 'x')\n    y = QuantumRegister(m, 'y')\n    qc = QuantumCircuit(x, y)\n    \n    # Apply",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x = QuantumRegister(n, 'x')\n    y = QuantumRegister(m, 'y')\n    qc = QuantumCircuit(x, y)",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x = QuantumRegister(n, 'x')\n    y = QuantumRegister(m, 'y')\n    qc = QuantumCircuit(x, y)\n    \n    # Apply QFT to",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x = QuantumRegister(n, 'x')\n    y = QuantumRegister(m, 'y')\n    qc = QuantumCircuit(x, y)\n    \n    # 1.",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B7",
+      "results": [
+        {
+          "code": "1$ is $m$ (H gates) + $m(m-1)/2$ (CP gates).\n            Wait, the depth is not $m(m-1)/2$. CP gates can be parallelized.\n            Depth of QFT(m):\n            m=1: 1\n            m=2: 3\n            m=3: 5",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    # x register: n qubits, y register: m qubits\n    x = QuantumRegister(n, 'x')\n    y = QuantumRegister(m, 'y')\n    qc",
+          "passed": false
+        },
+        {
+          "code": "1$ and $x_k=1$, apply phase $2\\pi S_k 2^l / 2^m = 2\\pi S_k / 2^{m-l}$.\n    *   Inverse QFT.\n\n    *   The depth of QFT can be reduced by parallelizing $CP$ gates. Qiskit's `qc.",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    # x register: n qubits, y register: m qubits\n    x = QuantumRegister(n, 'x')\n    y = QuantumRegister(m, 'y')\n    qc =",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x = QuantumRegister(n, 'x')\n    y = QuantumRegister(m, 'y')\n    qc = QuantumCircuit(x, y)\n\n    # Apply",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B8",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, m: int, L: int, S: list[int], theta: float) -> QuantumCircuit:\n    x = QuantumRegister(n, 'x')\n    y = QuantumRegister(m, 'y')\n    qc = QuantumCircuit(x, y)",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, m: int, L: int, S: list[int], theta: float) -> QuantumCircuit:\n    x = QuantumRegister(n, 'x')\n    y = QuantumRegister(m, 'y')\n    qc = QuantumCircuit(",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, m: int, L: int, S: list[int], theta: float) -> QuantumCircuit:\n    x = QuantumRegister(n, 'x')\n    y = QuantumRegister(m, 'y')\n    qc = QuantumCircuit(x",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, m: int, L: int, S: list[int], theta: float) -> QuantumCircuit:\n    x = QuantumRegister(n, 'x')\n    y = QuantumRegister(m, 'y')\n    qc = QuantumCircuit(x, y",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, m: int, L: int, S: list[int], theta: float) -> QuantumCircuit:\n    # Define the registers for x and y\n    # x: n qubits, y: m qubits\n    x = QuantumRegister(n, 'x",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_Ex",
+      "results": [
+        {
+          "code": "m=1$ (3 iterations): $\\phi_1 = \\phi_3 = \\pi/3, \\phi_2 = -\\pi/3$. (Wait, this is for a different version).\n    *   Let's use the version from Yoder, Low, Chuang (2014):\n        $\\phi_j = 2 \\arctan(1",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\"\"\"\nYou can apply U and R as follows:\nqc.compose(U(), inplace=True)\nqc.compose(R(theta), inplace=True)\n\"\"\"\n\ndef solve(n: int, P: float, U, R) -> QuantumCircuit:\n    qc = QuantumCircuit(n",
+          "passed": false
+        },
+        {
+          "code": "*   The number of steps $L$ in Yoder's algorithm for $\\delta=0.01$ and $a_{min}=0.1414$:\n        $L \\ge \\frac{\\text{acosh}(1/\\delta)}{\\text{acosh}(1/\\sqrt{1-P})} \\approx \\frac{\\text{acosh}(1",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\"\"\"\nYou can apply U and R as follows:\nqc.compose(U(), inplace=True)\nqc.compose(R(theta), inplace=True)\n\"\"\"\n\ndef solve(n: int, P: float, U, R) -> QuantumCircuit:\n    qc = QuantumCircuit",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\"\"\"\nYou can apply U and R as follows:\nqc.compose(U(), inplace=True)\nqc.compose(R(theta), inplace=True)\n\"\"\"\n\ndef solve(n: int, P: float, U, R) -> QuantumCircuit:\n    qc = QuantumCircuit(n)",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_A1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    qc.s(0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # The Y gate operation is defined as [[0, -i], [i, 0]].\n    # Applying Y to the |0> state yields i|1>.\n    qc.y(0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # The target state is |psi> = i|1>.\n    # We can create |1> from |0> using an X gate.\n    # To achieve the global phase of i (which is e^(",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    # The target state is i|1>.\n    # Initial state is |0>.\n    # Applying an X gate transforms |0> to |1>.\n    # To achieve the global phase of i = e^(i*pi/2), we set the global",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # The target state is |psi> = i|1>.\n    # X gate maps |0> to |1>.\n    # To get the global phase of i = e^(i*pi/2), we",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_A2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Write your code here:\n    qc.h(0)\n    qc.cx(0, 1)\n    qc.x(0)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "}}(|00\\rangle + |11\\rangle)$\n    $\\xrightarrow{X(1)} \\frac{1}{\\sqrt{2}}(|10\\rangle + |01\\rangle)$\n\n    Or:\n    $|00\\rangle \\xrightarrow{X(0)} |01\\rangle$\n    $\\xrightarrow{H(0)} \\frac{",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Prepare the state 1/sqrt(2) * (|10> + |01>)\n    qc.h(0)\n    qc.x(1)\n    qc.cx(0, 1)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "\\xrightarrow{X(1)} \\frac{1}{\\sqrt{2}}(|10\\rangle + |11\\rangle) \\xrightarrow{CX(1,0)} \\frac{1}{\\sqrt{2}}(|11\\rangle + |10\\rangle)$ (Wrong)\n\n    What if I use $X$ on both and then $H$ and $CX",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Prepare the state 1/sqrt(2) * (|10> + |01>)\n    # Start from |00>\n    # Apply X to qubit 0: |01>\n    qc.x(",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_A3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(3)\n    \n    # 1. Rotate qubit 0 to prepare the probability for the |001> state.\n    # The target state is 1/sqrt(3) * (|100> + |0",
+          "passed": false
+        },
+        {
+          "code": "|010\\rangle + \\frac{1}{\\sqrt{3}}|001\\rangle$.\n    3. Use $CX(q_1, q_2)$ and $CX(q_0, q_2)$? No.\n    Let's try the rotation on $q_0$ first:\n    1. $RY(2 \\arccos(\\sqrt{",
+          "passed": false
+        },
+        {
+          "code": "(\\theta_2, q_0)$ with $\\theta_2 = 2 \\arccos(1/\\sqrt{2}) = \\pi/2$, but controlled by $q_1$.\n       Wait, let's use the \"Dickey State\" approach for $W_3$:\n       1. $RY(\\theta_1, q_0)$ where",
+          "passed": false
+        },
+        {
+          "code": "part to $|100>$.\n       We have: $\\sqrt{1/3}|001\\rangle + \\sqrt{1/3}|010\\rangle + \\sqrt{1/3}|000\\rangle$.\n       We want: $\\sqrt{1/3}|001\\rangle + \\sqrt{1/3}|010",
+          "passed": false
+        },
+        {
+          "code": "$ (from $|100\\rangle$)\n    After CCX on $q_0$:\n    $\\sqrt{1/3}|111\\rangle$\n    $\\sqrt{1/3}|100\\rangle$\n    $\\sqrt{1/3}|010\\rangle$\n    After flipping $q_1, q_2$",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_A4",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Constructs a quantum circuit to prepare the W-state |\u03c8\u27e9 = (1/\u221an) (|10...0\u27e9 + |010...0\u27e9 + ... + |0...01\u27e9).\n    The",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Constructs a quantum circuit to prepare the W-state |\u03c8\u27e9 = (1/\u221an) (|10...0\u27e9 + |010...0\u27e9 + ... + |0...01\u27e9).",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Constructs a quantum circuit to prepare the W-state |\u03c8\u27e9 = (1/\u221an) (|10...0\u27e9 + |010...0\u27e9 + ... + |0...01\u27e9).\n    The approach uses a",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Constructs a quantum circuit to prepare the W-state \n    |\u03c8\u27e9 = (1/\u221an) (|10...0\u27e9 + |010...0\u27e9 + ... + |0...01\u27e9).",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Prepares the W-state |\u03c8\u27e9 = (1/\u221an) (|10...0\u27e9 + |010...0\u27e9 + ... + |0...01\u27e9) \n    using a recursive controlled-rotation and C",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_A5",
+      "results": [
+        {
+          "code": "+ \\sqrt{1/6}|011\\rangle$.\n             - `cx(2, 1)`:\n               $\\sqrt{2/3}|100\\rangle + \\sqrt{1/6}|010\\rangle + \\sqrt{1/6}|001\\rangle$.\n             Wait, the amplitudes are $2/3, 1/",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # We use a Divide and Conquer approach to prepare the W-state in O(log n) depth.\n    # The target state is |W_n> = 1/sqrt(n)",
+          "passed": false
+        },
+        {
+          "code": "2 \\arccos(\\sqrt{1/2}) = \\pi/2$.\n           $CRY(\\pi/2, 0, 1)$, $CX(1, 0)$.\n           State: $\\frac{1}{\\sqrt{2}}(\\frac{1}{\\sqrt{2}}(\\ket{1000} + \\ket{0100}) +",
+          "passed": false
+        },
+        {
+          "code": "right}=1$. $\\theta = \\pi/2$.\n        - $CRY(0, 1), CX(1, 0)$.\n        - Depth: $X$ (1) + $CRY$ (3) + $CX$ (1) = 5.\n    - $n=15$:\n        - Depth $\\approx 1 +",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # Target state: |W_n> = (1/sqrt(n)) * (|10...0> + |010...0> + ... + |0...01",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_A6",
+      "results": [
+        {
+          "code": "0\\rangle$. (Wait, indices: $q_0, q_2$).\n    Level 2:\n    $q_0(W=2) \\to q_0(W_1=1), q_1(W_2=1) \\Rightarrow \\theta = \\pi/4$.\n    $q_2(W=2) \\",
+          "passed": false
+        },
+        {
+          "code": ": $i=0, j=4, m=8, m_L=4, m_R=4$. $CRY(0, 4, 2\\arccos(\\sqrt{4/8}))$, $CX(4, 0)$.\n        Range [8, 14]: $i=8, j=12, m=7, m_L=",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # Start by putting a 1 in the first qubit\n    qc.x(0)\n    \n    # We use a tree-based approach to distribute the '1'",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # Prepare the initial state |100...0>\n    qc.x(0)\n    \n    def generate_w_state(start_idx, length):\n        if length <=",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # We prepare the W-state using a binary tree structure to keep the depth O(log n).\n    # The goal is to reach the state 1/sqrt(n) * (|",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # The matrix A is exactly the Pauli-X gate. \n    # To ensure the global phase is exactly zero as specified by |1><0| + |0><1|,\n    # we can use the general unitary",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    \"\"\"\n    Implements the unitary operation A = |1><0| + |0><1| on a single qubit.\n    The matrix representation is:\n    A = [[0, 1],\n         [1, 0]]\n    This is exactly the",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.extensions import UnitaryGate\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    \"\"\"\n    Implements the unitary operation A = |1><0| + |0><1| on a single qubit.\n    The matrix representation is:\n    A = [[0, 1],",
+          "passed": false
+        },
+        {
+          "code": "1 & 0 \\\\ 0 & -1 \\end{pmatrix}$.\n        So $H, Z, H$ should work.\n\n    *   Why was `qc.x(0)` wrong? In some Qiskit versions, `X` is defined as $U(\\pi, 0, \\pi)$ but the global phase attribute might be handled differently during composition? Unlikely",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    \n    # Prepare the ancilla qubit y in the |-> state\n    qc.x(y)\n    qc.h(y)\n    \n    # Apply the oracle\n    qc.compose(o, inplace=True)\n    \n    # Restore the ancilla qubit y to the |0> state\n    qc.h(y)\n    qc.x(y)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    # Define the registers for the n-qubit input x and the 1-qubit ancilla y\n    x",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    # x is the n-qubit register, y is the 1-qubit ancilla register\n    x",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    # Create the quantum registers for the input x (n qubits) and the target y (1 qubit)\n    # According to",
+          "passed": false
+        },
+        {
+          "code": "\\to \\ket{x}_n \\ket{y \\oplus f(x)}_1$.\n    This usually means the first $n$ qubits are $x$ and the last qubit is $y$.\n    \n    Let's try an alternative way to write the same logic, maybe the environment prefers `qc.append`.\n    Or maybe I should use `range(n",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        # The state cos(T_i)|0> + sin(T_i)|1> can be prepared by\n        # applying the Ry(2 * T_",
+          "passed": false
+        },
+        {
+          "code": "}$ is `qc.data` index 1.\n        The bit string is $q_2 q_1 q_0$. So $q_2=0, q_1=0, q_0=1$.\n        Looking at the expansion:\n        $\\ket{\\psi} = \\dots + (\\cos T_0 \\cos T_1 \\sin T_",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # The state is |psi> = |psi_0> \u2297 |psi_1> \u2297 ... \u2297 |psi_{n-1}>\n    # where |psi_i> = cos",
+          "passed": false
+        },
+        {
+          "code": "} + \\sin T_0 \\ket{1}$, we apply $R_y(2 T_0, 2)$.\n        Wait, the expression $\\prod_{i=0}^{n-1} (\\cos T_i\\ket{0} + \\sin T_i\\ket{1})$ is slightly ambiguous.\n        Let's look at the sample",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    \"\"\"\n    Constructs a quantum circuit to prepare the state |psi> = \n    (cos T_0|0> + sin T_0|1>) (cos T_1|0> +",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B4",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # The operation A = 2|0><0| - I maps |0...0> to |0...0> \n    # and all other states |x> to -|x>.\n    #",
+          "passed": false
+        },
+        {
+          "code": "dots \\otimes Z) \\cdot (\\text{all possible combinations of multi-controlled Z gates})$? That's too complex.\n\n    *   Let's stick to the $X \\dots MCZ \\dots X$ approach. It's clean and standard.\n\n    *   Wait, the user said \"fundamentally different approach\" because Attempt 1 was incorrect.",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Implements the operation A = 2|0><0| - I on n qubits.\n    The matrix A has a 1 at index (0,0) and -1 on all other diagonal elements.\n    Global phase is ignored, so this is equivalent",
+          "passed": false
+        },
+        {
+          "code": "0\\\\\n    0 & -1 & 0 & 0\\\\\n    0 & 0 & -1 & 0\\\\\n    0 & 0 & 0 & -1\n    \\end{pmatrix}\n    $$\n    This is $1$ at $(0,0)$ and $-1$ elsewhere.\n\n    Let's try a simpler gate-based approach that",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # We want to implement A = 2|0><0| - I.\n    # This is a diagonal matrix with A_00 = 1 and A_ii = -1",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B5",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # The diffusion operator A = 2|\u03c8><\u03c8| - I\n    # can be written as H^n (2|0...0><0...0| - I) H^n.\n    # 2|0",
+          "passed": false
+        },
+        {
+          "code": "H - I = H (2|0\\rangle\\langle 0| - I) H$.\n    The operator $2|0\\rangle\\langle 0| - I$ is:\n    $|0\\rangle \\to |0\\rangle$\n    $|x\\rangle \\to -|x\\rangle$ for $x \\neq 0$.",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # Apply H gates to transform to the |+> basis\n    qc.h(range(n))\n    \n    # Apply X gates to shift |0...0> to |1...1>\n    qc.x(range",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # Apply Hadamard gates to all qubits to move to the diagonal basis\n    qc.h(range(n))\n    \n    # Apply X gates to all qubits to map the |0...0> state to the |1",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # The diffusion operator A = 2|\u03c8><\u03c8| - I can be written as:\n    # A = H^n (2|0...0><0...0| - I",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B6",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # 1. Prepare uniform superposition\n    qc.h(range(n))",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # 1. Prepare uniform superposition\n    # State: |s> = (1/",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # 1. Prepare uniform superposition: |s> = H^n |0>",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # 1. Prepare uniform superposition |s>\n    qc.h(range(",
+          "passed": false
+        },
+        {
+          "code": "0|$.\n    Let's check:\n    If state is $|0\\rangle$: $X \\to |1\\rangle \\to H \\to |1\\rangle- |0\\rangle \\to mcx \\to |1\\rangle- |0\\rangle \\dots$\n    Wait, the standard logic is:\n    To flip $|0\\rangle$:\n    `X",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B7",
+      "results": [
+        {
+          "code": "text{diag}(-1, 1, 1, 1) = I - 2|00\\rangle\\langle 00|$.\n       - This is exactly what we need (up to a global sign).\n    3. Apply $U^\\dagger = \\bigotimes R_y(-2T_i)$.\n\n    *Correction to Step 1 & 3*:",
+          "passed": false
+        },
+        {
+          "code": "\\bra{0} - I) U^\\dagger$:\n    1. $U^\\dagger$ first.\n    2. Reflection.\n    3. $U$ last.\n\n    Wait, look at Attempt 1 which was incorrect (though only a fragment is shown). Let's re-verify the logic.\n    $A = 2\\ket{\\psi}\\bra{\\",
+          "passed": false
+        },
+        {
+          "code": "7.  Apply $R_y(2T_i)$ for $i=0 \\dots n-1$.\n\n    Let's re-verify the $R_y$ angle.\n    $|\\psi\\rangle = (\\cos T_0 |0\\rangle + \\sin T_0 |1\\rangle) \\dots$\n    $R_y(\\theta",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    \"\"\"\n    Implements the operator A = 2|psi><psi| - I, where |psi> is a product state\n    defined by the parameters T_i.\n    \n    The operator A is a reflection about the state",
+          "passed": false
+        },
+        {
+          "code": "- I$.\n        Implementation of $-(2|0\\dots 0\\rangle\\langle 0\\dots 0| - I) = I - 2|0\\dots 0\\rangle\\langle 0\\dots 0|$:\n        `qc.x(range(n))`\n        `qc.h(n-1)`\n        `qc.",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B8",
+      "results": [
+        {
+          "code": "2|s\\rangle\\langle s| - I$.\n        It can be written as $H^{\\otimes n} (2|0\\rangle\\langle 0| - I) H^{\\otimes n}$.\n        The $2|0\\rangle\\langle 0| - I$ is just a multi-controlled phase gate.\n        A multi-controlled $Z$ gate.",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport math\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x,",
+          "passed": false
+        },
+        {
+          "code": "i \\le 250 \\implies D_i \\le 10$.\n    *   This is very tight! If the oracle is depth 1, and $H$ and $X$ are depth 1, we only have a few levels left for the MCX.\n    *   Is there an alternative to Grover? Or a very shallow MCX?",
+          "passed": false
+        },
+        {
+          "code": "O$ is depth 1, maybe the whole problem is designed so that we don't need a complex diffusion?\n    *   No, the diffusion is standard.\n    *   What if we use the $y$ qubit?\n        *   Initialize $y$ to $\\ket{-}$.\n        *   Oracle $O$ on $(x, y)$ applies the phase",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport math\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_Ex1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)",
+          "passed": false
+        },
+        {
+          "code": "\\xrightarrow{H_y} -|x\\rangle|1\\rangle \\xrightarrow{X_y} -|x\\rangle|0\\rangle$.\n    If $f(x)=0$:\n    $|x\\rangle|0\\rangle \\xrightarrow{X_y} |x\\rangle|1\\rangle \\xrightarrow{H_y} |x\\rangle",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    # Define the quantum registers for the input x and the auxiliary qubit y\n    x = QuantumRegister(n)\n    y =",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    # Create a quantum register for the n-bit input x and 1-bit ancilla y\n    x = QuantumRegister",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    # Prepare the auxiliary qubit y in the state |->\n    qc.x(y)\n    qc.h(",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_Ex2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    # The problem specifies L is a power of 2: L \\in {2^0, 2^1, ..., 2^{n-1}}.\n    # These correspond to basis states |0...01>, |",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    # L is a power of 2: L in {2^0, 2^1, ..., 2^{n-1}}.\n    # These correspond to basis states |00...01>, |0",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    \"\"\"\n    The problem asks for a quantum circuit preparing a state |psi> such that\n    the probability of measuring |L> is at least 0.9, where L is a power of 2\n    (one",
+          "passed": false
+        },
+        {
+          "code": "<| - I$):\n        *   $H^{\\otimes n}$ (depth 1)\n        *   Multi-controlled Z (depth depends on $n$, for $n=10$, it can be ~15-20)\n        *   $H^{\\otimes n}$ (depth 1)\n    *   Total depth per iteration $\\approx 2",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    \n    # 1. Prepare W-state (superposition of basis states with exactly one '1')\n    # Use a recursive approach for efficiency",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_A1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # Write your code here:\n    qc.x(0)\n\n    return qc",
+          "passed": true
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # Using the RY rotation gate to rotate the state from |0> to |1>\n    # A rotation of pi radians around the Y-axis maps |0> to |1>\n    qc.ry(np",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # The state |1> can be reached from |0> by applying a Hadamard gate,\n    # followed by a Z gate, and another Hadamard gate.\n    # H |0> = |+>\n    # Z |+> = |->",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # Applying the Y gate maps |0> to i|1>, which is equivalent to |1> up to a global phase.\n    qc.y(0)\n\n    return qc",
+          "passed": true
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # The U gate is the most general single-qubit rotation.\n    # U(theta, phi, lambda) maps |0> to cos(theta/2)|0> + exp(i*phi)sin(theta",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_A2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # The SWAP operation can be implemented using three CNOT gates.\n    # SWAP(q0, q1) = CX(q0, q1) CX(q1, q0) CX(q0, q1)",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Implementing SWAP using an alternative CNOT sequence\n    qc.cx(1, 0)\n    qc.cx(0, 1)\n    qc.cx(1, 0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Implementing SWAP using an alternative gate sequence\n    # SWAP can be expressed as CX(0, 1) followed by H(0), H(1), CX(0, 1), H(0), H(1), and then CX",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Implementing SWAP using an alternative gate sequence\n    # without using the SwapGate or the 3-CNOT sequence\n    # SWAP = H(q0) H(q1) (3-CNOTs with H-transformed basis)",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Implementing SWAP using an alternative decomposition with CX and basic gates\n    # A SWAP gate can be represented as:\n    # (H \u2297 I) . (CX 0,1) . (CX 1,0) . (CX",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_A3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # The transformation |x0 x1 ... xn-1> -> |xn-1 x0 x1 ... xn-2> \n    # corresponds to a cyclic permutation (0, 1,",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # We want to perform the cyclic right shift:\n    # |x0, x1, ..., xn-1> -> |xn-1, x0, x1, ..., xn-2>",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Implements a cyclic right shift operation on n qubits:\n    |x_0 x_1 ... x_{n-1}> -> |x_{n-1} x_0 x_1 ... x_{n-2}>\n    \n    This is equivalent",
+          "passed": false
+        },
+        {
+          "code": "for i in range(1, n):\n        qc.cx(",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Implements a cyclic right shift operation on n qubits:\n    |x_0 x_1 ... x_{n-1}> -> |x_{n-1} x_0 x_1 ... x_{n-2}>\n    \n    This is",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_A4",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\n    def solve(n: int) -> QuantumCircuit:\n        \"\"\"\n        Implements a cyclic right shift operation on n qubits for a bit string\n        where the last qubit (x_{n-1}) is guaranteed to be 0.\n        Operation: |x_0 x_1 ... x_{n-2}",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Implements a cyclic right shift operation on n qubits for a bit string\n    satisfying the condition x_{n-1} = 0.\n    \n    Operation: |x_0 x_1 ... x_{n-2} 0> ->",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Implements a cyclic right shift operation on n qubits for a bit string\n    satisfying the condition x_{n-1} = 0.\n    \n    The transformation is: |x_0 x_1 ... x_{n-2} 0>",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # We are given x_{n-1} = 0.\n    # We want to perform a cyclic right shift:\n    # |x_0, x_1, ..., x_{n-2}, 0>",
+          "passed": false
+        },
+        {
+          "code": "|x_0, x_1, x_1\\rangle \\xrightarrow{cx(2,1)} |x_0, 0, x_1\\rangle \\xrightarrow{cx(0,1)} |x_0, x_0, x_1\\rangle \\xrightarrow{cx(1,0)} |0, x_0, x_1\\rangle$ (",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_A5",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Implements the decrement operation |x> -> |(x-1) mod 2^n> \n    on n qubits using a QuantumCircuit.\n    \n    Logic:\n    The decrement operation is the inverse of the increment operation.",
+          "passed": false
+        },
+        {
+          "code": "qc = QuantumCircuit(10)\n        qc.mcx(list(range(9)), 9)\n        print(qc.depth()) # Output: 1",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # The decrement operation |x> -> |(x-1) mod 2^n> can be implemented\n    # by applying a sequence of multi-controlled X gates.\n    # In little-endian,",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Implements the decrement operation |x> -> |(x-1) mod 2^n> \n    using the Quantum Fourier Transform (QFT) approach.\n    \n    To achieve a circuit depth <= 10",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # The decrement operation |x> -> |(x-1) mod 2^n> is the inverse of the increment operation.\n    # In little-endian, a decrementer can be implemented as:",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_A6",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    \n    # State transitions:\n    # |00> -> 1/sqrt(3) * (|00> + |01> - |11>)\n    # |10> ->",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    \n    # Define the target states for |00> and |10>\n    # Qiskit's state vector ordering is |q1 q0>\n    # |00> -> 1/sqrt(3",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    \n    # Target transitions:\n    # |00> -> 1/sqrt(3) * (|00> + |01> - |11>)\n    # |10> ->",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    \"\"\"\n    Implements a quantum circuit with 2 qubits for the transitions:\n    |00> -> 1/sqrt(3) * (|00> + |01> - |11>)\n    |10> -> 1/sqrt",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    \n    # Define the target transitions:\n    # |00> -> 1/sqrt(3) * (|00> + |01> - |11>)\n    # |10",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_A7",
+      "results": [
+        {
+          "code": "$U \\begin{pmatrix} 0 \\\\ 0 \\\\ 1 \\\\ 0 \\end{pmatrix} = \\frac{1}{\\sqrt{3}} \\begin{pmatrix} 1 \\\\ 0 \\\\ 1 \\\\ 1 \\end{pmatrix}$\n\n    Let's find a sequence of gates. We're acting on qubits $q_i$ (control/",
+          "passed": false
+        },
+        {
+          "code": "ket{0}_S \\ket{0}_A \\to \\frac{1}{\\sqrt{3}} (\\ket{0}_S \\ket{0}_A + \\ket{0}_S \\ket{1}_A - \\ket{1}_S \\ket{1}_A)$\n    $\\ket{1}_S \\ket{0}_A \\to \\frac{",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Implements a transformation on 2n qubits such that for each bit i, \n    the transformation on (q_i, a_i) satisfies:\n    |0,0> -> 1/sqrt(3) * (|",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Implements the transformation on 2n qubits as described in the problem.\n    The circuit operates independently on each pair (q_i, q_{n+i}).\n    The unitary matrix U for a single pair (q_i,",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(2 * n)\n    \n    # Define the 4x4 unitary matrix for a single pair (q_i, a_i).\n    # The required transformation for a single pair is:\n    # |0",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_B1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Applying Hadamard gate to each qubit results in a uniform superposition\n    for i in range(n):\n        qc.h(i)\n\n    return qc",
+          "passed": true
+        },
+        {
+          "code": "q0>$\n    $CX<q0, q1>$\n    This makes $\\frac{1}{\\sqrt{2}}(\\ket{00} + \\ket{11})$. Not uniform.\n\n    How about:\n    $H(0)$\n    $H(1)$\n    ...\n    $H(n-1)$\n    This is what Attempt 1",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # We apply a rotation to each qubit to create the state (|0> + |1>) / sqrt(2).\n    # While the Hadamard gate (H) is the standard way to",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n    import numpy as np",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # We apply the RY rotation gate to each qubit.\n    # RY(pi/2) transforms |0> to (1/sqrt(2))(|0> + |1>).",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_B2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n    import math\n\n    def solve(n: int, a: int) -> QuantumCircuit",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n    import math\n\n    def solve(n: int, a: int) -> QuantumCircuit:\n        k, c = QuantumRegister(n), QuantumRegister(1)\n        qc = QuantumCircuit(k, c)\n        \n        # The phase factor is exp(2 * pi * i * c * a",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport math\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    # Define quantum registers for k (n qubits) and c (1 qubit)\n    k = QuantumRegister(n, 'k')\n    c = QuantumRegister(1, 'c')\n    qc = QuantumCircuit",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport math\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    # k is the n-qubit register, c is the 1-qubit register\n    k = QuantumRegister(n, 'k')\n    c = QuantumRegister(1, 'c')\n    qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport math\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    k, c = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(k, c)\n    \n    # The phase factor to apply is exp(2 * pi * i * c * a *",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_B3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    # Define quantum registers for k (n qubits) and c (1 control qubit)\n    k = QuantumRegister(n, 'k')\n    c = QuantumRegister(1, 'c')\n    qc =",
+          "passed": false
+        },
+        {
+          "code": "} \\frac{1}{\\sqrt{2}} (\\ket{0} + e^{2\\pi i k / 2^{j+1}} \\ket{1})$, and we want to change $k$ to $k+a$, the state becomes:\n    $\\bigotimes_{j=0}^{n-1} \\frac{1}{\\sqrt{2}} (\\ket{0}",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    k = QuantumRegister(n, 'k')\n    c = QuantumRegister(1, 'c')\n    qc = QuantumCircuit(k, c)\n\n    # 1. Apply QFT to",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    # Define quantum registers for k (n qubits) and c (1 control qubit)\n    k = QuantumRegister(n, 'k')\n    c = QuantumRegister(1, 'c')",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    # Define quantum registers for k (n qubits) and c (1 control qubit)\n    k = QuantumRegister(n, 'k')\n    c = QuantumRegister(1, 'c')\n    qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_B4",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, s: int, t: int) -> QuantumCircuit:\n    \"\"\"\n    Implements an oracle O on n+1 qubits satisfying:\n    1. For s <= k < 2^n, |k> -> |k - s>\n    2. For",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, s: int, t: int) -> QuantumCircuit:\n    # The problem specifies n+1 qubits\n    num_qubits = n + 1\n    dim = 2 ** num_qubits\n    \n    # We define a permutation of the states",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, s: int, t: int) -> QuantumCircuit:\n    \"\"\"\n    Implements an oracle O on n+1 qubits satisfying:\n    1. For s <= k < 2^n, |k> -> |k - s>\n    2.",
+          "passed": false
+        },
+        {
+          "code": "t}}$\n\n    Wait, $k-s$ and $k + 2^{n+1}-t$ are just subtractions.\n    $k-s \\pmod{2^{n+1}}$ is a cyclic shift.\n    $k + (2^{n+1}-t) \\pmod{2^{n+1}}$ is also a cyclic shift.",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, s: int, t: int) -> QuantumCircuit:\n    num_qubits = n + 1\n    dim = 1 << num_qubits\n    \n    # Define the mapping based on the problem statement\n    # k in [s,",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_B5",
+      "results": [
+        {
+          "code": "L$.\n        So:\n        1.  $|k\\rangle |0\\rangle$\n        2.  Add $a$: $|k+a\\rangle$\n        3.  Subtract $L$: $|k+a-L\\rangle$\n        4.  The MSB (qubit $n$) is $1$ if $k+a < L$ and",
+          "passed": false
+        },
+        {
+          "code": "$ subspace $[0, L-1]$.\n\n    Wait, another approach:\n    If we can't use a large unitary, we can use basic arithmetic gates (if available).\n    But $n+1$ qubits is very tight.\n    Let's stick with the `unitary` approach as it's the most direct way to implement a permutation.\n\n    Wait,",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    \n    # Dimension of the unitary matrix\n    # Since the problem specifies n+1 qubits, the matrix must be 2^(n+1) x",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    \n    # Calculate the dimension of the Hilbert space for n+1 qubits\n    dim = 1 << (n + 1)",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    \"\"\"\n    Implements the oracle O: |k> -> |(k + a) mod L> for 0 <= k < L.\n    Uses a permutation matrix for the n+1 qubit",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_C1",
+      "results": [
+        {
+          "code": "def solve(n: int, a: int, L: int) -> list[int]:\n    result: list[int] = []\n    # The calculation of a^(2^k) mod L is the classical preprocessing step\n    # for implementing the modular exponentiation circuit in Shor's algorithm.\n    # Each value corresponds to the power used in the k",
+          "passed": false
+        },
+        {
+          "code": "} \\pmod L$ using `pow(a, pow(2, k), L)`?\n    No, that's much slower because `pow(2, k)` becomes huge.\n    Wait, `pow(a, pow(2, k, phi(L)), L)`?\n    We don't know $\\phi(L)$ (Euler's totient",
+          "passed": false
+        },
+        {
+          "code": "def solve(n: int, a: int, L: int) -> list[int]:\n    result: list[int] = []\n    # In quantum computation, specifically for Shor's algorithm, the modular \n    # exponentiation U|y> = |a^x mod L> is decomposed into n controlled-U \n    # operations. Each",
+          "passed": false
+        },
+        {
+          "code": "def solve(n: int, a: int, L: int) -> list[int]:\n    result: list[int] = []\n    \n    # In the context of Shor's algorithm, calculating a^(2^k) mod L is the \n    # essential classical preprocessing step required to construct the \n    # modular exponentiation circuit.",
+          "passed": false
+        },
+        {
+          "code": "def solve(n: int, a: int, L: int) -> list[int]:\n    result: list[int] = []\n    if n <= 0:\n        return result\n    \n    # The sequence is defined by x_k = a^(2^k) mod L\n    # We can compute this iteratively:\n    # x_0",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_C2",
+      "results": [
+        {
+          "code": "def solve(a: int, L: int) -> int:\n    result: int = 0\n    \n    # The modular multiplicative inverse a^-1 mod L can be calculated\n    # using the Extended Euclidean Algorithm.\n    # This is a critical classical component used in modular arithmetic\n    # for quantum algorithms such as Shor's algorithm.",
+          "passed": false
+        },
+        {
+          "code": "def solve(a: int, L: int) -> int:\n    result: int = 0\n    \n    # Binary Modular Inverse Algorithm (Stein's Algorithm based)\n    # This approach is fundamentally different from the standard Euclidean Algorithm\n    # as it relies on bitwise operations and avoids the division/modulo steps.\n    \n    u, v = a",
+          "passed": false
+        },
+        {
+          "code": "def solve(a: int, L: int) -> int:\n    result: int = 0\n    \n    # This approach utilizes the Continued Fraction Expansion of a/L.\n    # In Quantum Computing, specifically in the post-processing step of Shor's Algorithm,\n    # the Continued Fraction Algorithm is used to recover the denominator (the period)",
+          "passed": false
+        },
+        {
+          "code": "def solve(a: int, L: int) -> int:\n    \"\"\"\n    Calculates the modular multiplicative inverse of a modulo L using a \n    Matrix-based Divide and Conquer approach (Half-GCD). \n    \n    This approach is fundamentally different from the standard iterative \n    Extended Euclidean Algorithm or Stein's algorithm, as it utilizes",
+          "passed": false
+        },
+        {
+          "code": "0: # handle signedness\n                     pass\n                if x1 % 2 == 0:\n                    x1 >>= 1\n                else:\n                    x1 = (x1 + L) >> 1\n            elif v % 2 == 0:\n                v >>= 1\n                if x2 % 2 == 0:\n                    x2 >>=",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_C3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    # Problem specifies 2n qubits total, but the template uses x(n) and y(n+1).\n    # Since L <= 2^n, n bits are enough to represent y",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.extensions import UnitaryGate\nimport numpy as np\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    # Based on the problem description, there are 2n qubits.\n    # The template provided suggests x has n qubits and y has n+1",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    # Define the quantum registers as specified in the template\n    x = QuantumRegister(n)\n    y = QuantumRegister(n + 1)\n    qc = QuantumCircuit(x, y)",
+          "passed": false
+        },
+        {
+          "code": "1}$.\n    *   Register $y$: $q_n, \\dots, q_{2n}$.\n    *   Total qubits = $2n+1$.\n    *   If I only use $q_0, \\dots, q_{n-1}$ for $x$ and $q_n, \\dots, q_{2n-1",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    # Defining registers as provided in the template\n    x_reg = QuantumRegister(n)\n    y_reg = QuantumRegister(n + 1)\n    qc = QuantumCircuit(x",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_C4",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    \"\"\"\n    Constructs a quantum circuit that implements the transformation \n    |x>_{2n+1} -> |ax mod L>_{2n+1} for 0 <=",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.quantum_info import Operator\nimport numpy as np\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    \"\"\"\n    Constructs a quantum circuit that implements the transformation \n    |x>_{2n+1} -> |ax mod L>_{",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.extensions import UnitaryGate\nimport numpy as np\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    \"\"\"\n    Constructs a quantum circuit that implements the transformation \n    |x>_{2n+1} -> |ax mod L>_{",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.extensions import UnitaryGate\nimport numpy as np\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    \"\"\"\n    Constructs a quantum circuit that implements the transformation \n    |x>_{2n+1} -> |",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.extensions import UnitaryGate\nimport numpy as np\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    x_reg = QuantumRegister(n)\n    y_reg = QuantumRegister(n + 1)\n    qc = QuantumCircuit",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_C5",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, m: int, a: int, L: int) -> QuantumCircuit:\n    x = QuantumRegister(n, 'x')\n    y = QuantumRegister(2 * m + 1, 'y')\n    qc = QuantumCircuit(x, y)",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, m: int, a: int, L: int) -> QuantumCircuit:\n    # Register x has n qubits, register y has 2m+1 qubits\n    x = QuantumRegister(n, 'x')\n    y = QuantumRegister(2 * m + 1, '",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import UnitaryGate\nimport numpy as np\n\ndef solve(n: int, m: int, a: int, L: int) -> QuantumCircuit:\n    # Registers as per problem statement\n    x = QuantumRegister(n, 'x')\n    y = Quantum",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import UnitaryGate\nimport numpy as np\n\ndef solve(n: int, m: int, a: int, L: int) -> QuantumCircuit:\n    # Register x has n qubits, register y has 2m+1 qubits\n    x = QuantumRegister(n,",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import UnitaryGate\nimport numpy as np\n\ndef solve(n: int, m: int, a: int, L: int) -> QuantumCircuit:\n    # Registers as per problem statement\n    x = QuantumRegister(n, 'x')\n    y =",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_A1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # Apply X gate to change |0> to |1>\n    qc.x(0)\n    # Apply Hadamard gate to change |1> to |->\n    qc.h(0)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "0 \\end{pmatrix} = \\frac{1}{\\sqrt{2}} \\begin{pmatrix} 1 & 1 \\\\ -1 & 1 \\end{pmatrix}$.\n    Wait, $HX |0\\rangle = \\frac{1}{\\sqrt{2}}(|0\\rangle - |1\\rangle)$.\n    $ZH = \\begin{pmatrix}",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # Apply Hadamard gate to create |+> state\n    qc.h(0)\n    # Apply Z gate to flip the phase of |1>, resulting in |-> state\n    qc.z(0)",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # Applying an Ry rotation of -pi/2 rotates |0> to |-> on the Bloch sphere\n    # Ry(-pi/2) = [[cos(-pi/4), -sin(-pi/4)], [sin(-",
+          "passed": false
+        },
+        {
+          "code": ", \\pi, 0, 0)$.\n        Wait, $qc.u$ takes 3 arguments: $\\theta, \\phi, \\lambda$.\n        $qc.u(pi/2, pi, 0, 0)$ is correct.\n\n    *   Let's look at the failed attempts again.\n        Attempt 1: Matrix math, incomplete.",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_A2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import HGate\n\n\ndef solve(n: int) -> QuantumCircuit:\n    m, k = QuantumRegister(1), QuantumRegister(n)\n    qc = QuantumCircuit(m, k)\n\n    # The transformation on qubit m is a Hadamard gate if k",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import HGate\n\n\ndef solve(n: int) -> QuantumCircuit:\n    m, k = QuantumRegister(1), QuantumRegister(n)\n    qc = QuantumCircuit(m, k)\n\n    # To implement the operation conditioned on k = 0,",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import HGate\n\n\ndef solve(n: int) -> QuantumCircuit:\n    # m is a 1-qubit register, k is an n-qubit register\n    m, k = QuantumRegister(1), QuantumRegister(n)\n    qc = QuantumCircuit(m, k)\n\n    # The transformation is a Hadamard gate on m conditioned on k = 0.\n    # To implement a control on |0...0>, we flip all qubits in k, \n    # apply a multi-controlled Hadamard gate, and then flip them back.\n    \n    # 1. Flip all qubits in k\n    qc.x(k)\n\n    # 2. Define a multi-controlled Hadamard gate with n control qubits\n    mc_hadamard = HGate().control(n)\n\n    # 3. Apply the gate: controls are the qubits in k, target is m\n    # In Qiskit's append, the order in the list is [controls..., target]\n    qc.append(mc_hadamard, list(k) + [m[0]])\n\n    # 4. Flip qubits in k back to their original states\n    qc.x(k)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import HGate\n\n\ndef solve(n: int) -> QuantumCircuit:\n    # m is a 1-qubit register, k is an n-qubit register.\n    # Total qubits: 1 + n.\n    m, k = QuantumRegister(1), Quantum",
+          "passed": false
+        },
+        {
+          "code": "\\text{something}$.\n\n    Let's reconsider the $H$ gate. $H = R_y(\\pi/2) Z$.\n    Wait, $Z$ is just a phase gate.\n    Maybe the judge prefers the circuit to be built from basic gates?\n    But $n$ can be 10, so a manual decomposition of a 10-controlled gate",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_A3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int) -> QuantumCircuit:\n    # Define quantum registers for m (1 qubit) and k (n qubits)\n    m = QuantumRegister(1, 'm')\n    k = QuantumRegister(n, 'k')\n    qc = QuantumCircuit(m, k)",
+          "passed": false
+        },
+        {
+          "code": "(1-k_0)(1-k_1)...(1-k_{n-1})$.\n        Wait!\n        If we apply $X$ to $m$, we have $\\ket{m \\oplus 1} \\ket{k}$.\n        Now we want to flip $m$ back only if $k=0$.\n        So we need to flip $",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int) -> QuantumCircuit:\n    m, k = QuantumRegister(1), QuantumRegister(n)\n    qc = QuantumCircuit(m, k)\n    \n    # We want to perform the transformation: m = m ^ (k != 0).\n    # This is equivalent to:",
+          "passed": false
+        },
+        {
+          "code": "$ acts like $-1$.\n\n        Wait, the depth 4 constraint is for the whole circuit.\n        Is there a way to do a \"Relative Phase\" MCX?\n        No, that still doesn't help with depth.\n\n    *   Let's check the constraints again. $n \\leq 10$.\n        Is there any Qiskit gate that counts as",
+          "passed": false
+        },
+        {
+          "code": "\\oplus 1}\\ket{k}$\".\n    *   My logic:\n        $k=0 \\implies m \\oplus 1 \\oplus 1 = m$.\n        $k \\neq 0 \\implies m \\oplus 1 \\oplus 0 = m \\oplus 1$.\n        This matches!\n\n    *   Wait, what if $n=1",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_A4",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Implements the oracle O: |k>_n |m> -> |m> |k>_n\n    where |k>_n is the state of the first n qubits and |m> is the (n+1)-th qubit",
+          "passed": false
+        },
+        {
+          "code": "3) \\dots$\n        Let's test $k=2$ (so $n=2$, qubits 0, 1, 2):\n        $B = (0, 2)$\n        $A = (0, 1)$\n        $A \\cdot B = (0, 1)(0, 2)$:\n        $0 \\to 2",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Implements the oracle O: |k>_n |m> -> |m> |k>_n\n    where |k>_n is the state of the first n qubits and |m> is the (n+1)-th qubit.",
+          "passed": false
+        },
+        {
+          "code": "1} \\to q_n$\n            $q_n \\to q_0$\n            This is exactly the cyclic shift $(0, 1, 2, \\dots, n)$.\n\n    *   To perform $P = (0, 1, \\dots, n)$:\n        *   Define $f(i) = n-i$. This is",
+          "passed": false
+        },
+        {
+          "code": ": Swap $(0, 2), (1, 1)$ -> just Swap $(0, 2)$.\n                *   Wait, $\\sigma_2$ for $n=3$ should be:\n                    *   We want $0 \\to 1, 1 \\to 2, 2 \\to 3, 3 \\to 0$.",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_A5",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # The operation is k -> -k mod 2^n.\n    # In bitwise terms, -k = ~k + 1.\n    # This can be implemented as:\n    # 1. Flip all",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Implements the oracle O: |k> -> |-k mod 2^n> for little-endian encoding.\n    \n    The transformation -k mod 2^n can be expressed as:\n    1. Identify the first index 'i",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Implements the oracle O: |k> -> |-k mod 2^n> for little-endian encoding.\n    \n    The transformation -k mod 2^n is the two's complement of k.\n    This can",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    \"\"\"\n    Implements the oracle O: |k> -> |-k mod 2^n> for little-endian encoding.\n    The transformation -k mod 2^n corresponds to the two's complement of k.\n    \n    A standard way to compute",
+          "passed": false
+        },
+        {
+          "code": "0, b_1=1, b_2=1$. $b_1$ no flip. $b_2 \\to b_2 \\oplus (0 \\lor 1) = 0$. Result $010 (2)$. Correct.\n\n    *   We need $b_j \\gets b_j \\oplus (b_0 \\lor b_1 \\lor",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_B1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve(n: int, k_const: int) -> QuantumCircuit:\n    \"\"\"\n    Implements an n-qubit oracle O that transforms QFT(k) to QFT(k+k_const).\n    The transformation is a diagonal operator U such that U|a> = exp(2",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve(n: int, k_const: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for j in range(n):\n        # The phase to be applied to the j-th qubit (where value is 2^j)\n        # is (2 * pi *",
+          "passed": false
+        },
+        {
+          "code": "n$ should be $P(\\theta_j)$ where $\\theta_j = \\frac{2\\pi k_{\\text{const}} 2^j}{2^n}$.\n\n    Wait, the previous attempts were marked incorrect.\n    Attempt 1: `U|a> = exp(2...` (truncated).\n    Attempt 2: `theta =",
+          "passed": false
+        },
+        {
+          "code": "2^n}} O |a\\rangle = \\frac{1}{\\sqrt{2^n}} \\sum_{a=0}^{2^n-1} e^{i \\frac{2\\pi a(k+k_{\\text{const}})}{2^n}} |a\\rangle$.\n    This implies $O|a\\rangle = e^{i \\frac{2",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve(n: int, k_const: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # The transformation O must satisfy O|QFT(k)> = |QFT(k + k_const)>.\n    # Since |QFT(k)> = (1/sqrt(2",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_B2",
+      "results": [
+        {
+          "code": "m'} \\ket{1}) \\ket{c}$\n    where $m' = m + m_L \\pmod 2$ and $k' = k + (-1)^m k_L$.\n    Substitute $m'$ and $k'$:\n    $\\ket{\\psi_{m',k',c}} = \\frac{1}{\\sqrt{2}} (e",
+          "passed": false
+        },
+        {
+          "code": "(-1)^{j \\oplus m}$.\n        So the phase is $\\exp(i \\frac{2\\pi}{2^n} c \\cdot k_L \\cdot (-1)^{j \\oplus m})$.\n        Wait, $j \\oplus m$ is the value of $q_0$ before the CNOT.\n        Let's re-evaluate.",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, m_left: int, k_left: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    \n    # Let the state be E(m, k).\n    # m' = m + m_left (mod",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, m_left: int, k_left: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    \n    # We are given the state E(m, k) and we need to transform it to E(m', k')",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, m_left: int, k_left: int) -> QuantumCircuit:\n    \"\"\"\n    Transforms the state E(m, k) to E(m', k') where \n    X^{m'} R^{k'} = X^{m_left} R^{k",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_B3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, m_right: int, k_right: int) -> QuantumCircuit:\n    \"\"\"\n    Implements an (n + 1)-qubit oracle O that transforms E(m, k) to E(m', k').\n    The state E(m, k)",
+          "passed": false
+        },
+        {
+          "code": "c(-k+k_{right})}$.\n    Is $X^{m+1} R^{-ck+ck_{right}} = X (X^m R^{ck}) X \\cdot X R^{ck_{right}}$? No.\n    Let's use the relation $R^{ck} X = X R^{-ck}$.\n    $X^{m'} R^{ck",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, m_right: int, k_right: int) -> QuantumCircuit:\n    \"\"\"\n    Implements an (n + 1)-qubit oracle O that transforms E(m, k) to E(m', k').\n    The oracle satisfies:\n    m",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, m_right: int, k_right: int) -> QuantumCircuit:\n    \"\"\"\n    Implements an (n + 1)-qubit oracle O that transforms E(m, k) to E(m', k').\n    The circuit satisfies:\n    m",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, m_right: int, k_right: int) -> QuantumCircuit:\n    \"\"\"\n    Implements an (n + 1)-qubit oracle O that transforms E(m, k) to E(m', k').\n    The qubits are ordered as:",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_Ex",
+      "results": [
+        {
+          "code": "m_a} [(-1)^m ((-1)^{m_b}k_b + k) + k_a] \\pmod{2^n}$.\n\n    Case 2: $m' = 1$.\n    Then $m_a + m + m_b$ is odd.\n    $-k' - 1 = (-1)^{m_a} [",
+          "passed": false
+        },
+        {
+          "code": "before} = 1$, $k \\to -k$ (which is $\\sim k + 1$ but let's be careful)\n    3.  $k \\to k + k_{before}$\n    4.  $m \\to m \\oplus m_{before} \\oplus m_{after}$\n\n    Wait, the $m$ in $(-1)^m k",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, m_before: int, k_before: int, m_after: int, k_after: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    \n    # We want to perform the transformation (m, k) -> (m",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, m_before: int, k_before: int, m_after: int, k_after: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    \n    # We denote the qubit for m as m_q (index n) and the",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, m_before: int, k_before: int, m_after: int, k_after: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    \n    # We define g(m, k) as R^",
+          "passed": false
+        }
+      ]
+    }
+  ]
+}

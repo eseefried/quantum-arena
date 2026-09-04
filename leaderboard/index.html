@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quantum Arena</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="page-header">
+    <h1>Quantum Arena</h1>
+    <p class="subtitle">Benchmarking LLMs and quantum-specific coding assistants on Qiskit code generation</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <div class="control-group" role="tablist" aria-label="Dataset">
+        <span class="control-label">Dataset</span>
+        <div id="dataset-tabs" class="segmented"></div>
+      </div>
+      <div class="control-group" role="tablist" aria-label="Metric">
+        <span class="control-label">Metric</span>
+        <div id="metric-tabs" class="segmented"></div>
+      </div>
+    </section>
+
+    <section class="board-wrap">
+      <div id="status" class="status">Loading results…</div>
+      <table id="board" class="board" hidden>
+        <thead>
+          <tr>
+            <th class="col-rank">#</th>
+            <th class="col-model">Model</th>
+            <th class="col-metric">Pass@k</th>
+            <th class="col-bar"></th>
+            <th class="col-n">Tasks</th>
+          </tr>
+        </thead>
+        <tbody id="board-body"></tbody>
+      </table>
+    </section>
+
+    <p class="footnote">
+      Click a row to see its per-category breakdown. Shaded ranges are 95% confidence intervals where available.
+      Generated from experiment results by <code>scripts/export_leaderboard.py</code>.
+    </p>
+  </main>
+
+  <script src="./leaderboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,2055 @@
+{
+  "assistant": "mistral3",
+  "judge_model": "claude-sonnet-4-20250514",
+  "timestamp": "20260331_145401",
+  "config": {
+    "num_samples": 5,
+    "temperature": 0.8,
+    "max_tokens": 2048
+  },
+  "pass_at_k": {
+    "pass_at_k": {
+      "1": 0.04477611940298507,
+      "3": 0.07014925373134329,
+      "5": 0.07462686567164178
+    },
+    "statistics": {
+      "pass@1": {
+        "mean": 0.04477611940298507,
+        "std": 0.17215368185428315,
+        "min": 0.0,
+        "max": 1.0,
+        "median": 0.0
+      },
+      "pass@3": {
+        "mean": 0.07014925373134329,
+        "std": 0.24738327588179898,
+        "min": 0.0,
+        "max": 1.0,
+        "median": 0.0
+      },
+      "pass@5": {
+        "mean": 0.07462686567164178,
+        "std": 0.2627883113680449,
+        "min": 0.0,
+        "max": 1.0,
+        "median": 0.0
+      }
+    },
+    "per_task": {
+      "QPC001_A1": {
+        "1": 0.4,
+        "3": 0.9,
+        "5": 1.0
+      },
+      "QPC001_A2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC001_A3": {
+        "1": 0.8,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "QPC001_A4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC001_A5": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC001_B1": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC001_B2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC001_B3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC001_B4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC001_C1": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC001_C2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_A1": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_A2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_A3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_A4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_A5": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_B1": {
+        "1": 0.4,
+        "3": 0.9,
+        "5": 1.0
+      },
+      "QPC002_B2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_B3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_B4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_B5": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_B6": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_B7": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_B8": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_Ex": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_A1": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_A2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_A3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_A4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_A5": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_A6": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_B1": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_B2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_B3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_B4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_B5": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_B6": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_B7": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_B8": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_Ex1": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_Ex2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_A1": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "QPC004_A2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_A3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_A4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_A5": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_A6": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_A7": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_B1": {
+        "1": 0.4,
+        "3": 0.9,
+        "5": 1.0
+      },
+      "QPC004_B2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_B3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_B4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_B5": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_C1": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_C2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_C3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_C4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_C5": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_A1": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_A2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_A3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_A4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_A5": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_B1": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_B2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_B3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_Ex": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      }
+    },
+    "num_tasks": 67
+  },
+  "results": [
+    {
+      "task_id": "QPC001_A1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.h(0)\n    return qc",
+          "passed": true
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.ry(0.7853981633974483, 0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.h(0)\n    qc.t(0)\n    qc.h(0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.ry(3.141592653589793, 0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.h(0)\n    qc.rz(0, 0)  # Add a global phase correction (not affecting the state)\n    return qc",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_A2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    for i in range(n):\n        qc.h(i)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    qc.h(0)\n    for i in range(1, n):\n        qc.cx(0, i)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    qc.h(range(n))\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    qc.h(0)\n    for i in range(1, n):\n        qc.cx(0, i)\n    qc.barrier()\n    qc.h(range(n))\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.h(0)\n    for i in range(1, n):\n        qc.cx(0, i)\n    for i in range(1, n):\n        qc.h(i)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_A3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.h(0)\n    qc.cx(0, 1)\n\n    return qc",
+          "passed": true
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.h(1)\n    qc.cx(1, 0)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.h(0)\n    qc.cx(0, 1)\n    qc.global_phase = 0\n\n    return qc",
+          "passed": true
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.h(0)\n    qc.cx(0, 1)\n    qc.global_phase = 0.0\n    return qc",
+          "passed": true
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.h(0)\n    qc.cx(0, 1)\n    return qc",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_A4",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    a0, a1, a2 = np.random.rand(3)\n    norm = np.sqrt(a0**2 + a1**2 + a2**2)\n    a0, a1, a2 = a0 / norm, a1 / norm, a2 / norm\n    qc.ry(2 * np.arccos(a0), 0)\n    qc.ry(2 * np.arccos(a1), 1)\n    qc.cx(0, 1)\n    qc.ry(2 * np.arcsin(a2 / np.sqrt(1 - a0**2)), 1)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    theta = np.random.uniform(0, 2*np.pi)\n    phi = np.random.uniform(0, 2*np.pi)\n    a0 = np.cos(theta/2)\n    a1 = np.sin(theta/2) * np.cos(phi/2)\n    a2 = np.sin(theta/2) * np.sin(phi/2)\n    qc.ry(theta, 0)\n    qc.ry(phi, 1)\n    qc.cx(0, 1)\n    qc.p(-phi, 1)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    a0, a1, a2 = np.random.rand(3)\n    norm = np.sqrt(a0**2 + a1**2 + a2**2)\n    a0, a1, a2 = a0 / norm, a1 / norm, a2 / norm\n    qc.initialize([a0, a1], 0)\n    qc.ry(2 * np.arcsin(a2), 1)\n    qc.cx(0, 1)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    a0, a1, a2 = np.random.rand(3)\n    norm = np.sqrt(a0**2 + a1**2 + a2**2)\n    a0, a1, a2 = a0 / norm, a1 / norm, a2 / norm\n    qc.initialize([a0, np.sqrt(a1**2 + a2**2)], 0)\n    qc.ry(2 * np.arcsin(a2 / np.sqrt(a1**2 + a2**2)), 1)\n    qc.cx(0, 1)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Generate random amplitudes\n    a0 = np.random.rand()\n    a1 = np.random.rand()\n    a2 = np.random.rand()\n    # Normalize the amplitudes\n    norm = np.sqrt(a0**2 + a1**2 + a2**2)\n    a0 /= norm\n    a1 /= norm\n    a2 /= norm\n    # Prepare the state\n    qc.ry(2 * np.arccos(a0), 0)\n    qc.ry(2 * np.arccos(np.sqrt(a1**2 + a2**2)), 1)\n    qc.cx(0, 1)\n    qc.ry(2 * np.arcsin(a2 / np.sqrt(a1**2 + a2**2)), 1)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_A5",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Write your code here:\n    qc.h(0)\n    qc.p(2*np.pi/3, 0)\n    qc.cx(0, 1)\n    qc.x(0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Write your code here:\n    qc.ry(2 * np.arccos(1 / np.sqrt(3)), 0)\n    qc.ch(0, 1)\n    qc.x(1)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Write your code here:\n    qc.h(0)\n    qc.p(2*np.pi/3, 0)\n    qc.cx(0, 1)\n    qc.x(1)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Write your code here:\n    qc.ry(2 * np.arccos(1 / np.sqrt(3)), 0)\n    qc.ry(2 * np.arccos(1 / np.sqrt(3)), 1)\n    qc.cz(0, 1)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Write your code here:\n    qc.ry(2 * np.arccos(1 / np.sqrt(3)), 0)\n    qc.ry(np.arccos(-1 / np.sqrt(3)), 1)\n    qc.cx(0, 1)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_B1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve() -> QuantumCircuit:\n    x, y = QuantumRegister(1), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    qc.cx(x, y)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve() -> QuantumCircuit:\n    x, y = QuantumRegister(1), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    qc.cx(x, y)\n    qc.x(y)\n    qc.cx(x, y)\n    qc.x(y)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve() -> QuantumCircuit:\n    x, y = QuantumRegister(1), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    qc.cx(x, y)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve() -> QuantumCircuit:\n    x, y = QuantumRegister(1), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    qc.cx(x, y)\n    qc.cx(x, y)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve() -> QuantumCircuit:\n    x, y = QuantumRegister(1), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    qc.cx(x, y)\n    qc.x(y)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_B2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    # Write your code here:\n    qc.cx(x, y)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    # Write your code here:\n    for i in range(n):\n        qc.cx(x[i], y[0])\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    # Write your code here:\n    qc.cx(x[0], y[0])\n    for i in range(1, n):\n        qc.cx(x[i], y[0])\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    # Write your code here:\n    for i in range(n):\n        qc.cx(x[i], y[0])\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    # Write your code here:\n    for i in range(n):\n        qc.cx(x[i], y[0])\n    qc.barrier()\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_B3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    for i in range(n):\n        if (L >> i) & 1:\n            qc.x(i)\n    for i in range(n-1):\n        qc.cx(i, n-1)\n    for i in range(n):\n        if (L >> i) & 1:\n            qc.x(i)\n    qc.mcp(-1, list(range(n-1)), n-1)\n    for i in range(n-1):\n        qc.cx(i, n-1)\n    for i in range(n):\n        if (L >> i) & 1:\n            qc.x(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.h(n-1)\n    for i in range(n-1):\n        qc.cx(i, n-1)\n    for i in range(n):\n        if (L >> i) & 1:\n            qc.x(i)\n    qc.mcp(-1, list(range(n-1)), n-1)\n    for i in range(n):\n        if (L >> i) & 1:\n            qc.x(i)\n    for i in range(n-1):\n        qc.cx(i, n-1)\n    qc.h(n-1)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Convert L to binary and pad with zeros to match n bits\n    binary_L = format(L, f'0{n}b')\n    # Apply X gates to qubits where L has 1s\n    for i, bit in enumerate(binary_L):\n        if bit == '1':\n            qc.x(i)\n    # Apply MCX gate\n    qc.mcx(list(range(n-1)), n-1)\n    # Apply X gates again\n    for i, bit in enumerate(binary_L):\n        if bit == '1':\n            qc.x(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Convert L to binary and pad with zeros to match n bits\n    binary_L = format(L, f'0{n}b')\n    # Apply X gates to qubits where L has 1s\n    for i, bit in enumerate(binary_L):\n        if bit == '1':\n            qc.x(i)\n    # Apply MCX gate\n    qc.mcx(list(range(n-1)), n-1)\n    # Apply X gates again\n    for i, bit in enumerate(binary_L):\n        if bit == '1':\n            qc.x(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Convert L to binary and pad with zeros to match n bits\n    binary_L = format(L, f'0{n}b')\n    # Apply X gates to qubits where L has 1s\n    for i, bit in enumerate(binary_L):\n        if bit == '1':\n            qc.x(i)\n    # Apply Z gate to the last qubit (which will apply -1 phase to all states where L has 1s)\n    qc.z(n-1)\n    # Apply X gates again\n    for i, bit in enumerate(binary_L):\n        if bit == '1':\n            qc.x(i)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_B4",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import XGate\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    if L <= 1 or L >= 2**n:\n        return qc\n    for i in range(n):\n        if (L >> i) & 1 == 0:\n            qc.append(XGate().control(i), range(n))\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import MCMT, ZGate\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    if L == 2**n:\n        qc.z(0)\n        return qc\n    mct_mode = 'basic' if n <= 5 else 'v-chain'\n    qc.append(MCMT(ZGate(), n - 1, 1, mode=mct_mode), range(n))\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import XGate, ZGate, MCMT\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    if L == 2**n:\n        return qc\n    mct_mode = 'basic' if n <= 5 else 'v-chain'\n    for i in range(n):\n        if (L >> i) & 1 == 0:\n            qc.append(XGate().control(i), range(n))\n    qc.append(MCMT(ZGate(), n - 1, 1, mode=mct_mode), range(n))\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import XGate, ZGate, MCMT\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    if L == 2**n:\n        return qc\n    mct_mode = 'basic' if n <= 5 else 'v-chain'\n    for i in range(n):\n        if (L >> i) & 1 == 1:\n            qc.append(XGate().control(i), range(n))\n    qc.append(MCMT(ZGate(), n - 1, 1, mode=mct_mode), range(n))\n    for i in range(n):\n        if (L >> i) & 1 == 1:\n            qc.append(XGate().control(i), range(n))\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import MCXGate, XGate\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    if L == 2**n:\n        return qc\n    for i in range(n):\n        if (L >> i) & 1 == 0:\n            qc.append(XGate().control(i), range(n))\n    qc.append(MCXGate(n-1), range(n))\n    for i in range(n):\n        if (L >> i) & 1 == 0:\n            qc.append(XGate().control(i), range(n))\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_C1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    qc.h(0)  # Apply Hadamard gate to the first qubit\n\n    # Create a superposition of L states\n    for i in range(1, L):\n        # Apply appropriate gates to create uniform superposition\n        qc.x(0)  # Example: X gate (can be adjusted based on L)\n        qc.h(0)  # Hadamard gate\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    # Apply Hadamard to the first (least significant) qubit\n    qc.h(0)\n    # Apply controlled-Hadamard operations to create uniform superposition for the first L states\n    for i in range(1, n):\n        if L > 2**i:\n            qc.cx(0, i)\n            qc.h(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    if L == 1:\n        return qc\n\n    # Calculate the number of qubits needed to represent L states\n    num_qubits = n\n\n    # Apply Hadamard to the first qubit to create superposition\n    qc.h(0)\n\n    # Apply controlled-NOT gates to spread superposition to the other qubits\n    for i in range(1, num_qubits):\n        qc.cx(0, i)\n\n    # Calculate the rotation angle to ensure the first L states have equal probability\n    theta = 2 * np.arcsin(np.sqrt(L / (2**num_qubits)))\n\n    # Apply rotation to reduce the amplitude of states beyond L-1\n    qc.ry(-theta, 0)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Calculate the angle to apply to the Ry gate\n    theta = 2 * math.asin(math.sqrt(L / (2**n)))\n\n    # Apply Ry gate to the first qubit\n    qc.ry(theta, 0)\n\n    # Apply controlled Ry gates to the remaining qubits\n    for i in range(1, n):\n        angle = 2 * math.asin(math.sqrt(1 / (2**i)))\n        qc.cry(angle, 0, i)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Calculate the angle to apply to the Ry gate\n    theta = 2 * np.arcsin(np.sqrt(L / (2**n)))\n\n    # Apply Ry gate to the first qubit\n    qc.ry(theta, 0)\n\n    # Apply controlled Ry gates to the remaining qubits\n    for i in range(1, n):\n        angle = 2 * np.arcsin(np.sqrt(1 / (2**i)))\n        qc.cry(angle, 0, i)\n\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_C2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    if L == 1:\n        return qc\n    k = 0\n    while (1 << k) < L:\n        k += 1\n    for i in range(n - k + 1, n):\n        qc.h(i)\n    for i in range(k):\n        qc.cz(n - k + i, i)\n    qc.h(n - k)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Calculate the number of qubits needed for L\n    m = int(np.ceil(np.log2(L)))\n\n    # Initialize the circuit with Hadamard on the first m qubits\n    for i in range(m):\n        qc.h(i)\n\n    # Apply controlled phase gates to create superposition\n    for i in range(m):\n        for j in range(i + 1, m):\n            qc.cp(np.pi/L, i, j)\n\n    # Use the last qubit as a flag for the range\n    if m < n:\n        qc.x(m)\n    for i in range(m):\n        qc.ccx(m, i, n-1)\n    if m < n:\n        qc.x(m)\n\n    # Apply inverse Hadamard on the first m qubits\n    for i in range(m):\n        qc.h(i)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    m = int.__ceil__(n - (L - 1).bit_length())\n    if m < n:\n        qc.x(m)\n    for i in range(m):\n        qc.h(i)\n    for i in range(m - 1):\n        qc.cz(i, i + 1)\n    if m < n:\n        qc.x(m)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import HGate, RYGate\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    m = (L - 1).bit_length()\n    if m > n:\n        return qc\n    if L == 1:\n        return qc\n    if L == 2**n:\n        for i in range(n):\n            qc.h(i)\n        return qc\n    for i in range(m):\n        qc.h(i)\n    qc.ry(2 * (2**m - L) / (2**m) * 3.141592653589793, m - 1)\n    for i in range(m - 1):\n        qc.cx(m - 1 - i, m - i)\n    for i in range(n - m):\n        qc.h(m + i)\n    for i in range(m):\n        qc.h(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import QFT\nfrom qiskit.circuit import Parameter\nimport numpy as np\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    if L == 1:\n        return qc\n    if L == 2**n:\n        qc.h(range(n))\n        return qc\n\n    theta = Parameter('theta')\n    qc.ry(2 * np.arcsin(np.sqrt(1 / L)) - theta, 0)\n    qc.cry(2 * theta, 0, 1)\n    qc.ry(-np.pi/2 + 2 * np.arcsin(np.sqrt(1 / L)) + theta, 1)\n    qc.cry(-2 * theta, 1, 2)\n    qc.ry(np.pi/2 - 2 * np.arcsin(np.sqrt(1 / L)) - theta, 2)\n\n    qc = qc.assign_parameters({theta: np.arccos(np.sqrt(1 - 1 / L))})\n\n    if L < 2**n:\n        qc.h(range(n))\n\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_A1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    qc.z(0)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    qc.z(0)\n    qc.z(0)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    qc.z(0)\n    qc.x(0)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.z(0)\n    qc.x(0)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.z(0)\n    qc.x(0)\n    qc.z(0)\n    qc.x(0)\n\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_A2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Write your code here:\n    qc.h(0)\n    qc.cx(0, 1)\n    qc.z(1)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Write your code here:\n    qc.h(0)\n    qc.cx(0, 1)\n    qc.x(1)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Write your code here:\n    qc.h(0)\n    qc.cx(0, 1)\n    qc.z(0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Write your code here:\n    qc.h(0)\n    qc.cx(0, 1)\n    qc.x(0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Write your code here:\n    qc.h(0)\n    qc.cx(0, 1)\n    qc.x(0)\n    qc.z(1)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_A3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    qc.h(0)\n    for i in range(n - 1):\n        qc.cx(i, i + 1)\n    qc.x(range(n))\n    qc.h(0)\n    for i in range(n - 1):\n        qc.cx(i, i + 1)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    qc.h(0)\n    for i in range(n - 1):\n        qc.cx(0, i + 1)\n    qc.x(range(n))\n    qc.h(0)\n    for i in range(n - 1):\n        qc.cx(0, i + 1)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    qc.h(0)\n    for i in range(1, n):\n        qc.cx(0, i)\n    qc.x(range(n))\n    qc.h(0)\n    for i in range(1, n):\n        qc.cx(0, i)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.h(0)\n    for i in range(1, n):\n        qc.cx(0, i)\n    qc.x(n-1)\n    for i in range(1, n):\n        qc.cx(n-1, i)\n    qc.x(n-1)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.h(0)\n    for i in range(1, n):\n        qc.cx(0, i)\n    for i in range(n):\n        qc.x(i)\n    qc.h(0)\n    for i in range(1, n):\n        qc.cx(0, i)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_A4",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.h(0)\n    for i in range(n - 1):\n        qc.cx(0, i + 1)\n    qc.x(range(n))\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.h(0)\n    for i in range(n - 1):\n        qc.cx(0, i + 1)\n    qc.x(range(n))\n    qc.h(0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.h(0)\n    for i in range(1, n):\n        qc.cx(0, i)\n    qc.x(0)\n    qc.h(n - 1)\n    for i in range(n - 1):\n        qc.cx(n - 1, i)\n    qc.x(range(n))\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.h(range(n))\n    for i in range(n // 2):\n        qc.cx(i, n - 1 - i)\n    qc.x(n // 2)\n    if n % 2 == 0:\n        qc.cx(n // 2 - 1, n // 2)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.h(0)\n    for i in range(1, n):\n        qc.cx(0, i)\n    qc.x(0)\n    for i in range(1, n):\n        qc.cx(0, i)\n    qc.h(0)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_A5",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    qc.h(0)\n    for i in range(1, n):\n        qc.cx(0, i)\n    qc.z(0)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    qc.h(0)\n    qc.x(range(1, n))\n    qc.h(range(1, n))\n    qc.cx(0, range(1, n))\n    qc.h(0)\n    for i in range(1, n):\n        qc.cx(0, i)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    qc.h(0)\n    qc.x(range(1, n))\n    for i in range(1, n):\n        qc.cx(0, i)\n    qc.h(0)\n    for i in range(1, n):\n        qc.cx(0, i)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    qc.h(range(n))\n    for i in range(n):\n        qc.x(i)\n    qc.h(0)\n    for i in range(1, n):\n        qc.cx(0, i)\n    qc.h(range(n))\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    qc.h(range(n))\n    qc.x(range(n))\n    qc.cz(0, 1)\n    for i in range(2, n):\n        qc.cx(0, i)\n    qc.x(range(n))\n    qc.h(range(n))\n\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.p(theta, 0)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.global_phase = theta\n\n    return qc",
+          "passed": true
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.id(0)  # Apply identity gate, which has phase factor e^(i*0) = 1\n    qc.global_phase = theta\n\n    return qc",
+          "passed": true
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)  # Apply X gate to change to |1> state\n    qc.p(theta, 0)  # Apply phase rotation\n    qc.x(0)  # Apply X gate again to change back to |0> state\n    qc.global_phase = -theta  # Correct global phase\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.global_phase = theta\n    qc.id(0)\n\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, L: int, theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    for i in range(n):\n        if (L >> i) & 1:\n            qc.x(i)\n    qc.p(theta, n-1)\n    for i in range(n):\n        if (L >> i) & 1:\n            qc.x(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import PhaseOracle\n\ndef solve(n: int, L: int, theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    oracle = PhaseOracle([L], name=\"L\")\n    qc.append(oracle, range(n))\n    qc.p(theta, 0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import PhaseOracle\n\ndef solve(n: int, L: int, theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    oracle = PhaseOracle([L], name=\"L\")\n    qc.append(oracle, range(n))\n    qc.p(theta, range(n))\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, L: int, theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        if (L >> i) & 1:\n            qc.x(i)\n    qc.mcp(theta, list(range(n-1)), n-1)\n    for i in range(n):\n        if (L >> i) & 1:\n            qc.x(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, L: int, theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        if (L >> i) & 1:\n            qc.x(i)\n    qc.p(theta, 0)\n    for i in range(n):\n        if (L >> i) & 1:\n            qc.x(i)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.cx(0, 1)\n    qc.cx(1, 0)\n    qc.cx(0, 1)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.h(1)\n    qc.cx(0, 1)\n    qc.h(1)\n    qc.cx(1, 0)\n    qc.h(0)\n    qc.cx(0, 1)\n    qc.h(0)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.cx(0, 1)\n    qc.cx(1, 0)\n    qc.cx(0, 1)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.swap(0, 1)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.cx(0, 1)\n    qc.cx(1, 0)\n    qc.cx(0, 1)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B4",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    for i in range(n):\n        qc.h(n - 1 - i)\n        for j in range(i):\n            qc.cp(2 * 3.141592653589793 / 2 ** (i - j), n - 1 - i, n - 1 - j)\n    for i in range(n // 2):\n        qc.swap(i, n - 1 - i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Apply Hadamard gates to all qubits\n    for i in range(n):\n        qc.h(i)\n\n    # Apply controlled phase rotations\n    for i in range(n):\n        for j in range(i + 1, n):\n            qc.cp(2 * 3.141592653589793 / (2 ** (j - i)), i, j)\n\n    # Apply SWAP gates for reversing the order of qubits\n    for i in range(n // 2):\n        qc.swap(i, n - 1 - i)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for j in range(n):\n        qc.h(n - 1 - j)\n        for k in range(j):\n            qc.cp(2 * 3.141592653589793 / (2 ** (k + 1)), n - 1 - j, n - 1 - k)\n    for j in range(n // 2):\n        qc.swap(j, n - 1 - j)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.h(n - 1 - i)\n        for j in range(i + 1):\n            qc.cp(3.141592653589793 / (2 ** (i - j)), n - 1 - i, n - 1 - j)\n    for i in range(n // 2):\n        qc.swap(i, n - 1 - i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Apply Hadamard gates\n    for qubit in range(n):\n        qc.h(qubit)\n        # Apply controlled phase rotations\n        for k in range(1, n - qubit):\n            qc.cp(2 * 3.141592653589793 / (2 ** (k + 1)), qubit, qubit + k)\n    # Swap qubits to reverse the order\n    for qubit in range(n // 2):\n        qc.swap(qubit, n - 1 - qubit)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B5",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef Oracle(n, m, S):\n    q = QuantumRegister(n)\n    qc = QuantumCircuit(q)\n    for i in range(n):\n        if S[i] != 0:\n            qc.p((2 * S[i] * (2 ** (m - 1)) * (2 ** (n - i - 1))) % (2 ** (2 * m)), q[i])\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef Oracle(n, m, S):\n    q = QuantumRegister(n)\n    qc = QuantumCircuit(q)\n    for i in range(n):\n        if S[i] != 0:\n            qc.p((S[i] * (2 ** (n - i - 1))) % (2 ** m), q[i])\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit import Parameter\n\ndef Oracle(n, m, S):\n    q = QuantumRegister(n)\n    qc = QuantumCircuit(q)\n    for i in range(n):\n        if S[i] != 0:\n            angle = (2 * S[i] * (2 ** (n - i - 1)) * (2 ** (m - 1))) % (2 ** (2 * m))\n            qc.p(angle, q[i])\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef Oracle(n, m, S):\n    q = QuantumRegister(n)\n    qc = QuantumCircuit(q)\n    for i in range(n):\n        if S[i] != 0:\n            qc.p((S[i] * 2 ** (n - i - 1)) % (2 ** m), q[i])\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit import QuantumRegister\n\ndef Oracle(n, m, S):\n    q = QuantumRegister(n)\n    qc = QuantumCircuit(q)\n    for i in range(n):\n        if S[i] != 0:\n            qc.p((S[i] * (2 ** (n - i - 1))) % (2 ** m), q[i])\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B6",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(m)\n    qc = QuantumCircuit(x, y)\n\n    for i in range(n):\n        for j in range(m):\n            if (S[i] >> j) & 1:\n                qc.cx(x[i], y[j])\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(m)\n    qc = QuantumCircuit(x, y)\n\n    for i in range(n):\n        control = x[i]\n        for j in range(m):\n            if (S[i] >> j) & 1:\n                power = 2 ** j\n                for k in range(m - j):\n                    qc.cx(control, y[k])\n                    control = y[k]\n                qc.x(control) if power & 1 else None\n                for k in range(m - j):\n                    qc.cx(control, y[k])\n                    control = y[k]\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x, y = QuantumRegister(n, 'x'), QuantumRegister(m, 'y')\n    qc = QuantumCircuit(x, y)\n\n    for i in range(n):\n        if S[i]:\n            for j in range(m):\n                if (S[i] >> j) & 1:\n                    qc.cx(x[i], y[j])\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x, y = QuantumRegister(n, 'x'), QuantumRegister(m, 'y')\n    qc = QuantumCircuit(x, y)\n\n    for i in range(n):\n        if S[i]:\n            for j in range(m):\n                qc.cx(x[i], y[j])\n                if j < m - 1 and (S[i] >> (j + 1)) & 1:\n                    qc.x(y[j + 1])\n\n    for i in range(n):\n        for j in range(m):\n            if (S[i] >> j) & 1:\n                qc.cx(x[i], y[j])\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x, y = QuantumRegister(n, 'x'), QuantumRegister(m, 'y')\n    qc = QuantumCircuit(x, y)\n\n    for i in range(n):\n        control = x[i]\n        for j in range(m):\n            if (S[i] >> j) & 1:\n                qc.cx(control, y[j])\n\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B7",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(m)\n    qc = QuantumCircuit(x, y)\n    for i in range(n):\n        for j in range(m):\n            if (S[i] >> j) & 1:\n                qc.cx(x[i], y[j])\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(m)\n    qc = QuantumCircuit(x, y)\n    for i in range(n):\n        s = S[i]\n        for j in range(m):\n            if s & 1:\n                qc.cx(x[i], y[j])\n            s >>= 1\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(m)\n    qc = QuantumCircuit(x, y)\n    for i in range(n):\n        s = S[i]\n        for j in range(m):\n            if s & 1:\n                qc.cx(x[i], y[j])\n            s >>= 1\n    for i in range(n-1, -1, -1):\n        qc.mcx(x[:i], x[i])\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(m)\n    qc = QuantumCircuit(x, y)\n    for i in range(n):\n        s = S[i]\n        for j in range(m):\n            if s & 1:\n                qc.cx(x[i], y[j])\n            s >>= 1\n    for i in range(m):\n        qc.cx(y[i], y[(i+1) % m])\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(m)\n    qc = QuantumCircuit(x, y)\n    for i in range(n):\n        s = S[i]\n        for j in range(m):\n            if s & (1 << j):\n                qc.cx(x[i], y[j])\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B8",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, m: int, L: int, S: list[int], theta: float) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(m)\n    qc = QuantumCircuit(x, y)\n\n    for i in range(n):\n        qc.cp(2 * theta * S[i] * x[i], y[0])\n\n    qc.mcp(2 * theta * (L - sum(S)), x, y[0])\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, m: int, L: int, S: list[int], theta: float) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(m)\n    qc = QuantumCircuit(x, y)\n\n    for i in range(n):\n        qc.cp(2 * theta * S[i], x[i], y[0])\n\n    qc.mcp(-2 * theta * L, x, y[0])\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, m: int, L: int, S: list[int], theta: float) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(m)\n    qc = QuantumCircuit(x, y)\n\n    # Compute f(x) into y[0]\n    for i in range(n):\n        if S[i] == 0:\n            continue\n        if i == 0:\n            qc.cp(2 * theta * S[i], x[0], y[0])\n        else:\n            qc.append(qc.cp(2 * theta * S[i]).control(1), [x[i]] + [x[i-1]] + [y[0]])\n\n    # Add -f(x) to y[0]\n    if L != 0:\n        for i in range(n):\n            if i == 0:\n                qc.cp(-2 * theta * L, x[0], y[0])\n            else:\n                qc.append(qc.cp(-2 * theta * L).control(1), [x[i]] + [x[i-1]] + [y[0]])\n\n    # Apply phase if f(x) == L (mod 2^m)\n    qc.mcp(2 * theta, x, y[0])\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, m: int, L: int, S: list[int], theta: float) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(m)\n    qc = QuantumCircuit(x, y)\n\n    # Compute f(x) modulo 2^m\n    for i in range(n):\n        qc.cp(2 * theta * S[i] % (2 * 3.141592653589793), x[i], y[0])\n\n    # Add -L * 2*theta modulo 2^m\n    qc.cp(-2 * theta * L % (2 * 3.141592653589793), y[0], y[0])\n\n    # Apply conditional phase flip\n    qc.cp(2 * theta, y[0], y[0])\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, m: int, L: int, S: list[int], theta: float) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(m)\n    qc = QuantumCircuit(x, y)\n\n    # Compute f(x) modulo 2^m\n    for i in range(n):\n        qc.cp(2 * theta * S[i], x[i], y[0])\n\n    # Apply -2*theta*L to y[0]\n    qc.cp(-2 * theta * L, y[0], y[0])\n\n    # Apply a controlled-Z if f(x) == L (mod 2^m)\n    qc.mcp(2 * theta, x, y[0])\n\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_Ex",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\"\"\"\nYou can apply U and R as follows:\nqc.compose(U(), inplace=True)\nqc.compose(R(theta), inplace=True)\n\"\"\"\n\n\ndef solve(n: int, P: float, U, R) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    theta = 2 * (2 * P - 1)\n    qc.compose(U(), inplace=True)\n    qc.compose(R(theta), inplace=True)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\"\"\"\nYou can apply U and R as follows:\nqc.compose(U(), inplace=True)\nqc.compose(R(theta), inplace=True)\n\"\"\"\n\n\ndef solve(n: int, P: float, U, R) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    theta = -2 * P\n    for _ in range(100):\n        qc.compose(U(), inplace=True)\n        qc.compose(R(theta), inplace=True)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\"\"\"\nYou can apply U and R as follows:\nqc.compose(U(), inplace=True)\nqc.compose(R(theta), inplace=True)\n\"\"\"\n\n\ndef solve(n: int, P: float, U, R) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    theta = 2 * P\n    qc.compose(U(), inplace=True)\n    for _ in range(50):\n        qc.compose(R(theta), inplace=True)\n        qc.compose(U(), inplace=True)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\"\"\"\nYou can apply U and R as follows:\nqc.compose(U(), inplace=True)\nqc.compose(R(theta), inplace=True)\n\"\"\"\n\n\ndef solve(n: int, P: float, U, R) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    theta = 2 * P\n    qc.compose(U(), inplace=True)\n    for _ in range(40):\n        qc.compose(R(theta), inplace=True)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\"\"\"\nYou can apply U and R as follows:\nqc.compose(U(), inplace=True)\nqc.compose(R(theta), inplace=True)\n\"\"\"\n\n\ndef solve(n: int, P: float, U, R) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    theta = 2 * P\n    qc.compose(U(), inplace=True)\n    for _ in range(20):\n        qc.compose(R(theta), inplace=True)\n        qc.compose(U(), inplace=True)\n\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_A1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    qc.s(0)\n    qc.sdg(0)\n    qc.z(0)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    qc.s(0)\n    qc.h(0)\n    qc.z(0)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    qc.s(0)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    qc.s(0)\n    qc.z(0)\n    qc.s(0)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    qc.z(0)\n    qc.s(0)\n    qc.s(0)\n\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_A2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.x(1)\n    qc.h(0)\n    qc.cx(0, 1)\n    qc.z(1)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.h(1)\n    qc.cx(1, 0)\n    qc.z(0)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.x(1)\n    qc.h(0)\n    qc.cx(0, 1)\n    qc.z(0)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.h(0)\n    qc.cx(0, 1)\n    qc.z(1)\n    qc.x(0)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.x(0)\n    qc.h(1)\n    qc.cx(1, 0)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_A3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(3)\n    qc.ry(2*np.arccos(1/np.sqrt(3)), 0)\n    qc.ch(0, 1)\n    qc.cx(0, 2)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(3)\n    qc.h(0)\n    qc.h(1)\n    qc.h(2)\n    qc.p(2*math.pi/3, 0)\n    qc.cx(0, 1)\n    qc.cx(0, 2)\n    qc.p(-math.pi/3, 0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(3)\n    qc.ry(2*math.asin(1/math.sqrt(3)), 0)\n    qc.cry(2*math.asin(1/math.sqrt(2)), 0, 1)\n    qc.cry(2*math.asin(1/math.sqrt(2)), 0, 2)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(3)\n    qc.ry(2 * math.acos(1 / math.sqrt(3)), 0)\n    qc.ch(0, 1)\n    qc.cx(0, 2)\n    qc.p(-math.pi / 2, 1)\n    qc.p(-math.pi / 2, 2)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(3)\n    qc.ry(2 * math.acos(1 / math.sqrt(3)), 0)\n    qc.ch(0, 1)\n    qc.ch(0, 2)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_A4",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    qc.h(range(n))\n    qc.x(range(n))\n    for i in range(n):\n        qc.mcx(list(range(n)), i)\n        qc.x(i)\n    qc.h(range(n))\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    qc.h(0)\n    for i in range(1, n):\n        qc.cx(0, i)\n    qc.x(range(n))\n    qc.h(range(n))\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.h(range(n))\n    for i in range(n):\n        qc.x(i)\n        qc.mcp(-1, [j for j in range(n) if j != i], 0)\n        qc.x(i)\n    qc.h(range(n))\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.h(i)\n    qc.mct(list(range(n)), 0)\n    for i in range(n):\n        qc.h(i)\n    qc.x(range(n))\n    qc.h(n-1)\n    qc.mct(list(range(n-1)), n-1)\n    qc.h(n-1)\n    for i in range(n):\n        qc.x(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.h(i)\n        qc.ry(2 * (n-1-i) * (np.pi / 2 / (n-1)), i)\n    qc.barrier()\n    qc.mct(list(range(n)), 0)\n    for i in range(n):\n        qc.ry(-2 * (n-1-i) * (np.pi / 2 / (n-1)), i)\n    qc.barrier()\n    for i in range(n):\n        qc.h(i)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_A5",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Apply Hadamard to the first qubit\n    qc.h(0)\n    # Apply controlled-X gates from the first qubit to all other qubits\n    for i in range(1, n):\n        qc.cx(0, i)\n    # Apply phase gates to cancel out the extra terms\n    for i in range(1, n):\n        qc.p(-2 * 3.141592653589793 / n, i)\n    # Apply another Hadamard to the first qubit\n    qc.h(0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.h(i)\n        for j in range(i + 1, n):\n            qc.cx(i, j)\n    for i in range(n):\n        qc.p(-2 * 3.141592653589793 / n, i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import HGate, XGate, RZGate\nfrom qiskit.circuit import Parameter\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    theta = 2 * np.pi / n\n\n    # Apply Hadamard to the first qubit\n    qc.h(0)\n\n    # Apply controlled phase rotations\n    for i in range(1, n):\n        qc.cp(theta * i, 0, i)\n\n    # Apply controlled-X gates from the first qubit to all other qubits\n    for i in range(1, n):\n        qc.cx(0, i)\n\n    # Apply the inverse of the controlled phase rotations\n    for i in range(1, n):\n        qc.cp(-theta * i, 0, i)\n\n    # Apply Hadamard to the first qubit again\n    qc.h(0)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.h(range(n))\n    for i in range(n):\n        qc.p(2 * 3.141592653589793 * i / n, i)\n    qc.h(range(n))\n    for i in range(n):\n        qc.cx(i, (i + 1) % n)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Apply Hadamard to the first qubit\n    qc.h(0)\n    # Apply controlled-RY gates from the first qubit to all other qubits\n    for i in range(1, n):\n        qc.cry(2 * 3.141592653589793 / n, 0, i)\n    # Apply controlled-X gates from the first qubit to all other qubits\n    for i in range(1, n):\n        qc.cx(0, i)\n    # Apply another Hadamard to the first qubit\n    qc.h(0)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_A6",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.h(0)\n    for i in range(1, n):\n        qc.cx(0, i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.h(range(n))\n    for i in range(n):\n        qc.x(i)\n        qc.mcx(list(range(n)), i)\n        qc.x(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Apply Hadamard to the first qubit\n    qc.h(0)\n\n    # Controlled-NOT from the first qubit to all others\n    for i in range(1, n):\n        qc.cx(0, i)\n\n    # Apply multi-controlled X gates to create the superposition\n    for i in range(n):\n        controls = [j for j in range(n) if j != i]\n        if controls:\n            qc.mcx(controls, i)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import QFT\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.h(i)\n        qc.p(2 * 3.1415926535897932384626433832795 * (i + 1) / n, i)\n    qc = qc.compose(QFT(n, inverse=True), inplace=False)\n    qc = qc.compose(QFT(n, inverse=False), inplace=False)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.h(i)\n        for j in range(i + 1, n):\n            qc.cp(2 * 3.1415926535897932384626433832795 / n, i, j)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.h(0)\n    qc.z(0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    qc.z(0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.h(0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.swap(0, 0)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    # Write your code here:\n    qc.h(y)\n    qc.compose(o, inplace=True)\n    qc.h(y)\n    qc.x(y)\n    qc.mcx(list(x), y[0])\n    qc.x(y)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    # Write your code here:\n    qc.h(y)\n    qc.compose(o, inplace=True)\n    qc.h(y)\n    qc.x(y)\n    qc.mct(list(x), y[0], mode='v-chain')\n    qc.x(y)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    # Write your code here:\n    qc.h(y)\n    qc.compose(o, inplace=True)\n    qc.h(y)\n    qc.x(y)\n    qc.mcx(list(x), y[0])\n    qc.x(y)\n    qc.z(y)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    # Write your code here:\n    qc.h(y)\n    qc.compose(o, inplace=True)\n    qc.h(y)\n    qc.x(y)\n    qc.mct(list(x), y[0], mode='v-chain')\n    qc.x(y)\n    qc.z(y)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    # Write your code here:\n    qc.h(y)\n    qc.compose(o, inplace=True)\n    qc.h(y)\n    qc.z(y)\n    qc.mcx(list(x), y[0])\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.ry(2 * T[i], i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.ry(-2 * T[i], i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.ry(T[i], i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.ry(-T[i], i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.ry(2 * T[i], i)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B4",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    qc.h(0)\n    qc.x(range(1, n))\n    qc.mcx(list(range(n)), 0)\n    qc.x(range(1, n))\n    qc.h(0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    qc.p(-np.pi, 0)\n    qc.x(range(1, n))\n    qc.h(range(n))\n    qc.p(np.pi, 0)\n    qc.h(range(n))\n    qc.x(range(1, n))\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    qc.x(0)\n    qc.mcx(list(range(1, n)), 0)\n    qc.x(0)\n    qc.z(0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import UnitaryGate\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    matrix = 2 * [[1 if i == 0 else 0 for i in range(2**n)] for _ in range(2**n)]\n    for i in range(2**n):\n        if i != 0:\n            matrix[i][i] = -1\n    gate = UnitaryGate(matrix)\n    qc.append(gate, range(n))\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    qc.p(-np.pi, 0)\n    qc.x(range(1, n))\n    qc.h(range(n))\n    qc.p(np.pi, 0)\n    qc.h(range(n))\n    qc.x(range(1, n))\n    qc.z(0)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B5",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import HGate, MCXGate\nfrom math import pi\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Create the state |\u03c8>\n    for i in range(n):\n        qc.h(i)\n    # Apply 2|\u03c8><\u03c8| - I = 2|\u03c8><\u03c8| + -I\n    # First apply -I (Z gate on all qubits with a global phase)\n    qc.global_phase = pi\n    for i in range(n):\n        qc.z(i)\n    qc.global_phase = 0\n    # Then apply 2|\u03c8><\u03c8| using a controlled rotation\n    for i in range(n):\n        qc.h(i)\n    qc.mcx(list(range(n-1)), n-1)\n    qc.p(pi/2, n-1)\n    qc.mcx(list(range(n-1)), n-1)\n    for i in range(n):\n        qc.h(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Create the state |\u03c8>\n    for i in range(n):\n        qc.h(i)\n    # Apply 2|\u03c8><\u03c8| - I = 2|\u03c8><\u03c8| + -I\n    # First apply -I (X gate on all qubits with a global phase)\n    qc.global_phase = -pi\n    for i in range(n):\n        qc.x(i)\n    qc.global_phase = 0\n    # Then apply 2|\u03c8><\u03c8| using a controlled rotation\n    for i in range(n):\n        qc.h(i)\n    qc.mcx(list(range(n-1)), n-1)\n    qc.p(pi/2, n-1)\n    qc.mcx(list(range(n-1)), n-1)\n    for i in range(n):\n        qc.h(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Create the state |\u03c8>\n    for i in range(n):\n        qc.h(i)\n    # Apply 2|\u03c8><\u03c8| - I = 2|\u03c8><\u03c8| + -I\n    # First apply -I (Y gate on all qubits with a global phase)\n    qc.global_phase = -1.5707963267948966  # -pi/2\n    for i in range(n):\n        qc.y(i)\n    qc.global_phase = 0\n    # Then apply 2|\u03c8><\u03c8| using a controlled rotation\n    for i in range(n):\n        qc.h(i)\n    qc.mcx(list(range(n-1)), n-1)\n    qc.p(1.5707963267948966, n-1)  # pi/2\n    qc.mcx(list(range(n-1)), n-1)\n    for i in range(n):\n        qc.h(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import HGate, MCXGate\nfrom math import pi\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Create the state |\u03c8>\n    for i in range(n):\n        qc.h(i)\n    # Apply 2|\u03c8><\u03c8| - I using a different approach\n    for i in range(n):\n        qc.h(i)\n    qc.x(n-1)\n    qc.mcx(list(range(n-1)), n-1)\n    qc.p(pi/2, n-1)\n    qc.mcx(list(range(n-1)), n-1)\n    qc.x(n-1)\n    for i in range(n):\n        qc.h(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom math import pi\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Create the state |\u03c8>\n    for i in range(n):\n        qc.h(i)\n    # Apply 2|\u03c8><\u03c8| - I = 2|\u03c8><\u03c8| + -I\n    # First apply -I (X gate on all qubits with a global phase)\n    qc.global_phase = -pi\n    for i in range(n):\n        qc.x(i)\n    qc.global_phase = 0\n    # Then apply 2|\u03c8><\u03c8| using a controlled phase\n    qc.h(n-1)\n    qc.mcx(list(range(n-1)), n-1)\n    qc.p(pi/2, n-1)\n    qc.mcx(list(range(n-1)), n-1)\n    qc.h(n-1)\n    # Correct the global phase\n    qc.global_phase = -pi/2\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B6",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import QFT\nfrom qiskit.quantum_info import Statevector\nimport numpy as np\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    qc.h(range(n))\n    qc.compose(o, inplace=True)\n    qc.h(range(n))\n    qc.compose(QFT(n, inverse=True), range(n), inplace=True)\n    qc.z(0)\n\n    qc.append(QFT(n, inverse=False), range(n))\n    for qubit in range(n-1):\n        qc.cz(qubit, qubit+1)\n\n    qc.h(range(n))\n    qc.compose(o, inplace=True)\n    qc.h(range(n))\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import GroverOperator\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    grover_op = GroverOperator(o)\n    num_iterations = int(np.pi / 4 * np.sqrt(2**n))\n    for _ in range(num_iterations):\n        qc.compose(grover_op, inplace=True)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import QFT\nfrom qiskit.quantum_info import Statevector\nimport numpy as np\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    qc.h(range(n))\n    qc.compose(o, inplace=True)\n    qc.h(range(n))\n\n    qc.compose(QFT(n, inverse=True), range(n), inplace=True)\n    qc.z(0)\n    qc.compose(QFT(n, inverse=False), range(n), inplace=True)\n\n    for qubit in range(n-1):\n        qc.cz(qubit, qubit+1)\n\n    qc.h(range(n))\n    qc.compose(o, inplace=True)\n    qc.h(range(n))\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.h(range(n))\n    qc.compose(o, inplace=True)\n    qc.h(range(n))\n\n    qc.rz(np.pi, 0)\n    qc.cz(0, 1)\n    for qubit in range(2, n):\n        qc.cz(0, qubit)\n\n    qc.h(range(n))\n    qc.compose(o, inplace=True)\n    qc.h(range(n))\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import QFT\nfrom qiskit.quantum_info import Statevector\nimport numpy as np\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    qc.h(range(n))\n    qc.compose(o, inplace=True)\n    qc.h(range(n))\n\n    qc.compose(QFT(n, inverse=True), range(n), inplace=True)\n    qc.z(0)\n\n    qc.compose(QFT(n, inverse=False), range(n), inplace=True)\n    for qubit in range(n-1):\n        qc.cz(qubit, qubit+1)\n\n    qc.h(range(n))\n    qc.compose(o, inplace=True)\n    qc.h(range(n))\n\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B7",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Apply Ry gates to create |\u03c8\u27e9\n    for i in range(n):\n        qc.ry(2 * T[i], i)\n    # Apply 2|\u03c8\u27e9\u27e8\u03c8| - I = 2|\u03c8\u27e9\u27e8\u03c8| - |0\u27e9\u27e80| - |1\u27e9\u27e81| = Ry(2\u03b8) - I = 2 Ry(\u03b8) - I\n    # So, 2|\u03c8\u27e9\u27e8\u03c8| - I = 2 Ry(T[i]) - I = Ry(2T[i])\n    # However, the operation is 2|\u03c8\u27e9\u27e8\u03c8| - I on the full state, so we need to apply this for all qubits\n    # We can implement this by applying Ry(2T[i]) to each qubit and then a controlled phase based on the all-ones state\n    # But a simpler implementation is to apply the operation as a phase gate on the |\u03c8\u27e9 state\n    # Since 2|\u03c8\u27e9\u27e8\u03c8| - I is a projection onto |\u03c8\u27e9 minus identity, we can implement it as a phase flip on the |0...0\u27e9 state\n    # However, the proper way is to apply the operation as a diagonal matrix exp(i*2\u03c0*(2|\u03c8\u27e9\u27e8\u03c8| - I))\n    # This can be implemented using Ry(2T[i]) on each qubit followed by a phase gate on the |0...0\u27e9 state\n    # But a simpler implementation is to apply Ry(2T[i]) to each qubit and then a global phase shift\n    # Since the operation is Hermitian and unitary, we can implement it as a sequence of Ry rotations\n    # Implement the operation as 2|\u03c8\u27e9\u27e8\u03c8| - I = (2|\u03c8\u27e9\u27e8\u03c8| - I) = (I - 2|\u03c8\u27e9\u27e8\u03c8|) = -H^{\u2297n} (2|+\u27e9\u27e8+|^{\u2297n} - I) H^{\u2297n}\n    # So we can implement it as H^{\u2297n} (2|+\u27e9\u27e8+|^{\u2297n} - I) H^{\u2297n}\n    # 2|+\u27e9\u27e8+|^{\u2297n} - I can be implemented as a phase gate on the |0...0\u27e9 state\n    # So, the full implementation is H^{\u2297n} X^{\u2297n} (phase gate with phase = -\u03c0) X^{\u2297n} H^{\u2297n}\n    # Simplify this: H^{\u2297n} Z^{\u2297n} H^{\u2297n} = 2|\u03c8\u27e9\u27e8\u03c8| - I\n    qc.h(range(n))\n    qc.z(range(n))\n    qc.h(range(n))\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Apply Ry gates to create |\u03c8\u27e9\n    for i in range(n):\n        qc.ry(T[i], i)\n    # Apply the projection 2|\u03c8\u27e9\u27e8\u03c8| - I using a phase gate\n    qc.h(range(n))\n    qc.x(range(n))\n    qc.p(-2*T[0], 0)  # Apply the phase rotation\n    for i in range(1, n):\n        qc.p(-2*T[i], i)\n    qc.x(range(n))\n    qc.h(range(n))\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Apply the Ry gates to prepare |\u03c8\u27e9\n    for i in range(n):\n        qc.ry(2 * T[i], i)\n    # Apply the Hadamard gates\n    for i in range(n):\n        qc.h(i)\n    # Apply the Z gate to the first qubit\n    qc.z(0)\n    # Apply the Hadamard gates again\n    for i in range(n):\n        qc.h(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # First, create |\u03c8\u27e9 state using Ry rotations\n    for i in range(n):\n        qc.ry(2 * T[i], i)\n    # Then, apply the operator 2|\u03c8\u27e9\u27e8\u03c8| - I\n    # This can be achieved by applying a phase of -\u03c0 to the |0...0\u27e9 state\n    # and a phase of \u03c0 to the |1...1\u27e9 state\n    # To do this, we can use the following approach:\n    # 1. Apply Hadamard gates to all qubits to create the superposition of |0...0\u27e9 and |1...1\u27e9\n    for i in range(n):\n        qc.h(i)\n    # 2. Apply a phase of -\u03c0 to the |0...0\u27e9 state\n    qc.p(-np.pi, 0)\n    # 3. Apply a phase of \u03c0 to the |1...1\u27e9 state\n    for i in range(n):\n        qc.p(np.pi, i)\n    # 4. Apply Hadamard gates again to undo the superposition\n    for i in range(n):\n        qc.h(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Apply the Ry gates to prepare |\u03c8\u27e9\n    for i in range(n):\n        qc.ry(T[i], i)\n    # Apply the global phase shift -\u03c0\n    qc.p(-np.pi, 0)\n    # Apply the controlled phase shifts\n    for i in range(1, n):\n        qc.cp(2 * T[i], 0, i)\n    # Apply the global phase shift \u03c0\n    qc.p(np.pi, 0)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B8",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    # Initialize qubit y in |->\n    qc.x(y[0])\n    qc.h(y[0])\n\n    # Apply Hadamard gates to register x\n    for i in range(n):\n        qc.h(x[i])\n\n    # Apply the oracle\n    qc.compose(o, inplace=True)\n\n    # Apply Hadamard gates to register x\n    for i in range(n):\n        qc.h(x[i])\n\n    # Measure the register x\n    qc.measure_all()\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    # Initialize y in |+> state\n    qc.h(y[0])\n\n    # Apply Grover diffusion operator\n    qc.h(x)\n    qc.x(x)\n    qc.h(x[n-1])\n    qc.mcx(list(range(n-1)), n-1)\n    qc.h(x[n-1])\n    qc.x(x)\n    qc.h(x)\n\n    # Apply the oracle\n    qc.compose(o, inplace=True)\n\n    # Measure the register x\n    qc.measure_all()\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x = QuantumRegister(n, 'x')\n    y = QuantumRegister(1, 'y')\n    qc = QuantumCircuit(x, y)\n\n    # Initialize y in |+> state\n    qc.h(y[0])\n\n    # Apply Hadamard gates to register x\n    for i in range(n):\n        qc.h(x[i])\n\n    # Apply the oracle\n    qc.compose(o, inplace=True)\n\n    # Apply Grover diffusion operator\n    for i in range(n):\n        qc.h(x[i])\n        qc.x(x[i])\n    qc.h(x[n-1])\n    qc.mcx(list(range(n-1)), n-1)\n    qc.h(x[n-1])\n    for i in range(n):\n        qc.x(x[i])\n        qc.h(x[i])\n\n    # Measure the register x\n    qc.measure_all()\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x = QuantumRegister(n, 'x')\n    qc = QuantumCircuit(x)\n\n    # Apply Hadamard gates to all qubits in register x\n    for i in range(n):\n        qc.h(x[i])\n\n    # Apply the oracle\n    y = QuantumRegister(1, 'y')\n    qc.add_register(y)\n    qc.h(y[0])\n    qc.compose(o, inplace=True)\n\n    # Apply Grover diffusion operator\n    for i in range(n):\n        qc.h(x[i])\n        qc.x(x[i])\n    qc.h(x[n-1])\n    qc.mcx(list(range(n-1)), n-1)\n    qc.h(x[n-1])\n    for i in range(n):\n        qc.x(x[i])\n        qc.h(x[i])\n\n    # Measure the register x\n    qc.measure_all()\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    # Initialize y in |+> state\n    qc.h(y[0])\n\n    # Apply Hadamard gates to register x\n    for i in range(n):\n        qc.h(x[i])\n\n    # Apply the oracle\n    qc.compose(o, inplace=True)\n\n    # Apply Grover diffusion operator\n    for i in range(n):\n        qc.h(x[i])\n        qc.x(x[i])\n    qc.h(x[n-1])\n    qc.mcx(list(range(n-1)), n-1)\n    qc.h(x[n-1])\n    for i in range(n):\n        qc.x(x[i])\n        qc.h(x[i])\n\n    # Apply the oracle again\n    qc.compose(o, inplace=True)\n\n    # Apply another Grover diffusion operator\n    for i in range(n):\n        qc.h(x[i])\n        qc.x(x[i])\n    qc.h(x[n-1])\n    qc.mcx(list(range(n-1)), n-1)\n    qc.h(x[n-1])\n    for i in range(n):\n        qc.x(x[i])\n        qc.h(x[i])\n\n    # Measure the register x\n    qc.measure_all()\n\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_Ex1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    # Write your code here:\n    qc.compose(o, inplace=True)\n    qc.cz(x, y)\n    qc.compose(o, inplace=True)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    # Write your code here:\n    qc.compose(o, inplace=True)\n    qc.cz(x, y)\n    qc.z(y)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    # Write your code here:\n    qc.h(y)\n    qc.compose(o, inplace=True)\n    qc.h(y)\n    qc.cz(x, y)\n    qc.h(y)\n    qc.compose(o, inplace=True)\n    qc.h(y)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    # Write your code here:\n    qc.h(y)\n    qc.compose(o, inplace=True)\n    qc.cz(x, y)\n    qc.h(y)\n    qc.compose(o, inplace=True)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    # Write your code here:\n    qc.compose(o, inplace=True)\n    qc.cz(x, y)\n    qc.h(x)\n\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_Ex2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Initialize the quantum circuit\n    for i in range(n):\n        qc.h(i)  # Apply Hadamard gate to each qubit\n\n    # Apply the oracle\n    qc.compose(o, inplace=True)\n\n    # Apply Hadamard gates again and then X gates\n    for i in range(n):\n        qc.h(i)\n        qc.x(i)\n\n    # Apply the oracle again\n    qc.compose(o, inplace=True)\n\n    # Apply X gates and Hadamard gates\n    for i in range(n):\n        qc.x(i)\n        qc.h(i)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Initialize the quantum circuit\n    for i in range(n):\n        qc.h(i)  # Apply Hadamard gate to each qubit\n\n    # Apply the oracle\n    qc.compose(o, inplace=True)\n\n    # Apply Hadamard gates and X gates\n    for i in range(n):\n        qc.h(i)\n        qc.x(i)\n\n    # Apply the oracle again\n    qc.compose(o, inplace=True)\n\n    # Apply X gates and Hadamard gates\n    for i in range(n):\n        qc.x(i)\n        qc.h(i)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import QFT\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.h(range(n))\n    qc.compose(o, inplace=True)\n    qc.compose(QFT(n, inverse=True), range(n), inplace=True)\n    qc.x(0)\n    qc.compose(QFT(n), range(n), inplace=True)\n    qc.compose(o, inplace=True)\n    qc.compose(QFT(n, inverse=True), range(n), inplace=True)\n    qc.x(range(n))\n    qc.compose(QFT(n), range(n), inplace=True)\n    qc.compose(o, inplace=True)\n    qc.compose(QFT(n, inverse=True), range(n), inplace=True)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import QFT\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Initialize all qubits to |+> state\n    for i in range(n):\n        qc.h(i)\n\n    # Apply Grover iteration\n    qc.compose(o, inplace=True)\n    qc.compose(QFT(n, inverse=True), range(n), inplace=True)\n    qc.x(0)\n    qc.compose(QFT(n), range(n), inplace=True)\n    qc.compose(o, inplace=True)\n    qc.compose(QFT(n, inverse=True), range(n), inplace=True)\n\n    # Final rotation to maximize probability of |L>\n    qc.h(range(n))\n    qc.x(range(n))\n    qc.h(range(n))\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import QFT\n\n\"\"\"\nYou can apply oracle as follows:\nqc.compose(o, inplace=True)\n\"\"\"\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Initialize all qubits to |+> state\n    for i in range(n):\n        qc.h(i)\n\n    # Apply the oracle\n    qc.compose(o, inplace=True)\n\n    # Apply QFT\n    qc.compose(QFT(n), range(n), inplace=True)\n\n    # Mark the target state\n    qc.x(0)\n\n    # Apply inverse QFT\n    qc.compose(QFT(n, inverse=True), range(n), inplace=True)\n\n    # Apply the oracle again\n    qc.compose(o, inplace=True)\n\n    # Apply QFT\n    qc.compose(QFT(n), range(n), inplace=True)\n\n    # Unmark the target state\n    qc.x(0)\n\n    # Apply inverse QFT\n    qc.compose(QFT(n, inverse=True), range(n), inplace=True)\n\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_A1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    return qc",
+          "passed": true
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    return qc",
+          "passed": true
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    return qc",
+          "passed": true
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    return qc",
+          "passed": true
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    return qc",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_A2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Write your code here:\n    qc.cx(0, 1)\n    qc.cx(1, 0)\n    qc.cx(0, 1)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Write your code here:\n    qc.cx(0, 1)\n    qc.cx(0, 1)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Write your code here:\n    qc.swap(0, 1)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Write your code here:\n    qc.cx(0, 1)\n    qc.cx(1, 0)\n    qc.cx(0, 1)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Write your code here:\n    qc.h(1)\n    qc.cx(0, 1)\n    qc.h(1)\n    qc.cx(1, 0)\n    qc.cx(0, 1)\n\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_A3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    for i in range(n // 2):\n        qc.swap(i, n - 1 - i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    for i in range(n - 1):\n        if i % 2 == 0:\n            qc.cx(i, i + 1)\n    for i in range(n - 1):\n        if i % 2 == 1:\n            qc.cx(i, i + 1)\n    for i in range(n - 1):\n        if i % 2 == 0:\n            qc.cx(i, i + 1)\n    qc.cx(0, n - 1)\n    qc.x(n - 1)\n    for i in range(n - 2, 0, -1):\n        if i % 2 == 1:\n            qc.cx(i, i + 1)\n    for i in range(n - 2, 0, -1):\n        if i % 2 == 0:\n            qc.cx(i, i + 1)\n    for i in range(n - 2, 0, -1):\n        if i % 2 == 1:\n            qc.cx(i, i + 1)\n    qc.cx(0, n - 1)\n    qc.x(n - 1)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    for i in range(n - 1):\n        qc.cx(i, n - 1)\n    for i in range(n - 1):\n        qc.cx(n - 1, i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    for i in range(n - 1):\n        qc.cx(i, n - 1)\n    for i in range(n - 1):\n        qc.cx(n - 1, i)\n    qc.cx(0, n - 1)\n    for i in range(1, n - 1):\n        qc.cx(i, n - 1)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    for i in range(n - 1):\n        qc.cx(n - 1, i)\n    for i in range(n - 1):\n        qc.cx(i, n - 1)\n    qc.cx(0, n - 1)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_A4",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    for i in range(n-1, 0, -1):\n        qc.cx(i, i-1)\n    qc.x(n-1)\n    for i in range(1, n-1):\n        qc.cx(i, i-1)\n    qc.x(n-1)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    for i in range(n-1):\n        if i % 2 == 0:\n            qc.cx(i, i+1)\n        else:\n            qc.cx(i+1, i)\n    qc.x(n-1)\n    for i in range(n-2, -1, -1):\n        if i % 2 == 0:\n            qc.cx(i, i+1)\n        else:\n            qc.cx(i+1, i)\n    qc.x(n-1)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    for i in range(n-2):\n        qc.cx(i, i+1)\n    qc.x(n-1)\n    for i in range(n-2, 0, -1):\n        qc.cx(i, i-1)\n    qc.x(n-1)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    for i in range(n-1):\n        qc.cx(i, i+1)\n    qc.x(n-1)\n    for i in range(n-2, -1, -1):\n        qc.cx(i, i+1)\n    qc.x(n-1)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Write your code here:\n    for i in range(n-1):\n        qc.cx(i, i+1)\n    qc.x(n-1)\n    for i in range(n-2, -1, -1):\n        qc.cx(i+1, i)\n    qc.x(n-1)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_A5",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.x(i)\n    for i in range(n-1):\n        qc.cx(i, i+1)\n    for i in range(n):\n        qc.x(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.x(i)\n    qc.h(n-1)\n    for i in range(n-1, 0, -1):\n        qc.cx(i-1, i)\n    qc.x(n-1)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.x(n-1)\n    for i in range(n-1):\n        qc.cx(i, n-1)\n    for i in range(n-1):\n        qc.cx(i, n-1)\n    qc.x(n-1)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Apply X gates to all qubits\n    qc.x(range(n))\n    # Apply MCX gates to create a ripple-carry effect\n    for i in range(n-1):\n        qc.mcx(list(range(n-1-i)), n-1-i)\n    # Apply X gates to all qubits again\n    qc.x(range(n))\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.x(n-1)\n    for i in range(n-2, -1, -1):\n        qc.cx(i, n-1)\n        qc.x(i)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_A6",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.h(0)\n    qc.cx(0, 1)\n    qc.x(1)\n    qc.x(0)\n    qc.h(0)\n    qc.cx(1, 0)\n    qc.x(1)\n    qc.x(0)\n    qc.h(0)\n    qc.cx(0, 1)\n    qc.x(1)\n    qc.x(0)\n    qc.h(0)\n    qc.x(0)\n    qc.h(1)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.h(0)\n    qc.h(1)\n    qc.cp(-2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2, 0, 1)\n    qc.x(0)\n    qc.cp(2 * 2 * 2 * 2 * 2 * 2 * 2, 0, 1)\n    qc.cx(0, 1)\n    qc.x(0)\n    qc.cp(-2 * 2 * 2 * 2 * 2, 0, 1)\n    qc.cx(0, 1)\n    qc.cp(2 * 2 * 2 * 2 * 2, 0, 1)\n    qc.h(1)\n    qc.z(1)\n    qc.h(0)\n    qc.cp(2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2, 0, 1)\n    qc.cx(0, 1)\n    qc.cp(-2 * 2 * 2 * 2 * 2, 0, 1)\n    qc.cx(0, 1)\n    qc.cp(2 * 2 * 2 * 2 * 2, 0, 1)\n    qc.h(1)\n    qc.cp(2 * 2 * 2 * 2 * 2 * 2, 0, 1)\n    qc.h(0)\n    qc.cx(0, 1)\n    qc.h(1)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.h(0)\n    qc.cp(-2 * 2 * 2 * 2, 0, 1)\n    qc.cx(0, 1)\n    qc.x(0)\n    qc.cp(2 * 2 * 2 * 2, 0, 1)\n    qc.cx(0, 1)\n    qc.h(1)\n    qc.z(1)\n    qc.h(0)\n    qc.cx(0, 1)\n    qc.cp(2 * 2 * 2 * 2, 0, 1)\n    qc.cx(0, 1)\n    qc.h(1)\n    qc.cp(-2 * 2 * 2 * 2, 0, 1)\n    qc.cx(0, 1)\n    qc.x(0)\n    qc.cp(2 * 2 * 2 * 2, 0, 1)\n    qc.cx(0, 1)\n    qc.h(0)\n    qc.cx(0, 1)\n    qc.h(1)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.h(0)\n    qc.cp(2 * 2 * 2 * 2 * 2, 0, 1)\n    qc.cx(0, 1)\n    qc.x(0)\n    qc.cp(2 * 2 * 2 * 2 * 2, 0, 1)\n    qc.cx(0, 1)\n    qc.h(1)\n    qc.z(1)\n    qc.h(0)\n    qc.cx(0, 1)\n    qc.cp(2 * 2 * 2 * 2 * 2, 0, 1)\n    qc.cx(0, 1)\n    qc.h(1)\n    qc.cp(2 * 2 * 2 * 2 * 2, 0, 1)\n    qc.cx(0, 1)\n    qc.x(0)\n    qc.cp(2 * 2 * 2 * 2 * 2, 0, 1)\n    qc.cx(0, 1)\n    qc.h(0)\n    qc.cx(0, 1)\n    qc.h(1)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Prepare initial states\n    qc.x(1)  # Now |10> becomes |11>\n    \n    # Apply transformations\n    qc.h(0)\n    qc.cx(0, 1)\n    qc.cz(0, 1)  # Controlled-Z to create interference\n    qc.cx(0, 1)\n    qc.h(0)\n    \n    # Fix global phase and ensure normalization\n    qc.p(-np.pi/6, 0)  # Phase correction\n    qc.p(np.pi/6, 1)\n    \n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_A7",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(2 * n)\n    # Write your code here:\n    for i in range(n):\n        qc.h(i)\n    for i in range(n, 2 * n):\n        qc.h(i)\n    for i in range(n):\n        qc.cx(i, n + i)\n    for i in range(n, 2 * n):\n        qc.x(i)\n    for i in range(n):\n        qc.cx(i, n + i)\n    for i in range(n):\n        qc.h(i)\n    for i in range(n, 2 * n):\n        qc.h(i)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(2 * n)\n    for i in range(n):\n        qc.h(i)\n    qc.barrier()\n    for i in range(n):\n        qc.x(i)\n    qc.barrier()\n    for i in range(n):\n        qc.cx(i, i + n)\n    qc.barrier()\n    for i in range(n):\n        qc.x(i)\n    qc.barrier()\n    for i in range(n):\n        qc.h(i)\n    for i in range(n):\n        qc.h(i + n)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(2 * n)\n\n    # Initialize all qubits in superposition\n    for i in range(2 * n):\n        qc.h(i)\n\n    # Apply controlled-Z gates to create entanglement\n    for i in range(n):\n        for j in range(n, 2 * n):\n            qc.cz(i, j)\n\n    # Apply specific phase flips based on the problem requirements\n    for i in range(n):\n        qc.z(i)\n\n    # Apply another layer of Hadamard gates to create interference\n    for i in range(2 * n):\n        qc.h(i)\n\n    # Additional phase flips to match the required transformation\n    for i in range(n):\n        qc.z(i + n)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(2 * n)\n    for i in range(n):\n        qc.h(i)\n    for i in range(n, 2 * n):\n        qc.x(i)\n    for i in range(n):\n        qc.cx(i, i + n)\n    for i in range(n):\n        qc.z(i)\n    for i in range(n, 2 * n):\n        qc.x(i)\n    for i in range(n):\n        qc.h(i)\n    for i in range(n, 2 * n):\n        qc.h(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(2 * n)\n    # Write your code here:\n    for i in range(n):\n        qc.h(i)\n    for i in range(n, 2 * n):\n        qc.x(i)\n    for i in range(n):\n        qc.cx(i, i + n)\n    for i in range(n):\n        qc.z(i)\n    for i in range(n, 2 * n):\n        qc.x(i)\n    for i in range(n):\n        qc.h(i)\n    for i in range(n, 2 * n):\n        qc.h(i)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_B1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.h(i)\n    return qc",
+          "passed": true
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.h(0)\n    for i in range(1, n):\n        qc.cx(0, i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.h(i)\n        for j in range(i + 1, n):\n            qc.cx(i, j)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.h(range(n))\n    return qc",
+          "passed": true
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.h(0)\n    for i in range(1, n):\n        qc.cx(0, i)\n    qc.barrier()\n    for i in range(1, n):\n        qc.h(i)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_B2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    k, c = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(k, c)\n    for i in range(n):\n        for j in range(i + 1):\n            qc.cp(2 * 3.14159 * a * 2**j, k[i], c)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom math import pi\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    k = QuantumRegister(n, 'k')\n    c = QuantumRegister(1, 'c')\n    qc = QuantumCircuit(k, c)\n\n    for i in range(n):\n        angle = 2 * pi * a * (2 ** i) / (2 ** n)\n        qc.cp(angle, c, k[i])\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import PhaseGate\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    k = QuantumRegister(n, 'k')\n    c = QuantumRegister(1, 'c')\n    qc = QuantumCircuit(k, c)\n\n    qc.h(c)\n    qc.mcp(2 * 3.141592653589793 * a * (2 ** k.size - 1) / (2 ** k.size), list(k) + [c], c)\n    qc.h(c)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    k = QuantumRegister(n, 'k')\n    c = QuantumRegister(1, 'c')\n    qc = QuantumCircuit(k, c)\n\n    for i in range(n):\n        qc.cu1(2 * 3.141592653589793 * a * (2 ** (i + 1)), c, k[i])\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom math import pi\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    k = QuantumRegister(n, 'k')\n    c = QuantumRegister(1, 'c')\n    qc = QuantumCircuit(k, c)\n\n    for i in range(n):\n        angle = 2 * pi * a * (2 ** i) / (2 ** n)\n        qc.cu1(angle, c, k[i])\n\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_B3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    k, c = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(k, c)\n    # Write your code here:\n    qc.cx(c, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.cx(c, k[-1])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.cx(c, k[-1])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.cx(c, k[-1])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.cx(c, k[-1])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.cx(c, k[-1])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.cx(c, k[-1])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.cx(c, k[-1])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.cx(c, k[-1])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.cx(c, k[-1])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.cx(c, k[-1])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.cx(c, k[-1])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.cx(c, k[-1])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.cx(c, k[-1])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.cx(c, k[-1])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.cx(c, k[-1])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.cx(c, k[-1])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.mcx(k, k[-1])\n    for i in range(n - 1, 0, -1):\n        qc.mcx(k[i:], k[i - 1])\n    qc.cx(c, k[0])\n    qc.cx(c, k[-1])",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    k, c = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(k, c)\n    # Write your code here:\n    if a == 0:\n        return qc\n    a_bin = bin(a)[2:].zfill(n)\n    for i in range(n):\n        if a_bin[i] == '1':\n            qc.mcx(k, k[i])\n            qc.cx(c, k[i])\n            qc.mcx(k, k[i])\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    k, c = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(k, c)\n    # Write your code here:\n    if a == 0:\n        return qc\n    a_bin = bin(a)[2:].zfill(n)\n    for i in range(n):\n        if a_bin[i] == '1':\n            qc.cx(c, k[i])\n            qc.mcx(k, k[i])\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    k, c = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(k, c)\n    # Write your code here:\n    if a == 0:\n        return qc\n    a_bin = bin(a)[2:].zfill(n)\n    for i in range(n):\n        if a_bin[i] == '1':\n            qc.cx(c, k[i])\n            for j in range(i+1, n):\n                qc.cx(k[i], k[j])\n            qc.cx(k[i], k[0])\n            for j in range(i+1, n):\n                qc.cx(k[i], k[j])\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    k, c = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(k, c)\n    # Write your code here:\n    if a == 0:\n        return qc\n    for i in range(n):\n        if (a >> i) & 1:\n            qc.cx(c, k[i])\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_B4",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import QFT\n\ndef solve(n: int, s: int, t: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    qc.h(n)\n    qc.x(n)\n\n    qc.append(QFT(n), range(n))\n    for i in range(n):\n        qc.p(-2 * s * 3.14159 / (2 ** (i + 1)), n - i - 1)\n\n    qc.append(QFT(n, inverse=True), range(n))\n    qc.x(n)\n    qc.h(n)\n\n    qc.append(QFT(n), range(n))\n    for i in range(n):\n        qc.p(-2 * (2**n - t) * 3.14159 / (2 ** (i + 1)), n - i - 1)\n\n    qc.append(QFT(n, inverse=True), range(n))\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, s: int, t: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    qc.h(range(n))\n    qc.x(n)\n\n    # Apply phase shifts for first case\n    for i in range(n):\n        qc.p(-2 * s * 3.14159 / (2 ** (i + 1)), n - i - 1)\n\n    qc.h(range(n))\n    qc.x(n)\n\n    # Apply phase shifts for second case\n    for i in range(n):\n        qc.p(-2 * (2**n - t) * 3.14159 / (2 ** (i + 1)), n - i - 1)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import QFT\n\ndef solve(n: int, s: int, t: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    qc.h(n)\n    qc.x(n)\n\n    # First part: k - s for s \u2264 k < 2^n\n    qc.append(QFT(n), range(n))\n    for i in range(n):\n        qc.p(2 * s * 3.14159 / (2 ** (i + 1)), n - i - 1)\n    qc.append(QFT(n, inverse=True), range(n))\n\n    # Second part: k + 2^(n+1) - t for 2^n \u2264 k < t\n    qc.x(range(n))\n    qc.append(QFT(n), range(n))\n    for i in range(n):\n        qc.p(2 * (2**n - t) * 3.14159 / (2 ** (i + 1)), n - i - 1)\n    qc.append(QFT(n, inverse=True), range(n))\n    qc.x(range(n))\n\n    qc.h(n)\n    qc.x(n)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import MCMT, XGate\n\ndef solve(n: int, s: int, t: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    # Initialize control qubit\n    qc.x(n)\n\n    # First case: For s <= k < 2^n, apply k - s\n    for i in range(n):\n        if (s >> i) & 1:\n            qc.cx(n, i)\n\n    # Second case: For 2^n <= k < t, apply k + 2^(n+1) - t\n    for i in range(n):\n        if ((2**n - t) >> i) & 1:\n            qc.cx(n, i)\n\n    # Apply X gates to target qubits where needed\n    for i in range(n):\n        if ((2**n - t) >> i) & 1:\n            qc.x(i)\n\n    # Use multi-controlled gates for phase flips\n    qc.append(MCMT(XGate(), n, n), range(n + 1))\n\n    # Undo X gates\n    for i in range(n):\n        if ((2**n - t) >> i) & 1:\n            qc.x(i)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister\nfrom qiskit.circuit.library import QFT\n\ndef solve(n: int, s: int, t: int) -> QuantumCircuit:\n    # Create a quantum circuit with n+1 qubits\n    qc = QuantumCircuit(n + 1)\n    qr = QuantumRegister(n + 1, 'q')\n    qc = QuantumCircuit(qr)\n\n    # Apply Hadamard gate to the last qubit\n    qc.h(qr[-1])\n\n    # Apply X gate to the last qubit\n    qc.x(qr[-1])\n\n    # Apply inverse QFT to the first n qubits\n    qc.append(QFT(n, inverse=True), qr[:n])\n\n    # Apply controlled phase shifts\n    for i in range(n):\n        # First case: s <= k < 2^n\n        qc.cp(-2 * s * 3.14159 / (2 ** (i + 1)), qr[i], qr[-1])\n        # Second case: 2^n <= k < t\n        qc.cp(-2 * (2**n - t) * 3.14159 / (2 ** (i + 1)), qr[i], qr[-1])\n\n    # Apply QFT to the first n qubits\n    qc.append(QFT(n), qr[:n])\n\n    # Apply X gate to the last qubit\n    qc.x(qr[-1])\n\n    # Apply Hadamard gate to the last qubit\n    qc.h(qr[-1])\n\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_B5",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    for i in range(n + 1):\n        qc.h(i)\n    for i in range(n + 1):\n        if (a >> i) & 1:\n            qc.cx(i, n)\n    for i in range(n + 1):\n        if (L >> i) & 1:\n            qc.cx(i, n)\n    qc.x(n)\n    for i in range(n + 1):\n        if (a >> i) & 1:\n            qc.cx(i, n)\n    for i in range(n + 1):\n        qc.h(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    qc.h(n)\n    for i in range(n):\n        qc.cp(2 * 3.14159 * a * (2 ** i) / L, i, n)\n    qc.h(n)\n    for i in range(n):\n        qc.cz(i, n)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    qc.h(n)\n    for i in range(n):\n        qc.cp(2 * 3.14159 * (a / L) * (2 ** i), i, n)\n    qc.barrier()\n    qc.h(n)\n    for i in range(n):\n        qc.cz(i, n)\n    qc.h(n)\n    qc.x(n)\n    qc.barrier()\n    for i in range(n):\n        qc.cp(2 * 3.14159 * (a / L) * (2 ** i), i, n)\n    qc.h(n)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import PhaseEstimation\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    qc.h(n)\n    for i in range(n):\n        qc.cp(2 * 3.14159 * (a / L) * (2 ** (n - i - 1)), i, n)\n    qc.h(n)\n    for i in range(n):\n        qc.cz(i, n)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import PhaseEstimation, QFT\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    qc.h(n)\n    for i in range(n):\n        qc.cp(2 * 3.14159 * a * (2 ** i) / L, i, n)\n    qc.h(n)\n    qc.x(n)\n    for i in range(n):\n        qc.cp(2 * 3.14159 * a * (2 ** i) / L, i, n)\n    qc.h(n)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_C1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, transpile\nfrom qiskit_aer import AerSimulator\n\ndef mod_exp(a, power, L):\n    result = 1\n    while power > 0:\n        if power % 2 == 1:\n            result = (result * a) % L\n        a = (a * a) % L\n        power //= 2\n    return result\n\ndef solve(n: int, a: int, L: int) -> list[int]:\n    result: list[int] = []\n    for k in range(n):\n        power = 2 ** k\n        result.append(mod_exp(a, power, L))\n    return result",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, transpile\nfrom qiskit_aer import AerSimulator\nfrom qiskit.circuit.library import QFT, PhaseEstimation\n\ndef solve(n: int, a: int, L: int) -> list[int]:\n    result: list[int] = []\n    for k in range(n):\n        power = 2 ** k\n        qr = QuantumRegister(2 * L.bit_length())\n        cr = ClassicalRegister(qr.size)\n        qc = QuantumCircuit(qr, cr)\n        qc.h(qr[0])\n        for i in range(1, qr.size):\n            qc.cp(2 * 3.14159265358979323846 * a * power / L, qr[0], qr[i])\n        qc += QFT(qr[1:], inverse=True, do_swaps=True).to_gate()\n        qc.measure(qr[1:], cr[1:])\n        sim = AerSimulator()\n        qc = transpile(qc, sim)\n        job = sim.run(qc, shots=1)\n        counts = job.result().get_counts()\n        phase = int(list(counts.keys())[0], 2) / (2 ** (qr.size - 1))\n        result.append(int(round(a * (L ** phase)) % L))\n    return result",
+          "passed": false
+        },
+        {
+          "code": "from qiskit.circuit.library import PhaseEstimation, QFT\nfrom qiskit.primitives import Sampler\nfrom qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister\nfrom math import gcd\n\ndef solve(n: int, a: int, L: int) -> list[int]:\n    result: list[int] = []\n    if gcd(a, L) != 1:\n        return result\n    for k in range(n):\n        power = 2 ** k\n        qr = QuantumRegister(2 * L.bit_length())\n        cr = ClassicalRegister(qr.size)\n        qc = QuantumCircuit(qr, cr)\n        qc.h(qr[0])\n        for i in range(1, qr.size):\n            qc.cp(2 * 3.14159265358979323846 * a * power / L, qr[0], qr[i])\n        qc += QFT(qr[1:], inverse=True, do_swaps=True).to_gate()\n        qc.measure(qr[1:], cr[1:])\n        sampler = Sampler()\n        job = sampler.run(qc, shots=1)\n        counts = job.result().quasi_dists[0]\n        phase = int(list(counts.keys())[0], 2) / (2 ** (qr.size - 1))\n        result.append(int(round(a * (L ** phase)) % L))\n    return result",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, transpile\nfrom qiskit_aer import AerSimulator\nfrom qiskit.circuit.library import QFT, PhaseEstimation\n\ndef solve(n: int, a: int, L: int) -> list[int]:\n    result: list[int] = []\n    for k in range(n):\n        power = 2 ** k\n        qr = QuantumRegister(L.bit_length())\n        cr = ClassicalRegister(qr.size)\n        qc = QuantumCircuit(qr, cr)\n        qc.h(qr[0])\n        for i in range(1, qr.size):\n            qc.cp(2 * 3.14159265358979323846 * a * power / L, qr[0], qr[i])\n        qc += QFT(qr[1:], inverse=True, do_swaps=True).to_gate()\n        qc.measure(qr, cr)\n        sim = AerSimulator()\n        qc = transpile(qc, sim)\n        job = sim.run(qc, shots=1)\n        counts = job.result().get_counts()\n        phase = int(list(counts.keys())[0], 2) / (2 ** (qr.size - 1))\n        result.append(int(round(a * (L ** phase)) % L))\n    return result",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, transpile\nfrom qiskit_aer import AerSimulator\n\ndef solve(n: int, a: int, L: int) -> list[int]:\n    result: list[int] = []\n    for k in range(n):\n        power = 2 ** k\n        qr = QuantumRegister(L.bit_length())\n        cr = ClassicalRegister(qr.size)\n        qc = QuantumCircuit(qr, cr)\n        qc.h(qr[0])\n        for i in range(1, qr.size):\n            qc.cp(2 * 3.141592653589793 * a * power / L, qr[0], qr[i])\n        qc += QFT(qr[1:], inverse=True, do_swaps=True).to_gate()\n        qc.measure(qr, cr)\n        sim = AerSimulator()\n        qc = transpile(qc, sim)\n        job = sim.run(qc, shots=1)\n        counts = job.result().get_counts()\n        phase = int(list(counts.keys())[0], 2) / (2 ** (qr.size - 1))\n        result.append(int(round(a * (L ** phase)) % L))\n    return result",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_C2",
+      "results": [
+        {
+          "code": "from math import gcd\nfrom qiskit import QuantumCircuit, transpile\nfrom qiskit_ibm_runtime import QiskitRuntimeService\nfrom qiskit.primitives import Sampler\n\ndef solve(a: int, L: int) -> int:\n    result: int = 0\n    service = QiskitRuntimeService()\n    backend = service.least_busy(operational=True, simulator=False)\n    sampler = Sampler()\n\n    # Check if a and L are coprime\n    if gcd(a, L) != 1:\n        raise ValueError(\"a and L must be coprime\")\n\n    # Create a quantum circuit\n    n = L.bit_length()\n    qc = QuantumCircuit(n)\n\n    # Initialize the circuit with the value a\n    for i in range(n - 1, -1, -1):\n        if (a >> i) & 1:\n            qc.x(i)\n\n    # Apply modular exponentiation to compute a^(-1) mod L\n    for i in range(n - 1, -1, -1):\n        if (L >> i) & 1:\n            qc.cx(i, n - 1)\n        qc.h(n - 1)\n        qc.mcp(-1, list(range(n - 1)), n - 1)\n        qc.h(n - 1)\n\n    # Measure the result\n    qc.measure_all()\n\n    # Transpile and run the circuit\n    transpiled_qc = transpile(qc, backend)\n    job = sampler.run(transpiled_qc)\n    result = job.result().quasi_dists[0].get(0, 0)\n\n    return result",
+          "passed": false
+        },
+        {
+          "code": "def solve(a: int, L: int) -> int:\n    result: int = 0\n    # Use the extended Euclidean algorithm to find the inverse\n    def extended_euclidean(a, L):\n        if a == 0:\n            return (L, 0, 1)\n        else:\n            g, y, x = extended_euclidean(L % a, a)\n            return (g, x - (L // a) * y, y)\n\n    g, x, y = extended_euclidean(a, L)\n    if g != 1:\n        raise ValueError(\"a and L must be coprime\")\n    result = x % L\n    return result",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, transpile\nfrom qiskit.primitives import Sampler\nfrom qiskit.circuit.library import QFT\nfrom qiskit.circuit import QuantumRegister, ClassicalRegister\nfrom qiskit.circuit.library import PhaseEstimation\nfrom qiskit_ibm_runtime import QiskitRuntimeService\n\ndef solve(a: int, L: int) -> int:\n    result: int = 0\n    service = QiskitRuntimeService()\n    backend = service.least_busy(operational=True, simulator=False)\n    sampler = Sampler()\n\n    n = L.bit_length()\n    q = QuantumRegister(n, 'q')\n    c = ClassicalRegister(n, 'c')\n    qc = QuantumCircuit(q, c)\n\n    # Initialize q to |1>\n    qc.x(q[0])\n\n    # Apply QFT\n    qc.append(QFT(n), q)\n\n    # Apply controlled-U operations\n    for i in range(n):\n        for j in range(2**i):\n            qc.cp(2 * 3.141592653589793 * a * j / L, q[i], q[0])\n\n    # Apply inverse QFT\n    qc.append(QFT(n).inverse(), q)\n\n    # Measure\n    qc.measure(q, c)\n\n    transpiled_qc = transpile(qc, backend)\n    job = sampler.run(transpiled_qc)\n    result = job.result().quasi_dists[0].get(0, 0)\n    return result",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, transpile\nfrom qiskit.primitives import Sampler\nfrom qiskit.circuit.library import PhaseEstimation, QFT\nfrom qiskit_ibm_runtime import QiskitRuntimeService\n\ndef solve(a: int, L: int) -> int:\n    result: int = 0\n    service = QiskitRuntimeService()\n    backend = service.least_busy(operational=True, simulator=False)\n    sampler = Sampler()\n\n    n = L.bit_length()\n    q = QuantumRegister(n + 1, 'q')\n    c = ClassicalRegister(n, 'c')\n    qc = QuantumCircuit(q, c)\n\n    # Initialize q[0] to |1>\n    qc.x(q[0])\n\n    # Apply PhaseEstimation to compute a^{-1} mod L\n    pe = PhaseEstimation(n, QFT(num_qubits=n, do_swaps=False).inverse())\n    pe_gate = pe.to_gate().control(1)\n    qc.append(pe_gate, [q[0]] + q[1:])\n\n    # Measure the result\n    qc.measure(q[1:], c)\n\n    transpiled_qc = transpile(qc, backend)\n    job = sampler.run(transpiled_qc)\n    result = job.result().quasi_dists[0].get(0, 0)\n\n    return result",
+          "passed": false
+        },
+        {
+          "code": "def solve(a: int, L: int) -> int:\n    result: int = 0\n    # Use the extended Euclidean algorithm to find the inverse\n    def extended_euclidean(a, L):\n        if a == 0:\n            return (L, 0, 1)\n        else:\n            g, y, x = extended_euclidean(L % a, a)\n            return (g, x - (L // a) * y, y)\n\n    g, x, y = extended_euclidean(a, L)\n    if g != 1:\n        raise ValueError(\"a and L must be coprime\")\n    result = (x % L + L) % L  # Ensure result is positive\n    return result",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_C3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(n + 1)\n    qc = QuantumCircuit(x, y)\n    # Write your code here:\n    qc.cu(a, 0, 0, 0, x, y)\n    qc.measure_all()\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(n)\n    qc = QuantumCircuit(x, y)\n    for i in range(n):\n        for j in range(n):\n            if (a >> j) & 1:\n                qc.cx(x[i], y[j])\n        qc.cx(x[i], y[(i + 1) % n])\n    qc.cry((a % L) * (2 * 3.14159 / L), x[n-1], y[n-1])\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(n)\n    qc = QuantumCircuit(x, y)\n    for i in range(n):\n        qc.cx(x[i], y[i])\n    for j in range(n):\n        qc.cx(x[j], y[(j + a) % n])\n    qc.cry((a % L) * (2 * 3.14159 / L), x[0], y[0])\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(n)\n    qc = QuantumCircuit(x, y)\n\n    # Encode y = (y + ax) mod L\n    for i in range(n):\n        for j in range(n):\n            qc.cu(a >> (n-1-j), 0, 0, 0, x[i], y[j])\n        for j in range(n):\n            qc.cx(x[i], y[j])\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(n)\n    qc = QuantumCircuit(x, y)\n\n    # Apply modular addition (y + ax) mod L\n    for i in range(n):\n        for j in range(n):\n            if (a >> j) & 1:\n                qc.cx(x[i], y[j])\n    qc.measure_all()\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_C4",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(n + 1)\n    qc = QuantumCircuit(x, y)\n\n    # Initialize y to |1>\n    qc.x(y[0])\n\n    # Apply QFT to y\n    from qiskit.circuit.library import QFT\n    qc.append(QFT(n + 1, do_swaps=False), y)\n\n    # Apply controlled phase shifts for multiplication by a mod L\n    for i in range(n + 1):\n        for j in range(n):\n            # Controlled by y[i] and x[j]\n            angle = 2 * 3.141592653589793 * (a * (2**j) % L) / L\n            qc.cp(angle, y[i], x[j])\n\n    # Apply inverse QFT to y\n    qc.append(QFT(n + 1, do_swaps=False).inverse(), y)\n\n    # Extract result to x\n    for i in range(n):\n        qc.cx(y[i], x[i])\n\n    # Reset y to |0>\n    qc.reset(y)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import MCMT, QFT\n\n\ndef multiply_by_a_mod_L(qc, x, y, a, L):\n    n = len(x)\n    qc.h(y[-1])\n    for i in range(n):\n        for j in range(n):\n            if (a * (2**j) % L) & (1 << (n - 1 - i)):\n                qc.append(MCMT('x', 1, 2**j), [y[-1]] + x[:])\n        qc.h(y[-1])\n        qc.p(-2 * 3.141592653589793 * (a * (2**(n - 1 - i)) % L) / L, y[-1])\n        qc.h(y[-1])\n    for i in range(n):\n        for j in range(n):\n            if (a * (2**j) % L) & (1 << (n - 1 - i)):\n                qc.append(MCMT('x', 1, 2**j), [y[-1]] + x[:])\n    qc.h(y[-1])\n\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(n + 1)\n    qc = QuantumCircuit(x, y)\n\n    # Initialize y to |1>\n    qc.x(y[0])\n\n    # Apply QFT to y\n    qc.append(QFT(n + 1, do_swaps=False), y)\n\n    # Apply multiplication by a mod L\n    multiply_by_a_mod_L(qc, x, y, a, L)\n\n    # Apply inverse QFT to y\n    qc.append(QFT(n + 1, do_swaps=False).inverse(), y)\n\n    # Extract result to x\n    for i in range(n):\n        qc.cx(y[i], x[i])\n\n    # Reset y to |0>\n    qc.reset(y)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import QFTGate\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(n + 1)\n    qc = QuantumCircuit(x, y)\n\n    # Initialize y to |1>\n    qc.x(y[0])\n\n    # Apply QFT to y\n    qc.append(QFTGate(n + 1, do_swaps=False), y)\n\n    # Apply controlled modular multiplication\n    for i in range(n):\n        for j in range(n + 1):\n            qc.cp(2 * 3.141592653589793 * (a * (2**i) % L) / L, y[j], x[n - 1 - i])\n\n    # Apply inverse QFT to y\n    qc.append(QFTGate(n + 1, do_swaps=False).inverse(), y)\n\n    # Extract result to x\n    for i in range(n):\n        qc.cx(y[i], x[n - 1 - i])\n\n    # Reset y to |0>\n    qc.reset(y)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import QFT, MCXGate\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(n + 1)\n    qc = QuantumCircuit(x, y)\n\n    # Initialize y to |1>\n    qc.x(y[0])\n\n    # Apply QFT to y\n    qc.append(QFT(n + 1, do_swaps=False), y)\n\n    # Apply controlled modular multiplication using QFT-based approach\n    for i in range(n):\n        for j in range(n + 1):\n            angle = 2 * 3.141592653589793 * (a * (2**i) % L) / L\n            qc.cp(angle, y[j], x[n - 1 - i])\n\n    # Apply inverse QFT to y\n    qc.append(QFT(n + 1, do_swaps=False).inverse(), y)\n\n    # Extract result to x\n    for i in range(n):\n        qc.cx(y[i], x[n - 1 - i])\n\n    # Reset y to |0>\n    qc.reset(y)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import QFTGate\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    x = QuantumRegister(n)\n    y = QuantumRegister(n + 1)\n    qc = QuantumCircuit(x, y)\n\n    # Initialize y to |1>\n    qc.x(y[0])\n\n    # Apply QFT to y\n    qc.append(QFTGate(n + 1, do_swaps=False), y)\n\n    # Apply controlled modular multiplication\n    for i in range(n + 1):\n        for j in range(n):\n            qc.cp(2 * 3.141592653589793 * (a * (2**j) % L) / L, y[i], x[n - 1 - j])\n\n    # Apply inverse QFT to y\n    qc.append(QFTGate(n + 1, do_swaps=False).inverse(), y)\n\n    # Extract result to x\n    for i in range(n):\n        qc.cx(y[i], x[n - 1 - i])\n\n    # Reset y to |0>\n    qc.reset(y)\n\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_C5",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, m: int, a: int, L: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(2 * m + 1)\n    qc = QuantumCircuit(x, y)\n\n    # Initialize the first n qubits in superposition\n    qc.h(range(n))\n\n    # Compute a^k mod L for each basis state |k>\n    for k in range(2**n):\n        # Convert k to binary and pad to n bits (little-endian)\n        k_binary = format(k, f'0{n}b')[::-1]\n\n        # Apply X gates to x qubits based on k_binary\n        for i, bit in enumerate(k_binary):\n            if bit == '1':\n                qc.x(i)\n\n        # Compute a^k mod L using QFT and modular exponentiation\n        # This is a simplified version; actual implementation requires QFT and QRAM\n        # For the sake of this example, we'll use a placeholder\n        qc.cx(0, n)  # Placeholder operation\n\n        # Uncompute the X gates\n        for i, bit in enumerate(k_binary):\n            if bit == '1':\n                qc.x(i)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import QFT\nimport numpy as np\n\ndef modular_exponentiation(qc, base, exponent, modulus, x_register, y_register):\n    \"\"\"\n    Computes |y\u27e9 = |base^exponent mod modulus\u27e9 in the y_register given |exponent\u27e9 in x_register.\n    \"\"\"\n    n = len(x_register)\n    m = len(y_register) - 1  # -1 for the sign bit\n\n    # QFT on y_register (excluding the sign bit)\n    qc.append(QFT(m, do_swaps=False), y_register[:-1])\n\n    # Controlled modular multiplication for each bit in exponent\n    for i in range(n):\n        if (exponent >> i) & 1:\n            qc.append(modular_multiplication(base, modulus, x_register, y_register), [x_register[i]] + list(y_register))\n\n    # Inverse QFT on y_register (excluding the sign bit)\n    qc.append(QFT(m, do_swaps=False).inverse(), y_register[:-1])\n\ndef modular_multiplication(base, modulus, x_register, y_register):\n    \"\"\"\n    Implements modular multiplication by base under modulus.\n    \"\"\"\n    n = len(x_register)\n    m = len(y_register) - 1  # -1 for the sign bit\n\n    # This is a placeholder for the actual modular multiplication circuit\n    # Implement this using QRAM or other techniques as needed\n    return QuantumCircuit(n + m + 1)\n\ndef solve(n: int, m: int, a: int, L: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(2 * m + 1)\n    qc = QuantumCircuit(x, y)\n\n    # Initialize the first n qubits in superposition\n    qc.h(range(n))\n\n    # For each basis state |k\u27e9, compute |a^k mod L\u27e9 in y_register\n    for k in range(2**n):\n        # Apply modular exponentiation for each k\n        qc.compose(modular_exponentiation(qc, a, k, L, x, y), inplace=True)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister, transpile\nfrom qiskit_aer import AerSimulator\nfrom qiskit.circuit.library import QFT, QFTGate\nfrom qiskit.circuit import Gate, Parameter\nfrom qiskit.circuit.library import UnitaryGate\nfrom numpy import linalg as LA\nimport numpy as np\n\ndef qft_dagger_circ(n):\n    qc = QuantumCircuit(n)\n    for qubit in range(n//2):\n        qc.swap(qubit, n-qubit-1)\n    for j in range(n):\n        for m in range(j):\n            qc.cp(-np.pi/float(2**(j-m)), m, j)\n        qc.h(j)\n    qc.name = \"QFT\u2020\"\n    return qc\n\ndef qft_circ(n):\n    qc = QuantumCircuit(n)\n    for j in range(n):\n        qc.h(j)\n        for m in range(j):\n            qc.cp(np.pi/float(2**(j-m)), m, j)\n    for qubit in range(n//2):\n        qc.swap(qubit, n-qubit-1)\n    qc.name = \"QFT\"\n    return qc\n\ndef qpe(circ, unitary, n_counting_qubits, evo_qubits):\n    for q in range(n_counting_qubits):\n        circ.h(q)     # Initialize counting qubits in state |+>\n    circ.x(n_counting_qubits) # And auxiliary register in state |1>\n\n    for q in range(n_counting_qubits): # Do controlled-U operations\n        for i in range(2**q):\n            circ.append(unitary, range(n_counting_qubits, n_counting_qubits+len(evo_qubits))).c_if(q, int(i))\n\n    circ.append(qft_dagger_circ(n_counting_qubits).to_gate(), range(n_counting_qubits)) # Do inverse-QFT\n\ndef solve(n: int, m: int, a: int, L: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(2 * m + 1)\n    qc = QuantumCircuit(x, y)\n\n    qc.h(x)\n\n    L2 = 2**m\n    n_phase = 2*m\n    evo = y[:n_phase]\n    control = x\n    n_phase_qubits = len(evo)\n    unitary = UnitaryGate(np.diag([np.exp(1j*2*np.pi*((a**i)%L2)/L2) for i in range(L2)]), label = \"U\")\n    qpe(qc, unitary, n, evo)\n    qc.append(QFTGate(n_phase).inverse(), evo)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import QFT\nfrom numpy import linalg as LA\nimport numpy as np\n\ndef solve(n: int, m: int, a: int, L: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(2 * m + 1)\n    qc = QuantumCircuit(x, y)\n\n    # Initialize the first n qubits in superposition\n    qc.h(range(n))\n\n    # For each basis state |k\u27e9, compute |a^k mod L\u27e9 in y_register\n    for k in range(2**n):\n        # Convert k to binary and pad to n bits (little-endian)\n        k_binary = format(k, f'0{n}b')[::-1]\n\n        # Apply X gates to x qubits based on k_binary\n        for i, bit in enumerate(k_binary):\n            if bit == '1':\n                qc.x(i)\n\n        # Compute a^k mod L using QFT and modular exponentiation\n        qc.append(QFT(2 * m, do_swaps=False), y[1:2 * m + 1])\n\n        # Apply controlled modular multiplication\n        for i in range(2 * m):\n            if (a ** k >> i) & 1:\n                qc.cx(y[i + 1], y[2 * m])\n\n        # Inverse QFT\n        qc.append(QFT(2 * m, do_swaps=False).inverse(), y[1:2 * m + 1])\n\n        # Uncompute the X gates\n        for i, bit in enumerate(k_binary):\n            if bit == '1':\n                qc.x(i)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import QFT, QFTGate\nfrom qiskit.circuit.library import RZGate\nimport numpy as np\n\ndef solve(n: int, m: int, a: int, L: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(2 * m + 1)\n    qc = QuantumCircuit(x, y)\n\n    # Initialize the first n qubits in superposition\n    qc.h(range(n))\n\n    # Compute a^k mod L for each basis state |k>\n    for k in range(2**n):\n        # Convert k to binary and pad to n bits (little-endian)\n        k_binary = format(k, f'0{n}b')[::-1]\n\n        # Apply X gates to x qubits based on k_binary\n        for i, bit in enumerate(k_binary):\n            if bit == '1':\n                qc.x(i)\n\n        # Compute a^k mod L using QFT and controlled-phase rotations\n        qc.append(QFTGate(2 * m + 1).inverse(), y)\n\n        # Apply controlled-phase rotations for each qubit in y\n        for i in range(2 * m + 1):\n            angle = 2 * np.pi * (a ** k) / (L * 2**i)\n            qc.append(RZGate(angle).control(1), [x[0], y[i]])\n\n        # Apply QFT to complete the modular exponentiation\n        qc.append(QFTGate(2 * m + 1), y)\n\n        # Uncompute the X gates\n        for i, bit in enumerate(k_binary):\n            if bit == '1':\n                qc.x(i)\n\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_A1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.h(0)\n    qc.z(0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    qc.h(0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.h(0)\n    qc.x(0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.h(0)\n    qc.x(0)\n    qc.z(0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.h(0)\n    qc.z(0)\n    qc.s(0)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_A2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    m, k = QuantumRegister(1), QuantumRegister(n)\n    qc = QuantumCircuit(m, k)\n    qc.x(n)\n    qc.mcx(k, m, ctrl_state='0' * n)\n    qc.x(n)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    m, k = QuantumRegister(1), QuantumRegister(n)\n    qc = QuantumCircuit(m, k)\n    qc.h(m)\n    for i in range(n):\n        qc.cx(m, k[i])\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    m, k = QuantumRegister(1), QuantumRegister(n)\n    qc = QuantumCircuit(m, k)\n    qc.x(k[n-1])\n    qc.mcx(k, m, ctrl_state='0' * n)\n    qc.x(k[n-1])\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    m, k = QuantumRegister(1), QuantumRegister(n)\n    qc = QuantumCircuit(m, k)\n    qc.h(m)\n    qc.barrier()\n    qc.x(k[0])\n    qc.mcx(k, m)\n    qc.x(k[0])\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    m, k = QuantumRegister(1), QuantumRegister(n)\n    qc = QuantumCircuit(m, k)\n    qc.h(m)\n    qc.x(k)\n    qc.mcx(k, m)\n    qc.x(k)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_A3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    m, k = QuantumRegister(1), QuantumRegister(n)\n    qc = QuantumCircuit(m, k)\n\n    qc.x(m)\n    qc.mct(k, m)\n    qc.x(m)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    m, k = QuantumRegister(1), QuantumRegister(n)\n    qc = QuantumCircuit(m, k)\n\n    qc.cx(k, m)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    m, k = QuantumRegister(1), QuantumRegister(n)\n    qc = QuantumCircuit(m, k)\n\n    qc.x(k)\n    qc.mcx(k, m)\n    qc.x(k)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    m, k = QuantumRegister(1), QuantumRegister(n)\n    qc = QuantumCircuit(m, k)\n\n    qc.mcx(k, m)\n    qc.cx(m, k[0])\n    qc.mcx(k, m)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    m, k = QuantumRegister(1), QuantumRegister(n)\n    qc = QuantumCircuit(m, k)\n\n    qc.cx(k[0], m)\n    qc.x(k[0])\n\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_A4",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    for i in range(n):\n        qc.swap(n, i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    for i in range(n):\n        qc.cswap(n, i, 0)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    for i in range(n):\n        qc.cx(i, n)\n    for i in range(n):\n        qc.cx(i, n)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    for i in range(n):\n        qc.cx(i, n)\n    for i in range(n):\n        qc.cx(i, n)\n    qc.x(n)\n    for i in range(n):\n        qc.cx(i, n)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    for i in range(n):\n        qc.cx(i, n)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_A5",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.h(i)\n    for i in range(n):\n        qc.x(i)\n    for i in range(n):\n        qc.h(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.h(i)\n    for i in range(n):\n        qc.p(-2 * (i+1) * 3.141592653589793, i)\n    for i in range(n):\n        qc.h(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.h(i)\n    qc.barrier()\n    for i in range(n):\n        qc.p(-2 * (i+1) * 3.141592653589793, i)\n    qc.barrier()\n    for i in range(n):\n        qc.h(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.h(i)\n    qc.x(n-1)\n    qc.mcp(-2 * 3.141592653589793, list(range(n-1)), n-1)\n    qc.x(n-1)\n    for i in range(n):\n        qc.h(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.h(i)\n    qc.x(range(n))\n    for i in range(n):\n        qc.h(i)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_B1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import QFTGate\n\ndef solve(n: int, k_const: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Apply QFT\n    qc.append(QFTGate(n), range(n))\n    # Apply phase shift based on k_const\n    for i in range(n):\n        if (k_const >> i) & 1:\n            qc.z(i)\n    # Apply inverse QFT\n    qc.append(QFTGate(n).inverse(), range(n))\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, k_const: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        if (k_const >> i) & 1:\n            qc.x(i)\n    qc.mcx(list(range(n-1)), n-1)\n    for i in range(n):\n        if (k_const >> i) & 1:\n            qc.x(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import QFTGate\n\ndef solve(n: int, k_const: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Apply inverse QFT\n    qc.append(QFTGate(n).inverse(), range(n))\n    # Apply phase shift based on k_const\n    for i in range(n):\n        if (k_const >> i) & 1:\n            qc.z(i)\n    # Apply QFT\n    qc.append(QFTGate(n), range(n))\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import PhaseGate, HGate, SXGate\n\ndef solve(n: int, k_const: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.h(i)\n        for j in range(i+1, n):\n            qc.cp(2 * 3.141592653589793 / (2 ** (j - i)), j, i)\n    for i in range(n):\n        if (k_const >> i) & 1:\n            qc.p(3.141592653589793 / (2 ** (n - i)), i)\n    for i in range(n):\n        qc.h(i)\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, k_const: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.h(i)\n        for j in range(i+1, n):\n            qc.cp(2 * 3.141592653589793 / (2 ** (j - i)), j, i)\n    for i in range(n):\n        qc.p(3.141592653589793 * k_const / (2 ** n), i)\n    for i in range(n//2):\n        qc.swap(i, n-1-i)\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_B2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import XGate, RZGate, RYGate\n\n\ndef solve(n: int, m_left: int, k_left: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    # Write your code here:\n    # Create controlled phase gates for the oracle\n    for c in range(1, 2 ** (n - 1)):\n        qc.cp((-1) ** m_left * 2 * k_left * 2 * 3.141592653589793 / (2 ** n), 0, c + 1)\n\n    # Apply the X and R gates based on m_left and k_left\n    if m_left == 1:\n        qc.x(0)\n    if k_left != 0:\n        qc.rz(2 * 3.141592653589793 * k_left / (2 ** n), 0)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, m_left: int, k_left: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    # Write your code here:\n    m_prime = (m_left + k_left) % 2\n    k_prime = (k_left - k_left * ((-1) ** m_prime)) % (2 ** n)\n    for c in range(1, 2 ** (n - 1)):\n        qc.cp((-1) ** m_left * 2 * k_left * 3.141592653589793 / (2 ** n), 0, c + 1)\n    if m_left == 1:\n        qc.x(0)\n    if k_left != 0:\n        qc.rz(2 * 3.141592653589793 * k_left / (2 ** n), 0)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import XGate, RZGate\n\ndef solve(n: int, m_left: int, k_left: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    # First part of the state transformation\n    for c in range(1, 2 ** (n - 1)):\n        qc.cp((-1) ** m_left * 2 * k_left * 3.141592653589793 / (2 ** n), 0, c + 1)\n\n    # Apply X gate if m_left is 1\n    if m_left == 1:\n        qc.x(0)\n\n    # Apply RZ gate if k_left is not 0\n    if k_left != 0:\n        qc.rz(2 * 3.141592653589793 * k_left / (2 ** n), 0)\n\n    # Second part of the state transformation\n    for c in range(1, 2 ** (n - 1)):\n        qc.cp((-1) ** m_left * 2 * k_left * 3.141592653589793 / (2 ** n), 0, c + 1)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom math import pi\n\ndef solve(n: int, m_left: int, k_left: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n\n    # Apply controlled-phase gates for c in {1, ..., 2^(n-1)-1}\n    for c in range(1, 2 ** (n - 1)):\n        angle = (-1) ** m_left * 2 * k_left * pi / (2 ** n)\n        qc.cp(angle, 0, c + 1)\n\n    # Apply X gate if m_left == 1\n    if m_left == 1:\n        qc.x(0)\n\n    # Apply RZ gate if k_left != 0\n    if k_left != 0:\n        angle = 2 * pi * k_left / (2 ** n)\n        qc.rz(angle, 0)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom math import pi\n\ndef solve(n: int, m_left: int, k_left: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n\n    # Apply the X gate if m_left is 1\n    if m_left == 1:\n        qc.x(0)\n\n    # Apply the RZ gate if k_left is not 0\n    if k_left != 0:\n        qc.rz(2 * pi * k_left / (2 ** n), 0)\n\n    # Apply controlled-phase gates for c in {1, ..., 2^(n-1)-1}\n    for c in range(1, 2 ** (n - 1)):\n        angle = (-1) ** m_left * 2 * k_left * pi / (2 ** n)\n        qc.cp(angle, 0, c + 1)\n\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_B3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import XGate, RZGate\n\ndef solve(n: int, m_right: int, k_right: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    m_qubits = list(range(n - 1, -1, -1))\n    k_qubits = list(range(n - 2, -2, -1))\n    t_qubit = n\n\n    # Apply X^m_right to t_qubit\n    if m_right == 1:\n        qc.x(t_qubit)\n\n    # Apply R^(-1)^m_right k to k_qubits\n    if m_right == 0:\n        for i, qubit in enumerate(k_qubits):\n            if (k_right >> i) & 1:\n                qc.rz(-2 * 3.141592653589793 / (2 ** n), qubit)\n    else:\n        for i, qubit in enumerate(k_qubits):\n            if ((k_right >> i) & 1) ^ 1:\n                qc.rz(-2 * 3.141592653589793 / (2 ** n), qubit)\n\n    # Apply X^{m_right} R^{k_right} to t_qubit\n    if m_right == 1:\n        qc.rz(2 * 3.141592653589793 / (2 ** n), t_qubit)\n    if k_right > 0:\n        qc.cx(0, t_qubit)\n\n    # Apply X^m to t_qubit\n    if m_right == 0:\n        qc.x(t_qubit)\n\n    # Apply R^k to k_qubits\n    for i, qubit in enumerate(k_qubits):\n        if (k_right >> i) & 1:\n            qc.rz(2 * 3.141592653589793 / (2 ** n), qubit)\n\n    # Apply CNOTs to entangle t_qubit with k_qubits\n    for qubit in k_qubits:\n        qc.cx(qubit, t_qubit)\n\n    # Apply X^{m_right} R^{k_right} to t_qubit again\n    if m_right == 1:\n        qc.rz(2 * 3.141592653589793 / (2 ** n), t_qubit)\n    if k_right > 0:\n        qc.cx(0, t_qubit)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import XGate, RZGate\n\ndef solve(n: int, m_right: int, k_right: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    m_qubits = list(range(n - 1, -1, -1))\n    k_qubits = list(range(n - 2, -2, -1))\n    t_qubit = n\n\n    # Apply X^{m + m_right} to t_qubit\n    if (m_right + m_right) % 2 == 1:\n        qc.x(t_qubit)\n\n    # Apply R^{(-1)^{m_right} k + k_right} to k_qubits\n    k_prime = ((-1) ** m_right * k_right + k_right) % (2 ** n)\n    for i, qubit in enumerate(k_qubits):\n        if (k_prime >> i) & 1:\n            qc.rz(2 * 3.141592653589793 / (2 ** n), qubit)\n\n    # Entangle t_qubit with k_qubits\n    for qubit in k_qubits:\n        qc.cx(qubit, t_qubit)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import XGate, RZGate\n\ndef solve(n: int, m_right: int, k_right: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    m_qubits = list(range(n - 1, -1, -1))\n    k_qubits = list(range(n - 2, -2, -1))\n    t_qubit = n\n\n    m_prime = (m_right + m_right) % 2\n    k_prime = ((-1) ** m_right * k_right + k_right) % (2 ** n)\n\n    if m_prime == 1:\n        qc.x(t_qubit)\n\n    for i, qubit in enumerate(k_qubits):\n        if (k_prime >> i) & 1:\n            qc.rz(2 * 3.141592653589793 / (2 ** n), qubit)\n\n    for qubit in k_qubits:\n        qc.cx(qubit, t_qubit)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, m_right: int, k_right: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    t_qubit = n\n    k_qubits = list(range(n - 2, -2, -1))\n\n    # Apply X^{m + m_right} to t_qubit\n    if (m_right + m_right) % 2 == 1:\n        qc.x(t_qubit)\n\n    # Apply R^{(-1)^{m_right} k + k_right} to k_qubits\n    k_prime = ((-1) ** m_right * k_right + k_right) % (2 ** n)\n    for i, qubit in enumerate(k_qubits):\n        if (k_prime >> i) & 1:\n            qc.rz(2 * 3.141592653589793 / (2 ** n), qubit)\n\n    # Entangle t_qubit with k_qubits\n    for qubit in k_qubits:\n        qc.cx(qubit, t_qubit)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, m_right: int, k_right: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    t_qubit = n\n    k_qubits = list(range(n - 2, -2, -1))\n\n    # Calculate m' and k'\n    m_prime = (m_right + m_right) % 2\n    k_prime = ((-1) ** m_right * k_right + k_right) % (2 ** n)\n\n    # Apply X^{m'} to t_qubit\n    if m_prime == 1:\n        qc.x(t_qubit)\n\n    # Apply R^{k'} to k_qubits\n    for i, qubit in enumerate(k_qubits):\n        if (k_prime >> i) & 1:\n            qc.rz(2 * 3.141592653589793 / (2 ** n), qubit)\n\n    # Entangle t_qubit with k_qubits\n    for qubit in k_qubits:\n        qc.cx(qubit, t_qubit)\n\n    return qc",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_Ex",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, m_before: int, k_before: int, m_after: int, k_after: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n\n    for _ in range(k_before):\n        qc.mcx(list(range(n-1)), n-1)\n        qc.x(n-1)\n        qc.mcx(list(range(n-1)), n-1)\n        qc.x(n-1)\n    for _ in range(m_before):\n        for i in range(n//2):\n            qc.cx(i, n-1-i)\n        for i in range(n):\n            qc.x(i)\n    for _ in range(k):\n        qc.mcx(list(range(n-1)), n-1)\n        qc.x(n-1)\n        qc.mcx(list(range(n-1)), n-1)\n        qc.x(n-1)\n    for _ in range(m):\n        for i in range(n//2):\n            qc.cx(i, n-1-i)\n        for i in range(n):\n            qc.x(i)\n    for _ in range(k_after):\n        qc.mcx(list(range(n-1)), n-1)\n        qc.x(n-1)\n        qc.mcx(list(range(n-1)), n-1)\n        qc.x(n-1)\n    for _ in range(m_after):\n        for i in range(n//2):\n            qc.cx(i, n-1-i)\n        for i in range(n):\n            qc.x(i)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit import QuantumRegister\n\ndef solve(n: int, m_before: int, k_before: int, m_after: int, k_after: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    qr = QuantumRegister(n + 1, 'q')\n    qc.add_register(qr)\n\n    # Encode k_before and m_before\n    for i in range(n):\n        if (k_before >> i) & 1:\n            qc.x(qr[i])\n    if m_before == 1:\n        qc.x(qr[n])\n\n    # Encode k and m\n    for i in range(n):\n        if (k >> i) & 1:\n            qc.x(qr[i])\n    if m == 1:\n        qc.x(qr[n])\n\n    # Encode k_after and m_after\n    for i in range(n):\n        if (k_after >> i) & 1:\n            qc.x(qr[i])\n    if m_after == 1:\n        qc.x(qr[n])\n\n    # Controlled operations\n    for i in range(n):\n        qc.cx(qr[i], qr[n])\n    qc.mcx(qr[:n], qr[n])\n\n    # Uncompute\n    for i in range(n):\n        if (k_after >> i) & 1:\n            qc.x(qr[i])\n    if m_after == 1:\n        qc.x(qr[n])\n    for i in range(n):\n        if (k >> i) & 1:\n            qc.x(qr[i])\n    if m == 1:\n        qc.x(qr[n])\n    for i in range(n):\n        if (k_before >> i) & 1:\n            qc.x(qr[i])\n    if m_before == 1:\n        qc.x(qr[n])\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, m_before: int, k_before: int, m_after: int, k_after: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n\n    # Apply g(m_before, k_before)\n    for _ in range(k_before):\n        qc.mcx(list(range(n)), n)\n        qc.x(n)\n        qc.mcx(list(range(n)), n)\n        qc.x(n)\n    for _ in range(m_before):\n        for i in range(n//2):\n            qc.cx(i, n-1-i)\n        for i in range(n):\n            qc.x(i)\n\n    # Apply g(m, k)\n    for _ in range(k):\n        qc.mcx(list(range(n)), n)\n        qc.x(n)\n        qc.mcx(list(range(n)), n)\n        qc.x(n)\n    for _ in range(m):\n        for i in range(n//2):\n            qc.cx(i, n-1-i)\n        for i in range(n):\n            qc.x(i)\n\n    # Apply g(m_after, k_after)\n    for _ in range(k_after):\n        qc.mcx(list(range(n)), n)\n        qc.x(n)\n        qc.mcx(list(range(n)), n)\n        qc.x(n)\n    for _ in range(m_after):\n        for i in range(n//2):\n            qc.cx(i, n-1-i)\n        for i in range(n):\n            qc.x(i)\n\n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, m_before: int, k_before: int, m_after: int, k_after: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    \n    # Apply g(m_before, k_before)\n    for _ in range(k_before):\n        qc.mcx(list(range(n)), n)\n        qc.x(n)\n        qc.mcx(list(range(n)), n)\n        qc.x(n)\n    for _ in range(m_before):\n        for i in range(n // 2):\n            qc.cx(i, n - 1 - i)\n        for i in range(n):\n            qc.x(i)\n    \n    # Apply g(m, k)\n    for _ in range(k):\n        qc.mcx(list(range(n)), n)\n        qc.x(n)\n        qc.mcx(list(range(n)), n)\n        qc.x(n)\n    for _ in range(m):\n        for i in range(n // 2):\n            qc.cx(i, n - 1 - i)\n        for i in range(n):\n            qc.x(i)\n    \n    # Apply g(m_after, k_after)\n    for _ in range(k_after):\n        qc.mcx(list(range(n)), n)\n        qc.x(n)\n        qc.mcx(list(range(n)), n)\n        qc.x(n)\n    for _ in range(m_after):\n        for i in range(n // 2):\n            qc.cx(i, n - 1 - i)\n        for i in range(n):\n            qc.x(i)\n    \n    return qc",
+          "passed": false
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, m_before: int, k_before: int, m_after: int, k_after: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    qr = qc.qubits\n    \n    # Apply g(m_before, k_before)\n    for _ in range(k_before):\n        qc.mcx(qr[:n], qr[n])\n        qc.x(qr[n])\n        qc.mcx(qr[:n], qr[n])\n        qc.x(qr[n])\n    if m_before:\n        for i in range(n // 2):\n            qc.cx(qr[i], qr[n - 1 - i])\n        for i in range(n):\n            qc.x(qr[i])\n    \n    # Apply g(m, k)\n    for _ in range(k):\n        qc.mcx(qr[:n], qr[n])\n        qc.x(qr[n])\n        qc.mcx(qr[:n], qr[n])\n        qc.x(qr[n])\n    if m:\n        for i in range(n // 2):\n            qc.cx(qr[i], qr[n - 1 - i])\n        for i in range(n):\n            qc.x(qr[i])\n    \n    # Apply g(m_after, k_after)\n    for _ in range(k_after):\n        qc.mcx(qr[:n], qr[n])\n        qc.x(qr[n])\n        qc.mcx(qr[:n], qr[n])\n        qc.x(qr[n])\n    if m_after:\n        for i in range(n // 2):\n            qc.cx(qr[i], qr[n - 1 - i])\n        for i in range(n):\n            qc.x(qr[i])\n    \n    return qc",
+          "passed": false
+        }
+      ]
+    }
+  ]
+}

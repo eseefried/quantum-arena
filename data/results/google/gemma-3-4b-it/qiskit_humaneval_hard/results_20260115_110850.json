@@ -1,0 +1,5636 @@
+{
+  "benchmark": "qiskit_humaneval_hard",
+  "assistant": "google/gemma-3-4b-it",
+  "timestamp": "2026-01-15T11:08:50.978920",
+  "config": {
+    "num_samples": 5,
+    "temperature": 0.8
+  },
+  "raw_task_results": {
+    "qiskitHumanEval/0": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/1": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/2": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/3": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/4": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/5": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/6": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/7": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/8": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/9": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/10": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/11": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/12": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/13": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/14": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/15": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/16": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/17": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/18": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/19": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/20": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/21": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/22": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/23": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/24": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/25": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/26": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/27": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/28": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/29": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/30": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/31": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/32": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/33": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/34": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/35": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/36": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/37": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/38": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/39": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/40": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/41": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/42": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/43": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/44": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/45": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/46": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/47": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/48": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/49": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/50": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/51": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/52": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/53": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/54": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/55": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/56": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/57": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/58": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/59": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/60": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/61": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/62": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/63": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/64": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/65": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/66": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/67": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/68": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/69": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/70": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/71": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/72": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/73": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/74": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/75": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/76": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/77": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/78": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/79": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/80": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/81": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/82": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/83": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/84": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/85": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/86": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/87": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/88": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/89": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/90": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/91": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/92": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/93": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/94": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/95": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/96": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/97": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/98": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/99": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/100": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/101": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/102": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/103": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/104": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/105": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/106": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/107": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/108": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/109": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/110": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/111": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/112": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/113": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/114": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/115": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/116": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/117": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/118": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/119": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/120": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/121": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/122": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/123": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/124": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/125": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/126": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/127": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/128": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/129": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/130": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/131": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/132": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/133": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/134": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/135": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/136": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/137": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/138": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/139": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/140": [
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/141": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/142": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/143": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/144": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/145": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/146": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/147": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/148": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "qiskitHumanEval/149": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "qiskitHumanEval/150": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ]
+  },
+  "pass_at_k": {
+    "pass_at_k": {
+      "1": 0.001324503311258278,
+      "3": 0.003973509933774834,
+      "5": 0.006622516556291391
+    },
+    "statistics": {
+      "pass@1": {
+        "mean": 0.001324503311258278,
+        "std": 0.01622178637604754,
+        "min": 0.0,
+        "max": 0.19999999999999996,
+        "median": 0.0
+      },
+      "pass@3": {
+        "mean": 0.003973509933774834,
+        "std": 0.0486653591281426,
+        "min": 0.0,
+        "max": 0.6,
+        "median": 0.0
+      },
+      "pass@5": {
+        "mean": 0.006622516556291391,
+        "std": 0.0811089318802377,
+        "min": 0.0,
+        "max": 1.0,
+        "median": 0.0
+      }
+    },
+    "per_task": {
+      "qiskitHumanEval/0": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/1": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/5": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/6": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/7": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/8": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/9": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/10": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/11": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/12": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/13": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/14": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/15": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/16": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/17": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/18": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/19": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/20": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/21": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/22": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/23": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/24": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/25": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/26": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/27": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/28": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/29": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/30": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/31": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/32": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/33": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/34": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/35": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/36": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/37": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/38": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/39": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/40": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/41": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/42": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/43": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/44": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/45": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/46": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/47": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/48": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/49": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/50": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/51": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/52": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/53": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/54": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/55": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/56": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/57": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/58": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/59": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/60": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/61": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/62": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/63": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/64": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/65": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/66": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/67": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/68": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/69": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/70": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/71": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/72": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/73": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/74": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/75": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/76": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/77": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/78": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/79": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/80": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/81": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/82": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/83": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/84": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/85": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/86": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/87": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/88": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/89": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/90": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/91": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/92": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/93": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/94": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/95": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/96": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/97": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/98": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/99": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/100": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/101": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/102": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/103": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/104": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/105": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/106": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/107": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/108": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/109": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/110": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/111": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/112": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/113": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/114": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/115": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/116": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/117": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/118": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/119": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/120": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/121": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/122": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/123": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/124": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/125": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/126": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/127": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/128": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/129": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/130": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/131": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/132": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/133": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/134": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/135": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/136": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/137": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/138": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/139": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/140": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "qiskitHumanEval/141": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/142": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/143": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/144": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/145": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/146": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/147": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/148": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/149": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "qiskitHumanEval/150": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      }
+    },
+    "num_tasks": 151
+  },
+  "process_fidelity": {
+    "statistics": {},
+    "per_task": {},
+    "num_evaluated": 0
+  }
+}

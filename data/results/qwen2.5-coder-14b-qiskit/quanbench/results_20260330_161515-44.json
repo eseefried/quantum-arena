@@ -1,0 +1,1677 @@
+{
+  "benchmark": "quanbench",
+  "assistant": "qwen2.5-coder-14b-qiskit",
+  "timestamp": "2026-03-30T16:15:15.722669",
+  "config": {
+    "num_samples": 5,
+    "temperature": 0.8
+  },
+  "raw_task_results": {
+    "01": [
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "02": [
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "03": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "04": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "05": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "06": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "07": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "08": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "09": [
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "10": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "11": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "12": [
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "13": [
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "14": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "15": [
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "16": [
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "17": [
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "18": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "19": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "20": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "21": [
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "22": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "23": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "24": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "25": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": false,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "26": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "27": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "28": [
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "29": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "30": [
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "31": [
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "32": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "33": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "34": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "35": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "36": [
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "37": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "38": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "39": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "40": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "41": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      }
+    ],
+    "42": [
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": true,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "43": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ],
+    "44": [
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": true
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      },
+      {
+        "passed": false,
+        "process_fidelity": null,
+        "syntax_valid": true,
+        "runtime_error": false
+      }
+    ]
+  },
+  "pass_at_k": {
+    "pass_at_k": {
+      "1": 0.2772727272727273,
+      "3": 0.37045454545454537,
+      "5": 0.4090909090909091
+    },
+    "statistics": {
+      "pass@1": {
+        "mean": 0.2772727272727273,
+        "std": 0.3866309235878322,
+        "min": 0.0,
+        "max": 1.0,
+        "median": 0.0
+      },
+      "pass@3": {
+        "mean": 0.37045454545454537,
+        "std": 0.4575525530941503,
+        "min": 0.0,
+        "max": 1.0,
+        "median": 0.0
+      },
+      "pass@5": {
+        "mean": 0.4090909090909091,
+        "std": 0.4916660830178168,
+        "min": 0.0,
+        "max": 1.0,
+        "median": 0.0
+      }
+    },
+    "per_task": {
+      "01": {
+        "1": 0.8,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "02": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "03": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "04": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "05": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "06": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "07": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "08": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "09": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "10": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "11": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "12": {
+        "1": 0.6,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "13": {
+        "1": 0.8,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "14": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "15": {
+        "1": 0.4,
+        "3": 0.9,
+        "5": 1.0
+      },
+      "16": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "17": {
+        "1": 0.8,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "18": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "19": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "20": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "21": {
+        "1": 0.8,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "22": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "23": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "24": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "25": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "26": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "27": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "28": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "29": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "30": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "31": {
+        "1": 0.6,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "32": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "33": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "34": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "35": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "36": {
+        "1": 0.6,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "37": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "38": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "39": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "40": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "41": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "42": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "43": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "44": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      }
+    },
+    "num_tasks": 44
+  },
+  "process_fidelity": {
+    "statistics": {},
+    "per_task": {},
+    "num_evaluated": 0
+  }
+}

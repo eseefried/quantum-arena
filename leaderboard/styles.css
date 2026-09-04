@@ -1,0 +1,258 @@
+:root {
+  --bg: #f7f7f9;
+  --surface: #ffffff;
+  --border: #e2e2e6;
+  --text: #1a1a1e;
+  --text-muted: #6b6b72;
+  --accent: #4f46e5;
+  --accent-soft: #eef0ff;
+  --bar: #6366f1;
+  --bar-track: #eceefc;
+  --ci: #c7c9f5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16161a;
+    --surface: #1f1f24;
+    --border: #303038;
+    --text: #f0f0f2;
+    --text-muted: #9a9aa2;
+    --accent: #8b85f7;
+    --accent-soft: #26243f;
+    --bar: #8b85f7;
+    --bar-track: #2b2a3d;
+    --ci: #423f66;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+main {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+.page-header {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 48px 20px 8px;
+}
+
+.page-header h1 {
+  margin: 0 0 6px;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 28px 0 20px;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.control-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.segmented {
+  display: inline-flex;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.segmented button {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.segmented button:hover {
+  color: var(--text);
+}
+
+.segmented button.active {
+  background: var(--accent);
+  color: white;
+}
+
+.board-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.status {
+  padding: 32px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.board {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.board thead th {
+  text-align: left;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.board .col-rank { width: 40px; }
+.board .col-metric { width: 130px; }
+.board .col-bar { width: 160px; }
+.board .col-n { width: 70px; text-align: right; }
+
+.board tbody tr.row {
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.board tbody tr.row:hover {
+  background: var(--accent-soft);
+}
+
+.board tbody tr.row:last-child {
+  border-bottom: none;
+}
+
+.board td {
+  padding: 12px 16px;
+  vertical-align: middle;
+}
+
+.rank-num {
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.model-name {
+  font-weight: 600;
+}
+
+.metric-value {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.metric-ci {
+  display: block;
+  font-weight: 400;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.bar-track {
+  position: relative;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--bar-track);
+  overflow: hidden;
+}
+
+.bar-ci {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: var(--ci);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--bar);
+  border-radius: 4px;
+}
+
+.col-n {
+  text-align: right;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+tr.detail-row td {
+  background: var(--bg);
+  padding: 4px 16px 18px;
+}
+
+.detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin-top: 8px;
+}
+
+.detail-table th {
+  text-align: left;
+  color: var(--text-muted);
+  font-weight: 500;
+  padding: 4px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.detail-table td {
+  padding: 4px 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.detail-loading {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  padding: 4px 10px;
+}
+
+.footnote {
+  margin-top: 18px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.footnote code {
+  background: var(--accent-soft);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
