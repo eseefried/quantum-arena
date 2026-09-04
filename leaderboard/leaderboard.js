@@ -18,6 +18,7 @@
     details: null, // lazy-loaded
     view: "leaderboard",
     dataset: "Overall",
+    category: "All",
     metric: "pass_at_1",
     expanded: null, // model name currently expanded
   };
@@ -89,7 +90,69 @@
     return arr.reduce((a, b) => a + b, 0);
   }
 
+  // Category isn't part of leaderboard_summary.json (it's a per-task
+  // attribute), so any category filter other than "All" is aggregated here
+  // from leaderboard_details.json instead of the precomputed summary — same
+  // averaging the export script uses, just without confidence intervals
+  // (those are only computed for whole datasets).
+  function aggregateDetailRows(rows) {
+    const byModel = new Map();
+    for (const r of rows) {
+      if (!byModel.has(r.model)) byModel.set(r.model, { n: 0, sum1: 0, sum3: 0, n3: 0, sum5: 0, n5: 0 });
+      const a = byModel.get(r.model);
+      a.n += 1;
+      a.sum1 += r.pass_at_1;
+      if (r.pass_at_3 !== null && r.pass_at_3 !== undefined) {
+        a.sum3 += r.pass_at_3;
+        a.n3 += 1;
+      }
+      if (r.pass_at_5 !== null && r.pass_at_5 !== undefined) {
+        a.sum5 += r.pass_at_5;
+        a.n5 += 1;
+      }
+    }
+    const out = new Map();
+    for (const [model, a] of byModel) {
+      out.set(model, {
+        n_tasks: a.n,
+        pass_at_1: a.n > 0 ? a.sum1 / a.n : null,
+        pass_at_3: a.n3 > 0 ? a.sum3 / a.n3 : null,
+        pass_at_5: a.n5 > 0 ? a.sum5 / a.n5 : null,
+      });
+    }
+    return out;
+  }
+
+  function detailRowsFor(dataset, category) {
+    let rows = state.details || [];
+    if (dataset !== "Overall") rows = rows.filter((r) => r.dataset === dataset);
+    if (category !== "All") rows = rows.filter((r) => r.category === category);
+    return rows;
+  }
+
+  function categoriesForDataset(dataset) {
+    if (!state.details) return [];
+    const rows = dataset === "Overall" ? state.details : state.details.filter((r) => r.dataset === dataset);
+    return [...new Set(rows.map((r) => r.category))].sort();
+  }
+
   function rowsForCurrentDataset() {
+    if (state.category !== "All") {
+      const agg = aggregateDetailRows(detailRowsFor(state.dataset, state.category));
+      return [...agg.entries()].map(([model, a]) => ({
+        model,
+        n_tasks: a.n_tasks,
+        pass_at_1: a.pass_at_1,
+        pass_at_1_ci_lo: null,
+        pass_at_1_ci_hi: null,
+        pass_at_3: a.pass_at_3,
+        pass_at_3_ci_lo: null,
+        pass_at_3_ci_hi: null,
+        pass_at_5: a.pass_at_5,
+        pass_at_5_ci_lo: null,
+        pass_at_5_ci_hi: null,
+      }));
+    }
     if (state.dataset === "Overall") return overallRows();
     return state.summary.filter((r) => r.dataset === state.dataset);
   }
@@ -128,11 +191,30 @@
       btn.className = ds === state.dataset ? "active" : "";
       btn.addEventListener("click", () => {
         state.dataset = ds;
+        state.category = "All";
         state.expanded = null;
         renderTabs();
         renderCurrentView();
       });
       dsWrap.appendChild(btn);
+    }
+
+    const catOptions = ["All", ...categoriesForDataset(state.dataset)];
+    if (!catOptions.includes(state.category)) state.category = "All";
+
+    const catWrap = el("category-tabs");
+    catWrap.innerHTML = "";
+    for (const cat of catOptions) {
+      const btn = document.createElement("button");
+      btn.textContent = cat;
+      btn.className = cat === state.category ? "active" : "";
+      btn.addEventListener("click", () => {
+        state.category = cat;
+        state.expanded = null;
+        renderTabs();
+        renderCurrentView();
+      });
+      catWrap.appendChild(btn);
     }
   }
 
@@ -215,7 +297,7 @@
 
     if (rows.length === 0) {
       el("status").hidden = false;
-      el("status").textContent = "No results for this metric on this dataset yet.";
+      el("status").textContent = "No results for this metric/dataset/category combination yet.";
       el("board").hidden = true;
       return;
     }
@@ -266,7 +348,10 @@
 
     const datasetFilter = state.dataset === "Overall" ? null : state.dataset;
     const rows = details.filter(
-      (r) => r.model === model && (datasetFilter === null || r.dataset === datasetFilter)
+      (r) =>
+        r.model === model &&
+        (datasetFilter === null || r.dataset === datasetFilter) &&
+        (state.category === "All" || r.category === state.category)
     );
 
     const byCat = new Map();
@@ -366,11 +451,11 @@
     if (state.view !== "problems") return; // user switched views before this resolved
 
     const dataset = state.dataset;
-    const rows = details.filter((r) => r.dataset === dataset);
+    const rows = detailRowsFor(dataset, state.category);
     if (rows.length === 0) {
       el("problem-wrap").hidden = true;
       el("status").hidden = false;
-      el("status").textContent = "No per-problem results for this dataset yet.";
+      el("status").textContent = "No per-problem results for this dataset/category yet.";
       return;
     }
 
@@ -382,17 +467,19 @@
       byModel.get(r.model).set(r.task_id, r[state.metric]);
     }
 
-    const summaryByModel = new Map(state.summary.filter((r) => r.dataset === dataset).map((r) => [r.model, r]));
+    // Aggregated from the same (dataset + category)-filtered rows as the grid
+    // itself, so the Pass@k columns always match what the cells show.
+    const aggByModel = aggregateDetailRows(rows);
 
     const modelRows = [...byModel.entries()].map(([model, cells]) => {
-      const s = summaryByModel.get(model);
+      const a = aggByModel.get(model);
       return {
         model,
         cells,
-        sortVal: s ? s[state.metric] : null,
-        pass_at_1: s ? s.pass_at_1 : null,
-        pass_at_3: s ? s.pass_at_3 : null,
-        pass_at_5: s ? s.pass_at_5 : null,
+        sortVal: a ? a[state.metric] : null,
+        pass_at_1: a ? a.pass_at_1 : null,
+        pass_at_3: a ? a.pass_at_3 : null,
+        pass_at_5: a ? a.pass_at_5 : null,
       };
     });
     modelRows.sort((a, b) => (b.sortVal ?? -1) - (a.sortVal ?? -1));
@@ -450,7 +537,10 @@
     bindSortableHeader(el("board-head"));
     bindSortableHeader(el("problem-head"));
     try {
-      await loadSummary();
+      // Details are loaded eagerly (not just on row-expand) because the
+      // Category tabs and any category-filtered view need them up front.
+      await Promise.all([loadSummary(), loadDetails()]);
+      renderTabs();
       renderCurrentView();
     } catch (e) {
       el("status").textContent = "Could not load leaderboard_summary.json. Has export_leaderboard.py been run?";
