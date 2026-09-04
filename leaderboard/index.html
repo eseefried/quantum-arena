@@ -36,9 +36,15 @@
         <span class="control-label">Dataset</span>
         <div id="dataset-tabs" class="segmented"></div>
       </div>
-      <div class="control-group" role="tablist" aria-label="Category">
+      <div class="control-group">
         <span class="control-label">Category</span>
-        <div id="category-tabs" class="chip-row"></div>
+        <div class="dropdown" id="category-dropdown">
+          <button type="button" class="dropdown-toggle" id="category-toggle" aria-haspopup="listbox" aria-expanded="false">
+            <span id="category-toggle-label">All</span>
+            <span class="dropdown-caret" aria-hidden="true">&#9662;</span>
+          </button>
+          <ul class="dropdown-menu" id="category-menu" role="listbox" aria-label="Category" hidden></ul>
+        </div>
       </div>
     </section>
 

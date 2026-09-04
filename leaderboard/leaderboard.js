@@ -228,20 +228,71 @@
     const catOptions = ["All", ...categoriesForDataset(state.dataset)];
     if (!catOptions.includes(state.category)) state.category = "All";
 
-    const catWrap = el("category-tabs");
-    catWrap.innerHTML = "";
-    for (const cat of catOptions) {
-      const btn = document.createElement("button");
-      btn.textContent = cat === "All" ? "All" : categoryLabel(cat);
-      btn.className = cat === state.category ? "active" : "";
-      btn.addEventListener("click", () => {
-        state.category = cat;
-        state.expanded = null;
-        renderTabs();
-        renderCurrentView();
-      });
-      catWrap.appendChild(btn);
-    }
+    const menu = el("category-menu");
+    menu.innerHTML = catOptions
+      .map((cat) => {
+        const label = cat === "All" ? "All" : categoryLabel(cat);
+        const selected = cat === state.category;
+        return `<li class="dropdown-option${selected ? " selected" : ""}" role="option" tabindex="0" aria-selected="${selected}" data-value="${escapeHtml(cat)}">${escapeHtml(label)}</li>`;
+      })
+      .join("");
+    el("category-toggle-label").textContent = state.category === "All" ? "All" : categoryLabel(state.category);
+  }
+
+  function closeCategoryMenu() {
+    el("category-menu").hidden = true;
+    el("category-toggle").setAttribute("aria-expanded", "false");
+  }
+
+  function openCategoryMenu() {
+    el("category-menu").hidden = false;
+    el("category-toggle").setAttribute("aria-expanded", "true");
+  }
+
+  function selectCategory(cat) {
+    state.category = cat;
+    state.expanded = null;
+    closeCategoryMenu();
+    renderTabs();
+    renderCurrentView();
+  }
+
+  // Toggle button + option list are static/rebuilt-in-place like the other
+  // dropdowns on this page, so delegated listeners bound once in init()
+  // keep working across every re-render.
+  function bindCategoryDropdown() {
+    const toggle = el("category-toggle");
+    const menu = el("category-menu");
+
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (menu.hidden) openCategoryMenu();
+      else closeCategoryMenu();
+    });
+
+    menu.addEventListener("click", (e) => {
+      const opt = e.target.closest(".dropdown-option");
+      if (opt) selectCategory(opt.dataset.value);
+    });
+
+    menu.addEventListener("keydown", (e) => {
+      const opt = e.target.closest(".dropdown-option");
+      if (opt && (e.key === "Enter" || e.key === " ")) {
+        e.preventDefault();
+        selectCategory(opt.dataset.value);
+      }
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!el("category-dropdown").contains(e.target)) closeCategoryMenu();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !menu.hidden) {
+        closeCategoryMenu();
+        toggle.focus();
+      }
+    });
   }
 
   // Both tables' Pass@1/3/5 headers double as sort/rank controls and (in the
@@ -562,9 +613,10 @@
     renderTabs();
     bindSortableHeader(el("board-head"));
     bindSortableHeader(el("problem-head"));
+    bindCategoryDropdown();
     try {
       // Details are loaded eagerly (not just on row-expand) because the
-      // Category tabs and any category-filtered view need them up front.
+      // Category dropdown and any category-filtered view need them up front.
       await Promise.all([loadSummary(), loadDetails()]);
       renderTabs();
       renderCurrentView();
