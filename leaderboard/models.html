@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quantum Arena — Models</title>
+  <link rel="icon" type="image/jpeg" href="./assets/qsc-logo.jpeg" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="./index.html">
+        <span class="brand-logo-wrap"><img class="brand-logo" src="./assets/ornl-logo.png" alt="Oak Ridge National Laboratory" /></span>
+        <span class="brand-logo-wrap brand-logo-wrap--square"><img class="brand-logo brand-logo--square" src="./assets/qsc-logo.jpeg" alt="Quantum Science Center" /></span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a class="site-nav-link" href="./index.html">Arena</a>
+        <a class="site-nav-link active" href="./models.html">Models</a>
+      </nav>
+    </div>
+  </header>
+
+  <header class="page-header">
+    <h1>Models</h1>
+    <p class="subtitle">Provider, openness, and parameter counts for every model on the Arena leaderboard</p>
+  </header>
+
+  <main>
+    <section class="board-wrap">
+      <div id="status" class="status">Loading results…</div>
+      <table id="models-board" class="board models-board" hidden>
+        <thead>
+          <tr>
+            <th class="col-rank">#</th>
+            <th class="col-model">Model Name</th>
+            <th class="col-provider">Provider</th>
+            <th class="col-date">Rank Date</th>
+            <th class="col-open">Open</th>
+            <th class="col-params">Parameters</th>
+          </tr>
+        </thead>
+        <tbody id="models-body"></tbody>
+      </table>
+    </section>
+
+    <p class="footnote">
+      Rank is by Overall Pass@1 (task-weighted average across every dataset), the same default ranking used on the
+      Arena page. Rank Date is the most recent evaluation run recorded for that model. Provider/Open/Parameters
+      reflect the publicly known base model where identifiable; fine-tuned or custom variants built on top of a
+      base model, and rows marked "—", may need confirmation from whoever trained them. Generated from experiment
+      results by <code>scripts/export_leaderboard.py</code>.
+    </p>
+  </main>
+
+  <script src="./models.js"></script>
+
+  <!-- Cloudflare Web Analytics -->
+  <script
+    type="module"
+    src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "2cf05fab28254a7ca02fe173ff9916fa"}'>
+  </script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+</html>

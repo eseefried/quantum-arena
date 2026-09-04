@@ -41,6 +41,75 @@ main {
   padding: 0 20px 60px;
 }
 
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header-inner {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 4px 10px;
+}
+
+.brand-logo-wrap--square {
+  padding: 4px;
+}
+
+.brand-logo {
+  display: block;
+  height: 28px;
+  width: auto;
+}
+
+.brand-logo--square {
+  height: 28px;
+  width: 28px;
+}
+
+.site-nav {
+  display: flex;
+  gap: 4px;
+}
+
+.site-nav-link {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.site-nav-link:hover {
+  color: var(--text);
+  background: var(--accent-soft);
+}
+
+.site-nav-link.active {
+  color: white;
+  background: var(--accent);
+}
+
 .page-header {
   max-width: 880px;
   margin: 0 auto;
@@ -344,4 +413,14 @@ tr.detail-row td {
 
 .cell-empty {
   background: var(--bar-track);
+}
+
+.models-board .col-date,
+.models-board .col-open {
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.models-board .col-params {
+  color: var(--text-muted);
 }

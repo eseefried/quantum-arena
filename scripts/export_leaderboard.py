@@ -143,8 +143,15 @@ def load_task_metadata() -> dict[tuple[str, str], dict]:
     return lookup
 
 
-def collect_latest_result_files() -> tuple[dict[tuple[str, str], tuple[Path, dict, dict]], list[tuple[str, str]]]:
-    """One (path, data, samples) per (model, dataset), keeping the newest run."""
+def format_run_date(ts: str) -> str:
+    """'20260329_120510' -> '2026-03-29' (used as the Models page's Rank Date)."""
+    if len(ts) < 8:
+        return ""
+    return f"{ts[0:4]}-{ts[4:6]}-{ts[6:8]}"
+
+
+def collect_latest_result_files() -> tuple[dict[tuple[str, str], tuple[str, Path, dict, dict]], list[tuple[str, str]]]:
+    """One (timestamp, path, data, samples) per (model, dataset), keeping the newest run."""
     best: dict[tuple[str, str], tuple[str, Path, dict, dict]] = {}
     skipped: list[tuple[str, str]] = []
 
@@ -169,7 +176,7 @@ def collect_latest_result_files() -> tuple[dict[tuple[str, str], tuple[Path, dic
         if key not in best or ts > best[key][0]:
             best[key] = (ts, path, data, samples)
 
-    return {k: (v[1], v[2], v[3]) for k, v in best.items()}, skipped
+    return {k: (v[0], v[1], v[2], v[3]) for k, v in best.items()}, skipped
 
 
 def main() -> None:
@@ -178,8 +185,13 @@ def main() -> None:
 
     best_files, skipped = collect_latest_result_files()
 
+    model_last_run: dict[str, str] = {}
+
     detail_rows: list[dict] = []
-    for (model, dataset_label), (path, data, samples) in best_files.items():
+    for (model, dataset_label), (ts, path, data, samples) in best_files.items():
+        if ts > model_last_run.get(model, ""):
+            model_last_run[model] = ts
+
         per_task_pak = ((data.get("pass_at_k") or {}).get("per_task")) or {}
 
         for task_id, task_samples in samples.items():
@@ -240,6 +252,7 @@ def main() -> None:
         summary_rows.append({
             "model": model,
             "dataset": dataset_label,
+            "last_run": format_run_date(model_last_run.get(model, "")),
             "n_tasks": a["n"],
             "pass_at_1": a["sum1"] / a["n"] if a["n"] else None,
             "pass_at_1_ci_lo": lo1,

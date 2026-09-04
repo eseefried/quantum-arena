@@ -14,9 +14,12 @@ data/benchmarks/       task metadata (category / difficulty) used to enrich resu
 scripts/
   export_leaderboard.py   computes pass@k + reads confidence intervals, writes:
 leaderboard/
-  leaderboard_summary.json   one row per (model, dataset): pass@1/3/5, CI, task count
-  leaderboard_details.json   one row per (model, dataset, task): for the category drill-down
-  index.html / styles.css / leaderboard.js   the static site itself (reads the two JSON files)
+  leaderboard_summary.json   one row per (model, dataset): pass@1/3/5, CI, task count, last run date
+  leaderboard_details.json   one row per (model, dataset, task): for the category drill-down / problem view
+  index.html / leaderboard.js   the Arena page: leaderboard + per-problem heatmap (reads the two JSON files)
+  models.html / models.js    the Models page: provider/openness/parameter-count reference table
+  styles.css                 shared styling for both pages
+  assets/ornl-logo.png       logo shown in the shared top nav bar
 .github/workflows/leaderboard-pages.yml   runs the export script and deploys leaderboard/ to Pages
 ```
 
@@ -48,3 +51,7 @@ cd leaderboard && python3 -m http.server 8000
   subset of models; others show a plain point estimate with no shaded range.
 - A few models had more than one recorded run for the same dataset (e.g. reruns
   on different dates); the export script keeps only the most recent by timestamp.
+- The Models page's Provider/Open/Parameters columns are hand-maintained in
+  `leaderboard/models.js` (`MODEL_META`) since that metadata isn't part of any
+  benchmark result file. Fine-tuned/custom entries with unconfirmed specs show
+  "—"; update that table when adding a new model.

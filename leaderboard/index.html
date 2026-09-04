@@ -4,9 +4,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Quantum Arena</title>
+  <link rel="icon" type="image/jpeg" href="./assets/qsc-logo.jpeg" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="./index.html">
+        <span class="brand-logo-wrap"><img class="brand-logo" src="./assets/ornl-logo.png" alt="Oak Ridge National Laboratory" /></span>
+        <span class="brand-logo-wrap brand-logo-wrap--square"><img class="brand-logo brand-logo--square" src="./assets/qsc-logo.jpeg" alt="Quantum Science Center" /></span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a class="site-nav-link active" href="./index.html">Arena</a>
+        <a class="site-nav-link" href="./models.html">Models</a>
+      </nav>
+    </div>
+  </header>
+
   <header class="page-header">
     <h1>Quantum Arena</h1>
     <p class="subtitle">Benchmarking LLMs and quantum-specific coding assistants on Qiskit code generation</p>
