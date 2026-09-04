@@ -14,6 +14,10 @@
 
   <main>
     <section class="controls">
+      <div class="control-group" role="tablist" aria-label="View">
+        <span class="control-label">View</span>
+        <div id="view-tabs" class="segmented"></div>
+      </div>
       <div class="control-group" role="tablist" aria-label="Dataset">
         <span class="control-label">Dataset</span>
         <div id="dataset-tabs" class="segmented"></div>
@@ -38,11 +42,25 @@
         </thead>
         <tbody id="board-body"></tbody>
       </table>
+      <div id="problem-wrap" class="table-scroll" hidden>
+        <table id="problem-board" class="board problem-board">
+          <thead>
+            <tr id="problem-head"></tr>
+          </thead>
+          <tbody id="problem-body"></tbody>
+        </table>
+      </div>
     </section>
 
-    <p class="footnote">
+    <p id="leaderboard-footnote" class="footnote">
       Click a row to see its per-category breakdown. Shaded ranges are 95% confidence intervals where available.
       Generated from experiment results by <code>scripts/export_leaderboard.py</code>.
+    </p>
+    <p id="problem-footnote" class="footnote" hidden>
+      Each cell is colored by that model's pass rate on that problem (red = 0%, yellow = 50%, green = 100%); hover a
+      cell for the exact problem ID and value. Cost and Tokens are shown as N/A because the benchmark runs behind
+      this leaderboard don't record token usage or spend yet — those columns will populate automatically once that
+      data is captured. Generated from experiment results by <code>scripts/export_leaderboard.py</code>.
     </p>
   </main>
 

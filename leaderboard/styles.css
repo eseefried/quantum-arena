@@ -256,3 +256,78 @@ tr.detail-row td {
   padding: 1px 5px;
   border-radius: 4px;
 }
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.problem-board {
+  width: auto;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.problem-board th,
+.problem-board td {
+  padding: 7px 8px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.problem-board thead th {
+  position: sticky;
+  top: 0;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.72rem;
+  z-index: 1;
+}
+
+.problem-board .col-model,
+.problem-board .col-metric,
+.problem-board .col-cost,
+.problem-board .col-tokens {
+  text-align: left;
+}
+
+.problem-board .model-name {
+  font-weight: 600;
+}
+
+.problem-board .metric-value {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  text-align: left;
+}
+
+.problem-sticky {
+  position: sticky;
+  left: 0;
+  background: var(--surface);
+  z-index: 2;
+}
+
+.problem-board thead th.problem-sticky {
+  z-index: 3;
+}
+
+.col-task {
+  min-width: 22px;
+  width: 22px;
+  padding: 7px 2px;
+}
+
+.cell-task {
+  height: 26px;
+}
+
+.cell-empty {
+  background: var(--bar-track);
+}
+
+.muted {
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}

@@ -8,9 +8,15 @@
     { key: "pass_at_5", label: "Pass@5" },
   ];
 
+  const VIEWS = [
+    { key: "leaderboard", label: "Leaderboard" },
+    { key: "problems", label: "Problem View" },
+  ];
+
   const state = {
     summary: [],
     details: null, // lazy-loaded
+    view: "leaderboard",
     dataset: "Overall",
     metric: "pass_at_1",
     expanded: null, // model name currently expanded
@@ -91,9 +97,32 @@
   // ---- rendering ----
 
   function renderTabs() {
+    const viewWrap = el("view-tabs");
+    viewWrap.innerHTML = "";
+    for (const v of VIEWS) {
+      const btn = document.createElement("button");
+      btn.textContent = v.label;
+      btn.className = v.key === state.view ? "active" : "";
+      btn.addEventListener("click", () => {
+        state.view = v.key;
+        state.expanded = null;
+        renderTabs();
+        renderCurrentView();
+      });
+      viewWrap.appendChild(btn);
+    }
+
+    // The per-problem grid only makes sense within a single dataset, since
+    // task IDs/columns don't line up across datasets the way they do for a
+    // task-weighted "Overall" average.
+    const dsList = state.view === "problems" ? DATASETS.filter((d) => d !== "Overall") : DATASETS;
+    if (state.view === "problems" && state.dataset === "Overall") {
+      state.dataset = dsList[0];
+    }
+
     const dsWrap = el("dataset-tabs");
     dsWrap.innerHTML = "";
-    for (const ds of DATASETS) {
+    for (const ds of dsList) {
       const btn = document.createElement("button");
       btn.textContent = ds;
       btn.className = ds === state.dataset ? "active" : "";
@@ -101,7 +130,7 @@
         state.dataset = ds;
         state.expanded = null;
         renderTabs();
-        renderBoard();
+        renderCurrentView();
       });
       dsWrap.appendChild(btn);
     }
@@ -115,9 +144,22 @@
       btn.addEventListener("click", () => {
         state.metric = m.key;
         renderTabs();
-        renderBoard();
+        renderCurrentView();
       });
       metWrap.appendChild(btn);
+    }
+  }
+
+  function renderCurrentView() {
+    const isProblems = state.view === "problems";
+    el("leaderboard-footnote").hidden = isProblems;
+    el("problem-footnote").hidden = !isProblems;
+    if (isProblems) {
+      el("board").hidden = true;
+      renderProblemView();
+    } else {
+      el("problem-wrap").hidden = true;
+      renderBoard();
     }
   }
 
@@ -235,6 +277,131 @@
     container.replaceWith(table);
   }
 
+  // ---- problem view ----
+
+  // Splits into alternating digit/non-digit runs so "qiskitHumanEval/9" sorts
+  // before "qiskitHumanEval/10", and QCoder's mixed alnum IDs still get a
+  // stable, sensible order.
+  function naturalCompare(a, b) {
+    const pa = a.match(/(\d+|\D+)/g) || [];
+    const pb = b.match(/(\d+|\D+)/g) || [];
+    const len = Math.max(pa.length, pb.length);
+    for (let i = 0; i < len; i++) {
+      const x = pa[i] ?? "";
+      const y = pb[i] ?? "";
+      if (x === y) continue;
+      const xNum = /^\d+$/.test(x);
+      const yNum = /^\d+$/.test(y);
+      if (xNum && yNum) {
+        const diff = parseInt(x, 10) - parseInt(y, 10);
+        if (diff !== 0) return diff;
+      } else if (x < y) {
+        return -1;
+      } else {
+        return 1;
+      }
+    }
+    return 0;
+  }
+
+  // Red -> yellow -> green, matching the pass rate for one problem.
+  function heatColor(v) {
+    const stops = [
+      [0, [248, 113, 113]],
+      [0.5, [250, 204, 21]],
+      [1, [74, 222, 128]],
+    ];
+    const clamped = Math.max(0, Math.min(1, v));
+    let [loStop, hiStop] = [stops[0], stops[1]];
+    for (let i = 0; i < stops.length - 1; i++) {
+      if (clamped >= stops[i][0] && clamped <= stops[i + 1][0]) {
+        [loStop, hiStop] = [stops[i], stops[i + 1]];
+        break;
+      }
+    }
+    const span = hiStop[0] - loStop[0] || 1;
+    const t = (clamped - loStop[0]) / span;
+    const rgb = loStop[1].map((c, i) => Math.round(c + (hiStop[1][i] - c) * t));
+    return `rgb(${rgb.join(",")})`;
+  }
+
+  async function renderProblemView() {
+    el("status").hidden = true;
+
+    let details;
+    try {
+      details = await loadDetails();
+    } catch (e) {
+      el("problem-wrap").hidden = true;
+      el("status").hidden = false;
+      el("status").textContent = "Could not load leaderboard_details.json.";
+      console.error(e);
+      return;
+    }
+    if (state.view !== "problems") return; // user switched views before this resolved
+
+    const dataset = state.dataset;
+    const rows = details.filter((r) => r.dataset === dataset);
+    if (rows.length === 0) {
+      el("problem-wrap").hidden = true;
+      el("status").hidden = false;
+      el("status").textContent = "No per-problem results for this dataset yet.";
+      return;
+    }
+
+    const taskIds = [...new Set(rows.map((r) => r.task_id))].sort(naturalCompare);
+
+    const byModel = new Map();
+    for (const r of rows) {
+      if (!byModel.has(r.model)) byModel.set(r.model, new Map());
+      byModel.get(r.model).set(r.task_id, r[state.metric]);
+    }
+
+    const summaryByModel = new Map(state.summary.filter((r) => r.dataset === dataset).map((r) => [r.model, r]));
+
+    const modelRows = [...byModel.entries()].map(([model, cells]) => {
+      const s = summaryByModel.get(model);
+      const accuracy = s ? s[state.metric] : null;
+      return { model, accuracy, cells };
+    });
+    modelRows.sort((a, b) => (b.accuracy ?? -1) - (a.accuracy ?? -1));
+
+    const head = el("problem-head");
+    head.innerHTML = `
+      <th class="col-model problem-sticky">Model Name</th>
+      <th class="col-metric">Accuracy</th>
+      <th class="col-cost">Cost</th>
+      <th class="col-tokens">Tokens</th>
+      ${taskIds.map((tid, i) => `<th class="col-task" title="${escapeHtml(tid)}">${i + 1}</th>`).join("")}
+    `;
+
+    const body = el("problem-body");
+    body.innerHTML = modelRows
+      .map((row) => {
+        const cells = taskIds
+          .map((tid) => {
+            const v = row.cells.get(tid);
+            if (v === null || v === undefined) {
+              return `<td class="cell-task cell-empty" title="${escapeHtml(tid)}: no data"></td>`;
+            }
+            return `<td class="cell-task" style="background:${heatColor(v)}" title="${escapeHtml(tid)}: ${fmtPct(v)}"></td>`;
+          })
+          .join("");
+        return `
+          <tr>
+            <td class="model-name problem-sticky">${escapeHtml(row.model)}</td>
+            <td class="metric-value">${fmtPct(row.accuracy)}</td>
+            <td class="col-cost muted">N/A</td>
+            <td class="col-tokens muted">N/A</td>
+            ${cells}
+          </tr>
+        `;
+      })
+      .join("");
+
+    el("problem-wrap").hidden = false;
+  }
+
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, (c) => ({
       "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
@@ -251,7 +418,7 @@
     renderTabs();
     try {
       await loadSummary();
-      renderBoard();
+      renderCurrentView();
     } catch (e) {
       el("status").textContent = "Could not load leaderboard_summary.json. Has export_leaderboard.py been run?";
       console.error(e);
