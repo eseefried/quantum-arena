@@ -131,6 +131,7 @@ main {
 .controls {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 16px;
   margin: 28px 0 28px;
 }
