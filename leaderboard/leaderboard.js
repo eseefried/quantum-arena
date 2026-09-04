@@ -134,20 +134,25 @@
       });
       dsWrap.appendChild(btn);
     }
+  }
 
-    const metWrap = el("metric-tabs");
-    metWrap.innerHTML = "";
-    for (const m of METRICS) {
-      const btn = document.createElement("button");
-      btn.textContent = m.label;
-      btn.className = m.key === state.metric ? "active" : "";
-      btn.addEventListener("click", () => {
-        state.metric = m.key;
-        renderTabs();
-        renderCurrentView();
-      });
-      metWrap.appendChild(btn);
-    }
+  // Both tables' Pass@1/3/5 headers double as sort/rank controls and (in the
+  // problem grid) pick which metric colors the cells. #board's header is
+  // static and #problem-head is only ever rebuilt via innerHTML on the same
+  // <tr>, so one delegated listener per container survives every re-render.
+  function bindSortableHeader(container) {
+    container.addEventListener("click", (e) => {
+      const th = e.target.closest(".sortable");
+      if (!th) return;
+      state.metric = th.dataset.metric;
+      renderCurrentView();
+    });
+  }
+
+  function syncSortableHeaders(container) {
+    container.querySelectorAll(".sortable").forEach((th) => {
+      th.classList.toggle("active", th.dataset.metric === state.metric);
+    });
   }
 
   function renderCurrentView() {
@@ -163,7 +168,44 @@
     }
   }
 
+  // Renders one Pass@k cell; the currently-ranked-by metric also gets the
+  // bar-track visualization so it's obvious which column is driving order.
+  function renderMetricCell(row, metricKey, maxVal) {
+    const isActive = metricKey === state.metric;
+    const val = row[metricKey];
+    if (val === null || val === undefined) {
+      return `<td class="metric-value${isActive ? " metric-active" : ""}">—</td>`;
+    }
+
+    const ciLo = row[`${metricKey}_ci_lo`];
+    const ciHi = row[`${metricKey}_ci_hi`];
+    const ciText = fmtCi(ciLo, ciHi);
+
+    let bar = "";
+    if (isActive) {
+      const barPct = maxVal > 0 ? (val / maxVal) * 100 : 0;
+      const ciLeft = ciLo !== null && ciLo !== undefined && maxVal > 0 ? (ciLo / maxVal) * 100 : null;
+      const ciWidth = ciLo !== null && ciHi !== undefined && ciHi !== null && maxVal > 0
+        ? ((ciHi - ciLo) / maxVal) * 100
+        : 0;
+      bar = `
+        <div class="bar-track">
+          ${ciLeft !== null ? `<div class="bar-ci" style="left:${ciLeft}%;width:${ciWidth}%"></div>` : ""}
+          <div class="bar-fill" style="width:${barPct}%"></div>
+        </div>`;
+    }
+
+    return `
+      <td class="metric-value${isActive ? " metric-active" : ""}">
+        ${fmtPct(val)}${ciText ? `<span class="metric-ci">${ciText}</span>` : ""}
+        ${bar}
+      </td>
+    `;
+  }
+
   function renderBoard() {
+    syncSortableHeaders(el("board-head"));
+
     const rows = rowsForCurrentDataset()
       .filter((r) => r[state.metric] !== null && r[state.metric] !== undefined)
       .sort((a, b) => b[state.metric] - a[state.metric]);
@@ -186,27 +228,10 @@
       const tr = document.createElement("tr");
       tr.className = "row";
 
-      const val = row[state.metric];
-      const ciLo = row[`${state.metric}_ci_lo`];
-      const ciHi = row[`${state.metric}_ci_hi`];
-      const ciText = fmtCi(ciLo, ciHi);
-
-      const barPct = maxVal > 0 ? (val / maxVal) * 100 : 0;
-      const ciLeft = ciLo !== null && ciLo !== undefined && maxVal > 0 ? (ciLo / maxVal) * 100 : null;
-      const ciWidth = ciLo !== null && ciHi !== undefined && ciHi !== null && maxVal > 0
-        ? ((ciHi - ciLo) / maxVal) * 100
-        : 0;
-
       tr.innerHTML = `
         <td class="rank-num">${i + 1}</td>
         <td class="model-name">${escapeHtml(row.model)}</td>
-        <td class="metric-value">${fmtPct(val)}${ciText ? `<span class="metric-ci">${ciText}</span>` : ""}</td>
-        <td>
-          <div class="bar-track">
-            ${ciLeft !== null ? `<div class="bar-ci" style="left:${ciLeft}%;width:${ciWidth}%"></div>` : ""}
-            <div class="bar-fill" style="width:${barPct}%"></div>
-          </div>
-        </td>
+        ${METRICS.map((m) => renderMetricCell(row, m.key, maxVal)).join("")}
         <td class="col-n">${row.n_tasks}</td>
       `;
 
@@ -229,7 +254,7 @@
     const tr = document.createElement("tr");
     tr.className = "detail-row";
     const td = document.createElement("td");
-    td.colSpan = 5;
+    td.colSpan = 6;
     td.innerHTML = `<div class="detail-loading" data-model="${escapeHtml(model)}">Loading category breakdown…</div>`;
     tr.appendChild(td);
     return tr;
@@ -375,11 +400,10 @@
     const head = el("problem-head");
     head.innerHTML = `
       <th class="col-model problem-sticky">Model Name</th>
-      <th class="col-metric">Pass@1</th>
-      <th class="col-metric">Pass@3</th>
-      <th class="col-metric">Pass@5</th>
+      ${METRICS.map((m) => `<th class="col-metric sortable" data-metric="${m.key}">${m.label}</th>`).join("")}
       ${taskIds.map((tid, i) => `<th class="col-task" title="${escapeHtml(tid)}">${i + 1}</th>`).join("")}
     `;
+    syncSortableHeaders(head);
 
     const body = el("problem-body");
     body.innerHTML = modelRows
@@ -393,12 +417,13 @@
             return `<td class="cell-task" style="background:${heatColor(v)}" title="${escapeHtml(tid)}: ${fmtPct(v)}"></td>`;
           })
           .join("");
+        const metricCells = METRICS.map(
+          (m) => `<td class="metric-value${m.key === state.metric ? " metric-active" : ""}">${fmtPct(row[m.key])}</td>`
+        ).join("");
         return `
           <tr>
             <td class="model-name problem-sticky">${escapeHtml(row.model)}</td>
-            <td class="metric-value">${fmtPct(row.pass_at_1)}</td>
-            <td class="metric-value">${fmtPct(row.pass_at_3)}</td>
-            <td class="metric-value">${fmtPct(row.pass_at_5)}</td>
+            ${metricCells}
             ${cells}
           </tr>
         `;
@@ -422,6 +447,8 @@
 
   async function init() {
     renderTabs();
+    bindSortableHeader(el("board-head"));
+    bindSortableHeader(el("problem-head"));
     try {
       await loadSummary();
       renderCurrentView();

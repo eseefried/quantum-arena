@@ -22,21 +22,18 @@
         <span class="control-label">Dataset</span>
         <div id="dataset-tabs" class="segmented"></div>
       </div>
-      <div class="control-group" role="tablist" aria-label="Metric">
-        <span class="control-label">Metric</span>
-        <div id="metric-tabs" class="segmented"></div>
-      </div>
     </section>
 
     <section class="board-wrap">
       <div id="status" class="status">Loading results…</div>
       <table id="board" class="board" hidden>
         <thead>
-          <tr>
+          <tr id="board-head">
             <th class="col-rank">#</th>
             <th class="col-model">Model</th>
-            <th class="col-metric">Pass@k</th>
-            <th class="col-bar"></th>
+            <th class="col-metric sortable" data-metric="pass_at_1">Pass@1</th>
+            <th class="col-metric sortable" data-metric="pass_at_3">Pass@3</th>
+            <th class="col-metric sortable" data-metric="pass_at_5">Pass@5</th>
             <th class="col-n">Tasks</th>
           </tr>
         </thead>
@@ -53,13 +50,14 @@
     </section>
 
     <p id="leaderboard-footnote" class="footnote">
-      Click a row to see its per-category breakdown. Shaded ranges are 95% confidence intervals where available.
-      Generated from experiment results by <code>scripts/export_leaderboard.py</code>.
+      Click a Pass@k column header to rank by that metric. Click a row to see its per-category breakdown. Shaded
+      ranges are 95% confidence intervals where available. Generated from experiment results by
+      <code>scripts/export_leaderboard.py</code>.
     </p>
     <p id="problem-footnote" class="footnote" hidden>
-      Each cell is colored by the selected metric's pass rate on that problem (red = 0%, yellow = 50%, green = 100%);
-      hover a cell for the exact problem ID and value. Generated from experiment results by
-      <code>scripts/export_leaderboard.py</code>.
+      Click a Pass@k column header to rank by that metric and recolor the grid. Each cell is colored by that metric's
+      pass rate on that problem (red = 0%, yellow = 50%, green = 100%); hover a cell for the exact problem ID and
+      value. Generated from experiment results by <code>scripts/export_leaderboard.py</code>.
     </p>
   </main>
 

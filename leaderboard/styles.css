@@ -139,9 +139,25 @@ main {
 }
 
 .board .col-rank { width: 40px; }
-.board .col-metric { width: 130px; }
-.board .col-bar { width: 160px; }
+.board .col-metric { width: 150px; }
 .board .col-n { width: 70px; text-align: right; }
+
+.board th.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.board th.sortable:hover {
+  color: var(--text);
+}
+
+.board th.sortable.active {
+  color: var(--accent);
+}
+
+.board th.sortable.active::after {
+  content: " \25BE";
+}
 
 .board tbody tr.row {
   border-bottom: 1px solid var(--border);
@@ -183,10 +199,14 @@ main {
   font-variant-numeric: tabular-nums;
 }
 
+.metric-value .bar-track {
+  margin-top: 6px;
+}
+
 .bar-track {
   position: relative;
-  height: 8px;
-  border-radius: 4px;
+  height: 6px;
+  border-radius: 3px;
   background: var(--bar-track);
   overflow: hidden;
 }
