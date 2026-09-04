@@ -4,8 +4,8 @@
   --border: #e2e2e6;
   --text: #1a1a1e;
   --text-muted: #6b6b72;
-  --accent: #4f46e5;
-  --accent-soft: #eef0ff;
+  --accent: #31875a;
+  --accent-soft: #e9f6ef;
   --bar: #6366f1;
   --bar-track: #eceefc;
   --ci: #c7c9f5;
@@ -18,8 +18,8 @@
     --border: #303038;
     --text: #f0f0f2;
     --text-muted: #9a9aa2;
-    --accent: #8b85f7;
-    --accent-soft: #26243f;
+    --accent: #399364;
+    --accent-soft: #284837;
     --bar: #8b85f7;
     --bar-track: #2b2a3d;
     --ci: #423f66;
@@ -49,7 +49,7 @@ main {
 .site-header-inner {
   max-width: 880px;
   margin: 0 auto;
-  padding: 12px 20px;
+  padding: 16px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -60,30 +60,30 @@ main {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .brand-logo-wrap {
   display: inline-flex;
   align-items: center;
   background: #ffffff;
-  border-radius: 6px;
-  padding: 4px 10px;
+  border-radius: 8px;
+  padding: 8px 20px;
 }
 
 .brand-logo-wrap--square {
-  padding: 4px;
+  padding: 8px;
 }
 
 .brand-logo {
   display: block;
-  height: 28px;
+  height: 56px;
   width: auto;
 }
 
 .brand-logo--square {
-  height: 28px;
-  width: 28px;
+  height: 56px;
+  width: 56px;
 }
 
 .site-nav {
