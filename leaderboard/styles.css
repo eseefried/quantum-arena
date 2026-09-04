@@ -286,9 +286,7 @@ tr.detail-row td {
 }
 
 .problem-board .col-model,
-.problem-board .col-metric,
-.problem-board .col-cost,
-.problem-board .col-tokens {
+.problem-board .col-metric {
   text-align: left;
 }
 
@@ -325,9 +323,4 @@ tr.detail-row td {
 
 .cell-empty {
   background: var(--bar-track);
-}
-
-.muted {
-  color: var(--text-muted);
-  font-variant-numeric: tabular-nums;
 }

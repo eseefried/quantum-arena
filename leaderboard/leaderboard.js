@@ -361,17 +361,23 @@
 
     const modelRows = [...byModel.entries()].map(([model, cells]) => {
       const s = summaryByModel.get(model);
-      const accuracy = s ? s[state.metric] : null;
-      return { model, accuracy, cells };
+      return {
+        model,
+        cells,
+        sortVal: s ? s[state.metric] : null,
+        pass_at_1: s ? s.pass_at_1 : null,
+        pass_at_3: s ? s.pass_at_3 : null,
+        pass_at_5: s ? s.pass_at_5 : null,
+      };
     });
-    modelRows.sort((a, b) => (b.accuracy ?? -1) - (a.accuracy ?? -1));
+    modelRows.sort((a, b) => (b.sortVal ?? -1) - (a.sortVal ?? -1));
 
     const head = el("problem-head");
     head.innerHTML = `
       <th class="col-model problem-sticky">Model Name</th>
-      <th class="col-metric">Accuracy</th>
-      <th class="col-cost">Cost</th>
-      <th class="col-tokens">Tokens</th>
+      <th class="col-metric">Pass@1</th>
+      <th class="col-metric">Pass@3</th>
+      <th class="col-metric">Pass@5</th>
       ${taskIds.map((tid, i) => `<th class="col-task" title="${escapeHtml(tid)}">${i + 1}</th>`).join("")}
     `;
 
@@ -390,9 +396,9 @@
         return `
           <tr>
             <td class="model-name problem-sticky">${escapeHtml(row.model)}</td>
-            <td class="metric-value">${fmtPct(row.accuracy)}</td>
-            <td class="col-cost muted">N/A</td>
-            <td class="col-tokens muted">N/A</td>
+            <td class="metric-value">${fmtPct(row.pass_at_1)}</td>
+            <td class="metric-value">${fmtPct(row.pass_at_3)}</td>
+            <td class="metric-value">${fmtPct(row.pass_at_5)}</td>
             ${cells}
           </tr>
         `;
