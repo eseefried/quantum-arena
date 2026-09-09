@@ -73,6 +73,8 @@
       </div>
     </section>
 
+    <section id="problem-detail" class="problem-detail" aria-label="Problem inspection" hidden></section>
+
     <p id="leaderboard-footnote" class="footnote">
       Click a Pass@k column header to rank by that metric. Click a row to see its per-category breakdown. Shaded
       ranges are 95% confidence intervals where available. Generated from experiment results by
@@ -81,7 +83,7 @@
     <p id="problem-footnote" class="footnote" hidden>
       Click a Pass@k column header to rank by that metric and recolor the grid. Each cell is colored by that metric's
       pass rate on that problem (red = 0%, yellow = 50%, green = 100%); hover a cell for the exact problem ID and
-      value. Generated from experiment results by <code>scripts/export_leaderboard.py</code>.
+      value. Click a colored cell to inspect its prompt, reference solution, and model attempts. Generated from experiment results by <code>scripts/export_leaderboard.py</code>.
     </p>
   </main>
 

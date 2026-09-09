@@ -504,3 +504,40 @@ tr.detail-row td {
 .models-board .col-params {
   color: var(--text-muted);
 }
+
+/* Problem inspection stays outside the horizontally scrolling matrix. */
+.problem-board td.cell-task { padding: 0; }
+.problem-cell { display: block; width: 100%; min-width: 22px; height: 29px; border: 0; cursor: pointer; }
+.problem-cell[aria-pressed="true"] { box-shadow: inset 0 0 0 3px #1e4936, inset 0 0 0 5px white; }
+.problem-cell:focus-visible { outline: 3px solid #172d49; outline-offset: -3px; }
+.problem-detail { margin-top: 24px; padding: 24px; border: 1px solid var(--border); border-radius: 16px; background: var(--surface); box-shadow: 0 3px 12px #182a2010; }
+.problem-detail[hidden] { display: none; }
+.inspection-header { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 22px; }
+.inspection-header h2 { margin: 0 0 12px; font-size: 1.3rem; }
+.inspection-header p, .problem-navigation, .inspection-placeholder { font-size: .84rem; color: var(--text-muted); line-height: 1.6; }
+.inspection-header p { margin: 8px 0 0; }
+.inspection-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.inspection-chips span { padding: 4px 8px; border-radius: 6px; background: var(--bg); font-size: .72rem; overflow-wrap: anywhere; }
+.problem-navigation { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.problem-detail button { font: inherit; cursor: pointer; }
+.problem-navigation button { border: 1px solid var(--border); border-radius: 7px; padding: 7px 10px; background: var(--surface); color: var(--text); }
+.problem-navigation button:disabled { opacity: .4; cursor: default; }
+.problem-detail :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.inspection-columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.inspection-card { min-width: 0; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--bg); }
+.inspection-card h3 { margin: 0; padding: 14px; font-size: .88rem; border-bottom: 1px solid var(--border); background: var(--surface); }
+.inspection-card h3 small { float: right; color: var(--text-muted); font-size: .65rem; font-weight: 400; }
+.inspection-code, .inspection-prompt { margin: 0; padding: 16px; max-height: 480px; overflow: auto; font: .76rem/1.7 ui-monospace, SFMono-Regular, Consolas, monospace; tab-size: 4; }
+.inspection-prompt { white-space: pre-wrap; overflow-wrap: anywhere; }
+.attempt-tabs { display: flex; overflow-x: auto; padding: 10px; gap: 6px; background: var(--surface); }
+.attempt-tabs button { flex-shrink: 0; border: 1px solid var(--border); border-radius: 6px; padding: 7px 9px; font-size: .72rem; }
+.attempt-tabs button span { display: block; margin-top: 4px; font-size: .65rem; }
+.attempt-tabs [aria-selected="true"] { box-shadow: inset 0 0 0 2px currentColor; font-weight: 600; }
+.problem-detail .correct { background: #edf8f0; color: #24643c; }
+.problem-detail .incorrect { background: #fff0ef; color: #943e39; }
+.problem-detail .unknown { background: var(--bg); color: var(--text-muted); }
+.evaluation-result, .attempt-output details { margin: 0; padding: 12px 16px; border-top: 1px solid var(--border); font-size: .76rem; }
+.inspection-summary { margin-top: 18px; border-radius: 8px; padding: 14px 16px; font-size: .84rem; line-height: 1.6; }
+@media (min-width: 1100px) { .problem-detail { width: min(1240px, calc(100vw - 60px)); margin-left: calc((840px - min(1240px, 100vw - 60px)) / 2); } }
+@media (max-width: 760px) { .inspection-columns { grid-template-columns: 1fr; } .problem-detail { padding: 16px; } }
+@media (prefers-color-scheme: dark) { .problem-detail .correct { background: #203e2d; color: #b4dfc3; } .problem-detail .incorrect { background: #472b2c; color: #f0bdb9; } }

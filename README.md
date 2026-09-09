@@ -55,3 +55,11 @@ cd leaderboard && python3 -m http.server 8000
   `leaderboard/models.js` (`MODEL_META`) since that metadata isn't part of any
   benchmark result file. Fine-tuned/custom entries with unconfirmed specs show
   "—"; update that table when adding a new model.
+
+## QCoder judge provenance
+
+The LLaMA-3.1-8B run dated 2026-09-09 contains 67 tasks with five samples
+each, judged by `claude-sonnet-4-6`. Earlier QCoder runs used
+`claude-sonnet-4-20250514`; comparisons therefore span different judge versions.
+The new runner uses structured PASS/FAIL verdicts. The raw result file preserves
+the judge model at both run and sample level. Earlier results have not been rejudged.

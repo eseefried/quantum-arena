@@ -46,6 +46,9 @@
     dataset: "Overall",
     category: "All",
     metric: "pass_at_1",
+    selected: null,
+    attempt: 0,
+    content: new Map(),
     expanded: null, // model name currently expanded
   };
 
@@ -316,6 +319,7 @@
 
   function renderCurrentView() {
     const isProblems = state.view === "problems";
+    el("problem-detail").hidden = true;
     el("leaderboard-footnote").hidden = isProblems;
     el("problem-footnote").hidden = !isProblems;
     if (isProblems) {
@@ -578,7 +582,7 @@
             if (v === null || v === undefined) {
               return `<td class="cell-task cell-empty" title="${escapeHtml(tid)}: no data"></td>`;
             }
-            return `<td class="cell-task" style="background:${heatColor(v)}" title="${escapeHtml(tid)}: ${fmtPct(v)}"></td>`;
+            return `<td class="cell-task"><button type="button" class="problem-cell" style="background:${heatColor(v)}" data-model="${escapeHtml(row.model)}" data-task="${escapeHtml(tid)}" title="${escapeHtml(tid)}: ${fmtPct(v)}" aria-label="${escapeHtml(row.model)}, ${escapeHtml(tid)}, ${state.metric.replaceAll('_', ' ')}: ${fmtPct(v)}" aria-controls="problem-detail" aria-pressed="false"></button></td>`;
           })
           .join("");
         const metricCells = METRICS.map(
@@ -595,6 +599,92 @@
       .join("");
 
     el("problem-wrap").hidden = false;
+    if (state.selected && !rows.some((r) => r.dataset === state.selected.dataset && r.model === state.selected.model && r.task_id === state.selected.task_id)) state.selected = null;
+    renderProblemDetail();
+  }
+
+  async function selectProblem(model, task) {
+    state.selected = detailRowsFor(state.dataset, state.category).find((r) => r.model === model && r.task_id === task);
+    state.attempt = 0;
+    const dataset = state.dataset;
+    if (!state.content.has(dataset)) {
+      const request = fetch(`./problem_content/${encodeURIComponent(dataset)}.json`)
+        .then((res) => { if (!res.ok) throw new Error("Content unavailable"); return res.json(); });
+      state.content.set(dataset, request);
+      renderProblemDetail();
+      try { state.content.set(dataset, await request); }
+      catch { state.content.delete(dataset); }
+    }
+    renderProblemDetail();
+  }
+
+  function renderProblemDetail() {
+    const panel = el("problem-detail");
+    panel.hidden = state.view !== "problems" || el("problem-wrap").hidden;
+    document.querySelectorAll(".problem-cell").forEach((button) => {
+      button.setAttribute("aria-pressed", String(!!state.selected && button.dataset.model === state.selected.model && button.dataset.task === state.selected.task_id));
+    });
+    const row = state.selected;
+    if (!row) {
+      panel.innerHTML = '<p class="inspection-placeholder">Select a problem cell to inspect the prompt, reference solution, and model outputs.</p>';
+      return;
+    }
+    const content = state.content.get(row.dataset);
+    const task = content?.tasks?.[row.task_id] || row;
+    const attempts = content?.models?.[row.model]?.[row.task_id] || row.attempts || [];
+    const attempt = attempts[state.attempt] || {};
+    const status = (a) => a.passed === true ? ["correct", "✓ Correct"] : a.passed === false ? ["incorrect", "× Incorrect"] : ["unknown", "— Unavailable"];
+    const [tone, label] = status(attempt);
+    const tasks = [...new Set(detailRowsFor(row.dataset, state.category).map((r) => r.task_id))].sort(naturalCompare);
+    const index = tasks.indexOf(row.task_id);
+    const available = detailRowsFor(row.dataset, state.category).filter((r) => r.model === row.model && r[state.metric] != null).map((r) => r.task_id).sort(naturalCompare);
+    const position = available.indexOf(row.task_id);
+    const code = (value, fallback) => `<pre class="inspection-code" tabindex="0"><code>${escapeHtml(value || fallback)}</code></pre>`;
+    panel.innerHTML = `
+      <header class="inspection-header">
+        <div><h2 id="inspection-title">Problem ${index + 1}</h2>
+          <div class="inspection-chips">${[datasetLabel(row.dataset), row.task_id, row.category && categoryLabel(row.category), row.difficulty].filter(Boolean).map((v) => `<span>${escapeHtml(v)}</span>`).join("")}</div>
+          <p>Selected from: <strong>${escapeHtml(row.model)}</strong></p>
+          <p>Result: ${row.n_passed ?? "—"} of ${row.n_samples ?? "—"} attempts passed · ${METRICS.find((m) => m.key === state.metric).label}: ${fmtPct(row[state.metric])}</p>
+        </div>
+        <nav class="problem-navigation" aria-label="Problem navigation">
+          <button type="button" data-step="-1" ${position <= 0 ? "disabled" : ""}>← Previous problem</button>
+          <span>Problem ${index + 1} of ${tasks.length}</span>
+          <button type="button" data-step="1" ${position < 0 || position >= available.length - 1 ? "disabled" : ""}>Next problem →</button>
+        </nav>
+      </header>
+      <div class="inspection-columns">
+        <section class="inspection-card"><h3>Problem Prompt</h3><pre class="inspection-prompt" tabindex="0">${escapeHtml(task.prompt || "Problem prompt unavailable.")}</pre></section>
+        <section class="inspection-card"><h3>Canonical Solution <small>Python</small></h3>${code(task.canonical_solution, "Canonical solution unavailable.")}</section>
+        <section class="inspection-card"><h3>Model Outputs</h3>
+          <div class="attempt-tabs" role="tablist" aria-label="Model attempts">${Array.from({length: 5}, (_, i) => {
+            const [t, l] = status(attempts[i] || {});
+            return `<button type="button" role="tab" id="attempt-tab-${i}" aria-controls="attempt-output" aria-selected="${i === state.attempt}" tabindex="${i === state.attempt ? 0 : -1}" data-attempt="${i}" class="${t}">Attempt ${i + 1}<span>${l}</span></button>`;
+          }).join("")}</div>
+          <div id="attempt-output" role="tabpanel" aria-labelledby="attempt-tab-${state.attempt}" tabindex="0" class="attempt-output ${tone}">
+            ${code(attempt.code || attempt.output, "No output available for this attempt.")}
+            <p class="evaluation-result">${label}: ${attempt.runtime_error ? "Execution error" : attempt.syntax_valid === false ? "Syntax error" : attempt.passed === true ? "Passed evaluation" : attempt.passed === false ? "Failed evaluation" : "Evaluation unavailable"}</p>
+            ${attempt.logs ? `<details><summary>Evaluation details</summary>${code(attempt.logs, "")}</details>` : ""}
+          </div>
+        </section>
+      </div>
+      <div class="inspection-summary ${tone}" role="status">${attempt.passed === true ? "✓ This model’s attempt correctly solves the problem." : attempt.passed === false ? "× This model’s attempt does not solve the problem. The generated output failed evaluation." : content instanceof Promise ? "Loading problem content…" : "Evaluation data is unavailable for this attempt."}</div>`;
+    panel.querySelectorAll("[data-step]").forEach((button) => button.addEventListener("click", () => {
+      selectProblem(row.model, available[position + Number(button.dataset.step)]);
+      (panel.querySelector(`[data-step="${button.dataset.step}"]:not(:disabled)`) || panel.querySelector('[data-step]:not(:disabled)'))?.focus();
+    }));
+    const activate = (i) => {
+      state.attempt = i;
+      renderProblemDetail();
+      el(`attempt-tab-${i}`).focus();
+    };
+    panel.querySelectorAll("[data-attempt]").forEach((button) => {
+      button.addEventListener("click", () => activate(Number(button.dataset.attempt)));
+      button.addEventListener("keydown", (event) => {
+        const next = {ArrowRight: (state.attempt + 1) % 5, ArrowLeft: (state.attempt + 4) % 5, Home: 0, End: 4}[event.key];
+        if (next !== undefined) { event.preventDefault(); activate(next); }
+      });
+    });
   }
 
   function escapeHtml(s) {
@@ -614,6 +704,10 @@
     bindSortableHeader(el("board-head"));
     bindSortableHeader(el("problem-head"));
     bindCategoryDropdown();
+    el("problem-body").addEventListener("click", (event) => {
+      const button = event.target.closest(".problem-cell");
+      if (button) selectProblem(button.dataset.model, button.dataset.task);
+    });
     try {
       // Details are loaded eagerly (not just on row-expand) because the
       // Category dropdown and any category-filtered view need them up front.
