@@ -27,7 +27,7 @@
   </header>
 
   <main>
-    <section class="board-wrap">
+    <section class="board-wrap models-wrap">
       <div id="status" class="status">Loading results…</div>
       <table id="models-board" class="board models-board" hidden>
         <thead>
@@ -36,8 +36,9 @@
             <th class="col-model">Model Name</th>
             <th class="col-provider">Provider</th>
             <th class="col-date">Rank Date</th>
-            <th class="col-open">Open</th>
+            <th class="col-open">Open weights</th>
             <th class="col-params">Parameters</th>
+            <th class="col-source">Hugging Face</th>
           </tr>
         </thead>
         <tbody id="models-body"></tbody>
@@ -45,10 +46,9 @@
     </section>
 
     <p class="footnote">
-      Rank is by Overall Pass@1 (task-weighted average across every dataset), the same default ranking used on the
-      Arena page. Rank Date is the most recent evaluation run recorded for that model. Provider/Open/Parameters
-      reflect the publicly known base model where identifiable; fine-tuned or custom variants built on top of a
-      base model, and rows marked "—", may need confirmation from whoever trained them.
+      Models are ranked by Overall Pass@1. Rank Date shows the latest evaluation run.
+      Model cards provide published parameter counts and model details. A dash means the information
+      or exact checkpoint link is unconfirmed; undisclosed parameter counts are not publicly available.
     </p>
   </main>
 
