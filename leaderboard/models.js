@@ -17,12 +17,12 @@
     "LLaMA-4-Scout-17B": { provider: "Meta", open: true, parameters: "17B active / 109B total (MoE)" },
     "Mistral-7B-Instruct-v0.3": { provider: "Mistral AI", open: true, parameters: "7B", huggingFace: "mistralai/Mistral-7B-Instruct-v0.3" },
     "Mistral-3.2-24B-Qiskit": { provider: "Mistral AI (fine-tuned)", open: true, parameters: "24B", huggingFace: "Qiskit/mistral-small-3.2-24b-qiskit" },
-    "Mistral3-Qiskit": { provider: "Mistral AI (fine-tuned)", open: true, parameters: "24B (default)", huggingFace: "Qiskit/mistral-small-3.2-24b-qiskit", linkLabel: "Default model" },
-    "Qwen2.5-Coder-Qiskit": { provider: "Alibaba (fine-tuned)", open: true, parameters: "14.7B (default)", huggingFace: "Qiskit/Qwen2.5-Coder-14B-Qiskit", linkLabel: "Default model" },
+    "Mistral3-Qiskit": { provider: "Mistral AI (fine-tuned)", open: true, parameters: "24B", huggingFace: "Qiskit/mistral-small-3.2-24b-qiskit" },
+    "Qwen2.5-Coder-Qiskit": { provider: "Alibaba (fine-tuned)", open: true, parameters: "14.7B", huggingFace: "Qiskit/Qwen2.5-Coder-14B-Qiskit" },
     "Qwen2.5-Coder-14B-Qiskit": { provider: "Alibaba (fine-tuned)", open: true, parameters: "14.7B", huggingFace: "Qiskit/Qwen2.5-Coder-14B-Qiskit" },
     "Granite-8B-Qiskit": { provider: "IBM (fine-tuned)", open: true, parameters: "8B", huggingFace: "Qiskit/granite-8b-qiskit" },
     "Granite-3.2-8B-Qiskit": { provider: "IBM (fine-tuned)", open: true, parameters: "8B", huggingFace: "Qiskit/granite-3.2-8b-qiskit" },
-    "Quantum RAG": { provider: "Custom (Granite + retrieval)", open: true, parameters: "8B generator (default)", huggingFace: "Qiskit/granite-3.2-8b-qiskit", linkLabel: "Default generator" },
+    "Quantum RAG": { provider: "Custom (Granite + retrieval)", open: true, parameters: "8B generator", huggingFace: "Qiskit/granite-3.2-8b-qiskit" },
   };
 
   const DEFAULT_META = { provider: "—", open: null, parameters: "—" };
@@ -93,7 +93,7 @@
             <td class="col-open">${fmtOpen(meta.open)}</td>
             <td class="col-params">${escapeHtml(meta.parameters)}</td>
             <td class="col-source">${meta.huggingFace
-              ? `<a class="model-source-link" href="https://huggingface.co/${escapeHtml(meta.huggingFace)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(row.model)} on Hugging Face (opens in a new tab)">${escapeHtml(meta.linkLabel || "Model card")} ↗</a>`
+              ? `<a class="model-source-link" href="https://huggingface.co/${escapeHtml(meta.huggingFace)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(row.model)} on Hugging Face (opens in a new tab)">Model card ↗</a>`
               : "—"}</td>
           </tr>
         `;
