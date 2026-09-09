@@ -19,6 +19,7 @@ def task_content():
         'QiskitHumanEvalHard': 'dataset_qiskit_test_human_eval_hard.json',
         'QuanBench44': 'QuanBench44_categorized.jsonl',
         'QuanBench117': 'QuanBench117_categorized.jsonl',
+        'QCoder': 'QCoder_prompts.json',
     }
     for dataset, filename in files.items():
         path = source.BENCHMARKS_ROOT / filename

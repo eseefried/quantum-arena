@@ -56,6 +56,9 @@ MODEL_DISPLAY_NAMES = {
     "quantum-rag": "Quantum RAG",
 }
 
+# Excluded from the published leaderboard because generated code is unavailable.
+EXCLUDED_MODELS = {"LLaMA-4-Scout-17B"}
+
 TS_RE = re.compile(r"(\d{8}_\d{6})")
 
 
@@ -170,6 +173,8 @@ def collect_latest_result_files() -> tuple[dict[tuple[str, str], tuple[str, Path
 
         raw_assistant = data.get("assistant") or ""
         model = clean_model_name(raw_assistant)
+        if model in EXCLUDED_MODELS:
+            continue
 
         key = (model, dataset_label)
         ts = parse_timestamp(path)
