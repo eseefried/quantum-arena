@@ -191,6 +191,33 @@ def main() -> None:
 
     best_files, skipped = collect_latest_result_files()
 
+    # Publish only models with complete recorded coverage for all five datasets.
+    expected_tasks = {
+        "QiskitHumanEval": 151, "QiskitHumanEvalHard": 151,
+        "QuanBench44": 44, "QuanBench117": 117, "QCoder": 67,
+    }
+    eligible = set()
+    for model in sorted({model for model, _ in best_files}):
+        missing = []
+        for dataset, count in expected_tasks.items():
+            run = best_files.get((model, dataset))
+            if run is None:
+                missing.append(dataset)
+                continue
+            _, _, data, samples = run
+            if (len(samples) != count or any(
+                not isinstance(values, list) or len(values) != 5
+                or any(not isinstance(sample, dict)
+                       or not isinstance(sample.get("passed"), bool) for sample in values)
+                for values in samples.values()
+            )):
+                missing.append(dataset + " (incomplete samples)")
+        if missing:
+            print(f"Excluded {model}: {', '.join(missing)}")
+        else:
+            eligible.add(model)
+    best_files = {key: value for key, value in best_files.items() if key[0] in eligible}
+
     model_last_run: dict[str, str] = {}
 
     detail_rows: list[dict] = []

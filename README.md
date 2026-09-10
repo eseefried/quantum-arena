@@ -67,3 +67,16 @@ the judge model at both run and sample level. Earlier results have not been reju
 Gemini 3.6 Flash now has saved results for all five datasets (2026-09-09).
 Its QCoder run also uses `claude-sonnet-4-6`; older Gemini IDs remain separate.
 See [models.md](models.md) for the model registry and change history.
+
+## Complete-model publication policy
+
+Arena publishes only models with all five datasets: HumanEval Standard (151),
+HumanEval Hard (151), QuanBench44 (44), QuanBench117 (117), and QCoder (67),
+with five samples and boolean verdicts per task. Both summary and detail exports
+use this filter. Missing coverage is printed during export. Completion describes
+recorded coverage, not correctness or freedom from evaluation-environment errors.
+Aliases are not merged without checkpoint verification.
+
+Gemini 2.0 Flash was removed from active leaderboard inputs on 2026-09-10;
+its QCoder files are preserved in `data/archived_results/gemini-2.0-flash/`.
+Other incomplete models retain their source files but are hidden by the filter.
