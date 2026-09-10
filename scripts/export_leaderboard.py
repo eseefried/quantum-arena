@@ -41,6 +41,7 @@ MODEL_DISPLAY_NAMES = {
     "gpt-5": "GPT-5",
     "claude-opus-4-6": "Claude Opus 4.6",
     "gemini-3-flash-preview": "Gemini 3 Flash",
+    "gemini-3.6-flash": "Gemini 3.6 Flash",
     "gemini-2.0-flash": "Gemini 2.0 Flash",
     "google/gemma-3-4b-it": "Gemma-3-4B-IT",
     "meta-llama/llama-3.1-8b": "LLaMA-3.1-8B",

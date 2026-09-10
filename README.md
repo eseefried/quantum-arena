@@ -63,3 +63,7 @@ each, judged by `claude-sonnet-4-6`. Earlier QCoder runs used
 `claude-sonnet-4-20250514`; comparisons therefore span different judge versions.
 The new runner uses structured PASS/FAIL verdicts. The raw result file preserves
 the judge model at both run and sample level. Earlier results have not been rejudged.
+
+Gemini 3.6 Flash now has saved results for all five datasets (2026-09-09).
+Its QCoder run also uses `claude-sonnet-4-6`; older Gemini IDs remain separate.
+See [models.md](models.md) for the model registry and change history.

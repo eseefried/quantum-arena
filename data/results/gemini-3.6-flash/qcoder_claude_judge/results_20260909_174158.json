@@ -1,0 +1,2390 @@
+{
+  "assistant": "gemini-3.6-flash",
+  "judge_model": "claude-sonnet-4-6",
+  "timestamp": "20260909_174158",
+  "config": {
+    "num_samples": 5,
+    "temperature": 0.8,
+    "max_tokens": 2048
+  },
+  "pass_at_k": {
+    "pass_at_k": {
+      "1": 0.23283582089552235,
+      "3": 0.41194029850746267,
+      "5": 0.5074626865671642
+    },
+    "statistics": {
+      "pass@1": {
+        "mean": 0.23283582089552235,
+        "std": 0.30438980296603113,
+        "min": 0.0,
+        "max": 1.0,
+        "median": 0.19999999999999996
+      },
+      "pass@3": {
+        "mean": 0.41194029850746267,
+        "std": 0.4258520477642271,
+        "min": 0.0,
+        "max": 1.0,
+        "median": 0.6
+      },
+      "pass@5": {
+        "mean": 0.5074626865671642,
+        "std": 0.49994430520729033,
+        "min": 0.0,
+        "max": 1.0,
+        "median": 1.0
+      }
+    },
+    "per_task": {
+      "QPC001_A1": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "QPC001_A2": {
+        "1": 0.8,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "QPC001_A3": {
+        "1": 0.8,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "QPC001_A4": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "QPC001_A5": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "QPC001_B1": {
+        "1": 0.8,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "QPC001_B2": {
+        "1": 0.6,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "QPC001_B3": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "QPC001_B4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC001_C1": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "QPC001_C2": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "QPC002_A1": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_A2": {
+        "1": 0.8,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "QPC002_A3": {
+        "1": 0.6,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "QPC002_A4": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "QPC002_A5": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "QPC002_B1": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_B2": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "QPC002_B3": {
+        "1": 0.4,
+        "3": 0.9,
+        "5": 1.0
+      },
+      "QPC002_B4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_B5": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "QPC002_B6": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_B7": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_B8": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC002_Ex": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_A1": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_A2": {
+        "1": 0.6,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "QPC003_A3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_A4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_A5": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_A6": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_B1": {
+        "1": 0.6,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "QPC003_B2": {
+        "1": 0.4,
+        "3": 0.9,
+        "5": 1.0
+      },
+      "QPC003_B3": {
+        "1": 0.4,
+        "3": 0.9,
+        "5": 1.0
+      },
+      "QPC003_B4": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "QPC003_B5": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "QPC003_B6": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_B7": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_B8": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC003_Ex1": {
+        "1": 0.4,
+        "3": 0.9,
+        "5": 1.0
+      },
+      "QPC003_Ex2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_A1": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "QPC004_A2": {
+        "1": 0.4,
+        "3": 0.9,
+        "5": 1.0
+      },
+      "QPC004_A3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_A4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_A5": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_A6": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_A7": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_B1": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "QPC004_B2": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "QPC004_B3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_B4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_B5": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "QPC004_C1": {
+        "1": 0.4,
+        "3": 0.9,
+        "5": 1.0
+      },
+      "QPC004_C2": {
+        "1": 0.4,
+        "3": 0.9,
+        "5": 1.0
+      },
+      "QPC004_C3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_C4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC004_C5": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_A1": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "QPC005_A2": {
+        "1": 0.19999999999999996,
+        "3": 0.6,
+        "5": 1.0
+      },
+      "QPC005_A3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_A4": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_A5": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_B1": {
+        "1": 0.4,
+        "3": 0.9,
+        "5": 1.0
+      },
+      "QPC005_B2": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_B3": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "QPC005_Ex": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      }
+    },
+    "num_tasks": 67
+  },
+  "results": [
+    {
+      "task_id": "QPC001_A1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.h(0)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.ry(math.pi / 2, 0)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.rx(math.pi / 2, 0)\n    qc.s(0)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.u(math.pi / 2, 0, math.pi, 0)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.initialize([1 / math.sqrt(2), 1 / math.sqrt(2)], 0)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_A2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.h(range(n))\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.h(i)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.ry(math.pi / 2, i)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    state = [1.0 / math.sqrt(2**n)] * (2**n)\n    qc.initialize(state, qc.qubits)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "way to do this without standard `h` gate if `h` is somehow disabled or checked against a specific implementation?\nWait! What if we use `QuantumCircuit.prepare_state` or `Unitary` or a different gate?\nWait, what about `qc.u`?\n`qc.u(np.pi/2, 0, np.pi",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_A3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.h(0)\n    qc.cx(0, 1)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.h(1)\n    qc.cx(1, 0)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.initialize([1 / np.sqrt(2), 0, 0, 1 / np.sqrt(2)], [0, 1])\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "\\rangle}{\\sqrt{2}} + |1\\rangle \\frac{|0\\rangle+|1\\rangle}{\\sqrt{2}} - |1\\rangle \\frac{|0\\rangle-|1\\rangle}{\\sqrt{2}} ]$\n$= \\frac{1}{2\\sqrt{2}} [ |00\\rangle+|01\\rangle+|00\\rangle-|0",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.ry(np.pi / 2, 0)\n    qc.cx(0, 1)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_A4",
+      "results": [
+        {
+          "code": "$ is in state $\\sqrt{2/3}|0\\rangle + \\frac{1}{\\sqrt{3}}|1\\rangle$, $q_1 = |0\\rangle$).\n3. We want to act on $q_1$ when $q_0 = 0$.\n   `qc.x(0)`\n   `qc.cry(np.pi /",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": ", |10\\rangle, |11\\rangle$.\nIf we set amplitudes = `[1/np.sqrt(3), 1/np.sqrt(3), 1/np.sqrt(3), 0]`, then:\n$|00\\rangle \\to 1/\\sqrt{3}$\n$|01\\rangle \\to 1/\\",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    \n    # theta1 = 2 * asin(1 / sqrt(3))\n    theta1 = 2 * np.arcsin(1 / np.sqrt(3))\n    qc.ry(theta1, 0",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n\n    # Rotate q1 such that state becomes sqrt(2/3)|00> + 1/sqrt(3)|10>\n    theta = 2 * np.arcsin(1 / np.sqrt",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    val = 1.0 / np.sqrt(3)\n    # Target state: a0|00> + a2|01> + a1|10> + 0|11>\n    qc.initialize([val, val, val, 0.0], [0, 1])\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_A5",
+      "results": [
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n\n    # Rotate qubit 1 so that the state becomes sqrt(2/3)|00> + sqrt(1/3)|10>\n    theta = 2 * np.arccos(np.sqrt(2 / 3))\n    qc.ry(theta, 1)\n\n    # Apply Hadamard on qubit 0 when qubit 1 is |0>\n    qc.x(1)\n    qc.ch(1, 0)\n    qc.x(1)\n\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "1\\rangle = \\frac{1}{\\sqrt{2}}|0\\rangle + \\frac{1}{\\sqrt{2}}|1\\rangle$).\n   So if we flip $q_0$ with X, apply `cry(np.pi / 2, 0, 1)`, then flip $q_0$ back with X!\n\nLet's check this step by step",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n\n    # Amplitudes for |00>, |01>, |10>, |11>\n    amplitudes = [1 / np.sqrt(3), 1 / np.sqrt(3), 1 /",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    state = [1 / np.sqrt(3), 1 / np.sqrt(3), 1 / np.sqrt(3), 0]\n    qc.initialize(state, [0, 1])\n    return qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "6154797086703871$.\n$2 * 0.6154797086703871 = 1.2309594173407747$.\nWait, is `np.arccos(np.sqrt(2/3))` correct?",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_B1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve() -> QuantumCircuit:\n    x, y = QuantumRegister(1), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    # Write your code here:\n    qc.cx(x, y)\n\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve() -> QuantumCircuit:\n    x, y = QuantumRegister(1, name=\"x\"), QuantumRegister(1, name=\"y\")\n    qc = QuantumCircuit(x, y)\n\n    qc.cx(x[0], y[0])\n\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve() -> QuantumCircuit:\n    x, y = QuantumRegister(1), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    qc.cx(y, x)\n\n    return qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve() -> QuantumCircuit:\n    x, y = QuantumRegister(1), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    qc.cx(x[0], y[0])\n\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve() -> QuantumCircuit:\n    x, y = QuantumRegister(1), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    qc.cx(0, 1)\n\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_B2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    \n    for i in range(n):\n        qc.cx(x[i], y[0])\n        \n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    \n    for i in range(n):\n        qc.cx(x[i], y[0])\n        \n    return",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n, name='x'), QuantumRegister(1, name='y')\n    qc = QuantumCircuit(x, y)\n    \n    for qubit in x:\n        qc.cx(qubit, y)",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int) -> QuantumCircuit:\n    x = QuantumRegister(n, name=\"x\")\n    y = QuantumRegister(1, name=\"y\")\n    qc = QuantumCircuit(x, y)\n\n    qc.cx(x, y[0])\n\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int) -> QuantumCircuit:\n    x = QuantumRegister(n, \"x\")\n    y = QuantumRegister(1, \"y\")\n    qc = QuantumCircuit(x, y)\n\n    for i in range(n):\n        qc.cx(i, n)\n\n    return",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_B3",
+      "results": [
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    for x in range(L):\n        # Flip qubits corresponding to 0 bits in state x\n        for i in range(n):\n            if not ((x >> i) &",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import Diagonal\n\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    diag = [-1 if i < L else 1 for i in range(1 << n)]\n    qc.append(Diagonal(diag), range(n))\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "1\\rangle$.\nApply multi-controlled Z (or $Z$ on qubit 0 controlled by qubits $1 \\dots n-1$).\nThis flips phase of $|11\\dots1\\rangle$ by $-1$.\nApply $X$ to qubit $i$ if bit $i$ of $x$ is 0.\nNow state $|11\\dots1\\",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # Define diagonal matrix with -1 for x < L and 1 for x >= L\n    diag = [-1.0 if x < L else 1.0 for x in range(1",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    for x in range(L):\n        # Apply X to qubits where the bit in x is 0\n        for i in range(n):\n            if not ((x >> i) & 1):",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_B4",
+      "results": [
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\nfrom qiskit.circuit.library import ZGate\n\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Convert L to binary string of length n (big-endian: index n-1 is MSB, index 0 is LSB",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import ZGate\n\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    if L <= 0:\n        return qc\n\n    # Process each bit position k from n-1 down to 0\n    for k",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": ")` adds a single gate block to the circuit! Its depth as a `QuantumCircuit` before transpilation is 1 per append!\nWait, but if $L = 2^n$, what happens?\nIf $L = 2^n$, we need to multiply ALL $2^n$ states by $-1$.\nIf $L = 2^n$, $x <",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import ZGate\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    if L <= 0:\n        return qc\n    if L >= 2**n:\n        qc.z(0)",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "!\n\nLet's verify this logic carefully!\nSuppose $n=2, L=3$.\n$L = 3 = (11)_2$ in binary.\nBits of $L$:\nBit 1 (MSB, weight 2): bit is 1.\nCondition 1: matching prefix (none), bit 1 is 0.\nSo $x$",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_C1",
+      "results": [
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\nfrom qiskit.circuit.library import StatePreparation\n\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    state = np.zeros(2**n)\n    state[:L] = 1.0 / np.sqrt(L",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\nfrom qiskit.circuit.library import StatePreparation\n\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    state = np.zeros(2**n)\n    state[:L] = 1.0 / np",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    state = np.zeros(2**n)\n    state[:L] = 1.0 / np.sqrt(L)\n    qc.initialize(state, qc.qubits)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\nfrom qiskit.circuit.library import StatePreparation\n\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    state = np.zeros(2**n)\n    state[:L] = 1.0 / np.sqrt(",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\nfrom qiskit.circuit.library import StatePreparation\n\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    state = np.zeros(2**n)\n    state[:L] = 1.0 / np.sqrt(L)\n    qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC001_C2",
+      "results": [
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # We want to prepare a uniform superposition over states |0>, |1>, ..., |L-1>.\n    # Integers are encoded in little-endian, meaning qubit k",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    state_vector = np.zeros(2**n, dtype=complex)\n    state_vector[:L] = 1.0 / np.sqrt(L)\n    qc.initialize(state_vector, range(n))\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Prepare a state vector of size 2^n with equal amplitudes for indices 0 to L-1\n    state_vector = np.zeros(2**n, dtype=complex)",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    if L == 1:\n        return qc\n\n    # Top-down state preparation for uniform superposition |0>..|L-1>\n    # Bits are ordered 0 (LS",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "0$ is ALWAYS $2^k$ (full) when $L > 2^k$.\nSo the $q_k=0$ branch is ALWAYS full ( size $2^k$ ), which requires NO further branching!\nThe $q_k=1$ branch has size $L_1 = L - 2^k$, which may require further branching.\n\nThis",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_A1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    qc.z(0)\n    qc.x(0)\n    return qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.global_phase = math.pi\n    return qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.rz(2 * math.pi, 0)\n    return qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.u(2 * math.pi, 0, 0, 0)\n    return qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "` or other standard gates?\nIs `UnitaryGate` supported and preserved?\n`qc.unitary([[-1, 0], [0, 1]], [0])` or `qc.unitary([[-1, 0], [0, 1]], 0)`.\n\nLet's double check `qc.unitary`:\n`import numpy as np`",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_A2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.h(0)\n    qc.cx(0, 1)\n    qc.z(0)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.x(0)\n    qc.h(0)\n    qc.cx(0, 1)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.initialize([1 / np.sqrt(2), 0, 0, -1 / np.sqrt(2)], [0, 1])\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": ")!\n\nWait, why would Attempt 1, 2, 3 ALL be wrong?\nLet's check Attempt 1:\nqc.h(0)\nqc.cx(0, 1)\nqc.z(0)\n\nAttempt 2:\nqc.initialize(...)\n\nAttempt 3:\nqc.x(0)\nqc.h(0",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.h(1)\n    qc.z(1)\n    qc.cx(1, 0)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_A3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # Prepare qubit 0 in state (|0> - |1>) / sqrt(2)\n    qc.x(0)\n    qc.h(0)\n    \n    # Entangle qubit 0 with all other qubits\n    for i in range(1, n):\n        qc.cx(0, i)\n        \n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # Create GHZ state (|0...0> + |1...1>) / sqrt(2)\n    qc.h(0)\n    for i in range(n - 1):\n        qc.cx(i, i + 1)\n        \n    # Apply Z gate to flip the sign of the |1...1> term\n    qc.z(0)\n    \n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    qc.h(0)\n    qc.z(0)\n    for i in range(1, n):\n        qc.cx(0, i)\n        \n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # Prepare the state (|0> - |1>)/sqrt(2) on qubit 0 using RY rotation\n    qc.ry(-np.pi / 2, 0)",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # Apply X gate to all qubits to start from |1...1>\n    qc.x(range(n))\n    \n    # Apply H gate to qubit 0 to get (|01",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_A4",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    \n    # Prepare (|0> - |1>) / sqrt(2) on qubit 0\n    qc.x(0)\n    qc.h(0)\n    \n    # Use a binary tree of CNOTs to propagate the state to all n qubits in O(log n) depth\n    step = 1\n    while step < n:\n        for i in range(step):\n            if i + step < n:\n                qc.cx(i, i + step)\n        step *= 2\n\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Prepare (|0> - |1>) / sqrt(2) on qubit 0\n    qc.h(0)\n    qc.z(0)\n\n    # Parallel tree structure to spread the state with",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # State preparation on qubit 0: (|0> - |1>) / sqrt(2)\n    qc.h(0)\n    qc.z(0)\n\n    # Divide and conquer tree structure to achieve O(log",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Prepare (|0> - |1>) / sqrt(2) on qubit 0\n    qc.x(0)\n    qc.h(0)\n\n    # Propagate the state to all qubits using a",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Prepare (|0> - |1>) / sqrt(2) on qubit 0\n    qc.h(0)\n    qc.z(0)\n\n    # Propagate the state using a binary tree of CNOT gates",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_A5",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.x(0)\n    qc.h(0)\n    \n    active = [0]\n    next_qubit = 1\n    while next_qubit < n:\n        num_to_add = min(",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.x(0)\n    qc.h(0)\n\n    step = 1\n    while step < n:\n        for i in range(step):\n            if i + step < n:",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Prepare (|0> - |1>) / sqrt(2) on qubit 0\n    qc.x(0)\n    qc.h(0)\n\n    # Propagate state to all qubits using a binary tree of",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Prepare (|0> - |1>) / sqrt(2) on qubit 0\n    qc.x(0)\n    qc.h(0)\n\n    # Propagate the state across all qubits using a logarithmic tree of CNOTs\n    step = 1\n    while step < n:\n        for i in range(step):\n            if i + step < n:\n                qc.cx(i, i + step)\n        step *= 2\n\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Prepare (|0> - |1>) / sqrt(2) on qubit 0\n    qc.x(0)\n    qc.h(0)\n\n    # Binary tree broadcast using CNOT gates",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.global_phase = theta\n    return qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    qc.p(theta, 0)\n    qc.x(0)\n    return qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.rz(-2 * theta, 0)\n    return qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import GlobalPhaseGate\n\n\ndef solve(theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    qc.append(GlobalPhaseGate(theta), [0])\n    qc.x(0)\n    return qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import cmath\nfrom qiskit import QuantumCircuit\n\n\ndef solve(theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    phase = cmath.exp(1j * theta)\n    qc.unitary([[phase, 0], [0, phase]], 0)\n    return qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, L: int, theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    for i in range(n):\n        if not ((L >> i) & 1):\n            qc.x(i)\n\n    if n == 1:\n        qc.p(theta, 0",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, L: int, theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Flip qubits that correspond to 0 in the binary representation of L\n    for i in",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, L: int, theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Flip qubits where the binary representation of L (little-endian) has a 0\n    for i in range(n):\n        if not ((L >> i) & 1):\n            qc.x(i)\n\n    # Apply phase theta when all qubits are |1>\n    if n == 1:\n        qc.p(theta, 0)\n    else:\n        qc.mcp(theta, list(range(n - 1)), n - 1)\n\n    # Uncompute the X gates to restore original basis states\n    for i in range(n):\n        if not ((L >> i) & 1):\n            qc.x(i)\n\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import MCPhaseGate\n\n\ndef solve(n: int, L: int, theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Flip qubits where the i-th bit of L is 0\n    for i in range(n):\n        if not ((L",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.cx(0, 1)\n    qc.cx(1, 0)\n    qc.cx(0, 1)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.cx(1, 0)\n    qc.cx(0, 1)\n    qc.cx(1, 0)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # SWAP constructed using Hadamard and CZ gates\n    qc.h(0)\n    qc.h(1)\n    qc.cz(0, 1)\n    qc.h(0)\n    qc.h(1",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    swap_matrix = np.array(\n        [[1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": ") \\otimes (X Z) = (-iY) \\otimes (-iY) = - YY$.\nSo $(XX+YY)ZZ = -YY + XX$.\nThus $(I - ZZ - i(XX+YY))(I - i ZZ) = (1-i) I - (1+i) ZZ + \\dots$\nActually, $e^{-i \\frac{\\",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B4",
+      "results": [
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Transform input bits to QFT output phases\n    for m in range(n):\n        target = n - 1 - m\n        qc.h(target)\n        for l in",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    for i in range(n):\n        qc.h(i)\n        for j in range(i + 1, n):\n            angle = np.pi / (2 ** (",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    for i in range(n - 1, -1, -1):\n        qc.h(i)\n        for j in range(i - 1, -1,",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "2\\pi / 2 = \\pi$ (which is a Hadamard on $j_p$!).\n- $j_{p-1}$ contributes $2\\pi / 4 = \\pi / 2$.\n- $j_m$ contributes $2\\pi / 2^{p+1-m}$.\n\nWait, this means qubit $l$ of output state depends",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Apply standard QFT operations\n    for i in range(n):\n        qc.h(i)\n        for j in range(i + 1, n):\n            angle = np.",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B5",
+      "results": [
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for k in range(n):\n        angle = 2 * math.pi * S[k] / (1 << m)\n        qc.p(angle, k)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for k in range(n):\n        angle = 2 * np.pi * S[k] / (1 << m)",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for k in range(n):\n        angle = 2.0 * np.pi * float(S[k]) / (1 << m)",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for k in range(n):\n        angle = 2.0 * np.pi * S[k] / (1 << m)\n        qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qisk",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B6",
+      "results": [
+        {
+          "code": ":\nIn Qiskit, what is IQFT for little-endian?\nStandard QFT definition:\n$\\text{QFT}|y\\rangle = \\frac{1}{\\sqrt{2^m}} \\sum_{k=0}^{2^m-1} e^{2\\pi i y k / 2^m} |k\\rangle$.\nIf we apply phase $",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "0}^{2^m-1} e^{-2\\pi i k y' / 2^m} e^{2\\pi i \\Delta k / 2^m} e^{2\\pi i k y / 2^m} = \\frac{1}{2^m} \\sum_{k=0}^{2^m-1} e^{2\\pi i",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "\\Delta 2^j}{2^m}$ to qubit $y[j]$.\nWhen $\\Delta = f(x) = \\sum_{k=0}^{n-1} S_k x_k$, the phase added to qubit $y[j]$ should be:\n$\\sum_{k=0}^{n-1} x_k \\cdot \\left( 2",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport math\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x = QuantumRegister(n, name='x')\n    y = QuantumRegister(m, name='y')\n    qc = QuantumCircuit(x, y)\n\n    # Put y in Fourier basis (",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x = QuantumRegister(n, name=\"x\")\n    y = QuantumRegister(m, name=\"y\")\n    qc = QuantumCircuit(x, y)\n\n    # 1. Apply",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B7",
+      "results": [
+        {
+          "code": "}} \\sum_{z=0}^{2^m-1} e^{2\\pi i y z / 2^m} \\ket{z}$, where $z = \\sum_{j=0}^{m-1} z_j 2^j$ with qubit $j$ holding $z_j$.\nWait! In standard QFT:\nHadamard on",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "4$.\nqubit 1: phase $2\\pi y_1 / 2 = \\pi y_1 \\equiv \\pi y = 2\\pi (2 y) / 4$.\nYes! Because $2 y = 2 y_0 + 4 y_1 \\equiv 2 y_0 \\pmod 4$, wait... $\\pi y = \\pi",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x, y = QuantumRegister(n, name='x'), QuantumRegister(m, name='y')\n    qc = QuantumCircuit(x, y)\n\n    # QFT on y\n    for",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": ":\n$|y_0 y_1\\rangle \\to$:\nAfter $H(y[0])$: $\\frac{1}{\\sqrt{2}} (|0 y_1\\rangle + (-1)^{y_0} |1 y_1\\rangle)$.\nAfter $CP(\\pi/2)$ controlled by $y[1]$ on $y[0]$:\nIf",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "]]:\nphase $e^{i \\pi/2 y_0 z_1'}$ where $z_1'$ is the qubit state of $y[1]$.\nApply $H$ on $y[0]$:\nThen swap $y[0]$ and $y[1]$!\nIf we include swap at the end of QFT (and at the beginning",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_B8",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, m: int, L: int, S: list[int], theta: float) -> QuantumCircuit:\n    x = QuantumRegister(n, 'x')\n    y = QuantumRegister(m, 'y')\n    qc = QuantumCircuit(x, y)",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "j)), x[i], y[j])` and `p(2 * pi * L / (2**(m-j)), y[j])`.\n9. Uncompute step 2: Apply Hadamard on each $y_j$.\n\nWait, is that completely correct?\nLet's double check QFT convention and little-endian!\nIn Qisk",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "/ 2^m} = \\prod_{l=0}^{m-1} e^{2\\pi i A j_l / 2^{m-l}}$.\nSo for qubit $l$ (where $l \\in \\{0, \\dots, m-1\\}$), if qubit $l$ is in state $|1\\rangle$, it gets phase $2\\pi",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import QFT\nimport numpy as np\n\ndef solve(n: int, m: int, L: int, S: list[int], theta: float) -> QuantumCircuit:\n    x = QuantumRegister(n, 'x')\n    y = Quantum",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, m: int, L: int, S: list[int], theta: float) -> QuantumCircuit:\n    x = QuantumRegister(n, 'x')\n    y = QuantumRegister(m, 'y')\n    qc = QuantumCircuit(x",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC002_Ex",
+      "results": [
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int, P: float, U, R) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Calculate optimal odd length L for Fixed-Point Amplitude Amplification (Yoder-Low-Chuang)\n    # Target error delta <= 0.08 so success",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\ndef solve(n: int, P: float, U, R) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # We use Yoder-Low-Chuang (2014) Fixed-Point Amplitude Amplification.\n    # Target success probability >= 0.99, so maximum",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\ndef solve(n: int, P: float, U, R) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Lower bound on amplitude\n    a_min = np.sqrt(P)\n\n    # Target error delta = 0.08 to guarantee success probability >=",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "P, 4P]$.\nSince $p_0$ is unknown in the range $[P, 4P]$, standard Grover might over-rotate if we don't use Fixed-Point AA!\nFPAA guarantees success probability $\\ge 1 - \\delta^2$ for ANY $p_0 \\ge P$, as long as $N \\ge \\",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "}^{-1}(1/\\delta) )$.\nWait! $T_L(y) = \\cosh(L \\mathrm{acosh}(y))$.\nSo $1/\\delta = T_L(1/\\gamma) \\implies 1/\\gamma = \\cosh( \\frac{1}{L} \\mathrm{acosh}(1/\\delta) )$.\nThus $\\gamma =",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_A1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    qc.s(0)\n    return qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.u(np.pi, np.pi / 2, 0, 0)\n    return qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.rx(-np.pi, 0)\n    return qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.initialize([0, 1j], 0)\n    return qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    qc.global_phase = np.pi / 2\n    return qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_A2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.h(0)\n    qc.cx(0, 1)\n    qc.x(0)\n\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.x(1)\n    qc.h(0)\n    qc.cx(0, 1)\n\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "0\\rangle + |01\\rangle)/\\sqrt{2}$.\nThese two states are EXACTLY the same statevector: $[0, 1/\\sqrt{2}, 1/\\sqrt{2}, 0]^T$!\n\nWhy would Attempt 1 and Attempt 2 be wrong?!\nWait! Let's re-read carefully:\n\"Implement the operation of preparing the",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    val = 1 / (2**0.5)\n    qc.initialize([0, val, val, 0], [0, 1])\n\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.h(0)\n    qc.cx(0, 1)\n    qc.x(1)\n\n    return qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_A3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(3)\n\n    # Step 1: Rotate qubit 2\n    theta = 2 * np.arccos(np.sqrt(2 / 3))\n    qc.ry(theta, 2)\n\n    # Step 2: Anti",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(3)\n\n    # Angle to split probability: 1/3 for |1> and 2/3 for |0>\n    theta = 2 * np.arccos(np.sqrt(2 / 3))",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(3)\n\n    # Step 1: Rotate qubit 0 to give probability 1/3 of being in state |1>\n    theta1 = 2 * np.arccos(1 / np.sqrt(3))\n    qc.ry(theta1, 0)\n\n    # Step 2: Controlled on qubit 0 being 0, split the remaining 2/3 probability equally to qubit 1\n    qc.x(0)",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(3)\n\n    # 1. Rotate q2 to get amplitude 1/sqrt(3) for |1> (which becomes |100>)\n    theta1 = 2 * np.arccos(np.sqrt(",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "$$100\\rangle$ (where order is $q_2 q_1 q_0$).\nWait!\nOriginal term was $\\frac{1}{\\sqrt{3}}|100\\rangle$ (meaning $q_2=1, q_1=0, q_0=0$).\nApplying $X(q_2)$ to $|100",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_A4",
+      "results": [
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.x(0)\n    for i in range(n - 1):\n        k = n - i\n        theta = 2 * np.arccos(1 / np.sqrt(",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.x(0)\n    for k in range(1, n):\n        theta = 2 * np.arcsin(1 / np.sqrt(n - k + 1",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "\\ket{0010}$.\n\nNext step $i=2$: $m=2$. $\\theta_2 = 2 \\arccos(1/\\sqrt{2}) = \\pi/2$.\nCRY($\\pi/2$, control=2, target=3) and CX(control=3, target=2).\nTerm $\\frac{\\sqrt{2}}{2",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.x(0)\n    for i in range(n - 1):\n        theta = 2 * np.arccos(1.0 / np.sqrt(n - i))\n        qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_A5",
+      "results": [
+        {
+          "code": "with control `v`, target `u`.\n  \n  Then recursively call:\n  `generate_w(left)`\n  `generate_w(right)`\n\nWait, does recursive calls at the same depth execute in parallel?\nYes, because `left` and `right` use completely disjoint sets of qubits!\n\nLet's double check with an example $n=3$:",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Initial state preparation: flip the first qubit to |1>\n    qc.x(0)\n\n    # Helper function to recursively split excitation in parallel\n    def split_w(qu",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Initial state: put single excitation on qubit 0\n    qc.x(0)\n\n    # We do a breadth-first or depth-first generation of the tree.\n    # A task is defined by (l",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Step 1: Put the single excitation on qubit 0\n    qc.x(0)\n\n    # We build the tree level by level to ensure parallel execution and minimum depth.\n    # Each entry in",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.x(0)\n\n    # Store ranges to process layer by layer\n    current_layer = [(0, n - 1)]\n\n    while current_layer:\n        next_layer = []",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_A6",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.x(0)\n    for i in range(n - 1):\n        k = n - i\n        theta = 2 * np.arccos(1 / np.sqrt(k))\n        qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "00\\rangle + |0010\\rangle + |0001\\rangle)$.\n\nIs the total circuit depth $\\le 20$ for $n=15$?\nFor each step $i$:\n`cry` + `cx` on adjacent qubits $(i, i+1)$.\nThere are $n-1$ steps.\nFor $",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "2}{m}} \\left(\\frac{1}{\\sqrt{m_2}} \\sum_{j \\in \\text{right}} |j\\rangle\\right) = \\frac{1}{\\sqrt{m}} \\sum_{k \\in \\text{qubits}} |k\\rangle$.\nYES! This is perfectly linear in superposition and correct!\n\nLet's check",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.x(0)\n\n    def build_w(start: int, length: int):\n        if length <= 1:\n            return\n        n1 = length // 2\n        n2 = length",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": ") |1\\rangle_{start} |0\\rangle_{start+L} + \\sin(\\theta/2) |0\\rangle_{start} |1\\rangle_{start+L}$.\n\nIs the coefficient of $|1\\rangle_{start} |0\\rangle_{start+L}$ equal to $\\sqrt{L/length}$?\nYes!\nAnd coefficient of $|0",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    matrix = np.array([[0, 1], [1, 0]])\n    qc.unitary(matrix, 0)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.u(3.141592653589793, 0, 3.141592653589793, 0)\n    return qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    matrix = np.array([[0.0, 1.0], [1.0, 0.0]], dtype=complex)\n    qc.unitary(matrix, [0])\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.r(np.pi, 0, 0)\n    qc.global_phase = np.pi / 2\n    return qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    qc.x(y[0])\n    qc.h(y[0])\n    qc.compose(o, inplace=True)\n    qc.h(y[0])\n    qc.x(y[0])\n\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "}.\nAfter $O$:\nIf $f(x) = 0$: $O |x\\rangle \\frac{|0\\rangle - |1\\rangle}{\\sqrt{2}} = |x\\rangle \\frac{|0\\rangle - |1\\rangle}{\\sqrt{2}}$.\nThen $H$: $|x\\rangle |1\\rangle$.\nThen $X$: $|",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    qc.h(y[0])\n    qc.z(y[0])\n    qc.compose(o,",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    qc.x(y)\n    qc.h(y)\n    qc = qc.compose(o)",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n, \"x\"), QuantumRegister(1, \"y\")\n    qc = QuantumCircuit(x, y)\n\n    qc.x(y)\n    qc.h(y)",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B3",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.ry(2 * T[i], i)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.ry(2 * T[n - 1 - i], i)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "1} + \\dots + b_1 2^1 + b_0 2^0$.\nWait!\nIf qubit $i$ is bit $i$ of the integer representation:\nThe statevector element for $\\ket{b_{n-1} \\dots b_0}$ has string $b_{n-1}\\dots b_0$ in Qiskit?",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "{n-1}$. Its state is $\\cos T_{n-1} \\ket{0} + \\sin T_{n-1} \\ket{1}$.\nSince qubit 0 is bit 0 ($b_0$), bit 0 has $\\sin T_{n-1}$ when $b_0=1$.\nWhich means $b_0$ corresponds to $T_{",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B4",
+      "results": [
+        {
+          "code": "1) H_{n-1}$ flips the phase ONLY of $\\ket{11\\dots1}$.\n\nNow, full algorithm for $2\\ket{0}\\bra{0} - I$ (up to global phase):\n1. `qc.x(range(n))`\n2. `qc.h(n - 1)`\n3. `qc.mc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport math\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.x(range(n))\n    qc.mcp(math.pi, list(range(n - 1)), n - 1)\n    qc.x(range(n))\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "1\\rangle$.\n2. `qc.h(n - 1)`\n3. `qc.mcx(list(range(n - 1)), n - 1)`\n4. `qc.h(n - 1)`\n5. `qc.x(range(n))`\n\nLet's test this sequence on state $|00\\",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "\\to |\\bar{x}\\rangle \\to |x\\rangle$.\n\nSo this circuit applies the unitary $U$ where:\n$U |0\\rangle = -|0\\rangle$\n$U |x\\rangle = |x\\rangle$ for $x \\neq 0$.\n\nWait! $U = I - 2\\ket{0}\\bra{0} =",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.x(range(n))\n    qc.h(n - 1)\n    qc.mcx(list(range(n - 1)), n - 1)\n    qc.h(",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B5",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    qc.h(range(n))\n    qc.x(range(n))\n\n    qc.h(n - 1)\n    qc.mcx(list(range(n - 1)), n - 1)\n    qc.h(n - 1)\n\n    qc.x(range(n))\n    qc.h(range(n))\n\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    qc.h(range(n))\n    qc.x(range(n))\n\n    # Apply multi-controlled Z gate using mcp (phase pi)\n    qc.mcp(np.pi",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": ".\nThen `qc.x(range(n))` turns $\\ket{1...1}$ back to $\\ket{0...0}$, which now has a minus sign!\nSo Attempt 1 implemented $I - 2\\ket{0}\\bra{0}$!\nWait! Why was Attempt 1 WRONG?\n\nCould it be that Attempt 1 failed because `",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    matrix = np.full((2**n, 2**n), 2.0 / (2**n), dtype=complex)\n    np.fill_diagonal(matrix, matrix.diagonal() - 1",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    dim = 2**n\n    matrix = np.full((dim, dim), 2.0 / dim, dtype=complex)\n    np.fill_diagonal(matrix, matrix.",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B6",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = Quantum",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Step 1: Uniform superposition\n    qc.h(range(n))\n\n    # Step 2: Apply Oracle\n    qc.compose(o, inplace=True)\n\n    # Step",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Prepare uniform superposition\n    qc.h(range(n))\n\n    # Apply oracle\n    qc.compose(o, inplace=True)\n\n    # Diffusion operator (Grover diffuser)",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Uniform superposition\n    qc.h(range(n))\n\n    # Apply oracle\n    qc.compose(o, inplace=True)\n\n    # Apply diffusion operator (Grover diffuser)\n    qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # 1. Prepare uniform superposition\n    qc.h(range(n))\n\n    # 2. Apply Oracle\n    qc.compose(o, inplace=True)\n\n    # 3",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B7",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Step 1: Apply U^\\dagger = Ry(-2 * T_i) to each qubit\n    for i in range(n):\n        qc.ry(-2 * T[i],",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Apply U^\\dagger\n    for i in range(n):\n        qc.ry(-2 * T[i], i)\n\n    # Apply reflection about |0...0>: I - 2",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "}$.\n\nFor any computational basis state $x \\neq 0$:\n`x`: $y \\neq 1\\dots1$.\nIf $y$ does not have 1s on all first $n-1$ qubits, `mcx` does nothing.\nThen `h`, `mcx` (identity), `h` = Identity!\nSo $y",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Apply U^\\dagger\n    for i in range(n):\n        qc.ry(-2 * T[i], i)\n\n    # Apply reflection about |",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "0} + \\ket{11})$.\n`mcx` (controlled by qubit 0, target qubit 1): maps $\\ket{11} \\to \\ket{10}$ and $\\ket{10} \\to \\ket{11}$.\nSo state becomes $\\frac{1}{\\sqrt{2}}(\\ket{11} + \\ket{",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_B8",
+      "results": [
+        {
+          "code": "recombined or layered).\nFor $k=25$, total depth is $25 \\times 6 = 150 \\le 250$!\n\nLet's carefully construct the diffuser and step-by-step circuit.\n\n### Circuit Initialization:\n1. $x$ register ($n$ qubits): apply $H$ to all $x_i$.",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x = QuantumRegister(n, name=\"x\")\n    y = QuantumRegister(1, name=\"y\")\n    qc = QuantumCircuit(x, y)\n\n    # Initialize x in superposition |s",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x = QuantumRegister(n, name=\"x\")\n    y = QuantumRegister(1, name=\"y\")\n    qc = QuantumCircuit(x, y)\n\n    # Initialize x in |s",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import MCMT, ZGate\nimport math\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x = QuantumRegister(n, name=\"x\")\n    y = QuantumRegister(1, name=\"y\")\n    qc = QuantumCircuit(x,",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x = QuantumRegister(n, name=\"x\")\n    y = QuantumRegister(1, name=\"y\")\n    qc = QuantumCircuit(x, y)\n\n    # Initialize x in |+>^",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_Ex1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    qc.x(y)\n    qc.h(y)\n    qc.compose(o, inplace=True)",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    qc.x(y)\n    qc.h(y)\n    qc.compose(o, inplace=True)\n    qc.h(y)\n    qc.x(y)\n\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    qc.z(y)\n    qc.h(y)\n    qc.compose(o, inplace=True",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    qc.h(y)\n    qc.z(y)\n    qc.compose(o",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    qc.h(y)\n    qc.z(y)\n    qc.compose(o, inplace=True)",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC003_Ex2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    # Handle the number of qubits in the oracle\n    if o.num_qubits == n + 1:\n        qc = QuantumCircuit(n + 1)\n        # Prepare ancilla qubit in |-s> = (|0>",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    num_qubits = o.num_qubits\n    qc = QuantumCircuit(num_qubits)\n\n    # Initialize target/ancilla qubit to |-> if oracle expects it\n    if num_qubits ==",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "\\ket{\\phi} - \\left( \\ket{\\phi} - \\frac{2}{\\sqrt{n}} \\ket{L} \\right)$\nSince $\\langle \\phi | L \\rangle = \\frac{1}{\\sqrt{n}}$, this gives:\n$2\\ket{\\phi} - \\frac{4}{n} \\ket{\\phi} - \\ket{\\phi",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    num_qubits = o.num_qubits\n    qc = QuantumCircuit(num_qubits)\n\n    # Prepare ancilla qubit (last qubit) in |-> state\n    ancilla = num_qubits",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "135^\\circ) = 0.5$.\nWait, for $n=2$, initial probability is $1/2 = 0.5$.\nWait, why guess when we can measure or do something else?\n\nWait! Is there a deterministic or better way?\nWait! $L = 2^k$.\nThat means $L$ has EXACTLY",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_A1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.h(0)\n    qc.z(0)\n    qc.h(0)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.ry(math.pi, 0)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.y(0)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.rx(math.pi, 0)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_A2",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.cx(0, 1)\n    qc.cx(1, 0)\n    qc.cx(0, 1)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.cx(1, 0)\n    qc.cx(0, 1)\n    qc.cx(1, 0)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.h(1)\n    qc.cz(0, 1)\n    qc.h(0)\n    qc.h(1)\n    qc.cz(0, 1)\n    qc.h(0)",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.rxx(1.5707963267948966, 0, 1)\n    qc.ryy(1.5707963267948966,",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    qc.rxx(1.5707963267948966, 0, 1)\n    qc.ryy(1.57079632679489",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_A3",
+      "results": [
+        {
+          "code": "\\ket{01}$\nHere $x_0=1, x_1=0 \\to x_0'=0, x_1'=1$. So state of qubit 0 becomes 0 (which was $x_1$), state of qubit 1 becomes 1 (which was $x_0$).\nSo qubit 0 receives the value of qubit $n-",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n - 2, -1, -1):\n        qc.cx(i, i + 1)\n        qc.cx(i + 1, i)\n        qc.",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n - 2, -1, -1):\n        qc.cx(i, i + 1)\n        qc.cx(i + 1, i)\n        qc.cx(i, i + 1)\n    return qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "\\dots x_{n-1}}_n \\to \\ket{x_{n-1} x_0 x_1 \\dots x_{n-2}}_n$\nThis is purely a mathematical mapping on bitstrings!\nWait! If $\\ket{x_0 x_1 \\dots x_{n-1}}$ is the input string of bits $x_",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Perform cyclic shift using CNOT-based swaps\n    # To map qubit i to qubit (i + 1) mod n:\n    # We swap adjacent qubits starting from 0 up to n-2.\n    for",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_A4",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    for i in range(n - 2, -1, -1):\n        qc.cx(i, i + 1)\n        qc.cx(i + 1, i)\n\n    return qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "\\to |00\\rangle$\n$|10\\rangle \\to |01\\rangle$\nMy trace for $n=2$:\n$x_0=1 \\implies (1, 0) \\xrightarrow{cx(0,1)} (1, 1) \\xrightarrow{cx(1,0)} (0, 1)$. Correct!\n\nDepth check",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # We want to transform |x_0, x_1, ..., x_{n-2}, 0> to |0, x_0, x_1, ..., x_{n-2}>\n    #",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    for i in range(n - 1, 0, -1):\n        qc.cx(i - 1, i)\n        qc.cx(i, i - 1)\n\n    return qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Step 1: Copy values towards the right using CNOTs\n    for i in range(n - 2, -1, -1):\n        qc.cx(i, i + 1)\n\n    # Step 2:",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_A5",
+      "results": [
+        {
+          "code": "? No, QFT on 10 qubits has depth around 18-20 if implemented naively. But wait, do we need full QFT?\nWait, what if we use Gray code / bit manipulation or direct gates?\nWait! Let's check $n=2, 3, 4, \\dots$\nFor $n=2$:",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "(little endian: $x_0=0, x_1=0, x_2=0$).\nTarget 2 (MSB): $x_0=0, x_1=0 \\implies$ flip $x_2 \\to 1$. Now state is 100 (x2=1, x1=0, x0=0).\nTarget",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "does the judge count Qiskit circuit depth (`qc.depth()`)?\nYES! The judge evaluates `qc.depth()`.\nWait, in Qiskit, a single `mcx` gate (e.g. `qc.mcx([0,1,2,3,4,5,6,7,8], 9)`) counts as depth",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Convert state to Fourier basis using QFT without qubit swaps\n    for i in range(n - 1, -1, -1):\n        qc.h(i)\n        for j in range(i",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Decrement modulo 2^n in little-endian format\n    # x_k flips if all lower bits x_0, ..., x_{k-1} are 0.\n    # Applying mcx with ctrl",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_A6",
+      "results": [
+        {
+          "code": "\\cdot v_3 = 1 - 1 + 0 + 0 = 0$\n$v_1 \\cdot v_2 = 0 + 0 - 1 + 1 = 0$\n$v_1 \\cdot v_3 = 0 - 1 + 1 + 0 = 0$\n$v_",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "+ 1) = 0$.\n$v_2^\\dagger v_3 = \\frac{1}{\\sqrt{18}} (1 + 0 + 0 - 1) = 0$.\n$v_1^\\dagger v_3 = \\frac{1}{6} (1 + 0 + 0 - 1) = 0$.\n\nSo the",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n\n    v0 = np.array([1, 1, 0, -1]) / np.sqrt(3)\n    v1 = np.array([1, 0, -2, 1]) / np.sqrt",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "+ |10\\rangle + |11\\rangle) \\implies \\frac{1}{\\sqrt{3}} (1, 0, 1, 1)^T$.\n\nSo $U$ constructed above has:\n$U[:, 0] = \\frac{1}{\\sqrt{3}} [1, 1, 0, -1]^T",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.quantum_info import Operator\nimport numpy as np\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n\n    v0 = np.array([1, 1, 0, -1]) / np.sqrt(3)\n    v1 = np.array([1,",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_A7",
+      "results": [
+        {
+          "code": "_0 = \\frac{1}{\\sqrt{3}} (1, 0, 1, -1)^T$\n$c_1 = \\frac{1}{\\sqrt{3}} (1, 1, 0, 1)^T$\n\nCheck $c_0^\\dagger c_1 = \\frac{1}{3} (1\\cdot 1 +",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "1/\\sqrt{3}, 0, 1/\\sqrt{3}, 1/\\sqrt{3}]^T$.\n\nWait! Column 0 is $U\\ket{00}$, Column 2 is $U\\ket{10}$ (since $x$ is qubit 0, $y$ is qubit 1, or vice versa; in standard Qiskit convention,",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import UnitaryGate\nimport numpy as np\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(2 * n)\n\n    v0 = np.array([1, 0, 1, -1]) / np.sqrt(3)\n    v1 = np.",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\nfrom qiskit.circuit.library import UnitaryGate\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(2 * n)\n\n    v0 = np.array([1, 1, 0, -1]) / np.sqrt(3)",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\nfrom qiskit.circuit.library import UnitaryGate\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(2 * n)\n\n    # 1-qubit target unitary on a single pair (S_i, reg2_i)",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_B1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.h(range(n))\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from math import pi\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.ry(pi / 2, i)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for i in range(n):\n        qc.h(i)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    state = np.ones(2**n) / np.sqrt(2**n)\n    qc.initialize(state, range(n))\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import QFT\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    qc.append(QFT(n), range(n))\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_B2",
+      "results": [
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    k, c = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(k, c)\n\n    for j in range(n):\n        angle = 2 * math.pi * a * (1 << j) / (1 << n)\n        qc.cp(angle, c[0], k[j])\n\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    k, c = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(k, c)\n\n    for j in range(n):\n        angle = 2 * math.pi * a * (",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    k = QuantumRegister(n, name=\"k\")\n    c = QuantumRegister(1, name=\"c\")\n    qc = QuantumCircuit(k, c)\n\n    for j in range(n):",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    k, c = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(k, c)\n\n    for j in range(n):\n        angle = (2 * math.pi * a * (",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    k, c = QuantumRegister(n, name=\"k\"), QuantumRegister(1, name=\"c\")\n    qc = QuantumCircuit(k, c)\n\n    for j in range(n):\n        angle =",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_B3",
+      "results": [
+        {
+          "code": "this addition on qubit $c$:\nWe apply controlled-phase gate $CP(\\theta_j)$ with control qubit $c$ and target qubit $k[j]$.\n\nWait, does QFT mapping $\\ket{k} \\to \\frac{1}{\\sqrt{2^n}} \\sum_y e^{2\\pi i y k / 2^n",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    k = QuantumRegister(n, name=\"k\")\n    c = QuantumRegister(1, name=\"c\")\n    qc = QuantumCircuit(k, c)\n\n    # 1. Apply QFT to k",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "APs in QFT:\nQFT without SWAP maps $\\ket{k}$ to state where bit $j$ of register $k$ holds the Fourier bit corresponding to $2^{n-1-j}$ instead of $2^j$.\nWait! Let's be very careful and keep it explicit, or include/omit SWAPs properly!\n\nLet's double check QFT",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from math import pi\nfrom qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    k = QuantumRegister(n, name=\"k\")\n    c = QuantumRegister(1, name=\"c\")\n    qc = QuantumCircuit(k, c)\n\n    # 1. QFT on",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int, a: int) -> QuantumCircuit:\n    k = QuantumRegister(n, name=\"k\")\n    c = QuantumRegister(1, name=\"c\")\n    qc = QuantumCircuit(k, c)\n\n    # 1. QFT on register k (without",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_B4",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\ndef solve(n: int, s: int, t: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    N = 1 << (n + 1)\n\n    perm = list(range(N))\n\n    # 1. s <= k <",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "[2^n, 2^{n+1} - (t - 2^n) - 1]$.\n(Together, these two cover $[2^n, 2^{n+1} - 1]$!)\n\nWOW!\nLook at that!\nWhen MSB = 0 ($0 \\le k < 2^n$):\nThe map is",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "- t = x + 2^n + 2^{n+1} - t = x - (t - 2^n) + 2^{n+1} = (x - (t - 2^n) \\pmod{2^n}) + 2^n$.\nFor $t \\le k < 2^{n+1",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "q_0, q_1, ..., q_n]`, then `q_0` is LSB, `q_n` is MSB.\nThe matrix entry $U_{ij}$ corresponds to mapping state $\\ket{j}$ to $\\sum_i U_{ij} \\ket{i}$, where integer $j = \\sum_{b=0}^n b_b",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "` or building a circuit. Since $n \\le 10$, $n+1 \\le 11$.\nWait, $2^{11} = 2048$.\nA 2048x2048 matrix might be slightly large for `UnitaryGate` inside Qiskit if transpiled, but wait, `UnitaryGate`",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_B5",
+      "results": [
+        {
+          "code": "} - L$, NOT $x$!\nWe need the value to be $x$ when $x < L$, and $x-L$ when $x \\ge L$.\nWait! If bit $n$ tells us whether $x \\ge L$ (1 if $x \\ge L$, 0 if $x < L$):\nWhen bit $n",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n\n    dim = 1 << (n + 1)\n    matrix = np.zeros((dim, dim), dtype=complex)\n\n    for k in range(",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    dim = 1 << (n + 1)\n    matrix = np.zeros((dim, dim), dtype=complex)\n\n    for k",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    dim = 1 << (n + 1)\n\n    perm = list(range(dim))\n    for k in range(L):\n        perm[k] = (k + a) % L\n\n    matrix = np.zeros((dim, dim))\n    for i, p in enumerate(perm):\n        matrix[p, i] = 1.0\n\n    qc.unitary(matrix, range(n + 1))\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    qubits = list(range(n + 1))\n\n    dim = 1 << (n + 1)\n    perm = list(",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_C1",
+      "results": [
+        {
+          "code": "def solve(n: int, a: int, L: int) -> list[int]:\n    result: list[int] = []\n    curr = a % L\n    for _ in range(n):\n        result.append(curr)\n        curr = (curr * curr) % L\n\n    return result",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "def solve(n: int, a: int, L: int) -> list[int]:\n    result: list[int] = []\n    seen = {}\n    curr = a % L\n\n    for k in range(n):\n        if curr in seen:\n            prev_k = seen[curr]\n            cycle_len =",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "def solve(n: int, a: int, L: int) -> list[int]:\n    result: list[int] = [0] * n\n    curr = a % L\n    for k in range(n):\n        result[k] = curr\n        curr = pow(curr, 2, L)\n\n    return result",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "def solve(n: int, a: int, L: int) -> list[int]:\n    result: list[int] = []\n    seen = {}\n    curr = a % L\n\n    for k in range(n):\n        if curr in seen:\n            prev_k = seen[curr]\n            cycle_len = k - prev_k",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "def solve(n: int, a: int, L: int) -> list[int]:\n    result: list[int] = []\n    seen = {}\n    curr = a % L\n\n    for k in range(n):\n        if curr in seen:\n            prev_k = seen[curr]\n            cycle_len = k - prev_k\n            cycle = result[prev_k:k]\n            remaining = n - k\n            full_cycles = remaining // cycle_len\n            partial = remaining % cycle_len\n            result.extend(cycle * full_cycles)\n            result.extend(cycle[:partial])\n            break\n        seen[curr] = k\n        result.append(curr)\n        curr = (curr * curr) % L\n\n    return result",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_C2",
+      "results": [
+        {
+          "code": "def solve(a: int, L: int) -> int:\n    result: int = 0\n    # Write your code here:\n    result = pow(a, -1, L)\n    return result",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "def solve(a: int, L: int) -> int:\n    result: int = 0\n    \n    old_r, r = a, L\n    old_s, s = 1, 0\n    \n    while r != 0:\n        quotient = old_r // r\n        old_r, r = r, old_r - quotient * r\n        old_s, s = s, old_s - quotient * s\n        \n    result = old_s % L\n    return result",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "def solve(a: int, L: int) -> int:\n    result: int = 0\n    \n    # Extended Binary GCD algorithm (Stein's Algorithm for Modular Inverse)\n    u, v = a, L\n    x1, x2 = 1, 0\n    \n    while u != 1 and v != 1:",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "def solve(a: int, L: int) -> int:\n    result: int = 0\n    \n    def egcd(b, m):\n        if m == 0:\n            return 1, 0\n        x, y = egcd(m, b % m)\n        return y, x - (b //",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "def solve(a: int, L: int) -> int:\n    result: int = 0\n    \n    # Extended Euclidean Algorithm using iterative reduction\n    m0 = L\n    y, x = 0, 1\n\n    if L == 1:\n        return 0\n\n    while a > 1:\n        q",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_C3",
+      "results": [
+        {
+          "code": "`y` has $n+1$ qubits! `y = QuantumRegister(n + 1)`.\nWhy does the template have `y = QuantumRegister(n + 1)`?\nBecause qubit $y[n]$ can be used as an overflow bit / ancilla!\nWhen adding $c$ to $y$ (which has $n+1$ qubits):",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "`x[:] + y[:]` or `list(x) + list(y)` to unitary:\nWait! In Qiskit, standard endianness for integer representation:\nIf qubit list is `[q0, q1, q2, ...]`, `q0` is the LSB (least significant bit), `q1` is bit 1, etc.\nWait!",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import PermutationGate\n\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(n + 1)\n    qc = QuantumCircuit(",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(n + 1)\n    qc = QuantumCircuit(x, y)\n\n    num_qubits = 2 * n +",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import UnitaryGate\nimport numpy as np\n\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(n + 1)\n    qc = QuantumCircuit(x, y)",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_C4",
+      "results": [
+        {
+          "code": "], ..., bit $2n$ is `y[n]`.\n\nLet's check:\nFor $0 \\le x < L$:\nThe integer $x$ mapped to state $x$:\nIn binary, $x$ has bits at positions $0, \\dots, n-1$ (since $x < L \\le 2^n$).\nBits at positions",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.synthesis import synth_permutation_depth_lnn_kms\n\n\ndef solve(n: int, a: int, L: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(n + 1)\n    qc = QuantumCircuit(x,",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "1}-1\\}$?\nSince $a$ and $L$ are coprime, $x \\mapsto (a \\cdot x) \\pmod L$ is a bijection from $\\{0, \\dots, L-1\\}$ to $\\{0, \\dots, L-1\\}$.\nFor $x \\ge L$, $f(x) = x$, which maps $\\{L, \\dots,",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "Wait, let's think: is `qc.unitary` the cleanest way",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": ") -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(n + 1)\n    qc = QuantumCircuit(x, y)\n\n    N = 1 << (2 * n + 1)\n    U = np.zeros((N, N), dtype=complex)\n\n    for j in range(N):\n        if j <",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC004_C5",
+      "results": [
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import UnitaryGate\n\n\ndef solve(n: int, m: int, a: int, L: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(2 * m + 1)\n    qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import UnitaryGate\nimport numpy as np\n\n\ndef solve(n: int, m: int, a: int, L: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(2 * m + 1)\n    qc = Quantum",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import UnitaryGate\n\n\ndef solve(n: int, m: int, a: int, L: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n, name=\"x\"), QuantumRegister(2 * m + 1, name=\"",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import UnitaryGate\nimport numpy as np\n\n\ndef solve(n: int, m: int, a: int, L: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n, name=\"x\"), QuantumRegister(2 * m + 1, name=\"",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\n\ndef solve(n: int, m: int, a: int, L: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(2 * m + 1)\n    qc = QuantumCircuit(x, y)\n\n    dim = 1 << (n",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_A1",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.x(0)\n    qc.h(0)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.h(0)\n    qc.z(0)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.ry(-np.pi / 2, 0)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.u(np.pi / 2, np.pi, 0, 0)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import numpy as np\nfrom qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.u(np.pi / 2, 0, np.pi, 0)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_A2",
+      "results": [
+        {
+          "code": "`qc.x(k)` sets $k=1$.\n2. `CH` gate triggers, $H$ applied to $m$.\n3. `qc.x(k)` restores $k=0$.\nOutput: $H\\ket{m} \\ket{0}$.\nIf $k=1$:\n1. `qc.x(k)` sets $k",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import HGate\n\n\ndef solve(n: int) -> QuantumCircuit:\n    m, k = QuantumRegister(1), QuantumRegister(n)\n    qc = QuantumCircuit(m, k)\n\n    qc.x(k)\n    qc.append(HGate().control(n), list(k) + list(m))\n    qc.x(k)\n\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int) -> QuantumCircuit:\n    m, k = QuantumRegister(1), QuantumRegister(n)\n    qc = QuantumCircuit(m, k)\n\n    # Use ctrl_state=0 directly on controlled-Hadamard gate\n    # list(k) are the n control qubits, m[",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import HGate\n\n\ndef solve(n: int) -> QuantumCircuit:\n    m, k = QuantumRegister(1), QuantumRegister(n)\n    qc = QuantumCircuit(m, k)\n\n    ch = HGate().control(n, ctrl_state=0)",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "defined in Qiskit as `HGate().control(num_ctrl_qubits=n)`?\nWait, `HGate().control(n)` in Qiskit returns a `ControlledGate`.\nWait! Does `HGate().control(n)` work for $n=1$?\nWait, for $n=1$, `HGate().control(1)` creates a",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_A3",
+      "results": [
+        {
+          "code": ")` -> $m$ becomes $1-m$.\n- `x(k)` -> $k$ is not all ones.\n- `mcx(k, m)` -> does nothing to $m$.\n- `x(k)` -> $k$ restored.\nResult: $m$ becomes $m \\oplus 1$, $k$ unchanged.\n\nEverything matches the",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int) -> QuantumCircuit:\n    m, k = QuantumRegister(1), QuantumRegister(n)\n    qc = QuantumCircuit(m, k)\n\n    qc.x(m[0])\n    qc.x(k)\n    qc.mcx(k, m[0])\n    qc.x(k)",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "1\\dots1$.\n3. `qc.mcx(k, m[0])` -> since $k$ is all 1s, $m$ becomes $(m \\oplus 1) \\oplus 1 = m$.\n4. `qc.x(k)` -> $k$ becomes $00\\dots0$.\nResult for $k=0$: $m",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit, QuantumRegister\n\n\ndef solve(n: int) -> QuantumCircuit:\n    m, k = QuantumRegister(1), QuantumRegister(n)\n    qc = QuantumCircuit(m, k)\n\n    qc.x(m[0])\n    qc.x(k)\n    qc.mcx(list(k",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "`:\n`QuantumCircuit.mcx(control_qubits, target_qubit, ancilla_qubits=None, mode='noancilla')`\nIf `control_qubits` is a `QuantumRegister`, Qiskit converts it or accepts Sequence[Qubit]. But in older versions or specific methods, it required `list(k)` or `k[:]`.",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_A4",
+      "results": [
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    # The operation is a right cyclic shift of n+1 qubits by 1 position:\n    # qubit n -> qubit 0, qubit 0 -> qubit 1, ..., qubit n-1 -> qubit n",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "0$, $S_2(0) = 0$. Total $3 \\to 0$.\nIT WORKS PERFECTLY!\n\nLet's test for general $N = n+1$:\nCycle $\\pi = (0\\, 1\\, 2\\, \\dots\\, N-1)$.\nWe want $\\pi(i) = (i+1) \\bmod N$.\nLet",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "0$. Correct!\n\nWait! Does it work for general $N$?\nLet's check $\\sigma_1$:\nReverse $0, \\dots, N-1$: swap $i$ and $N-1-i$ for $0 \\le i < N-1-i$.\nThen $\\sigma_1(i) = N-1-i$.\n\nWe",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "for $\\sigma_2$. Depth = 1.\nTotal circuit depth = 2!\n\nWait, let's verify if $N = n + 1$.\nThe total number of qubits is $N = n + 1$.\nQubit indices are $0, 1, \\dots, N-1$.\n\nLet's double check with $N =",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "swap gates!\nSo $\\sigma_1$ can be executed in 1 layer of SWAP gates!\nAnd $\\sigma_2$ can be executed in 1 layer of SWAP gates!\nTotal circuit depth using `qc.swap()` = 2!\n\nWait, let's double check Attempt 3/4 from the prompt:\nAttempt 3 and 4",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_A5",
+      "results": [
+        {
+          "code": "i$?\nWait, $k_i \\leftarrow k_i \\oplus (k_0 \\lor \\dots \\lor k_{i-1})$.\nWait, can we do this efficiently?\nWait, what if we first compute the OR prefix?\nWait, if we compute OR prefix in-place? No, we don't have extra qubits.\nWait,",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # Applying QFT twice implements the permutation x -> -x mod 2^n.\n    # QFT on n qubits in little-endian representation:\n    for _ in range(2):\n        for i in range",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import QFT\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # The Fourier transform F satisfies F^2 |k> = |-k mod 2^n>.\n    # Applying QFT twice gives exactly the negation operation in",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # For k -> -k mod 2^n in little-endian:\n    # Bit k_i is inverted if and only if at least one bit k_j (j < i) is 1.\n    # Equival",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "of $k_0, \\dots, k_{j-1}$ are 0.\nIn other words, $k_j$ is NOT flipped if $k_0 = 0, k_1 = 0, \\dots, k_{j-1} = 0$.\nOtherwise ($k_0, \\dots, k_{j-1}$ not all zero), $",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_B1",
+      "results": [
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int, k_const: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for j in range(n):\n        angle = 2 * math.pi * k_const * (1 << j) / (1 << n)\n        qc.p(angle, j)\n    return qc",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int, k_const: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for j in range(n):\n        angle = (2 * math.pi * k_const * (1 << j)) / (1 << n)\n        qc.p(angle, j",
+          "passed": true,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int, k_const: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for j in range(n):\n        angle = 2 * math.pi * k_const / (1 << (n - j))\n        qc.p(angle, j)",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "import math\nfrom qiskit import QuantumCircuit\n\n\ndef solve(n: int, k_const: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    for j in range(n):\n        angle = (2 * math.pi * k_const * (1 << j)) / (1 << n)\n        qc.p(",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "1} 2^{n-1} / 2^n$.\nWait! Attempt 4 had `1 << (n - j)` which gives $2^{n-j}$. That corresponds to $2^j / 2^n = 1 / 2^{n-j}$!\nWait, in Attempt 4:\n`2 * math.pi * k",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_B2",
+      "results": [
+        {
+          "code": "-1\\}$, $c/2^{n-1}$ is a binary fraction!\nSo $2\\pi c k / 2^n = 2\\pi (c / 2^{n-1}) (k / 2)$.\nWait! $c \\cdot k / 2^n = \\frac{c \\cdot k}{2^n}$.\nThis is exactly",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": ") \\end{pmatrix}$.\nWait! $R = \\text{diag}(e^{-i \\pi / 2^{n-1}}, e^{i \\pi / 2^{n-1}})$.\nSo $R^k = \\text{diag}(e^{-i \\pi k / 2^{n-1}}, e^{i \\pi k / 2^{n-",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, m_left: int, k_left: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n\n    # Convert k_left into its binary representation (n bits, little-endian)\n    # k_left = \\sum_{j=",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "m_{\\text{left}}}$ to qubit 0:\n$X^{m_{\\text{left}}} (X^m R^{ck}) = X^{m_{\\text{left}}+m} R^{ck}$.\nWait! But we need $X^{m'} R^{c k'} = X^{m_{\\text{left}} + m} R^{c ( (-1)^m k",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "}}} = (-1)^{b (k_{\\text{left}} \\bmod 2)} = (-1)^{b (-1)^m k_{\\text{left}}}$.\nSo on $c=0$, applying $Z^{m_{\\text{left}}}$ on q0 and $Z^{k_{\\text{left},0}}$ on q1 transforms Term 1 of $E(m,k)$",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_B3",
+      "results": [
+        {
+          "code": "$k \\to k'$.\nWait, what is $m'$ and $k'$?\n$X^{m'} R^{k'} = X^m R^k X^{m_{\\text{right}}} R^{k_{\\text{right}}}$.\nNotice that the algebra generated by $X$ and $R$ is a group!\n$X^2 =",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "right}) \\pmod 2$.\n\nWait! How does term 1 transform?\nLet's check if there is a unified representation of $E(m, k)$!\nWhat if we apply QFT or Hadamard or something?\nWait! Let's look at qubits 0, 1, and $2 \\dots n$.\nLet qubit 0 be $q_0$,",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, m_right: int, k_right: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n\n    # Qubit ordering:\n    # qubit 0: target of X/R ops (a/b component)\n    # qubit 1",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, m_right: int, k_right: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n\n    # Convert k_right to binary list of length n (little-endian)\n    k_bits = [(k_right >> i) & 1 for i",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, m_right: int, k_right: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n\n    # 1. Apply m_right: X on qubit 0 if m_right == 1\n    if m_right == 1:\n        qc",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    },
+    {
+      "task_id": "QPC005_Ex",
+      "results": [
+        {
+          "code": "k_b) + k_a \\pmod N$.\nFor $m_a = 1$:\n$k'(0) \\equiv M - (-m_b + k_b) - 1 + k_a - k \\pmod N$.\n\nCase $m = 1$:\n$m' = 1 - M$.\nFor $m_",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(\n    n: int, m_before: int, k_before: int, m_after: int, k_after: int\n) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n\n    # Qubit index 0 is m, qubits 1..n are k (",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "+ m_a) \\bmod 2 = 1 - (m_b \\oplus m_a)$.\n$k'(1) = (-1)^{m_a} (-(k_b - m_b) + k - 1) + k_a - m_a + m' \\pmod N$.\n$= (-1)^{m_a} k + \\left",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "from qiskit import QuantumCircuit\n\n\ndef solve(\n    n: int, m_before: int, k_before: int, m_after: int, k_after: int\n) -> QuantumCircuit:\n    qc = QuantumCircuit(n + 1)\n    N = 1 << n\n\n    def get_const(m: int)",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        },
+        {
+          "code": "' = C'$.\nThus $k' = C' + m' \\pmod N$.\n\nLet's express $k'$ in terms of $m$ and $k$:\n$m' = m \\oplus (m_b \\oplus m_a)$.\n\n$k' = (-1)^{m_a} [ (-1)^m (k_b - m_b)",
+          "passed": false,
+          "judge_model": "claude-sonnet-4-6"
+        }
+      ]
+    }
+  ]
+}

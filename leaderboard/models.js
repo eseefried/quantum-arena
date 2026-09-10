@@ -10,6 +10,7 @@
     "GPT-5": { provider: "OpenAI", open: false, parameters: "Undisclosed" },
     "Claude Opus 4.6": { provider: "Anthropic", open: false, parameters: "Undisclosed" },
     "Gemini 3 Flash": { provider: "Google DeepMind", open: false, parameters: "Undisclosed" },
+    "Gemini 3.6 Flash": { provider: "Google DeepMind", open: false, parameters: "Undisclosed" },
     "Gemini 2.0 Flash": { provider: "Google DeepMind", open: false, parameters: "Undisclosed" },
     "Gemma-3-4B-IT": { provider: "Google DeepMind", open: true, parameters: "4B", huggingFace: "google/gemma-3-4b-it" },
     "LLaMA-3.1-8B": { provider: "Meta", open: true, parameters: "8B", huggingFace: "meta-llama/Llama-3.1-8B" },
