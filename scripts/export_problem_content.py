@@ -40,10 +40,15 @@ def matching_cache(cache_root, dataset, raw_model, task_id, samples):
     folder = source.DATASET_CI_KEY[dataset]
     if dataset.startswith('QuanBench'):
         folder = 'quanbench'
-        raw_model += '-' + dataset.removeprefix('QuanBench')
-    path = cache_root / folder / raw_model / (task_id + '.json')
+        candidates = [
+            cache_root / folder / (raw_model + '-' + dataset.removeprefix('QuanBench')) / (task_id + '.json'),
+            cache_root / folder / dataset / raw_model / (task_id + '.json'),
+        ]
+    else:
+        candidates = [cache_root / folder / raw_model / (task_id + '.json')]
     # Refuse ambiguous/partial histories: snapshot order is the benchmark's order.
-    if not path.is_file():
+    path = next((p for p in candidates if p.is_file()), None)
+    if path is None:
         return None
     cached = source.load_json(path)
     if not isinstance(cached, list) or len(cached) != len(samples):
