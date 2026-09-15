@@ -35,13 +35,14 @@ DATASET_CI_KEY = {
 
 # raw "assistant" field (lowercased) -> display name shown on the site.
 # Kept explicit rather than auto-derived: several raw ids are ambiguous or
-# inconsistent across scripts (e.g. "mistral3" vs "mistral-small-3.2-24b-qiskit"
-# are DIFFERENT recorded runs, not the same model under two names).
+# inconsistent across scripts. The owner confirmed the Qwen, Mistral, and
+# Granite alias pairs refer to the same checkpoints on 2026-09-15.
 MODEL_DISPLAY_NAMES = {
     "gpt-5": "GPT-5",
     "claude-opus-4-6": "Claude Opus 4.6",
     "gemini-3-flash-preview": "Gemini 3 Flash",
     "gemini-3.6-flash": "Gemini 3.6 Flash",
+    "gemini-3.1-pro-preview": "Gemini 3.1 Pro Preview",
     "gemini-2.0-flash": "Gemini 2.0 Flash",
     "google/gemma-3-4b-it": "Gemma-3-4B-IT",
     "meta-llama/llama-3.1-8b": "LLaMA-3.1-8B",
@@ -49,10 +50,10 @@ MODEL_DISPLAY_NAMES = {
     "meta-llama/llama-4-scout-17b-16e-instruct": "LLaMA-4-Scout-17B",
     "mistralai/mistral-7b-instruct-v0.3": "Mistral-7B-Instruct-v0.3",
     "mistral-small-3.2-24b-qiskit": "Mistral-3.2-24B-Qiskit",
-    "mistral3": "Mistral3-Qiskit",
-    "qwen": "Qwen2.5-Coder-Qiskit",
+    "mistral3": "Mistral-3.2-24B-Qiskit",
+    "qwen": "Qwen2.5-Coder-14B-Qiskit",
     "qwen2.5-coder-14b-qiskit": "Qwen2.5-Coder-14B-Qiskit",
-    "qiskit/granite-8b-qiskit": "Granite-8B-Qiskit",
+    "qiskit/granite-8b-qiskit": "Granite-3.2-8B-Qiskit",
     "qiskit/granite-3.2-8b-qiskit": "Granite-3.2-8B-Qiskit",
     "quantum-rag": "Quantum RAG",
 }

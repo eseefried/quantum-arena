@@ -9,6 +9,7 @@
   const MODEL_META = {
     "GPT-5": { provider: "OpenAI", open: false, parameters: "Undisclosed" },
     "Claude Opus 4.6": { provider: "Anthropic", open: false, parameters: "Undisclosed" },
+    "Gemini 3.1 Pro Preview": { provider: "Google DeepMind", open: false, parameters: "Undisclosed" },
     "Gemini 3 Flash": { provider: "Google DeepMind", open: false, parameters: "Undisclosed" },
     "Gemini 3.6 Flash": { provider: "Google DeepMind", open: false, parameters: "Undisclosed" },
     "Gemini 2.0 Flash": { provider: "Google DeepMind", open: false, parameters: "Undisclosed" },
@@ -18,10 +19,7 @@
     "LLaMA-4-Scout-17B": { provider: "Meta", open: true, parameters: "17B active / 109B total (MoE)" },
     "Mistral-7B-Instruct-v0.3": { provider: "Mistral AI", open: true, parameters: "7B", huggingFace: "mistralai/Mistral-7B-Instruct-v0.3" },
     "Mistral-3.2-24B-Qiskit": { provider: "Mistral AI (fine-tuned)", open: true, parameters: "24B", huggingFace: "Qiskit/mistral-small-3.2-24b-qiskit" },
-    "Mistral3-Qiskit": { provider: "Mistral AI (fine-tuned)", open: true, parameters: "24B", huggingFace: "Qiskit/mistral-small-3.2-24b-qiskit" },
-    "Qwen2.5-Coder-Qiskit": { provider: "Alibaba (fine-tuned)", open: true, parameters: "14.7B", huggingFace: "Qiskit/Qwen2.5-Coder-14B-Qiskit" },
     "Qwen2.5-Coder-14B-Qiskit": { provider: "Alibaba (fine-tuned)", open: true, parameters: "14.7B", huggingFace: "Qiskit/Qwen2.5-Coder-14B-Qiskit" },
-    "Granite-8B-Qiskit": { provider: "IBM (fine-tuned)", open: true, parameters: "8B", huggingFace: "Qiskit/granite-8b-qiskit" },
     "Granite-3.2-8B-Qiskit": { provider: "IBM (fine-tuned)", open: true, parameters: "8B", huggingFace: "Qiskit/granite-3.2-8b-qiskit" },
     "Quantum RAG": { provider: "Custom (Granite + retrieval)", open: true, parameters: "8B generator", huggingFace: "Qiskit/granite-3.2-8b-qiskit" },
   };

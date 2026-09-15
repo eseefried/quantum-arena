@@ -17,9 +17,9 @@ used in an old run: historical commit hashes were generally not saved.
 | `meta-llama/Llama-3.2-3B-Instruct` | Meta; instruction tuned | 3B | [Llama 3.2 3B Instruct](https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct) | Separate model from 3.1 8B. |
 | `google/gemma-3-4b-it` | Google; instruction tuned | 4B | [Gemma 3 4B IT](https://huggingface.co/google/gemma-3-4b-it) | Recorded local checkpoint. |
 | `mistralai/Mistral-7B-Instruct-v0.3` | Mistral AI; instruction tuned | 7B | [Mistral 7B Instruct v0.3](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3) | Recorded local checkpoint. |
-| `mistral-small-3.2-24b-qiskit`, `mistral3` | Qiskit fine-tune of Mistral | 24B | [Mistral Small 3.2 24B Qiskit](https://huggingface.co/Qiskit/mistral-small-3.2-24b-qiskit) | Current factory routes both aliases to this default. Historical overrides/revisions remain unverified; Arena keeps separate rows. |
-| `qwen2.5-coder-14b-qiskit`, `qwen` | Qiskit fine-tune of Qwen | 14B class | [Qwen2.5 Coder 14B Qiskit](https://huggingface.co/Qiskit/Qwen2.5-Coder-14B-Qiskit) | Current factory routes both aliases to this default. Do not merge historical runs solely from this routing. |
-| `qiskit/granite-8b-qiskit` | IBM / Qiskit fine-tune | 8B | [Granite 8B Qiskit](https://huggingface.co/Qiskit/granite-8b-qiskit) | Historical HumanEval/QuanBench label; not proven identical to Granite 3.2. |
+| `mistral-small-3.2-24b-qiskit`, `mistral3` | Qiskit fine-tune of Mistral | 24B | [Mistral Small 3.2 24B Qiskit](https://huggingface.co/Qiskit/mistral-small-3.2-24b-qiskit) | Owner confirmed both IDs refer to this checkpoint on 2026-09-15; Arena merges their results. |
+| `qwen2.5-coder-14b-qiskit`, `qwen` | Qiskit fine-tune of Qwen | 14B class | [Qwen2.5 Coder 14B Qiskit](https://huggingface.co/Qiskit/Qwen2.5-Coder-14B-Qiskit) | Owner confirmed both IDs refer to this checkpoint on 2026-09-15; Arena merges their results. |
+| `qiskit/granite-8b-qiskit` | IBM / Qiskit fine-tune | 8B | [Granite 8B Qiskit](https://huggingface.co/Qiskit/granite-8b-qiskit) | Historical HumanEval/QuanBench alias for Granite 3.2, confirmed by the owner on 2026-09-15; Arena merges these results with the Granite 3.2 ID. |
 | `Qiskit/granite-3.2-8b-qiskit` | IBM / Qiskit fine-tune | 8B | [Granite 3.2 8B Qiskit](https://huggingface.co/Qiskit/granite-3.2-8b-qiskit) | QCoder label and current factory default. |
 | `quantum-rag` | Custom retrieval + Granite generator | 8B generator + 30M embedder | [Generator](https://huggingface.co/Qiskit/granite-3.2-8b-qiskit), [embedder](https://huggingface.co/ibm-granite/granite-embedding-30m-english) | Pipeline, not a distinct trained checkpoint. Current defaults: top-k 4, first 2,000 corpus chunks, Qiskit 2.2 docs; generator attempts NF4 4-bit loading. Environment overrides can change these settings. QCoder startup encountered CUDA initialization failures. |
 | `meta-llama/Llama-4-Scout-17B-16E-Instruct` | Meta; mixture of experts | 17B active / 109B total | [Llama 4 Scout](https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct) | **Archived / excluded** pending output verification. Historical HE Standard/Hard and QB44 files remain in `experiments/archived_results/scout_unverified/`. No generation caches found during audit. |
@@ -50,7 +50,7 @@ listed by an API is not automatically a model we have benchmarked.
 Generated from `experiments/results/**/results_*.json` on the audit date.
 Numbers are task counts in the latest saved file for each model and dataset.
 `—` means no saved final file, not necessarily no attempt. This table does not
-certify output quality. Aliases stay separate intentionally.
+certify output quality. Raw IDs are preserved here; Arena merges the three owner-confirmed alias pairs above.
 
 | Recorded ID | HE Standard | HE Hard | QB44 | QB117 | QCoder |
 |---|---:|---:|---:|---:|---:|
@@ -124,3 +124,10 @@ from a short alias or silently combine runs across replacements.
 
 Local evidence: `scripts/run_benchmark.py`, `scripts/run_benchmark_qcoder.py`,
 `assistants/`, `experiments/results/`, `cache/`, and the archived Scout directory.
+
+## 2026-09-15 leaderboard update
+
+The owner confirmed the Qwen, Mistral, and Granite alias pairs above represent
+the same checkpoints. Export maps each pair to one model without rewriting raw
+results. Gemini 3.1 Pro Preview and Quantum RAG now include their completed
+2026-09-10 QCoder results. All 11 published models have five complete datasets.
