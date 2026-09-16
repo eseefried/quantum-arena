@@ -40,6 +40,7 @@ DATASET_CI_KEY = {
 MODEL_DISPLAY_NAMES = {
     "gpt-5": "GPT-5",
     "claude-opus-4-6": "Claude Opus 4.6",
+    "claude-fable-5-1": "Claude Fable 5.1",
     "gemini-3-flash-preview": "Gemini 3 Flash",
     "gemini-3.6-flash": "Gemini 3.6 Flash",
     "gemini-3.1-pro-preview": "Gemini 3.1 Pro Preview",
