@@ -1,0 +1,27 @@
+{
+  "status": "completed",
+  "counts": {
+    "incorrect": 50,
+    "candidate_error": 21,
+    "truncated": 1,
+    "candidate_unsupported_import": 1,
+    "passed": 2
+  },
+  "expected_samples": 75,
+  "fingerprint": "30f5935a9df7794e68b9b6911dc500f34591a05df7dfefaa43016a9fe814404b",
+  "execution_status_counts": {
+    "incorrect": 50,
+    "candidate_error": 21,
+    "candidate_unsupported_import": 1,
+    "passed": 2,
+    "not_executed": 1
+  },
+  "unsupported_import_modules": {
+    "qiskit.circuit.library.QAOAnsatz": 1
+  },
+  "pass_at_k": {
+    "1": 0.02666666666666666,
+    "5": 0.13333333333333333
+  },
+  "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."
+}

@@ -546,3 +546,23 @@ tr.detail-row td {
 .model-source-link { color: var(--accent); white-space: nowrap; text-underline-offset: 3px; font-size: .8rem; }
 .model-source-link:hover { color: var(--text); }
 .model-source-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
+
+/* Independent QuantumBenchEval preview collection. */
+.qbe-panel { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+.qbe-panel h2 { margin-top: 0; font-size: 1.25rem; }
+.qbe-panel p { line-height: 1.6; }
+.qbe-panel .muted { color: var(--text-muted); font-size: .8rem; }
+.qbe-badge { font-size: .75rem; vertical-align: middle; padding: 5px 9px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); }
+.qbe-topics a { padding: 7px 16px; text-decoration: none; color: var(--text-muted); border-radius: 6px; }
+.qbe-topics a[aria-current] { background: var(--accent); color: white; }
+.qbe-metrics { display: flex; gap: 48px; flex-wrap: wrap; margin: 24px 0; }
+.qbe-metrics span { display: block; color: var(--text-muted); font-size: .85rem; margin-bottom: 6px; }
+.qbe-metrics strong { font-size: 2rem; font-variant-numeric: tabular-nums; }
+.qbe-notice { border-left: 3px solid var(--accent); padding: 12px 16px; background: var(--accent-soft); }
+.qbe-statuses { display: flex; flex-wrap: wrap; gap: 10px; }
+.qbe-statuses div { display: flex; gap: 12px; border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px; font-size: .8rem; overflow-wrap: anywhere; }
+.qbe-statuses dd { margin: 0; font-weight: 600; }
+.qbe-variant { border-top: 1px solid var(--border); margin-top: 24px; padding-top: 12px; }
+.qbe-panel summary { cursor: pointer; margin-top: 24px; color: var(--accent); }
+.qbe-panel .board { font-size: .8rem; }
+@media (max-width: 600px) { .qbe-panel { padding: 16px; } .site-nav { flex-wrap: wrap; } }

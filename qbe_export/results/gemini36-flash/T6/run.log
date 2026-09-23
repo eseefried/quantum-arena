@@ -1,0 +1,344 @@
+[T6 1/17] t6_0 sample 1/5
+INFO:assistants.base_assistant:Initialized GeminiAssistant with model gemini-3.6-flash
+INFO:assistants.gemini_assistant:Initialized GenAI client with model gemini-3.6-flash
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+WARNING:google_genai.models:Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 1/17] t6_0 sample 2/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 1/17] t6_0 sample 3/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 1/17] t6_0 sample 4/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 1/17] t6_0 sample 5/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 2/17] t6_1 sample 1/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 2/17] t6_1 sample 2/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 2/17] t6_1 sample 3/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 2/17] t6_1 sample 4/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 2/17] t6_1 sample 5/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 3/17] t6_2 sample 1/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 3/17] t6_2 sample 2/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 3/17] t6_2 sample 3/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 3/17] t6_2 sample 4/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 3/17] t6_2 sample 5/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 4/17] t6_3 sample 1/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 4/17] t6_3 sample 2/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 4/17] t6_3 sample 3/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 4/17] t6_3 sample 4/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 4/17] t6_3 sample 5/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 5/17] t6_4 sample 1/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 5/17] t6_4 sample 2/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 5/17] t6_4 sample 3/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 5/17] t6_4 sample 4/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 5/17] t6_4 sample 5/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 6/17] t6_5 sample 1/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 6/17] t6_5 sample 2/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 6/17] t6_5 sample 3/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 6/17] t6_5 sample 4/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 6/17] t6_5 sample 5/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 7/17] t6_6 sample 1/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 7/17] t6_6 sample 2/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 7/17] t6_6 sample 3/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 7/17] t6_6 sample 4/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 7/17] t6_6 sample 5/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 8/17] t6_7 sample 1/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 8/17] t6_7 sample 2/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 8/17] t6_7 sample 3/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 8/17] t6_7 sample 4/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 8/17] t6_7 sample 5/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 9/17] t6_8 sample 1/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 9/17] t6_8 sample 2/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 9/17] t6_8 sample 3/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 9/17] t6_8 sample 4/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 9/17] t6_8 sample 5/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 10/17] t6_9 sample 1/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 10/17] t6_9 sample 2/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 10/17] t6_9 sample 3/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 10/17] t6_9 sample 4/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 10/17] t6_9 sample 5/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 11/17] t6_10 sample 1/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 11/17] t6_10 sample 2/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 11/17] t6_10 sample 3/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 11/17] t6_10 sample 4/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 11/17] t6_10 sample 5/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 12/17] t6_11 sample 1/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 12/17] t6_11 sample 2/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 12/17] t6_11 sample 3/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 12/17] t6_11 sample 4/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 12/17] t6_11 sample 5/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 13/17] t6_12 sample 1/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 13/17] t6_12 sample 2/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 13/17] t6_12 sample 3/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 13/17] t6_12 sample 4/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 13/17] t6_12 sample 5/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 14/17] t6_13 sample 1/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 14/17] t6_13 sample 2/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 14/17] t6_13 sample 3/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 14/17] t6_13 sample 4/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 14/17] t6_13 sample 5/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 15/17] t6_14 sample 1/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 15/17] t6_14 sample 2/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 15/17] t6_14 sample 3/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 15/17] t6_14 sample 4/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 15/17] t6_14 sample 5/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 16/17] t6_15 sample 1/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 16/17] t6_15 sample 2/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 16/17] t6_15 sample 3/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 16/17] t6_15 sample 4/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 16/17] t6_15 sample 5/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 17/17] t6_16 sample 1/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 17/17] t6_16 sample 2/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 17/17] t6_16 sample 3/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 17/17] t6_16 sample 4/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+[T6 17/17] t6_16 sample 5/5
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+INFO:assistants.gemini_assistant:Generated sample 1/1 successfully
+{"status": "completed", "counts": {"candidate_error": 7, "passed": 65, "incorrect": 7, "candidate_unsupported_import": 3, "truncated": 3}, "expected_samples": 85, "fingerprint": "9b2a0df1b3422f867b6b969796dbe621d72595876d977f5649ca7f8d1cdcbf50", "execution_status_counts": {"passed": 65, "candidate_error": 7, "incorrect": 7, "candidate_unsupported_import": 3, "not_executed": 3}, "unsupported_import_modules": {"networkx.community": 3}, "pass_at_k": {"1": 0.7647058823529411, "5": 1.0}, "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."}

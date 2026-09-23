@@ -1,0 +1,706 @@
+{
+  "schema_version": 1,
+  "status": "proposal_not_launch_configuration",
+  "audit_date": "2026-09-18",
+  "historical_evidence": "models.md and current code only; old caches/results absent",
+  "datasets": [
+    {
+      "key": "T1",
+      "path": "QuantumBenchEval_T1.json",
+      "sha256": "c8322a8794a3897692b51817d5783a0ce21d1c1403f60dece50f1f04fff86b42",
+      "topic": "T1: AI-Assisted QAOA for Weighted Max-Cut",
+      "tasks": 17,
+      "evaluation": "supplied_python_assertions"
+    },
+    {
+      "key": "T2",
+      "path": "QuantumBenchEval_T2.json",
+      "sha256": "3e3daf234993271faa9d385b8642639e64c152d6ad2a3062e033687281a0c506",
+      "topic": "T2: Constrained QUBO for Scientific Resource Allocation",
+      "tasks": 15,
+      "evaluation": "supplied_python_assertions"
+    },
+    {
+      "key": "T3",
+      "path": "QuantumBenchEval_T3.json",
+      "sha256": "9d6310f82c5be971540de860a693a613b26479ce9cc85a37b7fa6444fedab9bb",
+      "topic": "T3: Variational Quantum Eigensolver (VQE) for Molecular Ground States",
+      "tasks": 15,
+      "evaluation": "ai_assistance_rubric_protocol_pending"
+    },
+    {
+      "key": "T4",
+      "path": "QuantumBenchEval_T4.json",
+      "sha256": "b50f9e1749dfc571b3b6790e34d860701bb0ff9561ccf1a74b3f6c78e3d1b5ca",
+      "topic": "T4: Detection of Quantum Phase Transitions",
+      "tasks": 15,
+      "evaluation": "supplied_python_assertions"
+    },
+    {
+      "key": "T5",
+      "path": "QuantumBenchEval_T5.json",
+      "sha256": "e7b36fdd3e5f50ab15568be9c71fc3e263710e562fab87812b6b27c4b464d8b2",
+      "topic": "T5: Maximum Independent Set on Hardware-Relevant Graphs",
+      "tasks": 17,
+      "evaluation": "supplied_python_assertions"
+    },
+    {
+      "key": "T6",
+      "path": "QuantumBenchEval_T6.json",
+      "sha256": "420001e137883c1413afefd1644918bd0013dc7b3fde9e7fb9f1784aef6e604f",
+      "topic": "T6: Graph Partitioning and Community Detection",
+      "tasks": 17,
+      "evaluation": "supplied_python_assertions"
+    }
+  ],
+  "models": [
+    {
+      "key": "llama31-8b",
+      "role": "candidate",
+      "identity": "meta-llama/Llama-3.1-8B",
+      "assistant_implementation": "assistants.llama3_assistant.Llama3Assistant",
+      "historical_status": "previously_run",
+      "proposed_selection": true,
+      "aliases": [],
+      "python": ".venv/bin/python",
+      "historical_revision": null,
+      "historical_settings_verified": false,
+      "settings_evidence": "Current adapter and scripts/run_model_all.sh; historical per-run configs absent",
+      "current_effective_settings": {
+        "samples_per_task": 5,
+        "max_output_tokens": 2048,
+        "temperature": 0.8,
+        "top_p": 0.95,
+        "top_k": "checkpoint/provider default, not explicitly set",
+        "reasoning": "not explicitly configured",
+        "precision": "bfloat16",
+        "quantization": null,
+        "device_policy": "require all model weights on CUDA"
+      },
+      "notes": [],
+      "hf_checkpoint": "meta-llama/Llama-3.1-8B",
+      "blockers": [
+        "Historical HF commit not recorded; pin a resolved revision before a new run and disclose historical uncertainty",
+        "Model environment and GPU generation not validated on this host"
+      ]
+    },
+    {
+      "key": "llama32-3b",
+      "role": "candidate",
+      "identity": "meta-llama/Llama-3.2-3B-Instruct",
+      "assistant_implementation": "assistants.llama3_assistant.Llama3Assistant",
+      "historical_status": "previously_run",
+      "proposed_selection": true,
+      "aliases": [],
+      "python": ".venv/bin/python",
+      "historical_revision": null,
+      "historical_settings_verified": false,
+      "settings_evidence": "Current adapter and scripts/run_model_all.sh; historical per-run configs absent",
+      "current_effective_settings": {
+        "samples_per_task": 5,
+        "max_output_tokens": 2048,
+        "temperature": 0.8,
+        "top_p": 0.95,
+        "top_k": "checkpoint/provider default, not explicitly set",
+        "reasoning": "not explicitly configured",
+        "precision": "bfloat16",
+        "quantization": null,
+        "device_policy": "require all model weights on CUDA"
+      },
+      "notes": [],
+      "hf_checkpoint": "meta-llama/Llama-3.2-3B-Instruct",
+      "blockers": [
+        "Historical HF commit not recorded; pin a resolved revision before a new run and disclose historical uncertainty",
+        "Model environment and GPU generation not validated on this host"
+      ]
+    },
+    {
+      "key": "gemma3-4b",
+      "role": "candidate",
+      "identity": "google/gemma-3-4b-it",
+      "assistant_implementation": "assistants.gemma3_assistant.Gemma3Assistant",
+      "historical_status": "previously_run",
+      "proposed_selection": true,
+      "aliases": [],
+      "python": ".venv/bin/python",
+      "historical_revision": null,
+      "historical_settings_verified": false,
+      "settings_evidence": "Current adapter and scripts/run_model_all.sh; historical per-run configs absent",
+      "current_effective_settings": {
+        "samples_per_task": 5,
+        "max_output_tokens": 512,
+        "temperature": 0.8,
+        "top_p": 0.95,
+        "top_k": "checkpoint/provider default, not explicitly set",
+        "reasoning": "not explicitly configured",
+        "precision": "bfloat16",
+        "quantization": null,
+        "device_policy": "require all model weights on CUDA"
+      },
+      "notes": [
+        "Adapter hard-codes 512, overriding runner max_tokens=2048. Preserve effective cap pending explicit protocol change."
+      ],
+      "hf_checkpoint": "google/gemma-3-4b-it",
+      "blockers": [
+        "Historical HF commit not recorded; pin a resolved revision before a new run and disclose historical uncertainty",
+        "Model environment and GPU generation not validated on this host"
+      ]
+    },
+    {
+      "key": "mistral7b",
+      "role": "candidate",
+      "identity": "mistralai/Mistral-7B-Instruct-v0.3",
+      "assistant_implementation": "assistants.mistral_assistant.MistralAssistant",
+      "historical_status": "previously_run",
+      "proposed_selection": true,
+      "aliases": [],
+      "python": ".venv/bin/python",
+      "historical_revision": null,
+      "historical_settings_verified": false,
+      "settings_evidence": "Current adapter and scripts/run_model_all.sh; historical per-run configs absent",
+      "current_effective_settings": {
+        "samples_per_task": 5,
+        "max_output_tokens": 512,
+        "temperature": 0.8,
+        "top_p": 0.95,
+        "top_k": "checkpoint/provider default, not explicitly set",
+        "reasoning": "not explicitly configured",
+        "precision": "bfloat16",
+        "quantization": null,
+        "device_policy": "require all model weights on CUDA"
+      },
+      "notes": [
+        "Adapter hard-codes 512, overriding runner max_tokens=2048. Preserve effective cap pending explicit protocol change."
+      ],
+      "hf_checkpoint": "mistralai/Mistral-7B-Instruct-v0.3",
+      "blockers": [
+        "Historical HF commit not recorded; pin a resolved revision before a new run and disclose historical uncertainty",
+        "Model environment and GPU generation not validated on this host"
+      ]
+    },
+    {
+      "key": "mistral-qiskit",
+      "role": "candidate",
+      "identity": "Qiskit/mistral-small-3.2-24b-qiskit",
+      "assistant_implementation": "assistants.mistral3_qiskit_assistant.Mistral3QiskitAssistant",
+      "historical_status": "previously_run",
+      "proposed_selection": true,
+      "aliases": [
+        "mistral-small-3.2-24b-qiskit",
+        "mistral3"
+      ],
+      "python": ".venv/bin/python",
+      "historical_revision": null,
+      "historical_settings_verified": false,
+      "settings_evidence": "Current adapter and scripts/run_model_all.sh; historical per-run configs absent",
+      "current_effective_settings": {
+        "samples_per_task": 5,
+        "max_output_tokens": 2048,
+        "temperature": 0.8,
+        "top_p": 0.95,
+        "top_k": "checkpoint/provider default, not explicitly set",
+        "reasoning": "not explicitly configured",
+        "precision": "bfloat16",
+        "quantization": null,
+        "device_policy": "require all model weights on CUDA"
+      },
+      "notes": [
+        "Aliases map to one proposed entry; historical overrides are unverified, so historical scores must not be merged."
+      ],
+      "hf_checkpoint": "Qiskit/mistral-small-3.2-24b-qiskit",
+      "blockers": [
+        "Historical HF commit not recorded; pin a resolved revision before a new run and disclose historical uncertainty",
+        "Model environment and GPU generation not validated on this host"
+      ]
+    },
+    {
+      "key": "qwen-qiskit",
+      "role": "candidate",
+      "identity": "Qiskit/Qwen2.5-Coder-14B-Qiskit",
+      "assistant_implementation": "assistants.qwen25_qiskit_assistant.Qwen25QiskitAssistant",
+      "historical_status": "previously_run",
+      "proposed_selection": true,
+      "aliases": [
+        "qwen2.5-coder-14b-qiskit",
+        "qwen"
+      ],
+      "python": ".venv/bin/python",
+      "historical_revision": null,
+      "historical_settings_verified": false,
+      "settings_evidence": "Current adapter and scripts/run_model_all.sh; historical per-run configs absent",
+      "current_effective_settings": {
+        "samples_per_task": 5,
+        "max_output_tokens": 2048,
+        "temperature": 0.8,
+        "top_p": 0.95,
+        "top_k": "checkpoint/provider default, not explicitly set",
+        "reasoning": "not explicitly configured",
+        "precision": "bfloat16",
+        "quantization": null,
+        "device_policy": "require all model weights on CUDA"
+      },
+      "notes": [
+        "Aliases map to one proposed entry; historical overrides are unverified, so historical scores must not be merged."
+      ],
+      "hf_checkpoint": "Qiskit/Qwen2.5-Coder-14B-Qiskit",
+      "blockers": [
+        "Historical HF commit not recorded; pin a resolved revision before a new run and disclose historical uncertainty",
+        "Model environment and GPU generation not validated on this host"
+      ]
+    },
+    {
+      "key": "granite32",
+      "role": "candidate",
+      "identity": "Qiskit/granite-3.2-8b-qiskit",
+      "assistant_implementation": "assistants.granite_qiskit_assistant.GraniteQiskitAssistant",
+      "historical_status": "previously_run",
+      "proposed_selection": true,
+      "aliases": [],
+      "python": ".venv/bin/python",
+      "historical_revision": null,
+      "historical_settings_verified": false,
+      "settings_evidence": "Current adapter and scripts/run_model_all.sh; historical per-run configs absent",
+      "current_effective_settings": {
+        "samples_per_task": 5,
+        "max_output_tokens": 2048,
+        "temperature": 0.8,
+        "top_p": 1.0,
+        "top_k": "checkpoint/provider default, not explicitly set",
+        "reasoning": "not explicitly configured",
+        "precision": "bfloat16",
+        "quantization": null,
+        "device_policy": "require all model weights on CUDA"
+      },
+      "notes": [],
+      "hf_checkpoint": "Qiskit/granite-3.2-8b-qiskit",
+      "blockers": [
+        "Historical HF commit not recorded; pin a resolved revision before a new run and disclose historical uncertainty",
+        "Model environment and GPU generation not validated on this host"
+      ]
+    },
+    {
+      "key": "granite-legacy",
+      "role": "candidate",
+      "identity": "qiskit/granite-8b-qiskit",
+      "assistant_implementation": "assistants.granite_qiskit_assistant.GraniteQiskitAssistant",
+      "historical_status": "previously_run",
+      "proposed_selection": false,
+      "aliases": [],
+      "python": ".venv/bin/python",
+      "historical_revision": null,
+      "historical_settings_verified": false,
+      "settings_evidence": "Current adapter and scripts/run_model_all.sh; historical per-run configs absent",
+      "current_effective_settings": {
+        "samples_per_task": 5,
+        "max_output_tokens": 2048,
+        "temperature": 0.8,
+        "top_p": 1.0,
+        "top_k": "checkpoint/provider default, not explicitly set",
+        "reasoning": "not explicitly configured",
+        "precision": "bfloat16",
+        "quantization": null,
+        "device_policy": "require all model weights on CUDA"
+      },
+      "notes": [],
+      "hf_checkpoint": "qiskit/granite-8b-qiskit",
+      "blockers": [
+        "Historical HF commit not recorded; pin a resolved revision before a new run and disclose historical uncertainty",
+        "Model environment and GPU generation not validated on this host",
+        "Legacy label does not prove checkpoint identity; current factory silently defaults to Granite 3.2 without explicit model_path. Resolve before enabling."
+      ]
+    },
+    {
+      "key": "quantum-rag",
+      "role": "candidate",
+      "identity": "quantum-rag",
+      "assistant_implementation": "assistants.quantum_rag_assistant.QuantumRAGAssistant",
+      "historical_status": "previously_run",
+      "proposed_selection": true,
+      "aliases": [
+        "rag"
+      ],
+      "python": ".venv/bin/python",
+      "historical_revision": null,
+      "historical_settings_verified": false,
+      "settings_evidence": "Current adapter and scripts/run_model_all.sh; historical per-run configs absent",
+      "current_effective_settings": {
+        "samples_per_task": 5,
+        "max_output_tokens": 2048,
+        "temperature": 0.8,
+        "top_p": 0.95,
+        "top_k": "checkpoint/provider default, not explicitly set",
+        "reasoning": "not explicitly configured",
+        "precision": "BF16 load dtype, FP16 NF4 compute",
+        "quantization": "NF4 4-bit, double quantization",
+        "device_policy": "require all model weights on CUDA"
+      },
+      "notes": [],
+      "blockers": [
+        "Historical HF commit not recorded; pin a resolved revision before a new run and disclose historical uncertainty",
+        "Model environment and GPU generation not validated on this host",
+        "Retrieval corpus and historical ordered chunk list missing; class default max_chunks=30 differs from factory 2000"
+      ],
+      "retrieval": {
+        "generator": "Qiskit/granite-3.2-8b-qiskit",
+        "embedder": "ibm-granite/granite-embedding-30m-english",
+        "generator_revision": null,
+        "embedder_revision": null,
+        "corpus": "Qiskit 2.2 docs",
+        "corpus_path": null,
+        "corpus_sha256": null,
+        "top_k": 4,
+        "max_chunks": 2000,
+        "chunk_max_chars": 3500,
+        "chunk_overlap_chars": 300,
+        "min_content_chars": 200,
+        "roots": [
+          "api",
+          "guides",
+          "learning",
+          "tutorials"
+        ],
+        "ordering": "Existing rglob traversal is not sorted; historical first-2000 chunk order unknown"
+      }
+    },
+    {
+      "key": "opus46",
+      "role": "candidate",
+      "identity": "claude-opus-4-6",
+      "assistant_implementation": "assistants.claude_assistant.ClaudeAssistant",
+      "historical_status": "previously_run",
+      "proposed_selection": true,
+      "aliases": [],
+      "python": ".venv/bin/python",
+      "historical_revision": null,
+      "historical_settings_verified": false,
+      "settings_evidence": "Current adapter and scripts/run_model_all.sh; historical per-run configs absent",
+      "current_effective_settings": {
+        "samples_per_task": 5,
+        "max_output_tokens": 2048,
+        "temperature": 0.8,
+        "top_p": "not sent",
+        "top_k": "checkpoint/provider default, not explicitly set",
+        "reasoning": "provider default; no reasoning/thinking parameter sent",
+        "precision": "provider controlled",
+        "quantization": null,
+        "device_policy": "hosted API"
+      },
+      "notes": [],
+      "provider_model_or_deployment_id": "claude-opus-4-6",
+      "blockers": [
+        "API availability and generation not validated on this host"
+      ],
+      "provider": "Anthropic Messages"
+    },
+    {
+      "key": "gemini3-flash",
+      "role": "candidate",
+      "identity": "gemini-3-flash-preview",
+      "assistant_implementation": "assistants.gemini_assistant.GeminiAssistant",
+      "historical_status": "previously_run",
+      "proposed_selection": true,
+      "aliases": [],
+      "python": ".venv/bin/python",
+      "historical_revision": null,
+      "historical_settings_verified": false,
+      "settings_evidence": "Current adapter and scripts/run_model_all.sh; historical per-run configs absent",
+      "current_effective_settings": {
+        "samples_per_task": 5,
+        "max_output_tokens": 2048,
+        "temperature": 0.8,
+        "top_p": "not sent",
+        "top_k": "checkpoint/provider default, not explicitly set",
+        "reasoning": "provider default; no reasoning/thinking parameter sent",
+        "precision": "provider controlled",
+        "quantization": null,
+        "device_policy": "hosted API"
+      },
+      "notes": [],
+      "provider_model_or_deployment_id": "gemini-3-flash-preview",
+      "blockers": [
+        "API availability and generation not validated on this host"
+      ],
+      "provider": "Google GenAI"
+    },
+    {
+      "key": "gemini36-flash",
+      "role": "candidate",
+      "identity": "gemini-3.6-flash",
+      "assistant_implementation": "assistants.gemini_assistant.GeminiAssistant",
+      "historical_status": "previously_run",
+      "proposed_selection": true,
+      "aliases": [],
+      "python": ".venv/bin/python",
+      "historical_revision": null,
+      "historical_settings_verified": false,
+      "settings_evidence": "Current adapter and scripts/run_model_all.sh; historical per-run configs absent",
+      "current_effective_settings": {
+        "samples_per_task": 5,
+        "max_output_tokens": 2048,
+        "temperature": 0.8,
+        "top_p": "not sent",
+        "top_k": "checkpoint/provider default, not explicitly set",
+        "reasoning": "provider default; no reasoning/thinking parameter sent",
+        "precision": "provider controlled",
+        "quantization": null,
+        "device_policy": "hosted API"
+      },
+      "notes": [],
+      "provider_model_or_deployment_id": "gemini-3.6-flash",
+      "blockers": [
+        "API availability and generation not validated on this host"
+      ],
+      "provider": "Google GenAI"
+    },
+    {
+      "key": "gpt5",
+      "role": "candidate",
+      "identity": "gpt-5",
+      "assistant_implementation": "assistants.gpt5_assistant.GPT5Assistant",
+      "historical_status": "previously_run",
+      "proposed_selection": false,
+      "aliases": [],
+      "python": ".venv/bin/python",
+      "historical_revision": null,
+      "historical_settings_verified": false,
+      "settings_evidence": "Current adapter and scripts/run_model_all.sh; historical per-run configs absent",
+      "current_effective_settings": {
+        "samples_per_task": 5,
+        "max_output_tokens": 16384,
+        "temperature": "not sent",
+        "top_p": "not sent",
+        "top_k": "checkpoint/provider default, not explicitly set",
+        "reasoning": "provider default; no reasoning/thinking parameter sent",
+        "precision": "provider controlled",
+        "quantization": null,
+        "device_policy": "hosted API"
+      },
+      "notes": [],
+      "provider_model_or_deployment_id": "gpt-5",
+      "blockers": [
+        "API availability and generation not validated on this host",
+        "Recorded DeploymentNotFound; endpoint/deployment version unverified",
+        "Historical QCoder cap=2048 differs from current rerun cap=16384; protocol choice required"
+      ],
+      "provider": "Azure Responses",
+      "azure_deployment": "gpt-5",
+      "underlying_model_version": null
+    },
+    {
+      "key": "gemini2-flash",
+      "role": "candidate",
+      "identity": "gemini-2.0-flash",
+      "assistant_implementation": "assistants.gemini_assistant.GeminiAssistant",
+      "historical_status": "previously_run",
+      "proposed_selection": false,
+      "aliases": [],
+      "python": ".venv/bin/python",
+      "historical_revision": null,
+      "historical_settings_verified": false,
+      "settings_evidence": "Current adapter and scripts/run_model_all.sh; historical per-run configs absent",
+      "current_effective_settings": {
+        "samples_per_task": 5,
+        "max_output_tokens": 2048,
+        "temperature": 0.8,
+        "top_p": "not sent",
+        "top_k": "checkpoint/provider default, not explicitly set",
+        "reasoning": "provider default; no reasoning/thinking parameter sent",
+        "precision": "provider controlled",
+        "quantization": null,
+        "device_policy": "hosted API"
+      },
+      "notes": [],
+      "provider_model_or_deployment_id": "gemini-2.0-flash",
+      "blockers": [
+        "API availability and generation not validated on this host",
+        "Recorded API response says ID unavailable; retain ID, no replacement"
+      ],
+      "provider": "Google GenAI"
+    },
+    {
+      "key": "muse-glimmer",
+      "role": "candidate",
+      "identity": "meta-models/Muse-Glimmer-30B",
+      "assistant_implementation": "assistants.muse_glimmer_assistant.MuseGlimmerAssistant",
+      "historical_status": "prepared_only",
+      "proposed_selection": false,
+      "aliases": [
+        "muse-glimmer",
+        "muse-glimmer-30b"
+      ],
+      "python": ".venv-muse/bin/python",
+      "historical_revision": "a4e59da52a7bc87ae7251dd5545c0dd437c44b68",
+      "historical_settings_verified": false,
+      "settings_evidence": "Current adapter and scripts/run_model_all.sh; historical per-run configs absent",
+      "current_effective_settings": {
+        "samples_per_task": 5,
+        "max_output_tokens": 16384,
+        "temperature": 1,
+        "top_p": 0.95,
+        "top_k": 64,
+        "reasoning": "Reasoning strength: high system instruction",
+        "precision": "bfloat16",
+        "quantization": null,
+        "device_policy": "require all model weights on CUDA"
+      },
+      "notes": [],
+      "hf_checkpoint": "meta-models/Muse-Glimmer-30B",
+      "blockers": [
+        "Prepared only: no full weight-load/generation validation",
+        "Separate pinned environment needs validation on aarch64 GB10"
+      ],
+      "requirements_lock": "requirements-muse.lock.txt"
+    },
+    {
+      "key": "gemini31-pro",
+      "role": "candidate",
+      "identity": "gemini-3.1-pro-preview",
+      "assistant_implementation": "assistants.gemini_assistant.GeminiAssistant",
+      "historical_status": "prepared_only",
+      "proposed_selection": false,
+      "aliases": [],
+      "python": ".venv/bin/python",
+      "historical_revision": null,
+      "historical_settings_verified": false,
+      "settings_evidence": "Current adapter and scripts/run_model_all.sh; historical per-run configs absent",
+      "current_effective_settings": {
+        "samples_per_task": 5,
+        "max_output_tokens": 16384,
+        "temperature": 0.8,
+        "top_p": "not sent",
+        "top_k": "checkpoint/provider default, not explicitly set",
+        "reasoning": "provider default",
+        "precision": "provider controlled",
+        "quantization": null,
+        "device_policy": "hosted API"
+      },
+      "notes": [
+        "Selected by user 2026-09-21 for a new run. historical_status stays prepared_only: no earlier results exist."
+      ],
+      "provider_model_or_deployment_id": "gemini-3.1-pro-preview",
+      "blockers": [
+        "API availability and generation not validated on this host"
+      ],
+      "provider": "Google GenAI"
+    },
+    {
+      "key": "fable51",
+      "role": "candidate",
+      "identity": "claude-fable-5-1",
+      "assistant_implementation": "assistants.claude_assistant.ClaudeAssistant",
+      "historical_status": "prepared_only",
+      "proposed_selection": false,
+      "aliases": [],
+      "python": ".venv/bin/python",
+      "historical_revision": null,
+      "historical_settings_verified": false,
+      "settings_evidence": "Current adapter and scripts/run_model_all.sh; historical per-run configs absent",
+      "current_effective_settings": {
+        "samples_per_task": 5,
+        "max_output_tokens": 65536,
+        "temperature": "not sent",
+        "top_p": "not sent",
+        "top_k": "checkpoint/provider default, not explicitly set",
+        "reasoning": "models.md records adaptive thinking; adapter sends no thinking parameter",
+        "precision": "provider controlled",
+        "quantization": null,
+        "device_policy": "hosted API"
+      },
+      "notes": [
+        "Selected by user 2026-09-22. The runner's effective() always applies config's max_tokens (16384) uniformly, overriding this registry's max_output_tokens (65536); the noted 16384-vs-65536 conflict does not block the run. temperature stays unset for Fable regardless of config, per assistants/claude_assistant.py (is_fable branch)."
+      ],
+      "provider_model_or_deployment_id": "claude-fable-5-1",
+      "blockers": [
+        "API availability and generation not validated on this host",
+        "models.md says 16384 tokens; shell runner says 65536. Resolve before selection."
+      ],
+      "provider": "Anthropic Messages"
+    },
+    {
+      "key": "scout",
+      "role": "candidate",
+      "identity": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "assistant_implementation": "assistants.llama4_assistant.Llama4Assistant",
+      "historical_status": "archived_unverified",
+      "proposed_selection": false,
+      "aliases": [],
+      "python": ".venv/bin/python",
+      "historical_revision": null,
+      "historical_settings_verified": false,
+      "settings_evidence": "Current adapter and scripts/run_model_all.sh; historical per-run configs absent",
+      "current_effective_settings": {
+        "samples_per_task": 5,
+        "max_output_tokens": 2048,
+        "temperature": 0.8,
+        "top_p": 0.95,
+        "top_k": "checkpoint/provider default, not explicitly set",
+        "reasoning": "not explicitly configured",
+        "precision": "bfloat16",
+        "quantization": null,
+        "device_policy": "require all model weights on CUDA"
+      },
+      "notes": [
+        "Explicitly excluded by prior audit; do not enable automatically"
+      ],
+      "hf_checkpoint": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "blockers": [
+        "Historical HF commit not recorded; pin a resolved revision before a new run and disclose historical uncertainty",
+        "Model environment and GPU generation not validated on this host"
+      ]
+    },
+    {
+      "key": "astra",
+      "role": "candidate",
+      "identity": "gpt-6-astra",
+      "assistant_implementation": "assistants.openai_gpt_assistant.OpenAIGPTAssistant",
+      "provider": "OpenAI Responses",
+      "provider_model_or_deployment_id": "gpt-6-astra",
+      "historical_status": "new",
+      "proposed_selection": true,
+      "aliases": [],
+      "python": ".venv/bin/python",
+      "current_effective_settings": {
+        "samples_per_task": 5,
+        "max_output_tokens": 32768,
+        "temperature": "not sent",
+        "top_p": "not sent",
+        "reasoning": "high",
+        "precision": "provider controlled",
+        "quantization": null,
+        "device_policy": "hosted API"
+      },
+      "notes": [
+        "Direct OpenAI API; separate from historical Azure GPT-5."
+      ],
+      "blockers": [
+        "Live API availability not yet verified."
+      ]
+    }
+  ],
+  "judges": [
+    {
+      "identity": "claude-sonnet-4-20250514",
+      "role": "judge",
+      "historical_status": "recorded_404",
+      "proposed_selection": false
+    },
+    {
+      "identity": "claude-sonnet-4-6",
+      "role": "judge",
+      "historical_status": "previous_qcoder_judge",
+      "proposed_selection": false,
+      "notes": "T3 judge role requires an explicit evaluation protocol; not a candidate alias"
+    }
+  ],
+  "excluded_unrecorded_adapters": [
+    "assistants.gpt4_assistant.GPT4Assistant"
+  ],
+  "execution_plan": {
+    "ordering": "model outer loop, T1 through T6 inner loop",
+    "stop_on_error": true,
+    "gpu_visibility": "explicit launch configuration required",
+    "experiment_root": "runs/quantumbencheval_t1-6/<run-id>",
+    "resume_identity": "model settings + revision + adapter hash + dataset hash + evaluator hash + environment fingerprint + sample index",
+    "full_launch": "user only; runner not yet implemented"
+  }
+}

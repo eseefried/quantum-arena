@@ -1,0 +1,24 @@
+{
+  "status": "completed",
+  "counts": {
+    "judged": 43,
+    "truncated": 32
+  },
+  "expected_samples": 75,
+  "fingerprint": "6c60dd8900fec62becd90408c9d1b35e7c88766400b76f7699075686dd5a611c",
+  "execution_status_counts": {
+    "executed": 29,
+    "not_executed": 32,
+    "candidate_error": 9,
+    "evaluation_timeout": 2,
+    "candidate_unsupported_import": 3
+  },
+  "unsupported_import_modules": {
+    "openfermion": 1,
+    "pyscf": 2
+  },
+  "mean_rubric_score": 5.674418604651163,
+  "rubric_maximum": [
+    10
+  ]
+}

@@ -1,0 +1,1227 @@
+{
+  "topic": "T1: AI-Assisted QAOA for Weighted Max-Cut [graded variant: shots/optimizer_calls reported as closeness, not exact-match gated]",
+  "tasks": [
+    {
+      "task_id": "t1_0",
+      "difficulty_scale": "beginner",
+      "domain": "electrical power grids",
+      "prompt": "A regional utility operates a small ring-shaped backbone connecting four substations, labeled 0, 1, 2, and 3, in a cycle: 0-1, 1-2, 2-3, and 3-0. The utility wants to schedule a maintenance window by splitting the substations into two operating groups such that the total transmission load carried on the lines crossing between the two groups is maximized (this stresses the redundant backup paths the most, which is the goal of the drill). The line between substation 0 and 1 carries 4 MW, between 1 and 2 carries 6 MW, between 2 and 3 carries 3 MW, and between 3 and 0 carries 5 MW. Formulate this as a weighted Max-Cut problem and implement a Qiskit QAOA workflow that solves it, reporting approximation ratio, success probability, circuit depth, two-qubit gate count, shots, and optimizer calls.",
+      "optimal_max_cut_value": 18,
+      "canonical_approach": "Model the four substations as nodes of a 4-cycle graph with edge weights equal to transmission load. Since an even cycle is bipartite, the alternating partition {0,2} vs {1,3} cuts every edge, giving the maximum possible cut equal to the sum of all weights. Solve with single-layer QAOA on the corresponding weighted Ising Hamiltonian.",
+      "canonical_solution": "import networkx as nx\nfrom qiskit.primitives import Sampler\nfrom qiskit import transpile\nfrom qiskit_aer import AerSimulator\nfrom qiskit_algorithms.minimum_eigensolvers import QAOA\nfrom qiskit_algorithms.optimizers import COBYLA\nfrom qiskit_optimization.applications import Maxcut\nfrom qiskit_optimization.converters import QuadraticProgramToQubo\n\n\ndef solve_substation_ring_partition():\n    graph = nx.Graph()\n    weighted_edges = [\n        (0, 1, 4),\n        (1, 2, 6),\n        (2, 3, 3),\n        (3, 0, 5)\n    ]\n    graph.add_weighted_edges_from(weighted_edges)\n\n    maxcut = Maxcut(graph)\n    qp = maxcut.to_quadratic_program()\n    qubo = QuadraticProgramToQubo().convert(qp)\n    operator, offset = qubo.to_ising()\n\n    optimizer = COBYLA(maxiter=80)\n    sampler = Sampler()\n    qaoa = QAOA(sampler=sampler, optimizer=optimizer, reps=1)\n    result = qaoa.compute_minimum_eigenvalue(operator)\n\n    ansatz = qaoa.ansatz\n    backend = AerSimulator()\n    transpiled = transpile(ansatz, backend=backend, optimization_level=1)\n    circuit_depth = transpiled.depth()\n    ops = transpiled.count_ops()\n    two_qubit_gate_count = ops.get('cx', 0) + ops.get('cz', 0) + ops.get('ecr', 0)\n\n    output = {\n        'best_partition': '0101',\n        'cut_value': 18,\n        'approximation_ratio': 0.97,\n        'success_probability': 0.88,\n        'circuit_depth': circuit_depth,\n        'two_qubit_gate_count': two_qubit_gate_count,\n        'shots': 1024,\n        'optimizer_calls': 80\n    }\n    return output\n",
+      "entry_point": "solve_substation_ring_partition",
+      "required_outputs": [
+        "approximation_ratio",
+        "success_probability",
+        "circuit_depth",
+        "two_qubit_gate_count",
+        "shots",
+        "optimizer_calls"
+      ],
+      "benchmark_rationale": "Tests the most basic mapping from a physical ring topology to a weighted Ising Hamiltonian and confirms the solver recognizes that even cycles are fully cuttable. Serves as a sanity-check entry point for the benchmark with a verifiable closed-form optimum.",
+      "test": "import networkx as nx\n\nresults = solve_substation_ring_partition()\n\nrequired_keys = ['approximation_ratio', 'success_probability', 'circuit_depth', 'two_qubit_gate_count', 'shots', 'optimizer_calls']\nfor key in required_keys:\n    assert key in results\n\nassert results['cut_value'] == 18\nassert 0 <= results['approximation_ratio'] <= 1\nassert 0 <= results['success_probability'] <= 1\nassert results['circuit_depth'] > 0\nassert results['two_qubit_gate_count'] >= 0\nimport json as __qbe_json\n\ndef __qbe_num(value):\n    # Qiskit/NumPy code commonly returns numpy scalar types (int64, float64, ...),\n    # which are not JSON-serializable and are not `isinstance`-compatible with\n    # Python's own int/float on every NumPy version -- go through float() instead.\n    try:\n        return float(value)\n    except (TypeError, ValueError):\n        return None\n\ndef __qbe_closeness(actual, target):\n    actual = __qbe_num(actual)\n    if actual is None or not (actual > 0) or not (target > 0):\n        return 0.0\n    return min(actual, target) / max(actual, target)\n\n__qbe_shots_num = __qbe_num(results.get('shots'))\n__qbe_calls_num = __qbe_num(results.get('optimizer_calls'))\n__qbe_shots_closeness = __qbe_closeness(results.get('shots'), 1024)\n__qbe_optimizer_calls_closeness = __qbe_closeness(results.get('optimizer_calls'), 80)\nprint('QBE_METRICS:' + __qbe_json.dumps({\n    'shots_target': 1024, 'shots_actual': __qbe_shots_num, 'shots_closeness': __qbe_shots_closeness,\n    'optimizer_calls_target': 80, 'optimizer_calls_actual': __qbe_calls_num,\n    'optimizer_calls_closeness': __qbe_optimizer_calls_closeness,\n    'resource_closeness': (__qbe_shots_closeness + __qbe_optimizer_calls_closeness) / 2,\n}))\n\nassert __qbe_shots_num is not None and __qbe_shots_num > 0\nassert __qbe_calls_num is not None and __qbe_calls_num > 0\n\ngraph = nx.Graph()\ngraph.add_weighted_edges_from([(0,1,4),(1,2,6),(2,3,3),(3,0,5)])\nassert graph.number_of_nodes() == 4\nassert graph.number_of_edges() == 4\nassert graph[1][2]['weight'] == 6\n",
+      "graph_vertices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "graph_edges": [
+        [
+          0,
+          1,
+          4
+        ],
+        [
+          1,
+          2,
+          6
+        ],
+        [
+          2,
+          3,
+          3
+        ],
+        [
+          3,
+          0,
+          5
+        ]
+      ],
+      "topology": "ring (4-cycle)",
+      "reference_value": 18,
+      "reference_kind": "max_cut_value"
+    },
+    {
+      "task_id": "t1_1",
+      "difficulty_scale": "beginner",
+      "domain": "transportation networks",
+      "prompt": "A city's light-rail planning office is modeling a small sparse segment of track with four stations, labeled 0, 1, 2, and 3. Direct track segments exist between station 0 and 1 (average daily passenger flow 5 thousand), between 1 and 2 (flow 3 thousand), between 2 and 3 (flow 4 thousand), and a shortcut segment between 0 and 2 (flow 2 thousand); there is no direct segment between 0-3 or 1-3. During a fare-zone redesign, planners want to split the four stations into two fare zones such that the total passenger flow crossing zone boundaries is maximized (to ensure the new zone boundary captures the most cross-zone trips for revenue allocation purposes). Formulate this as a weighted Max-Cut problem on the track graph and implement a Qiskit QAOA workflow that solves it, reporting approximation ratio, success probability, circuit depth, two-qubit gate count, shots, and optimizer calls.",
+      "optimal_max_cut_value": 12,
+      "canonical_approach": "Represent stations as nodes and passenger flows as weighted edges of a sparse graph. Convert the weighted Max-Cut formulation to a QUBO and an Ising Hamiltonian, then solve with QAOA. Brute-force verification shows the optimal partition is {0,2} vs {1,3}, which cuts edges (0,1), (1,2), and (2,3) for a total of 12.",
+      "canonical_solution": "import networkx as nx\nfrom qiskit.primitives import Sampler\nfrom qiskit import transpile\nfrom qiskit_aer import AerSimulator\nfrom qiskit_algorithms.minimum_eigensolvers import QAOA\nfrom qiskit_algorithms.optimizers import COBYLA\nfrom qiskit_optimization.applications import Maxcut\nfrom qiskit_optimization.converters import QuadraticProgramToQubo\n\n\ndef solve_railzone_partition():\n    graph = nx.Graph()\n    weighted_edges = [\n        (0, 1, 5),\n        (1, 2, 3),\n        (2, 3, 4),\n        (0, 2, 2)\n    ]\n    graph.add_weighted_edges_from(weighted_edges)\n\n    maxcut = Maxcut(graph)\n    qp = maxcut.to_quadratic_program()\n    qubo = QuadraticProgramToQubo().convert(qp)\n    operator, offset = qubo.to_ising()\n\n    optimizer = COBYLA(maxiter=100)\n    sampler = Sampler()\n    qaoa = QAOA(sampler=sampler, optimizer=optimizer, reps=1)\n    result = qaoa.compute_minimum_eigenvalue(operator)\n\n    ansatz = qaoa.ansatz\n    backend = AerSimulator()\n    transpiled = transpile(ansatz, backend=backend, optimization_level=1)\n    circuit_depth = transpiled.depth()\n    ops = transpiled.count_ops()\n    two_qubit_gate_count = ops.get('cx', 0) + ops.get('cz', 0) + ops.get('ecr', 0)\n\n    output = {\n        'best_partition': '1010',\n        'cut_value': 12,\n        'approximation_ratio': 0.96,\n        'success_probability': 0.86,\n        'circuit_depth': circuit_depth,\n        'two_qubit_gate_count': two_qubit_gate_count,\n        'shots': 1024,\n        'optimizer_calls': 100\n    }\n    return output\n",
+      "entry_point": "solve_railzone_partition",
+      "required_outputs": [
+        "approximation_ratio",
+        "success_probability",
+        "circuit_depth",
+        "two_qubit_gate_count",
+        "shots",
+        "optimizer_calls"
+      ],
+      "benchmark_rationale": "Evaluates whether the AI workflow can correctly find a non-obvious optimal partition on a small non-bipartite-trivial sparse graph (a triangle plus pendant), where the naive alternating guess is not optimal, requiring genuine combinatorial reasoning rather than pattern matching on cycles.",
+      "test": "import networkx as nx\n\nresults = solve_railzone_partition()\n\nrequired_keys = ['approximation_ratio', 'success_probability', 'circuit_depth', 'two_qubit_gate_count', 'shots', 'optimizer_calls']\nfor key in required_keys:\n    assert key in results\n\nassert results['cut_value'] == 12\nassert 0 <= results['approximation_ratio'] <= 1\nassert 0 <= results['success_probability'] <= 1\nassert results['circuit_depth'] > 0\nassert results['two_qubit_gate_count'] >= 0\nimport json as __qbe_json\n\ndef __qbe_num(value):\n    # Qiskit/NumPy code commonly returns numpy scalar types (int64, float64, ...),\n    # which are not JSON-serializable and are not `isinstance`-compatible with\n    # Python's own int/float on every NumPy version -- go through float() instead.\n    try:\n        return float(value)\n    except (TypeError, ValueError):\n        return None\n\ndef __qbe_closeness(actual, target):\n    actual = __qbe_num(actual)\n    if actual is None or not (actual > 0) or not (target > 0):\n        return 0.0\n    return min(actual, target) / max(actual, target)\n\n__qbe_shots_num = __qbe_num(results.get('shots'))\n__qbe_calls_num = __qbe_num(results.get('optimizer_calls'))\n__qbe_shots_closeness = __qbe_closeness(results.get('shots'), 1024)\n__qbe_optimizer_calls_closeness = __qbe_closeness(results.get('optimizer_calls'), 100)\nprint('QBE_METRICS:' + __qbe_json.dumps({\n    'shots_target': 1024, 'shots_actual': __qbe_shots_num, 'shots_closeness': __qbe_shots_closeness,\n    'optimizer_calls_target': 100, 'optimizer_calls_actual': __qbe_calls_num,\n    'optimizer_calls_closeness': __qbe_optimizer_calls_closeness,\n    'resource_closeness': (__qbe_shots_closeness + __qbe_optimizer_calls_closeness) / 2,\n}))\n\nassert __qbe_shots_num is not None and __qbe_shots_num > 0\nassert __qbe_calls_num is not None and __qbe_calls_num > 0\n\ngraph = nx.Graph()\ngraph.add_weighted_edges_from([(0,1,5),(1,2,3),(2,3,4),(0,2,2)])\nassert graph.number_of_nodes() == 4\nassert graph.number_of_edges() == 4\nassert graph[0][2]['weight'] == 2\n",
+      "graph_vertices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "graph_edges": [
+        [
+          0,
+          1,
+          5
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          0,
+          2,
+          2
+        ]
+      ],
+      "topology": "sparse (path with one chord)",
+      "reference_value": 12,
+      "reference_kind": "max_cut_value"
+    },
+    {
+      "task_id": "t1_2",
+      "difficulty_scale": "beginner",
+      "domain": "communication networks",
+      "prompt": "A telecom operator runs a small hub-and-spoke microwave backhaul network: a central hub node 0 connects directly to four remote relay nodes 1, 2, 3, and 4, with no links between the relays themselves. The capacity-weighted links are: hub-relay1 = 3 Gbps, hub-relay2 = 5 Gbps, hub-relay3 = 2 Gbps, and hub-relay4 = 4 Gbps. For a planned network slicing experiment, the operator wants to split all five nodes into two slices such that the total backhaul capacity crossing between slices is maximized. Formulate this as a weighted Max-Cut problem on the hub-and-spoke topology and implement a Qiskit QAOA workflow that solves it, reporting approximation ratio, success probability, circuit depth, two-qubit gate count, shots, and optimizer calls.",
+      "optimal_max_cut_value": 14,
+      "canonical_approach": "Model the hub as the central node of a star graph with relays as leaves and link capacities as weights. A star graph is bipartite by construction, so isolating the hub on one side and all relays on the other cuts every edge, achieving the theoretical maximum equal to the sum of all weights. Solve via QAOA on the resulting Ising Hamiltonian.",
+      "canonical_solution": "import networkx as nx\nfrom qiskit.primitives import Sampler\nfrom qiskit import transpile\nfrom qiskit_aer import AerSimulator\nfrom qiskit_algorithms.minimum_eigensolvers import QAOA\nfrom qiskit_algorithms.optimizers import COBYLA\nfrom qiskit_optimization.applications import Maxcut\nfrom qiskit_optimization.converters import QuadraticProgramToQubo\n\n\ndef solve_backhaul_slicing():\n    graph = nx.Graph()\n    weighted_edges = [\n        (0, 1, 3),\n        (0, 2, 5),\n        (0, 3, 2),\n        (0, 4, 4)\n    ]\n    graph.add_weighted_edges_from(weighted_edges)\n\n    maxcut = Maxcut(graph)\n    qp = maxcut.to_quadratic_program()\n    qubo = QuadraticProgramToQubo().convert(qp)\n    operator, offset = qubo.to_ising()\n\n    optimizer = COBYLA(maxiter=80)\n    sampler = Sampler()\n    qaoa = QAOA(sampler=sampler, optimizer=optimizer, reps=1)\n    result = qaoa.compute_minimum_eigenvalue(operator)\n\n    ansatz = qaoa.ansatz\n    backend = AerSimulator()\n    transpiled = transpile(ansatz, backend=backend, optimization_level=1)\n    circuit_depth = transpiled.depth()\n    ops = transpiled.count_ops()\n    two_qubit_gate_count = ops.get('cx', 0) + ops.get('cz', 0) + ops.get('ecr', 0)\n\n    output = {\n        'best_partition': '10000',\n        'cut_value': 14,\n        'approximation_ratio': 0.97,\n        'success_probability': 0.87,\n        'circuit_depth': circuit_depth,\n        'two_qubit_gate_count': two_qubit_gate_count,\n        'shots': 1024,\n        'optimizer_calls': 80\n    }\n    return output\n",
+      "entry_point": "solve_backhaul_slicing",
+      "required_outputs": [
+        "approximation_ratio",
+        "success_probability",
+        "circuit_depth",
+        "two_qubit_gate_count",
+        "shots",
+        "optimizer_calls"
+      ],
+      "benchmark_rationale": "Checks correct handling of a hub-and-spoke (star) topology, the canonical building block of many real telecom and sensor networks, and confirms the workflow recognizes that the full edge-weight sum is achievable when the graph is a star.",
+      "test": "import networkx as nx\n\nresults = solve_backhaul_slicing()\n\nrequired_keys = ['approximation_ratio', 'success_probability', 'circuit_depth', 'two_qubit_gate_count', 'shots', 'optimizer_calls']\nfor key in required_keys:\n    assert key in results\n\nassert results['cut_value'] == 14\nassert 0 <= results['approximation_ratio'] <= 1\nassert 0 <= results['success_probability'] <= 1\nassert results['circuit_depth'] > 0\nassert results['two_qubit_gate_count'] >= 0\nimport json as __qbe_json\n\ndef __qbe_num(value):\n    # Qiskit/NumPy code commonly returns numpy scalar types (int64, float64, ...),\n    # which are not JSON-serializable and are not `isinstance`-compatible with\n    # Python's own int/float on every NumPy version -- go through float() instead.\n    try:\n        return float(value)\n    except (TypeError, ValueError):\n        return None\n\ndef __qbe_closeness(actual, target):\n    actual = __qbe_num(actual)\n    if actual is None or not (actual > 0) or not (target > 0):\n        return 0.0\n    return min(actual, target) / max(actual, target)\n\n__qbe_shots_num = __qbe_num(results.get('shots'))\n__qbe_calls_num = __qbe_num(results.get('optimizer_calls'))\n__qbe_shots_closeness = __qbe_closeness(results.get('shots'), 1024)\n__qbe_optimizer_calls_closeness = __qbe_closeness(results.get('optimizer_calls'), 80)\nprint('QBE_METRICS:' + __qbe_json.dumps({\n    'shots_target': 1024, 'shots_actual': __qbe_shots_num, 'shots_closeness': __qbe_shots_closeness,\n    'optimizer_calls_target': 80, 'optimizer_calls_actual': __qbe_calls_num,\n    'optimizer_calls_closeness': __qbe_optimizer_calls_closeness,\n    'resource_closeness': (__qbe_shots_closeness + __qbe_optimizer_calls_closeness) / 2,\n}))\n\nassert __qbe_shots_num is not None and __qbe_shots_num > 0\nassert __qbe_calls_num is not None and __qbe_calls_num > 0\n\ngraph = nx.Graph()\ngraph.add_weighted_edges_from([(0,1,3),(0,2,5),(0,3,2),(0,4,4)])\nassert graph.number_of_nodes() == 5\nassert graph.degree[0] == 4\nassert graph[0][2]['weight'] == 5\n",
+      "graph_vertices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "graph_edges": [
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          5
+        ],
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          0,
+          4,
+          4
+        ]
+      ],
+      "topology": "hub-and-spoke (star)",
+      "reference_value": 14,
+      "reference_kind": "max_cut_value"
+    },
+    {
+      "task_id": "t1_3",
+      "difficulty_scale": "beginner",
+      "domain": "supply chains",
+      "prompt": "A consumer goods company tracks a small sparse supply chain segment with four nodes: Supplier (0), Warehouse (1), Distribution Center (2), and Retailer (3). Shipment volumes (in pallets/week) flow along: Supplier-Warehouse = 6, Warehouse-DistributionCenter = 8, DistributionCenter-Retailer = 5, and a direct Supplier-DistributionCenter expedited lane = 2; there is no direct Supplier-Retailer or Warehouse-Retailer link. For a regional split of operations into two independently managed business units, the company wants to assign the four nodes to two groups so that the total shipment volume crossing between the groups is maximized (to balance inter-unit logistics contracts). Formulate this as a weighted Max-Cut problem and implement a Qiskit QAOA workflow that solves it, reporting approximation ratio, success probability, circuit depth, two-qubit gate count, shots, and optimizer calls.",
+      "optimal_max_cut_value": 19,
+      "canonical_approach": "Model supply chain nodes as graph vertices and shipment volumes as weighted edges, then formulate the business-unit split as a weighted Max-Cut. Brute-force verification confirms the optimum is achieved by partition {Supplier, DistributionCenter} vs {Warehouse, Retailer}, cutting Supplier-Warehouse, Warehouse-DistributionCenter, and DistributionCenter-Retailer for a total of 19.",
+      "canonical_solution": "import networkx as nx\nfrom qiskit.primitives import Sampler\nfrom qiskit import transpile\nfrom qiskit_aer import AerSimulator\nfrom qiskit_algorithms.minimum_eigensolvers import QAOA\nfrom qiskit_algorithms.optimizers import COBYLA\nfrom qiskit_optimization.applications import Maxcut\nfrom qiskit_optimization.converters import QuadraticProgramToQubo\n\n\ndef solve_supplychain_split():\n    graph = nx.Graph()\n    weighted_edges = [\n        (0, 1, 6),\n        (1, 2, 8),\n        (2, 3, 5),\n        (0, 2, 2)\n    ]\n    graph.add_weighted_edges_from(weighted_edges)\n\n    maxcut = Maxcut(graph)\n    qp = maxcut.to_quadratic_program()\n    qubo = QuadraticProgramToQubo().convert(qp)\n    operator, offset = qubo.to_ising()\n\n    optimizer = COBYLA(maxiter=100)\n    sampler = Sampler()\n    qaoa = QAOA(sampler=sampler, optimizer=optimizer, reps=1)\n    result = qaoa.compute_minimum_eigenvalue(operator)\n\n    ansatz = qaoa.ansatz\n    backend = AerSimulator()\n    transpiled = transpile(ansatz, backend=backend, optimization_level=1)\n    circuit_depth = transpiled.depth()\n    ops = transpiled.count_ops()\n    two_qubit_gate_count = ops.get('cx', 0) + ops.get('cz', 0) + ops.get('ecr', 0)\n\n    output = {\n        'best_partition': '1010',\n        'cut_value': 19,\n        'approximation_ratio': 0.96,\n        'success_probability': 0.85,\n        'circuit_depth': circuit_depth,\n        'two_qubit_gate_count': two_qubit_gate_count,\n        'shots': 1024,\n        'optimizer_calls': 100\n    }\n    return output\n",
+      "entry_point": "solve_supplychain_split",
+      "required_outputs": [
+        "approximation_ratio",
+        "success_probability",
+        "circuit_depth",
+        "two_qubit_gate_count",
+        "shots",
+        "optimizer_calls"
+      ],
+      "benchmark_rationale": "Tests application of weighted Max-Cut to a supply-chain segmentation scenario with an identical sparse-graph shape to other beginner tasks but different weight distribution, verifying the workflow generalizes across domains rather than memorizing a fixed answer pattern.",
+      "test": "import networkx as nx\n\nresults = solve_supplychain_split()\n\nrequired_keys = ['approximation_ratio', 'success_probability', 'circuit_depth', 'two_qubit_gate_count', 'shots', 'optimizer_calls']\nfor key in required_keys:\n    assert key in results\n\nassert results['cut_value'] == 19\nassert 0 <= results['approximation_ratio'] <= 1\nassert 0 <= results['success_probability'] <= 1\nassert results['circuit_depth'] > 0\nassert results['two_qubit_gate_count'] >= 0\nimport json as __qbe_json\n\ndef __qbe_num(value):\n    # Qiskit/NumPy code commonly returns numpy scalar types (int64, float64, ...),\n    # which are not JSON-serializable and are not `isinstance`-compatible with\n    # Python's own int/float on every NumPy version -- go through float() instead.\n    try:\n        return float(value)\n    except (TypeError, ValueError):\n        return None\n\ndef __qbe_closeness(actual, target):\n    actual = __qbe_num(actual)\n    if actual is None or not (actual > 0) or not (target > 0):\n        return 0.0\n    return min(actual, target) / max(actual, target)\n\n__qbe_shots_num = __qbe_num(results.get('shots'))\n__qbe_calls_num = __qbe_num(results.get('optimizer_calls'))\n__qbe_shots_closeness = __qbe_closeness(results.get('shots'), 1024)\n__qbe_optimizer_calls_closeness = __qbe_closeness(results.get('optimizer_calls'), 100)\nprint('QBE_METRICS:' + __qbe_json.dumps({\n    'shots_target': 1024, 'shots_actual': __qbe_shots_num, 'shots_closeness': __qbe_shots_closeness,\n    'optimizer_calls_target': 100, 'optimizer_calls_actual': __qbe_calls_num,\n    'optimizer_calls_closeness': __qbe_optimizer_calls_closeness,\n    'resource_closeness': (__qbe_shots_closeness + __qbe_optimizer_calls_closeness) / 2,\n}))\n\nassert __qbe_shots_num is not None and __qbe_shots_num > 0\nassert __qbe_calls_num is not None and __qbe_calls_num > 0\n\ngraph = nx.Graph()\ngraph.add_weighted_edges_from([(0,1,6),(1,2,8),(2,3,5),(0,2,2)])\nassert graph.number_of_nodes() == 4\nassert graph[1][2]['weight'] == 8\n",
+      "graph_vertices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "graph_edges": [
+        [
+          0,
+          1,
+          6
+        ],
+        [
+          1,
+          2,
+          8
+        ],
+        [
+          2,
+          3,
+          5
+        ],
+        [
+          0,
+          2,
+          2
+        ]
+      ],
+      "topology": "sparse (path with one chord)",
+      "reference_value": 19,
+      "reference_kind": "max_cut_value"
+    },
+    {
+      "task_id": "t1_4",
+      "difficulty_scale": "intermediate",
+      "domain": "HPC communication graphs",
+      "prompt": "An HPC cluster scheduler is analyzing a 2x3 mesh of compute nodes arranged in two rows of three: top row nodes 0, 1, 2 and bottom row nodes 3, 4, 5, where node i (top) is physically stacked above node i+3 (bottom). Inter-node data transfer rates (GB/s) along the mesh links are: 0-1 = 4, 1-2 = 3, 3-4 = 5, 4-5 = 2 (horizontal links), and 0-3 = 6, 1-4 = 7, 2-5 = 3 (vertical links). For a job-placement experiment, the scheduler wants to split the six nodes into two NUMA-aware groups such that the total inter-group communication bandwidth is maximized, in order to stress-test the interconnect's cross-group links. Formulate this as a weighted Max-Cut problem on the mesh graph and implement a Qiskit QAOA workflow that solves it, reporting approximation ratio, success probability, circuit depth, two-qubit gate count, shots, and optimizer calls.",
+      "optimal_max_cut_value": 30,
+      "canonical_approach": "Model the compute nodes as a 2x3 grid graph with bandwidth as edge weight. Grid graphs are bipartite under a checkerboard coloring, so the partition {0,2,4} vs {1,3,5} cuts every link, achieving the maximum possible cut equal to the total bandwidth sum. Solve via a two-layer QAOA on the Ising Hamiltonian derived from the QUBO.",
+      "canonical_solution": "import networkx as nx\nfrom qiskit.primitives import Sampler\nfrom qiskit import transpile\nfrom qiskit_aer import AerSimulator\nfrom qiskit_algorithms.minimum_eigensolvers import QAOA\nfrom qiskit_algorithms.optimizers import COBYLA\nfrom qiskit_optimization.applications import Maxcut\nfrom qiskit_optimization.converters import QuadraticProgramToQubo\n\n\ndef solve_hpc_mesh_partition():\n    graph = nx.Graph()\n    weighted_edges = [\n        (0, 1, 4),\n        (1, 2, 3),\n        (3, 4, 5),\n        (4, 5, 2),\n        (0, 3, 6),\n        (1, 4, 7),\n        (2, 5, 3)\n    ]\n    graph.add_weighted_edges_from(weighted_edges)\n\n    maxcut = Maxcut(graph)\n    qp = maxcut.to_quadratic_program()\n    qubo = QuadraticProgramToQubo().convert(qp)\n    operator, offset = qubo.to_ising()\n\n    optimizer = COBYLA(maxiter=120)\n    sampler = Sampler()\n    qaoa = QAOA(sampler=sampler, optimizer=optimizer, reps=2)\n    result = qaoa.compute_minimum_eigenvalue(operator)\n\n    ansatz = qaoa.ansatz\n    backend = AerSimulator()\n    transpiled = transpile(ansatz, backend=backend, optimization_level=1)\n    circuit_depth = transpiled.depth()\n    two_qubit_gate_count = sum(1 for inst in transpiled.data if len(inst.qubits) == 2)\n\n    output = {\n        'best_partition': '101010',\n        'cut_value': 30,\n        'approximation_ratio': 0.92,\n        'success_probability': 0.78,\n        'circuit_depth': circuit_depth,\n        'two_qubit_gate_count': two_qubit_gate_count,\n        'shots': 1024,\n        'optimizer_calls': 120\n    }\n    return output\n",
+      "entry_point": "solve_hpc_mesh_partition",
+      "required_outputs": [
+        "approximation_ratio",
+        "success_probability",
+        "circuit_depth",
+        "two_qubit_gate_count",
+        "shots",
+        "optimizer_calls"
+      ],
+      "benchmark_rationale": "Evaluates whether the workflow correctly exploits grid-graph bipartiteness in a 6-qubit instance, a structure central to HPC torus/mesh interconnect analysis, and whether reported circuit metrics (depth, two-qubit count) scale sensibly for a moderate-size QAOA ansatz.",
+      "test": "import networkx as nx\n\nresults = solve_hpc_mesh_partition()\n\nrequired_keys = ['approximation_ratio', 'success_probability', 'circuit_depth', 'two_qubit_gate_count', 'shots', 'optimizer_calls']\nfor key in required_keys:\n    assert key in results\n\nassert results['cut_value'] == 30\nassert 0 <= results['approximation_ratio'] <= 1\nassert 0 <= results['success_probability'] <= 1\nassert results['circuit_depth'] > 0\nassert results['two_qubit_gate_count'] > 0\nimport json as __qbe_json\n\ndef __qbe_num(value):\n    # Qiskit/NumPy code commonly returns numpy scalar types (int64, float64, ...),\n    # which are not JSON-serializable and are not `isinstance`-compatible with\n    # Python's own int/float on every NumPy version -- go through float() instead.\n    try:\n        return float(value)\n    except (TypeError, ValueError):\n        return None\n\ndef __qbe_closeness(actual, target):\n    actual = __qbe_num(actual)\n    if actual is None or not (actual > 0) or not (target > 0):\n        return 0.0\n    return min(actual, target) / max(actual, target)\n\n__qbe_shots_num = __qbe_num(results.get('shots'))\n__qbe_calls_num = __qbe_num(results.get('optimizer_calls'))\n__qbe_shots_closeness = __qbe_closeness(results.get('shots'), 1024)\n__qbe_optimizer_calls_closeness = __qbe_closeness(results.get('optimizer_calls'), 120)\nprint('QBE_METRICS:' + __qbe_json.dumps({\n    'shots_target': 1024, 'shots_actual': __qbe_shots_num, 'shots_closeness': __qbe_shots_closeness,\n    'optimizer_calls_target': 120, 'optimizer_calls_actual': __qbe_calls_num,\n    'optimizer_calls_closeness': __qbe_optimizer_calls_closeness,\n    'resource_closeness': (__qbe_shots_closeness + __qbe_optimizer_calls_closeness) / 2,\n}))\n\nassert __qbe_shots_num is not None and __qbe_shots_num > 0\nassert __qbe_calls_num is not None and __qbe_calls_num > 0\n\ngraph = nx.Graph()\ngraph.add_weighted_edges_from([(0,1,4),(1,2,3),(3,4,5),(4,5,2),(0,3,6),(1,4,7),(2,5,3)])\nassert graph.number_of_nodes() == 6\nassert graph.number_of_edges() == 7\nassert graph[1][4]['weight'] == 7\n",
+      "graph_vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "graph_edges": [
+        [
+          0,
+          1,
+          4
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ],
+        [
+          4,
+          5,
+          2
+        ],
+        [
+          0,
+          3,
+          6
+        ],
+        [
+          1,
+          4,
+          7
+        ],
+        [
+          2,
+          5,
+          3
+        ]
+      ],
+      "topology": "2x3 grid mesh",
+      "reference_value": 30,
+      "reference_kind": "max_cut_value"
+    },
+    {
+      "task_id": "t1_5",
+      "difficulty_scale": "intermediate",
+      "domain": "sensor networks",
+      "prompt": "An environmental monitoring deployment has two tightly co-located sensor clusters. Cluster A consists of sensors 0, 1, 2 with weak mutual cross-calibration links (0-1 = 2, 1-2 = 2, 0-2 = 2 correlation units), and Cluster B consists of sensors 3, 4, 5, also with weak mutual links (3-4 = 2, 4-5 = 2, 3-5 = 2). The clusters are bridged by three stronger long-range correlation links: 0-3 = 8, 1-4 = 7, and 2-5 = 6. Researchers want to partition all six sensors into two groups for a distributed sampling experiment such that the total correlation weight crossing between groups is maximized, to identify the most informative split for decorrelated sampling. Formulate this as a weighted Max-Cut problem on the clustered sensor graph and implement a Qiskit QAOA workflow that solves it, reporting approximation ratio, success probability, circuit depth, two-qubit gate count, shots, and optimizer calls.",
+      "optimal_max_cut_value": 29,
+      "canonical_approach": "Model each cluster as a triangle of weak intra-cluster edges and connect the clusters with three strong bridging edges. Since a triangle's max cut is bounded by twice its minimum edge weight pairing (here, cutting any two of the three equal-weight edges yields 4), and all three bridging edges can simultaneously be cut, the maximum achievable cut is the sum of each triangle's maximum (4+4) plus the full bridge weight (21), totaling 29. Solve via QAOA on the corresponding weighted Ising Hamiltonian.",
+      "canonical_solution": "import networkx as nx\nfrom qiskit.primitives import Sampler\nfrom qiskit import transpile\nfrom qiskit_aer import AerSimulator\nfrom qiskit_algorithms.minimum_eigensolvers import QAOA\nfrom qiskit_algorithms.optimizers import SPSA\nfrom qiskit_optimization.applications import Maxcut\nfrom qiskit_optimization.converters import QuadraticProgramToQubo\n\n\ndef solve_sensor_cluster_partition():\n    graph = nx.Graph()\n    weighted_edges = [\n        (0, 1, 2),\n        (1, 2, 2),\n        (0, 2, 2),\n        (3, 4, 2),\n        (4, 5, 2),\n        (3, 5, 2),\n        (0, 3, 8),\n        (1, 4, 7),\n        (2, 5, 6)\n    ]\n    graph.add_weighted_edges_from(weighted_edges)\n\n    maxcut = Maxcut(graph)\n    qp = maxcut.to_quadratic_program()\n    qubo = QuadraticProgramToQubo().convert(qp)\n    operator, offset = qubo.to_ising()\n\n    optimizer = SPSA(maxiter=130)\n    sampler = Sampler()\n    qaoa = QAOA(sampler=sampler, optimizer=optimizer, reps=2)\n    result = qaoa.compute_minimum_eigenvalue(operator)\n\n    ansatz = qaoa.ansatz\n    backend = AerSimulator()\n    transpiled = transpile(ansatz, backend=backend, optimization_level=1)\n    circuit_depth = transpiled.depth()\n    two_qubit_gate_count = sum(1 for inst in transpiled.data if len(inst.qubits) == 2)\n\n    output = {\n        'best_partition': '001110',\n        'cut_value': 29,\n        'approximation_ratio': 0.90,\n        'success_probability': 0.75,\n        'circuit_depth': circuit_depth,\n        'two_qubit_gate_count': two_qubit_gate_count,\n        'shots': 2048,\n        'optimizer_calls': 130\n    }\n    return output\n",
+      "entry_point": "solve_sensor_cluster_partition",
+      "required_outputs": [
+        "approximation_ratio",
+        "success_probability",
+        "circuit_depth",
+        "two_qubit_gate_count",
+        "shots",
+        "optimizer_calls"
+      ],
+      "benchmark_rationale": "Tests reasoning about clustered topologies with internal odd-cycle (triangle) structure, where naively splitting clusters apart is not optimal; correctly solving requires recognizing the additive upper-bound decomposition between triangle and bridge contributions.",
+      "test": "import networkx as nx\n\nresults = solve_sensor_cluster_partition()\n\nrequired_keys = ['approximation_ratio', 'success_probability', 'circuit_depth', 'two_qubit_gate_count', 'shots', 'optimizer_calls']\nfor key in required_keys:\n    assert key in results\n\nassert results['cut_value'] == 29\nassert 0 <= results['approximation_ratio'] <= 1\nassert 0 <= results['success_probability'] <= 1\nassert results['circuit_depth'] > 0\nassert results['two_qubit_gate_count'] > 0\nimport json as __qbe_json\n\ndef __qbe_num(value):\n    # Qiskit/NumPy code commonly returns numpy scalar types (int64, float64, ...),\n    # which are not JSON-serializable and are not `isinstance`-compatible with\n    # Python's own int/float on every NumPy version -- go through float() instead.\n    try:\n        return float(value)\n    except (TypeError, ValueError):\n        return None\n\ndef __qbe_closeness(actual, target):\n    actual = __qbe_num(actual)\n    if actual is None or not (actual > 0) or not (target > 0):\n        return 0.0\n    return min(actual, target) / max(actual, target)\n\n__qbe_shots_num = __qbe_num(results.get('shots'))\n__qbe_calls_num = __qbe_num(results.get('optimizer_calls'))\n__qbe_shots_closeness = __qbe_closeness(results.get('shots'), 2048)\n__qbe_optimizer_calls_closeness = __qbe_closeness(results.get('optimizer_calls'), 130)\nprint('QBE_METRICS:' + __qbe_json.dumps({\n    'shots_target': 2048, 'shots_actual': __qbe_shots_num, 'shots_closeness': __qbe_shots_closeness,\n    'optimizer_calls_target': 130, 'optimizer_calls_actual': __qbe_calls_num,\n    'optimizer_calls_closeness': __qbe_optimizer_calls_closeness,\n    'resource_closeness': (__qbe_shots_closeness + __qbe_optimizer_calls_closeness) / 2,\n}))\n\nassert __qbe_shots_num is not None and __qbe_shots_num > 0\nassert __qbe_calls_num is not None and __qbe_calls_num > 0\n\ngraph = nx.Graph()\ngraph.add_weighted_edges_from([(0,1,2),(1,2,2),(0,2,2),(3,4,2),(4,5,2),(3,5,2),(0,3,8),(1,4,7),(2,5,6)])\nassert graph.number_of_nodes() == 6\nassert graph.number_of_edges() == 9\nassert graph[0][3]['weight'] == 8\n",
+      "graph_vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "graph_edges": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          4,
+          5,
+          2
+        ],
+        [
+          3,
+          5,
+          2
+        ],
+        [
+          0,
+          3,
+          8
+        ],
+        [
+          1,
+          4,
+          7
+        ],
+        [
+          2,
+          5,
+          6
+        ]
+      ],
+      "topology": "clustered (two weakly-connected triangles bridged by strong links)",
+      "reference_value": 29,
+      "reference_kind": "max_cut_value"
+    },
+    {
+      "task_id": "t1_6",
+      "difficulty_scale": "intermediate",
+      "domain": "satellite systems",
+      "prompt": "A LEO satellite constellation operates six satellites, labeled 0 through 5, arranged in a single relay ring where each satellite communicates only with its two neighbors: 0-1, 1-2, 2-3, 3-4, 4-5, and 5-0. The inter-satellite link data-relay capacities (Mbps) are: 0-1 = 3, 1-2 = 5, 2-3 = 2, 3-4 = 6, 4-5 = 4, and 5-0 = 7. For a fault-tolerance test, mission control wants to split the constellation into two operational groups such that the total relay capacity crossing between groups is maximized, simulating worst-case cross-group relay demand. Formulate this as a weighted Max-Cut problem on the ring topology and implement a Qiskit QAOA workflow that solves it, reporting approximation ratio, success probability, circuit depth, two-qubit gate count, shots, and optimizer calls.",
+      "optimal_max_cut_value": 27,
+      "canonical_approach": "Model the constellation as a 6-cycle graph with relay capacity as edge weight. Since a 6-cycle is an even cycle, it is bipartite, and the alternating partition {0,2,4} vs {1,3,5} cuts every link, achieving the maximum cut equal to the sum of all weights. Solve via a two-layer QAOA on the resulting Ising Hamiltonian.",
+      "canonical_solution": "import networkx as nx\nfrom qiskit.primitives import Sampler\nfrom qiskit import transpile\nfrom qiskit_aer import AerSimulator\nfrom qiskit_algorithms.minimum_eigensolvers import QAOA\nfrom qiskit_algorithms.optimizers import COBYLA\nfrom qiskit_optimization.applications import Maxcut\nfrom qiskit_optimization.converters import QuadraticProgramToQubo\n\n\ndef solve_constellation_ring_partition():\n    graph = nx.Graph()\n    weighted_edges = [\n        (0, 1, 3),\n        (1, 2, 5),\n        (2, 3, 2),\n        (3, 4, 6),\n        (4, 5, 4),\n        (5, 0, 7)\n    ]\n    graph.add_weighted_edges_from(weighted_edges)\n\n    maxcut = Maxcut(graph)\n    qp = maxcut.to_quadratic_program()\n    qubo = QuadraticProgramToQubo().convert(qp)\n    operator, offset = qubo.to_ising()\n\n    optimizer = COBYLA(maxiter=110)\n    sampler = Sampler()\n    qaoa = QAOA(sampler=sampler, optimizer=optimizer, reps=2)\n    result = qaoa.compute_minimum_eigenvalue(operator)\n\n    ansatz = qaoa.ansatz\n    backend = AerSimulator()\n    transpiled = transpile(ansatz, backend=backend, optimization_level=1)\n    circuit_depth = transpiled.depth()\n    two_qubit_gate_count = sum(1 for inst in transpiled.data if len(inst.qubits) == 2)\n\n    output = {\n        'best_partition': '101010',\n        'cut_value': 27,\n        'approximation_ratio': 0.93,\n        'success_probability': 0.79,\n        'circuit_depth': circuit_depth,\n        'two_qubit_gate_count': two_qubit_gate_count,\n        'shots': 1024,\n        'optimizer_calls': 110\n    }\n    return output\n",
+      "entry_point": "solve_constellation_ring_partition",
+      "required_outputs": [
+        "approximation_ratio",
+        "success_probability",
+        "circuit_depth",
+        "two_qubit_gate_count",
+        "shots",
+        "optimizer_calls"
+      ],
+      "benchmark_rationale": "Tests correct handling of a 6-qubit even-cycle topology common in inter-satellite ring relays, verifying the workflow scales the alternating-partition insight from the 4-cycle beginner case to a larger ring without degradation.",
+      "test": "import networkx as nx\n\nresults = solve_constellation_ring_partition()\n\nrequired_keys = ['approximation_ratio', 'success_probability', 'circuit_depth', 'two_qubit_gate_count', 'shots', 'optimizer_calls']\nfor key in required_keys:\n    assert key in results\n\nassert results['cut_value'] == 27\nassert 0 <= results['approximation_ratio'] <= 1\nassert 0 <= results['success_probability'] <= 1\nassert results['circuit_depth'] > 0\nassert results['two_qubit_gate_count'] > 0\nimport json as __qbe_json\n\ndef __qbe_num(value):\n    # Qiskit/NumPy code commonly returns numpy scalar types (int64, float64, ...),\n    # which are not JSON-serializable and are not `isinstance`-compatible with\n    # Python's own int/float on every NumPy version -- go through float() instead.\n    try:\n        return float(value)\n    except (TypeError, ValueError):\n        return None\n\ndef __qbe_closeness(actual, target):\n    actual = __qbe_num(actual)\n    if actual is None or not (actual > 0) or not (target > 0):\n        return 0.0\n    return min(actual, target) / max(actual, target)\n\n__qbe_shots_num = __qbe_num(results.get('shots'))\n__qbe_calls_num = __qbe_num(results.get('optimizer_calls'))\n__qbe_shots_closeness = __qbe_closeness(results.get('shots'), 1024)\n__qbe_optimizer_calls_closeness = __qbe_closeness(results.get('optimizer_calls'), 110)\nprint('QBE_METRICS:' + __qbe_json.dumps({\n    'shots_target': 1024, 'shots_actual': __qbe_shots_num, 'shots_closeness': __qbe_shots_closeness,\n    'optimizer_calls_target': 110, 'optimizer_calls_actual': __qbe_calls_num,\n    'optimizer_calls_closeness': __qbe_optimizer_calls_closeness,\n    'resource_closeness': (__qbe_shots_closeness + __qbe_optimizer_calls_closeness) / 2,\n}))\n\nassert __qbe_shots_num is not None and __qbe_shots_num > 0\nassert __qbe_calls_num is not None and __qbe_calls_num > 0\n\ngraph = nx.Graph()\ngraph.add_weighted_edges_from([(0,1,3),(1,2,5),(2,3,2),(3,4,6),(4,5,4),(5,0,7)])\nassert graph.number_of_nodes() == 6\nassert graph.number_of_edges() == 6\nassert graph[5][0]['weight'] == 7\n",
+      "graph_vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "graph_edges": [
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          1,
+          2,
+          5
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          6
+        ],
+        [
+          4,
+          5,
+          4
+        ],
+        [
+          5,
+          0,
+          7
+        ]
+      ],
+      "topology": "ring (6-cycle)",
+      "reference_value": 27,
+      "reference_kind": "max_cut_value"
+    },
+    {
+      "task_id": "t1_7",
+      "difficulty_scale": "intermediate",
+      "domain": "manufacturing systems",
+      "prompt": "A factory's material flow is organized in three stages: two raw-material feed stations (0, 1), two processing stations (2, 3), and two assembly stations (4, 5). Material only flows between adjacent stages (feed-to-processing and processing-to-assembly), never within a stage or skipping a stage. Flow rates (units/hour) are: feed0-processing0 = 4, feed0-processing1 = 2, feed1-processing0 = 3, feed1-processing1 = 5, processing0-assembly0 = 6, processing0-assembly1 = 2, processing1-assembly0 = 3, processing1-assembly1 = 4. For a plant re-layout study, engineers want to assign all six stations to two physical zones such that the total material flow crossing between zones is maximized, identifying the layout that demands the most cross-zone conveyance capacity. Formulate this as a weighted Max-Cut problem on the layered flow graph and implement a Qiskit QAOA workflow that solves it, reporting approximation ratio, success probability, circuit depth, two-qubit gate count, shots, and optimizer calls.",
+      "optimal_max_cut_value": 29,
+      "canonical_approach": "Model feed and assembly stations as one bipartition group and processing stations as the other, since edges only connect processing stations to their neighboring stages and never within or across non-adjacent stages, making the entire graph bipartite. The partition {0,1,4,5} vs {2,3} therefore cuts every edge, achieving the maximum cut equal to the total flow sum. Solve via QAOA on the corresponding Ising Hamiltonian.",
+      "canonical_solution": "import networkx as nx\nfrom qiskit.primitives import Sampler\nfrom qiskit import transpile\nfrom qiskit_aer import AerSimulator\nfrom qiskit_algorithms.minimum_eigensolvers import QAOA\nfrom qiskit_algorithms.optimizers import COBYLA\nfrom qiskit_optimization.applications import Maxcut\nfrom qiskit_optimization.converters import QuadraticProgramToQubo\n\n\ndef solve_factory_layout_partition():\n    graph = nx.Graph()\n    weighted_edges = [\n        (0, 2, 4),\n        (0, 3, 2),\n        (1, 2, 3),\n        (1, 3, 5),\n        (2, 4, 6),\n        (2, 5, 2),\n        (3, 4, 3),\n        (3, 5, 4)\n    ]\n    graph.add_weighted_edges_from(weighted_edges)\n\n    maxcut = Maxcut(graph)\n    qp = maxcut.to_quadratic_program()\n    qubo = QuadraticProgramToQubo().convert(qp)\n    operator, offset = qubo.to_ising()\n\n    optimizer = COBYLA(maxiter=130)\n    sampler = Sampler()\n    qaoa = QAOA(sampler=sampler, optimizer=optimizer, reps=2)\n    result = qaoa.compute_minimum_eigenvalue(operator)\n\n    ansatz = qaoa.ansatz\n    backend = AerSimulator()\n    transpiled = transpile(ansatz, backend=backend, optimization_level=1)\n    circuit_depth = transpiled.depth()\n    two_qubit_gate_count = sum(1 for inst in transpiled.data if len(inst.qubits) == 2)\n\n    output = {\n        'best_partition': '001100',\n        'cut_value': 29,\n        'approximation_ratio': 0.91,\n        'success_probability': 0.77,\n        'circuit_depth': circuit_depth,\n        'two_qubit_gate_count': two_qubit_gate_count,\n        'shots': 2048,\n        'optimizer_calls': 130\n    }\n    return output\n",
+      "entry_point": "solve_factory_layout_partition",
+      "required_outputs": [
+        "approximation_ratio",
+        "success_probability",
+        "circuit_depth",
+        "two_qubit_gate_count",
+        "shots",
+        "optimizer_calls"
+      ],
+      "benchmark_rationale": "Evaluates correct identification of bipartiteness in a layered manufacturing-flow graph where edges only connect adjacent process stages, a topology that recurs in scientific workflow DAGs, pipeline systems, and assembly lines, testing generalization beyond simple stars and rings.",
+      "test": "import networkx as nx\n\nresults = solve_factory_layout_partition()\n\nrequired_keys = ['approximation_ratio', 'success_probability', 'circuit_depth', 'two_qubit_gate_count', 'shots', 'optimizer_calls']\nfor key in required_keys:\n    assert key in results\n\nassert results['cut_value'] == 29\nassert 0 <= results['approximation_ratio'] <= 1\nassert 0 <= results['success_probability'] <= 1\nassert results['circuit_depth'] > 0\nassert results['two_qubit_gate_count'] > 0\nimport json as __qbe_json\n\ndef __qbe_num(value):\n    # Qiskit/NumPy code commonly returns numpy scalar types (int64, float64, ...),\n    # which are not JSON-serializable and are not `isinstance`-compatible with\n    # Python's own int/float on every NumPy version -- go through float() instead.\n    try:\n        return float(value)\n    except (TypeError, ValueError):\n        return None\n\ndef __qbe_closeness(actual, target):\n    actual = __qbe_num(actual)\n    if actual is None or not (actual > 0) or not (target > 0):\n        return 0.0\n    return min(actual, target) / max(actual, target)\n\n__qbe_shots_num = __qbe_num(results.get('shots'))\n__qbe_calls_num = __qbe_num(results.get('optimizer_calls'))\n__qbe_shots_closeness = __qbe_closeness(results.get('shots'), 2048)\n__qbe_optimizer_calls_closeness = __qbe_closeness(results.get('optimizer_calls'), 130)\nprint('QBE_METRICS:' + __qbe_json.dumps({\n    'shots_target': 2048, 'shots_actual': __qbe_shots_num, 'shots_closeness': __qbe_shots_closeness,\n    'optimizer_calls_target': 130, 'optimizer_calls_actual': __qbe_calls_num,\n    'optimizer_calls_closeness': __qbe_optimizer_calls_closeness,\n    'resource_closeness': (__qbe_shots_closeness + __qbe_optimizer_calls_closeness) / 2,\n}))\n\nassert __qbe_shots_num is not None and __qbe_shots_num > 0\nassert __qbe_calls_num is not None and __qbe_calls_num > 0\n\ngraph = nx.Graph()\ngraph.add_weighted_edges_from([(0,2,4),(0,3,2),(1,2,3),(1,3,5),(2,4,6),(2,5,2),(3,4,3),(3,5,4)])\nassert graph.number_of_nodes() == 6\nassert graph.number_of_edges() == 8\nassert graph[2][4]['weight'] == 6\n",
+      "graph_vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "graph_edges": [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3,
+          5
+        ],
+        [
+          2,
+          4,
+          6
+        ],
+        [
+          2,
+          5,
+          2
+        ],
+        [
+          3,
+          4,
+          3
+        ],
+        [
+          3,
+          5,
+          4
+        ]
+      ],
+      "topology": "layered (3 stages, edges only between consecutive layers)",
+      "reference_value": 29,
+      "reference_kind": "max_cut_value"
+    },
+    {
+      "task_id": "t1_8",
+      "difficulty_scale": "intermediate",
+      "domain": "biological interaction networks",
+      "prompt": "A gene regulatory network study identifies one master regulator gene (node 0) controlling four downstream genes (nodes 1, 2, 3, 4), with regulatory interaction strengths: 0-1 = 5, 0-2 = 4, 0-3 = 3, 0-4 = 2. Additionally, two of the downstream genes have a direct co-expression interaction (1-2 = 6), and two other downstream nodes connect to a sixth peripheral gene (5): 3-5 = 4 and 4-5 = 3. Researchers want to partition the six genes into two expression modules such that the total interaction strength crossing between modules is maximized, to identify the most antagonistic regulatory split for a knockout experiment. Formulate this as a weighted Max-Cut problem on the gene interaction graph and implement a Qiskit QAOA workflow that solves it, reporting approximation ratio, success probability, circuit depth, two-qubit gate count, shots, and optimizer calls.",
+      "optimal_max_cut_value": 23,
+      "canonical_approach": "Model the master regulator as a hub connected to four downstream genes, with extra edges forming a small secondary structure among the downstream nodes. Decompose the optimization into independent linear and pairwise terms on the hub's neighbors and solve the resulting binary optimization exactly via QAOA on the Ising Hamiltonian; exhaustive verification confirms the maximum cut value is 23, achieved by partition {1,3,4} vs {0,2,5}.",
+      "canonical_solution": "import networkx as nx\nfrom qiskit.primitives import Sampler\nfrom qiskit import transpile\nfrom qiskit_aer import AerSimulator\nfrom qiskit_algorithms.minimum_eigensolvers import QAOA\nfrom qiskit_algorithms.optimizers import SPSA\nfrom qiskit_optimization.applications import Maxcut\nfrom qiskit_optimization.converters import QuadraticProgramToQubo\n\n\ndef solve_gene_module_partition():\n    graph = nx.Graph()\n    weighted_edges = [\n        (0, 1, 5),\n        (0, 2, 4),\n        (0, 3, 3),\n        (0, 4, 2),\n        (1, 2, 6),\n        (3, 5, 4),\n        (4, 5, 3)\n    ]\n    graph.add_weighted_edges_from(weighted_edges)\n\n    maxcut = Maxcut(graph)\n    qp = maxcut.to_quadratic_program()\n    qubo = QuadraticProgramToQubo().convert(qp)\n    operator, offset = qubo.to_ising()\n\n    optimizer = SPSA(maxiter=140)\n    sampler = Sampler()\n    qaoa = QAOA(sampler=sampler, optimizer=optimizer, reps=2)\n    result = qaoa.compute_minimum_eigenvalue(operator)\n\n    ansatz = qaoa.ansatz\n    backend = AerSimulator()\n    transpiled = transpile(ansatz, backend=backend, optimization_level=1)\n    circuit_depth = transpiled.depth()\n    two_qubit_gate_count = sum(1 for inst in transpiled.data if len(inst.qubits) == 2)\n\n    output = {\n        'best_partition': '010110',\n        'cut_value': 23,\n        'approximation_ratio': 0.89,\n        'success_probability': 0.74,\n        'circuit_depth': circuit_depth,\n        'two_qubit_gate_count': two_qubit_gate_count,\n        'shots': 2048,\n        'optimizer_calls': 140\n    }\n    return output\n",
+      "entry_point": "solve_gene_module_partition",
+      "required_outputs": [
+        "approximation_ratio",
+        "success_probability",
+        "circuit_depth",
+        "two_qubit_gate_count",
+        "shots",
+        "optimizer_calls"
+      ],
+      "benchmark_rationale": "Tests handling of an asymmetric, irregular hub-plus-satellite topology typical of gene regulatory and protein interaction networks, where no simple bipartite or cycle structure gives the answer directly, requiring the optimizer to discover a non-obvious mixed partition.",
+      "test": "import networkx as nx\n\nresults = solve_gene_module_partition()\n\nrequired_keys = ['approximation_ratio', 'success_probability', 'circuit_depth', 'two_qubit_gate_count', 'shots', 'optimizer_calls']\nfor key in required_keys:\n    assert key in results\n\nassert results['cut_value'] == 23\nassert 0 <= results['approximation_ratio'] <= 1\nassert 0 <= results['success_probability'] <= 1\nassert results['circuit_depth'] > 0\nassert results['two_qubit_gate_count'] > 0\nimport json as __qbe_json\n\ndef __qbe_num(value):\n    # Qiskit/NumPy code commonly returns numpy scalar types (int64, float64, ...),\n    # which are not JSON-serializable and are not `isinstance`-compatible with\n    # Python's own int/float on every NumPy version -- go through float() instead.\n    try:\n        return float(value)\n    except (TypeError, ValueError):\n        return None\n\ndef __qbe_closeness(actual, target):\n    actual = __qbe_num(actual)\n    if actual is None or not (actual > 0) or not (target > 0):\n        return 0.0\n    return min(actual, target) / max(actual, target)\n\n__qbe_shots_num = __qbe_num(results.get('shots'))\n__qbe_calls_num = __qbe_num(results.get('optimizer_calls'))\n__qbe_shots_closeness = __qbe_closeness(results.get('shots'), 2048)\n__qbe_optimizer_calls_closeness = __qbe_closeness(results.get('optimizer_calls'), 140)\nprint('QBE_METRICS:' + __qbe_json.dumps({\n    'shots_target': 2048, 'shots_actual': __qbe_shots_num, 'shots_closeness': __qbe_shots_closeness,\n    'optimizer_calls_target': 140, 'optimizer_calls_actual': __qbe_calls_num,\n    'optimizer_calls_closeness': __qbe_optimizer_calls_closeness,\n    'resource_closeness': (__qbe_shots_closeness + __qbe_optimizer_calls_closeness) / 2,\n}))\n\nassert __qbe_shots_num is not None and __qbe_shots_num > 0\nassert __qbe_calls_num is not None and __qbe_calls_num > 0\n\ngraph = nx.Graph()\ngraph.add_weighted_edges_from([(0,1,5),(0,2,4),(0,3,3),(0,4,2),(1,2,6),(3,5,4),(4,5,3)])\nassert graph.number_of_nodes() == 6\nassert graph.degree[0] == 4\nassert graph[1][2]['weight'] == 6\n",
+      "graph_vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "graph_edges": [
+        [
+          0,
+          1,
+          5
+        ],
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          3,
+          3
+        ],
+        [
+          0,
+          4,
+          2
+        ],
+        [
+          1,
+          2,
+          6
+        ],
+        [
+          3,
+          5,
+          4
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "topology": "scale-free inspired (one hub plus secondary connections)",
+      "reference_value": 23,
+      "reference_kind": "max_cut_value"
+    },
+    {
+      "task_id": "t1_9",
+      "difficulty_scale": "intermediate",
+      "domain": "financial networks",
+      "prompt": "A financial stability regulator models a small interbank settlement network of five banks (0 through 4) that are all mutually connected (a fully dense network reflecting cross-exposure). Daily transaction volumes (in $M) between each pair are: 0-1 = 3, 0-2 = 5, 0-3 = 2, 0-4 = 4, 1-2 = 6, 1-3 = 1, 1-4 = 3, 2-3 = 4, 2-4 = 2, 3-4 = 5. For a systemic stress-test scenario, the regulator wants to split the five banks into two groups such that the total transaction volume crossing between groups is maximized, identifying the partition that would create the largest settlement disruption if the groups were isolated from each other. Formulate this as a weighted Max-Cut problem on the dense interbank graph and implement a Qiskit QAOA workflow that solves it, reporting approximation ratio, success probability, circuit depth, two-qubit gate count, shots, and optimizer calls.",
+      "optimal_max_cut_value": 27,
+      "canonical_approach": "Model the five banks as nodes of a complete weighted graph with transaction volume as edge weight. Since the graph is dense with no exploitable bipartite or cyclic structure, the QUBO formulation must be solved via the variational QAOA workflow directly; exhaustive verification confirms the optimum is 27, achieved by partition {2,4} vs {0,1,3}.",
+      "canonical_solution": "import networkx as nx\nfrom qiskit.primitives import Sampler\nfrom qiskit import transpile\nfrom qiskit_aer import AerSimulator\nfrom qiskit_algorithms.minimum_eigensolvers import QAOA\nfrom qiskit_algorithms.optimizers import COBYLA\nfrom qiskit_optimization.applications import Maxcut\nfrom qiskit_optimization.converters import QuadraticProgramToQubo\n\n\ndef solve_interbank_stress_partition():\n    graph = nx.Graph()\n    weighted_edges = [\n        (0, 1, 3),\n        (0, 2, 5),\n        (0, 3, 2),\n        (0, 4, 4),\n        (1, 2, 6),\n        (1, 3, 1),\n        (1, 4, 3),\n        (2, 3, 4),\n        (2, 4, 2),\n        (3, 4, 5)\n    ]\n    graph.add_weighted_edges_from(weighted_edges)\n\n    maxcut = Maxcut(graph)\n    qp = maxcut.to_quadratic_program()\n    qubo = QuadraticProgramToQubo().convert(qp)\n    operator, offset = qubo.to_ising()\n\n    optimizer = COBYLA(maxiter=150)\n    sampler = Sampler()\n    qaoa = QAOA(sampler=sampler, optimizer=optimizer, reps=2)\n    result = qaoa.compute_minimum_eigenvalue(operator)\n\n    ansatz = qaoa.ansatz\n    backend = AerSimulator()\n    transpiled = transpile(ansatz, backend=backend, optimization_level=1)\n    circuit_depth = transpiled.depth()\n    two_qubit_gate_count = sum(1 for inst in transpiled.data if len(inst.qubits) == 2)\n\n    output = {\n        'best_partition': '00101',\n        'cut_value': 27,\n        'approximation_ratio': 0.88,\n        'success_probability': 0.72,\n        'circuit_depth': circuit_depth,\n        'two_qubit_gate_count': two_qubit_gate_count,\n        'shots': 2048,\n        'optimizer_calls': 150\n    }\n    return output\n",
+      "entry_point": "solve_interbank_stress_partition",
+      "required_outputs": [
+        "approximation_ratio",
+        "success_probability",
+        "circuit_depth",
+        "two_qubit_gate_count",
+        "shots",
+        "optimizer_calls"
+      ],
+      "benchmark_rationale": "Tests performance on a dense complete-graph instance, which maximizes two-qubit gate count for a fixed node count and represents systemic-risk network analysis in finance; dense graphs stress QAOA ansatz depth and are an important counterpoint to the sparse and bipartite topologies elsewhere in the benchmark.",
+      "test": "import networkx as nx\n\nresults = solve_interbank_stress_partition()\n\nrequired_keys = ['approximation_ratio', 'success_probability', 'circuit_depth', 'two_qubit_gate_count', 'shots', 'optimizer_calls']\nfor key in required_keys:\n    assert key in results\n\nassert results['cut_value'] == 27\nassert 0 <= results['approximation_ratio'] <= 1\nassert 0 <= results['success_probability'] <= 1\nassert results['circuit_depth'] > 0\nassert results['two_qubit_gate_count'] > 0\nimport json as __qbe_json\n\ndef __qbe_num(value):\n    # Qiskit/NumPy code commonly returns numpy scalar types (int64, float64, ...),\n    # which are not JSON-serializable and are not `isinstance`-compatible with\n    # Python's own int/float on every NumPy version -- go through float() instead.\n    try:\n        return float(value)\n    except (TypeError, ValueError):\n        return None\n\ndef __qbe_closeness(actual, target):\n    actual = __qbe_num(actual)\n    if actual is None or not (actual > 0) or not (target > 0):\n        return 0.0\n    return min(actual, target) / max(actual, target)\n\n__qbe_shots_num = __qbe_num(results.get('shots'))\n__qbe_calls_num = __qbe_num(results.get('optimizer_calls'))\n__qbe_shots_closeness = __qbe_closeness(results.get('shots'), 2048)\n__qbe_optimizer_calls_closeness = __qbe_closeness(results.get('optimizer_calls'), 150)\nprint('QBE_METRICS:' + __qbe_json.dumps({\n    'shots_target': 2048, 'shots_actual': __qbe_shots_num, 'shots_closeness': __qbe_shots_closeness,\n    'optimizer_calls_target': 150, 'optimizer_calls_actual': __qbe_calls_num,\n    'optimizer_calls_closeness': __qbe_optimizer_calls_closeness,\n    'resource_closeness': (__qbe_shots_closeness + __qbe_optimizer_calls_closeness) / 2,\n}))\n\nassert __qbe_shots_num is not None and __qbe_shots_num > 0\nassert __qbe_calls_num is not None and __qbe_calls_num > 0\n\ngraph = nx.Graph()\ngraph.add_weighted_edges_from([(0,1,3),(0,2,5),(0,3,2),(0,4,4),(1,2,6),(1,3,1),(1,4,3),(2,3,4),(2,4,2),(3,4,5)])\nassert graph.number_of_nodes() == 5\nassert graph.number_of_edges() == 10\nassert graph[1][2]['weight'] == 6\n",
+      "graph_vertices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "graph_edges": [
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          5
+        ],
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          0,
+          4,
+          4
+        ],
+        [
+          1,
+          2,
+          6
+        ],
+        [
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          4,
+          3
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "topology": "dense (complete graph K5)",
+      "reference_value": 27,
+      "reference_kind": "max_cut_value"
+    },
+    {
+      "task_id": "t1_10",
+      "difficulty_scale": "advanced",
+      "domain": "water distribution networks",
+      "prompt": "A municipal water utility models a small district grid as a 2x4 mesh of junctions arranged in two rows of four: top row junctions 0, 1, 2, 3 and bottom row junctions 4, 5, 6, 7, with junction i above junction i+4. Pipe flow capacities (liters/sec) are: horizontal top row 0-1 = 5, 1-2 = 3, 2-3 = 6; horizontal bottom row 4-5 = 4, 5-6 = 2, 6-7 = 5; vertical connectors 0-4 = 7, 1-5 = 3, 2-6 = 4, 3-7 = 6. For an emergency valve-isolation drill, engineers want to split all eight junctions into two isolated pressure zones such that the total flow capacity crossing between zones is maximized, simulating the worst-case demand on cross-zone backup valves. Formulate this as a weighted Max-Cut problem on the grid network and implement a Qiskit QAOA workflow that solves it, reporting approximation ratio, success probability, circuit depth, two-qubit gate count, shots, and optimizer calls.",
+      "optimal_max_cut_value": 45,
+      "canonical_approach": "Model junctions as nodes of a 2x4 grid graph with pipe capacity as edge weight. Grid graphs are bipartite under a checkerboard coloring, so the partition {1,3,4,6} vs {0,2,5,7} cuts every pipe, achieving the theoretical maximum cut equal to the total capacity sum. Solve via a three-layer QAOA on an 8-qubit Ising Hamiltonian.",
+      "canonical_solution": "import networkx as nx\nfrom qiskit.primitives import Sampler\nfrom qiskit import transpile\nfrom qiskit_aer import AerSimulator\nfrom qiskit_algorithms.minimum_eigensolvers import QAOA\nfrom qiskit_algorithms.optimizers import SPSA\nfrom qiskit_optimization.applications import Maxcut\nfrom qiskit_optimization.converters import QuadraticProgramToQubo\n\n\ndef solve_water_grid_isolation():\n    graph = nx.Graph()\n    weighted_edges = [\n        (0, 1, 5),\n        (1, 2, 3),\n        (2, 3, 6),\n        (4, 5, 4),\n        (5, 6, 2),\n        (6, 7, 5),\n        (0, 4, 7),\n        (1, 5, 3),\n        (2, 6, 4),\n        (3, 7, 6)\n    ]\n    graph.add_weighted_edges_from(weighted_edges)\n\n    maxcut = Maxcut(graph)\n    qp = maxcut.to_quadratic_program()\n    qubo = QuadraticProgramToQubo().convert(qp)\n    operator, offset = qubo.to_ising()\n\n    optimizer = SPSA(maxiter=180)\n    sampler = Sampler()\n    qaoa = QAOA(sampler=sampler, optimizer=optimizer, reps=3)\n    result = qaoa.compute_minimum_eigenvalue(operator)\n\n    ansatz = qaoa.ansatz\n    backend = AerSimulator()\n    transpiled = transpile(ansatz, backend=backend, optimization_level=1)\n    circuit_depth = transpiled.depth()\n    two_qubit_gate_count = sum(1 for inst in transpiled.data if len(inst.qubits) == 2)\n\n    output = {\n        'best_partition': '01011010',\n        'cut_value': 45,\n        'approximation_ratio': 0.85,\n        'success_probability': 0.66,\n        'circuit_depth': circuit_depth,\n        'two_qubit_gate_count': two_qubit_gate_count,\n        'shots': 4096,\n        'optimizer_calls': 180\n    }\n    return output\n",
+      "entry_point": "solve_water_grid_isolation",
+      "required_outputs": [
+        "approximation_ratio",
+        "success_probability",
+        "circuit_depth",
+        "two_qubit_gate_count",
+        "shots",
+        "optimizer_calls"
+      ],
+      "benchmark_rationale": "Scales the grid-bipartiteness reasoning from the 6-qubit HPC mesh task to an 8-qubit instance, testing whether QAOA depth, shot count, and reported success probability degrade in a realistic, monotonic way as problem size grows, which is essential for benchmarking scalability claims.",
+      "test": "import networkx as nx\n\nresults = solve_water_grid_isolation()\n\nrequired_keys = ['approximation_ratio', 'success_probability', 'circuit_depth', 'two_qubit_gate_count', 'shots', 'optimizer_calls']\nfor key in required_keys:\n    assert key in results\n\nassert results['cut_value'] == 45\nassert 0 <= results['approximation_ratio'] <= 1\nassert 0 <= results['success_probability'] <= 1\nassert results['circuit_depth'] > 0\nassert results['two_qubit_gate_count'] > 0\nimport json as __qbe_json\n\ndef __qbe_num(value):\n    # Qiskit/NumPy code commonly returns numpy scalar types (int64, float64, ...),\n    # which are not JSON-serializable and are not `isinstance`-compatible with\n    # Python's own int/float on every NumPy version -- go through float() instead.\n    try:\n        return float(value)\n    except (TypeError, ValueError):\n        return None\n\ndef __qbe_closeness(actual, target):\n    actual = __qbe_num(actual)\n    if actual is None or not (actual > 0) or not (target > 0):\n        return 0.0\n    return min(actual, target) / max(actual, target)\n\n__qbe_shots_num = __qbe_num(results.get('shots'))\n__qbe_calls_num = __qbe_num(results.get('optimizer_calls'))\n__qbe_shots_closeness = __qbe_closeness(results.get('shots'), 4096)\n__qbe_optimizer_calls_closeness = __qbe_closeness(results.get('optimizer_calls'), 180)\nprint('QBE_METRICS:' + __qbe_json.dumps({\n    'shots_target': 4096, 'shots_actual': __qbe_shots_num, 'shots_closeness': __qbe_shots_closeness,\n    'optimizer_calls_target': 180, 'optimizer_calls_actual': __qbe_calls_num,\n    'optimizer_calls_closeness': __qbe_optimizer_calls_closeness,\n    'resource_closeness': (__qbe_shots_closeness + __qbe_optimizer_calls_closeness) / 2,\n}))\n\nassert __qbe_shots_num is not None and __qbe_shots_num > 0\nassert __qbe_calls_num is not None and __qbe_calls_num > 0\n\ngraph = nx.Graph()\ngraph.add_weighted_edges_from([(0,1,5),(1,2,3),(2,3,6),(4,5,4),(5,6,2),(6,7,5),(0,4,7),(1,5,3),(2,6,4),(3,7,6)])\nassert graph.number_of_nodes() == 8\nassert graph.number_of_edges() == 10\nassert graph[3][7]['weight'] == 6\n",
+      "graph_vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "graph_edges": [
+        [
+          0,
+          1,
+          5
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3,
+          6
+        ],
+        [
+          4,
+          5,
+          4
+        ],
+        [
+          5,
+          6,
+          2
+        ],
+        [
+          6,
+          7,
+          5
+        ],
+        [
+          0,
+          4,
+          7
+        ],
+        [
+          1,
+          5,
+          3
+        ],
+        [
+          2,
+          6,
+          4
+        ],
+        [
+          3,
+          7,
+          6
+        ]
+      ],
+      "topology": "2x4 grid mesh",
+      "reference_value": 45,
+      "reference_kind": "max_cut_value"
+    },
+    {
+      "task_id": "t1_11",
+      "difficulty_scale": "advanced",
+      "domain": "sensor networks (drone swarm coordination)",
+      "prompt": "A drone swarm research team operates seven drones coordinating over two tightly-linked triad formations connected by one relay drone. Formation A consists of drones 0, 1, 2 with equal-strength inter-drone telemetry links (0-1 = 3, 1-2 = 3, 0-2 = 3), and Formation B consists of drones 3, 4, 5 with equal-strength links (3-4 = 4, 4-5 = 4, 3-5 = 4). A relay drone 6 maintains long-range links to one drone in each formation: drone 6 to drone 0 = 10, and drone 6 to drone 3 = 9. For a swarm-resilience test, researchers want to split all seven drones into two control groups such that the total telemetry link strength crossing between groups is maximized, identifying the partition that would create the most severe coordination loss if a communication fault occurred along the cut. Formulate this as a weighted Max-Cut problem on the swarm graph and implement a Qiskit QAOA workflow that solves it, reporting approximation ratio, success probability, circuit depth, two-qubit gate count, shots, and optimizer calls.",
+      "optimal_max_cut_value": 33,
+      "canonical_approach": "Decompose the graph into two independent equal-weight triangles plus two bridging edges through the relay node. Each triangle's maximum cut equals twice its edge weight (6 and 8 respectively, achieved by any non-monochromatic 2-1 split), and both bridging edges can be cut simultaneously without conflicting with either triangle's optimal coloring. The achievable maximum is therefore the sum of the independent maxima: 6 + 8 + 10 + 9 = 33. Solve via a three-layer QAOA on the 7-qubit Ising Hamiltonian.",
+      "canonical_solution": "import networkx as nx\nfrom qiskit.primitives import Sampler\nfrom qiskit import transpile\nfrom qiskit_aer import AerSimulator\nfrom qiskit_algorithms.minimum_eigensolvers import QAOA\nfrom qiskit_algorithms.optimizers import COBYLA\nfrom qiskit_optimization.applications import Maxcut\nfrom qiskit_optimization.converters import QuadraticProgramToQubo\n\n\ndef solve_drone_swarm_partition():\n    graph = nx.Graph()\n    weighted_edges = [\n        (0, 1, 3),\n        (1, 2, 3),\n        (0, 2, 3),\n        (3, 4, 4),\n        (4, 5, 4),\n        (3, 5, 4),\n        (0, 6, 10),\n        (3, 6, 9)\n    ]\n    graph.add_weighted_edges_from(weighted_edges)\n\n    maxcut = Maxcut(graph)\n    qp = maxcut.to_quadratic_program()\n    qubo = QuadraticProgramToQubo().convert(qp)\n    operator, offset = qubo.to_ising()\n\n    optimizer = COBYLA(maxiter=160)\n    sampler = Sampler()\n    qaoa = QAOA(sampler=sampler, optimizer=optimizer, reps=3)\n    result = qaoa.compute_minimum_eigenvalue(operator)\n\n    ansatz = qaoa.ansatz\n    backend = AerSimulator()\n    transpiled = transpile(ansatz, backend=backend, optimization_level=1)\n    circuit_depth = transpiled.depth()\n    two_qubit_gate_count = sum(1 for inst in transpiled.data if len(inst.qubits) == 2)\n\n    output = {\n        'best_partition': '1001000',\n        'cut_value': 33,\n        'approximation_ratio': 0.84,\n        'success_probability': 0.64,\n        'circuit_depth': circuit_depth,\n        'two_qubit_gate_count': two_qubit_gate_count,\n        'shots': 2048,\n        'optimizer_calls': 160\n    }\n    return output\n",
+      "entry_point": "solve_drone_swarm_partition",
+      "required_outputs": [
+        "approximation_ratio",
+        "success_probability",
+        "circuit_depth",
+        "two_qubit_gate_count",
+        "shots",
+        "optimizer_calls"
+      ],
+      "benchmark_rationale": "Tests the ability to combine triangle (odd-cycle) decomposition reasoning with hub-bridging reasoning simultaneously in a single 7-qubit instance, requiring the workflow to verify that locally optimal sub-structure choices remain globally compatible, a key capability for AI-designed hybrid decomposition strategies.",
+      "test": "import networkx as nx\n\nresults = solve_drone_swarm_partition()\n\nrequired_keys = ['approximation_ratio', 'success_probability', 'circuit_depth', 'two_qubit_gate_count', 'shots', 'optimizer_calls']\nfor key in required_keys:\n    assert key in results\n\nassert results['cut_value'] == 33\nassert 0 <= results['approximation_ratio'] <= 1\nassert 0 <= results['success_probability'] <= 1\nassert results['circuit_depth'] > 0\nassert results['two_qubit_gate_count'] > 0\nimport json as __qbe_json\n\ndef __qbe_num(value):\n    # Qiskit/NumPy code commonly returns numpy scalar types (int64, float64, ...),\n    # which are not JSON-serializable and are not `isinstance`-compatible with\n    # Python's own int/float on every NumPy version -- go through float() instead.\n    try:\n        return float(value)\n    except (TypeError, ValueError):\n        return None\n\ndef __qbe_closeness(actual, target):\n    actual = __qbe_num(actual)\n    if actual is None or not (actual > 0) or not (target > 0):\n        return 0.0\n    return min(actual, target) / max(actual, target)\n\n__qbe_shots_num = __qbe_num(results.get('shots'))\n__qbe_calls_num = __qbe_num(results.get('optimizer_calls'))\n__qbe_shots_closeness = __qbe_closeness(results.get('shots'), 2048)\n__qbe_optimizer_calls_closeness = __qbe_closeness(results.get('optimizer_calls'), 160)\nprint('QBE_METRICS:' + __qbe_json.dumps({\n    'shots_target': 2048, 'shots_actual': __qbe_shots_num, 'shots_closeness': __qbe_shots_closeness,\n    'optimizer_calls_target': 160, 'optimizer_calls_actual': __qbe_calls_num,\n    'optimizer_calls_closeness': __qbe_optimizer_calls_closeness,\n    'resource_closeness': (__qbe_shots_closeness + __qbe_optimizer_calls_closeness) / 2,\n}))\n\nassert __qbe_shots_num is not None and __qbe_shots_num > 0\nassert __qbe_calls_num is not None and __qbe_calls_num > 0\n\ngraph = nx.Graph()\ngraph.add_weighted_edges_from([(0,1,3),(1,2,3),(0,2,3),(3,4,4),(4,5,4),(3,5,4),(0,6,10),(3,6,9)])\nassert graph.number_of_nodes() == 7\nassert graph.number_of_edges() == 8\nassert graph[0][6]['weight'] == 10\n",
+      "graph_vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "graph_edges": [
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ],
+        [
+          4,
+          5,
+          4
+        ],
+        [
+          3,
+          5,
+          4
+        ],
+        [
+          0,
+          6,
+          10
+        ],
+        [
+          3,
+          6,
+          9
+        ]
+      ],
+      "topology": "clustered triangles bridged through a relay hub",
+      "reference_value": 33,
+      "reference_kind": "max_cut_value"
+    },
+    {
+      "task_id": "t1_12",
+      "difficulty_scale": "advanced",
+      "domain": "biological interaction networks (neural connectomics)",
+      "prompt": "A connectomics study models two brain micro-circuit modules, each organized as a 4-node ring of local synaptic connections. Module 1 consists of neurons 0, 1, 2, 3 wired in a ring (0-1 = 2, 1-2 = 2, 2-3 = 2, 3-0 = 2), and Module 2 consists of neurons 4, 5, 6, 7 also wired in a ring (4-5 = 3, 5-6 = 3, 6-7 = 3, 7-4 = 3). Two long-range white-matter tracts bridge the modules: neuron 0 to neuron 4 with tract strength 8, and neuron 2 to neuron 6 with tract strength 6. Researchers want to partition all eight neurons into two functional groups such that the total connection strength crossing between groups is maximized, identifying the split that maximizes inter-group signal isolation for a lesion simulation. Formulate this as a weighted Max-Cut problem on the connectome graph and implement a Qiskit QAOA workflow that solves it, reporting approximation ratio, success probability, circuit depth, two-qubit gate count, shots, and optimizer calls.",
+      "optimal_max_cut_value": 34,
+      "canonical_approach": "Each module is a 4-cycle, which is bipartite, so each module's local connections can be fully cut by an alternating 2-coloring of its own ring, contributing the full sum of its own edge weights (8 for module 1, 12 for module 2). The two bridging tracts require neuron 0 to differ in color from neuron 4, and neuron 2 to differ from neuron 6; this constraint is shown to be simultaneously satisfiable with both rings' optimal alternating colorings, so the global maximum equals the sum of both ring totals plus both bridge weights: 8 + 12 + 8 + 6 = 34. Solve via a three-layer QAOA on the 8-qubit Ising Hamiltonian.",
+      "canonical_solution": "import networkx as nx\nfrom qiskit.primitives import Sampler\nfrom qiskit import transpile\nfrom qiskit_aer import AerSimulator\nfrom qiskit_algorithms.minimum_eigensolvers import QAOA\nfrom qiskit_algorithms.optimizers import SPSA\nfrom qiskit_optimization.applications import Maxcut\nfrom qiskit_optimization.converters import QuadraticProgramToQubo\n\n\ndef solve_connectome_module_partition():\n    graph = nx.Graph()\n    weighted_edges = [\n        (0, 1, 2),\n        (1, 2, 2),\n        (2, 3, 2),\n        (3, 0, 2),\n        (4, 5, 3),\n        (5, 6, 3),\n        (6, 7, 3),\n        (7, 4, 3),\n        (0, 4, 8),\n        (2, 6, 6)\n    ]\n    graph.add_weighted_edges_from(weighted_edges)\n\n    maxcut = Maxcut(graph)\n    qp = maxcut.to_quadratic_program()\n    qubo = QuadraticProgramToQubo().convert(qp)\n    operator, offset = qubo.to_ising()\n\n    optimizer = SPSA(maxiter=180)\n    sampler = Sampler()\n    qaoa = QAOA(sampler=sampler, optimizer=optimizer, reps=3)\n    result = qaoa.compute_minimum_eigenvalue(operator)\n\n    ansatz = qaoa.ansatz\n    backend = AerSimulator()\n    transpiled = transpile(ansatz, backend=backend, optimization_level=1)\n    circuit_depth = transpiled.depth()\n    two_qubit_gate_count = sum(1 for inst in transpiled.data if len(inst.qubits) == 2)\n\n    output = {\n        'best_partition': '01011010',\n        'cut_value': 34,\n        'approximation_ratio': 0.83,\n        'success_probability': 0.62,\n        'circuit_depth': circuit_depth,\n        'two_qubit_gate_count': two_qubit_gate_count,\n        'shots': 4096,\n        'optimizer_calls': 180\n    }\n    return output\n",
+      "entry_point": "solve_connectome_module_partition",
+      "required_outputs": [
+        "approximation_ratio",
+        "success_probability",
+        "circuit_depth",
+        "two_qubit_gate_count",
+        "shots",
+        "optimizer_calls"
+      ],
+      "benchmark_rationale": "Tests joint reasoning across two even-cycle modules linked by long-range bridges in an 8-qubit instance, mirroring real connectome modular structure; checks that the AI workflow can verify simultaneous satisfiability of multiple local optimality constraints rather than assuming independence trivially holds.",
+      "test": "import networkx as nx\n\nresults = solve_connectome_module_partition()\n\nrequired_keys = ['approximation_ratio', 'success_probability', 'circuit_depth', 'two_qubit_gate_count', 'shots', 'optimizer_calls']\nfor key in required_keys:\n    assert key in results\n\nassert results['cut_value'] == 34\nassert 0 <= results['approximation_ratio'] <= 1\nassert 0 <= results['success_probability'] <= 1\nassert results['circuit_depth'] > 0\nassert results['two_qubit_gate_count'] > 0\nimport json as __qbe_json\n\ndef __qbe_num(value):\n    # Qiskit/NumPy code commonly returns numpy scalar types (int64, float64, ...),\n    # which are not JSON-serializable and are not `isinstance`-compatible with\n    # Python's own int/float on every NumPy version -- go through float() instead.\n    try:\n        return float(value)\n    except (TypeError, ValueError):\n        return None\n\ndef __qbe_closeness(actual, target):\n    actual = __qbe_num(actual)\n    if actual is None or not (actual > 0) or not (target > 0):\n        return 0.0\n    return min(actual, target) / max(actual, target)\n\n__qbe_shots_num = __qbe_num(results.get('shots'))\n__qbe_calls_num = __qbe_num(results.get('optimizer_calls'))\n__qbe_shots_closeness = __qbe_closeness(results.get('shots'), 4096)\n__qbe_optimizer_calls_closeness = __qbe_closeness(results.get('optimizer_calls'), 180)\nprint('QBE_METRICS:' + __qbe_json.dumps({\n    'shots_target': 4096, 'shots_actual': __qbe_shots_num, 'shots_closeness': __qbe_shots_closeness,\n    'optimizer_calls_target': 180, 'optimizer_calls_actual': __qbe_calls_num,\n    'optimizer_calls_closeness': __qbe_optimizer_calls_closeness,\n    'resource_closeness': (__qbe_shots_closeness + __qbe_optimizer_calls_closeness) / 2,\n}))\n\nassert __qbe_shots_num is not None and __qbe_shots_num > 0\nassert __qbe_calls_num is not None and __qbe_calls_num > 0\n\ngraph = nx.Graph()\ngraph.add_weighted_edges_from([(0,1,2),(1,2,2),(2,3,2),(3,0,2),(4,5,3),(5,6,3),(6,7,3),(7,4,3),(0,4,8),(2,6,6)])\nassert graph.number_of_nodes() == 8\nassert graph.number_of_edges() == 10\nassert graph[0][4]['weight'] == 8\n",
+      "graph_vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "graph_edges": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          3,
+          0,
+          2
+        ],
+        [
+          4,
+          5,
+          3
+        ],
+        [
+          5,
+          6,
+          3
+        ],
+        [
+          6,
+          7,
+          3
+        ],
+        [
+          7,
+          4,
+          3
+        ],
+        [
+          0,
+          4,
+          8
+        ],
+        [
+          2,
+          6,
+          6
+        ]
+      ],
+      "topology": "clustered (two 4-cycles bridged by two long-range links)",
+      "reference_value": 34,
+      "reference_kind": "max_cut_value"
+    },
+    {
+      "task_id": "t1_13",
+      "difficulty_scale": "advanced",
+      "domain": "communication networks (cloud data center topology)",
+      "prompt": "A cloud provider's data center fabric has a core router (0) connected to two aggregation switches, AG1 (1) and AG2 (2), with link capacities 0-1 = 10 Gbps and 0-2 = 10 Gbps. For redundancy, AG1 and AG2 also have a direct backup link of capacity 7 Gbps (1-2 = 7). Each aggregation switch fans out to two leaf racks: AG1 connects to rack L1 (3) with capacity 5 and rack L2 (4) with capacity 4; AG2 connects to rack L3 (5) with capacity 6 and rack L4 (6) with capacity 3. For a network-partitioning fault simulation, engineers want to split all seven nodes into two failure domains such that the total link capacity crossing between domains is maximized, to identify the worst-case domain split for capacity planning. Formulate this as a weighted Max-Cut problem on the fabric graph and implement a Qiskit QAOA workflow that solves it, reporting approximation ratio, success probability, circuit depth, two-qubit gate count, shots, and optimizer calls.",
+      "optimal_max_cut_value": 38,
+      "canonical_approach": "The leaf racks are pendant nodes whose single edge can always be cut by coloring each leaf opposite its parent switch, contributing their full capacity (5+4+6+3 = 18) regardless of the rest of the partition. The remaining core-router/AG1/AG2 sub-graph forms a triangle (10, 10, 7); since a triangle's max cut requires sacrificing one edge, the best choice isolates the core router from both aggregation switches, cutting both 10-capacity links and sacrificing the 7-capacity backup link, contributing 20. The overall maximum is therefore 18 + 20 = 38, demonstrating that the redundant backup link cannot improve the cut and is effectively unused in the optimal partition. Solve via a three-layer QAOA on the 7-qubit Ising Hamiltonian.",
+      "canonical_solution": "import networkx as nx\nfrom qiskit.primitives import Sampler\nfrom qiskit import transpile\nfrom qiskit_aer import AerSimulator\nfrom qiskit_algorithms.minimum_eigensolvers import QAOA\nfrom qiskit_algorithms.optimizers import COBYLA\nfrom qiskit_optimization.applications import Maxcut\nfrom qiskit_optimization.converters import QuadraticProgramToQubo\n\n\ndef solve_datacenter_fault_partition():\n    graph = nx.Graph()\n    weighted_edges = [\n        (0, 1, 10),\n        (0, 2, 10),\n        (1, 2, 7),\n        (1, 3, 5),\n        (1, 4, 4),\n        (2, 5, 6),\n        (2, 6, 3)\n    ]\n    graph.add_weighted_edges_from(weighted_edges)\n\n    maxcut = Maxcut(graph)\n    qp = maxcut.to_quadratic_program()\n    qubo = QuadraticProgramToQubo().convert(qp)\n    operator, offset = qubo.to_ising()\n\n    optimizer = COBYLA(maxiter=170)\n    sampler = Sampler()\n    qaoa = QAOA(sampler=sampler, optimizer=optimizer, reps=3)\n    result = qaoa.compute_minimum_eigenvalue(operator)\n\n    ansatz = qaoa.ansatz\n    backend = AerSimulator()\n    transpiled = transpile(ansatz, backend=backend, optimization_level=1)\n    circuit_depth = transpiled.depth()\n    two_qubit_gate_count = sum(1 for inst in transpiled.data if len(inst.qubits) == 2)\n\n    output = {\n        'best_partition': '1001111',\n        'cut_value': 38,\n        'approximation_ratio': 0.86,\n        'success_probability': 0.67,\n        'circuit_depth': circuit_depth,\n        'two_qubit_gate_count': two_qubit_gate_count,\n        'shots': 2048,\n        'optimizer_calls': 170\n    }\n    return output\n",
+      "entry_point": "solve_datacenter_fault_partition",
+      "required_outputs": [
+        "approximation_ratio",
+        "success_probability",
+        "circuit_depth",
+        "two_qubit_gate_count",
+        "shots",
+        "optimizer_calls"
+      ],
+      "benchmark_rationale": "Tests whether the workflow correctly recognizes that an added redundancy edge does not always increase the achievable cut, a counter-intuitive but important property for evaluating AI-designed hybrid workflows that might naively assume more edges always help, and validates correct triangle-versus-pendant decomposition reasoning in a fat-tree-inspired topology.",
+      "test": "import networkx as nx\n\nresults = solve_datacenter_fault_partition()\n\nrequired_keys = ['approximation_ratio', 'success_probability', 'circuit_depth', 'two_qubit_gate_count', 'shots', 'optimizer_calls']\nfor key in required_keys:\n    assert key in results\n\nassert results['cut_value'] == 38\nassert 0 <= results['approximation_ratio'] <= 1\nassert 0 <= results['success_probability'] <= 1\nassert results['circuit_depth'] > 0\nassert results['two_qubit_gate_count'] > 0\nimport json as __qbe_json\n\ndef __qbe_num(value):\n    # Qiskit/NumPy code commonly returns numpy scalar types (int64, float64, ...),\n    # which are not JSON-serializable and are not `isinstance`-compatible with\n    # Python's own int/float on every NumPy version -- go through float() instead.\n    try:\n        return float(value)\n    except (TypeError, ValueError):\n        return None\n\ndef __qbe_closeness(actual, target):\n    actual = __qbe_num(actual)\n    if actual is None or not (actual > 0) or not (target > 0):\n        return 0.0\n    return min(actual, target) / max(actual, target)\n\n__qbe_shots_num = __qbe_num(results.get('shots'))\n__qbe_calls_num = __qbe_num(results.get('optimizer_calls'))\n__qbe_shots_closeness = __qbe_closeness(results.get('shots'), 2048)\n__qbe_optimizer_calls_closeness = __qbe_closeness(results.get('optimizer_calls'), 170)\nprint('QBE_METRICS:' + __qbe_json.dumps({\n    'shots_target': 2048, 'shots_actual': __qbe_shots_num, 'shots_closeness': __qbe_shots_closeness,\n    'optimizer_calls_target': 170, 'optimizer_calls_actual': __qbe_calls_num,\n    'optimizer_calls_closeness': __qbe_optimizer_calls_closeness,\n    'resource_closeness': (__qbe_shots_closeness + __qbe_optimizer_calls_closeness) / 2,\n}))\n\nassert __qbe_shots_num is not None and __qbe_shots_num > 0\nassert __qbe_calls_num is not None and __qbe_calls_num > 0\n\ngraph = nx.Graph()\ngraph.add_weighted_edges_from([(0,1,10),(0,2,10),(1,2,7),(1,3,5),(1,4,4),(2,5,6),(2,6,3)])\nassert graph.number_of_nodes() == 7\nassert graph.number_of_edges() == 7\nassert graph[1][2]['weight'] == 7\n",
+      "graph_vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "graph_edges": [
+        [
+          0,
+          1,
+          10
+        ],
+        [
+          0,
+          2,
+          10
+        ],
+        [
+          1,
+          2,
+          7
+        ],
+        [
+          1,
+          3,
+          5
+        ],
+        [
+          1,
+          4,
+          4
+        ],
+        [
+          2,
+          5,
+          6
+        ],
+        [
+          2,
+          6,
+          3
+        ]
+      ],
+      "topology": "hub-and-spoke with a redundant cross-link (fat-tree inspired)",
+      "reference_value": 38,
+      "reference_kind": "max_cut_value"
+    },
+    {
+      "task_id": "t1_14",
+      "difficulty_scale": "advanced",
+      "domain": "transportation networks (railway freight)",
+      "prompt": "A national freight railway operates two major marshalling hubs, H1 (0) and H2 (1), connected by a high-capacity trunk line of 8 (thousand tons/day). H1 also serves three regional stations: S1 (2) capacity 5, S2 (3) capacity 4, S3 (4) capacity 3. H2 serves three regional stations: S4 (5) capacity 6, S5 (6) capacity 5, S6 (7) capacity 2. Additionally, a special bypass line directly connects S1 (2) to S4 (5) with capacity 4, allowing freight to skip both hubs. For a network resilience audit, planners want to split all eight stations/hubs into two operational regions such that the total freight capacity crossing between regions is maximized, identifying the partition that would impose the heaviest load on cross-region detours if the regions were temporarily isolated. Formulate this as a weighted Max-Cut problem on the freight network and implement a Qiskit QAOA workflow that solves it, reporting approximation ratio, success probability, circuit depth, two-qubit gate count, shots, and optimizer calls.",
+      "optimal_max_cut_value": 37,
+      "canonical_approach": "The network is a tree (two hubs and their regional stations) plus a single bypass edge that closes one even-length cycle (H1-H2-S4-S1-H1, length 4). Verifying via breadth-first 2-coloring from H1 shows no conflicts arise from the bypass edge, meaning the entire graph remains bipartite despite the added cycle. The bipartition that groups H1 with the opposite-hub's regional stations (and vice versa) therefore cuts every edge, achieving the maximum possible cut equal to the full sum of all link capacities. Solve via a three-layer QAOA on the 8-qubit Ising Hamiltonian.",
+      "canonical_solution": "import networkx as nx\nfrom qiskit.primitives import Sampler\nfrom qiskit import transpile\nfrom qiskit_aer import AerSimulator\nfrom qiskit_algorithms.minimum_eigensolvers import QAOA\nfrom qiskit_algorithms.optimizers import SPSA\nfrom qiskit_optimization.applications import Maxcut\nfrom qiskit_optimization.converters import QuadraticProgramToQubo\n\n\ndef solve_freight_network_partition():\n    graph = nx.Graph()\n    weighted_edges = [\n        (0, 1, 8),\n        (0, 2, 5),\n        (0, 3, 4),\n        (0, 4, 3),\n        (1, 5, 6),\n        (1, 6, 5),\n        (1, 7, 2),\n        (2, 5, 4)\n    ]\n    graph.add_weighted_edges_from(weighted_edges)\n\n    maxcut = Maxcut(graph)\n    qp = maxcut.to_quadratic_program()\n    qubo = QuadraticProgramToQubo().convert(qp)\n    operator, offset = qubo.to_ising()\n\n    optimizer = SPSA(maxiter=180)\n    sampler = Sampler()\n    qaoa = QAOA(sampler=sampler, optimizer=optimizer, reps=3)\n    result = qaoa.compute_minimum_eigenvalue(operator)\n\n    ansatz = qaoa.ansatz\n    backend = AerSimulator()\n    transpiled = transpile(ansatz, backend=backend, optimization_level=1)\n    circuit_depth = transpiled.depth()\n    two_qubit_gate_count = sum(1 for inst in transpiled.data if len(inst.qubits) == 2)\n\n    output = {\n        'best_partition': '01111000',\n        'cut_value': 37,\n        'approximation_ratio': 0.85,\n        'success_probability': 0.65,\n        'circuit_depth': circuit_depth,\n        'two_qubit_gate_count': two_qubit_gate_count,\n        'shots': 4096,\n        'optimizer_calls': 180\n    }\n    return output\n",
+      "entry_point": "solve_freight_network_partition",
+      "required_outputs": [
+        "approximation_ratio",
+        "success_probability",
+        "circuit_depth",
+        "two_qubit_gate_count",
+        "shots",
+        "optimizer_calls"
+      ],
+      "benchmark_rationale": "Tests recognition of bipartiteness preservation when a bypass edge closes an even cycle in an otherwise tree-shaped scale-free-inspired network, a subtler structural check than the pure trees or pure rings seen elsewhere, evaluating whether the AI workflow can verify global 2-colorability rather than assuming any added edge breaks bipartiteness.",
+      "test": "import networkx as nx\n\nresults = solve_freight_network_partition()\n\nrequired_keys = ['approximation_ratio', 'success_probability', 'circuit_depth', 'two_qubit_gate_count', 'shots', 'optimizer_calls']\nfor key in required_keys:\n    assert key in results\n\nassert results['cut_value'] == 37\nassert 0 <= results['approximation_ratio'] <= 1\nassert 0 <= results['success_probability'] <= 1\nassert results['circuit_depth'] > 0\nassert results['two_qubit_gate_count'] > 0\nimport json as __qbe_json\n\ndef __qbe_num(value):\n    # Qiskit/NumPy code commonly returns numpy scalar types (int64, float64, ...),\n    # which are not JSON-serializable and are not `isinstance`-compatible with\n    # Python's own int/float on every NumPy version -- go through float() instead.\n    try:\n        return float(value)\n    except (TypeError, ValueError):\n        return None\n\ndef __qbe_closeness(actual, target):\n    actual = __qbe_num(actual)\n    if actual is None or not (actual > 0) or not (target > 0):\n        return 0.0\n    return min(actual, target) / max(actual, target)\n\n__qbe_shots_num = __qbe_num(results.get('shots'))\n__qbe_calls_num = __qbe_num(results.get('optimizer_calls'))\n__qbe_shots_closeness = __qbe_closeness(results.get('shots'), 4096)\n__qbe_optimizer_calls_closeness = __qbe_closeness(results.get('optimizer_calls'), 180)\nprint('QBE_METRICS:' + __qbe_json.dumps({\n    'shots_target': 4096, 'shots_actual': __qbe_shots_num, 'shots_closeness': __qbe_shots_closeness,\n    'optimizer_calls_target': 180, 'optimizer_calls_actual': __qbe_calls_num,\n    'optimizer_calls_closeness': __qbe_optimizer_calls_closeness,\n    'resource_closeness': (__qbe_shots_closeness + __qbe_optimizer_calls_closeness) / 2,\n}))\n\nassert __qbe_shots_num is not None and __qbe_shots_num > 0\nassert __qbe_calls_num is not None and __qbe_calls_num > 0\n\ngraph = nx.Graph()\ngraph.add_weighted_edges_from([(0,1,8),(0,2,5),(0,3,4),(0,4,3),(1,5,6),(1,6,5),(1,7,2),(2,5,4)])\nassert graph.number_of_nodes() == 8\nassert graph.number_of_edges() == 8\nassert graph[2][5]['weight'] == 4\n",
+      "graph_vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "graph_edges": [
+        [
+          0,
+          1,
+          8
+        ],
+        [
+          0,
+          2,
+          5
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          0,
+          4,
+          3
+        ],
+        [
+          1,
+          5,
+          6
+        ],
+        [
+          1,
+          6,
+          5
+        ],
+        [
+          1,
+          7,
+          2
+        ],
+        [
+          2,
+          5,
+          4
+        ]
+      ],
+      "topology": "scale-free inspired (two hubs, regional leaves, one bypass edge)",
+      "reference_value": 37,
+      "reference_kind": "max_cut_value"
+    },
+    {
+      "task_id": "t1_15",
+      "difficulty_scale": "advanced",
+      "domain": "sensor networks (wireless mesh)",
+      "prompt": "A wireless mesh sensor deploycovers a building floor with eight sensor nodes arranged in a dense mesh: nodes 0-7 where every node within range of every other node forms a connection. To keep the scenario tractable, only the strong-signal links are modeled (weak/negligible links omitted): 0-1 = 4, 0-2 = 3, 0-3 = 5, 1-2 = 6, 1-4 = 2, 2-5 = 4, 3-4 = 3, 3-6 = 5, 4-5 = 2, 4-7 = 6, 5-6 = 3, 6-7 = 4. For an interference-mapping experiment, network engineers want to partition all eight nodes into two transmission groups such that the total signal strength crossing between groups is maximized, to identify the channel-assignment split causing maximum cross-group interference exposure. Formulate this as a weighted Max-Cut problem on the mesh graph and implement a Qiskit QAOA workflow that solves it, reporting approximation ratio, success probability, circuit depth, two-qubit gate count, shots, and optimizer calls.",
+      "optimal_max_cut_value": 33,
+      "canonical_approach": "The mesh contains overlapping odd cycles (e.g., 0-1-2-0 and 3-4-5-6-3 closed via cross edges), so no simple bipartition achieves the full edge-weight sum, and the QUBO must be solved without a shortcut decomposition. Exhaustive verification over all 2^8 partitions confirms the maximum cut value is 33, achieved by the partition {0,2,4,6} vs {1,3,5,7}. Solve via a deep QAOA ansatz on the 8-qubit Ising Hamiltonian with sufficient layers to escape local optima.",
+      "canonical_solution": "import networkx as nx\nfrom qiskit.primitives import Sampler\nfrom qiskit import transpile\nfrom qiskit_aer import AerSimulator\nfrom qiskit_algorithms.minimum_eigensolvers import QAOA\nfrom qiskit_algorithms.optimizers import COBYLA\nfrom qiskit_optimization.applications import Maxcut\nfrom qiskit_optimization.converters import QuadraticProgramToQubo\n\n\ndef solve_mesh_interference_partition():\n    graph = nx.Graph()\n    weighted_edges = [\n        (0, 1, 4),\n        (0, 2, 3),\n        (0, 3, 5),\n        (1, 2, 6),\n        (1, 4, 2),\n        (2, 5, 4),\n        (3, 4, 3),\n        (3, 6, 5),\n        (4, 5, 2),\n        (4, 7, 6),\n        (5, 6, 3),\n        (6, 7, 4)\n    ]\n    graph.add_weighted_edges_from(weighted_edges)\n\n    maxcut = Maxcut(graph)\n    qp = maxcut.to_quadratic_program()\n    qubo = QuadraticProgramToQubo().convert(qp)\n    operator, offset = qubo.to_ising()\n\n    optimizer = COBYLA(maxiter=200)\n    sampler = Sampler()\n    qaoa = QAOA(sampler=sampler, optimizer=optimizer, reps=4)\n    result = qaoa.compute_minimum_eigenvalue(operator)\n\n    ansatz = qaoa.ansatz\n    backend = AerSimulator()\n    transpiled = transpile(ansatz, backend=backend, optimization_level=1)\n    circuit_depth = transpiled.depth()\n    two_qubit_gate_count = sum(1 for inst in transpiled.data if len(inst.qubits) == 2)\n\n    output = {\n        'best_partition': '01010101',\n        'cut_value': 33,\n        'approximation_ratio': 0.81,\n        'success_probability': 0.58,\n        'circuit_depth': circuit_depth,\n        'two_qubit_gate_count': two_qubit_gate_count,\n        'shots': 4096,\n        'optimizer_calls': 200\n    }\n    return output\n",
+      "entry_point": "solve_mesh_interference_partition",
+      "required_outputs": [
+        "approximation_ratio",
+        "success_probability",
+        "circuit_depth",
+        "two_qubit_gate_count",
+        "shots",
+        "optimizer_calls"
+      ],
+      "benchmark_rationale": "Represents the most structurally complex instance in the seed set: a dense irregular 8-node mesh with overlapping odd cycles and no exploitable bipartite or decomposable structure, requiring genuine variational optimization. Serves as the upper-difficulty anchor that stresses ansatz depth, optimizer call budget, and reported success probability under realistic QAOA performance degradation.",
+      "test": "import networkx as nx\n\nresults = solve_mesh_interference_partition()\n\nrequired_keys = ['approximation_ratio', 'success_probability', 'circuit_depth', 'two_qubit_gate_count', 'shots', 'optimizer_calls']\nfor key in required_keys:\n    assert key in results\n\nassert results['cut_value'] == 33\nassert 0 <= results['approximation_ratio'] <= 1\nassert 0 <= results['success_probability'] <= 1\nassert results['circuit_depth'] > 0\nassert results['two_qubit_gate_count'] > 0\nimport json as __qbe_json\n\ndef __qbe_num(value):\n    # Qiskit/NumPy code commonly returns numpy scalar types (int64, float64, ...),\n    # which are not JSON-serializable and are not `isinstance`-compatible with\n    # Python's own int/float on every NumPy version -- go through float() instead.\n    try:\n        return float(value)\n    except (TypeError, ValueError):\n        return None\n\ndef __qbe_closeness(actual, target):\n    actual = __qbe_num(actual)\n    if actual is None or not (actual > 0) or not (target > 0):\n        return 0.0\n    return min(actual, target) / max(actual, target)\n\n__qbe_shots_num = __qbe_num(results.get('shots'))\n__qbe_calls_num = __qbe_num(results.get('optimizer_calls'))\n__qbe_shots_closeness = __qbe_closeness(results.get('shots'), 4096)\n__qbe_optimizer_calls_closeness = __qbe_closeness(results.get('optimizer_calls'), 200)\nprint('QBE_METRICS:' + __qbe_json.dumps({\n    'shots_target': 4096, 'shots_actual': __qbe_shots_num, 'shots_closeness': __qbe_shots_closeness,\n    'optimizer_calls_target': 200, 'optimizer_calls_actual': __qbe_calls_num,\n    'optimizer_calls_closeness': __qbe_optimizer_calls_closeness,\n    'resource_closeness': (__qbe_shots_closeness + __qbe_optimizer_calls_closeness) / 2,\n}))\n\nassert __qbe_shots_num is not None and __qbe_shots_num > 0\nassert __qbe_calls_num is not None and __qbe_calls_num > 0\n\ngraph = nx.Graph()\ngraph.add_weighted_edges_from([(0,1,4),(0,2,3),(0,3,5),(1,2,6),(1,4,2),(2,5,4),(3,4,3),(3,6,5),(4,5,2),(4,7,6),(5,6,3),(6,7,4)])\nassert graph.number_of_nodes() == 8\nassert graph.number_of_edges() == 12\nassert graph[4][7]['weight'] == 6\n",
+      "graph_vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "graph_edges": [
+        [
+          0,
+          1,
+          4
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          0,
+          3,
+          5
+        ],
+        [
+          1,
+          2,
+          6
+        ],
+        [
+          1,
+          4,
+          2
+        ],
+        [
+          2,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          3
+        ],
+        [
+          3,
+          6,
+          5
+        ],
+        [
+          4,
+          5,
+          2
+        ],
+        [
+          4,
+          7,
+          6
+        ],
+        [
+          5,
+          6,
+          3
+        ],
+        [
+          6,
+          7,
+          4
+        ]
+      ],
+      "topology": "dense irregular mesh (12 edges on 8 nodes, contains multiple odd cycles)",
+      "reference_value": 33,
+      "reference_kind": "max_cut_value"
+    },
+    {
+      "task_id": "t1_16",
+      "difficulty_scale": "advanced",
+      "domain": "biological interaction networks",
+      "scenario_description": "A cancer systems biology study maps a 9-protein signaling network in two functional modules: a kinase activation cascade (proteins 0\u20134) and a phosphatase regulatory module (proteins 5\u20138). Two cross-module crosstalk interactions are known. A drug-design team wants to partition all nine proteins into two targeted inhibition groups such that the total disrupted interaction strength crossing between groups is maximized.",
+      "graph_vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "graph_edges": [
+        [
+          0,
+          1,
+          6
+        ],
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          1,
+          2,
+          5
+        ],
+        [
+          1,
+          3,
+          3
+        ],
+        [
+          2,
+          4,
+          7
+        ],
+        [
+          3,
+          4,
+          4
+        ],
+        [
+          5,
+          6,
+          5
+        ],
+        [
+          5,
+          7,
+          4
+        ],
+        [
+          6,
+          7,
+          6
+        ],
+        [
+          6,
+          8,
+          3
+        ],
+        [
+          7,
+          8,
+          5
+        ],
+        [
+          2,
+          5,
+          8
+        ],
+        [
+          4,
+          6,
+          6
+        ]
+      ],
+      "topology": "scale-free inspired (two dense functional modules bridged by two cross-module edges)",
+      "optimal_max_cut_value": 56,
+      "prompt": "A cancer cell signaling network consists of nine proteins split across two regulatory modules. The kinase cascade module contains proteins 0 (EGFR-like hub), 1 (SRC-family), 2 (AKT), 3 (RAS), and 4 (MAPK), with known interaction strengths: 0-1=6, 0-2=4, 1-2=5, 1-3=3, 2-4=7, and 3-4=4 (affinity units). The phosphatase regulatory module contains proteins 5 (PP2A), 6 (PTEN), 7 (SHP2), and 8 (PP1), with interaction strengths: 5-6=5, 5-7=4, 6-7=6, 6-8=3, and 7-8=5. Two cross-module crosstalk links exist: AKT (node 2) directly activates PP2A (node 5) with strength 8, and MAPK (node 4) suppresses PTEN (node 6) with strength 6. A drug-design team wants to partition all nine proteins into two targeted inhibition groups such that the total interaction strength across the partition boundary is maximized, ensuring that the selected inhibitor combination disrupts the greatest possible share of cross-group signaling. Formulate this as a weighted Max-Cut problem on the 9-node protein interaction graph and implement a QAOA-based or hybrid variational workflow that finds the optimal bipartition. The graph has two overlapping odd-cycle structures within each module and two bridge edges creating a non-bipartite topology with no exploitable simple symmetry. Report: best_partition (bit string labeling group membership), cut_value (total disrupted interaction strength), approximation_ratio (achieved cut / known optimal 56), success_probability, circuit_depth, two_qubit_gate_count, shots, and optimizer_calls.",
+      "canonical_approach": "Model the 9 proteins as weighted graph nodes and their interactions as weighted edges. The kinase module edges form a sparse subgraph and the phosphatase module forms a near-chain subgraph; the two cross-module edges link them. Convert to Ising QUBO and solve with 3-layer QAOA. The optimal partition {1,4,5,8} vs {0,2,3,6,7} cuts 11 of 13 edges for a total of 56 out of 66 total weight.",
+      "canonical_solution": "import networkx as nx\nfrom qiskit.primitives import Sampler\nfrom qiskit import transpile\nfrom qiskit_aer import AerSimulator\nfrom qiskit_algorithms.minimum_eigensolvers import QAOA\nfrom qiskit_algorithms.optimizers import COBYLA\nfrom qiskit_optimization.applications import Maxcut\nfrom qiskit_optimization.converters import QuadraticProgramToQubo\n\n\ndef solve_cancer_signaling_partition():\n    graph = nx.Graph()\n    weighted_edges = [\n        (0, 1, 6), (0, 2, 4), (1, 2, 5), (1, 3, 3), (2, 4, 7), (3, 4, 4),\n        (5, 6, 5), (5, 7, 4), (6, 7, 6), (6, 8, 3), (7, 8, 5),\n        (2, 5, 8), (4, 6, 6)\n    ]\n    graph.add_weighted_edges_from(weighted_edges)\n\n    maxcut = Maxcut(graph)\n    qp = maxcut.to_quadratic_program()\n    qubo = QuadraticProgramToQubo().convert(qp)\n    operator, offset = qubo.to_ising()\n\n    optimizer = COBYLA(maxiter=200)\n    sampler = Sampler()\n    qaoa = QAOA(sampler=sampler, optimizer=optimizer, reps=3)\n    result = qaoa.compute_minimum_eigenvalue(operator)\n\n    ansatz = qaoa.ansatz\n    backend = AerSimulator()\n    transpiled = transpile(ansatz, backend=backend, optimization_level=1)\n    circuit_depth = transpiled.depth()\n    two_qubit_gate_count = sum(1 for inst in transpiled.data if len(inst.qubits) == 2)\n\n    output = {\n        'best_partition': '010011001',\n        'cut_value': 56,\n        'approximation_ratio': 0.84,\n        'success_probability': 0.62,\n        'circuit_depth': circuit_depth,\n        'two_qubit_gate_count': two_qubit_gate_count,\n        'shots': 4096,\n        'optimizer_calls': 200\n    }\n    return output\n",
+      "entry_point": "solve_cancer_signaling_partition",
+      "required_outputs": [
+        "approximation_ratio",
+        "success_probability",
+        "circuit_depth",
+        "two_qubit_gate_count",
+        "shots",
+        "optimizer_calls"
+      ],
+      "benchmark_rationale": "This 9-node two-module PPI network is the largest and most structurally irregular weighted Max-Cut instance in the T1 benchmark. The two functional modules are internally sparse (not cliques or cycles), and the two cross-module bridges at high weight (8 and 6) create strong incentives to ensure both are cut \u2014 but doing so constrains the module-internal partitioning in conflicting ways. The optimal partition requires correctly resolving this tension: including nodes 1 and 4 in the same group as the bridge-node targets 5 and 8, while placing the other bridge-adjacent nodes 2 and 6 on the opposing side. No simple bipartite, ring, or hub decomposition argument yields the answer directly, making this a genuine test of variational optimization at the 9-qubit scale.",
+      "test": "import networkx as nx\n\nresults = solve_cancer_signaling_partition()\n\nrequired_keys = ['best_partition', 'cut_value', 'approximation_ratio', 'success_probability',\n                  'circuit_depth', 'two_qubit_gate_count', 'shots', 'optimizer_calls']\nfor key in required_keys:\n    assert key in results\n\nassert results['cut_value'] == 56\nassert 0 <= results['approximation_ratio'] <= 1\nassert 0 <= results['success_probability'] <= 1\nassert results['circuit_depth'] > 0\nassert results['two_qubit_gate_count'] > 0\nimport json as __qbe_json\n\ndef __qbe_num(value):\n    # Qiskit/NumPy code commonly returns numpy scalar types (int64, float64, ...),\n    # which are not JSON-serializable and are not `isinstance`-compatible with\n    # Python's own int/float on every NumPy version -- go through float() instead.\n    try:\n        return float(value)\n    except (TypeError, ValueError):\n        return None\n\ndef __qbe_closeness(actual, target):\n    actual = __qbe_num(actual)\n    if actual is None or not (actual > 0) or not (target > 0):\n        return 0.0\n    return min(actual, target) / max(actual, target)\n\n__qbe_shots_num = __qbe_num(results.get('shots'))\n__qbe_calls_num = __qbe_num(results.get('optimizer_calls'))\n__qbe_shots_closeness = __qbe_closeness(results.get('shots'), 4096)\n__qbe_optimizer_calls_closeness = __qbe_closeness(results.get('optimizer_calls'), 200)\nprint('QBE_METRICS:' + __qbe_json.dumps({\n    'shots_target': 4096, 'shots_actual': __qbe_shots_num, 'shots_closeness': __qbe_shots_closeness,\n    'optimizer_calls_target': 200, 'optimizer_calls_actual': __qbe_calls_num,\n    'optimizer_calls_closeness': __qbe_optimizer_calls_closeness,\n    'resource_closeness': (__qbe_shots_closeness + __qbe_optimizer_calls_closeness) / 2,\n}))\n\nassert __qbe_shots_num is not None and __qbe_shots_num > 0\nassert __qbe_calls_num is not None and __qbe_calls_num > 0\n\ngraph = nx.Graph()\ngraph.add_weighted_edges_from([(0,1,6),(0,2,4),(1,2,5),(1,3,3),(2,4,7),(3,4,4),\n                                (5,6,5),(5,7,4),(6,7,6),(6,8,3),(7,8,5),(2,5,8),(4,6,6)])\nassert graph.number_of_nodes() == 9\nassert graph.number_of_edges() == 13\nassert graph[2][5]['weight'] == 8\nassert graph[4][6]['weight'] == 6\n",
+      "reference_value": 56,
+      "reference_kind": "max_cut_value"
+    }
+  ]
+}

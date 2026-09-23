@@ -1,0 +1,27 @@
+{
+  "status": "completed",
+  "counts": {
+    "candidate_error": 7,
+    "passed": 65,
+    "incorrect": 7,
+    "candidate_unsupported_import": 3,
+    "truncated": 3
+  },
+  "expected_samples": 85,
+  "fingerprint": "9b2a0df1b3422f867b6b969796dbe621d72595876d977f5649ca7f8d1cdcbf50",
+  "execution_status_counts": {
+    "passed": 65,
+    "candidate_error": 7,
+    "incorrect": 7,
+    "candidate_unsupported_import": 3,
+    "not_executed": 3
+  },
+  "unsupported_import_modules": {
+    "networkx.community": 3
+  },
+  "pass_at_k": {
+    "1": 0.7647058823529411,
+    "5": 1.0
+  },
+  "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."
+}

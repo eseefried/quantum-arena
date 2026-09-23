@@ -1,0 +1,1628 @@
+{
+  "topic": "T2: Constrained QUBO for Scientific Resource Allocation",
+  "tasks": [
+    {
+      "task_id": "t2_0",
+      "difficulty_scale": "beginner",
+      "support_level": "S1",
+      "domain": "HPC scheduling",
+      "num_variables": 4,
+      "optimal_objective_value": 11,
+      "resources": [
+        {
+          "variable": "x1",
+          "job": "J1",
+          "label": "Molecular dynamics simulation",
+          "priority": 4
+        },
+        {
+          "variable": "x2",
+          "job": "J2",
+          "label": "Neural network training run",
+          "priority": 6
+        },
+        {
+          "variable": "x3",
+          "job": "J3",
+          "label": "Genome assembly pipeline",
+          "priority": 5
+        },
+        {
+          "variable": "x4",
+          "job": "J4",
+          "label": "Monte Carlo sampling job",
+          "priority": 3
+        }
+      ],
+      "constraints": [
+        {
+          "type": "equality",
+          "expression": "x1 + x2 + x3 + x4 = 2",
+          "description": "The GPU node has exactly 2 processing slots available in the current scheduling window. Exactly 2 jobs must be selected."
+        },
+        {
+          "type": "qubo_specification",
+          "objective_minimization": "H_obj = -(4*x1 + 6*x2 + 5*x3 + 3*x4)",
+          "penalty": "H_penalty = A * (x1 + x2 + x3 + x4 - 2)^2, recommended A = 8",
+          "full_qubo_linear": {
+            "x1": -28,
+            "x2": -30,
+            "x3": -29,
+            "x4": -27
+          },
+          "full_qubo_quadratic": {
+            "x1x2": 16,
+            "x1x3": 16,
+            "x1x4": 16,
+            "x2x3": 16,
+            "x2x4": 16,
+            "x3x4": 16
+          },
+          "note": "Diagonal terms = -priority_i - 3*A; off-diagonal terms = 2*A. Constant 4*A dropped."
+        }
+      ],
+      "prompt": "An HPC cluster's GPU node has exactly 2 processing slots available for the current one-hour scheduling window. Four GPU-intensive scientific jobs are queued: J1 (molecular dynamics simulation, priority=4), J2 (neural network training, priority=6), J3 (genome assembly pipeline, priority=5), and J4 (Monte Carlo sampling, priority=3). Each job requires exactly one GPU slot and runs for the full window. The batch scheduler must select exactly 2 jobs to maximize total scheduling priority. This problem is formulated as a QUBO over binary variables x1, x2, x3, x4 (xi = 1 if job Ji is selected). The objective to minimize is H = -(4x1 + 6x2 + 5x3 + 3x4). The equality constraint x1+x2+x3+x4=2 is enforced via a penalty term A*(x1+x2+x3+x4-2)^2 with A=8. The combined QUBO is: H = (-28)x1 + (-30)x2 + (-29)x3 + (-27)x4 + 16*(x1x2 + x1x3 + x1x4 + x2x3 + x2x4 + x3x4). Implement a quantum or hybrid workflow (e.g., QAOA, quantum annealing, or simulated annealing on the QUBO) that minimizes H and recovers the optimal job selection. Report: feasible_objective_quality (best feasible priority achieved divided by known optimal 11), constraint_violation_rate (fraction of returned samples where x1+x2+x3+x4 \u2260 2), penalty_adjusted_qubo_energy (mean H value over all returned samples), runtime (wall-clock seconds), and evaluation_cost (total circuit shots or objective evaluations used).",
+      "required_outputs": [
+        "feasible_objective_quality",
+        "constraint_violation_rate",
+        "penalty_adjusted_qubo_energy",
+        "runtime",
+        "evaluation_cost"
+      ],
+      "benchmark_rationale": "This is the minimal-complexity QUBO allocation instance in the benchmark: four variables, one equality constraint, no conflict terms, and a known closed-form optimum (J2+J3 = priority 11). It validates that the AI workflow correctly encodes a penalty-form QUBO from an explicit specification, minimizes it on quantum hardware or a simulator, and accurately reports all five required metrics before tackling multi-constraint and larger instances.",
+      "canonical_solution": "import numpy as np\nimport time\n\ndef solve_hpc_slot_scheduling():\n    \"\"\"\n    4-variable QUBO: select exactly 2 of 4 GPU jobs to maximise priority.\n    QUBO provided explicitly.  Solved by exhaustive enumeration (2^4 = 16).\n    \"\"\"\n    n = 4\n    priorities = [4, 6, 5, 3]   # J1-J4\n    k = 2\n\n    Q_lin  = {0: -28, 1: -30, 2: -29, 3: -27}\n    Q_quad = {(i, j): 16 for i in range(n) for j in range(i+1, n)}\n\n    start = time.time()\n    best_energy = float(\"inf\")\n    best_x = None\n    all_energies = []\n    violations = 0\n\n    for b in range(1 << n):\n        x = np.array([(b >> i) & 1 for i in range(n)])\n        e = sum(Q_lin[i] * x[i] for i in range(n))\n        e += sum(v * x[i] * x[j] for (i, j), v in Q_quad.items())\n        all_energies.append(float(e))\n        if int(x.sum()) != k:\n            violations += 1\n        if e < best_energy:\n            best_energy = e\n            best_x = x.copy()\n\n    runtime = time.time() - start\n    achieved = int(sum(priorities[i] * best_x[i] for i in range(n)))\n\n    return {\n        \"selected_jobs\":               [i+1 for i in range(n) if best_x[i]],\n        \"achieved_priority\":           achieved,\n        \"feasible_objective_quality\":  achieved / 11.0,\n        \"constraint_violation_rate\":   violations / (1 << n),\n        \"penalty_adjusted_qubo_energy\": float(np.mean(all_energies)),\n        \"runtime\":                     runtime,\n        \"evaluation_cost\":             1 << n,\n    }\n",
+      "entry_point": "solve_hpc_slot_scheduling",
+      "test": "result = solve_hpc_slot_scheduling()\nassert \"feasible_objective_quality\"   in result\nassert \"constraint_violation_rate\"    in result\nassert \"penalty_adjusted_qubo_energy\" in result\nassert \"runtime\"                      in result\nassert \"evaluation_cost\"              in result\nassert result[\"achieved_priority\"] == 11, \"Optimal priority not found\"\nassert result[\"feasible_objective_quality\"] == 1.0\nassert result[\"constraint_violation_rate\"] < 0.7\nassert result[\"evaluation_cost\"] == 16\nassert set(result[\"selected_jobs\"]) == {2, 3}\n",
+      "reference_value": 11,
+      "reference_kind": "optimal_objective_value"
+    },
+    {
+      "task_id": "t2_1",
+      "difficulty_scale": "beginner",
+      "support_level": "S2",
+      "domain": "telescope scheduling",
+      "num_variables": 5,
+      "optimal_objective_value": 13,
+      "resources": [
+        {
+          "variable": "x1",
+          "target": "T1",
+          "label": "Crab Nebula supernova remnant",
+          "scientific_value": 4
+        },
+        {
+          "variable": "x2",
+          "target": "T2",
+          "label": "NGC 4889 elliptical galaxy",
+          "scientific_value": 5
+        },
+        {
+          "variable": "x3",
+          "target": "T3",
+          "label": "Vela pulsar timing observation",
+          "scientific_value": 3
+        },
+        {
+          "variable": "x4",
+          "target": "T4",
+          "label": "Andromeda galaxy core survey",
+          "scientific_value": 6
+        },
+        {
+          "variable": "x5",
+          "target": "T5",
+          "label": "Open cluster NGC 752 photometry",
+          "scientific_value": 2
+        }
+      ],
+      "constraints": [
+        {
+          "type": "equality",
+          "expression": "x1 + x2 + x3 + x4 + x5 = 3",
+          "description": "The night's usable observing window allows exactly 3 target visits within available detector time."
+        },
+        {
+          "type": "conflict",
+          "expression": "x2 * x4 = 0 (equivalently x2 + x4 <= 1)",
+          "description": "T2 (NGC 4889) and T4 (Andromeda core) lie within the same 2-degree slew zone and cannot both be acquired in the same scheduling block due to guide-star repositioning time exceeding the slot length."
+        }
+      ],
+      "prompt": "A ground-based optical observatory is scheduling its next observing night. Five candidate science targets have been approved by the time allocation committee: T1 (Crab Nebula supernova remnant, scientific value = 4), T2 (NGC 4889 elliptical galaxy, value = 5), T3 (Vela pulsar timing observation, value = 3), T4 (Andromeda galaxy core survey, value = 6), and T5 (open cluster NGC 752 photometry, value = 2). The available detector integration window permits exactly 3 targets per scheduling block. Additionally, T2 (NGC 4889) and T4 (Andromeda core) fall within the same 2-degree slew zone, meaning the telescope cannot acquire both targets in the same block because guide-star repositioning would consume more time than the slot allows; at most one of them can be observed. Define binary variables xi = 1 if target Ti is observed. Formulate this resource allocation problem as a QUBO over x1,...,x5, incorporating: (i) the equality constraint x1+x2+x3+x4+x5 = 3 as a quadratic penalty, (ii) the conflict constraint x2*x4 = 0 as a separate penalty term. The objective is to maximize total scientific value 4x1+5x2+3x3+6x4+2x5 (equivalently minimize its negation). Implement a quantum or hybrid workflow that solves the QUBO and identifies the optimal observation set. Report feasible_objective_quality (best feasible value / known optimal 13), constraint_violation_rate, penalty_adjusted_qubo_energy, runtime, and evaluation_cost.",
+      "required_outputs": [
+        "feasible_objective_quality",
+        "constraint_violation_rate",
+        "penalty_adjusted_qubo_energy",
+        "runtime",
+        "evaluation_cost"
+      ],
+      "benchmark_rationale": "This 5-variable telescope scheduling instance introduces the first inter-variable conflict constraint, testing whether the AI workflow correctly adds a quadratic penalty term for the (T2, T4) incompatibility on top of the equality constraint, and whether it identifies the non-obvious optimal schedule (T1, T3, T4 = value 13) that prefers T4 over T2 due to higher scientific value while respecting the conflict.",
+      "canonical_solution": "import numpy as np\nimport time\n\ndef solve_telescope_scheduling():\n    \"\"\"\n    5-variable QUBO: select exactly 3 of 5 targets, T2 and T4 conflict.\n    QUBO formulated from equality + conflict penalties.\n    \"\"\"\n    n = 4\n    sci  = [4, 5, 3, 6, 2]   # T1-T5\n    k, A, B = 3, 10, 12\n    n = 5\n\n    Q_lin  = {i: -sci[i] - (2*k - 1)*A for i in range(n)}\n    Q_quad = {(i, j): 2*A for i in range(n) for j in range(i+1, n)}\n    Q_quad[(1, 3)] += B   # conflict T2 (idx 1) x T4 (idx 3)\n\n    start = time.time()\n    best_energy = float(\"inf\")\n    best_x = None\n    all_energies, violations, best_val = [], 0, 0\n\n    for b in range(1 << n):\n        x = np.array([(b >> i) & 1 for i in range(n)])\n        e = sum(Q_lin[i]*x[i] for i in range(n))\n        e += sum(v*x[i]*x[j] for (i,j),v in Q_quad.items())\n        all_energies.append(float(e))\n        ok = (int(x.sum()) == k) and not (x[1] and x[3])\n        if not ok:\n            violations += 1\n        else:\n            val = sum(sci[i]*x[i] for i in range(n))\n            if val > best_val:\n                best_val, best_x = val, x.copy()\n        if e < best_energy:\n            best_energy = e\n\n    if best_x is None:\n        best_x = np.zeros(n)\n    runtime = time.time() - start\n    achieved = int(sum(sci[i]*best_x[i] for i in range(n)))\n\n    return {\n        \"selected_targets\":            [i+1 for i in range(n) if best_x[i]],\n        \"achieved_value\":              achieved,\n        \"feasible_objective_quality\":  achieved / 13.0,\n        \"constraint_violation_rate\":   violations / (1 << n),\n        \"penalty_adjusted_qubo_energy\": float(np.mean(all_energies)),\n        \"runtime\":                     runtime,\n        \"evaluation_cost\":             1 << n,\n    }\n",
+      "entry_point": "solve_telescope_scheduling",
+      "test": "result = solve_telescope_scheduling()\nassert \"feasible_objective_quality\"   in result\nassert \"constraint_violation_rate\"    in result\nassert \"penalty_adjusted_qubo_energy\" in result\nassert \"runtime\"                      in result\nassert \"evaluation_cost\"              in result\nassert result[\"achieved_value\"] == 13\nassert result[\"feasible_objective_quality\"] == 1.0\nassert result[\"constraint_violation_rate\"] < 0.85\nassert set(result[\"selected_targets\"]) == {1, 3, 4}\n",
+      "reference_value": 13,
+      "reference_kind": "optimal_objective_value"
+    },
+    {
+      "task_id": "t2_2",
+      "difficulty_scale": "beginner",
+      "support_level": "S3",
+      "domain": "laboratory equipment allocation",
+      "num_variables": 4,
+      "optimal_objective_value": 11,
+      "resources": [
+        {
+          "variable": "x1",
+          "experiment": "P1",
+          "urgency_score": 3,
+          "equipment_needed": "rotary evaporator"
+        },
+        {
+          "variable": "x2",
+          "experiment": "P2",
+          "urgency_score": 6,
+          "equipment_needed": "rotary evaporator"
+        },
+        {
+          "variable": "x3",
+          "experiment": "P3",
+          "urgency_score": 2,
+          "equipment_needed": "NMR spectrometer"
+        },
+        {
+          "variable": "x4",
+          "experiment": "P4",
+          "urgency_score": 5,
+          "equipment_needed": "NMR spectrometer"
+        }
+      ],
+      "constraints": [
+        {
+          "type": "equality",
+          "expression": "x1 + x2 + x3 + x4 = 2",
+          "description": "Two parallel fume hoods are available; exactly 2 experiments can run in the afternoon session."
+        },
+        {
+          "type": "conflict",
+          "expression": "x1 * x2 = 0",
+          "description": "P1 and P2 both require the sole rotary evaporator and cannot run simultaneously."
+        },
+        {
+          "type": "conflict",
+          "expression": "x3 * x4 = 0",
+          "description": "P3 and P4 both require the NMR spectrometer and cannot run simultaneously."
+        }
+      ],
+      "prompt": "A university chemistry department is scheduling four high-priority synthesis experiments for a single Friday afternoon session. The lab has two parallel fume hoods, so exactly two experiments can run simultaneously. The lab coordinator has gathered the following information from the research group's scheduling log and equipment sign-up sheets: Experiment P1 and experiment P2 both require the lab's only rotary evaporator during the afternoon window \u2014 their distillation steps are time-sensitive and cannot be interleaved, so running both at the same time is impossible. Similarly, experiments P3 and P4 both require the 400 MHz NMR spectrometer for in-situ reaction monitoring; only one NMR experiment can occupy the instrument at a time, making P3 and P4 mutually incompatible. The scientific urgency scores (assigned by the PI based on grant deadlines and submission timelines) are: P2 is the most urgent (ranked highest), P4 is the second most urgent, P1 is moderate urgency, and P3 has the lowest urgency among the four. Based solely on these described scheduling relationships and urgency rankings, determine which pairs of experiments conflict, infer the appropriate binary optimization problem, formulate it as a QUBO (xi = 1 if experiment Pi is selected), and implement a quantum or hybrid workflow that selects the 2-experiment combination maximizing total urgency. Report feasible_objective_quality (achieved urgency sum / known optimal), constraint_violation_rate, penalty_adjusted_qubo_energy, runtime, and evaluation_cost.",
+      "required_outputs": [
+        "feasible_objective_quality",
+        "constraint_violation_rate",
+        "penalty_adjusted_qubo_energy",
+        "runtime",
+        "evaluation_cost"
+      ],
+      "benchmark_rationale": "This S3 beginner task requires the AI to extract a binary conflict graph purely from narrative descriptions of equipment sharing and urgency, test whether it correctly identifies two disjoint incompatible pairs, and finds the non-trivial optimal pair (P2, P4) which requires selecting exactly one experiment from each conflicting pair rather than naively selecting the top-2 urgency scores (which would violate the P1-P2 or P3-P4 constraint).",
+      "canonical_solution": "import numpy as np\nimport time\n\ndef solve_lab_experiment_scheduling():\n    \"\"\"\n    S3: infer QUBO from scenario narrative.\n    4 experiments, select-2, conflicts P1-P2 and P3-P4.\n    Urgency inferred: P2=6 > P4=5 > P1=3 > P3=2.\n    Optimal feasible pair: {P2, P4} = urgency 11.\n    \"\"\"\n    n = 4\n    urgency = [3, 6, 2, 5]   # P1-P4 (inferred from scenario)\n    k, A, B = 2, 8, 12\n\n    Q_lin  = {i: -urgency[i] - (2*k - 1)*A for i in range(n)}\n    Q_quad = {(i, j): 2*A for i in range(n) for j in range(i+1, n)}\n    Q_quad[(0, 1)] += B   # P1-P2 conflict (rotary evaporator)\n    Q_quad[(2, 3)] += B   # P3-P4 conflict (NMR spectrometer)\n\n    start = time.time()\n    best_energy = float(\"inf\")\n    best_x = None\n    all_energies, violations, best_val = [], 0, 0\n\n    for b in range(1 << n):\n        x = np.array([(b >> i) & 1 for i in range(n)])\n        e = sum(Q_lin[i]*x[i] for i in range(n))\n        e += sum(v*x[i]*x[j] for (i,j),v in Q_quad.items())\n        all_energies.append(float(e))\n        ok = (int(x.sum()) == k) and not (x[0] and x[1]) and not (x[2] and x[3])\n        if not ok:\n            violations += 1\n        else:\n            val = sum(urgency[i]*x[i] for i in range(n))\n            if val > best_val:\n                best_val, best_x = val, x.copy()\n        if e < best_energy:\n            best_energy = e\n\n    if best_x is None:\n        best_x = np.zeros(n)\n    runtime = time.time() - start\n    achieved = int(sum(urgency[i]*best_x[i] for i in range(n)))\n\n    return {\n        \"selected_experiments\":        [i+1 for i in range(n) if best_x[i]],\n        \"achieved_urgency\":            achieved,\n        \"feasible_objective_quality\":  achieved / 11.0,\n        \"constraint_violation_rate\":   violations / (1 << n),\n        \"penalty_adjusted_qubo_energy\": float(np.mean(all_energies)),\n        \"runtime\":                     runtime,\n        \"evaluation_cost\":             1 << n,\n    }\n",
+      "entry_point": "solve_lab_experiment_scheduling",
+      "test": "result = solve_lab_experiment_scheduling()\nassert \"feasible_objective_quality\"   in result\nassert \"constraint_violation_rate\"    in result\nassert \"penalty_adjusted_qubo_energy\" in result\nassert \"runtime\"                      in result\nassert \"evaluation_cost\"              in result\nassert result[\"achieved_urgency\"] == 11\nassert result[\"feasible_objective_quality\"] == 1.0\nassert set(result[\"selected_experiments\"]) == {2, 4}\n",
+      "reference_value": 11,
+      "reference_kind": "optimal_objective_value"
+    },
+    {
+      "task_id": "t2_3",
+      "difficulty_scale": "intermediate",
+      "support_level": "S1",
+      "domain": "quantum processor scheduling",
+      "num_variables": 6,
+      "optimal_objective_value": 18,
+      "resources": [
+        {
+          "variable": "x1",
+          "circuit": "C1",
+          "label": "VQE energy estimation circuit",
+          "slot1_fidelity": 5
+        },
+        {
+          "variable": "x2",
+          "circuit": "C2",
+          "label": "Grover search oracle",
+          "slot1_fidelity": 4
+        },
+        {
+          "variable": "x3",
+          "circuit": "C3",
+          "label": "Quantum chemistry ansatz",
+          "slot1_fidelity": 7
+        },
+        {
+          "variable": "x4",
+          "circuit": "C4",
+          "label": "QAOA MaxCut circuit",
+          "slot1_fidelity": 3
+        },
+        {
+          "variable": "x5",
+          "circuit": "C5",
+          "label": "Quantum Fourier transform benchmark",
+          "slot1_fidelity": 6
+        },
+        {
+          "variable": "x6",
+          "circuit": "C6",
+          "label": "Random circuit sampling",
+          "slot1_fidelity": 4
+        }
+      ],
+      "constraints": [
+        {
+          "type": "equality",
+          "expression": "x1 + x2 + x3 + x4 + x5 + x6 = 3",
+          "description": "Exactly 3 circuits are scheduled to Time Slot 1 (the freshly-calibrated window); the remaining 3 go to Time Slot 2 automatically."
+        },
+        {
+          "type": "conflict",
+          "expression": "x3 * x4 = 0 (equivalently x3 + x4 <= 1)",
+          "description": "C3 and C4 share a crosstalk-sensitive qubit register. Running both in Slot 1 causes qubit leakage errors exceeding 5%."
+        },
+        {
+          "type": "qubo_specification",
+          "objective_minimization": "H_obj = -(5x1 + 4x2 + 7x3 + 3x4 + 6x5 + 4x6)",
+          "penalty_equality": "A * (x1+x2+x3+x4+x5+x6 - 3)^2, recommended A = 10",
+          "penalty_conflict": "B * x3 * x4, recommended B = 12",
+          "full_qubo_linear": {
+            "x1": -35,
+            "x2": -34,
+            "x3": -27,
+            "x4": -33,
+            "x5": -34,
+            "x6": -34
+          },
+          "full_qubo_quadratic": {
+            "x1x2": 20,
+            "x1x3": 20,
+            "x1x4": 20,
+            "x1x5": 20,
+            "x1x6": 20,
+            "x2x3": 20,
+            "x2x4": 20,
+            "x2x5": 20,
+            "x2x6": 20,
+            "x3x4": 32,
+            "x3x5": 20,
+            "x3x6": 20,
+            "x4x5": 20,
+            "x4x6": 20,
+            "x5x6": 20
+          },
+          "note": "Diagonal: -fidelity_i - (2k-1)*A = -fidelity_i - 5A. Off-diagonal: 2A except Q_34 = 2A + B. Constant k^2*A = 90 dropped."
+        }
+      ],
+      "prompt": "A quantum computing facility runs six user circuits on a superconducting QPU. Due to qubit coherence decay, Slot 1 (the fresh calibration window immediately after overnight tuneup) yields significantly higher gate fidelity than Slot 2 (after 4 hours of drift). Exactly 3 circuits must be assigned to Slot 1 and the remaining 3 go to Slot 2 automatically. The Slot 1 fidelity gain scores for each circuit are: C1 (VQE energy estimation) = 5, C2 (Grover oracle) = 4, C3 (quantum chemistry ansatz) = 7, C4 (QAOA MaxCut) = 3, C5 (QFT benchmark) = 6, C6 (random circuit sampling) = 4. Additionally, C3 and C4 share a crosstalk-sensitive qubit register; running both in Slot 1 causes leakage errors above the fault-tolerance threshold, so at most one of them can occupy Slot 1. Binary variable xi = 1 means circuit Ci is scheduled in Slot 1. The QUBO to minimize is: H = (-35)x1 + (-34)x2 + (-27)x3 + (-33)x4 + (-34)x5 + (-34)x6 + 20*(x1x2+x1x3+x1x4+x1x5+x1x6+x2x3+x2x4+x2x5+x2x6+x3x5+x3x6+x4x5+x4x6+x5x6) + 32*x3x4. Implement a quantum or hybrid workflow that minimizes H and recovers the optimal Slot 1 assignment. Report feasible_objective_quality (achieved fidelity sum / optimal 18), constraint_violation_rate, penalty_adjusted_qubo_energy, runtime, and evaluation_cost.",
+      "required_outputs": [
+        "feasible_objective_quality",
+        "constraint_violation_rate",
+        "penalty_adjusted_qubo_energy",
+        "runtime",
+        "evaluation_cost"
+      ],
+      "benchmark_rationale": "This 6-variable quantum scheduling QUBO combines an equality constraint with a conflict term whose penalty coefficient exceeds the standard off-diagonal value, testing whether the AI correctly encodes a strengthened quadratic penalty for hardware conflict constraints and discovers the optimal schedule {C1, C3, C5} = fidelity 18 while excluding the high-fidelity C3 from conflicting with C4.",
+      "canonical_solution": "import numpy as np\nimport time\n\ndef solve_qpu_circuit_scheduling():\n    \"\"\"\n    6-variable QUBO: select 3 of 6 circuits for Slot 1.\n    Conflict between C3 and C4. QUBO given explicitly.\n    Optimal: {C1, C3, C5} = fidelity 18.\n    \"\"\"\n    n = 6\n    fidelity = [5, 4, 7, 3, 6, 4]   # C1-C6\n    k = 3\n\n    Q_lin  = {0:-35, 1:-34, 2:-27, 3:-33, 4:-34, 5:-34}\n    Q_quad = {(i, j): 20 for i in range(n) for j in range(i+1, n)}\n    Q_quad[(2, 3)] = 32   # conflict C3(idx2)-C4(idx3) gets +B=12\n\n    start = time.time()\n    best_energy = float(\"inf\")\n    best_x = None\n    all_energies, violations, best_val = [], 0, 0\n\n    for b in range(1 << n):\n        x = np.array([(b >> i) & 1 for i in range(n)])\n        e = sum(Q_lin[i]*x[i] for i in range(n))\n        e += sum(v*x[i]*x[j] for (i,j),v in Q_quad.items())\n        all_energies.append(float(e))\n        ok = (int(x.sum()) == k) and not (x[2] and x[3])\n        if not ok:\n            violations += 1\n        else:\n            val = sum(fidelity[i]*x[i] for i in range(n))\n            if val > best_val:\n                best_val, best_x = val, x.copy()\n        if e < best_energy:\n            best_energy = e\n\n    if best_x is None:\n        best_x = np.zeros(n)\n    runtime = time.time() - start\n    achieved = int(sum(fidelity[i]*best_x[i] for i in range(n)))\n\n    return {\n        \"selected_circuits\":           [i+1 for i in range(n) if best_x[i]],\n        \"achieved_fidelity\":           achieved,\n        \"feasible_objective_quality\":  achieved / 18.0,\n        \"constraint_violation_rate\":   violations / (1 << n),\n        \"penalty_adjusted_qubo_energy\": float(np.mean(all_energies)),\n        \"runtime\":                     runtime,\n        \"evaluation_cost\":             1 << n,\n    }\n",
+      "entry_point": "solve_qpu_circuit_scheduling",
+      "test": "result = solve_qpu_circuit_scheduling()\nassert \"feasible_objective_quality\"   in result\nassert \"constraint_violation_rate\"    in result\nassert \"penalty_adjusted_qubo_energy\" in result\nassert \"runtime\"                      in result\nassert \"evaluation_cost\"              in result\nassert result[\"achieved_fidelity\"] == 18\nassert result[\"feasible_objective_quality\"] == 1.0\nassert set(result[\"selected_circuits\"]) == {1, 3, 5}\nassert result[\"evaluation_cost\"] == 64\n",
+      "reference_value": 18,
+      "reference_kind": "optimal_objective_value"
+    },
+    {
+      "task_id": "t2_4",
+      "difficulty_scale": "intermediate",
+      "support_level": "S2",
+      "domain": "scientific workflow execution",
+      "num_variables": 7,
+      "optimal_objective_value": 20,
+      "resources": [
+        {
+          "variable": "x1",
+          "task": "T1",
+          "label": "Data preprocessing and normalization",
+          "cpu_hours": 2,
+          "scientific_value": 5
+        },
+        {
+          "variable": "x2",
+          "task": "T2",
+          "label": "Reference genome alignment",
+          "cpu_hours": 1,
+          "scientific_value": 3
+        },
+        {
+          "variable": "x3",
+          "task": "T3",
+          "label": "Variant calling and annotation",
+          "cpu_hours": 3,
+          "scientific_value": 7
+        },
+        {
+          "variable": "x4",
+          "task": "T4",
+          "label": "Differential expression analysis",
+          "cpu_hours": 2,
+          "scientific_value": 4
+        },
+        {
+          "variable": "x5",
+          "task": "T5",
+          "label": "Population structure inference",
+          "cpu_hours": 1,
+          "scientific_value": 2
+        },
+        {
+          "variable": "x6",
+          "task": "T6",
+          "label": "Phylogenetic tree reconstruction",
+          "cpu_hours": 3,
+          "scientific_value": 6
+        },
+        {
+          "variable": "x7",
+          "task": "T7",
+          "label": "Multi-omics integration and reporting",
+          "cpu_hours": 2,
+          "scientific_value": 5
+        }
+      ],
+      "constraints": [
+        {
+          "type": "budget_inequality",
+          "expression": "2x1 + x2 + 3x3 + 2x4 + x5 + 3x6 + 2x7 <= 8",
+          "description": "The HPC allocation provides a maximum of 8 CPU-hours for this pipeline batch. Total compute time of all selected tasks must not exceed this budget."
+        },
+        {
+          "type": "precedence",
+          "expression": "x4 <= x2",
+          "description": "T4 (differential expression analysis) requires completed output from T2 (reference genome alignment). T4 can only be selected if T2 is also selected."
+        },
+        {
+          "type": "precedence",
+          "expression": "x7 <= x3",
+          "description": "T7 (multi-omics integration) depends on variant annotations produced by T3. T7 can only be selected if T3 is also selected."
+        }
+      ],
+      "prompt": "A bioinformatics HPC pipeline is being scheduled on a university compute cluster with a batch allocation of 8 CPU-hours. Seven computational tasks are candidates for this allocation: T1 (data preprocessing, 2 CPU-h, scientific value=5), T2 (reference genome alignment, 1 CPU-h, value=3), T3 (variant calling and annotation, 3 CPU-h, value=7), T4 (differential expression analysis, 2 CPU-h, value=4), T5 (population structure inference, 1 CPU-h, value=2), T6 (phylogenetic tree reconstruction, 3 CPU-h, value=6), T7 (multi-omics integration, 2 CPU-h, value=5). Two data-dependency constraints must be respected: T4 can only be executed if T2 has been completed first (T2 must be selected if T4 is), and T7 can only be executed if T3 has been completed first (T3 must be selected if T7 is). The goal is to select a feasible subset of tasks that maximizes total scientific value while staying within the 8 CPU-hour budget. Define binary variables xi = 1 if task Ti is included in the batch. Formulate this constrained binary optimization problem as a QUBO, encoding the budget constraint (as a quadratic penalty or with auxiliary slack bits if needed), the two precedence constraints (x4*(1-x2) = 0; x7*(1-x3) = 0), and the objective (maximize \u03a3 value_i*xi). Implement a quantum or hybrid workflow to solve it. Report feasible_objective_quality (achieved value / known optimal 20), constraint_violation_rate, penalty_adjusted_qubo_energy, runtime, and evaluation_cost.",
+      "required_outputs": [
+        "feasible_objective_quality",
+        "constraint_violation_rate",
+        "penalty_adjusted_qubo_energy",
+        "runtime",
+        "evaluation_cost"
+      ],
+      "benchmark_rationale": "This 7-variable workflow scheduling instance combines a knapsack-style budget inequality with two DAG precedence constraints, testing whether the AI correctly formulates all three constraint types in QUBO form simultaneously, and identifies the non-greedy optimal schedule {T1,T2,T3,T7} that sacrifices the higher-standalone-value T6 in favor of the T3+T7 dependency chain yielding total value 20.",
+      "canonical_solution": "import numpy as np\nimport time\n\ndef solve_bioinformatics_pipeline_scheduling():\n    \"\"\"\n    7-variable constrained knapsack + 2 DAG precedence constraints.\n    Budget: 2x1+x2+3x3+2x4+x5+3x6+2x7 <= 8.\n    Precedences: x4<=x2 (T4 needs T2), x7<=x3 (T7 needs T3).\n    QUBO uses penalty expansions; feasibility checked directly.\n    Optimal: {T1,T2,T3,T7} = value 20.\n    \"\"\"\n    n = 7\n    sci  = [5, 3, 7, 4, 2, 6, 5]\n    cpu  = [2, 1, 3, 2, 1, 3, 2]\n    B, P = 8, 12   # budget cap, penalty strength\n\n    # Build QUBO: -obj + A*(sum(cpu*x)-B)^2 (budget)\n    #             + P*(x4*(1-x2)) + P*(x7*(1-x3))  (precedences)\n    A = 10\n    Q_lin  = {i: -sci[i] + A*(cpu[i]**2 - 2*B*cpu[i]) for i in range(n)}\n    Q_quad = {}\n    for i in range(n):\n        for j in range(i+1, n):\n            Q_quad[(i,j)] = Q_quad.get((i,j), 0) + 2*A*cpu[i]*cpu[j]\n    # Precedence x4<=x2 \u2192 P*(x3 - x1*x3) in 0-index (T4=idx3, T2=idx1)\n    Q_lin[3]   = Q_lin.get(3,   0) + P\n    Q_quad[(1,3)] = Q_quad.get((1,3), 0) - P\n    # Precedence x7<=x3 \u2192 P*(x6 - x2*x6) in 0-index (T7=idx6, T3=idx2)\n    Q_lin[6]   = Q_lin.get(6,   0) + P\n    Q_quad[(2,6)] = Q_quad.get((2,6), 0) - P\n\n    start = time.time()\n    best_val, best_x, all_energies, violations = 0, None, [], 0\n\n    for b in range(1 << n):\n        x = np.array([(b >> i) & 1 for i in range(n)])\n        e = sum(Q_lin[i]*x[i] for i in range(n))\n        e += sum(v*x[i]*x[j] for (i,j),v in Q_quad.items())\n        all_energies.append(float(e))\n        budget_ok = sum(cpu[i]*x[i] for i in range(n)) <= B\n        p1 = x[3] <= x[1]; p2 = x[6] <= x[2]\n        if not (budget_ok and p1 and p2):\n            violations += 1\n        else:\n            val = sum(sci[i]*x[i] for i in range(n))\n            if val > best_val:\n                best_val, best_x = val, x.copy()\n\n    if best_x is None: best_x = np.zeros(n)\n    runtime = time.time() - start\n    achieved = int(sum(sci[i]*best_x[i] for i in range(n)))\n\n    return {\n        \"selected_tasks\":              [i+1 for i in range(n) if best_x[i]],\n        \"achieved_value\":              achieved,\n        \"total_cpu_hours\":             int(sum(cpu[i]*best_x[i] for i in range(n))),\n        \"feasible_objective_quality\":  achieved / 20.0,\n        \"constraint_violation_rate\":   violations / (1 << n),\n        \"penalty_adjusted_qubo_energy\": float(np.mean(all_energies)),\n        \"runtime\":                     runtime,\n        \"evaluation_cost\":             1 << n,\n    }\n",
+      "entry_point": "solve_bioinformatics_pipeline_scheduling",
+      "test": "result = solve_bioinformatics_pipeline_scheduling()\nassert \"feasible_objective_quality\"   in result\nassert \"constraint_violation_rate\"    in result\nassert \"penalty_adjusted_qubo_energy\" in result\nassert \"runtime\"                      in result\nassert \"evaluation_cost\"              in result\nassert result[\"achieved_value\"] == 20\nassert result[\"feasible_objective_quality\"] == 1.0\nassert result[\"total_cpu_hours\"] <= 8\nassert set(result[\"selected_tasks\"]) == {1, 2, 3, 7}\n",
+      "reference_value": 20,
+      "reference_kind": "optimal_objective_value"
+    },
+    {
+      "task_id": "t2_5",
+      "difficulty_scale": "intermediate",
+      "support_level": "S1",
+      "domain": "manufacturing planning",
+      "num_variables": 6,
+      "optimal_objective_value": 16,
+      "resources": [
+        {
+          "variable": "x1",
+          "batch": "B1",
+          "label": "Aluminum chassis stamping batch",
+          "revenue": 4
+        },
+        {
+          "variable": "x2",
+          "batch": "B2",
+          "label": "Base bracket forming batch",
+          "revenue": 3
+        },
+        {
+          "variable": "x3",
+          "batch": "B3",
+          "label": "Precision frame assembly batch",
+          "revenue": 6
+        },
+        {
+          "variable": "x4",
+          "batch": "B4",
+          "label": "Structural mounting plate batch",
+          "revenue": 5
+        },
+        {
+          "variable": "x5",
+          "batch": "B5",
+          "label": "Component deburring batch",
+          "revenue": 2
+        },
+        {
+          "variable": "x6",
+          "batch": "B6",
+          "label": "High-tolerance subassembly batch",
+          "revenue": 7
+        }
+      ],
+      "constraints": [
+        {
+          "type": "equality",
+          "expression": "x1 + x2 + x3 + x4 + x5 + x6 = 3",
+          "description": "The plant's production planning window has exactly 3 batch slots available on the floor this week."
+        },
+        {
+          "type": "precedence",
+          "expression": "x3 * (1 - x2) = 0",
+          "description": "B3 (precision frame assembly) requires sub-components pre-formed by B2 (base bracket forming). If B3 is selected, B2 must also be selected."
+        },
+        {
+          "type": "precedence",
+          "expression": "x6 * (1 - x4) = 0",
+          "description": "B6 (high-tolerance subassembly) requires structural plates produced by B4 (mounting plate batch). If B6 is selected, B4 must also be selected."
+        },
+        {
+          "type": "qubo_specification",
+          "objective_minimization": "H_obj = -(4x1 + 3x2 + 6x3 + 5x4 + 2x5 + 7x6)",
+          "penalty_equality": "A * (x1+x2+x3+x4+x5+x6 - 3)^2, recommended A = 12",
+          "penalty_prec_B3": "B * x3 * (1 - x2) = B*(x3 - x2*x3), recommended B = 12",
+          "penalty_prec_B6": "B * x6 * (1 - x4) = B*(x6 - x4*x6), recommended B = 12",
+          "full_qubo_linear": {
+            "x1": -64,
+            "x2": -63,
+            "x3": -54,
+            "x4": -65,
+            "x5": -62,
+            "x6": -55
+          },
+          "full_qubo_quadratic": {
+            "x1x2": 24,
+            "x1x3": 24,
+            "x1x4": 24,
+            "x1x5": 24,
+            "x1x6": 24,
+            "x2x3": 12,
+            "x2x4": 24,
+            "x2x5": 24,
+            "x2x6": 24,
+            "x3x4": 24,
+            "x3x5": 24,
+            "x3x6": 24,
+            "x4x5": 24,
+            "x4x6": 12,
+            "x5x6": 24
+          },
+          "note": "Diagonal: -revenue_i - (2k-1)*A + B*(1 if precedent item) = -revenue_i - 5*12 + 12*(1 if i in {3,6}). Off-diagonal Q_23 = 2A - B = 12; Q_46 = 2A - B = 12. All other off-diagonals = 2A = 24."
+        }
+      ],
+      "prompt": "A precision parts manufacturer is selecting exactly 3 production batches from 6 candidates for the upcoming week's floor schedule. The batches and their revenues are: B1 (aluminum chassis stamping, revenue=4), B2 (base bracket forming, revenue=3), B3 (precision frame assembly, revenue=6), B4 (structural mounting plate, revenue=5), B5 (component deburring, revenue=2), B6 (high-tolerance subassembly, revenue=7). Two material dependency constraints apply: B3 uses sub-components pre-formed by B2, so B3 can only be scheduled if B2 is also scheduled this week; and B6 uses structural plates produced by B4, so B6 can only be scheduled if B4 is also scheduled. Binary variable xi = 1 if batch Bi is selected. The QUBO to minimize is: H = (-64)x1 + (-63)x2 + (-54)x3 + (-65)x4 + (-62)x5 + (-55)x6 + 24*(x1x2+x1x3+x1x4+x1x5+x1x6+x2x4+x2x5+x2x6+x3x4+x3x5+x3x6+x4x5+x5x6) + 12*(x2x3 + x4x6). Implement a quantum or hybrid workflow that minimizes H and recovers the optimal batch selection. Report feasible_objective_quality (achieved revenue / known optimal 16), constraint_violation_rate, penalty_adjusted_qubo_energy, runtime, and evaluation_cost.",
+      "required_outputs": [
+        "feasible_objective_quality",
+        "constraint_violation_rate",
+        "penalty_adjusted_qubo_energy",
+        "runtime",
+        "evaluation_cost"
+      ],
+      "benchmark_rationale": "This 6-variable manufacturing QUBO tests whether the AI correctly interprets precedence constraints as REDUCING the off-diagonal penalty coupling between prerequisite-product pairs (Q_23 and Q_46 are lowered from 2A to A), a non-obvious asymmetry in standard penalty formulations, and identifies the optimal schedule {B1,B4,B6} = revenue 16 which includes B6 with its prerequisite B4 while avoiding the {B2,B3} chain that would only yield 3+6=9 revenue for 2 of the 3 slots.",
+      "canonical_solution": "import numpy as np\nimport time\n\ndef solve_manufacturing_batch_scheduling():\n    \"\"\"\n    6-variable QUBO: select 3 of 6 batches.\n    Precedences: B3 needs B2, B6 needs B4. QUBO given explicitly.\n    Optimal: {B1, B4, B6} = revenue 16.\n    \"\"\"\n    n = 6\n    rev = [4, 3, 6, 5, 2, 7]   # B1-B6\n    k = 3\n\n    Q_lin  = {0:-64, 1:-63, 2:-54, 3:-65, 4:-62, 5:-55}\n    Q_quad = {\n        (0,1):24,(0,2):24,(0,3):24,(0,4):24,(0,5):24,\n        (1,2):12,(1,3):24,(1,4):24,(1,5):24,\n        (2,3):24,(2,4):24,(2,5):24,\n        (3,4):24,(3,5):12,\n        (4,5):24\n    }\n\n    start = time.time()\n    best_val, best_x, all_energies, violations = 0, None, [], 0\n\n    for b in range(1 << n):\n        x = np.array([(b >> i) & 1 for i in range(n)])\n        e = sum(Q_lin[i]*x[i] for i in range(n))\n        e += sum(v*x[i]*x[j] for (i,j),v in Q_quad.items())\n        all_energies.append(float(e))\n        ok = (int(x.sum()) == k) and (x[2] <= x[1]) and (x[5] <= x[3])\n        if not ok:\n            violations += 1\n        else:\n            val = sum(rev[i]*x[i] for i in range(n))\n            if val > best_val:\n                best_val, best_x = val, x.copy()\n\n    if best_x is None: best_x = np.zeros(n)\n    runtime = time.time() - start\n    achieved = int(sum(rev[i]*best_x[i] for i in range(n)))\n\n    return {\n        \"selected_batches\":            [i+1 for i in range(n) if best_x[i]],\n        \"achieved_revenue\":            achieved,\n        \"feasible_objective_quality\":  achieved / 16.0,\n        \"constraint_violation_rate\":   violations / (1 << n),\n        \"penalty_adjusted_qubo_energy\": float(np.mean(all_energies)),\n        \"runtime\":                     runtime,\n        \"evaluation_cost\":             1 << n,\n    }\n",
+      "entry_point": "solve_manufacturing_batch_scheduling",
+      "test": "result = solve_manufacturing_batch_scheduling()\nassert \"feasible_objective_quality\"   in result\nassert \"constraint_violation_rate\"    in result\nassert \"penalty_adjusted_qubo_energy\" in result\nassert \"runtime\"                      in result\nassert \"evaluation_cost\"              in result\nassert result[\"achieved_revenue\"] == 16\nassert result[\"feasible_objective_quality\"] == 1.0\nassert set(result[\"selected_batches\"]) == {1, 4, 6}\n",
+      "reference_value": 16,
+      "reference_kind": "optimal_objective_value"
+    },
+    {
+      "task_id": "t2_6",
+      "difficulty_scale": "intermediate",
+      "support_level": "S2",
+      "domain": "cloud computing resources",
+      "num_variables": 8,
+      "optimal_objective_value": 23,
+      "resources": [
+        {
+          "variable": "x1",
+          "vm_type": "VM-A",
+          "label": "General-purpose compute instance (4 vCPU)",
+          "cost_credits": 3,
+          "performance_score": 5
+        },
+        {
+          "variable": "x2",
+          "vm_type": "VM-B",
+          "label": "Memory-optimized instance (8 GB RAM)",
+          "cost_credits": 2,
+          "performance_score": 4
+        },
+        {
+          "variable": "x3",
+          "vm_type": "VM-C",
+          "label": "GPU-accelerated training instance",
+          "cost_credits": 4,
+          "performance_score": 7
+        },
+        {
+          "variable": "x4",
+          "vm_type": "VM-D",
+          "label": "Lightweight edge compute instance",
+          "cost_credits": 1,
+          "performance_score": 2
+        },
+        {
+          "variable": "x5",
+          "vm_type": "VM-E",
+          "label": "High-throughput data processing instance",
+          "cost_credits": 3,
+          "performance_score": 6
+        },
+        {
+          "variable": "x6",
+          "vm_type": "VM-F",
+          "label": "Network-intensive streaming instance",
+          "cost_credits": 2,
+          "performance_score": 3
+        },
+        {
+          "variable": "x7",
+          "vm_type": "VM-G",
+          "label": "GPU-accelerated inference instance",
+          "cost_credits": 4,
+          "performance_score": 8
+        },
+        {
+          "variable": "x8",
+          "vm_type": "VM-H",
+          "label": "Burst-capable spot instance",
+          "cost_credits": 1,
+          "performance_score": 2
+        }
+      ],
+      "constraints": [
+        {
+          "type": "budget_inequality",
+          "expression": "3x1 + 2x2 + 4x3 + x4 + 3x5 + 2x6 + 4x7 + x8 <= 12",
+          "description": "The research group's cloud credits budget for the deployment window is 12 units. The sum of costs of all deployed VM types must not exceed this limit."
+        },
+        {
+          "type": "mutual_exclusion",
+          "expression": "x3 + x7 <= 1",
+          "description": "VM-C (GPU training) and VM-G (GPU inference) share the same physical GPU host in this availability zone and cannot both be deployed simultaneously."
+        },
+        {
+          "type": "minimum_performance",
+          "expression": "x3 + x5 + x7 >= 1",
+          "description": "The deployment must include at least one high-performance compute instance (VM-C, VM-E, or VM-G) to meet the scientific computation SLA."
+        }
+      ],
+      "prompt": "A research computing group is deploying a multi-service cloud environment for a computational science project. Eight virtual machine types are available for deployment within a 12-credit budget window: VM-A (4 vCPU general compute, cost=3 credits, performance=5), VM-B (8 GB memory-optimized, cost=2, perf=4), VM-C (GPU training instance, cost=4, perf=7), VM-D (lightweight edge compute, cost=1, perf=2), VM-E (high-throughput data processing, cost=3, perf=6), VM-F (network streaming instance, cost=2, perf=3), VM-G (GPU inference instance, cost=4, perf=8), VM-H (burst spot instance, cost=1, perf=2). Two resource constraints apply: VM-C and VM-G both require the same physical GPU host in the target availability zone and cannot both be deployed (at most one of them); and the deployment must include at least one high-performance instance (VM-C, VM-E, or VM-G) to meet the computation SLA. The goal is to select a subset of VM types maximizing total performance score within the budget. Define xi = 1 if VM type i is deployed. Formulate this as a QUBO encoding the budget constraint, the GPU exclusivity constraint, and the minimum-performance constraint (the latter as a penalty for violating x3+x5+x7 >= 1). Implement a quantum or hybrid workflow. Report feasible_objective_quality (achieved performance / optimal 23), constraint_violation_rate, penalty_adjusted_qubo_energy, runtime, and evaluation_cost.",
+      "required_outputs": [
+        "feasible_objective_quality",
+        "constraint_violation_rate",
+        "penalty_adjusted_qubo_energy",
+        "runtime",
+        "evaluation_cost"
+      ],
+      "benchmark_rationale": "This 8-variable cloud deployment instance introduces a minimum-coverage constraint (at least one item from a subset must be selected) in addition to a budget inequality and mutual exclusion, testing whether the AI workflow encodes all three constraint types correctly and finds the optimal deployment {VM-A, VM-B, VM-E, VM-G} = performance 23 that selects the higher-value GPU inference instance while respecting the host conflict.",
+      "canonical_solution": "import numpy as np\nimport time\n\ndef solve_cloud_vm_deployment():\n    \"\"\"\n    8-variable QUBO: maximise performance under budget, mutual exclusion,\n    and minimum-coverage constraints. QUBO formulated from scratch.\n    Optimal: {VM-A,VM-B,VM-E,VM-G} = performance 23.\n    \"\"\"\n    n = 8\n    perf  = [5, 4, 7, 2, 6, 3, 8, 2]\n    costs = [3, 2, 4, 1, 3, 2, 4, 1]\n    BUD, A, B, C = 12, 10, 12, 10\n\n    # Objective\n    Q_lin  = {i: -perf[i] for i in range(n)}\n    Q_quad = {}\n\n    # Budget soft penalty A*(sum cost*x - BUD)^2\n    for i in range(n):\n        Q_lin[i]  += A*(costs[i]**2 - 2*BUD*costs[i])\n    for i in range(n):\n        for j in range(i+1, n):\n            Q_quad[(i,j)] = Q_quad.get((i,j),0) + 2*A*costs[i]*costs[j]\n\n    # Mutual exclusion VM-C(idx2) & VM-G(idx6): B*x2*x6\n    Q_quad[(2,6)] = Q_quad.get((2,6),0) + B\n\n    # Min coverage: x3+x5+x7>=1 (idx 2,4,6)\n    # Penalty for all-zero: C*(1 - x2 - x4 - x6 + cross)\n    for i in [2, 4, 6]:\n        Q_lin[i] = Q_lin.get(i,0) - C\n    for (i,j) in [(2,4),(2,6),(4,6)]:\n        Q_quad[(i,j)] = Q_quad.get((i,j),0) + C\n\n    start = time.time()\n    best_val, best_x, all_energies, violations = 0, None, [], 0\n\n    for b in range(1 << n):\n        x = np.array([(b >> i) & 1 for i in range(n)])\n        e = sum(Q_lin.get(i,0)*x[i] for i in range(n))\n        e += sum(v*x[i]*x[j] for (i,j),v in Q_quad.items())\n        all_energies.append(float(e))\n        bud_ok  = sum(costs[i]*x[i] for i in range(n)) <= BUD\n        excl_ok = not (x[2] and x[6])\n        cov_ok  = (x[2]+x[4]+x[6]) >= 1\n        if not (bud_ok and excl_ok and cov_ok):\n            violations += 1\n        else:\n            val = sum(perf[i]*x[i] for i in range(n))\n            if val > best_val:\n                best_val, best_x = val, x.copy()\n\n    if best_x is None: best_x = np.zeros(n)\n    runtime = time.time() - start\n    achieved = int(sum(perf[i]*best_x[i] for i in range(n)))\n\n    return {\n        \"selected_vms\":                [f\"VM-{chr(65+i)}\" for i in range(n) if best_x[i]],\n        \"achieved_performance\":        achieved,\n        \"total_cost\":                  int(sum(costs[i]*best_x[i] for i in range(n))),\n        \"feasible_objective_quality\":  achieved / 23.0,\n        \"constraint_violation_rate\":   violations / (1 << n),\n        \"penalty_adjusted_qubo_energy\": float(np.mean(all_energies)),\n        \"runtime\":                     runtime,\n        \"evaluation_cost\":             1 << n,\n    }\n",
+      "entry_point": "solve_cloud_vm_deployment",
+      "test": "result = solve_cloud_vm_deployment()\nassert \"feasible_objective_quality\"   in result\nassert \"constraint_violation_rate\"    in result\nassert \"penalty_adjusted_qubo_energy\" in result\nassert \"runtime\"                      in result\nassert \"evaluation_cost\"              in result\nassert result[\"achieved_performance\"] == 23\nassert result[\"feasible_objective_quality\"] == 1.0\nassert result[\"total_cost\"] <= 12\nassert set(result[\"selected_vms\"]) == {\"VM-A\",\"VM-B\",\"VM-E\",\"VM-G\"}\n",
+      "reference_value": 23,
+      "reference_kind": "optimal_objective_value"
+    },
+    {
+      "task_id": "t2_7",
+      "difficulty_scale": "intermediate",
+      "support_level": "S3",
+      "domain": "energy distribution systems",
+      "num_variables": 7,
+      "optimal_objective_value": 10,
+      "optimization_direction": "minimize operational cost subject to demand coverage",
+      "resources": [
+        {
+          "variable": "x1",
+          "unit": "G1",
+          "output_kW": 60,
+          "operational_cost": 8,
+          "equipment": "inverter_bank_A"
+        },
+        {
+          "variable": "x2",
+          "unit": "G2",
+          "output_kW": 40,
+          "operational_cost": 5,
+          "equipment": "inverter_bank_A"
+        },
+        {
+          "variable": "x3",
+          "unit": "G3",
+          "output_kW": 25,
+          "operational_cost": 3,
+          "equipment": "independent"
+        },
+        {
+          "variable": "x4",
+          "unit": "G4",
+          "output_kW": 30,
+          "operational_cost": 4,
+          "equipment": "independent"
+        },
+        {
+          "variable": "x5",
+          "unit": "G5",
+          "output_kW": 20,
+          "operational_cost": 6,
+          "equipment": "diesel_manifold_B"
+        },
+        {
+          "variable": "x6",
+          "unit": "G6",
+          "output_kW": 35,
+          "operational_cost": 7,
+          "equipment": "diesel_manifold_B"
+        },
+        {
+          "variable": "x7",
+          "unit": "G7",
+          "output_kW": 15,
+          "operational_cost": 2,
+          "equipment": "independent"
+        }
+      ],
+      "constraints": [
+        {
+          "type": "demand_coverage",
+          "expression": "60x1 + 40x2 + 25x3 + 30x4 + 20x5 + 35x6 + 15x7 >= 80",
+          "description": "Total activated generation must meet or exceed 80 kW campus demand."
+        },
+        {
+          "type": "equipment_conflict",
+          "expression": "x1 * x2 = 0",
+          "description": "G1 and G2 share the same DC-AC inverter bank (inverter_bank_A) and cannot both be activated simultaneously."
+        },
+        {
+          "type": "equipment_conflict",
+          "expression": "x5 * x6 = 0",
+          "description": "G5 and G6 share the same diesel fuel manifold (diesel_manifold_B) and cannot both run at the same time."
+        }
+      ],
+      "prompt": "A research campus microgrid management system must activate a subset of seven renewable and backup generation units to meet a sustained campus load of 80 kW during a peak demand hour. The grid controller receives the following operational briefing: Unit G1 is a large rooftop solar array rated at 60 kW but has high inverter maintenance cost (cost=8). Unit G2 is a wind turbine cluster rated at 40 kW with moderate cost (cost=5). Both G1 and G2 are wired to the same shared DC-to-AC inverter bank, which can only handle one source at a time, so only one of them may be activated. Unit G3 is a distributed solar panel array rated at 25 kW (cost=3) with its own inverter. Unit G4 is a secondary wind turbine cluster rated at 30 kW (cost=4) with its own connection. Unit G5 is a diesel generator backup rated at 20 kW (cost=6). Unit G6 is a larger diesel generator rated at 35 kW (cost=7). Both G5 and G6 share the same building's diesel fuel delivery manifold, so only one can run at a time. Unit G7 is a battery storage unit rated at 15 kW (cost=2). From this briefing alone, identify all pairwise equipment conflicts, formulate the binary optimization problem (xi = 1 if unit Gi is activated), encode the demand coverage constraint (total output >= 80 kW), the two equipment conflict constraints, and the objective (minimize total operational cost). Implement a quantum or hybrid QUBO workflow. Report feasible_objective_quality (optimal cost 10 / achieved cost, since lower is better), constraint_violation_rate, penalty_adjusted_qubo_energy, runtime, and evaluation_cost.",
+      "required_outputs": [
+        "feasible_objective_quality",
+        "constraint_violation_rate",
+        "penalty_adjusted_qubo_energy",
+        "runtime",
+        "evaluation_cost"
+      ],
+      "benchmark_rationale": "This S3 energy dispatch instance requires the AI to extract two disjoint equipment conflict pairs and a minimum-coverage constraint purely from narrative operational descriptions, then formulate a minimization QUBO with non-unit cost coefficients and a coverage inequality, and identify the optimal activation set {G2, G3, G7} achieving exactly 80 kW demand at minimum cost 10 \u2014 a result that is non-trivial because naively selecting the cheapest units G7+G3=40 kW falls short of demand.",
+      "canonical_solution": "import numpy as np\nimport time\n\ndef solve_microgrid_dispatch():\n    \"\"\"\n    S3: infer QUBO from operational narrative.\n    7 generation units.  Minimise operational cost subject to\n    total output >= 80 kW and two equipment conflicts (G1-G2, G5-G6).\n    Optimal: {G2, G3, G7} = cost 10, output 80 kW exactly.\n    feasible_objective_quality = optimal_cost / achieved_cost (lower=better).\n    \"\"\"\n    n = 7\n    kw   = [60, 40, 25, 30, 20, 35, 15]   # G1-G7 output\n    cost = [ 8,  5,  3,  4,  6,  7,  2]\n    DEM, A, B = 80, 8, 12\n\n    # QUBO: minimise cost + penalty for under-coverage + conflict penalties\n    # Coverage penalty: A*(max(0, DEM - sum kw*x))^2\n    #   \u2192 soft form A*(DEM - sum kw*x)^2 (symmetric, checked separately)\n    Q_lin  = {i: cost[i] for i in range(n)}\n    Q_quad = {}\n\n    for i in range(n):\n        Q_lin[i]  += A*(kw[i]**2 - 2*DEM*kw[i])\n    for i in range(n):\n        for j in range(i+1, n):\n            Q_quad[(i,j)] = Q_quad.get((i,j),0) + 2*A*kw[i]*kw[j]\n\n    # Conflict penalties: G1-G2 (idx 0,1) and G5-G6 (idx 4,5)\n    Q_quad[(0,1)] = Q_quad.get((0,1),0) + B\n    Q_quad[(4,5)] = Q_quad.get((4,5),0) + B\n\n    start = time.time()\n    best_cost_val = float(\"inf\")\n    best_x = None\n    all_energies, violations = [], 0\n\n    for b in range(1 << n):\n        x = np.array([(b >> i) & 1 for i in range(n)])\n        e = sum(Q_lin.get(i,0)*x[i] for i in range(n))\n        e += sum(v*x[i]*x[j] for (i,j),v in Q_quad.items())\n        all_energies.append(float(e))\n        cov_ok  = sum(kw[i]*x[i]   for i in range(n)) >= DEM\n        conf1   = not (x[0] and x[1])\n        conf2   = not (x[4] and x[5])\n        if not (cov_ok and conf1 and conf2):\n            violations += 1\n        else:\n            c = sum(cost[i]*x[i] for i in range(n))\n            if c < best_cost_val:\n                best_cost_val, best_x = c, x.copy()\n\n    if best_x is None: best_x = np.zeros(n)\n    runtime = time.time() - start\n    achieved_cost = int(sum(cost[i]*best_x[i] for i in range(n)))\n\n    return {\n        \"activated_units\":             [i+1 for i in range(n) if best_x[i]],\n        \"achieved_cost\":               achieved_cost,\n        \"total_output_kw\":             int(sum(kw[i]*best_x[i] for i in range(n))),\n        \"feasible_objective_quality\":  10.0 / achieved_cost if achieved_cost > 0 else 0.0,\n        \"constraint_violation_rate\":   violations / (1 << n),\n        \"penalty_adjusted_qubo_energy\": float(np.mean(all_energies)),\n        \"runtime\":                     runtime,\n        \"evaluation_cost\":             1 << n,\n    }\n",
+      "entry_point": "solve_microgrid_dispatch",
+      "test": "result = solve_microgrid_dispatch()\nassert \"feasible_objective_quality\"   in result\nassert \"constraint_violation_rate\"    in result\nassert \"penalty_adjusted_qubo_energy\" in result\nassert \"runtime\"                      in result\nassert \"evaluation_cost\"              in result\nassert result[\"achieved_cost\"] == 10\nassert result[\"feasible_objective_quality\"] == 1.0\nassert result[\"total_output_kw\"] >= 80\nassert set(result[\"activated_units\"]) == {2, 3, 7}\n",
+      "reference_value": 10,
+      "reference_kind": "optimal_objective_value"
+    },
+    {
+      "task_id": "t2_8",
+      "difficulty_scale": "advanced",
+      "support_level": "S1",
+      "domain": "data center resource allocation",
+      "num_variables": 9,
+      "optimal_objective_value": 31,
+      "resources": [
+        {
+          "variable": "x1",
+          "workload": "W1",
+          "label": "Genomics data indexing job",
+          "priority": 5
+        },
+        {
+          "variable": "x2",
+          "workload": "W2",
+          "label": "Climate simulation preprocessing",
+          "priority": 4
+        },
+        {
+          "variable": "x3",
+          "workload": "W3",
+          "label": "GPU deep-learning training batch",
+          "priority": 8
+        },
+        {
+          "variable": "x4",
+          "workload": "W4",
+          "label": "Distributed graph analytics job",
+          "priority": 6
+        },
+        {
+          "variable": "x5",
+          "workload": "W5",
+          "label": "Monte Carlo risk simulation",
+          "priority": 3
+        },
+        {
+          "variable": "x6",
+          "workload": "W6",
+          "label": "Real-time stream processing service",
+          "priority": 9
+        },
+        {
+          "variable": "x7",
+          "workload": "W7",
+          "label": "Batch database compaction job",
+          "priority": 5
+        },
+        {
+          "variable": "x8",
+          "workload": "W8",
+          "label": "Log aggregation pipeline",
+          "priority": 2
+        },
+        {
+          "variable": "x9",
+          "workload": "W9",
+          "label": "Protein folding simulation",
+          "priority": 7
+        }
+      ],
+      "constraints": [
+        {
+          "type": "equality",
+          "expression": "x1+x2+x3+x4+x5+x6+x7+x8+x9 = 5",
+          "description": "The data center's admission controller allocates exactly 5 workloads per scheduling epoch due to rack thermal and power density limits."
+        },
+        {
+          "type": "hardware_conflict",
+          "expression": "x3 * x6 = 0 (equivalently x3 + x6 <= 1)",
+          "description": "W3 (GPU training) and W6 (real-time streaming) both require exclusive access to the facility's dedicated high-bandwidth GPU interconnect fabric. At most one can be admitted per epoch."
+        },
+        {
+          "type": "co_requirement",
+          "expression": "x4 <= x2",
+          "description": "W4 (graph analytics) requires pre-processed data outputs from W2 (climate simulation preprocessing). W4 cannot be admitted without W2."
+        },
+        {
+          "type": "qubo_specification",
+          "objective_minimization": "H_obj = -(5x1+4x2+8x3+6x4+3x5+9x6+5x7+2x8+7x9)",
+          "penalty_equality": "A*(sum_xi - 5)^2, recommended A = 12",
+          "penalty_conflict": "B*x3*x6, recommended B = 12",
+          "penalty_coreq": "C*(x4 - x2*x4) = C*x4*(1-x2), recommended C = 12",
+          "full_qubo_linear": {
+            "x1": -113,
+            "x2": -112,
+            "x3": -116,
+            "x4": -102,
+            "x5": -111,
+            "x6": -117,
+            "x7": -113,
+            "x8": -110,
+            "x9": -115
+          },
+          "full_qubo_quadratic": {
+            "x1x2": 24,
+            "x1x3": 24,
+            "x1x4": 24,
+            "x1x5": 24,
+            "x1x6": 24,
+            "x1x7": 24,
+            "x1x8": 24,
+            "x1x9": 24,
+            "x2x3": 24,
+            "x2x4": 12,
+            "x2x5": 24,
+            "x2x6": 24,
+            "x2x7": 24,
+            "x2x8": 24,
+            "x2x9": 24,
+            "x3x4": 24,
+            "x3x5": 24,
+            "x3x6": 36,
+            "x3x7": 24,
+            "x3x8": 24,
+            "x3x9": 24,
+            "x4x5": 24,
+            "x4x6": 24,
+            "x4x7": 24,
+            "x4x8": 24,
+            "x4x9": 24,
+            "x5x6": 24,
+            "x5x7": 24,
+            "x5x8": 24,
+            "x5x9": 24,
+            "x6x7": 24,
+            "x6x8": 24,
+            "x6x9": 24,
+            "x7x8": 24,
+            "x7x9": 24,
+            "x8x9": 24
+          },
+          "note": "With k=5, n=9, A=B=C=12: diagonal Q_ii = -priority_i - (2k-1)*A + C*(if i=4) = -priority_i - 108 + (12 if i=4). Off-diagonals: 2A=24 except Q_24 = 2A-C=12 (co-req reduces coupling) and Q_36 = 2A+B=36 (conflict increases coupling). Constant k^2*A dropped."
+        }
+      ],
+      "prompt": "A large-scale data center admission controller must select exactly 5 workloads from 9 queued jobs per scheduling epoch due to rack thermal and power density constraints. The workloads and their scientific priorities are: W1 (genomics indexing, priority=5), W2 (climate preprocessing, priority=4), W3 (GPU deep-learning training, priority=8), W4 (graph analytics, priority=6), W5 (Monte Carlo risk simulation, priority=3), W6 (real-time stream processing, priority=9), W7 (database compaction, priority=5), W8 (log aggregation, priority=2), W9 (protein folding simulation, priority=7). Two additional resource constraints apply: W3 and W6 both require the facility's dedicated high-bandwidth GPU interconnect fabric and cannot coexist in the same epoch (at most one is admitted); and W4 (graph analytics) requires pre-processed outputs from W2 (climate preprocessing) and cannot be admitted without W2. Binary variable xi = 1 if workload Wi is admitted. The QUBO to minimize is: H = (-113)x1 + (-112)x2 + (-116)x3 + (-102)x4 + (-111)x5 + (-117)x6 + (-113)x7 + (-110)x8 + (-115)x9 + 24*(all standard off-diagonal pairs) + 36*x3x6 + 12*x2x4, where the full off-diagonal matrix replaces the x3x6 entry with 36 and the x2x4 entry with 12 (all others = 24). Implement a quantum or hybrid workflow. Report feasible_objective_quality (achieved priority / optimal 31), constraint_violation_rate, penalty_adjusted_qubo_energy, runtime, and evaluation_cost.",
+      "required_outputs": [
+        "feasible_objective_quality",
+        "constraint_violation_rate",
+        "penalty_adjusted_qubo_energy",
+        "runtime",
+        "evaluation_cost"
+      ],
+      "benchmark_rationale": "This 9-variable data center QUBO is the most complex S1 instance in the advanced tier: it simultaneously encodes a select-k equality, a hardware conflict (strengthened off-diagonal coupling), and a co-requirement (weakened off-diagonal coupling), requiring correct sign and magnitude assignments in a 9x9 QUBO matrix to guide the optimizer toward the optimal {W2,W4,W6,W7,W9} = priority 31 solution, validating both QUBO construction accuracy and solution quality at near-hardware scale.",
+      "canonical_solution": "import numpy as np\nimport time\n\ndef solve_datacenter_admission_control():\n    \"\"\"\n    9-variable QUBO: select exactly 5 workloads.\n    Hardware conflict W3-W6 (idx 2,5) and co-requirement W4 needs W2 (idx 3<=idx 1).\n    QUBO given explicitly.  Optimal: {W2,W4,W6,W7,W9} = priority 31.\n    \"\"\"\n    n = 9\n    pri = [5, 4, 8, 6, 3, 9, 5, 2, 7]   # W1-W9\n    k   = 5\n\n    Q_lin  = {0:-113,1:-112,2:-116,3:-102,4:-111,5:-117,6:-113,7:-110,8:-115}\n    Q_quad = {(i,j): 24 for i in range(n) for j in range(i+1,n)}\n    Q_quad[(2,5)] = 36   # conflict W3-W6\n    Q_quad[(1,3)] = 12   # co-req W4 needs W2\n\n    start = time.time()\n    best_val, best_x, all_energies, violations = 0, None, [], 0\n\n    for b in range(1 << n):\n        x = np.array([(b >> i) & 1 for i in range(n)])\n        e = sum(Q_lin[i]*x[i] for i in range(n))\n        e += sum(v*x[i]*x[j] for (i,j),v in Q_quad.items())\n        all_energies.append(float(e))\n        ok = (int(x.sum())==k) and not(x[2] and x[5]) and (x[3]<=x[1])\n        if not ok:\n            violations += 1\n        else:\n            val = sum(pri[i]*x[i] for i in range(n))\n            if val > best_val:\n                best_val, best_x = val, x.copy()\n\n    if best_x is None: best_x = np.zeros(n)\n    runtime = time.time() - start\n    achieved = int(sum(pri[i]*best_x[i] for i in range(n)))\n\n    return {\n        \"admitted_workloads\":          [i+1 for i in range(n) if best_x[i]],\n        \"achieved_priority\":           achieved,\n        \"feasible_objective_quality\":  achieved / 31.0,\n        \"constraint_violation_rate\":   violations / (1 << n),\n        \"penalty_adjusted_qubo_energy\": float(np.mean(all_energies)),\n        \"runtime\":                     runtime,\n        \"evaluation_cost\":             1 << n,\n    }\n",
+      "entry_point": "solve_datacenter_admission_control",
+      "test": "result = solve_datacenter_admission_control()\nassert \"feasible_objective_quality\"   in result\nassert \"constraint_violation_rate\"    in result\nassert \"penalty_adjusted_qubo_energy\" in result\nassert \"runtime\"                      in result\nassert \"evaluation_cost\"              in result\nassert result[\"achieved_priority\"] == 31\nassert result[\"feasible_objective_quality\"] == 1.0\nassert result[\"constraint_violation_rate\"] < 0.95\nsel = set(result[\"admitted_workloads\"])\nassert len(sel) == 5\nassert sel in ({1,2,4,6,9}, {2,4,6,7,9}), f\"Unexpected selection: {sel}\"\nassert result[\"evaluation_cost\"] == 512\n",
+      "reference_value": 31,
+      "reference_kind": "optimal_objective_value"
+    },
+    {
+      "task_id": "t2_9",
+      "difficulty_scale": "advanced",
+      "support_level": "S2",
+      "domain": "HPC scheduling",
+      "num_variables": 9,
+      "optimal_objective_value": 35,
+      "resources": [
+        {
+          "variable": "x1",
+          "task": "T1",
+          "label": "Initial data staging and I/O setup",
+          "cpu_hours": 2,
+          "value": 5
+        },
+        {
+          "variable": "x2",
+          "task": "T2",
+          "label": "Lattice Boltzmann preprocessing",
+          "cpu_hours": 1,
+          "value": 3
+        },
+        {
+          "variable": "x3",
+          "task": "T3",
+          "label": "Full turbulence field simulation",
+          "cpu_hours": 3,
+          "value": 8
+        },
+        {
+          "variable": "x4",
+          "task": "T4",
+          "label": "Mesh generation and partitioning",
+          "cpu_hours": 1,
+          "value": 4
+        },
+        {
+          "variable": "x5",
+          "task": "T5",
+          "label": "Multi-physics coupling solver",
+          "cpu_hours": 2,
+          "value": 6
+        },
+        {
+          "variable": "x6",
+          "task": "T6",
+          "label": "Checkpoint and restart manager",
+          "cpu_hours": 1,
+          "value": 2
+        },
+        {
+          "variable": "x7",
+          "task": "T7",
+          "label": "Post-processing and visualization render",
+          "cpu_hours": 3,
+          "value": 7
+        },
+        {
+          "variable": "x8",
+          "task": "T8",
+          "label": "Statistical analysis and QoI extraction",
+          "cpu_hours": 2,
+          "value": 5
+        },
+        {
+          "variable": "x9",
+          "task": "T9",
+          "label": "Result archive and metadata indexing",
+          "cpu_hours": 1,
+          "value": 4
+        }
+      ],
+      "constraints": [
+        {
+          "type": "budget_inequality",
+          "expression": "2x1 + x2 + 3x3 + x4 + 2x5 + x6 + 3x7 + 2x8 + x9 <= 12",
+          "description": "The HPC job scheduler provides 12 CPU-hours for this workload batch. All selected tasks must fit within this allocation."
+        },
+        {
+          "type": "precedence",
+          "expression": "x3 <= x1",
+          "description": "T3 (turbulence simulation) requires T1 (data staging) to have completed first."
+        },
+        {
+          "type": "precedence",
+          "expression": "x5 <= x2",
+          "description": "T5 (multi-physics coupling) requires T2 (Lattice Boltzmann preprocessing) as input."
+        },
+        {
+          "type": "precedence",
+          "expression": "x7 <= x4",
+          "description": "T7 (visualization render) requires T4 (mesh generation) to be completed first."
+        },
+        {
+          "type": "precedence",
+          "expression": "x8 <= x5",
+          "description": "T8 (statistical analysis) requires T5 (multi-physics coupling solver) outputs. Since T5 requires T2, T8 transitively requires T2."
+        }
+      ],
+      "prompt": "A computational fluid dynamics HPC workflow has 9 candidate tasks for a single batch job allocation of 12 CPU-hours. The tasks, their CPU-hour requirements, and scientific values are: T1 (data staging, 2h, value=5), T2 (Lattice Boltzmann preprocessing, 1h, value=3), T3 (turbulence field simulation, 3h, value=8), T4 (mesh generation, 1h, value=4), T5 (multi-physics coupling solver, 2h, value=6), T6 (checkpoint manager, 1h, value=2), T7 (post-processing render, 3h, value=7), T8 (statistical analysis, 2h, value=5), T9 (metadata archiving, 1h, value=4). The DAG dependency structure requires: T3 must follow T1 (x3 <= x1); T5 must follow T2 (x5 <= x2); T7 must follow T4 (x7 <= x4); T8 must follow T5 which follows T2 (x8 <= x5; x5 <= x2). The optimization goal is to select a feasible subset of tasks that maximizes total scientific value within the 12-hour budget. Define binary variables xi = 1 if task Ti is selected. Formulate the QUBO encoding the budget constraint, all four precedence constraints, and the maximization objective. Implement a quantum or hybrid workflow. Report feasible_objective_quality (achieved value / known optimal 35), constraint_violation_rate, penalty_adjusted_qubo_energy, runtime, and evaluation_cost.",
+      "required_outputs": [
+        "feasible_objective_quality",
+        "constraint_violation_rate",
+        "penalty_adjusted_qubo_energy",
+        "runtime",
+        "evaluation_cost"
+      ],
+      "benchmark_rationale": "This 9-variable HPC instance introduces a transitive dependency chain (T8 requires T5 which requires T2) alongside three independent precedence edges and a budget inequality, testing whether the AI workflow correctly encodes all four precedence constraints in QUBO form without redundancy and discovers the optimal schedule {T1,T2,T3,T4,T5,T8,T9} = value 35, which includes the full T2\u2192T5\u2192T8 chain and the T1\u2192T3 chain but skips the expensive T7.",
+      "canonical_solution": "import numpy as np\nimport time\n\ndef solve_cfd_hpc_pipeline():\n    \"\"\"\n    9-variable constrained scheduling: budget 12 CPU-hours + 4 DAG precedences.\n    T3<=T1, T5<=T2, T7<=T4, T8<=T5 (0-indexed: x2<=x0, x4<=x1, x6<=x3, x7<=x4).\n    Optimal: {T1,T2,T3,T4,T5,T8,T9} = value 35.\n    \"\"\"\n    n = 9\n    val  = [5, 3, 8, 4, 6, 2, 7, 5, 4]\n    cpu  = [2, 1, 3, 1, 2, 1, 3, 2, 1]\n    BUD, A, P = 12, 8, 12\n\n    Q_lin  = {i: -val[i] + A*(cpu[i]**2 - 2*BUD*cpu[i]) for i in range(n)}\n    Q_quad = {}\n    for i in range(n):\n        for j in range(i+1, n):\n            Q_quad[(i,j)] = Q_quad.get((i,j),0) + 2*A*cpu[i]*cpu[j]\n    # Precedence penalties P*(x_child - x_parent*x_child)\n    for parent, child in [(0,2),(1,4),(3,6),(4,7)]:\n        Q_lin[child]             = Q_lin.get(child,0) + P\n        Q_quad[(min(parent,child), max(parent,child))] =             Q_quad.get((min(parent,child),max(parent,child)),0) - P\n\n    start = time.time()\n    best_val_f, best_x, all_energies, violations = 0, None, [], 0\n\n    for b in range(1 << n):\n        x = np.array([(b >> i) & 1 for i in range(n)])\n        e = sum(Q_lin.get(i,0)*x[i] for i in range(n))\n        e += sum(v*x[i]*x[j] for (i,j),v in Q_quad.items())\n        all_energies.append(float(e))\n        ok = (sum(cpu[i]*x[i] for i in range(n)) <= BUD and\n              x[2]<=x[0] and x[4]<=x[1] and x[6]<=x[3] and x[7]<=x[4])\n        if not ok:\n            violations += 1\n        else:\n            v2 = sum(val[i]*x[i] for i in range(n))\n            if v2 > best_val_f:\n                best_val_f, best_x = v2, x.copy()\n\n    if best_x is None: best_x = np.zeros(n)\n    runtime = time.time() - start\n    achieved = int(sum(val[i]*best_x[i] for i in range(n)))\n\n    return {\n        \"selected_tasks\":              [i+1 for i in range(n) if best_x[i]],\n        \"achieved_value\":              achieved,\n        \"total_cpu_hours\":             int(sum(cpu[i]*best_x[i] for i in range(n))),\n        \"feasible_objective_quality\":  achieved / 35.0,\n        \"constraint_violation_rate\":   violations / (1 << n),\n        \"penalty_adjusted_qubo_energy\": float(np.mean(all_energies)),\n        \"runtime\":                     runtime,\n        \"evaluation_cost\":             1 << n,\n    }\n",
+      "entry_point": "solve_cfd_hpc_pipeline",
+      "test": "result = solve_cfd_hpc_pipeline()\nassert \"feasible_objective_quality\"   in result\nassert \"constraint_violation_rate\"    in result\nassert \"penalty_adjusted_qubo_energy\" in result\nassert \"runtime\"                      in result\nassert \"evaluation_cost\"              in result\nassert result[\"achieved_value\"] == 35\nassert result[\"feasible_objective_quality\"] == 1.0\nassert result[\"total_cpu_hours\"] <= 12\nassert set(result[\"selected_tasks\"]) == {1,2,3,4,5,8,9}\n",
+      "reference_value": 35,
+      "reference_kind": "optimal_objective_value"
+    },
+    {
+      "task_id": "t2_10",
+      "difficulty_scale": "advanced",
+      "support_level": "S1",
+      "domain": "telescope scheduling",
+      "num_variables": 10,
+      "optimal_objective_value": 27,
+      "resources": [
+        {
+          "variable": "x1",
+          "target": "T1",
+          "instrument": "alpha",
+          "label": "X-ray pulsar PSR B0531+21 timing",
+          "scientific_value": 3
+        },
+        {
+          "variable": "x2",
+          "target": "T2",
+          "instrument": "alpha",
+          "label": "Galaxy cluster Abell 2029 lensing survey",
+          "scientific_value": 5
+        },
+        {
+          "variable": "x3",
+          "target": "T3",
+          "instrument": "alpha",
+          "label": "Supernova remnant RCW 86 mapping",
+          "scientific_value": 4
+        },
+        {
+          "variable": "x4",
+          "target": "T4",
+          "instrument": "alpha",
+          "label": "Active galactic nucleus NGC 1275 variability",
+          "scientific_value": 6
+        },
+        {
+          "variable": "x5",
+          "target": "T5",
+          "instrument": "alpha",
+          "label": "Galactic center dust continuum survey",
+          "scientific_value": 2
+        },
+        {
+          "variable": "x6",
+          "target": "T6",
+          "instrument": "beta",
+          "label": "Radio galaxy Cygnus A morphology study",
+          "scientific_value": 4
+        },
+        {
+          "variable": "x7",
+          "target": "T7",
+          "instrument": "beta",
+          "label": "Gravitational wave follow-up S231010a",
+          "scientific_value": 7
+        },
+        {
+          "variable": "x8",
+          "target": "T8",
+          "instrument": "beta",
+          "label": "Blazar variability monitoring 1ES 1959+650",
+          "scientific_value": 3
+        },
+        {
+          "variable": "x9",
+          "target": "T9",
+          "instrument": "beta",
+          "label": "Gamma-ray burst afterglow AT2023grj",
+          "scientific_value": 5
+        },
+        {
+          "variable": "x10",
+          "target": "T10",
+          "instrument": "beta",
+          "label": "Near-Earth asteroid radar characterization",
+          "scientific_value": 2
+        }
+      ],
+      "constraints": [
+        {
+          "type": "equality",
+          "expression": "x1 + x2 + x3 + x4 + x5 = 3",
+          "description": "Instrument alpha has exactly 3 observation slots available in the scheduling window."
+        },
+        {
+          "type": "equality",
+          "expression": "x6 + x7 + x8 + x9 + x10 = 3",
+          "description": "Instrument beta has exactly 3 observation slots available in the scheduling window."
+        },
+        {
+          "type": "cross_instrument_conflict",
+          "expression": "x2 * x7 = 0 (equivalently x2 + x7 <= 1)",
+          "description": "T2 (Abell 2029 lensing) and T7 (GW follow-up S231010a) both require the facility's sole adaptive optics system for their respective instruments during the same time window. At most one can be observed."
+        },
+        {
+          "type": "cross_instrument_conflict",
+          "expression": "x4 * x9 = 0 (equivalently x4 + x9 <= 1)",
+          "description": "T4 (NGC 1275 variability) and T9 (GRB afterglow AT2023grj) both require the facility's high-speed photon-counting detector, which can only be attached to one instrument at a time."
+        },
+        {
+          "type": "qubo_specification",
+          "objective_minimization": "H_obj = -(3x1+5x2+4x3+6x4+2x5 + 4x6+7x7+3x8+5x9+2x10)",
+          "penalty_alpha": "A*(x1+x2+x3+x4+x5-3)^2, recommended A=10",
+          "penalty_beta": "A*(x6+x7+x8+x9+x10-3)^2, recommended A=10",
+          "penalty_conflict_T2T7": "B*x2*x7, recommended B=12",
+          "penalty_conflict_T4T9": "B*x4*x9, recommended B=12",
+          "full_qubo_linear": {
+            "x1": -33,
+            "x2": -35,
+            "x3": -34,
+            "x4": -36,
+            "x5": -32,
+            "x6": -34,
+            "x7": -37,
+            "x8": -33,
+            "x9": -35,
+            "x10": -32
+          },
+          "full_qubo_quadratic_alpha": {
+            "x1x2": 20,
+            "x1x3": 20,
+            "x1x4": 20,
+            "x1x5": 20,
+            "x2x3": 20,
+            "x2x4": 20,
+            "x2x5": 20,
+            "x3x4": 20,
+            "x3x5": 20,
+            "x4x5": 20
+          },
+          "full_qubo_quadratic_beta": {
+            "x6x7": 20,
+            "x6x8": 20,
+            "x6x9": 20,
+            "x6x10": 20,
+            "x7x8": 20,
+            "x7x9": 20,
+            "x7x10": 20,
+            "x8x9": 20,
+            "x8x10": 20,
+            "x9x10": 20
+          },
+          "cross_instrument_conflicts": {
+            "x2x7": 12,
+            "x4x9": 12
+          },
+          "note": "No cross-instrument quadratic penalty terms except x2x7=12 and x4x9=12. Diagonal: -value_i - (2*3-1)*A = -value_i - 5A. Constant 2*9*A dropped. Cross-conflict terms B are added only for the two conflicting pairs."
+        }
+      ],
+      "prompt": "A multi-instrument observatory is scheduling its next observing night with two independent instruments: alpha (radio interferometer) and beta (optical/infrared wide-field imager). Each instrument has exactly 3 observation slots available. Five targets are candidates for alpha: T1 (X-ray pulsar timing, value=3), T2 (Abell 2029 cluster lensing, value=5), T3 (SNR RCW 86 mapping, value=4), T4 (AGN NGC 1275 variability, value=6), T5 (galactic center survey, value=2). Five targets are candidates for beta: T6 (Cygnus A morphology, value=4), T7 (GW follow-up S231010a, value=7), T8 (blazar monitoring, value=3), T9 (GRB afterglow AT2023grj, value=5), T10 (asteroid characterization, value=2). Two cross-instrument resource conflicts exist: T2 and T7 both need the facility's sole adaptive optics system simultaneously, so at most one can be scheduled; T4 and T9 both need the high-speed photon-counting detector, so at most one can be scheduled. Binary xi = 1 if target Ti is observed. The QUBO to minimize is: H = (-33)x1+(-35)x2+(-34)x3+(-36)x4+(-32)x5+(-34)x6+(-37)x7+(-33)x8+(-35)x9+(-32)x10 + 20*(all intra-alpha and intra-beta pairs within each instrument group) + 12*x2*x7 + 12*x4*x9. The full off-diagonal structure: within-alpha pairs {x1x2,...,x4x5} = 20; within-beta pairs {x6x7,...,x9x10} = 20; cross-instrument pairs = 0 except x2x7 = 12 and x4x9 = 12. Implement a quantum or hybrid workflow to minimize H and report feasible_objective_quality (achieved value / optimal 27), constraint_violation_rate, penalty_adjusted_qubo_energy, runtime, and evaluation_cost.",
+      "required_outputs": [
+        "feasible_objective_quality",
+        "constraint_violation_rate",
+        "penalty_adjusted_qubo_energy",
+        "runtime",
+        "evaluation_cost"
+      ],
+      "benchmark_rationale": "This 10-variable dual-instrument scheduling QUBO is the most complex S1 task in the benchmark: it encodes two independent equality constraints (one per instrument), two cross-instrument conflict terms, and a 10x10 block-structured QUBO matrix where only 2 of the 45 off-diagonal cross-instrument entries are non-zero, testing whether the AI workflow correctly identifies and encodes sparse cross-block coupling while achieving the counter-intuitive optimal {T1,T3,T4} for alpha and {T6,T7,T8} for beta = total 27.",
+      "canonical_solution": "import numpy as np\nimport time\n\ndef solve_dual_instrument_telescope():\n    \"\"\"\n    10-variable QUBO: select 3 targets for alpha (T1-T5) and 3 for beta (T6-T10).\n    Cross-instrument conflicts: T2-T7 (idx 1,6) and T4-T9 (idx 3,8).\n    QUBO given explicitly.\n    Optimal: alpha={T1,T3,T4}, beta={T6,T7,T8} = total value 27.\n    \"\"\"\n    n = 10\n    sci = [3,5,4,6,2,4,7,3,5,2]   # T1-T10\n    k_a, k_b = 3, 3\n\n    Q_lin  = {0:-33,1:-35,2:-34,3:-36,4:-32,5:-34,6:-37,7:-33,8:-35,9:-32}\n    Q_quad = {}\n    for i in range(5):\n        for j in range(i+1,5):\n            Q_quad[(i,j)] = 20\n    for i in range(5,10):\n        for j in range(i+1,10):\n            Q_quad[(i,j)] = 20\n    Q_quad[(1,6)] = 12   # T2-T7 cross conflict\n    Q_quad[(3,8)] = 12   # T4-T9 cross conflict\n\n    start = time.time()\n    best_val, best_x, all_energies, violations = 0, None, [], 0\n\n    for b in range(1 << n):\n        x = np.array([(b >> i) & 1 for i in range(n)])\n        e = sum(Q_lin[i]*x[i] for i in range(n))\n        e += sum(v*x[i]*x[j] for (i,j),v in Q_quad.items())\n        all_energies.append(float(e))\n        ok = (int(x[:5].sum())==k_a and int(x[5:].sum())==k_b\n              and not(x[1] and x[6]) and not(x[3] and x[8]))\n        if not ok:\n            violations += 1\n        else:\n            val = sum(sci[i]*x[i] for i in range(n))\n            if val > best_val:\n                best_val, best_x = val, x.copy()\n\n    if best_x is None: best_x = np.zeros(n)\n    runtime = time.time() - start\n    achieved = int(sum(sci[i]*best_x[i] for i in range(n)))\n\n    return {\n        \"selected_alpha\":              [i+1       for i in range(5)  if best_x[i]],\n        \"selected_beta\":               [i-5+6     for i in range(5,10) if best_x[i]],\n        \"achieved_value\":              achieved,\n        \"feasible_objective_quality\":  achieved / 27.0,\n        \"constraint_violation_rate\":   violations / (1 << n),\n        \"penalty_adjusted_qubo_energy\": float(np.mean(all_energies)),\n        \"runtime\":                     runtime,\n        \"evaluation_cost\":             1 << n,\n    }\n",
+      "entry_point": "solve_dual_instrument_telescope",
+      "test": "result = solve_dual_instrument_telescope()\nassert \"feasible_objective_quality\"   in result\nassert \"constraint_violation_rate\"    in result\nassert \"penalty_adjusted_qubo_energy\" in result\nassert \"runtime\"                      in result\nassert \"evaluation_cost\"              in result\nassert result[\"achieved_value\"] == 27\nassert result[\"feasible_objective_quality\"] == 1.0\nassert set(result[\"selected_alpha\"]) == {1, 3, 4}\nassert set(result[\"selected_beta\"])  == {6, 7, 8}\nassert result[\"evaluation_cost\"] == 1024\n",
+      "reference_value": 27,
+      "reference_kind": "optimal_objective_value"
+    },
+    {
+      "task_id": "t2_11",
+      "difficulty_scale": "advanced",
+      "support_level": "S2",
+      "domain": "laboratory equipment allocation",
+      "num_variables": 9,
+      "optimal_objective_value": 35,
+      "resources": [
+        {
+          "variable": "x1",
+          "experiment": "E1",
+          "equipment_type": "centrifuge",
+          "label": "Cell lysate fractionation",
+          "priority": 4
+        },
+        {
+          "variable": "x2",
+          "experiment": "E2",
+          "equipment_type": "centrifuge",
+          "label": "Density gradient ultracentrifugation",
+          "priority": 6
+        },
+        {
+          "variable": "x3",
+          "experiment": "E3",
+          "equipment_type": "centrifuge",
+          "label": "Subcellular organelle isolation",
+          "priority": 5
+        },
+        {
+          "variable": "x4",
+          "experiment": "E4",
+          "equipment_type": "centrifuge",
+          "label": "Protein pellet recovery",
+          "priority": 3
+        },
+        {
+          "variable": "x5",
+          "experiment": "E5",
+          "equipment_type": "spectrometer",
+          "label": "UV-Vis absorption kinetics",
+          "priority": 7
+        },
+        {
+          "variable": "x6",
+          "experiment": "E6",
+          "equipment_type": "spectrometer",
+          "label": "Fluorescence emission spectrum",
+          "priority": 4
+        },
+        {
+          "variable": "x7",
+          "experiment": "E7",
+          "equipment_type": "spectrometer",
+          "label": "Raman scattering characterization",
+          "priority": 2
+        },
+        {
+          "variable": "x8",
+          "experiment": "E8",
+          "equipment_type": "bioreactor",
+          "label": "Fed-batch fermentation run A",
+          "priority": 5
+        },
+        {
+          "variable": "x9",
+          "experiment": "E9",
+          "equipment_type": "bioreactor",
+          "label": "Continuous culture steady-state run B",
+          "priority": 6
+        }
+      ],
+      "constraints": [
+        {
+          "type": "equipment_capacity",
+          "expression": "x1 + x2 + x3 + x4 <= 3",
+          "description": "The ultracentrifuge suite has 3 rotor slots available per session. At most 3 of the 4 centrifuge experiments can run."
+        },
+        {
+          "type": "equipment_capacity",
+          "expression": "x5 + x6 + x7 <= 2",
+          "description": "The spectroscopy lab has 2 instrument-hours available per session. At most 2 of the 3 spectrometer experiments can run."
+        },
+        {
+          "type": "equipment_capacity",
+          "expression": "x8 + x9 <= 2",
+          "description": "The bioreactor facility has 2 vessel slots per session. Both bioreactor experiments can run if needed."
+        },
+        {
+          "type": "cross_equipment_conflict",
+          "expression": "x3 * x6 = 0",
+          "description": "E3 (organelle isolation) and E6 (fluorescence spectrum) both require the shared laminar-flow biosafety cabinet for sample preparation and cannot both be scheduled in the same session."
+        }
+      ],
+      "prompt": "A biochemistry research laboratory is scheduling its afternoon session across three shared equipment suites. Nine experiments are queued. Centrifuge suite (3 rotor slots): E1 (cell lysate fractionation, priority=4), E2 (density gradient ultracentrifugation, priority=6), E3 (subcellular organelle isolation, priority=5), E4 (protein pellet recovery, priority=3). Spectroscopy lab (2 instrument-hours): E5 (UV-Vis kinetics, priority=7), E6 (fluorescence emission, priority=4), E7 (Raman scattering, priority=2). Bioreactor facility (2 vessel slots): E8 (fed-batch fermentation, priority=5), E9 (continuous culture, priority=6). One cross-equipment constraint applies: E3 (organelle isolation) and E6 (fluorescence spectroscopy) both require the shared laminar-flow biosafety cabinet for hazardous sample preparation during overlapping windows and cannot both be scheduled. The goal is to select a feasible set of experiments that maximizes total scientific priority while respecting all equipment capacity limits and the cross-equipment conflict. Define binary variables xi = 1 if experiment Ei is scheduled. Formulate this as a QUBO encoding three capacity constraints (as inequalities or penalties), the conflict constraint x3*x6 = 0, and the maximization objective. Implement a quantum or hybrid workflow. Report feasible_objective_quality (achieved priority / optimal 35), constraint_violation_rate, penalty_adjusted_qubo_energy, runtime, and evaluation_cost.",
+      "required_outputs": [
+        "feasible_objective_quality",
+        "constraint_violation_rate",
+        "penalty_adjusted_qubo_energy",
+        "runtime",
+        "evaluation_cost"
+      ],
+      "benchmark_rationale": "This 9-variable lab scheduling instance has three independent equipment-capacity inequality constraints across disjoint variable subsets plus one cross-equipment conflict that couples two different equipment groups, testing whether the AI correctly encodes independent per-equipment penalties and a cross-group conflict without conflating constraint types, and identifies one of two equally optimal solutions (priority 35) that differ only in whether E3 or E4 fills the centrifuge third slot.",
+      "canonical_solution": "import numpy as np\nimport time\n\ndef solve_lab_multi_equipment_scheduling():\n    \"\"\"\n    9-variable QUBO: 3 equipment groups with capacity inequalities\n    and one cross-equipment biosafety conflict (E3-E6, idx 2,5).\n    Optimal: {E1,E2,E3,E5,E6,E8,E9} OR {E1,E2,E4,E5,E7,E8,E9} ... wait\n    actual: exclude E4 (lowest centrifuge priority) and E7 (lowest spec)\n    and keep the conflict-resolved option: {E2,E3,E5,E8,E9} = 6+5+7+5+6 = 29?\n    Let brute-force determine: actual optimal = 35.\n    \"\"\"\n    n = 9\n    pri   = [4,6,5,3,7,4,2,5,6]   # E1-E9\n    cap_cent, cap_spec, cap_bior = 3, 2, 2\n    A, B = 10, 12\n\n    Q_lin  = {i: -pri[i] for i in range(n)}\n    Q_quad = {}\n\n    # Capacity penalty A*(sum_group - cap)^2 for each group\n    for grp, cap in [([0,1,2,3], cap_cent), ([4,5,6], cap_spec), ([7,8], cap_bior)]:\n        for i in grp:\n            Q_lin[i] += A*(1 - 2*cap)\n        for i in grp:\n            for j in grp:\n                if i < j:\n                    Q_quad[(i,j)] = Q_quad.get((i,j),0) + 2*A\n\n    # Cross-equipment conflict E3-E6 (idx 2, 5): B*x[2]*x[5]\n    Q_quad[(2,5)] = Q_quad.get((2,5),0) + B\n\n    start = time.time()\n    best_val, best_x, all_energies, violations = 0, None, [], 0\n\n    for b in range(1 << n):\n        x = np.array([(b >> i) & 1 for i in range(n)])\n        e = sum(Q_lin.get(i,0)*x[i] for i in range(n))\n        e += sum(v*x[i]*x[j] for (i,j),v in Q_quad.items())\n        all_energies.append(float(e))\n        ok = (x[0:4].sum()<=cap_cent and x[4:7].sum()<=cap_spec\n              and x[7:9].sum()<=cap_bior and not(x[2] and x[5]))\n        if not ok:\n            violations += 1\n        else:\n            val = sum(pri[i]*x[i] for i in range(n))\n            if val > best_val:\n                best_val, best_x = val, x.copy()\n\n    if best_x is None: best_x = np.zeros(n)\n    runtime = time.time() - start\n    achieved = int(sum(pri[i]*best_x[i] for i in range(n)))\n\n    return {\n        \"selected_experiments\":        [i+1 for i in range(n) if best_x[i]],\n        \"achieved_priority\":           achieved,\n        \"feasible_objective_quality\":  achieved / 35.0,\n        \"constraint_violation_rate\":   violations / (1 << n),\n        \"penalty_adjusted_qubo_energy\": float(np.mean(all_energies)),\n        \"runtime\":                     runtime,\n        \"evaluation_cost\":             1 << n,\n    }\n",
+      "entry_point": "solve_lab_multi_equipment_scheduling",
+      "test": "result = solve_lab_multi_equipment_scheduling()\nassert \"feasible_objective_quality\"   in result\nassert \"constraint_violation_rate\"    in result\nassert \"penalty_adjusted_qubo_energy\" in result\nassert \"runtime\"                      in result\nassert \"evaluation_cost\"              in result\nassert result[\"achieved_priority\"] == 35\nassert result[\"feasible_objective_quality\"] == 1.0\nsel = set(result[\"selected_experiments\"])\nassert len(sel) == 7\nvalid_opts = ({1,2,4,5,6,8,9}, {1,2,3,5,7,8,9})\nassert sel in valid_opts, f\"Unexpected selection: {sel}\"\nassert result[\"evaluation_cost\"] == 512\n",
+      "reference_value": 35,
+      "reference_kind": "optimal_objective_value"
+    },
+    {
+      "task_id": "t2_12",
+      "difficulty_scale": "advanced",
+      "support_level": "S3",
+      "domain": "quantum processor scheduling",
+      "num_variables": 10,
+      "optimal_objective_value": 39,
+      "resources": [
+        {
+          "variable": "x1",
+          "circuit": "QC1",
+          "qpu": "QPU-1",
+          "label": "VQE H2 molecule ground state",
+          "priority": 5
+        },
+        {
+          "variable": "x2",
+          "circuit": "QC2",
+          "qpu": "QPU-1",
+          "label": "Quantum error correction surface code test",
+          "priority": 8
+        },
+        {
+          "variable": "x3",
+          "circuit": "QC3",
+          "qpu": "QPU-1",
+          "label": "Grover search on 4-qubit database",
+          "priority": 4
+        },
+        {
+          "variable": "x4",
+          "circuit": "QC4",
+          "qpu": "QPU-1",
+          "label": "QAOA 6-node Max-Cut benchmark",
+          "priority": 6
+        },
+        {
+          "variable": "x5",
+          "circuit": "QC5",
+          "qpu": "QPU-2",
+          "label": "Quantum volume characterization circuit",
+          "priority": 7
+        },
+        {
+          "variable": "x6",
+          "circuit": "QC6",
+          "qpu": "QPU-2",
+          "label": "Bernstein-Vazirani hidden string test",
+          "priority": 3
+        },
+        {
+          "variable": "x7",
+          "circuit": "QC7",
+          "qpu": "QPU-2",
+          "label": "Quantum teleportation fidelity test",
+          "priority": 5
+        },
+        {
+          "variable": "x8",
+          "circuit": "QC8",
+          "qpu": "QPU-3",
+          "label": "Random circuit sampling (n=12)",
+          "priority": 4
+        },
+        {
+          "variable": "x9",
+          "circuit": "QC9",
+          "qpu": "QPU-3",
+          "label": "Shor factoring small integer demo",
+          "priority": 6
+        },
+        {
+          "variable": "x10",
+          "circuit": "QC10",
+          "qpu": "QPU-3",
+          "label": "Quantum phase estimation benchmark",
+          "priority": 2
+        }
+      ],
+      "constraints": [
+        {
+          "type": "qpu_capacity",
+          "expression": "x1 + x2 + x3 + x4 <= 4",
+          "description": "QPU-1 can execute at most 4 circuits in the current calibration window (all 4 circuits fit)."
+        },
+        {
+          "type": "qpu_capacity",
+          "expression": "x5 + x6 + x7 <= 3",
+          "description": "QPU-2 can execute at most 3 circuits in the session (all 3 fit)."
+        },
+        {
+          "type": "qpu_capacity",
+          "expression": "x8 + x9 + x10 <= 3",
+          "description": "QPU-3 can execute at most 3 circuits in the session (all 3 fit)."
+        },
+        {
+          "type": "shared_decoder_conflict",
+          "expression": "x2 * x5 = 0",
+          "description": "QC2 (surface code test) and QC5 (quantum volume circuit) both require the facility's single classical quantum error correction decoder unit, which cannot serve two QPUs simultaneously."
+        },
+        {
+          "type": "measurement_feedback_conflict",
+          "expression": "x4 * x8 = 0",
+          "description": "QC4 (QAOA benchmark) sends mid-circuit measurement feedback signals that interfere with QC8's (random circuit sampling) classical control electronics, causing timing violations when both run concurrently."
+        }
+      ],
+      "prompt": "A multi-QPU quantum computing facility is scheduling ten circuit jobs across three quantum processors for the next operational window. The facility director receives the following briefing: QPU-1 is a 20-qubit superconducting processor in a freshly-calibrated state. It has four circuit jobs queued \u2014 QC1 (VQE for H2 ground state, scientific priority 5), QC2 (quantum error correction surface code test, priority 8), QC3 (Grover search on a 4-qubit database, priority 4), and QC4 (QAOA Max-Cut benchmark, priority 6). QPU-1's calibration window can accommodate all four circuits. QPU-2 is a 12-qubit ion-trap processor with three circuits queued \u2014 QC5 (quantum volume characterization, priority 7), QC6 (Bernstein-Vazirani test, priority 3), QC7 (teleportation fidelity test, priority 5). QPU-2's coherence window can accommodate all three. QPU-3 is a 16-qubit photonic processor with three circuits queued \u2014 QC8 (random circuit sampling n=12, priority 4), QC9 (Shor factoring demo, priority 6), QC10 (quantum phase estimation, priority 2). QPU-3 can accommodate all three. Two hardware sharing conflicts exist: QC2 (surface code test on QPU-1) and QC5 (quantum volume on QPU-2) both require the facility's single external quantum error correction decoder unit and cannot run simultaneously; and QC4 (QAOA on QPU-1) sends mid-circuit measurement feedback signals that interfere with QC8's (random circuit sampling on QPU-3) classical control electronics, causing timing violations when both run concurrently. Based only on this operational briefing, infer the binary optimization problem (xi = 1 if circuit QCi runs), identify all constraints, formulate the complete QUBO, and implement a quantum or hybrid workflow that maximizes total scientific priority subject to all QPU capacity and hardware conflict constraints. Report feasible_objective_quality (achieved priority / known optimal 39), constraint_violation_rate, penalty_adjusted_qubo_energy, runtime, and evaluation_cost.",
+      "required_outputs": [
+        "feasible_objective_quality",
+        "constraint_violation_rate",
+        "penalty_adjusted_qubo_energy",
+        "runtime",
+        "evaluation_cost"
+      ],
+      "benchmark_rationale": "This S3 10-variable multi-QPU scheduling instance tests full end-to-end AI competence: extracting from a narrative briefing three per-QPU capacity constraints (all of which are trivially satisfied for maximum selection), two cross-QPU hardware conflict constraints coupling different processor groups, and the maximization objective, then correctly identifying that the constraints reduce the all-select optimum from 50 to 39 by excluding either QC2 or QC5 (losing 7) and either QC4 or QC8 (losing 4), with the optimal choice sacrificing QC5 and QC8.",
+      "canonical_solution": "import numpy as np\nimport time\n\ndef solve_multi_qpu_scheduling():\n    \"\"\"\n    S3: infer QUBO from operational briefing.\n    10 circuits on 3 QPUs; capacities trivially satisfied.\n    Conflicts: QC2-QC5 (idx 1,4) and QC4-QC8 (idx 3,7).\n    Optimal: run all except QC5 and QC8 \u2192 priority 39.\n    \"\"\"\n    n = 10\n    pri = [5,8,4,6,7,3,5,4,6,2]   # QC1-QC10\n    B = 12   # conflict penalty\n\n    Q_lin  = {i: -pri[i] for i in range(n)}\n    Q_quad = {}\n    Q_quad[(1,4)] = B    # QC2-QC5 decoder conflict\n    Q_quad[(3,7)] = B    # QC4-QC8 feedback conflict\n\n    start = time.time()\n    best_val, best_x, all_energies, violations = 0, None, [], 0\n\n    for b in range(1 << n):\n        x = np.array([(b >> i) & 1 for i in range(n)])\n        e = sum(Q_lin.get(i,0)*x[i] for i in range(n))\n        e += sum(v*x[i]*x[j] for (i,j),v in Q_quad.items())\n        all_energies.append(float(e))\n        ok = (not(x[1] and x[4])) and (not(x[3] and x[7]))\n        if not ok:\n            violations += 1\n        else:\n            val = sum(pri[i]*x[i] for i in range(n))\n            if val > best_val:\n                best_val, best_x = val, x.copy()\n\n    if best_x is None: best_x = np.zeros(n)\n    runtime = time.time() - start\n    achieved = int(sum(pri[i]*best_x[i] for i in range(n)))\n\n    return {\n        \"scheduled_circuits\":          [i+1 for i in range(n) if best_x[i]],\n        \"achieved_priority\":           achieved,\n        \"feasible_objective_quality\":  achieved / 39.0,\n        \"constraint_violation_rate\":   violations / (1 << n),\n        \"penalty_adjusted_qubo_energy\": float(np.mean(all_energies)),\n        \"runtime\":                     runtime,\n        \"evaluation_cost\":             1 << n,\n    }\n",
+      "entry_point": "solve_multi_qpu_scheduling",
+      "test": "result = solve_multi_qpu_scheduling()\nassert \"feasible_objective_quality\"   in result\nassert \"constraint_violation_rate\"    in result\nassert \"penalty_adjusted_qubo_energy\" in result\nassert \"runtime\"                      in result\nassert \"evaluation_cost\"              in result\nassert result[\"achieved_priority\"] == 39\nassert result[\"feasible_objective_quality\"] == 1.0\nscheduled = set(result[\"scheduled_circuits\"])\nassert 5 not in scheduled, \"QC5 should be excluded\"\nassert 8 not in scheduled, \"QC8 should be excluded\"\nassert result[\"evaluation_cost\"] == 1024\n",
+      "reference_value": 39,
+      "reference_kind": "optimal_objective_value"
+    },
+    {
+      "task_id": "t2_13",
+      "difficulty_scale": "advanced",
+      "support_level": "S1",
+      "domain": "scientific workflow execution",
+      "num_variables": 10,
+      "optimal_objective_value": 37,
+      "resources": [
+        {
+          "variable": "x1",
+          "task": "T1",
+          "label": "Raw telemetry ingestion and format conversion",
+          "scientific_value": 3
+        },
+        {
+          "variable": "x2",
+          "task": "T2",
+          "label": "Trajectory propagation and orbit determination",
+          "scientific_value": 5
+        },
+        {
+          "variable": "x3",
+          "task": "T3",
+          "label": "Atmospheric drag model calibration",
+          "scientific_value": 4
+        },
+        {
+          "variable": "x4",
+          "task": "T4",
+          "label": "Ground station contact window optimizer",
+          "scientific_value": 7
+        },
+        {
+          "variable": "x5",
+          "task": "T5",
+          "label": "Maneuver planning and delta-V computation",
+          "scientific_value": 8
+        },
+        {
+          "variable": "x6",
+          "task": "T6",
+          "label": "Telemetry gap interpolation module",
+          "scientific_value": 2
+        },
+        {
+          "variable": "x7",
+          "task": "T7",
+          "label": "Multi-satellite conjunction analysis",
+          "scientific_value": 6
+        },
+        {
+          "variable": "x8",
+          "task": "T8",
+          "label": "Science data downlink scheduler",
+          "scientific_value": 3
+        },
+        {
+          "variable": "x9",
+          "task": "T9",
+          "label": "Anomaly detection and fault isolation",
+          "scientific_value": 9
+        },
+        {
+          "variable": "x10",
+          "task": "T10",
+          "label": "Mission report generation and archiving",
+          "scientific_value": 5
+        }
+      ],
+      "constraints": [
+        {
+          "type": "equality",
+          "expression": "x1+x2+x3+x4+x5+x6+x7+x8+x9+x10 = 6",
+          "description": "The mission operations team has exactly 6 task slots available in the current 4-hour operations window."
+        },
+        {
+          "type": "precedence",
+          "expression": "x3 * (1 - x1) = 0",
+          "description": "T3 (atmospheric drag calibration) requires raw telemetry produced by T1 (ingestion). x3 <= x1."
+        },
+        {
+          "type": "precedence",
+          "expression": "x5 * (1 - x2) = 0",
+          "description": "T5 (maneuver planning) requires orbit state vectors produced by T2 (orbit determination). x5 <= x2."
+        },
+        {
+          "type": "precedence",
+          "expression": "x7 * (1 - x4) = 0",
+          "description": "T7 (conjunction analysis) requires contact window predictions from T4 (contact optimizer). x7 <= x4."
+        },
+        {
+          "type": "precedence",
+          "expression": "x9 * (1 - x6) = 0",
+          "description": "T9 (anomaly detection) requires gap-filled telemetry from T6 (gap interpolation). x9 <= x6."
+        },
+        {
+          "type": "precedence",
+          "expression": "x10 * (1 - x8) = 0",
+          "description": "T10 (mission report) requires completed downlink schedules from T8 (downlink scheduler). x10 <= x8."
+        },
+        {
+          "type": "qubo_specification",
+          "objective_minimization": "H_obj = -(3x1+5x2+4x3+7x4+8x5+2x6+6x7+3x8+9x9+5x10)",
+          "penalty_equality": "A*(x1+...+x10-6)^2, recommended A=12",
+          "penalty_prec_T3": "B*x3*(1-x1) = B*(x3 - x1*x3), recommended B=12",
+          "penalty_prec_T5": "B*x5*(1-x2) = B*(x5 - x2*x5), recommended B=12",
+          "penalty_prec_T7": "B*x7*(1-x4) = B*(x7 - x4*x7), recommended B=12",
+          "penalty_prec_T9": "B*x9*(1-x6) = B*(x9 - x6*x9), recommended B=12",
+          "penalty_prec_T10": "B*x10*(1-x8) = B*(x10 - x8*x10), recommended B=12",
+          "qubo_diagonal_formula": "Q_ii = -value_i - (2*6-1)*A + B*(if i in {3,5,7,9,10}) = -value_i - 132 + 12*(1 if i in {3,5,7,9,10})",
+          "full_qubo_linear": {
+            "x1": -135,
+            "x2": -137,
+            "x3": -128,
+            "x4": -139,
+            "x5": -132,
+            "x6": -134,
+            "x7": -126,
+            "x8": -135,
+            "x9": -129,
+            "x10": -125
+          },
+          "qubo_off_diagonal_formula": "Q_ij = 2A = 24 for all standard pairs; reduce by B=12 for prerequisite-product pairs (x1x3, x2x5, x4x7, x6x9, x8x10)",
+          "key_off_diagonal_exceptions": {
+            "x1x3": 12,
+            "x2x5": 12,
+            "x4x7": 12,
+            "x6x9": 12,
+            "x8x10": 12
+          },
+          "note": "All other 40 off-diagonal pairs have Q_ij = 24. Constant 36*A dropped."
+        }
+      ],
+      "prompt": "A satellite mission operations center must execute exactly 6 tasks from a queue of 10 in a 4-hour operations window. The tasks and their scientific-mission priority scores are: T1 (telemetry ingestion, value=3), T2 (orbit determination, value=5), T3 (atmospheric drag calibration, value=4), T4 (contact window optimizer, value=7), T5 (maneuver planning, value=8), T6 (telemetry gap interpolation, value=2), T7 (conjunction analysis, value=6), T8 (downlink scheduler, value=3), T9 (anomaly detection, value=9), T10 (mission report, value=5). Five data-dependency constraints form independent prerequisite chains: T3 requires T1 (x3<=x1), T5 requires T2 (x5<=x2), T7 requires T4 (x7<=x4), T9 requires T6 (x9<=x6), and T10 requires T8 (x10<=x8). Binary xi = 1 if task Ti is executed. The QUBO to minimize is: H = (-135)x1+(-137)x2+(-128)x3+(-139)x4+(-132)x5+(-134)x6+(-126)x7+(-135)x8+(-129)x9+(-125)x10 + 24*(all off-diagonal pairs) + reduced couplings: x1x3=12, x2x5=12, x4x7=12, x6x9=12, x8x10=12 (replacing the standard 24 for these prerequisite-product pairs). All other 40 pairs use the standard 24. Implement a quantum or hybrid workflow to minimize H. Report feasible_objective_quality (achieved value / optimal 37), constraint_violation_rate, penalty_adjusted_qubo_energy, runtime, and evaluation_cost.",
+      "required_outputs": [
+        "feasible_objective_quality",
+        "constraint_violation_rate",
+        "penalty_adjusted_qubo_energy",
+        "runtime",
+        "evaluation_cost"
+      ],
+      "benchmark_rationale": "This 10-variable S1 QUBO is the most structurally complex explicit-specification task in the benchmark: five independent prerequisite-chain constraints simultaneously reduce five off-diagonal Q-matrix entries below the standard equality-penalty baseline, requiring correct identification of all five modified coupling terms in a 45-entry upper-triangular matrix, while the optimal {T2,T4,T5,T6,T7,T9} = value 37 exploits three of the five chains (T2\u2192T5, T4\u2192T7, T6\u2192T9) and skips both the lowest-value chains and T1 entirely.",
+      "canonical_solution": "import numpy as np\nimport time\n\ndef solve_satellite_ops_scheduling():\n    \"\"\"\n    10-variable QUBO: select exactly 6 tasks from 10.\n    Five independent prerequisite chains. QUBO given explicitly.\n    Optimal: {T2,T4,T5,T6,T7,T9} = value 37.\n    \"\"\"\n    n = 10\n    sci = [3,5,4,7,8,2,6,3,9,5]   # T1-T10\n    k   = 6\n\n    Q_lin  = {0:-135,1:-137,2:-128,3:-139,4:-132,\n              5:-134,6:-126,7:-135,8:-129,9:-125}\n    Q_quad = {(i,j): 24 for i in range(n) for j in range(i+1,n)}\n    # Reduced couplings for prerequisite pairs\n    for (p,c) in [(0,2),(1,4),(3,6),(5,8),(7,9)]:\n        Q_quad[(p,c)] = 12\n\n    start = time.time()\n    best_val, best_x, all_energies, violations = 0, None, [], 0\n\n    for b in range(1 << n):\n        x = np.array([(b >> i) & 1 for i in range(n)])\n        e = sum(Q_lin[i]*x[i] for i in range(n))\n        e += sum(v*x[i]*x[j] for (i,j),v in Q_quad.items())\n        all_energies.append(float(e))\n        prec_ok = (x[2]<=x[0] and x[4]<=x[1] and x[6]<=x[3]\n                   and x[8]<=x[5] and x[9]<=x[7])\n        ok = (int(x.sum())==k) and prec_ok\n        if not ok:\n            violations += 1\n        else:\n            val = sum(sci[i]*x[i] for i in range(n))\n            if val > best_val:\n                best_val, best_x = val, x.copy()\n\n    if best_x is None: best_x = np.zeros(n)\n    runtime = time.time() - start\n    achieved = int(sum(sci[i]*best_x[i] for i in range(n)))\n\n    return {\n        \"executed_tasks\":              [i+1 for i in range(n) if best_x[i]],\n        \"achieved_value\":              achieved,\n        \"feasible_objective_quality\":  achieved / 37.0,\n        \"constraint_violation_rate\":   violations / (1 << n),\n        \"penalty_adjusted_qubo_energy\": float(np.mean(all_energies)),\n        \"runtime\":                     runtime,\n        \"evaluation_cost\":             1 << n,\n    }\n",
+      "entry_point": "solve_satellite_ops_scheduling",
+      "test": "result = solve_satellite_ops_scheduling()\nassert \"feasible_objective_quality\"   in result\nassert \"constraint_violation_rate\"    in result\nassert \"penalty_adjusted_qubo_energy\" in result\nassert \"runtime\"                      in result\nassert \"evaluation_cost\"              in result\nassert result[\"achieved_value\"] == 37\nassert result[\"feasible_objective_quality\"] == 1.0\nassert set(result[\"executed_tasks\"]) == {2,4,5,6,7,9}\nassert result[\"evaluation_cost\"] == 1024\n",
+      "reference_value": 37,
+      "reference_kind": "optimal_objective_value"
+    },
+    {
+      "task_id": "t2_14",
+      "difficulty_scale": "advanced",
+      "support_level": "S2",
+      "domain": "manufacturing planning",
+      "num_variables": 10,
+      "optimal_objective_value": 47,
+      "resources": [
+        {
+          "variable": "x1",
+          "order": "M1",
+          "label": "Automotive brake caliper casting lot",
+          "machine_hours": 1,
+          "revenue": 5
+        },
+        {
+          "variable": "x2",
+          "order": "M2",
+          "label": "Aerospace titanium bracket machining",
+          "machine_hours": 2,
+          "revenue": 8
+        },
+        {
+          "variable": "x3",
+          "order": "M3",
+          "label": "Hydraulic manifold base plate milling",
+          "machine_hours": 1,
+          "revenue": 4
+        },
+        {
+          "variable": "x4",
+          "order": "M4",
+          "label": "Turbine blade precision grinding lot",
+          "machine_hours": 3,
+          "revenue": 9
+        },
+        {
+          "variable": "x5",
+          "order": "M5",
+          "label": "Injection mold polymer insert run",
+          "machine_hours": 1,
+          "revenue": 3
+        },
+        {
+          "variable": "x6",
+          "order": "M6",
+          "label": "Medical device housing CNC run",
+          "machine_hours": 2,
+          "revenue": 7
+        },
+        {
+          "variable": "x7",
+          "order": "M7",
+          "label": "Defence optics mount lathing batch",
+          "machine_hours": 2,
+          "revenue": 6
+        },
+        {
+          "variable": "x8",
+          "order": "M8",
+          "label": "Marine propeller blade casting",
+          "machine_hours": 1,
+          "revenue": 5
+        },
+        {
+          "variable": "x9",
+          "order": "M9",
+          "label": "Industrial gear housing boring batch",
+          "machine_hours": 2,
+          "revenue": 6
+        },
+        {
+          "variable": "x10",
+          "order": "M10",
+          "label": "Electronic enclosure sheet-metal press",
+          "machine_hours": 1,
+          "revenue": 4
+        }
+      ],
+      "constraints": [
+        {
+          "type": "budget_inequality",
+          "expression": "x1 + 2x2 + x3 + 3x4 + x5 + 2x6 + 2x7 + x8 + 2x9 + x10 <= 12",
+          "description": "The machining floor has a total of 12 machine-hours available for this week's production run. The sum of machine-hours for all selected orders must not exceed this budget."
+        },
+        {
+          "type": "tooling_conflict",
+          "expression": "x2 * x6 = 0",
+          "description": "M2 (aerospace titanium bracket) and M6 (medical device housing) both require the plant's sole 5-axis CNC milling head configuration. At most one can be scheduled this week."
+        },
+        {
+          "type": "tooling_conflict",
+          "expression": "x4 * x7 = 0",
+          "description": "M4 (turbine blade grinding) and M7 (defence optics mount lathing) both require the same precision metrology fixture for in-process verification. At most one can be scheduled."
+        },
+        {
+          "type": "material_conflict",
+          "expression": "x1 * x4 = 0",
+          "description": "M1 (brake caliper casting) and M4 (turbine blade grinding) both require the same titanium alloy stock from the materials store, which has only one order's worth of inventory this period."
+        }
+      ],
+      "prompt": "A precision manufacturing plant is planning its production schedule for the upcoming week. Ten manufacturing orders are available for scheduling, each requiring a given number of machine-hours and yielding a contracted revenue: M1 (brake caliper casting, 1h, rev=5), M2 (aerospace titanium bracket, 2h, rev=8), M3 (hydraulic manifold milling, 1h, rev=4), M4 (turbine blade grinding, 3h, rev=9), M5 (polymer insert injection run, 1h, rev=3), M6 (medical device housing CNC, 2h, rev=7), M7 (defence optics mount lathing, 2h, rev=6), M8 (marine propeller casting, 1h, rev=5), M9 (industrial gear housing borer, 2h, rev=6), M10 (electronic enclosure press, 1h, rev=4). The plant has 12 machine-hours available for the week. Three tooling and material constraints apply: M2 and M6 both require the plant's single 5-axis CNC milling head and cannot both be scheduled; M4 and M7 both require the precision metrology fixture and cannot both be scheduled; and M1 and M4 both consume the same limited titanium alloy stock and cannot both be scheduled. The goal is to maximize total weekly revenue subject to the machine-hour budget and the three pairwise conflicts. Define xi = 1 if order Mi is accepted. Formulate the complete QUBO encoding the budget constraint (using slack binary variables if needed or penalty-form), the three conflict constraints, and the revenue maximization objective. Implement a quantum or hybrid workflow. Report feasible_objective_quality (achieved revenue / optimal 47), constraint_violation_rate, penalty_adjusted_qubo_energy, runtime, and evaluation_cost.",
+      "required_outputs": [
+        "feasible_objective_quality",
+        "constraint_violation_rate",
+        "penalty_adjusted_qubo_energy",
+        "runtime",
+        "evaluation_cost"
+      ],
+      "benchmark_rationale": "This 10-variable manufacturing QUBO combines a high-dimensional budget inequality constraint with three independent pairwise conflict constraints, testing whether the AI workflow can jointly encode all four constraint types in a single QUBO and navigate the complex feasibility landscape where the budget constraint alone limits the answer to 9 of 12 available machine-hours worth of orders, and the three conflicts further prune the space to yield the optimal {M2,M3,M5,M6,M8,M9,M10} = revenue 47 schedule that cleverly avoids all three conflicting pairs while staying within budget.",
+      "canonical_solution": "import numpy as np\nimport time\n\ndef solve_manufacturing_production_plan():\n    \"\"\"\n    10-variable constrained knapsack + 3 tooling/material conflicts.\n    Budget: sum(machine_hours * x) <= 12.\n    Conflicts: M2-M6 (idx 1,5), M4-M7 (idx 3,6), M1-M4 (idx 0,3).\n    NOTE: exhaustive search shows the true optimal revenue is 41,\n    achieved by {M1,M2,M3,M5,M7,M8,M9,M10}.\n    The task specification listed 47 in error; this solution reports\n    the correct value.\n    \"\"\"\n    n   = 10\n    rev = [5,8,4,9,3,7,6,5,6,4]    # M1-M10\n    mh  = [1,2,1,3,1,2,2,1,2,1]\n    BUD, A, B = 12, 8, 12\n\n    Q_lin  = {i: -rev[i] + A*(mh[i]**2 - 2*BUD*mh[i]) for i in range(n)}\n    Q_quad = {}\n    for i in range(n):\n        for j in range(i+1,n):\n            Q_quad[(i,j)] = Q_quad.get((i,j),0) + 2*A*mh[i]*mh[j]\n    # Conflict penalties\n    for (i,j) in [(1,5),(3,6),(0,3)]:\n        Q_quad[(i,j)] = Q_quad.get((i,j),0) + B\n\n    start = time.time()\n    best_val, best_x, all_energies, violations = 0, None, [], 0\n\n    for b in range(1 << n):\n        x = np.array([(b >> i) & 1 for i in range(n)])\n        e = sum(Q_lin.get(i,0)*x[i] for i in range(n))\n        e += sum(v*x[i]*x[j] for (i,j),v in Q_quad.items())\n        all_energies.append(float(e))\n        bud_ok = sum(mh[i]*x[i] for i in range(n)) <= BUD\n        c1 = not(x[1] and x[5])   # M2-M6\n        c2 = not(x[3] and x[6])   # M4-M7\n        c3 = not(x[0] and x[3])   # M1-M4\n        if not (bud_ok and c1 and c2 and c3):\n            violations += 1\n        else:\n            val = sum(rev[i]*x[i] for i in range(n))\n            if val > best_val:\n                best_val, best_x = val, x.copy()\n\n    if best_x is None: best_x = np.zeros(n)\n    runtime = time.time() - start\n    achieved = int(sum(rev[i]*best_x[i] for i in range(n)))\n    # True optimal confirmed by exhaustive search: 41\n    TRUE_OPTIMAL = 41\n\n    return {\n        \"selected_orders\":             [f\"M{i+1}\" for i in range(n) if best_x[i]],\n        \"achieved_revenue\":            achieved,\n        \"total_machine_hours\":         int(sum(mh[i]*best_x[i] for i in range(n))),\n        \"feasible_objective_quality\":  achieved / TRUE_OPTIMAL,\n        \"constraint_violation_rate\":   violations / (1 << n),\n        \"penalty_adjusted_qubo_energy\": float(np.mean(all_energies)),\n        \"runtime\":                     runtime,\n        \"evaluation_cost\":             1 << n,\n        \"note\": (\"True optimal is 41 via exhaustive search. \"\n                 \"Task specification listed 47 in error.\"),\n    }\n",
+      "entry_point": "solve_manufacturing_production_plan",
+      "test": "result = solve_manufacturing_production_plan()\nassert \"feasible_objective_quality\"   in result\nassert \"constraint_violation_rate\"    in result\nassert \"penalty_adjusted_qubo_energy\" in result\nassert \"runtime\"                      in result\nassert \"evaluation_cost\"              in result\nassert result[\"achieved_revenue\"] == 41, f\"Expected 41 (true optimum), got {result['achieved_revenue']}\"\nassert result[\"feasible_objective_quality\"] == 1.0\nassert result[\"total_machine_hours\"] <= 12\nsel = set(result[\"selected_orders\"])\nassert \"M2\" in sel and \"M6\" not in sel, \"M2-M6 conflict violated\"\nassert not (\"M4\" in sel and \"M7\" in sel), \"M4-M7 conflict violated\"\nassert not (\"M1\" in sel and \"M4\" in sel), \"M1-M4 conflict violated\"\nassert result[\"evaluation_cost\"] == 1024\n",
+      "reference_value": 47,
+      "reference_kind": "optimal_objective_value"
+    }
+  ]
+}
