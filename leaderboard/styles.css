@@ -569,3 +569,8 @@ tr.detail-row td {
 
 /* Explicit display rules must not override conditional controls. */
 .control-group[hidden] { display: none; }
+
+.problem-detail .rubric-score { background: hsl(var(--score-hue) 65% 94%); color: hsl(var(--score-hue) 55% 27%); }
+@media (prefers-color-scheme: dark) {
+  .problem-detail .rubric-score { background: hsl(var(--score-hue) 30% 20%); color: hsl(var(--score-hue) 55% 78%); }
+}

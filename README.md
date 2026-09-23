@@ -99,3 +99,9 @@ unsupported imports, fingerprints and metrics, plus corrected replay slots and o
 statuses. It does not execute candidates or call judges. Missing sample coverage remains
 visible; incomplete tasks and infrastructure failures are excluded from pass estimates.
 Generated preview JSON is retained locally; deployment automation is unchanged. Select QuantumBenchEval in Dataset; its T1–T6 Collection controls appear directly below Dataset. Old preview URLs redirect into Arena.
+
+## Dataset reference pages
+
+The Datasets navigation link opens an inventory table with problem counts and links
+to six explanatory pages. Rebuild them with `python3 scripts/export_dataset_pages.py`;
+counts come from local problem-content files and QuantumBenchEval task files.

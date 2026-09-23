@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quantum Arena — QuantumBenchEval</title>
+  <link rel="icon" type="image/jpeg" href="./assets/qsc-logo.jpeg" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="./index.html">
+        <span class="brand-logo-wrap"><img class="brand-logo" src="./assets/ornl-logo.png" alt="Oak Ridge National Laboratory" /></span>
+        <span class="brand-logo-wrap brand-logo-wrap--square"><img class="brand-logo brand-logo--square" src="./assets/qsc-logo.jpeg" alt="Quantum Science Center" /></span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a class="site-nav-link" href="./index.html">Arena</a>
+        <a class="site-nav-link" href="./models.html">Models</a>
+        <a class="site-nav-link active" href="./datasets.html">Datasets</a>
+
+      </nav>
+    </div>
+  </header>
+
+<header class="page-header"><h1>QuantumBenchEval</h1><p class="subtitle">Six scientific quantum-computing topics</p></header><main><p><a href="./datasets.html">← All datasets</a></p><section class="qbe-panel"><p>A 96-problem collection spanning six topics, with five requested samples per problem. The current preview contains one model, Gemini 3.6 Flash, and 480 sample records.</p><dl class="qbe-statuses"><div><dt>Problems</dt><dd>96</dd></div><div><dt>Samples per problem</dt><dd>5</dd></div></dl><h2>What is evaluated</h2><p>T1, T2, T4, T5, and T6 use executable correctness checks and report pass@1 and pass@5. T3 reports a mean rubric score on a 0–10 scale, separately from pass rates. No combined score or comparative ranking is presented.</p><h2>Topics</h2><div class="table-scroll"><table class="board"><thead><tr><th>Topic</th><th>Problems</th><th>Scoring</th></tr></thead><tbody><tr><td><a href="./index.html?collection=qbe&amp;topic=T1">T1: AI-Assisted QAOA for Weighted Max-Cut</a></td><td>17</td><td>Pass@1 / 5</td></tr><tr><td><a href="./index.html?collection=qbe&amp;topic=T2">T2: Constrained QUBO for Scientific Resource Allocation</a></td><td>15</td><td>Pass@1 / 5</td></tr><tr><td><a href="./index.html?collection=qbe&amp;topic=T3">T3: Variational Quantum Eigensolver (VQE) for Molecular Ground States</a></td><td>15</td><td>Rubric score, 0–10</td></tr><tr><td><a href="./index.html?collection=qbe&amp;topic=T4">T4: Detection of Quantum Phase Transitions</a></td><td>15</td><td>Pass@1 / 5</td></tr><tr><td><a href="./index.html?collection=qbe&amp;topic=T5">T5: Maximum Independent Set on Hardware-Relevant Graphs</a></td><td>17</td><td>Pass@1 / 5</td></tr><tr><td><a href="./index.html?collection=qbe&amp;topic=T6">T6: Graph Partitioning and Community Detection</a></td><td>17</td><td>Pass@1 / 5</td></tr></tbody></table></div><h2>Scoring and coverage</h2><p>T3 uses claude-sonnet-4-6 with the qbe-t3-rubric-v2 protocol. Its mean is 5.6744/10 across 43 scored samples; 32 truncated samples remain unscored. All 75 T3 sample records are present. Execution failures remain distinct from rubric scoring status.</p><h2>T1 scoring variants</h2><p>The original T1 tests require exact shots and optimizer_calls values that were not disclosed to candidates. The corrected replay replaces only these assertions with non-gating resource-closeness measurements, retaining other correctness checks. Original and corrected scores are displayed separately.</p><p><a href="./index.html?collection=qbe">Explore QuantumBenchEval in Arena →</a></p></section></main></body></html>
