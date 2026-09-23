@@ -43,7 +43,6 @@
     summary: [],
     collection: new URLSearchParams(location.search).get("collection") === "qbe" ? "qbe" : "arena",
     topic: new URLSearchParams(location.search).get("topic") || "T1",
-    variant: "original",
     details: null, // lazy-loaded
     view: "leaderboard",
     dataset: "Overall",

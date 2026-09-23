@@ -99,6 +99,9 @@ def main():
     check(passed/len(replay), corrected['pass_rate_graded'], 'corrected pass rate')
     corrected['counts'] = dict(Counter(r['graded_status'] for r in corrected['rows']))
     corrected['pass_at_k'] = metrics([dict(r, status=r['graded_status']) for r in corrected['rows']], sorted({t for t,i in replay}))
+    replay_by_slot = {(r['task_id'], r['sample_index']): r for r in corrected['rows']}
+    for row in topics[0]['rows']:
+        row['corrected_evaluation'] = replay_by_slot[(row['task_id'], row['sample_index'])]
     for data in topics:
         dataset = read(SOURCE / 'datasets' / f'QuantumBenchEval_{data["topic"]}.json')
         data['task_details'] = dataset['tasks']

@@ -91,8 +91,7 @@ http://localhost:8000/index.html?collection=qbe. Generate the original Arena dat
 The six-topic collection in Arena’s shared Leaderboard / Problem views bypasses Arena's completeness filter, displays
 one available model without comparative rankings, and never aggregates rubric scores
 with pass rates. T3's mean includes only judged samples and flags incomplete scoring
-coverage. Original T1 includes its undisclosed shots/optimizer_calls test limitation;
-the corrected replay is a separate scoring variant.
+coverage. T1 displays corrected replay scoring, joined by task_id and sample_index to the original prompts and code; the original records are retained for provenance.
 
 The exporter verifies all topic summaries against sample statuses, execution outcomes,
 unsupported imports, fingerprints and metrics, plus corrected replay slots and original
