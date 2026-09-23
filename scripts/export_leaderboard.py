@@ -39,6 +39,7 @@ DATASET_CI_KEY = {
 # Granite alias pairs refer to the same checkpoints on 2026-09-15.
 MODEL_DISPLAY_NAMES = {
     "gpt-5": "GPT-5",
+    "gpt-6-astra": "GPT-6 Astra",
     "claude-opus-4-6": "Claude Opus 4.6",
     "claude-fable-5-1": "Claude Fable 5.1",
     "gemini-3-flash-preview": "Gemini 3 Flash",

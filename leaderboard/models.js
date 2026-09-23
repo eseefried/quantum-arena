@@ -7,6 +7,7 @@
   // unconfirmed base model) is left as "—" rather than guessed.
   // Hugging Face model cards verified 2026-09-09; counts use published model sizes.
   const MODEL_META = {
+    "GPT-6 Astra": { provider: "OpenAI", open: false, parameters: "Undisclosed" },
     "GPT-5": { provider: "OpenAI", open: false, parameters: "Undisclosed" },
     "Claude Opus 4.6": { provider: "Anthropic", open: false, parameters: "Undisclosed" },
     "Gemini 3.1 Pro Preview": { provider: "Google DeepMind", open: false, parameters: "Undisclosed" },
