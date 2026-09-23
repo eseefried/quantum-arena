@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Quantum Arena</title>
   <link rel="icon" type="image/jpeg" href="./assets/qsc-logo.jpeg" />
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./styles.css?v=qbe-dataset-2" />
 </head>
 <body>
   <header class="site-header">
@@ -29,7 +29,6 @@
 
   <main>
     <section class="controls">
-      <div class="control-group"><span class="control-label">Collection</span><div id="collection-tabs" class="segmented"></div></div>
       <div class="control-group" role="tablist" aria-label="View">
         <span class="control-label">View</span>
         <div id="view-tabs" class="segmented"></div>
@@ -38,6 +37,7 @@
         <span class="control-label">Dataset</span>
         <div id="dataset-tabs" class="segmented"></div>
       </div>
+      <div id="collection-control" class="control-group" hidden><span class="control-label">Collection</span><div id="collection-tabs" class="segmented" aria-label="QuantumBenchEval topics"></div></div>
       <div class="control-group">
         <span class="control-label">Category</span>
         <div class="dropdown" id="category-dropdown">
@@ -88,8 +88,8 @@
     </p>
   </main>
 
-  <script src="./quantumbencheval.js"></script>
-  <script src="./leaderboard.js"></script>
+  <script src="./quantumbencheval.js?v=qbe-dataset-2"></script>
+  <script src="./leaderboard.js?v=qbe-dataset-2"></script>
 
   <!-- Cloudflare Web Analytics -->
   <script

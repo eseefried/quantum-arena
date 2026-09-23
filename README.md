@@ -98,4 +98,4 @@ The exporter verifies all topic summaries against sample statuses, execution out
 unsupported imports, fingerprints and metrics, plus corrected replay slots and original
 statuses. It does not execute candidates or call judges. Missing sample coverage remains
 visible; incomplete tasks and infrastructure failures are excluded from pass estimates.
-Generated preview JSON is retained locally; deployment automation is unchanged. Use the Collection selector to switch between existing benchmarks and QuantumBenchEval. Old preview URLs redirect into Arena.
+Generated preview JSON is retained locally; deployment automation is unchanged. Select QuantumBenchEval in Dataset; its T1–T6 Collection controls appear directly below Dataset. Old preview URLs redirect into Arena.

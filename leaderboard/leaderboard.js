@@ -192,12 +192,13 @@
   // ---- rendering ----
 
   function renderTabs() {
+    el("collection-control").hidden = state.collection !== "qbe";
     el("collection-tabs").innerHTML = "";
-    for (const [key, label] of [["arena", "Existing benchmarks"], ["qbe", "QuantumBenchEval · Preview"]]) {
+    if (state.collection === "qbe") for (const topic of ["T1", "T2", "T3", "T4", "T5", "T6"]) {
       const button = document.createElement("button");
-      button.textContent = label;
-      button.className = state.collection === key ? "active" : "";
-      button.addEventListener("click", () => { state.collection = key; state.selected = null; renderTabs(); renderCurrentView(); });
+      button.textContent = topic;
+      button.className = state.topic === topic ? "active" : "";
+      button.addEventListener("click", () => { state.topic = topic; state.selected = null; renderTabs(); renderCurrentView(); });
       el("collection-tabs").appendChild(button);
     }
     el("category-dropdown").parentElement.hidden = state.collection === "qbe";
@@ -220,7 +221,7 @@
     // The per-problem grid only makes sense within a single dataset, since
     // task IDs/columns don't line up across datasets the way they do for a
     // task-weighted "Overall" average.
-    const dsList = state.collection === "qbe" ? ["T1", "T2", "T3", "T4", "T5", "T6"] : state.view === "problems" ? DATASETS.filter((d) => d !== "Overall") : DATASETS;
+    const dsList = [...(state.view === "problems" ? DATASETS.filter((d) => d !== "Overall") : DATASETS), "QuantumBenchEval"];
     if (state.collection !== "qbe" && state.view === "problems" && state.dataset === "Overall") {
       state.dataset = dsList[0];
     }
@@ -230,10 +231,11 @@
     for (const ds of dsList) {
       const btn = document.createElement("button");
       btn.textContent = datasetLabel(ds);
-      btn.className = ds === (state.collection === "qbe" ? state.topic : state.dataset) ? "active" : "";
+      btn.className = ds === (state.collection === "qbe" ? "QuantumBenchEval" : state.dataset) ? "active" : "";
       btn.addEventListener("click", () => {
-        if (state.collection === "qbe") { state.topic = ds; state.selected = null; }
-        else state.dataset = ds;
+        state.collection = ds === "QuantumBenchEval" ? "qbe" : "arena";
+        if (state.collection === "arena") state.dataset = ds;
+        state.selected = null;
         state.category = "All";
         state.expanded = null;
         renderTabs();

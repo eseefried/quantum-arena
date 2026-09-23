@@ -566,3 +566,6 @@ tr.detail-row td {
 .qbe-panel summary { cursor: pointer; margin-top: 24px; color: var(--accent); }
 .qbe-panel .board { font-size: .8rem; }
 @media (max-width: 600px) { .qbe-panel { padding: 16px; } .site-nav { flex-wrap: wrap; } }
+
+/* Explicit display rules must not override conditional controls. */
+.control-group[hidden] { display: none; }
