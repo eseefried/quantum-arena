@@ -3,7 +3,6 @@
 import json
 import math
 from collections import Counter
-from html import escape
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -86,53 +85,6 @@ def topic_data(model, topic):
     return result
 
 
-def e(value):
-    return escape(str(value))
-
-
-def percent(value):
-    return 'Unavailable' if value is None else f'{value * 100:.2f}%'
-
-
-def histogram(title, counts):
-    return f'<h3>{title}</h3><dl class="qbe-statuses">' + ''.join(
-        f'<div><dt>{e(k)}</dt><dd>{v}</dd></div>' for k, v in sorted(counts.items())) + '</dl>'
-
-
-def render(data, corrected=None):
-    topic = data['topic']
-    coverage = f"{data['recorded_tasks']}/{data['tasks']} tasks · {data['samples']}/{data['expected_samples']} sample records"
-    body = f'<h2>{e(data["title"])}</h2><p><strong>Gemini 3.6 Flash</strong> <span class="muted">{e(data["identity"])}</span></p><p>{coverage}</p>'
-    body += f'<p>{data["complete_tasks"]}/{data["tasks"]} tasks have all requested sample slots. ' + ('Complete recorded coverage.' if data['samples'] == data['expected_samples'] else '<strong>Incomplete recorded coverage.</strong>') + '</p>'
-    if topic == 'T1':
-        body += '<p class="qbe-notice"><strong>Original T1 · known test limitation.</strong> Tests require exact <code>shots</code> and <code>optimizer_calls</code> values that were not disclosed to candidates. These checks can reject otherwise correct Max-Cut answers and depress the original scores.</p>'
-    if topic == 'T3':
-        mean = data['mean_rubric_score']
-        body += f'<div class="qbe-metrics"><div><span>Mean rubric score</span><strong>{"Unavailable" if mean is None else f"{mean:.4f}"}</strong></div><div><span>Scale</span><strong>0–{e(" / ".join(map(str, data["rubric_maximum"])))}</strong></div></div>'
-        body += f'<p>Judge: <strong>{e(data["judge"].get("model", "Unknown"))}</strong> · {e(data["judge"].get("protocol", ""))}</p><p class="qbe-notice"><strong>{"Incomplete rubric coverage" if data["judged_samples"] < data["expected_samples"] else "Complete rubric coverage"}: {data["judged_samples"]}/{data["expected_samples"]} samples scored.</strong> The mean includes judged samples only; unjudged samples are excluded, not assigned zero. “Judged” is a rubric status, never a pass. Execution outcomes remain separate. Energy accuracy is checked deterministically against executed output.</p>'
-    else:
-        body += '<div class="qbe-metrics">' + ''.join(f'<div><span>Pass@{k}</span><strong>{percent(v)}</strong></div>' for k,v in data['pass_at_k'].items()) + '</div>'
-        body += '<p class="footnote">Task-averaged pass@k: 1 − C(n − c, k) / C(n, k). Only fully recorded, scorable tasks contribute. Candidate failures and truncated/empty/incomplete outputs count as unsuccessful; infrastructure failures remain unscored.</p>'
-    body += histogram('Sample statuses', data['counts']) + histogram('Execution outcomes', data['execution_status_counts'])
-    if data['unsupported_import_modules']:
-        body += histogram('Unsupported imports', data['unsupported_import_modules'])
-    if corrected:
-        body += '<section class="qbe-variant"><h3>Corrected T1 · separate scoring variant</h3><p>Replay of the same 85 generated candidates, with no regeneration. Replaces only the undisclosed shots/optimizer_calls assertions with non-gating closeness ratios; retains the other correctness checks.</p>'
-        body += '<div class="qbe-metrics">' + ''.join(f'<div><span>Corrected pass@{k}</span><strong>{percent(v)}</strong></div>' for k,v in corrected['pass_at_k'].items()) + '</div>'
-        body += f'<p>{corrected["passed_under_graded_test"]}/{corrected["samples"]} samples passed · 17/17 tasks replayed. Verified against all saved replay rows; original statuses retained below.</p>' + histogram('Corrected replay statuses', corrected['counts']) + '</section>'
-    body += '<details><summary>Inspect sample records and task coverage</summary><div class="table-scroll"><table class="board"><thead><tr><th>Task / sample</th><th>Status</th><th>Execution</th><th>Rubric score / scale</th>' + ('<th>Corrected T1 status</th>' if corrected else '') + '</tr></thead><tbody>'
-    replay = {(r['task_id'],r['sample_index']):r['graded_status'] for r in corrected['rows']} if corrected else {}
-    for r in data['rows']:
-        j = r.get('judge', {})
-        score = f'{j["total"]} / {j["max_total"]}' if r['status'] == 'judged' else '—'
-        body += f'<tr><td>{e(r["task_id"])} / {r["sample_index"]}</td><td>{e(r["status"])}</td><td>{e(r.get("execution", {}).get("status", "not_executed"))}</td><td>{score}</td>' + (f'<td>{e(replay.get((r["task_id"],r["sample_index"]), "Missing"))}</td>' if corrected else '') + '</tr>'
-    body += '</tbody></table></div></details><p class="footnote">' + ('Summary verified against every saved sample record.' if data['verified'] else 'No saved summary available; metrics derived from available records.') + ' Source: qbe_export/results/gemini36-flash/' + topic + '.</p>'
-    template = (OUT / 'index.html').read_text().split('<header class="page-header">')[0]
-    template = template.replace('<title>Quantum Arena</title>', '<title>QuantumBenchEval · Preview</title>').replace('site-nav-link active', 'site-nav-link')
-    nav = '<section class="controls"><div class="control-group"><span class="control-label">Topic</span><nav class="segmented qbe-topics" aria-label="QuantumBenchEval topics">' + ''.join(f'<a href="./quantumbencheval{ "" if i == 1 else "-T"+str(i)}.html" {"aria-current=page" if topic == "T"+str(i) else ""}>T{i}</a>' for i in range(1,7)) + '</nav></div></section>'
-    return template + '<header class="page-header"><h1>QuantumBenchEval <span class="qbe-badge">Preview</span></h1><p class="subtitle">A separate collection · six topics · one available model</p></header><main><p>96 tasks · 480 requested samples · five samples per task. This preview reports one model without comparative rankings or an aggregate score. The original Arena collection remains separate.</p>' + nav + '<section class="qbe-panel">' + body + '</section></main></body></html>'
-
-
 def main():
     model = SOURCE / 'results/gemini36-flash'
     topics = [topic_data(model, f'T{i}') for i in range(1,7)]
@@ -148,9 +100,23 @@ def main():
     corrected['counts'] = dict(Counter(r['graded_status'] for r in corrected['rows']))
     corrected['pass_at_k'] = metrics([dict(r, status=r['graded_status']) for r in corrected['rows']], sorted({t for t,i in replay}))
     for data in topics:
+        dataset = read(SOURCE / 'datasets' / f'QuantumBenchEval_{data["topic"]}.json')
+        data['task_details'] = dataset['tasks']
+        for task in data['task_details']:
+            rows = [r for r in data['rows'] if r['task_id'] == task['task_id']]
+            task['sample_count'] = len(rows)
+            judged = [r['judge'] for r in rows if r['status'] == 'judged']
+            task['mean_rubric_score'] = sum(j['total'] for j in judged)/len(judged) if judged else None
+            task['judged_samples'] = len(judged)
+            task['pass_at_k'] = metrics(rows, [task['task_id']]) if data['topic'] != 'T3' else None
+            if data['topic'] == 'T1':
+                task['corrected_pass_at_k'] = metrics([dict(r, status=r['graded_status']) for r in corrected['rows'] if r['task_id'] == task['task_id']], [task['task_id']])
+    (OUT / 'quantumbencheval.json').write_text(json.dumps(dict(topics=topics, corrected=corrected)))
+    # Retain old preview URLs as links into Arena, not a separate collection UI.
+    for data in topics:
         name = 'quantumbencheval' + ('' if data['topic'] == 'T1' else '-'+data['topic'])
-        (OUT / f'{name}.html').write_text(render(data, corrected if data['topic'] == 'T1' else None))
-        print(data['topic'], data.get('pass_at_k', data.get('mean_rubric_score')), data['counts'])
+        target = './index.html?collection=qbe&topic=' + data['topic']
+        (OUT / f'{name}.html').write_text(f'<!doctype html><html lang="en"><meta charset="utf-8"><title>QuantumBenchEval</title><meta http-equiv="refresh" content="0;url={target}"><a href="{target}">Open QuantumBenchEval in Arena</a></html>')
     print('Corrected T1:', corrected['pass_at_k'])
 
 

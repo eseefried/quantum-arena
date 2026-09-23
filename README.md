@@ -85,10 +85,10 @@ Other incomplete models retain their source files but are hidden by the filter.
 
 Run `python3 scripts/export_quantumbencheval.py`, then serve `leaderboard/` with
 `python3 -m http.server 8000 --bind 127.0.0.1 --directory leaderboard` and open
-http://localhost:8000/quantumbencheval.html. Generate the original Arena data using
+http://localhost:8000/index.html?collection=qbe. Generate the original Arena data using
 `python3 scripts/export_leaderboard.py` as before. These commands do not publish.
 
-The independent six-topic collection bypasses Arena's completeness filter, displays
+The six-topic collection in Arena’s shared Leaderboard / Problem views bypasses Arena's completeness filter, displays
 one available model without comparative rankings, and never aggregates rubric scores
 with pass rates. T3's mean includes only judged samples and flags incomplete scoring
 coverage. Original T1 includes its undisclosed shots/optimizer_calls test limitation;
@@ -98,4 +98,4 @@ The exporter verifies all topic summaries against sample statuses, execution out
 unsupported imports, fingerprints and metrics, plus corrected replay slots and original
 statuses. It does not execute candidates or call judges. Missing sample coverage remains
 visible; incomplete tasks and infrastructure failures are excluded from pass estimates.
-Generated preview HTML is retained locally; deployment automation is unchanged.
+Generated preview JSON is retained locally; deployment automation is unchanged. Use the Collection selector to switch between existing benchmarks and QuantumBenchEval. Old preview URLs redirect into Arena.

@@ -31,21 +31,18 @@ class PreviewTests(unittest.TestCase):
         self.assertNotIn('pass_at_k', topics[2])
         self.assertAlmostEqual(topics[2]['mean_rubric_score'], 244/43)
 
-    def test_generated_pages_and_links(self):
-        class Links(HTMLParser):
-            def handle_starttag(self, tag, attrs):
-                for key, value in attrs:
-                    if key in ('href', 'src') and value.startswith('./'):
-                        assert (OUT / value).exists(), value
+    def test_integrated_export(self):
+        import json
+        data = json.loads((OUT / 'quantumbencheval.json').read_text())
+        self.assertEqual(len(data['topics']), 6)
+        t3 = data['topics'][2]
+        self.assertEqual(sum(t['judged_samples'] for t in t3['task_details']), 43)
+        self.assertTrue(all(t['pass_at_k'] is None for t in t3['task_details']))
+        self.assertEqual(len(t3['task_details']), 15)
+        self.assertIn('collection-tabs', (OUT / 'index.html').read_text())
+        self.assertIn('quantumbencheval.js', (OUT / 'index.html').read_text())
         for page in OUT.glob('quantumbencheval*.html'):
-            html = page.read_text()
-            Links().feed(html)
-            self.assertIn('Preview', html)
-            self.assertNotIn('col-rank', html)
-        t3 = (OUT / 'quantumbencheval-T3.html').read_text()
-        self.assertNotIn('Pass@', t3)
-        self.assertIn('43/75 samples scored', t3)
-        self.assertIn('claude-sonnet-4-6', t3)
+            self.assertIn('index.html?collection=qbe', page.read_text())
 
 
 if __name__ == '__main__':

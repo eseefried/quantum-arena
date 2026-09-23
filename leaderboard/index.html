@@ -17,7 +17,7 @@
       <nav class="site-nav" aria-label="Primary">
         <a class="site-nav-link active" href="./index.html">Arena</a>
         <a class="site-nav-link" href="./models.html">Models</a>
-      <a class="site-nav-link" href="./quantumbencheval.html">QuantumBenchEval · Preview</a>
+
       </nav>
     </div>
   </header>
@@ -29,6 +29,7 @@
 
   <main>
     <section class="controls">
+      <div class="control-group"><span class="control-label">Collection</span><div id="collection-tabs" class="segmented"></div></div>
       <div class="control-group" role="tablist" aria-label="View">
         <span class="control-label">View</span>
         <div id="view-tabs" class="segmented"></div>
@@ -49,6 +50,7 @@
       </div>
     </section>
 
+    <section id="qbe-notes" hidden></section>
     <section class="board-wrap">
       <div id="status" class="status">Loading results…</div>
       <table id="board" class="board" hidden>
@@ -86,6 +88,7 @@
     </p>
   </main>
 
+  <script src="./quantumbencheval.js"></script>
   <script src="./leaderboard.js"></script>
 
   <!-- Cloudflare Web Analytics -->

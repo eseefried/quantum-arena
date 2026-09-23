@@ -41,6 +41,9 @@
 
   const state = {
     summary: [],
+    collection: new URLSearchParams(location.search).get("collection") === "qbe" ? "qbe" : "arena",
+    topic: new URLSearchParams(location.search).get("topic") || "T1",
+    variant: "original",
     details: null, // lazy-loaded
     view: "leaderboard",
     dataset: "Overall",
@@ -189,6 +192,16 @@
   // ---- rendering ----
 
   function renderTabs() {
+    el("collection-tabs").innerHTML = "";
+    for (const [key, label] of [["arena", "Existing benchmarks"], ["qbe", "QuantumBenchEval · Preview"]]) {
+      const button = document.createElement("button");
+      button.textContent = label;
+      button.className = state.collection === key ? "active" : "";
+      button.addEventListener("click", () => { state.collection = key; state.selected = null; renderTabs(); renderCurrentView(); });
+      el("collection-tabs").appendChild(button);
+    }
+    el("category-dropdown").parentElement.hidden = state.collection === "qbe";
+
     const viewWrap = el("view-tabs");
     viewWrap.innerHTML = "";
     for (const v of VIEWS) {
@@ -207,8 +220,8 @@
     // The per-problem grid only makes sense within a single dataset, since
     // task IDs/columns don't line up across datasets the way they do for a
     // task-weighted "Overall" average.
-    const dsList = state.view === "problems" ? DATASETS.filter((d) => d !== "Overall") : DATASETS;
-    if (state.view === "problems" && state.dataset === "Overall") {
+    const dsList = state.collection === "qbe" ? ["T1", "T2", "T3", "T4", "T5", "T6"] : state.view === "problems" ? DATASETS.filter((d) => d !== "Overall") : DATASETS;
+    if (state.collection !== "qbe" && state.view === "problems" && state.dataset === "Overall") {
       state.dataset = dsList[0];
     }
 
@@ -217,9 +230,10 @@
     for (const ds of dsList) {
       const btn = document.createElement("button");
       btn.textContent = datasetLabel(ds);
-      btn.className = ds === state.dataset ? "active" : "";
+      btn.className = ds === (state.collection === "qbe" ? state.topic : state.dataset) ? "active" : "";
       btn.addEventListener("click", () => {
-        state.dataset = ds;
+        if (state.collection === "qbe") { state.topic = ds; state.selected = null; }
+        else state.dataset = ds;
         state.category = "All";
         state.expanded = null;
         renderTabs();
@@ -317,7 +331,12 @@
     });
   }
 
+  const originalHead = el("board-head").innerHTML;
   function renderCurrentView() {
+    el("qbe-notes").hidden = state.collection !== "qbe";
+    if (state.collection === "qbe") { window.renderQBE(state, renderCurrentView); return; }
+    el("board-head").innerHTML = originalHead;
+
     const isProblems = state.view === "problems";
     el("problem-detail").hidden = true;
     el("leaderboard-footnote").hidden = isProblems;
@@ -529,7 +548,7 @@
       console.error(e);
       return;
     }
-    if (state.view !== "problems") return; // user switched views before this resolved
+    if (state.collection === "qbe" || state.view !== "problems") return; // user switched views before this resolved
 
     const dataset = state.dataset;
     const rows = detailRowsFor(dataset, state.category);
@@ -706,7 +725,7 @@
     bindCategoryDropdown();
     el("problem-body").addEventListener("click", (event) => {
       const button = event.target.closest(".problem-cell");
-      if (button) selectProblem(button.dataset.model, button.dataset.task);
+      if (button && state.collection !== "qbe") selectProblem(button.dataset.model, button.dataset.task);
     });
     try {
       // Details are loaded eagerly (not just on row-expand) because the
