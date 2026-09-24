@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
 """Build the independent QBE preview; verify saved summaries without executing candidates."""
+import hashlib
 import json
 import math
+import random
 from collections import Counter
 from pathlib import Path
+
+from export_leaderboard import clean_model_name
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / 'qbe_export'
 OUT = ROOT / 'leaderboard'
+REPLICATES, SEED = 10000, 20260922
 TERMINAL = {'passed', 'incorrect', 'candidate_error', 'candidate_unsupported_import',
             'evaluation_crash', 'evaluation_timeout', 'empty_output', 'truncated', 'incomplete_output'}
 
@@ -18,7 +23,7 @@ def read(path):
 
 def metrics(rows, tasks, samples=5):
     values = {}
-    for k in (1, 5):
+    for k in (1, 3, 5):
         estimates = []
         for task in tasks:
             group = [r for r in rows if r['task_id'] == task]
@@ -30,6 +35,44 @@ def metrics(rows, tasks, samples=5):
                 estimates.append(1 - math.comb(n-c, k) / math.comb(n, k) if n-c >= k else 1.0)
         values[str(k)] = sum(estimates)/len(estimates) if estimates else None
     return values
+
+
+def reasoning_label(recorded):
+    """Short reasoning level for the display name; None when nothing was configured."""
+    recorded = (recorded or '').lower()
+    if 'adaptive' in recorded:
+        return 'adaptive'
+    if recorded.startswith('provider default'):
+        return 'default'
+    if not recorded or recorded == 'not explicitly configured':
+        return None
+    return recorded
+
+
+def quantile(sorted_values, q):
+    # Linear interpolation, matching numpy.quantile's default.
+    pos = q * (len(sorted_values) - 1)
+    lo = math.floor(pos)
+    hi = min(lo + 1, len(sorted_values) - 1)
+    return sorted_values[lo] + (sorted_values[hi] - sorted_values[lo]) * (pos - lo)
+
+
+def bootstrap_ci(pairs, key):
+    """Percentile 95% task bootstrap of sum(num)/sum(den) over (num, den) task pairs, as the Arena CIs."""
+    pairs = [p for p in pairs if p[1]]
+    if len(pairs) < 2:
+        return None
+    rng = random.Random(int.from_bytes(hashlib.sha256((str(SEED) + repr(key)).encode()).digest()[:8], 'big'))
+    n, draws = len(pairs), []
+    for _ in range(REPLICATES):
+        sample = [pairs[rng.randrange(n)] for _ in range(n)]
+        draws.append(sum(p[0] for p in sample) / sum(p[1] for p in sample))
+    draws.sort()
+    return [quantile(draws, .025), quantile(draws, .975)]
+
+
+def pass_ci(task_metrics, key):
+    return {k: bootstrap_ci([(m[k], 1) for m in task_metrics if m and m[k] is not None], (*key, k)) for k in ('1', '3', '5')}
 
 
 def check(actual, expected, label):
@@ -60,6 +103,9 @@ def topic_data(model, topic):
                   complete_tasks=sum(sum(r['task_id'] == t for r in rows) == samples for t in tasks),
                   counts=counts, execution_status_counts=execution, unsupported_import_modules=modules,
                   identity=plan.get('model', {}).get('identity', model.name), rows=rows)
+    # Arena display name plus the recorded reasoning level, e.g. "GPT-6 Astra (high)".
+    reasoning = reasoning_label(plan.get('settings', {}).get('reasoning'))
+    result['name'] = clean_model_name(result['identity']) + (f' ({reasoning})' if reasoning else '')
     if topic == 'T3':
         judged = [r['judge'] for r in rows if r['status'] == 'judged']
         result.update(mean_rubric_score=sum(j['total'] for j in judged)/len(judged) if judged else None,
@@ -78,8 +124,9 @@ def topic_data(model, topic):
         for field in ('mean_rubric_score', 'rubric_maximum') if topic == 'T3' else ():
             check(result[field], summary[field], f'{topic} {field}')
         if topic != 'T3':
-            for k, value in result['pass_at_k'].items():
-                check(value, summary['pass_at_k'][k], f'{topic} pass@{k}')
+            # Saved summaries predate pass@3, so only the k values they record are verified.
+            for k, value in summary['pass_at_k'].items():
+                check(result['pass_at_k'][k], value, f'{topic} pass@{k}')
         for row in rows:
             check(row['fingerprint'], summary['fingerprint'], f'{topic} fingerprint')
     return result
@@ -113,6 +160,13 @@ def build_model(model):
             task['pass_at_k'] = metrics(rows, [task['task_id']]) if data['topic'] != 'T3' else None
             if data['topic'] == 'T1':
                 task['corrected_pass_at_k'] = metrics([dict(r, status=r['graded_status']) for r in corrected['rows'] if r['task_id'] == task['task_id']], [task['task_id']])
+    for data in topics:
+        if data['topic'] == 'T3':
+            data['ci'] = bootstrap_ci([(t['mean_rubric_score'] * t['judged_samples'], t['judged_samples'])
+                                       for t in data['task_details'] if t['judged_samples']], (model.name, 'T3'))
+        else:
+            data['ci'] = pass_ci([t['pass_at_k'] for t in data['task_details']], (model.name, data['topic']))
+    corrected['ci'] = pass_ci([t['corrected_pass_at_k'] for t in topics[0]['task_details']], (model.name, 'T1', 'corrected'))
     return dict(key=model.name, topics=topics, corrected=corrected)
 
 

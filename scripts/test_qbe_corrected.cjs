@@ -3,10 +3,10 @@ const data=JSON.parse(fs.readFileSync('leaderboard/quantumbencheval.json'));
 const elements={};global.document={getElementById:id=>elements[id] ||= {innerHTML:'',querySelectorAll:()=>[]}};global.window={};global.fetch=async()=>({ok:true,json:async()=>data});
 vm.runInThisContext(fs.readFileSync('leaderboard/quantumbencheval.js','utf8'));
 (async()=>{
- const state={collection:'qbe',topic:'T1',view:'leaderboard'};
+ const state={collection:'qbe',topic:'T1',view:'leaderboard',qbeModel:'gemini36-flash'};
  await window.renderQBE(state,()=>{});
- assert(elements['board-body'].innerHTML.includes('83.53%'));
- assert(elements['board-body'].innerHTML.includes('94.12%'));
+ assert(elements['board-body'].innerHTML.includes('83.5%'));
+ assert(elements['board-body'].innerHTML.includes('94.1%'));
  assert(!elements['qbe-notes'].innerHTML.includes('Preview'));
  assert(!elements['qbe-notes'].innerHTML.includes('Sample statuses'));
  for(const r of data.topics[0].rows) {

@@ -9,11 +9,11 @@ class PreviewTests(unittest.TestCase):
         rows = [dict(task_id='a', sample_index=i, status='passed') for i in range(5)]
         rows += [dict(task_id='b', sample_index=0, status='passed')]
         rows += [dict(task_id='c', sample_index=i, status='evaluation_environment_failure') for i in range(5)]
-        self.assertEqual(metrics(rows, ['a', 'b', 'c']), {'1': 1.0, '5': 1.0})
+        self.assertEqual(metrics(rows, ['a', 'b', 'c']), {'1': 1.0, '3': 1.0, '5': 1.0})
 
     def test_judged_never_becomes_pass(self):
         rows = [dict(task_id='a', sample_index=i, status='judged') for i in range(5)]
-        self.assertEqual(metrics(rows, ['a']), {'1': None, '5': None})
+        self.assertEqual(metrics(rows, ['a']), {'1': None, '3': None, '5': None})
 
     def test_candidate_failures_remain_in_denominator(self):
         rows = [dict(task_id='a', sample_index=i, status='passed' if i == 0 else 'truncated') for i in range(5)]
