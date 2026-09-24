@@ -8,6 +8,7 @@ __pycache__/
 leaderboard/leaderboard_summary.json
 leaderboard/leaderboard_details.json
 leaderboard/quantumbencheval.json
+leaderboard/qbe_content/
 
 # Original Streamlit app, kept locally only as a logic reference — not part
 # of the published site.

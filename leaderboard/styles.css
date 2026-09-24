@@ -574,3 +574,7 @@ tr.detail-row td {
 @media (prefers-color-scheme: dark) {
   .problem-detail .rubric-score { background: hsl(var(--score-hue) 30% 20%); color: hsl(var(--score-hue) 55% 78%); }
 }
+
+/* In-page links (dataset tables, back links) use the ORNL accent green, not browser-default blue. */
+main a { color: var(--accent); text-decoration: none; font-weight: 600; }
+main a:hover { text-decoration: underline; }

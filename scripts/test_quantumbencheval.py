@@ -34,8 +34,10 @@ class PreviewTests(unittest.TestCase):
     def test_integrated_export(self):
         import json
         data = json.loads((OUT / 'quantumbencheval.json').read_text())
-        self.assertEqual(len(data['topics']), 6)
-        t3 = data['topics'][2]
+        default = next(m for m in data['models'] if m['key'] == 'gemini36-flash')
+        self.assertEqual(len(default['topics']), 6)
+        t3 = default['topics'][2]
+        self.assertEqual(len(json.loads((OUT / 'qbe_content/T3.json').read_text())['models']), len(data['models']))
         self.assertEqual(sum(t['judged_samples'] for t in t3['task_details']), 43)
         self.assertTrue(all(t['pass_at_k'] is None for t in t3['task_details']))
         self.assertEqual(len(t3['task_details']), 15)

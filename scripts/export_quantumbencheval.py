@@ -170,12 +170,48 @@ def build_model(model):
     return dict(key=model.name, topics=topics, corrected=corrected)
 
 
+# The judge request repeats the prompt and code already shown; API bookkeeping is not displayed.
+JUDGE_OMIT = {'request_prompt', 'usage', 'response_id'}
+TASK_STATS = ('task_id', 'sample_count', 'mean_rubric_score', 'judged_samples', 'pass_at_k', 'corrected_pass_at_k')
+
+
+def attempt(row):
+    """Only the fields the inspection panel shows; the model output is stored once."""
+    corrected = row.get('corrected_evaluation')
+    return dict(sample_index=row['sample_index'], status=row['status'], prompt=row.get('prompt'),
+                code=row.get('generation', {}).get('code') or row.get('completion', {}).get('raw_text'),
+                execution=row.get('execution'),
+                judge=row.get('judge') and {k: v for k, v in row['judge'].items() if k not in JUDGE_OMIT},
+                corrected_evaluation=corrected and {k: corrected.get(k) for k in ('graded_status', 'metrics')})
+
+
+
+def by_task(rows):
+    grouped = {}
+    for row in sorted(rows, key=lambda r: r['sample_index']):
+        grouped.setdefault(row['task_id'], []).append(attempt(row))
+    return grouped
+
+
 def main():
     models = [build_model(p) for p in sorted((SOURCE / 'results').iterdir())
               if p.is_dir() and (p / 'T1').exists()]
-    default = next((m for m in models if m['key'] == 'gemini36-flash'), models[0])
     OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / 'quantumbencheval.json').write_text(json.dumps(dict(models=models, topics=default['topics'], corrected=default['corrected'])))
+    # Like the Arena datasets: a small score file loads up front and the prompts, solutions and
+    # model outputs for a topic load only when one of its problem cells is inspected.
+    content_dir = OUT / 'qbe_content'
+    content_dir.mkdir(exist_ok=True)
+    for index, topic in enumerate(f'T{i}' for i in range(1, 7)):
+        content = dict(tasks={t['task_id']: dict(prompt=t.get('prompt'), canonical_solution=t.get('canonical_solution'))
+                              for t in models[0]['topics'][index]['task_details']},
+                       models={m['key']: by_task(m['topics'][index]['rows']) for m in models})
+        (content_dir / f'{topic}.json').write_text(json.dumps(content))
+    for m in models:
+        for data in m['topics']:
+            del data['rows']
+            data['task_details'] = [{k: t.get(k) for k in TASK_STATS} for t in data['task_details']]
+        del m['corrected']['rows']
+    (OUT / 'quantumbencheval.json').write_text(json.dumps(dict(models=models)))
     print(f"Exported {len(models)} models, {sum(len(m['topics']) for m in models)} topic rows")
 
 

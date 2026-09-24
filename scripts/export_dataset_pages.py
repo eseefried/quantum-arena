@@ -22,9 +22,10 @@ INVENTORY = [
     ('QCoder', 'QCoder', 'Quantum coding with judge verdicts', 'Pass@1 / 3 / 5',
      'A 67-problem quantum coding dataset. Its saved evaluations use a Claude judge to assign pass/fail verdicts to model outputs.',
      'Judge versions differ across runs: older runs use claude-sonnet-4-20250514, while newer runs include claude-sonnet-4-6. These verdicts are binary, unlike QuantumBenchEval T3’s numerical rubric. Category and difficulty metadata are not available for this set.'),
-    ('QuantumBenchEval', 'QuantumBenchEval', 'Six scientific quantum-computing topics', 'Pass@1 / 5; T3 rubric',
-     'A 96-problem collection spanning six topics, with five requested samples per problem. The current collection contains one model, Gemini 3.6 Flash, and 480 sample records.',
-     'T1, T2, T4, T5, and T6 use executable correctness checks and report pass@1 and pass@5. T3 reports a mean rubric score on a 0–10 scale, separately from pass rates. No combined score or comparative ranking is presented.'),
+    ('QuantumBenchEval', 'QuantumBenchEval', 'Six scientific quantum-computing topics', 'Pass@1 / 3 / 5; T3 rubric',
+     # {count}, {models}, {model_count} and {records} are filled from the QuantumBenchEval export.
+     'A {count}-problem collection spanning six topics, with five requested samples per problem. It currently covers {model_count} models ({models}), with {records} sample records.',
+     'T1, T2, T4, T5, and T6 use executable correctness checks and report pass@1, pass@3, and pass@5, with 95% task-bootstrap confidence intervals. T3 reports a mean rubric score on a 0–10 scale, separately from pass rates. Arena ranks models within each topic; no combined score across topics is presented.'),
 ]
 
 
@@ -42,6 +43,19 @@ def main():
         if key == 'QuantumBenchEval':
             topics = [json.loads((ROOT / f'qbe_export/datasets/QuantumBenchEval_T{i}.json').read_text()) for i in range(1, 7)]
             count = sum(len(t['tasks']) for t in topics)
+            qbe_path = OUT / 'quantumbencheval.json'
+            if not qbe_path.exists():
+                raise SystemExit('Run python3 scripts/export_quantumbencheval.py first.')
+            qbe = json.loads(qbe_path.read_text())['models']
+            names = [m['topics'][0]['name'] for m in qbe]
+            intro = intro.format(count=count, model_count=len(qbe), models=', '.join(names),
+                                 records=f"{sum(t['samples'] for m in qbe for t in m['topics']):,}")
+            t3 = [m['topics'][2] for m in qbe]
+            judges = sorted({f"{t['judge']['model']} with the {t['judge']['protocol']} protocol" for t in t3})
+            unscored = [f"{t['name']}: {t['samples'] - t['judged_samples']}" for t in t3 if t['judged_samples'] < t['samples']]
+            coverage = (f"T3 is judged by {' and '.join(judges)}. Truncated or otherwise unscored samples are excluded from the mean rather than counted as zero"
+                        + (f"; unscored samples per model are {', '.join(unscored)}." if unscored else '; every T3 sample is scored.')
+                        + ' Execution failures remain distinct from rubric scoring status.')
         else:
             content = json.loads((OUT / f'problem_content/{key}.json').read_text())
             count = len(content['tasks'])
@@ -51,8 +65,8 @@ def main():
         if key == 'QuantumBenchEval':
             body += '<h2>Topics</h2><div class="table-scroll"><table class="board"><thead><tr><th>Topic</th><th>Problems</th><th>Scoring</th></tr></thead><tbody>'
             for i, topic in enumerate(topics, 1):
-                body += f'<tr><td><a href="./index.html?collection=qbe&amp;topic=T{i}">{escape(topic["topic"])}</a></td><td>{len(topic["tasks"])}</td><td>{"Rubric score, 0–10" if i == 3 else "Pass@1 / 5"}</td></tr>'
-            body += '</tbody></table></div><h2>Scoring and coverage</h2><p>T3 uses claude-sonnet-4-6 with the qbe-t3-rubric-v2 protocol. Its mean is 5.6744/10 across 43 scored samples; 32 truncated samples remain unscored. All 75 T3 sample records are present. Execution failures remain distinct from rubric scoring status.</p><h2>T1 scoring variants</h2><p>The original T1 tests require exact shots and optimizer_calls values that were not disclosed to candidates. The corrected replay replaces only these assertions with non-gating resource-closeness measurements, retaining other correctness checks. Arena displays the corrected replay scores, joined to the original prompts and generated code. Original results remain preserved in the source records.</p><p><a href="./index.html?collection=qbe">Explore QuantumBenchEval in Arena →</a></p>'
+                body += f'<tr><td><a href="./index.html?collection=qbe&amp;topic=T{i}">{escape(topic["topic"])}</a></td><td>{len(topic["tasks"])}</td><td>{"Rubric score, 0–10" if i == 3 else "Pass@1 / 3 / 5"}</td></tr>'
+            body += f'</tbody></table></div><h2>Scoring and coverage</h2><p>{escape(coverage)}</p>' + '<h2>T1 scoring variants</h2><p>The original T1 tests require exact shots and optimizer_calls values that were not disclosed to candidates. The corrected replay replaces only these assertions with non-gating resource-closeness measurements, retaining other correctness checks. Arena displays the corrected replay scores, joined to the original prompts and generated code. Original results remain preserved in the source records.</p><p><a href="./index.html?collection=qbe">Explore QuantumBenchEval in Arena →</a></p>'
         else:
             body += '<h2>Reading the results</h2><p>Pass@k estimates the chance of obtaining at least one passing answer from k samples, averaged across problems. Arena displays pass@1, pass@3, and pass@5 from five recorded samples per problem. These are evaluation outcomes, not guarantees about code used elsewhere.</p><p>Select this dataset in Arena to compare model scores, or switch to Problem View to inspect individual attempts.</p><p><a href="./index.html">Open Arena →</a></p>'
         body += '</section>'
