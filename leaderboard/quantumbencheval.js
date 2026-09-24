@@ -42,12 +42,9 @@
     const taskValue = t => rubric ? t.mean_rubric_score : (corrected ? t.corrected_pass_at_k : t.pass_at_k)[metric];
     const notes = el('qbe-notes');
     notes.innerHTML = `<h2>${esc(data.title)}${corrected ? ' · corrected scoring' : ''}</h2>${data.samples < data.expected_samples ? '<p class="footnote">Incomplete recorded coverage.</p>' : ''}`;
-    notes.innerHTML += `<label>Inspect model <select id="qbe-model-select">${models.map(m => `<option value="${esc(m.key)}" ${m.key===active.key?'selected':''}>${esc(m.topics[0].identity)}</option>`).join('')}</select></label><p class="footnote">T1 uses corrected tests; original outcomes are retained in sample details. T2 evaluation_cost and T6 reproducibility scoring issues remain uncorrected. T3 is a rubric score, not a pass rate.</p>`;
-    el('qbe-model-select').onchange = e => { state.qbeModel=e.target.value; state.selected=null; state.attempt=0; refresh(); };
+    notes.innerHTML += `<p class="footnote">T1 uses corrected tests; original outcomes are retained in sample details. T2 evaluation_cost and T6 reproducibility scoring issues remain uncorrected. T3 is a rubric score, not a pass rate.</p>`;
     el('status').hidden = true;
     const headers = rubric ? '<th>Mean rubric score</th><th>Scale</th><th>Judge</th>' : '<th class="sortable" data-metric="pass_at_1">Pass@1</th><th class="sortable" data-metric="pass_at_5">Pass@5</th>';
-    const cells = rubric ? `<td>${score(data.mean_rubric_score)}</td><td>0–${esc(data.rubric_maximum.join('/'))}</td><td>${esc(data.judge.model)}</td>` : `<td class="metric-value">${pct(result.pass_at_k['1'])}</td><td class="metric-value">${pct(result.pass_at_k['5'])}</td>`;
-    const model = `<td class="model-name">${esc(data.identity)}${corrected ? '<small> · corrected T1</small>' : ''}</td>`;
     if (state.view === 'leaderboard') {
       el('board-head').innerHTML = `<th>Model</th>${headers}<th>Tasks</th><th>Samples${rubric ? ' / scored' : ''}</th>`;
       const tableRows = models.map(m => {
@@ -61,15 +58,24 @@
       return;
     }
     el('problem-head').innerHTML = `<th class="problem-sticky">Model</th>${headers}${tasks.map((t,i) => `<th class="col-task" title="${esc(t.task_id)}">${i+1}</th>`).join('')}`;
-    el('problem-body').innerHTML = `<tr>${model}${cells}${tasks.map(t => {
-      const value = taskValue(t);
-      const label = rubric ? `${score(value)} / ${data.rubric_maximum.join('/')} · ${t.judged_samples}/5 scored` : pct(value);
-      // Color rubric points on their own scale; they remain scores, not pass rates.
-      const background = value == null ? 'var(--accent-soft)' : heatColor(rubric ? value / data.rubric_maximum[0] : value);
-      return `<td class="cell-task"><button class="problem-cell" style="background:${background}" data-qbe-task="${esc(t.task_id)}" title="${esc(t.task_id)}: ${label}" aria-label="${esc(t.task_id)}: ${label}" aria-controls="problem-detail" aria-pressed="${state.selected === t.task_id}">${rubric ? score(value) : ''}</button></td>`;
-    }).join('')}</tr>`;
+    const problemRows = models.map(m => {
+      const topic = m.topics.find(t => t.topic === data.topic);
+      const summary = corrected ? m.corrected : topic;
+      const value = rubric ? topic.mean_rubric_score : summary.pass_at_k[metric];
+      const cells = rubric ? `<td>${score(topic.mean_rubric_score)}</td><td>0–${esc(topic.rubric_maximum.join('/'))}</td><td>${esc(topic.judge.model)}</td>` : `<td>${pct(summary.pass_at_k['1'])}</td><td>${pct(summary.pass_at_k['5'])}</td>`;
+      const byId = new Map(topic.task_details.map(t => [t.task_id, t]));
+      const html = `<tr><td class="model-name problem-sticky">${esc(topic.identity)}</td>${cells}${tasks.map(column => {
+        const t = byId.get(column.task_id);
+        const value = t ? taskValue(t) : null;
+        const label = rubric ? `${score(value)} / ${topic.rubric_maximum.join('/')} · ${t?.judged_samples ?? 0}/5 scored` : pct(value);
+        const background = value == null ? 'var(--accent-soft)' : heatColor(rubric ? value / topic.rubric_maximum[0] : value);
+        return `<td class="cell-task"><button class="problem-cell" style="background:${background}" data-qbe-model="${esc(m.key)}" data-qbe-task="${esc(column.task_id)}" title="${esc(topic.identity)} · ${esc(column.task_id)}: ${label}" aria-label="${esc(topic.identity)} · ${esc(column.task_id)}: ${label}" aria-controls="problem-detail" aria-pressed="${state.qbeModel === m.key && state.selected === column.task_id}">${rubric ? score(value) : ''}</button></td>`;
+      }).join('')}</tr>`;
+      return {value, html};
+    }).sort((a,b) => (b.value ?? -1) - (a.value ?? -1));
+    el('problem-body').innerHTML = problemRows.map(r => r.html).join('');
     el('problem-wrap').hidden = false;
-    el('problem-body').querySelectorAll('[data-qbe-task]').forEach(b => b.onclick = () => { state.selected = b.dataset.qbeTask; state.attempt = 0; refresh(); });
+    el('problem-body').querySelectorAll('[data-qbe-task]').forEach(b => b.onclick = () => { state.qbeModel = b.dataset.qbeModel; state.selected = b.dataset.qbeTask; state.attempt = 0; refresh(); });
     const panel = el('problem-detail'); panel.hidden = false;
     const task = tasks.find(t => t.task_id === state.selected);
     if (!task) { panel.innerHTML = '<p class="inspection-placeholder">Select a problem cell to inspect its prompt, reference solution, and sample outputs.</p>'; return; }
@@ -88,7 +94,7 @@
     };
     const selected = presentation(attempt);
     const index = tasks.indexOf(task);
-    panel.innerHTML = `<header class="inspection-header"><div><h2>Problem ${index+1}</h2><div class="inspection-chips"><span>${esc(task.task_id)}</span><span>${esc(data.topic)}</span></div><p>${task.sample_count}/5 sample records${rubric ? ` · ${task.judged_samples}/5 rubric scores · mean ${score(task.mean_rubric_score)} / ${data.rubric_maximum.join('/')}` : ` · Pass@${metric}: ${pct(taskValue(task))}`}</p></div><nav class="problem-navigation"><button data-step="-1" ${index===0?'disabled':''}>← Previous problem</button><button data-step="1" ${index===tasks.length-1?'disabled':''}>Next problem →</button></nav></header><div class="inspection-columns"><section class="inspection-card"><h3>Problem Prompt</h3><pre class="inspection-prompt">${esc(attempt?.prompt || task.prompt)}</pre></section><section class="inspection-card"><h3>Canonical Solution</h3>${code(task.canonical_solution)}</section><section class="inspection-card"><h3>Model Outputs</h3><div class="attempt-tabs" role="tablist" aria-label="Model attempts">${Array.from({length:5},(_,i) => { const r=rows.find(r=>r.sample_index===i), display=presentation(r); return `<button id="qbe-attempt-${i}" role="tab" aria-controls="qbe-attempt-output" class="${display.tone}" style="${display.style}" data-attempt="${i}" aria-selected="${i===state.attempt}">Attempt ${i+1}<span>${esc(display.label)}</span></button>`; }).join('')}</div><div id="qbe-attempt-output" role="tabpanel" aria-labelledby="qbe-attempt-${state.attempt}" class="attempt-output ${selected.tone}" style="${selected.style}">${code(attempt?.generation?.code || attempt?.completion?.raw_text || 'No output available.')}<p class="evaluation-result">${esc(selected.label)}</p><details><summary>Evaluation details${rubric ? ' and rubric' : ''}</summary>${code(corrected ? {status:replay?.graded_status, metrics:replay?.metrics} : {status:attempt?.status, execution:attempt?.execution, judge:attempt?.judge})}</details></div></section></div>`;
+    panel.innerHTML = `<header class="inspection-header"><div><h2>Problem ${index+1}</h2><div class="inspection-chips"><span>${esc(task.task_id)}</span><span>${esc(data.topic)}</span><span>${esc(data.identity)}</span></div><p>${task.sample_count}/5 sample records${rubric ? ` · ${task.judged_samples}/5 rubric scores · mean ${score(task.mean_rubric_score)} / ${data.rubric_maximum.join('/')}` : ` · Pass@${metric}: ${pct(taskValue(task))}`}</p></div><nav class="problem-navigation"><button data-step="-1" ${index===0?'disabled':''}>← Previous problem</button><button data-step="1" ${index===tasks.length-1?'disabled':''}>Next problem →</button></nav></header><div class="inspection-columns"><section class="inspection-card"><h3>Problem Prompt</h3><pre class="inspection-prompt">${esc(attempt?.prompt || task.prompt)}</pre></section><section class="inspection-card"><h3>Canonical Solution</h3>${code(task.canonical_solution)}</section><section class="inspection-card"><h3>Model Outputs</h3><div class="attempt-tabs" role="tablist" aria-label="Model attempts">${Array.from({length:5},(_,i) => { const r=rows.find(r=>r.sample_index===i), display=presentation(r); return `<button id="qbe-attempt-${i}" role="tab" aria-controls="qbe-attempt-output" class="${display.tone}" style="${display.style}" data-attempt="${i}" aria-selected="${i===state.attempt}">Attempt ${i+1}<span>${esc(display.label)}</span></button>`; }).join('')}</div><div id="qbe-attempt-output" role="tabpanel" aria-labelledby="qbe-attempt-${state.attempt}" class="attempt-output ${selected.tone}" style="${selected.style}">${code(attempt?.generation?.code || attempt?.completion?.raw_text || 'No output available.')}<p class="evaluation-result">${esc(selected.label)}</p><details><summary>Evaluation details${rubric ? ' and rubric' : ''}</summary>${code(corrected ? {status:replay?.graded_status, metrics:replay?.metrics} : {status:attempt?.status, execution:attempt?.execution, judge:attempt?.judge})}</details></div></section></div>`;
     panel.querySelectorAll('[data-attempt]').forEach(b => b.onclick = () => { state.attempt=Number(b.dataset.attempt); refresh(); });
     panel.querySelectorAll('[data-step]').forEach(b => b.onclick = () => { state.selected=tasks[index+Number(b.dataset.step)].task_id; state.attempt=0; refresh(); });
   };
