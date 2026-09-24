@@ -1,0 +1,172 @@
+[T5 1/17] t5_0 sample 1/5
+INFO:assistants.base_assistant:Initialized OpenAIGPTAssistant with model gpt-6-astra
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 1/17] t5_0 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 1/17] t5_0 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 1/17] t5_0 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 1/17] t5_0 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 2/17] t5_1 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 2/17] t5_1 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 2/17] t5_1 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 2/17] t5_1 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 2/17] t5_1 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 3/17] t5_2 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 3/17] t5_2 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 3/17] t5_2 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 3/17] t5_2 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 3/17] t5_2 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 4/17] t5_3 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 4/17] t5_3 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 4/17] t5_3 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 4/17] t5_3 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 4/17] t5_3 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 5/17] t5_4 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 5/17] t5_4 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 5/17] t5_4 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 5/17] t5_4 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 5/17] t5_4 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 6/17] t5_5 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 6/17] t5_5 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 6/17] t5_5 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 6/17] t5_5 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 6/17] t5_5 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 7/17] t5_6 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 7/17] t5_6 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 7/17] t5_6 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 7/17] t5_6 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 7/17] t5_6 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 8/17] t5_7 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 8/17] t5_7 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 8/17] t5_7 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 8/17] t5_7 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 8/17] t5_7 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 9/17] t5_8 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 9/17] t5_8 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 9/17] t5_8 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 9/17] t5_8 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 9/17] t5_8 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 10/17] t5_9 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 10/17] t5_9 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 10/17] t5_9 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 10/17] t5_9 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 10/17] t5_9 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 11/17] t5_10 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 11/17] t5_10 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 11/17] t5_10 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 11/17] t5_10 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 11/17] t5_10 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 12/17] t5_11 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 12/17] t5_11 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 12/17] t5_11 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 12/17] t5_11 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 12/17] t5_11 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 13/17] t5_12 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 13/17] t5_12 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 13/17] t5_12 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 13/17] t5_12 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 13/17] t5_12 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 14/17] t5_13 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 14/17] t5_13 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 14/17] t5_13 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 14/17] t5_13 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 14/17] t5_13 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 15/17] t5_14 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 15/17] t5_14 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 15/17] t5_14 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 15/17] t5_14 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 15/17] t5_14 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 16/17] t5_15 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 16/17] t5_15 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 16/17] t5_15 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 16/17] t5_15 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 16/17] t5_15 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 17/17] t5_16 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 17/17] t5_16 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 17/17] t5_16 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 17/17] t5_16 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[T5 17/17] t5_16 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+{"status": "completed", "counts": {"candidate_error": 50, "passed": 34, "candidate_unsupported_import": 1}, "expected_samples": 85, "fingerprint": "9524ef6a68cee3d5cacf8f652377346b85d56073d58dfe94811f44a4c2a5ab5a", "execution_status_counts": {"passed": 34, "candidate_error": 50, "candidate_unsupported_import": 1}, "unsupported_import_modules": {"qiskiskit": 1}, "pass_at_k": {"1": 0.39999999999999997, "5": 0.6470588235294118}, "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."}

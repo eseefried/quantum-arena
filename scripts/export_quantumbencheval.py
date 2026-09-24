@@ -85,10 +85,9 @@ def topic_data(model, topic):
     return result
 
 
-def main():
-    model = SOURCE / 'results/gemini36-flash'
+def build_model(model):
     topics = [topic_data(model, f'T{i}') for i in range(1,7)]
-    corrected = read(SOURCE / 't1_corrected/gemini36-flash_t1_graded.json')
+    corrected = read(SOURCE / 't1_corrected' / f'{model.name}_t1_graded.json')
     original = {(r['task_id'],r['sample_index']):r['status'] for r in topics[0]['rows']}
     replay = {(r['task_id'],r['sample_index']):r['original_status'] for r in corrected['rows']}
     check(replay, original, 'corrected replay source slots and statuses')
@@ -114,13 +113,16 @@ def main():
             task['pass_at_k'] = metrics(rows, [task['task_id']]) if data['topic'] != 'T3' else None
             if data['topic'] == 'T1':
                 task['corrected_pass_at_k'] = metrics([dict(r, status=r['graded_status']) for r in corrected['rows'] if r['task_id'] == task['task_id']], [task['task_id']])
-    (OUT / 'quantumbencheval.json').write_text(json.dumps(dict(topics=topics, corrected=corrected)))
-    # Retain old preview URLs as links into Arena, not a separate collection UI.
-    for data in topics:
-        name = 'quantumbencheval' + ('' if data['topic'] == 'T1' else '-'+data['topic'])
-        target = './index.html?collection=qbe&topic=' + data['topic']
-        (OUT / f'{name}.html').write_text(f'<!doctype html><html lang="en"><meta charset="utf-8"><title>QuantumBenchEval</title><meta http-equiv="refresh" content="0;url={target}"><a href="{target}">Open QuantumBenchEval in Arena</a></html>')
-    print('Corrected T1:', corrected['pass_at_k'])
+    return dict(key=model.name, topics=topics, corrected=corrected)
+
+
+def main():
+    models = [build_model(p) for p in sorted((SOURCE / 'results').iterdir())
+              if p.is_dir() and (p / 'T1').exists()]
+    default = next((m for m in models if m['key'] == 'gemini36-flash'), models[0])
+    OUT.mkdir(parents=True, exist_ok=True)
+    (OUT / 'quantumbencheval.json').write_text(json.dumps(dict(models=models, topics=default['topics'], corrected=default['corrected'])))
+    print(f"Exported {len(models)} models, {sum(len(m['topics']) for m in models)} topic rows")
 
 
 if __name__ == '__main__':

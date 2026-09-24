@@ -1,0 +1,158 @@
+{
+  "model": "gemini3-flash",
+  "topics": {
+    "T1": {
+      "counts": {
+        "candidate_error": 65,
+        "incorrect": 16,
+        "candidate_unsupported_import": 4
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "candidate_error": 65,
+        "incorrect": 16,
+        "candidate_unsupported_import": 4
+      },
+      "unsupported_import_modules": {
+        "qiskit_optimization.converters.QuadraticProgramToIsing": 1,
+        "qiskit_aer.Sampler": 2,
+        "qiskit.transpiler.passes.Unroller": 1
+      }
+    },
+    "T2": {
+      "counts": {
+        "candidate_error": 43,
+        "incorrect": 28,
+        "candidate_unsupported_import": 3,
+        "empty_output": 1
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "candidate_error": 43,
+        "incorrect": 28,
+        "candidate_unsupported_import": 3,
+        "not_executed": 1
+      },
+      "unsupported_import_modules": {
+        "qiskit_optimization.algorithms.SolutionStatus": 1,
+        "qiskit_aer.Sampler": 1,
+        "qiskit_optimization.problems.OptimizationResultStatus": 1
+      }
+    },
+    "T3": {
+      "counts": {
+        "judged": 75
+      },
+      "pass_at_k": null,
+      "mean_rubric_score": 4.986666666666666,
+      "rubric_maximum": [
+        10
+      ],
+      "execution_status_counts": {
+        "candidate_error": 16,
+        "candidate_unsupported_import": 16,
+        "executed": 43
+      },
+      "unsupported_import_modules": {
+        "pyscf": 13,
+        "qiskit_algorithms.utils.EstimatorResult": 1,
+        "qiskit.transpiler.passes.Unroller": 1,
+        "qiskit_algorithms.utils.AlgorithmGlobals": 1
+      },
+      "generation_providers": {
+        "vendor_api": 75
+      },
+      "judge_providers": {
+        "perplexity": 74,
+        "anthropic": 1
+      }
+    },
+    "T4": {
+      "counts": {
+        "incorrect": 31,
+        "passed": 19,
+        "candidate_error": 14,
+        "evaluation_timeout": 10,
+        "candidate_unsupported_import": 1
+      },
+      "pass_at_k": {
+        "1": 0.2533333333333333,
+        "5": 0.4666666666666667
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "incorrect": 31,
+        "passed": 19,
+        "evaluation_timeout": 10,
+        "candidate_error": 14,
+        "candidate_unsupported_import": 1
+      },
+      "unsupported_import_modules": {
+        "scipy.linalg.eigsh": 1
+      }
+    },
+    "T5": {
+      "counts": {
+        "incorrect": 27,
+        "candidate_unsupported_import": 37,
+        "passed": 12,
+        "candidate_error": 9
+      },
+      "pass_at_k": {
+        "1": 0.1411764705882353,
+        "5": 0.4117647058823529
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "incorrect": 27,
+        "candidate_unsupported_import": 37,
+        "candidate_error": 9,
+        "passed": 12
+      },
+      "unsupported_import_modules": {
+        "qiskit_optimization.converters.QuadraticProgramToIsing": 30,
+        "qiskit_optimization.applications.MaximumIndependentSet": 4,
+        "qiskit_optimization.applications.IndependentSet": 1,
+        "qiskit_optimization.translators.from_networkx_graph": 1,
+        "qiskit_optimization.converters.LinearConstraintToPenalty": 1
+      }
+    },
+    "T6": {
+      "counts": {
+        "candidate_unsupported_import": 21,
+        "candidate_error": 28,
+        "passed": 24,
+        "incorrect": 12
+      },
+      "pass_at_k": {
+        "1": 0.2823529411764706,
+        "5": 0.7647058823529411
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "passed": 24,
+        "candidate_error": 28,
+        "candidate_unsupported_import": 21,
+        "incorrect": 12
+      },
+      "unsupported_import_modules": {
+        "qiskit_optimization.converters.QuadraticProgramToIsing": 14,
+        "networkx.community": 6,
+        "qiskit_algorithms.utils.AlgorithmGlobals": 1
+      }
+    }
+  }
+}

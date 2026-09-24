@@ -1,0 +1,40 @@
+{
+  "status": "completed",
+  "counts": {
+    "truncated": 2,
+    "candidate_error": 53,
+    "candidate_unsupported_import": 20
+  },
+  "expected_samples": 75,
+  "fingerprint": "8e4c55a64156b76c5a0b3be1b777d2d67690c834f7d64a97c8545dc4ee6710f1",
+  "execution_status_counts": {
+    "candidate_error": 53,
+    "candidate_unsupported_import": 20,
+    "not_executed": 2
+  },
+  "unsupported_import_modules": {
+    "dwave_neal": 1,
+    "dimod.Variable": 2,
+    "dimod.BQO": 1,
+    "dwave_binary_quadratic_modeling": 1,
+    "dimod.VariableBin": 1,
+    "dimod.GridQUBO": 1,
+    "dimod.BQProblem": 1,
+    "qiskit_optimization.BQAOptimizer": 1,
+    "dwave_binary": 1,
+    "dimod.VariableBinary": 1,
+    "dwave.system": 2,
+    "qiskit_algorithms.DW_Naive_Clique": 1,
+    "dwave_networkx": 1,
+    "qiskit.BasicAer": 1,
+    "dimod.AllOnesPauliChain": 1,
+    "qiskit.QuantumSimulator": 1,
+    "dimod.ContinuousVariableBinary": 1,
+    "qiskit.algorithms": 1
+  },
+  "pass_at_k": {
+    "1": 0.0,
+    "5": 0.0
+  },
+  "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."
+}

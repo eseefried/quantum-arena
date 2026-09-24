@@ -1,0 +1,23 @@
+{
+  "status": "completed",
+  "counts": {
+    "judged": 75
+  },
+  "expected_samples": 75,
+  "fingerprint": "931fd1ba2ee3720471cceda4be82f74be3dd5682808141c9638505426e9c10a9",
+  "execution_status_counts": {
+    "candidate_error": 25,
+    "executed": 29,
+    "candidate_unsupported_import": 13,
+    "evaluation_timeout": 8
+  },
+  "unsupported_import_modules": {
+    "openfermion": 3,
+    "qiskit_algorithms.optimizers.BFGS": 1,
+    "pyscf": 9
+  },
+  "mean_rubric_score": 4.866666666666666,
+  "rubric_maximum": [
+    10
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "status": "completed",
+  "counts": {
+    "candidate_error": 34,
+    "candidate_unsupported_import": 51
+  },
+  "expected_samples": 85,
+  "fingerprint": "251fefe46714db6e23d9cfab4c20255472794bd3ba906e29f2affb796683acff",
+  "execution_status_counts": {
+    "candidate_unsupported_import": 51,
+    "candidate_error": 34
+  },
+  "unsupported_import_modules": {
+    "dwave_networkx": 1,
+    "pennylane.qc": 1,
+    "pennylane.qchem.QubitEmbedding": 4,
+    "qiskit.Aer": 15,
+    "pennylane.qchem.qaoa_ansatz": 1,
+    "dimod.bindings": 1,
+    "pennylane.qfunc": 3,
+    "dwave.qbsolver": 1,
+    "pennylane.qchem.qc_from_molecule": 1,
+    "qiskit.visualization.plot_circuit": 1,
+    "qiskit.execute": 3,
+    "pennylane.qchem.qaoa": 3,
+    "pennylane.qchem.qchem": 1,
+    "pennylane.qchem.qaoa_energies": 1,
+    "quantum_api": 1,
+    "dwave.qbsolv": 1,
+    "pennylane.qaoa.QAOA": 1,
+    "dimod.backends": 1,
+    "pennylane.qfn": 1,
+    "pennylane.wfo_devices": 1,
+    "pennylane_qiskit": 1,
+    "pennylane.numpy_qfunc": 1,
+    "dimod.Binning": 1,
+    "pennylane.qchem.qc": 1,
+    "dimod.MaxSatisfyProblem": 1,
+    "pennylane.qchem.qaoa_energy": 1,
+    "pennylane.qfunction": 1,
+    "pennylane.qchem.MolAtom": 1
+  },
+  "pass_at_k": {
+    "1": 0.0,
+    "5": 0.0
+  },
+  "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."
+}

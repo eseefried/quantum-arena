@@ -1,0 +1,35 @@
+{
+  "status": "completed",
+  "counts": {
+    "judged": 75
+  },
+  "expected_samples": 75,
+  "fingerprint": "bcb14aa716282bd393e5534cf43f1c3c2e4854b669eb2975ac6113ab27e1b62f",
+  "execution_status_counts": {
+    "candidate_unsupported_import": 59,
+    "candidate_error": 15,
+    "executed": 1
+  },
+  "unsupported_import_modules": {
+    "qiskit.algorithms": 20,
+    "qiskit_optimizer": 4,
+    "qiskit.chemistry": 6,
+    "qiskit.opcodes": 1,
+    "qiskit.Aer": 14,
+    "qiskit_optimization.QOXPO": 1,
+    "qiskit.opflow": 2,
+    "qutip": 2,
+    "qiskit_optimization.QOOptimizer": 1,
+    "pennylane.PauliMap": 1,
+    "qiskit.circuit.library.ZZNoise": 2,
+    "qiskit_algorithms.VQESolver": 1,
+    "qiskit_algorithms.EstimationTask": 1,
+    "qiskit_algorithms.EstimationOptimizer": 1,
+    "qiskit.quantum_info.PauliExpectation": 1,
+    "qiskit.circuit.library.ZZGate": 1
+  },
+  "mean_rubric_score": 1.5866666666666667,
+  "rubric_maximum": [
+    10
+  ]
+}

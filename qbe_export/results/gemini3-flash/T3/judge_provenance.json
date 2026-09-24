@@ -1,0 +1,70 @@
+{
+  "events": [
+    {
+      "kind": "provider_transition",
+      "at_utc": "2026-09-24T00:41:49Z",
+      "provider_before": "anthropic",
+      "provider_after": "perplexity",
+      "judge_config": {
+        "model": "claude-sonnet-4-6",
+        "temperature": 0.0,
+        "max_tokens": 2048,
+        "protocol": "qbe-t3-rubric-v2"
+      },
+      "requested_api_model": "anthropic/claude-sonnet-4-6",
+      "base_url": "https://api.perplexity.ai/v1",
+      "unchanged": "qbe.evaluate.judge_t3 executed as-is: prompt, rubric schema, max_tokens, temperature, score validation and deterministic energy scoring are unchanged; only the transport differs",
+      "samples_judged_before": {
+        "anthropic": 1
+      },
+      "transport_module_sha256": "d9fcaf08505be2ad4a408c09c3d3eee588fade52fc51ac5b5504d61ee0a6c141",
+      "reason": "Anthropic API credit exhausted",
+      "serving_note": "Requested via Perplexity under an Anthropic-style model ID. Identical serving behaviour to Anthropic's own API is not claimed; compare judge_model_returned and the scores, not the ID."
+    },
+    {
+      "kind": "session",
+      "started_utc": "2026-09-24T00:41:49Z",
+      "provider": "perplexity",
+      "ended_utc": "2026-09-24T00:42:55Z",
+      "judged_by_provider_after": {
+        "anthropic": 1,
+        "judge_failure": 1
+      },
+      "judged_this_session": 0
+    },
+    {
+      "kind": "session",
+      "started_utc": "2026-09-24T13:54:25Z",
+      "provider": "perplexity",
+      "ended_utc": "2026-09-24T14:20:22Z",
+      "judged_by_provider_after": {
+        "perplexity": 25,
+        "anthropic": 1
+      },
+      "judged_this_session": 25
+    },
+    {
+      "kind": "session",
+      "started_utc": "2026-09-24T14:22:27Z",
+      "provider": "perplexity",
+      "ended_utc": "2026-09-24T14:55:40Z",
+      "judged_by_provider_after": {
+        "perplexity": 69,
+        "anthropic": 1
+      },
+      "judged_this_session": 44
+    },
+    {
+      "kind": "session",
+      "started_utc": "2026-09-24T14:57:46Z",
+      "provider": "perplexity",
+      "ended_utc": "2026-09-24T15:01:35Z",
+      "judged_by_provider_after": {
+        "perplexity": 74,
+        "anthropic": 1
+      },
+      "judged_this_session": 5
+    }
+  ],
+  "current_provider": "perplexity"
+}

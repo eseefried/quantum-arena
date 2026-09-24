@@ -1,0 +1,27 @@
+{
+  "status": "completed",
+  "counts": {
+    "candidate_error": 43,
+    "incorrect": 28,
+    "candidate_unsupported_import": 3,
+    "empty_output": 1
+  },
+  "expected_samples": 75,
+  "fingerprint": "a77cc865d217386a467170b29553c282a8d636d640a091d8116190c9728c231f",
+  "execution_status_counts": {
+    "candidate_error": 43,
+    "incorrect": 28,
+    "candidate_unsupported_import": 3,
+    "not_executed": 1
+  },
+  "unsupported_import_modules": {
+    "qiskit_optimization.algorithms.SolutionStatus": 1,
+    "qiskit_aer.Sampler": 1,
+    "qiskit_optimization.problems.OptimizationResultStatus": 1
+  },
+  "pass_at_k": {
+    "1": 0.0,
+    "5": 0.0
+  },
+  "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."
+}

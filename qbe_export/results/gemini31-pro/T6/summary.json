@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "counts": {
+    "incorrect": 41,
+    "candidate_error": 23,
+    "passed": 18,
+    "candidate_unsupported_import": 2,
+    "evaluation_timeout": 1
+  },
+  "expected_samples": 85,
+  "fingerprint": "fca166d5a8461f30c3233a504b88a4b77aaad283e506391b2d5b472331179136",
+  "execution_status_counts": {
+    "incorrect": 41,
+    "candidate_error": 23,
+    "passed": 18,
+    "evaluation_timeout": 1,
+    "candidate_unsupported_import": 2
+  },
+  "unsupported_import_modules": {
+    "networkx.community": 1,
+    "qiskit_algorithms.QAOAAnsatz": 1
+  },
+  "pass_at_k": {
+    "1": 0.2117647058823529,
+    "5": 0.7058823529411765
+  },
+  "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."
+}

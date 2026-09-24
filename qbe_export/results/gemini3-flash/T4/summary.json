@@ -1,0 +1,27 @@
+{
+  "status": "completed",
+  "counts": {
+    "incorrect": 31,
+    "passed": 19,
+    "candidate_error": 14,
+    "evaluation_timeout": 10,
+    "candidate_unsupported_import": 1
+  },
+  "expected_samples": 75,
+  "fingerprint": "6b2b4d6dc320e722ecc34d41f941d5647210b74b375f07c70db987a7c22ab3ef",
+  "execution_status_counts": {
+    "incorrect": 31,
+    "passed": 19,
+    "evaluation_timeout": 10,
+    "candidate_error": 14,
+    "candidate_unsupported_import": 1
+  },
+  "unsupported_import_modules": {
+    "scipy.linalg.eigsh": 1
+  },
+  "pass_at_k": {
+    "1": 0.2533333333333333,
+    "5": 0.4666666666666667
+  },
+  "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."
+}

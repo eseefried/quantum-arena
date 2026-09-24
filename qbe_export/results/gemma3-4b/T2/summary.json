@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "counts": {
+    "candidate_unsupported_import": 71,
+    "candidate_error": 3,
+    "incorrect": 1
+  },
+  "expected_samples": 75,
+  "fingerprint": "0f294ba6d8dadc47eb598f9fef6466e3b1107c1553e90648b56b3a6dd584736c",
+  "execution_status_counts": {
+    "candidate_unsupported_import": 71,
+    "candidate_error": 3,
+    "incorrect": 1
+  },
+  "unsupported_import_modules": {
+    "qiskit.Aer": 29,
+    "qiskit.algorithms": 24,
+    "qiskit_optimization.QOOptimizer": 2,
+    "dwave.system": 5,
+    "qiskit_optimization.algorithms.QAOA": 6,
+    "qiskit.providers.aer": 1,
+    "qiskit_optimization.QWalkSat": 1,
+    "dimod.algorithms": 1,
+    "dimod.api": 1,
+    "dimod.knapsack": 1
+  },
+  "pass_at_k": {
+    "1": 0.0,
+    "5": 0.0
+  },
+  "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."
+}

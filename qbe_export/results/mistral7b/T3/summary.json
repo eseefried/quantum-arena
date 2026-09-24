@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "counts": {
+    "judged": 75
+  },
+  "expected_samples": 75,
+  "fingerprint": "156d61c7a4c8d65bf77f874205c1e785d7415bceb2af12f0e428236a5c4eab89",
+  "execution_status_counts": {
+    "candidate_unsupported_import": 52,
+    "candidate_error": 23
+  },
+  "unsupported_import_modules": {
+    "qiskit.execute": 13,
+    "pennylane.qchem.QubitMolecularData": 1,
+    "scipy.special.exp_int_1_1": 1,
+    "qiskit.Aer": 25,
+    "qiskit.Qubit": 3,
+    "scipy.constants.Bohr": 1,
+    "qiskit.chemistry": 2,
+    "scipy.sparse.cite_matrix": 1,
+    "openfermion": 4,
+    "scipy.sparse.linalg.eigh": 1
+  },
+  "mean_rubric_score": 1.4,
+  "rubric_maximum": [
+    10
+  ]
+}

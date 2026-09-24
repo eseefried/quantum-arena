@@ -1,0 +1,41 @@
+{
+  "status": "completed",
+  "counts": {
+    "judged": 70,
+    "truncated": 5
+  },
+  "expected_samples": 75,
+  "fingerprint": "bfc9b905005a480c746c6b8904fe469f9012a766b079cf3d08fa6b64eeacaff2",
+  "execution_status_counts": {
+    "candidate_error": 32,
+    "not_executed": 5,
+    "candidate_unsupported_import": 38
+  },
+  "unsupported_import_modules": {
+    "pennylane.qml": 8,
+    "pennylane.QuantumCircuit": 1,
+    "qiskit.circuit.library.ZZgate": 1,
+    "qiskit.algorithms": 4,
+    "qiskit.execute": 3,
+    "pennylane.qobj": 1,
+    "pennylane.qml_jwtfim": 1,
+    "pennylane.qml_jax": 1,
+    "pennylane.quantum_circuit": 2,
+    "pennylane.numpy_qasm": 1,
+    "pennylane.qubit_encoding": 1,
+    "qiskit.BasicAer": 3,
+    "openfermion": 1,
+    "qiskit.Aer": 2,
+    "pennylane.symbols": 1,
+    "qiskit.optimization": 2,
+    "qiskit.aqua": 1,
+    "qiskit_aqua": 1,
+    "aqtk": 1,
+    "pennylane.Basis": 1,
+    "qiskit_aer.BasicAer": 1
+  },
+  "mean_rubric_score": 1.1428571428571428,
+  "rubric_maximum": [
+    10
+  ]
+}

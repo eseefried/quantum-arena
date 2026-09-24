@@ -1,0 +1,182 @@
+[T6 1/17] t6_0 sample 1/5
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 1237.28it/s]
+INFO:assistants.base_assistant:Initialized Gemma3Assistant with model /mnt/zgx2-shared/AS-HybridQuantumBench/runs/quantumbencheval_t1-6/gemma-v3-c/cache/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767
+`torch_dtype` is deprecated! Use `dtype` instead!
+/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:283: UserWarning: 
+    Found GPU0 NVIDIA GB10 which is of cuda capability 12.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (8.0) - (12.0)
+    
+  warnings.warn(
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   0%|          | 1/883 [00:15<3:41:33, 15.07s/it]Loading weights:   0%|          | 3/883 [00:16<1:03:31,  4.33s/it]Loading weights:   0%|          | 4/883 [00:16<44:17,  3.02s/it]  Loading weights:   1%|          | 9/883 [00:17<13:12,  1.10it/s]Loading weights:   1%|          | 11/883 [00:17<09:34,  1.52it/s]Loading weights:   2%|▏         | 16/883 [00:18<06:04,  2.38it/s]Loading weights:   2%|▏         | 18/883 [00:18<05:35,  2.58it/s]Loading weights:   3%|▎         | 24/883 [00:18<03:02,  4.72it/s]Loading weights:   3%|▎         | 26/883 [00:18<02:36,  5.47it/s]Loading weights:   3%|▎         | 29/883 [00:19<02:44,  5.20it/s]Loading weights:   4%|▎         | 31/883 [00:20<03:52,  3.67it/s]Loading weights:   4%|▍         | 37/883 [00:20<02:10,  6.47it/s]Loading weights:   4%|▍         | 39/883 [00:20<01:54,  7.35it/s]Loading weights:   5%|▍         | 42/883 [00:21<02:11,  6.39it/s]Loading weights:   5%|▍         | 44/883 [00:22<03:24,  4.10it/s]Loading weights:   5%|▌         | 48/883 [00:22<02:21,  5.91it/s]Loading weights:   6%|▌         | 55/883 [00:23<01:47,  7.68it/s]Loading weights:   6%|▋         | 57/883 [00:24<02:46,  4.96it/s]Loading weights:   7%|▋         | 63/883 [00:24<01:46,  7.73it/s]Loading weights:   7%|▋         | 65/883 [00:24<01:35,  8.53it/s]Loading weights:   8%|▊         | 68/883 [00:25<01:54,  7.09it/s]Loading weights:   8%|▊         | 70/883 [00:26<03:27,  3.91it/s]Loading weights:   9%|▊         | 76/883 [00:27<02:01,  6.65it/s]Loading weights:   9%|▉         | 78/883 [00:27<01:47,  7.46it/s]Loading weights:   9%|▉         | 81/883 [00:27<02:04,  6.46it/s]Loading weights:   9%|▉         | 83/883 [00:29<03:12,  4.16it/s]Loading weights:  10%|█         | 89/883 [00:29<01:50,  7.18it/s]Loading weights:  10%|█         | 91/883 [00:29<01:38,  8.05it/s]Loading weights:  11%|█         | 94/883 [00:29<01:56,  6.75it/s]Loading weights:  11%|█         | 96/883 [00:31<03:05,  4.23it/s]Loading weights:  12%|█▏        | 102/883 [00:31<01:46,  7.33it/s]Loading weights:  12%|█▏        | 104/883 [00:31<01:34,  8.22it/s]Loading weights:  12%|█▏        | 107/883 [00:31<01:49,  7.09it/s]Loading weights:  12%|█▏        | 109/883 [00:33<02:58,  4.35it/s]Loading weights:  13%|█▎        | 115/883 [00:33<01:42,  7.49it/s]Loading weights:  13%|█▎        | 117/883 [00:33<01:31,  8.36it/s]Loading weights:  14%|█▎        | 120/883 [00:33<01:50,  6.93it/s]Loading weights:  14%|█▍        | 122/883 [00:35<03:23,  3.75it/s]Loading weights:  14%|█▍        | 128/883 [00:35<01:54,  6.57it/s]Loading weights:  15%|█▍        | 130/883 [00:35<01:41,  7.44it/s]Loading weights:  15%|█▌        | 133/883 [00:36<01:56,  6.44it/s]Loading weights:  15%|█▌        | 135/883 [00:37<03:00,  4.14it/s]Loading weights:  16%|█▌        | 140/883 [00:37<01:52,  6.58it/s]Loading weights:  17%|█▋        | 146/883 [00:38<01:37,  7.60it/s]Loading weights:  17%|█▋        | 148/883 [00:39<02:30,  4.89it/s]Loading weights:  17%|█▋        | 154/883 [00:39<01:35,  7.65it/s]Loading weights:  18%|█▊        | 156/883 [00:39<01:26,  8.43it/s]Loading weights:  18%|█▊        | 159/883 [00:40<01:42,  7.05it/s]Loading weights:  18%|█▊        | 161/883 [00:41<02:44,  4.40it/s]Loading weights:  19%|█▉        | 172/883 [00:41<01:26,  8.24it/s]Loading weights:  20%|█▉        | 174/883 [00:43<02:23,  4.93it/s]Loading weights:  20%|██        | 179/883 [00:43<01:41,  6.91it/s]Loading weights:  21%|██        | 182/883 [00:43<01:24,  8.26it/s]Loading weights:  21%|██        | 186/883 [00:44<01:33,  7.44it/s]Loading weights:  21%|██▏       | 188/883 [00:44<01:51,  6.25it/s]Loading weights:  22%|██▏       | 193/883 [00:44<01:16,  8.98it/s]Loading weights:  22%|██▏       | 195/883 [00:45<01:09,  9.89it/s]Loading weights:  23%|██▎       | 199/883 [00:45<00:53, 12.86it/s]Loading weights:  23%|██▎       | 206/883 [00:45<00:37, 17.94it/s]Loading weights:  24%|██▎       | 209/883 [00:45<00:37, 18.21it/s]Loading weights:  24%|██▍       | 212/883 [00:46<01:27,  7.64it/s]Loading weights:  24%|██▍       | 214/883 [00:47<01:47,  6.24it/s]Loading weights:  25%|██▍       | 219/883 [00:47<01:12,  9.14it/s]Loading weights:  25%|██▌       | 221/883 [00:47<01:05, 10.05it/s]Loading weights:  25%|██▌       | 224/883 [00:48<01:24,  7.77it/s]Loading weights:  26%|██▌       | 226/883 [00:49<02:25,  4.53it/s]Loading weights:  26%|██▋       | 232/883 [00:49<01:24,  7.72it/s]Loading weights:  27%|██▋       | 234/883 [00:49<01:16,  8.50it/s]Loading weights:  27%|██▋       | 238/883 [00:49<00:56, 11.37it/s]Loading weights:  27%|██▋       | 241/883 [00:49<00:49, 13.01it/s]Loading weights:  28%|██▊       | 245/883 [00:50<00:41, 15.50it/s]Loading weights:  28%|██▊       | 248/883 [00:50<00:39, 16.20it/s]Loading weights:  28%|██▊       | 251/883 [00:51<01:45,  6.00it/s]Loading weights:  29%|██▊       | 253/883 [00:52<02:07,  4.94it/s]Loading weights:  29%|██▉       | 258/883 [00:52<01:21,  7.67it/s]Loading weights:  29%|██▉       | 260/883 [00:52<01:12,  8.61it/s]Loading weights:  30%|██▉       | 263/883 [00:53<01:28,  7.01it/s]Loading weights:  30%|███       | 265/883 [00:54<02:25,  4.24it/s]Loading weights:  31%|███       | 270/883 [00:54<01:33,  6.59it/s]Loading weights:  31%|███       | 273/883 [00:54<01:13,  8.27it/s]Loading weights:  31%|███▏      | 276/883 [00:55<01:30,  6.74it/s]Loading weights:  31%|███▏      | 278/883 [00:56<02:22,  4.25it/s]Loading weights:  32%|███▏      | 284/883 [00:56<01:22,  7.29it/s]Loading weights:  32%|███▏      | 286/883 [00:56<01:13,  8.13it/s]Loading weights:  33%|███▎      | 289/883 [00:57<01:28,  6.73it/s]Loading weights:  33%|███▎      | 291/883 [00:58<02:18,  4.26it/s]Loading weights:  34%|███▎      | 297/883 [00:58<01:19,  7.39it/s]Loading weights:  34%|███▍      | 299/883 [00:58<01:10,  8.27it/s]Loading weights:  34%|███▍      | 302/883 [00:59<01:24,  6.86it/s]Loading weights:  34%|███▍      | 304/883 [01:01<02:55,  3.30it/s]Loading weights:  35%|███▌      | 310/883 [01:01<01:39,  5.79it/s]Loading weights:  35%|███▌      | 312/883 [01:01<01:26,  6.60it/s]Loading weights:  36%|███▌      | 315/883 [01:01<01:22,  6.89it/s]Loading weights:  36%|███▌      | 317/883 [01:02<01:54,  4.95it/s]Loading weights:  37%|███▋      | 323/883 [01:02<01:11,  7.84it/s]Loading weights:  37%|███▋      | 325/883 [01:02<01:05,  8.53it/s]Loading weights:  37%|███▋      | 328/883 [01:03<01:24,  6.54it/s]Loading weights:  37%|███▋      | 330/883 [01:05<02:34,  3.57it/s]Loading weights:  38%|███▊      | 336/883 [01:05<01:29,  6.11it/s]Loading weights:  38%|███▊      | 338/883 [01:05<01:18,  6.96it/s]Loading weights:  39%|███▊      | 341/883 [01:06<01:28,  6.14it/s]Loading weights:  39%|███▉      | 343/883 [01:07<02:14,  4.00it/s]Loading weights:  40%|███▉      | 349/883 [01:07<01:16,  6.94it/s]Loading weights:  40%|███▉      | 351/883 [01:07<01:08,  7.77it/s]Loading weights:  40%|████      | 354/883 [01:08<01:35,  5.56it/s]Loading weights:  40%|████      | 356/883 [01:09<02:20,  3.75it/s]Loading weights:  41%|████      | 362/883 [01:09<01:19,  6.52it/s]Loading weights:  41%|████      | 364/883 [01:09<01:09,  7.42it/s]Loading weights:  42%|████▏     | 367/883 [01:10<01:19,  6.47it/s]Loading weights:  42%|████▏     | 369/883 [01:11<02:03,  4.17it/s]Loading weights:  42%|████▏     | 375/883 [01:11<01:10,  7.21it/s]Loading weights:  43%|████▎     | 377/883 [01:11<01:02,  8.11it/s]Loading weights:  43%|████▎     | 380/883 [01:12<01:14,  6.77it/s]Loading weights:  43%|████▎     | 382/883 [01:13<01:58,  4.24it/s]Loading weights:  44%|████▍     | 388/883 [01:13<01:07,  7.30it/s]Loading weights:  44%|████▍     | 390/883 [01:14<01:00,  8.17it/s]Loading weights:  45%|████▍     | 393/883 [01:14<01:11,  6.81it/s]Loading weights:  45%|████▍     | 395/883 [01:15<01:54,  4.26it/s]Loading weights:  45%|████▌     | 401/883 [01:15<01:05,  7.34it/s]Loading weights:  46%|████▌     | 403/883 [01:16<00:58,  8.24it/s]Loading weights:  46%|████▌     | 406/883 [01:16<01:23,  5.72it/s]Loading weights:  46%|████▌     | 408/883 [01:18<02:02,  3.88it/s]Loading weights:  47%|████▋     | 414/883 [01:18<01:09,  6.71it/s]Loading weights:  47%|████▋     | 416/883 [01:18<01:01,  7.57it/s]Loading weights:  47%|████▋     | 419/883 [01:19<01:11,  6.53it/s]Loading weights:  48%|████▊     | 421/883 [01:20<01:53,  4.08it/s]Loading weights:  48%|████▊     | 426/883 [01:20<01:10,  6.46it/s]Loading weights:  49%|████▊     | 429/883 [01:20<00:55,  8.15it/s]Loading weights:  49%|████▉     | 432/883 [01:21<01:06,  6.83it/s]Loading weights:  49%|████▉     | 434/883 [01:22<01:44,  4.29it/s]Loading weights:  50%|████▉     | 440/883 [01:22<01:00,  7.34it/s]Loading weights:  50%|█████     | 442/883 [01:22<00:53,  8.25it/s]Loading weights:  50%|█████     | 445/883 [01:22<00:43, 10.12it/s]Loading weights:  51%|█████     | 449/883 [01:22<00:31, 13.57it/s]Loading weights:  52%|█████▏    | 455/883 [01:22<00:21, 19.72it/s]Loading weights:  52%|█████▏    | 459/883 [01:23<00:19, 21.49it/s]Loading weights:  53%|█████▎    | 471/883 [01:23<00:12, 33.81it/s]Loading weights:  54%|█████▍    | 476/883 [01:23<00:12, 33.39it/s]Loading weights:  55%|█████▌    | 487/883 [01:23<00:09, 39.63it/s]Loading weights:  56%|█████▌    | 492/883 [01:23<00:10, 38.84it/s]Loading weights:  57%|█████▋    | 500/883 [01:23<00:08, 46.52it/s]Loading weights:  57%|█████▋    | 506/883 [01:24<00:09, 40.72it/s]Loading weights:  58%|█████▊    | 512/883 [01:24<00:08, 44.54it/s]Loading weights:  59%|█████▉    | 519/883 [01:24<00:09, 37.56it/s]Loading weights:  60%|█████▉    | 527/883 [01:24<00:08, 43.14it/s]Loading weights:  61%|██████    | 535/883 [01:24<00:06, 50.46it/s]Loading weights:  61%|██████▏   | 541/883 [01:24<00:09, 37.35it/s]Loading weights:  62%|██████▏   | 549/883 [01:25<00:09, 34.98it/s]Loading weights:  64%|██████▍   | 565/883 [01:25<00:06, 50.57it/s]Loading weights:  65%|██████▍   | 571/883 [01:25<00:07, 39.20it/s]Loading weights:  66%|██████▌   | 583/883 [01:25<00:06, 45.17it/s]Loading weights:  67%|██████▋   | 589/883 [01:25<00:06, 42.94it/s]Loading weights:  68%|██████▊   | 599/883 [01:26<00:06, 47.07it/s]Loading weights:  69%|██████▊   | 605/883 [01:26<00:06, 43.52it/s]Loading weights:  70%|██████▉   | 615/883 [01:26<00:05, 48.03it/s]Loading weights:  70%|███████   | 620/883 [01:26<00:05, 44.68it/s]Loading weights:  71%|███████▏  | 631/883 [01:26<00:04, 51.38it/s]Loading weights:  72%|███████▏  | 637/883 [01:26<00:05, 43.23it/s]Loading weights:  73%|███████▎  | 647/883 [01:27<00:06, 38.94it/s]Loading weights:  75%|███████▍  | 661/883 [01:27<00:04, 49.04it/s]Loading weights:  76%|███████▌  | 667/883 [01:27<00:04, 47.29it/s]Loading weights:  77%|███████▋  | 679/883 [01:27<00:03, 51.53it/s]Loading weights:  78%|███████▊  | 685/883 [01:27<00:04, 46.78it/s]Loading weights:  79%|███████▊  | 695/883 [01:28<00:04, 40.62it/s]Loading weights:  80%|███████▉  | 703/883 [01:28<00:03, 46.42it/s]Loading weights:  81%|████████  | 711/883 [01:28<00:03, 52.06it/s]Loading weights:  81%|████████  | 717/883 [01:28<00:03, 47.08it/s]Loading weights:  82%|████████▏ | 727/883 [01:28<00:03, 50.56it/s]Loading weights:  83%|████████▎ | 733/883 [01:29<00:03, 41.04it/s]Loading weights:  84%|████████▍ | 743/883 [01:29<00:02, 50.01it/s]Loading weights:  85%|████████▍ | 749/883 [01:29<00:02, 45.43it/s]Loading weights:  86%|████████▌ | 759/883 [01:29<00:02, 50.86it/s]Loading weights:  87%|████████▋ | 765/883 [01:29<00:02, 45.59it/s]Loading weights:  88%|████████▊ | 776/883 [01:29<00:01, 56.79it/s]Loading weights:  89%|████████▉ | 790/883 [01:29<00:01, 73.96it/s]Loading weights:  90%|█████████ | 799/883 [01:30<00:01, 52.45it/s]Loading weights:  91%|█████████▏| 806/883 [01:30<00:01, 43.22it/s]Loading weights:  92%|█████████▏| 815/883 [01:30<00:01, 49.49it/s]Loading weights:  93%|█████████▎| 823/883 [01:30<00:01, 53.00it/s]Loading weights:  94%|█████████▍| 830/883 [01:30<00:01, 49.87it/s]Loading weights:  95%|█████████▌| 839/883 [01:31<00:00, 50.43it/s]Loading weights:  96%|█████████▌| 845/883 [01:31<00:00, 48.59it/s]Loading weights:  97%|█████████▋| 855/883 [01:31<00:00, 50.86it/s]Loading weights:  98%|█████████▊| 861/883 [01:31<00:00, 46.81it/s]Loading weights:  99%|█████████▊| 871/883 [01:31<00:00, 48.80it/s]Loading weights:  99%|█████████▉| 876/883 [01:31<00:00, 43.33it/s]Loading weights: 100%|██████████| 883/883 [01:31<00:00,  9.60it/s]
+INFO:assistants.gemma3_assistant:Initialized HF Gemma-3 model: /mnt/zgx2-shared/AS-HybridQuantumBench/runs/quantumbencheval_t1-6/gemma-v3-c/cache/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 1/17] t6_0 sample 2/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 1/17] t6_0 sample 3/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 1/17] t6_0 sample 4/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 1/17] t6_0 sample 5/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 2/17] t6_1 sample 1/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 2/17] t6_1 sample 2/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 2/17] t6_1 sample 3/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 2/17] t6_1 sample 4/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 2/17] t6_1 sample 5/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 3/17] t6_2 sample 1/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 3/17] t6_2 sample 2/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 3/17] t6_2 sample 3/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 3/17] t6_2 sample 4/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 3/17] t6_2 sample 5/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 4/17] t6_3 sample 1/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 4/17] t6_3 sample 2/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 4/17] t6_3 sample 3/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 4/17] t6_3 sample 4/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 4/17] t6_3 sample 5/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 5/17] t6_4 sample 1/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 5/17] t6_4 sample 2/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 5/17] t6_4 sample 3/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 5/17] t6_4 sample 4/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 5/17] t6_4 sample 5/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 6/17] t6_5 sample 1/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 6/17] t6_5 sample 2/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 6/17] t6_5 sample 3/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 6/17] t6_5 sample 4/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 6/17] t6_5 sample 5/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 7/17] t6_6 sample 1/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 7/17] t6_6 sample 2/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 7/17] t6_6 sample 3/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 7/17] t6_6 sample 4/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 7/17] t6_6 sample 5/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 8/17] t6_7 sample 1/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 8/17] t6_7 sample 2/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 8/17] t6_7 sample 3/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 8/17] t6_7 sample 4/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 8/17] t6_7 sample 5/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 9/17] t6_8 sample 1/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 9/17] t6_8 sample 2/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 9/17] t6_8 sample 3/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 9/17] t6_8 sample 4/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 9/17] t6_8 sample 5/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 10/17] t6_9 sample 1/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 10/17] t6_9 sample 2/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 10/17] t6_9 sample 3/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 10/17] t6_9 sample 4/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 10/17] t6_9 sample 5/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 11/17] t6_10 sample 1/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 11/17] t6_10 sample 2/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 11/17] t6_10 sample 3/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 11/17] t6_10 sample 4/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 11/17] t6_10 sample 5/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 12/17] t6_11 sample 1/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 12/17] t6_11 sample 2/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 12/17] t6_11 sample 3/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 12/17] t6_11 sample 4/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 12/17] t6_11 sample 5/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 13/17] t6_12 sample 1/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 13/17] t6_12 sample 2/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 13/17] t6_12 sample 3/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 13/17] t6_12 sample 4/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 13/17] t6_12 sample 5/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 14/17] t6_13 sample 1/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 14/17] t6_13 sample 2/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 14/17] t6_13 sample 3/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 14/17] t6_13 sample 4/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 14/17] t6_13 sample 5/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 15/17] t6_14 sample 1/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 15/17] t6_14 sample 2/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 15/17] t6_14 sample 3/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 15/17] t6_14 sample 4/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 15/17] t6_14 sample 5/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 16/17] t6_15 sample 1/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 16/17] t6_15 sample 2/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 16/17] t6_15 sample 3/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 16/17] t6_15 sample 4/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 16/17] t6_15 sample 5/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 17/17] t6_16 sample 1/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 17/17] t6_16 sample 2/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 17/17] t6_16 sample 3/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 17/17] t6_16 sample 4/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+[T6 17/17] t6_16 sample 5/5
+INFO:assistants.gemma3_assistant:Generated sample 1/1 successfully
+{"status": "completed", "counts": {"candidate_unsupported_import": 70, "candidate_error": 15}, "expected_samples": 85, "fingerprint": "cdb5dd06e7b50d05f509489f54de6b565ebe599d1809fa0852db78820b6502f9", "execution_status_counts": {"candidate_unsupported_import": 70, "candidate_error": 15}, "unsupported_import_modules": {"qiskit.algorithms": 10, "dimod.dm_events": 1, "dimod.dm_cube": 2, "dimod.dm_garage": 3, "qiskit.Aer": 20, "dimod.ConstraintSatisfactionProblem": 3, "dimod.dm_psi": 2, "dimod.dm": 3, "dimod.dm_satisfiability": 1, "qiskit.execute": 4, "dimod.Encore": 5, "dimod.minimum_weight_matching": 1, "qiskit_algorithms.MinimumWeight\u0acd\u0ab0\u0abeCircuit": 1, "dimod.BasisState": 1, "dimod.BasisGraph": 1, "dimod.qubits": 1, "qiskit.circuit.library.ParameterizedPulse": 1, "dimod.ConstraintProgram": 1, "qiskit_algorithms.EstimationAlgorithms": 1, "dwave.system": 2, "dimod.dm_rose_annealer": 1, "dimod.LegacySampler": 1, "dimod.dm_satisfy": 1, "dimod.ConfiguredSampler": 1, "dimod.BasisDigraph": 1, "dimod.Encoding": 1}, "pass_at_k": {"1": 0.0, "5": 0.0}, "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."}

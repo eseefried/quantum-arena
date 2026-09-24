@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "counts": {
+    "judged": 75
+  },
+  "expected_samples": 75,
+  "fingerprint": "3a5e6b1508b1dd344482fd6a623d5b18b26b0533ef1e4e55c18db8f965f38a28",
+  "execution_status_counts": {
+    "executed": 60,
+    "candidate_error": 8,
+    "evaluation_timeout": 7
+  },
+  "unsupported_import_modules": {},
+  "mean_rubric_score": 7.773333333333333,
+  "rubric_maximum": [
+    10
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "model": "mistral7b",
+  "topics": {
+    "T1": {
+      "counts": {
+        "candidate_error": 24,
+        "candidate_unsupported_import": 61
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "candidate_unsupported_import": 61,
+        "candidate_error": 24
+      },
+      "unsupported_import_modules": {
+        "qiskit.Aer": 23,
+        "qiskit.execute": 22,
+        "qiskit_algorithms.apis": 1,
+        "dimod.simulated_annealing_solver": 2,
+        "qiskit.AerSimulator": 1,
+        "Qiskit": 1,
+        "qiskit.aer": 1,
+        "dimod.BinomialQuadraticModel": 3,
+        "qiskit.algorithms": 2,
+        "dimod.qpu": 1,
+        "dimod.MaximumFlow": 1,
+        "dwave_networkx": 1,
+        "qiskit.qaoa": 1,
+        "qiskit.quantum_info.graph": 1
+      }
+    },
+    "T2": {
+      "counts": {
+        "candidate_unsupported_import": 40,
+        "candidate_error": 35
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "candidate_error": 35,
+        "candidate_unsupported_import": 40
+      },
+      "unsupported_import_modules": {
+        "dimod.QuboModel": 2,
+        "qiskit.Aer": 11,
+        "pennylane.numpy_qfunc": 4,
+        "pennylane.qchem.QubitEmbedding": 3,
+        "dwave.system": 4,
+        "pennylane.qchem.Fermion": 1,
+        "pennylane.qfunc": 3,
+        "pennylane.qchem.qc_vqe": 1,
+        "dimod.Simulator": 1,
+        "pennylane.qpu": 1,
+        "pennylane.numpy_qfun": 1,
+        "pennylane.qchem.quadratic": 1,
+        "pennylane.QubitOperator": 1,
+        "dwave.ocean": 1,
+        "pennylane.napoleon": 1,
+        "pennylane.qnn.QubitQubitCoupledIsing": 1,
+        "dimod.objective": 1,
+        "qiskit_ocean_provider_dwave_system": 1,
+        "dwave_networkx": 1
+      }
+    },
+    "T3": {
+      "counts": {
+        "judged": 75
+      },
+      "pass_at_k": null,
+      "mean_rubric_score": 1.4,
+      "rubric_maximum": [
+        10
+      ],
+      "execution_status_counts": {
+        "candidate_unsupported_import": 52,
+        "candidate_error": 23
+      },
+      "unsupported_import_modules": {
+        "qiskit.execute": 13,
+        "pennylane.qchem.QubitMolecularData": 1,
+        "scipy.special.exp_int_1_1": 1,
+        "qiskit.Aer": 25,
+        "qiskit.Qubit": 3,
+        "scipy.constants.Bohr": 1,
+        "qiskit.chemistry": 2,
+        "scipy.sparse.cite_matrix": 1,
+        "openfermion": 4,
+        "scipy.sparse.linalg.eigh": 1
+      }
+    },
+    "T4": {
+      "counts": {
+        "candidate_unsupported_import": 39,
+        "candidate_error": 36
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "candidate_unsupported_import": 39,
+        "candidate_error": 36
+      },
+      "unsupported_import_modules": {
+        "qiskit.execute": 16,
+        "qiskit.Aer": 19,
+        "qiskit.QuantumCircuit": 1,
+        "qiskit.transpile": 1,
+        "pennylane.qchem.TransverseFieldIsingChain": 1,
+        "pennylane.qchem.TranslationallyInvariantHamiltonian": 1
+      }
+    },
+    "T5": {
+      "counts": {
+        "candidate_error": 34,
+        "candidate_unsupported_import": 51
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "candidate_unsupported_import": 51,
+        "candidate_error": 34
+      },
+      "unsupported_import_modules": {
+        "dwave_networkx": 1,
+        "pennylane.qc": 1,
+        "pennylane.qchem.QubitEmbedding": 4,
+        "qiskit.Aer": 15,
+        "pennylane.qchem.qaoa_ansatz": 1,
+        "dimod.bindings": 1,
+        "pennylane.qfunc": 3,
+        "dwave.qbsolver": 1,
+        "pennylane.qchem.qc_from_molecule": 1,
+        "qiskit.visualization.plot_circuit": 1,
+        "qiskit.execute": 3,
+        "pennylane.qchem.qaoa": 3,
+        "pennylane.qchem.qchem": 1,
+        "pennylane.qchem.qaoa_energies": 1,
+        "quantum_api": 1,
+        "dwave.qbsolv": 1,
+        "pennylane.qaoa.QAOA": 1,
+        "dimod.backends": 1,
+        "pennylane.qfn": 1,
+        "pennylane.wfo_devices": 1,
+        "pennylane_qiskit": 1,
+        "pennylane.numpy_qfunc": 1,
+        "dimod.Binning": 1,
+        "pennylane.qchem.qc": 1,
+        "dimod.MaxSatisfyProblem": 1,
+        "pennylane.qchem.qaoa_energy": 1,
+        "pennylane.qfunction": 1,
+        "pennylane.qchem.MolAtom": 1
+      }
+    },
+    "T6": {
+      "counts": {
+        "candidate_unsupported_import": 59,
+        "candidate_error": 26
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "candidate_unsupported_import": 59,
+        "candidate_error": 26
+      },
+      "unsupported_import_modules": {
+        "pennylane.qchem.qaoa": 3,
+        "qiskit.Aer": 33,
+        "pennylane.qfunc": 2,
+        "qiskit.execute": 5,
+        "qiskit.algorithms": 2,
+        "pennylane.qchem.QubitEmbedding": 2,
+        "pennylane.qchem.qiskit": 2,
+        "pennylane_qiskit": 2,
+        "dwave.ocean": 1,
+        "pqp": 1,
+        "networkx.graph_from_edgelist": 1,
+        "pennylane.qfc": 1,
+        "pennylane.numpy_qfun": 1,
+        "pennylane.numpy_qfunc": 1,
+        "dimod.BinaryScalar": 1,
+        "pennylane.qchem.qaoa_energy": 1
+      }
+    }
+  }
+}

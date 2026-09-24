@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "counts": {
+    "candidate_error": 48,
+    "truncated": 2,
+    "candidate_unsupported_import": 35
+  },
+  "expected_samples": 85,
+  "fingerprint": "1491b19c03945abe68ecd0c5431c21fd620e09e956d02200845184f45b08f060",
+  "execution_status_counts": {
+    "candidate_unsupported_import": 35,
+    "candidate_error": 48,
+    "not_executed": 2
+  },
+  "unsupported_import_modules": {
+    "dimod.GridQubo": 2,
+    "qiskit.BasicAer": 5,
+    "dwave_neal": 1,
+    "qiskit.algorithms": 6,
+    "dimod.BQSD": 2,
+    "neal.Solver": 1,
+    "qiskit_chemical": 1,
+    "qiskit_aqua": 2,
+    "dimod.BQSM": 1,
+    "dwave_networkx": 2,
+    "qiskit_algorithms.max_cut": 1,
+    "dimod.Hypergraph": 1,
+    "qiskit_circuit_library": 1,
+    "qiskit.Aer": 1,
+    "dimod.combinatorics": 1,
+    "dimod.BQPTotMaxCut": 1,
+    "qiskit_algorithms.get_minimum_eigensolver": 1,
+    "qiskit.aqua": 1,
+    "dimod.BinaryVartype": 1,
+    "dimod.get_hamiltonian": 1,
+    "neal.L_BFGS_B": 1,
+    "dwave.neural_torch": 1
+  },
+  "pass_at_k": {
+    "1": 0.0,
+    "5": 0.0
+  },
+  "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."
+}

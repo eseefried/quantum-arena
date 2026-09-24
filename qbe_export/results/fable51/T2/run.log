@@ -1,0 +1,228 @@
+[T2 1/15] t2_0 sample 1/5
+INFO:assistants.base_assistant:Initialized ClaudeAssistant with model claude-fable-5-1
+INFO:assistants.claude_assistant:Initialized Anthropic client with model claude-fable-5-1
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 1/15] t2_0 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 1/15] t2_0 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 1/15] t2_0 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 1/15] t2_0 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 2/15] t2_1 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 2/15] t2_1 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 2/15] t2_1 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 2/15] t2_1 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 2/15] t2_1 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 3/15] t2_2 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 3/15] t2_2 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 3/15] t2_2 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 3/15] t2_2 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 3/15] t2_2 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 4/15] t2_3 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 4/15] t2_3 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 4/15] t2_3 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 4/15] t2_3 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 4/15] t2_3 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 5/15] t2_4 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 5/15] t2_4 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 5/15] t2_4 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 5/15] t2_4 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 5/15] t2_4 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 6/15] t2_5 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 6/15] t2_5 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 6/15] t2_5 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 6/15] t2_5 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 6/15] t2_5 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 7/15] t2_6 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 7/15] t2_6 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 7/15] t2_6 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 7/15] t2_6 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 7/15] t2_6 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 8/15] t2_7 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 8/15] t2_7 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 8/15] t2_7 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 8/15] t2_7 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 8/15] t2_7 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 9/15] t2_8 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 9/15] t2_8 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 9/15] t2_8 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 9/15] t2_8 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 9/15] t2_8 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 10/15] t2_9 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 10/15] t2_9 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 10/15] t2_9 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 10/15] t2_9 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 10/15] t2_9 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 11/15] t2_10 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 11/15] t2_10 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 11/15] t2_10 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 11/15] t2_10 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 11/15] t2_10 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 12/15] t2_11 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 12/15] t2_11 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 12/15] t2_11 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 12/15] t2_11 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 12/15] t2_11 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 13/15] t2_12 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 13/15] t2_12 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 13/15] t2_12 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 13/15] t2_12 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 13/15] t2_12 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 14/15] t2_13 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 14/15] t2_13 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 14/15] t2_13 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 14/15] t2_13 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 14/15] t2_13 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 15/15] t2_14 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 15/15] t2_14 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 15/15] t2_14 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 15/15] t2_14 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+[T2 15/15] t2_14 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+{"status": "completed", "counts": {"incorrect": 73, "passed": 1, "candidate_error": 1}, "expected_samples": 75, "fingerprint": "06d2ebbef27de61480e7577b3e5150528fc20958761391e2fc84ebbd6d56a00c", "execution_status_counts": {"incorrect": 73, "passed": 1, "candidate_error": 1}, "unsupported_import_modules": {}, "pass_at_k": {"1": 0.01333333333333333, "5": 0.06666666666666667}, "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."}

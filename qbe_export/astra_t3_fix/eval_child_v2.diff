@@ -1,0 +1,28 @@
+--- qbe/eval_child_v2.py	2026-09-22 18:25:43.849702803 +0000
++++ qbe_export/astra_t3_fix/eval_child_v2.py	2026-09-24 22:08:03.285801701 +0000
+@@ -52,8 +52,25 @@
+     return match.group(1) if match else None
+ 
+ 
++def underlying_candidate_import_error(exc):
++    """Follow __cause__/__context__ to the import failure that started a chain, when that inner failure is an
++    import statement in the candidate's own source. Candidates often catch a ModuleNotFoundError and re-raise
++    a friendlier `ImportError("X is required ... pip install x") from exc`; the outer error carries no module
++    name, so classifying it alone is 'unclassified' and would abort the dataset for a candidate's own import.
++    Only ImportErrors raised from '<candidate>' frames are followed, so a chain that starts inside a library
++    (or in the dataset test) is classified exactly as before."""
++    found, seen, current = exc, set(), exc
++    while current is not None and id(current) not in seen:
++        seen.add(id(current))
++        if isinstance(current, ImportError) and raised_by_candidate(current):
++            found = current
++        current = current.__cause__ or current.__context__
++    return found
++
++
+ def classify_import(exc):
+     """Return (status, import_kind, module) for an import failure raised while running candidate code."""
++    exc = underlying_candidate_import_error(exc) if raised_by_candidate(exc) else exc
+     name = getattr(exc, 'name', '') or ''
+     top = name.split('.')[0]
+     if not raised_by_candidate(exc):

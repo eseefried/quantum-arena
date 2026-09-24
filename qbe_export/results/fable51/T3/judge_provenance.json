@@ -1,0 +1,37 @@
+{
+  "events": [
+    {
+      "kind": "provider_transition",
+      "at_utc": "2026-09-24T14:49:21Z",
+      "provider_before": "anthropic",
+      "provider_after": "perplexity",
+      "judge_config": {
+        "model": "claude-sonnet-4-6",
+        "temperature": 0.0,
+        "max_tokens": 2048,
+        "protocol": "qbe-t3-rubric-v2"
+      },
+      "requested_api_model": "anthropic/claude-sonnet-4-6",
+      "base_url": "https://api.perplexity.ai/v1",
+      "unchanged": "qbe.evaluate.judge_t3 executed as-is: prompt, rubric schema, max_tokens, temperature, score validation and deterministic energy scoring are unchanged; only the transport differs",
+      "samples_judged_before": {
+        "anthropic": 70
+      },
+      "transport_module_sha256": "7359651b75683fad3ca8a678b9c4979404712d4fde5d6259960a0a6087e0ffa1",
+      "reason": "Anthropic credits exhausted",
+      "serving_note": "Requested via Perplexity under an Anthropic-style model ID. Identical serving behaviour to Anthropic's own API is not claimed; compare judge_model_returned and the scores, not the ID."
+    },
+    {
+      "kind": "session",
+      "started_utc": "2026-09-24T14:49:21Z",
+      "provider": "perplexity",
+      "ended_utc": "2026-09-24T15:11:48Z",
+      "judged_by_provider_after": {
+        "anthropic": 70,
+        "perplexity": 5
+      },
+      "judged_this_session": 5
+    }
+  ],
+  "current_provider": "perplexity"
+}

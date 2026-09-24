@@ -1,0 +1,162 @@
+{
+  "config": {
+    "schema_version": 1,
+    "registry": "configs/quantumbencheval_models.proposed.json",
+    "selected_models": [
+      "llama31-8b",
+      "llama32-3b",
+      "gemma3-4b",
+      "mistral7b",
+      "mistral-qiskit",
+      "qwen-qiskit",
+      "granite32",
+      "granite-legacy",
+      "opus46",
+      "gemini3-flash",
+      "gemini36-flash",
+      "gpt5",
+      "gemini31-pro",
+      "fable51",
+      "astra"
+    ],
+    "datasets": [
+      "T1",
+      "T2",
+      "T3",
+      "T4",
+      "T5",
+      "T6"
+    ],
+    "data_dir": ".",
+    "python": ".venv/bin/python",
+    "evaluation_python": ".venv/bin/python",
+    "python_overrides": {
+      "muse-glimmer": ".venv-muse/bin/python"
+    },
+    "max_tokens": 16384,
+    "max_tokens_overrides": {
+      "gemini31-pro": 65536,
+      "fable51": 65536,
+      "gemini3-flash": 65536,
+      "astra": 32768
+    },
+    "samples": 5,
+    "temperature": 0.8,
+    "revision_pins": {
+      "llama32-3b": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+      "gemma3-4b": "093f9f388b31de276ce2de164bdc2081324b9767",
+      "mistral7b": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+      "mistral-qiskit": "0c541958022de04bd7c200b14a4b7a58977ae751",
+      "qwen-qiskit": "9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a",
+      "granite32": "8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188",
+      "llama31-8b": "d04e592bb4f6aa9cfee91e2e20afa771667e1d4b"
+    },
+    "judge": {
+      "model": "claude-sonnet-4-6",
+      "temperature": 0.0,
+      "max_tokens": 2048,
+      "protocol": "qbe-t3-rubric-v2"
+    },
+    "timeouts": {
+      "T1": 150,
+      "T2": 60,
+      "T3": 150,
+      "T4": 60,
+      "T5": 150,
+      "T6": 150
+    },
+    "held_models": {
+      "quantum-rag": "User requested hold; original corpus not supplied",
+      "scout": "Previously archived as unverified"
+    },
+    "identity_blocks": {
+      "granite-legacy": "Historical label is not proof of the HF checkpoint; resolve identity before enabling"
+    },
+    "protocol_change": "User requested increased generation budget. 16384 is the recorded increased budget, now applied to all selected candidates, including former 512-token adapters. Historical settings remain in the registry.",
+    "revision_pin_provenance": {
+      "llama32-3b": {
+        "source": "Resolved for NEW experiment; historical commit unknown",
+        "resolved_at_utc": "2026-09-18T18:22:48Z"
+      },
+      "gemma3-4b": {
+        "source": "Resolved for NEW experiment; historical commit unknown",
+        "resolved_at_utc": "2026-09-18T18:22:48Z"
+      },
+      "mistral7b": {
+        "source": "Resolved for NEW experiment; historical commit unknown",
+        "resolved_at_utc": "2026-09-18T18:22:49Z"
+      },
+      "mistral-qiskit": {
+        "source": "Resolved for NEW experiment; historical commit unknown",
+        "resolved_at_utc": "2026-09-18T18:22:49Z"
+      },
+      "qwen-qiskit": {
+        "source": "Resolved for NEW experiment; historical commit unknown",
+        "resolved_at_utc": "2026-09-18T18:22:49Z"
+      },
+      "granite32": {
+        "source": "Resolved for NEW experiment; historical commit unknown",
+        "resolved_at_utc": "2026-09-18T18:22:49Z"
+      },
+      "llama31-8b": {
+        "source": "Resolved for NEW experiment; historical commit unknown",
+        "resolved_at_utc": "2026-09-18T18:22:48Z"
+      }
+    }
+  },
+  "model": {
+    "key": "gemini3-flash",
+    "role": "candidate",
+    "identity": "gemini-3-flash-preview",
+    "assistant_implementation": "assistants.gemini_assistant.GeminiAssistant",
+    "historical_status": "previously_run",
+    "proposed_selection": true,
+    "aliases": [],
+    "python": ".venv/bin/python",
+    "historical_revision": null,
+    "historical_settings_verified": false,
+    "settings_evidence": "Current adapter and scripts/run_model_all.sh; historical per-run configs absent",
+    "current_effective_settings": {
+      "samples_per_task": 5,
+      "max_output_tokens": 2048,
+      "temperature": 0.8,
+      "top_p": "not sent",
+      "top_k": "checkpoint/provider default, not explicitly set",
+      "reasoning": "provider default; no reasoning/thinking parameter sent",
+      "precision": "provider controlled",
+      "quantization": null,
+      "device_policy": "hosted API"
+    },
+    "notes": [],
+    "provider_model_or_deployment_id": "gemini-3-flash-preview",
+    "blockers": [
+      "API availability and generation not validated on this host"
+    ],
+    "provider": "Google GenAI"
+  },
+  "settings": {
+    "samples": 5,
+    "max_tokens": 65536,
+    "temperature": 0.8,
+    "top_p": 1.0,
+    "effective_api_temperature": 0.8,
+    "effective_top_p": "not sent",
+    "reasoning": "provider default; no reasoning/thinking parameter sent",
+    "precision": "provider controlled",
+    "quantization": null
+  },
+  "topic": "T4",
+  "data_dir": "/mnt/zgx2-shared/AS-HybridQuantumBench",
+  "dataset": {
+    "path": "/mnt/zgx2-shared/AS-HybridQuantumBench/QuantumBenchEval_T4.json",
+    "sha256": "b50f9e1749dfc571b3b6790e34d860701bb0ff9561ccf1a74b3f6c78e3d1b5ca",
+    "topic": "T4: Detection of Quantum Phase Transitions",
+    "task_count": 15
+  },
+  "output": "/mnt/zgx2-shared/AS-HybridQuantumBench/runs/quantumbencheval_t1-6/gemini3-flash-v3/gemini3-flash/T4",
+  "cache": "/mnt/zgx2-shared/AS-HybridQuantumBench/runs/quantumbencheval_t1-6/gemini3-flash-v3/cache",
+  "python": "/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/bin/python",
+  "evaluation_python": "/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/bin/python",
+  "cuda_visible_devices": "0",
+  "smoke": false
+}

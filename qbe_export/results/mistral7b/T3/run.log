@@ -1,0 +1,237 @@
+[T3 1/15] t3_0 sample 1/5
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 1271.75it/s]
+INFO:assistants.base_assistant:Initialized MistralAssistant with model /mnt/zgx2-shared/AS-HybridQuantumBench/runs/quantumbencheval_t1-6/mistral7b-v3/cache/hub/models--mistralai--Mistral-7B-Instruct-v0.3/snapshots/c170c708c41dac9275d15a8fff4eca08d52bab71
+`torch_dtype` is deprecated! Use `dtype` instead!
+/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:283: UserWarning: 
+    Found GPU0 NVIDIA GB10 which is of cuda capability 12.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (8.0) - (12.0)
+    
+  warnings.warn(
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights:   0%|          | 1/291 [00:03<16:06,  3.33s/it]Loading weights:   1%|          | 2/291 [00:06<16:46,  3.48s/it]Loading weights:   1%|▏         | 4/291 [00:08<08:26,  1.77s/it]Loading weights:   2%|▏         | 5/291 [00:09<08:01,  1.68s/it]Loading weights:   2%|▏         | 6/291 [00:11<07:37,  1.61s/it]Loading weights:   3%|▎         | 8/291 [00:11<04:09,  1.14it/s]Loading weights:   3%|▎         | 9/291 [00:11<03:34,  1.31it/s]Loading weights:   3%|▎         | 10/291 [00:12<03:08,  1.49it/s]Loading weights:   4%|▍         | 13/291 [00:14<02:55,  1.58it/s]Loading weights:   5%|▍         | 14/291 [00:15<03:38,  1.27it/s]Loading weights:   5%|▌         | 15/291 [00:16<04:21,  1.06it/s]Loading weights:   6%|▌         | 18/291 [00:17<02:34,  1.77it/s]Loading weights:   7%|▋         | 19/291 [00:17<02:26,  1.86it/s]Loading weights:   8%|▊         | 22/291 [00:19<02:20,  1.92it/s]Loading weights:   8%|▊         | 23/291 [00:21<03:11,  1.40it/s]Loading weights:   8%|▊         | 24/291 [00:22<03:58,  1.12it/s]Loading weights:  11%|█         | 31/291 [00:24<01:55,  2.25it/s]Loading weights:  11%|█         | 32/291 [00:25<02:27,  1.76it/s]Loading weights:  11%|█▏        | 33/291 [00:27<03:00,  1.43it/s]Loading weights:  12%|█▏        | 34/291 [00:28<03:11,  1.34it/s]Loading weights:  14%|█▍        | 41/291 [00:29<01:45,  2.37it/s]Loading weights:  14%|█▍        | 42/291 [00:31<02:17,  1.81it/s]Loading weights:  15%|█▌        | 45/291 [00:31<01:44,  2.35it/s]Loading weights:  16%|█▌        | 46/291 [00:32<01:43,  2.37it/s]Loading weights:  17%|█▋        | 49/291 [00:33<01:52,  2.15it/s]Loading weights:  17%|█▋        | 50/291 [00:35<02:26,  1.64it/s]Loading weights:  18%|█▊        | 51/291 [00:36<03:00,  1.33it/s]Loading weights:  18%|█▊        | 53/291 [00:36<02:03,  1.93it/s]Loading weights:  19%|█▊        | 54/291 [00:37<01:57,  2.01it/s]Loading weights:  19%|█▉        | 55/291 [00:37<01:53,  2.09it/s]Loading weights:  19%|█▉        | 56/291 [00:37<01:42,  2.28it/s]Loading weights:  20%|█▉        | 58/291 [00:39<02:14,  1.74it/s]Loading weights:  20%|██        | 59/291 [00:40<02:58,  1.30it/s]Loading weights:  21%|██        | 60/291 [00:42<03:39,  1.05it/s]Loading weights:  23%|██▎       | 66/291 [00:47<03:06,  1.21it/s]Loading weights:  24%|██▍       | 71/291 [00:47<01:43,  2.13it/s]Loading weights:  25%|██▌       | 73/291 [00:47<01:38,  2.20it/s]Loading weights:  26%|██▌       | 75/291 [00:48<01:18,  2.75it/s]Loading weights:  26%|██▋       | 77/291 [00:50<02:13,  1.60it/s]Loading weights:  27%|██▋       | 78/291 [00:52<02:35,  1.37it/s]Loading weights:  27%|██▋       | 80/291 [00:52<01:51,  1.89it/s]Loading weights:  28%|██▊       | 82/291 [00:58<04:25,  1.27s/it]Loading weights:  29%|██▊       | 83/291 [00:58<03:41,  1.06s/it]Loading weights:  31%|███       | 89/291 [00:59<01:38,  2.06it/s]Loading weights:  32%|███▏      | 94/291 [01:00<01:22,  2.39it/s]Loading weights:  33%|███▎      | 95/291 [01:02<01:43,  1.90it/s]Loading weights:  33%|███▎      | 96/291 [01:04<02:17,  1.42it/s]Loading weights:  34%|███▎      | 98/291 [01:04<01:43,  1.86it/s]Loading weights:  34%|███▍      | 99/291 [01:04<01:40,  1.91it/s]Loading weights:  34%|███▍      | 100/291 [01:05<01:37,  1.96it/s]Loading weights:  35%|███▌      | 103/291 [01:06<01:35,  1.96it/s]Loading weights:  36%|███▌      | 104/291 [01:08<02:07,  1.47it/s]Loading weights:  36%|███▌      | 105/291 [01:09<02:34,  1.21it/s]Loading weights:  37%|███▋      | 108/291 [01:10<01:36,  1.89it/s]Loading weights:  37%|███▋      | 109/291 [01:10<01:32,  1.97it/s]Loading weights:  38%|███▊      | 110/291 [01:10<01:17,  2.34it/s]Loading weights:  39%|███▉      | 113/291 [01:10<00:45,  3.89it/s]Loading weights:  41%|████      | 119/291 [01:10<00:20,  8.33it/s]Loading weights:  42%|████▏     | 122/291 [01:11<00:16,  9.95it/s]Loading weights:  43%|████▎     | 125/291 [01:12<00:40,  4.09it/s]Loading weights:  44%|████▎     | 127/291 [01:18<02:06,  1.29it/s]Loading weights:  46%|████▋     | 135/291 [01:18<00:54,  2.84it/s]Loading weights:  47%|████▋     | 138/291 [01:18<00:47,  3.22it/s]Loading weights:  48%|████▊     | 141/291 [01:23<01:32,  1.63it/s]Loading weights:  49%|████▉     | 144/291 [01:23<01:13,  2.01it/s]Loading weights:  50%|█████     | 146/291 [01:24<01:04,  2.23it/s]Loading weights:  51%|█████     | 149/291 [01:24<00:46,  3.04it/s]Loading weights:  53%|█████▎    | 153/291 [01:29<01:34,  1.46it/s]Loading weights:  55%|█████▌    | 161/291 [01:29<00:44,  2.90it/s]Loading weights:  56%|█████▋    | 164/291 [01:30<00:42,  2.98it/s]Loading weights:  57%|█████▋    | 167/291 [01:33<01:00,  2.06it/s]Loading weights:  58%|█████▊    | 169/291 [01:35<01:04,  1.89it/s]Loading weights:  59%|█████▉    | 171/291 [01:35<00:56,  2.11it/s]Loading weights:  59%|█████▉    | 172/291 [01:36<00:54,  2.16it/s]Loading weights:  60%|██████    | 175/291 [01:38<01:00,  1.91it/s]Loading weights:  60%|██████    | 176/291 [01:39<01:15,  1.53it/s]Loading weights:  61%|██████    | 177/291 [01:40<01:31,  1.25it/s]Loading weights:  62%|██████▏   | 179/291 [01:41<01:02,  1.81it/s]Loading weights:  62%|██████▏   | 180/291 [01:41<00:58,  1.90it/s]Loading weights:  62%|██████▏   | 181/291 [01:41<00:55,  1.98it/s]Loading weights:  63%|██████▎   | 183/291 [01:41<00:35,  3.01it/s]Loading weights:  63%|██████▎   | 184/291 [01:43<01:00,  1.78it/s]Loading weights:  64%|██████▎   | 185/291 [01:44<01:21,  1.29it/s]Loading weights:  64%|██████▍   | 186/291 [01:46<01:46,  1.02s/it]Loading weights:  65%|██████▍   | 188/291 [01:46<01:03,  1.63it/s]Loading weights:  65%|██████▍   | 189/291 [01:47<00:58,  1.75it/s]Loading weights:  65%|██████▌   | 190/291 [01:47<00:53,  1.89it/s]Loading weights:  66%|██████▌   | 191/291 [01:47<00:41,  2.39it/s]Loading weights:  66%|██████▌   | 192/291 [01:50<01:52,  1.13s/it]Loading weights:  68%|██████▊   | 198/291 [01:51<00:36,  2.55it/s]Loading weights:  68%|██████▊   | 199/291 [01:51<00:35,  2.60it/s]Loading weights:  69%|██████▊   | 200/291 [01:51<00:30,  2.97it/s]Loading weights:  70%|██████▉   | 203/291 [01:54<00:52,  1.67it/s]Loading weights:  73%|███████▎  | 212/291 [01:55<00:25,  3.13it/s]Loading weights:  73%|███████▎  | 213/291 [01:57<00:33,  2.33it/s]Loading weights:  74%|███████▍  | 215/291 [01:57<00:26,  2.86it/s]Loading weights:  74%|███████▍  | 216/291 [01:57<00:26,  2.81it/s]Loading weights:  75%|███████▍  | 217/291 [01:58<00:27,  2.73it/s]Loading weights:  76%|███████▌  | 220/291 [01:59<00:29,  2.37it/s]Loading weights:  76%|███████▌  | 221/291 [02:01<00:41,  1.68it/s]Loading weights:  76%|███████▋  | 222/291 [02:03<00:55,  1.24it/s]Loading weights:  78%|███████▊  | 228/291 [02:06<00:39,  1.58it/s]Loading weights:  80%|████████  | 234/291 [02:06<00:21,  2.70it/s]Loading weights:  81%|████████  | 235/291 [02:07<00:20,  2.68it/s]Loading weights:  82%|████████▏ | 238/291 [02:08<00:22,  2.37it/s]Loading weights:  82%|████████▏ | 239/291 [02:16<01:06,  1.29s/it]Loading weights:  87%|████████▋ | 252/291 [02:16<00:15,  2.45it/s]Loading weights:  87%|████████▋ | 254/291 [02:16<00:14,  2.57it/s]Loading weights:  88%|████████▊ | 256/291 [02:18<00:15,  2.25it/s]Loading weights:  88%|████████▊ | 257/291 [02:20<00:19,  1.71it/s]Loading weights:  89%|████████▊ | 258/291 [02:21<00:22,  1.44it/s]Loading weights:  91%|█████████ | 265/291 [02:23<00:10,  2.37it/s]Loading weights:  91%|█████████▏| 266/291 [02:24<00:13,  1.88it/s]Loading weights:  92%|█████████▏| 267/291 [02:26<00:15,  1.51it/s]Loading weights:  92%|█████████▏| 269/291 [02:26<00:10,  2.01it/s]Loading weights:  93%|█████████▎| 270/291 [02:26<00:10,  2.04it/s]Loading weights:  93%|█████████▎| 271/291 [02:27<00:09,  2.08it/s]Loading weights:  93%|█████████▎| 272/291 [02:27<00:07,  2.49it/s]Loading weights:  94%|█████████▍| 274/291 [02:29<00:10,  1.65it/s]Loading weights:  95%|█████████▍| 275/291 [02:30<00:12,  1.23it/s]Loading weights:  95%|█████████▍| 276/291 [02:32<00:14,  1.05it/s]Loading weights:  96%|█████████▌| 278/291 [02:32<00:08,  1.50it/s]Loading weights:  97%|█████████▋| 283/291 [02:34<00:03,  2.25it/s]Loading weights:  98%|█████████▊| 284/291 [02:35<00:04,  1.63it/s]Loading weights:  98%|█████████▊| 285/291 [02:37<00:05,  1.20it/s]Loading weights:  99%|█████████▊| 287/291 [02:37<00:02,  1.73it/s]Loading weights:  99%|█████████▉| 288/291 [02:38<00:01,  1.83it/s]Loading weights:  99%|█████████▉| 289/291 [02:38<00:01,  1.89it/s]Loading weights: 100%|█████████▉| 290/291 [02:38<00:00,  2.31it/s]Loading weights: 100%|██████████| 291/291 [02:38<00:00,  1.83it/s]
+INFO:assistants.mistral_assistant:Initialized HF Mistral model: /mnt/zgx2-shared/AS-HybridQuantumBench/runs/quantumbencheval_t1-6/mistral7b-v3/cache/hub/models--mistralai--Mistral-7B-Instruct-v0.3/snapshots/c170c708c41dac9275d15a8fff4eca08d52bab71
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 1/15] t3_0 sample 2/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 1/15] t3_0 sample 3/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 1/15] t3_0 sample 4/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 1/15] t3_0 sample 5/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 2/15] t3_1 sample 1/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 2/15] t3_1 sample 2/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 2/15] t3_1 sample 3/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 2/15] t3_1 sample 4/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 2/15] t3_1 sample 5/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 3/15] t3_2 sample 1/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 3/15] t3_2 sample 2/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 3/15] t3_2 sample 3/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 3/15] t3_2 sample 4/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 3/15] t3_2 sample 5/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 4/15] t3_3 sample 1/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 4/15] t3_3 sample 2/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 4/15] t3_3 sample 3/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 4/15] t3_3 sample 4/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 4/15] t3_3 sample 5/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 5/15] t3_4 sample 1/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 5/15] t3_4 sample 2/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 5/15] t3_4 sample 3/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 5/15] t3_4 sample 4/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 5/15] t3_4 sample 5/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 6/15] t3_5 sample 1/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 6/15] t3_5 sample 2/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 6/15] t3_5 sample 3/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 6/15] t3_5 sample 4/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 6/15] t3_5 sample 5/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 7/15] t3_6 sample 1/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 7/15] t3_6 sample 2/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 7/15] t3_6 sample 3/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 7/15] t3_6 sample 4/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 7/15] t3_6 sample 5/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 8/15] t3_7 sample 1/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 8/15] t3_7 sample 2/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 8/15] t3_7 sample 3/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 8/15] t3_7 sample 4/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 8/15] t3_7 sample 5/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 9/15] t3_8 sample 1/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 9/15] t3_8 sample 2/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 9/15] t3_8 sample 3/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 9/15] t3_8 sample 4/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 9/15] t3_8 sample 5/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 10/15] t3_9 sample 1/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 10/15] t3_9 sample 2/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 10/15] t3_9 sample 3/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 10/15] t3_9 sample 4/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 10/15] t3_9 sample 5/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 11/15] t3_10 sample 1/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 11/15] t3_10 sample 2/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 11/15] t3_10 sample 3/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 11/15] t3_10 sample 4/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 11/15] t3_10 sample 5/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 12/15] t3_11 sample 1/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 12/15] t3_11 sample 2/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 12/15] t3_11 sample 3/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 12/15] t3_11 sample 4/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 12/15] t3_11 sample 5/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 13/15] t3_12 sample 1/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 13/15] t3_12 sample 2/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 13/15] t3_12 sample 3/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 13/15] t3_12 sample 4/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 13/15] t3_12 sample 5/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 14/15] t3_13 sample 1/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 14/15] t3_13 sample 2/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 14/15] t3_13 sample 3/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 14/15] t3_13 sample 4/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 14/15] t3_13 sample 5/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 15/15] t3_14 sample 1/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 15/15] t3_14 sample 2/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 15/15] t3_14 sample 3/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 15/15] t3_14 sample 4/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 15/15] t3_14 sample 5/5
+INFO:assistants.mistral_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+{"status": "completed", "counts": {"judged": 75}, "expected_samples": 75, "fingerprint": "156d61c7a4c8d65bf77f874205c1e785d7415bceb2af12f0e428236a5c4eab89", "execution_status_counts": {"candidate_unsupported_import": 52, "candidate_error": 23}, "unsupported_import_modules": {"qiskit.execute": 13, "pennylane.qchem.QubitMolecularData": 1, "scipy.special.exp_int_1_1": 1, "qiskit.Aer": 25, "qiskit.Qubit": 3, "scipy.constants.Bohr": 1, "qiskit.chemistry": 2, "scipy.sparse.cite_matrix": 1, "openfermion": 4, "scipy.sparse.linalg.eigh": 1}, "mean_rubric_score": 1.4, "rubric_maximum": [10]}

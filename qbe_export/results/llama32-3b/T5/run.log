@@ -1,0 +1,208 @@
+[T5 1/17] t5_0 sample 1/5
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/meta-llama/Llama-3.2-3B-Instruct/tree/0cb88a4f764b7a12671c53f0838cd831a0843b95?recursive=true&expand=false "HTTP/1.1 200 OK"
+Fetching 16 files:   0%|          | 0/16 [00:00<?, ?it/s]INFO:httpx:HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/.gitattributes "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/LICENSE.txt "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/README.md "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/USE_POLICY.md "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/meta-llama/Llama-3.2-3B-Instruct/xet-read-token/0cb88a4f764b7a12671c53f0838cd831a0843b95 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/.gitattributes "HTTP/1.1 200 OK"
+Fetching 16 files:   6%|▋         | 1/16 [00:00<00:01,  7.63it/s]INFO:httpx:HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/generation_config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/LICENSE.txt "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/README.md "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/USE_POLICY.md "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/model.safetensors.index.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/generation_config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/original/orig_params.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/original/params.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/model.safetensors.index.json "HTTP/1.1 200 OK"
+Fetching 16 files:  44%|████▍     | 7/16 [00:00<00:00, 30.65it/s]INFO:httpx:HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/special_tokens_map.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/original/orig_params.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/tokenizer.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/special_tokens_map.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/tokenizer_config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/tokenizer.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/tokenizer_config.json "HTTP/1.1 200 OK"
+Fetching 16 files:  69%|██████▉   | 11/16 [00:00<00:00, 26.33it/s]Fetching 16 files:  75%|███████▌  | 12/16 [00:20<00:00, 26.33it/s]Fetching 16 files:  81%|████████▏ | 13/16 [00:57<00:21,  7.05s/it]Fetching 16 files:  88%|████████▊ | 14/16 [06:16<01:47, 53.96s/it]Fetching 16 files:  94%|█████████▍| 15/16 [07:44<00:59, 59.88s/it]Fetching 16 files: 100%|██████████| 16/16 [07:55<00:00, 50.22s/it]Fetching 16 files: 100%|██████████| 16/16 [07:55<00:00, 29.75s/it]
+INFO:assistants.base_assistant:Initialized Llama3Assistant with model /mnt/zgx2-shared/AS-HybridQuantumBench/runs/quantumbencheval_t1-6/llama32-v3-c/cache/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95
+`torch_dtype` is deprecated! Use `dtype` instead!
+/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:283: UserWarning: 
+    Found GPU0 NVIDIA GB10 which is of cuda capability 12.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (8.0) - (12.0)
+    
+  warnings.warn(
+Loading weights:   0%|          | 0/254 [00:00<?, ?it/s]Loading weights:   0%|          | 1/254 [00:09<39:59,  9.48s/it]Loading weights:   1%|          | 2/254 [00:10<17:53,  4.26s/it]Loading weights:   1%|          | 3/254 [00:10<10:44,  2.57s/it]Loading weights:   2%|▏         | 5/254 [00:11<05:17,  1.28s/it]Loading weights:   3%|▎         | 8/254 [00:11<02:33,  1.61it/s]Loading weights:   4%|▎         | 9/254 [00:11<02:10,  1.87it/s]Loading weights:   5%|▍         | 12/254 [00:12<01:32,  2.63it/s]Loading weights:   5%|▌         | 13/254 [00:12<01:39,  2.42it/s]Loading weights:   6%|▌         | 14/254 [00:13<01:46,  2.26it/s]Loading weights:   7%|▋         | 17/254 [00:13<01:04,  3.67it/s]Loading weights:   7%|▋         | 18/254 [00:13<01:01,  3.86it/s]Loading weights:   8%|▊         | 21/254 [00:14<01:02,  3.74it/s]Loading weights:   9%|▊         | 22/254 [00:15<01:18,  2.96it/s]Loading weights:   9%|▉         | 23/254 [00:15<01:28,  2.62it/s]Loading weights:  10%|█         | 26/254 [00:16<00:55,  4.09it/s]Loading weights:  11%|█         | 27/254 [00:16<00:53,  4.26it/s]Loading weights:  12%|█▏        | 30/254 [00:16<00:50,  4.43it/s]Loading weights:  12%|█▏        | 31/254 [00:17<01:03,  3.54it/s]Loading weights:  13%|█▎        | 32/254 [00:18<01:14,  2.97it/s]Loading weights:  14%|█▍        | 35/254 [00:18<00:48,  4.52it/s]Loading weights:  14%|█▍        | 36/254 [00:18<00:47,  4.63it/s]Loading weights:  15%|█▌        | 39/254 [00:20<01:20,  2.65it/s]Loading weights:  16%|█▌        | 40/254 [00:21<02:08,  1.66it/s]Loading weights:  20%|█▉        | 50/254 [00:22<00:43,  4.67it/s]Loading weights:  21%|██        | 53/254 [00:23<00:40,  5.02it/s]Loading weights:  21%|██▏       | 54/254 [00:23<00:39,  5.03it/s]Loading weights:  22%|██▏       | 57/254 [00:23<00:41,  4.71it/s]Loading weights:  23%|██▎       | 58/254 [00:24<00:50,  3.91it/s]Loading weights:  23%|██▎       | 59/254 [00:25<00:58,  3.34it/s]Loading weights:  24%|██▍       | 62/254 [00:25<00:41,  4.66it/s]Loading weights:  25%|██▍       | 63/254 [00:25<00:40,  4.74it/s]Loading weights:  26%|██▌       | 66/254 [00:27<01:07,  2.77it/s]Loading weights:  30%|██▉       | 75/254 [00:27<00:30,  5.79it/s]Loading weights:  30%|██▉       | 76/254 [00:28<00:37,  4.77it/s]Loading weights:  30%|███       | 77/254 [00:28<00:44,  4.01it/s]Loading weights:  31%|███       | 79/254 [00:29<00:42,  4.12it/s]Loading weights:  33%|███▎      | 84/254 [00:29<00:31,  5.44it/s]Loading weights:  33%|███▎      | 85/254 [00:30<00:38,  4.39it/s]Loading weights:  34%|███▍      | 86/254 [00:31<00:46,  3.64it/s]Loading weights:  35%|███▍      | 88/254 [00:31<00:46,  3.57it/s]Loading weights:  37%|███▋      | 94/254 [00:32<00:31,  5.06it/s]Loading weights:  39%|███▊      | 98/254 [00:32<00:23,  6.59it/s]Loading weights:  39%|███▉      | 99/254 [00:32<00:24,  6.39it/s]Loading weights:  40%|████      | 102/254 [00:33<00:25,  5.85it/s]Loading weights:  41%|████      | 103/254 [00:34<00:33,  4.52it/s]Loading weights:  41%|████      | 104/254 [00:34<00:41,  3.66it/s]Loading weights:  42%|████▏     | 107/254 [00:34<00:28,  5.10it/s]Loading weights:  43%|████▎     | 108/254 [00:35<00:28,  5.11it/s]Loading weights:  44%|████▎     | 111/254 [00:36<00:40,  3.57it/s]Loading weights:  44%|████▍     | 112/254 [00:36<00:46,  3.07it/s]Loading weights:  48%|████▊     | 121/254 [00:37<00:19,  6.76it/s]Loading weights:  48%|████▊     | 122/254 [00:37<00:24,  5.35it/s]Loading weights:  49%|████▉     | 124/254 [00:38<00:25,  5.16it/s]Loading weights:  51%|█████     | 129/254 [00:38<00:20,  6.18it/s]Loading weights:  51%|█████     | 130/254 [00:39<00:25,  4.86it/s]Loading weights:  52%|█████▏    | 131/254 [00:40<00:36,  3.40it/s]Loading weights:  52%|█████▏    | 133/254 [00:40<00:30,  4.01it/s]Loading weights:  54%|█████▍    | 138/254 [00:42<00:34,  3.35it/s]Loading weights:  55%|█████▍    | 139/254 [00:44<00:53,  2.13it/s]Loading weights:  59%|█████▊    | 149/254 [00:44<00:21,  4.93it/s]Loading weights:  60%|█████▉    | 152/254 [00:44<00:17,  5.67it/s]Loading weights:  60%|██████    | 153/254 [00:45<00:17,  5.62it/s]Loading weights:  61%|██████▏   | 156/254 [00:46<00:28,  3.46it/s]Loading weights:  63%|██████▎   | 161/254 [00:46<00:17,  5.20it/s]Loading weights:  65%|██████▍   | 165/254 [00:47<00:15,  5.58it/s]Loading weights:  65%|██████▌   | 166/254 [00:48<00:20,  4.21it/s]Loading weights:  66%|██████▌   | 167/254 [00:49<00:25,  3.40it/s]Loading weights:  67%|██████▋   | 170/254 [00:49<00:18,  4.56it/s]Loading weights:  67%|██████▋   | 171/254 [00:49<00:17,  4.66it/s]Loading weights:  69%|██████▊   | 174/254 [00:50<00:16,  4.79it/s]Loading weights:  69%|██████▉   | 175/254 [00:50<00:20,  3.83it/s]Loading weights:  69%|██████▉   | 176/254 [00:51<00:24,  3.19it/s]Loading weights:  70%|███████   | 178/254 [00:51<00:21,  3.55it/s]Loading weights:  72%|███████▏  | 184/254 [00:52<00:12,  5.72it/s]Loading weights:  73%|███████▎  | 185/254 [00:52<00:15,  4.53it/s]Loading weights:  74%|███████▍  | 188/254 [00:52<00:11,  5.78it/s]Loading weights:  74%|███████▍  | 189/254 [00:53<00:11,  5.72it/s]Loading weights:  76%|███████▋  | 194/254 [00:53<00:05, 10.05it/s]Loading weights:  79%|███████▉  | 201/254 [00:53<00:04, 10.75it/s]Loading weights:  80%|███████▉  | 203/254 [00:55<00:08,  5.87it/s]Loading weights:  81%|████████  | 206/254 [00:55<00:07,  6.68it/s]Loading weights:  82%|████████▏ | 208/254 [00:55<00:06,  6.85it/s]Loading weights:  83%|████████▎ | 210/254 [00:56<00:07,  5.66it/s]Loading weights:  83%|████████▎ | 211/254 [00:56<00:11,  3.88it/s]Loading weights:  83%|████████▎ | 212/254 [00:57<00:13,  3.10it/s]Loading weights:  84%|████████▍ | 214/254 [00:57<00:11,  3.44it/s]Loading weights:  86%|████████▌ | 219/254 [00:58<00:06,  5.03it/s]Loading weights:  87%|████████▋ | 220/254 [00:59<00:08,  4.07it/s]Loading weights:  87%|████████▋ | 221/254 [00:59<00:09,  3.41it/s]Loading weights:  88%|████████▊ | 224/254 [00:59<00:06,  4.83it/s]Loading weights:  89%|████████▊ | 225/254 [01:00<00:05,  4.89it/s]Loading weights:  89%|████████▉ | 226/254 [01:01<00:10,  2.58it/s]Loading weights:  90%|████████▉ | 228/254 [01:01<00:09,  2.87it/s]Loading weights:  92%|█████████▏| 233/254 [01:02<00:03,  5.59it/s]Loading weights:  92%|█████████▏| 234/254 [01:02<00:03,  5.30it/s]Loading weights:  93%|█████████▎| 237/254 [01:02<00:03,  5.36it/s]Loading weights:  94%|█████████▎| 238/254 [01:03<00:03,  4.13it/s]Loading weights:  94%|█████████▍| 239/254 [01:03<00:04,  3.37it/s]Loading weights:  95%|█████████▍| 241/254 [01:04<00:03,  3.68it/s]Loading weights:  97%|█████████▋| 247/254 [01:05<00:01,  5.16it/s]Loading weights:  98%|█████████▊| 248/254 [01:05<00:01,  3.97it/s]Loading weights:  98%|█████████▊| 250/254 [01:06<00:00,  4.13it/s]Loading weights: 100%|██████████| 254/254 [01:06<00:00,  3.83it/s]
+INFO:assistants.llama3_assistant:Initialized HF Llama-3 model: /mnt/zgx2-shared/AS-HybridQuantumBench/runs/quantumbencheval_t1-6/llama32-v3-c/cache/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 1/17] t5_0 sample 2/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 1/17] t5_0 sample 3/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 1/17] t5_0 sample 4/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 1/17] t5_0 sample 5/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 2/17] t5_1 sample 1/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 2/17] t5_1 sample 2/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 2/17] t5_1 sample 3/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 2/17] t5_1 sample 4/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 2/17] t5_1 sample 5/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 3/17] t5_2 sample 1/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 3/17] t5_2 sample 2/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 3/17] t5_2 sample 3/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 3/17] t5_2 sample 4/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 3/17] t5_2 sample 5/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 4/17] t5_3 sample 1/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 4/17] t5_3 sample 2/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 4/17] t5_3 sample 3/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 4/17] t5_3 sample 4/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 4/17] t5_3 sample 5/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 5/17] t5_4 sample 1/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 5/17] t5_4 sample 2/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 5/17] t5_4 sample 3/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 5/17] t5_4 sample 4/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 5/17] t5_4 sample 5/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 6/17] t5_5 sample 1/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 6/17] t5_5 sample 2/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 6/17] t5_5 sample 3/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 6/17] t5_5 sample 4/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 6/17] t5_5 sample 5/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 7/17] t5_6 sample 1/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 7/17] t5_6 sample 2/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 7/17] t5_6 sample 3/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 7/17] t5_6 sample 4/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 7/17] t5_6 sample 5/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 8/17] t5_7 sample 1/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 8/17] t5_7 sample 2/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 8/17] t5_7 sample 3/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 8/17] t5_7 sample 4/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 8/17] t5_7 sample 5/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 9/17] t5_8 sample 1/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 9/17] t5_8 sample 2/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 9/17] t5_8 sample 3/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 9/17] t5_8 sample 4/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 9/17] t5_8 sample 5/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 10/17] t5_9 sample 1/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 10/17] t5_9 sample 2/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 10/17] t5_9 sample 3/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 10/17] t5_9 sample 4/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 10/17] t5_9 sample 5/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 11/17] t5_10 sample 1/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 11/17] t5_10 sample 2/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 11/17] t5_10 sample 3/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 11/17] t5_10 sample 4/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 11/17] t5_10 sample 5/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 12/17] t5_11 sample 1/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 12/17] t5_11 sample 2/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 12/17] t5_11 sample 3/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 12/17] t5_11 sample 4/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 12/17] t5_11 sample 5/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 13/17] t5_12 sample 1/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 13/17] t5_12 sample 2/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 13/17] t5_12 sample 3/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 13/17] t5_12 sample 4/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 13/17] t5_12 sample 5/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 14/17] t5_13 sample 1/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 14/17] t5_13 sample 2/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 14/17] t5_13 sample 3/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 14/17] t5_13 sample 4/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 14/17] t5_13 sample 5/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 15/17] t5_14 sample 1/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 15/17] t5_14 sample 2/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 15/17] t5_14 sample 3/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 15/17] t5_14 sample 4/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 15/17] t5_14 sample 5/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 16/17] t5_15 sample 1/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 16/17] t5_15 sample 2/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 16/17] t5_15 sample 3/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 16/17] t5_15 sample 4/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 16/17] t5_15 sample 5/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 17/17] t5_16 sample 1/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 17/17] t5_16 sample 2/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 17/17] t5_16 sample 3/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 17/17] t5_16 sample 4/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+[T5 17/17] t5_16 sample 5/5
+INFO:assistants.llama3_assistant:Generated sample 1/1 successfully
+{"status": "completed", "counts": {"candidate_unsupported_import": 30, "candidate_error": 55}, "expected_samples": 85, "fingerprint": "4a2ae6d39061a208a237aed56c7408f104b8a79ae65b989f481ba898f9dff9ad", "execution_status_counts": {"candidate_unsupported_import": 30, "candidate_error": 55}, "unsupported_import_modules": {"networkx.algorithms.maximum_weight_clique": 1, "dwavebinaryimport": 2, "dwave_neal": 3, "neal.SimulatedAnnealing": 1, "dwave_neural_networks": 1, "networkx.algorithms.maximum_weightIndependentSet": 1, "dwave_networkx": 6, "dwave.system": 1, "neal.DWaveSampler": 2, "dimod.Collection": 1, "neal.LBFGS_B": 1, "qiskit.algorithms": 1, "qiskit.BasicAer": 1, "qiskit_optimization.QuadraticUnconstrainedBinaryQuadraticProgram": 1, "dwave.neural_networks": 1, "dimod.GridGraph": 1, "dimod.load": 1, "neal.LocalDMCGrover": 1, "dwave_binary": 1, "qiskit_aqua": 1, "neal.Simannea": 1}, "pass_at_k": {"1": 0.0, "5": 0.0}, "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."}

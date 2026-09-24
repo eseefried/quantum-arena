@@ -1,0 +1,36 @@
+{
+  "status": "completed",
+  "counts": {
+    "candidate_unsupported_import": 59,
+    "candidate_error": 26
+  },
+  "expected_samples": 85,
+  "fingerprint": "fa4b35c34299c59ff2095095257db779f183f732bc754bc4cfc9f67439683c64",
+  "execution_status_counts": {
+    "candidate_unsupported_import": 59,
+    "candidate_error": 26
+  },
+  "unsupported_import_modules": {
+    "pennylane.qchem.qaoa": 3,
+    "qiskit.Aer": 33,
+    "pennylane.qfunc": 2,
+    "qiskit.execute": 5,
+    "qiskit.algorithms": 2,
+    "pennylane.qchem.QubitEmbedding": 2,
+    "pennylane.qchem.qiskit": 2,
+    "pennylane_qiskit": 2,
+    "dwave.ocean": 1,
+    "pqp": 1,
+    "networkx.graph_from_edgelist": 1,
+    "pennylane.qfc": 1,
+    "pennylane.numpy_qfun": 1,
+    "pennylane.numpy_qfunc": 1,
+    "dimod.BinaryScalar": 1,
+    "pennylane.qchem.qaoa_energy": 1
+  },
+  "pass_at_k": {
+    "1": 0.0,
+    "5": 0.0
+  },
+  "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."
+}

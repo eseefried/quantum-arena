@@ -1,0 +1,664 @@
+[T3 1/15] t3_0 sample 1/5
+INFO:assistants.base_assistant:Initialized ClaudeAssistant with model claude-fable-5-1
+INFO:assistants.claude_assistant:Initialized Anthropic client with model claude-fable-5-1
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 1/15] t3_0 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 1/15] t3_0 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 1/15] t3_0 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 1/15] t3_0 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 2/15] t3_1 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 2/15] t3_1 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 2/15] t3_1 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 2/15] t3_1 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 2/15] t3_1 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 3/15] t3_2 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 3/15] t3_2 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 3/15] t3_2 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 3/15] t3_2 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 3/15] t3_2 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 4/15] t3_3 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 4/15] t3_3 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 4/15] t3_3 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 4/15] t3_3 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 4/15] t3_3 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 5/15] t3_4 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 5/15] t3_4 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 5/15] t3_4 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 5/15] t3_4 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 5/15] t3_4 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 6/15] t3_5 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 6/15] t3_5 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 6/15] t3_5 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 6/15] t3_5 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 6/15] t3_5 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 7/15] t3_6 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 7/15] t3_6 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 7/15] t3_6 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 7/15] t3_6 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 7/15] t3_6 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 8/15] t3_7 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 8/15] t3_7 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 8/15] t3_7 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 8/15] t3_7 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 8/15] t3_7 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 9/15] t3_8 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 9/15] t3_8 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 9/15] t3_8 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 9/15] t3_8 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 9/15] t3_8 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 10/15] t3_9 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 10/15] t3_9 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+ERROR:assistants.claude_assistant:Error generating sample 1/1: Empty or unfinished Claude output: stop_reason=max_tokens
+Traceback (most recent call last):
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/assistants/claude_assistant.py", line 108, in generate_code
+    raise RuntimeError(
+RuntimeError: Empty or unfinished Claude output: stop_reason=max_tokens
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/scripts/run_quantumbencheval.py", line 8, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/qbe/runner.py", line 222, in main
+    if args.worker: worker(args.worker); return 0
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/qbe/runner.py", line 134, in worker
+    generated = assistant.generate_code(prompt, num_samples=1, temperature=settings['temperature'])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/assistants/claude_assistant.py", line 149, in generate_code
+    raise RuntimeError("Fable generation failed; stopping before caching invalid output") from e
+RuntimeError: Fable generation failed; stopping before caching invalid output
+[T3 1/15] t3_0 sample 1/5
+[T3 1/15] t3_0 sample 2/5
+[T3 1/15] t3_0 sample 3/5
+[T3 1/15] t3_0 sample 4/5
+[T3 1/15] t3_0 sample 5/5
+[T3 2/15] t3_1 sample 1/5
+[T3 2/15] t3_1 sample 2/5
+[T3 2/15] t3_1 sample 3/5
+[T3 2/15] t3_1 sample 4/5
+[T3 2/15] t3_1 sample 5/5
+[T3 3/15] t3_2 sample 1/5
+[T3 3/15] t3_2 sample 2/5
+[T3 3/15] t3_2 sample 3/5
+[T3 3/15] t3_2 sample 4/5
+[T3 3/15] t3_2 sample 5/5
+[T3 4/15] t3_3 sample 1/5
+[T3 4/15] t3_3 sample 2/5
+[T3 4/15] t3_3 sample 3/5
+[T3 4/15] t3_3 sample 4/5
+[T3 4/15] t3_3 sample 5/5
+[T3 5/15] t3_4 sample 1/5
+[T3 5/15] t3_4 sample 2/5
+[T3 5/15] t3_4 sample 3/5
+[T3 5/15] t3_4 sample 4/5
+[T3 5/15] t3_4 sample 5/5
+[T3 6/15] t3_5 sample 1/5
+[T3 6/15] t3_5 sample 2/5
+[T3 6/15] t3_5 sample 3/5
+[T3 6/15] t3_5 sample 4/5
+[T3 6/15] t3_5 sample 5/5
+[T3 7/15] t3_6 sample 1/5
+[T3 7/15] t3_6 sample 2/5
+[T3 7/15] t3_6 sample 3/5
+[T3 7/15] t3_6 sample 4/5
+[T3 7/15] t3_6 sample 5/5
+[T3 8/15] t3_7 sample 1/5
+[T3 8/15] t3_7 sample 2/5
+[T3 8/15] t3_7 sample 3/5
+[T3 8/15] t3_7 sample 4/5
+[T3 8/15] t3_7 sample 5/5
+[T3 9/15] t3_8 sample 1/5
+[T3 9/15] t3_8 sample 2/5
+[T3 9/15] t3_8 sample 3/5
+[T3 9/15] t3_8 sample 4/5
+[T3 9/15] t3_8 sample 5/5
+[T3 10/15] t3_9 sample 1/5
+[T3 10/15] t3_9 sample 2/5
+INFO:assistants.base_assistant:Initialized ClaudeAssistant with model claude-fable-5-1
+INFO:assistants.claude_assistant:Initialized Anthropic client with model claude-fable-5-1
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+ERROR:assistants.claude_assistant:Error generating sample 1/1: Empty or unfinished Claude output: stop_reason=max_tokens
+Traceback (most recent call last):
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/assistants/claude_assistant.py", line 108, in generate_code
+    raise RuntimeError(
+RuntimeError: Empty or unfinished Claude output: stop_reason=max_tokens
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/scripts/run_quantumbencheval.py", line 8, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/qbe/runner.py", line 222, in main
+    if args.worker: worker(args.worker); return 0
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/qbe/runner.py", line 134, in worker
+    generated = assistant.generate_code(prompt, num_samples=1, temperature=settings['temperature'])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/assistants/claude_assistant.py", line 149, in generate_code
+    raise RuntimeError("Fable generation failed; stopping before caching invalid output") from e
+RuntimeError: Fable generation failed; stopping before caching invalid output
+[T3 1/15] t3_0 sample 1/5
+[T3 1/15] t3_0 sample 2/5
+[T3 1/15] t3_0 sample 3/5
+[T3 1/15] t3_0 sample 4/5
+[T3 1/15] t3_0 sample 5/5
+[T3 2/15] t3_1 sample 1/5
+[T3 2/15] t3_1 sample 2/5
+[T3 2/15] t3_1 sample 3/5
+[T3 2/15] t3_1 sample 4/5
+[T3 2/15] t3_1 sample 5/5
+[T3 3/15] t3_2 sample 1/5
+[T3 3/15] t3_2 sample 2/5
+[T3 3/15] t3_2 sample 3/5
+[T3 3/15] t3_2 sample 4/5
+[T3 3/15] t3_2 sample 5/5
+[T3 4/15] t3_3 sample 1/5
+[T3 4/15] t3_3 sample 2/5
+[T3 4/15] t3_3 sample 3/5
+[T3 4/15] t3_3 sample 4/5
+[T3 4/15] t3_3 sample 5/5
+[T3 5/15] t3_4 sample 1/5
+[T3 5/15] t3_4 sample 2/5
+[T3 5/15] t3_4 sample 3/5
+[T3 5/15] t3_4 sample 4/5
+[T3 5/15] t3_4 sample 5/5
+[T3 6/15] t3_5 sample 1/5
+[T3 6/15] t3_5 sample 2/5
+[T3 6/15] t3_5 sample 3/5
+[T3 6/15] t3_5 sample 4/5
+[T3 6/15] t3_5 sample 5/5
+[T3 7/15] t3_6 sample 1/5
+[T3 7/15] t3_6 sample 2/5
+[T3 7/15] t3_6 sample 3/5
+[T3 7/15] t3_6 sample 4/5
+[T3 7/15] t3_6 sample 5/5
+[T3 8/15] t3_7 sample 1/5
+[T3 8/15] t3_7 sample 2/5
+[T3 8/15] t3_7 sample 3/5
+[T3 8/15] t3_7 sample 4/5
+[T3 8/15] t3_7 sample 5/5
+[T3 9/15] t3_8 sample 1/5
+[T3 9/15] t3_8 sample 2/5
+[T3 9/15] t3_8 sample 3/5
+[T3 9/15] t3_8 sample 4/5
+[T3 9/15] t3_8 sample 5/5
+[T3 10/15] t3_9 sample 1/5
+[T3 10/15] t3_9 sample 2/5
+INFO:assistants.base_assistant:Initialized ClaudeAssistant with model claude-fable-5-1
+INFO:assistants.claude_assistant:Initialized Anthropic client with model claude-fable-5-1
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 10/15] t3_9 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 10/15] t3_9 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 10/15] t3_9 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 11/15] t3_10 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 11/15] t3_10 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 11/15] t3_10 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 11/15] t3_10 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 11/15] t3_10 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 12/15] t3_11 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 12/15] t3_11 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 12/15] t3_11 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 12/15] t3_11 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 12/15] t3_11 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 13/15] t3_12 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 13/15] t3_12 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 13/15] t3_12 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 13/15] t3_12 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 13/15] t3_12 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 14/15] t3_13 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 14/15] t3_13 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 14/15] t3_13 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 14/15] t3_13 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 14/15] t3_13 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 15/15] t3_14 sample 1/5
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+ERROR:assistants.claude_assistant:Error generating sample 1/1: {'type': 'error', 'error': {'details': None, 'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CfLwsAhHHUbqz3DnF546E'}
+Traceback (most recent call last):
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/assistants/claude_assistant.py", line 87, in generate_code
+    resp = self._stream_with_retries(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/assistants/claude_assistant.py", line 189, in _stream_with_retries
+    return stream.get_final_message()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/lib/python3.12/site-packages/anthropic/lib/streaming/_messages.py", line 98, in get_final_message
+    self.until_done()
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/lib/python3.12/site-packages/anthropic/lib/streaming/_messages.py", line 125, in until_done
+    consume_sync_iterator(self)
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/lib/python3.12/site-packages/anthropic/_utils/_streams.py", line 6, in consume_sync_iterator
+    for _ in iterator:
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/lib/python3.12/site-packages/anthropic/lib/streaming/_messages.py", line 72, in __iter__
+    for item in self._iterator:
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/lib/python3.12/site-packages/anthropic/lib/streaming/_messages.py", line 133, in __stream__
+    for sse_event in self._raw_stream:
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/lib/python3.12/site-packages/anthropic/_streaming.py", line 48, in __iter__
+    for item in self._iterator:
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/lib/python3.12/site-packages/anthropic/_streaming.py", line 140, in __stream__
+    raise self._client._make_status_error(
+anthropic.APIStatusError: {'type': 'error', 'error': {'details': None, 'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CfLwsAhHHUbqz3DnF546E'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/scripts/run_quantumbencheval.py", line 8, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/qbe/runner.py", line 222, in main
+    if args.worker: worker(args.worker); return 0
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/qbe/runner.py", line 134, in worker
+    generated = assistant.generate_code(prompt, num_samples=1, temperature=settings['temperature'])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/assistants/claude_assistant.py", line 149, in generate_code
+    raise RuntimeError("Fable generation failed; stopping before caching invalid output") from e
+RuntimeError: Fable generation failed; stopping before caching invalid output
+[T3 1/15] t3_0 sample 1/5
+[T3 1/15] t3_0 sample 2/5
+[T3 1/15] t3_0 sample 3/5
+[T3 1/15] t3_0 sample 4/5
+[T3 1/15] t3_0 sample 5/5
+[T3 2/15] t3_1 sample 1/5
+[T3 2/15] t3_1 sample 2/5
+[T3 2/15] t3_1 sample 3/5
+[T3 2/15] t3_1 sample 4/5
+[T3 2/15] t3_1 sample 5/5
+[T3 3/15] t3_2 sample 1/5
+[T3 3/15] t3_2 sample 2/5
+[T3 3/15] t3_2 sample 3/5
+[T3 3/15] t3_2 sample 4/5
+[T3 3/15] t3_2 sample 5/5
+[T3 4/15] t3_3 sample 1/5
+[T3 4/15] t3_3 sample 2/5
+[T3 4/15] t3_3 sample 3/5
+[T3 4/15] t3_3 sample 4/5
+[T3 4/15] t3_3 sample 5/5
+[T3 5/15] t3_4 sample 1/5
+[T3 5/15] t3_4 sample 2/5
+[T3 5/15] t3_4 sample 3/5
+[T3 5/15] t3_4 sample 4/5
+[T3 5/15] t3_4 sample 5/5
+[T3 6/15] t3_5 sample 1/5
+[T3 6/15] t3_5 sample 2/5
+[T3 6/15] t3_5 sample 3/5
+[T3 6/15] t3_5 sample 4/5
+[T3 6/15] t3_5 sample 5/5
+[T3 7/15] t3_6 sample 1/5
+[T3 7/15] t3_6 sample 2/5
+[T3 7/15] t3_6 sample 3/5
+[T3 7/15] t3_6 sample 4/5
+[T3 7/15] t3_6 sample 5/5
+[T3 8/15] t3_7 sample 1/5
+[T3 8/15] t3_7 sample 2/5
+[T3 8/15] t3_7 sample 3/5
+[T3 8/15] t3_7 sample 4/5
+[T3 8/15] t3_7 sample 5/5
+[T3 9/15] t3_8 sample 1/5
+[T3 9/15] t3_8 sample 2/5
+[T3 9/15] t3_8 sample 3/5
+[T3 9/15] t3_8 sample 4/5
+[T3 9/15] t3_8 sample 5/5
+[T3 10/15] t3_9 sample 1/5
+[T3 10/15] t3_9 sample 2/5
+[T3 10/15] t3_9 sample 3/5
+[T3 10/15] t3_9 sample 4/5
+[T3 10/15] t3_9 sample 5/5
+[T3 11/15] t3_10 sample 1/5
+[T3 11/15] t3_10 sample 2/5
+[T3 11/15] t3_10 sample 3/5
+[T3 11/15] t3_10 sample 4/5
+[T3 11/15] t3_10 sample 5/5
+[T3 12/15] t3_11 sample 1/5
+[T3 12/15] t3_11 sample 2/5
+[T3 12/15] t3_11 sample 3/5
+[T3 12/15] t3_11 sample 4/5
+[T3 12/15] t3_11 sample 5/5
+[T3 13/15] t3_12 sample 1/5
+[T3 13/15] t3_12 sample 2/5
+[T3 13/15] t3_12 sample 3/5
+[T3 13/15] t3_12 sample 4/5
+[T3 13/15] t3_12 sample 5/5
+[T3 14/15] t3_13 sample 1/5
+[T3 14/15] t3_13 sample 2/5
+[T3 14/15] t3_13 sample 3/5
+[T3 14/15] t3_13 sample 4/5
+[T3 14/15] t3_13 sample 5/5
+[T3 15/15] t3_14 sample 1/5
+INFO:assistants.base_assistant:Initialized ClaudeAssistant with model claude-fable-5-1
+INFO:assistants.claude_assistant:Initialized Anthropic client with model claude-fable-5-1
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+ERROR:assistants.claude_assistant:Error generating sample 1/1: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CfM5DZ5ZBnkFm4Ay9NdSj'}
+Traceback (most recent call last):
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/assistants/claude_assistant.py", line 87, in generate_code
+    resp = self._stream_with_retries(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/assistants/claude_assistant.py", line 188, in _stream_with_retries
+    with self.client.messages.stream(**request) as stream:
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/lib/python3.12/site-packages/anthropic/lib/streaming/_messages.py", line 172, in __enter__
+    raw_stream = self.__api_request()
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/lib/python3.12/site-packages/anthropic/_base_client.py", line 1511, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/lib/python3.12/site-packages/anthropic/_base_client.py", line 1195, in request
+    raise self._make_status_error_from_response(response) from None
+anthropic.BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CfM5DZ5ZBnkFm4Ay9NdSj'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/scripts/run_quantumbencheval.py", line 8, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/qbe/runner.py", line 222, in main
+    if args.worker: worker(args.worker); return 0
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/qbe/runner.py", line 134, in worker
+    generated = assistant.generate_code(prompt, num_samples=1, temperature=settings['temperature'])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/assistants/claude_assistant.py", line 149, in generate_code
+    raise RuntimeError("Fable generation failed; stopping before caching invalid output") from e
+RuntimeError: Fable generation failed; stopping before caching invalid output
+[T3 1/15] t3_0 sample 1/5
+[T3 1/15] t3_0 sample 2/5
+[T3 1/15] t3_0 sample 3/5
+[T3 1/15] t3_0 sample 4/5
+[T3 1/15] t3_0 sample 5/5
+[T3 2/15] t3_1 sample 1/5
+[T3 2/15] t3_1 sample 2/5
+[T3 2/15] t3_1 sample 3/5
+[T3 2/15] t3_1 sample 4/5
+[T3 2/15] t3_1 sample 5/5
+[T3 3/15] t3_2 sample 1/5
+[T3 3/15] t3_2 sample 2/5
+[T3 3/15] t3_2 sample 3/5
+[T3 3/15] t3_2 sample 4/5
+[T3 3/15] t3_2 sample 5/5
+[T3 4/15] t3_3 sample 1/5
+[T3 4/15] t3_3 sample 2/5
+[T3 4/15] t3_3 sample 3/5
+[T3 4/15] t3_3 sample 4/5
+[T3 4/15] t3_3 sample 5/5
+[T3 5/15] t3_4 sample 1/5
+[T3 5/15] t3_4 sample 2/5
+[T3 5/15] t3_4 sample 3/5
+[T3 5/15] t3_4 sample 4/5
+[T3 5/15] t3_4 sample 5/5
+[T3 6/15] t3_5 sample 1/5
+[T3 6/15] t3_5 sample 2/5
+[T3 6/15] t3_5 sample 3/5
+[T3 6/15] t3_5 sample 4/5
+[T3 6/15] t3_5 sample 5/5
+[T3 7/15] t3_6 sample 1/5
+[T3 7/15] t3_6 sample 2/5
+[T3 7/15] t3_6 sample 3/5
+[T3 7/15] t3_6 sample 4/5
+[T3 7/15] t3_6 sample 5/5
+[T3 8/15] t3_7 sample 1/5
+[T3 8/15] t3_7 sample 2/5
+[T3 8/15] t3_7 sample 3/5
+[T3 8/15] t3_7 sample 4/5
+[T3 8/15] t3_7 sample 5/5
+[T3 9/15] t3_8 sample 1/5
+[T3 9/15] t3_8 sample 2/5
+[T3 9/15] t3_8 sample 3/5
+[T3 9/15] t3_8 sample 4/5
+[T3 9/15] t3_8 sample 5/5
+[T3 10/15] t3_9 sample 1/5
+[T3 10/15] t3_9 sample 2/5
+[T3 10/15] t3_9 sample 3/5
+[T3 10/15] t3_9 sample 4/5
+[T3 10/15] t3_9 sample 5/5
+[T3 11/15] t3_10 sample 1/5
+[T3 11/15] t3_10 sample 2/5
+[T3 11/15] t3_10 sample 3/5
+[T3 11/15] t3_10 sample 4/5
+[T3 11/15] t3_10 sample 5/5
+[T3 12/15] t3_11 sample 1/5
+[T3 12/15] t3_11 sample 2/5
+[T3 12/15] t3_11 sample 3/5
+[T3 12/15] t3_11 sample 4/5
+[T3 12/15] t3_11 sample 5/5
+[T3 13/15] t3_12 sample 1/5
+[T3 13/15] t3_12 sample 2/5
+[T3 13/15] t3_12 sample 3/5
+[T3 13/15] t3_12 sample 4/5
+[T3 13/15] t3_12 sample 5/5
+[T3 14/15] t3_13 sample 1/5
+[T3 14/15] t3_13 sample 2/5
+[T3 14/15] t3_13 sample 3/5
+[T3 14/15] t3_13 sample 4/5
+[T3 14/15] t3_13 sample 5/5
+[T3 15/15] t3_14 sample 1/5
+INFO:assistants.base_assistant:Initialized ClaudeAssistant with model claude-fable-5-1
+INFO:assistants.claude_assistant:Initialized Anthropic client with model claude-fable-5-1
+INFO:httpx2:HTTP Request: POST https://api.perplexity.ai/v1/responses "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.perplexity.ai/v1/responses "HTTP/1.1 200 OK"
+[T3 15/15] t3_14 sample 2/5
+INFO:httpx2:HTTP Request: POST https://api.perplexity.ai/v1/responses "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.perplexity.ai/v1/responses "HTTP/1.1 200 OK"
+[T3 15/15] t3_14 sample 3/5
+INFO:httpx2:HTTP Request: POST https://api.perplexity.ai/v1/responses "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.perplexity.ai/v1/responses "HTTP/1.1 200 OK"
+[T3 15/15] t3_14 sample 4/5
+INFO:httpx2:HTTP Request: POST https://api.perplexity.ai/v1/responses "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.perplexity.ai/v1/responses "HTTP/1.1 200 OK"
+[T3 15/15] t3_14 sample 5/5
+INFO:httpx2:HTTP Request: POST https://api.perplexity.ai/v1/responses "HTTP/1.1 200 OK"
+INFO:assistants.claude_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.perplexity.ai/v1/responses "HTTP/1.1 200 OK"
+{"status": "completed", "counts": {"judged": 75}, "expected_samples": 75, "fingerprint": "3a5e6b1508b1dd344482fd6a623d5b18b26b0533ef1e4e55c18db8f965f38a28", "execution_status_counts": {"executed": 60, "candidate_error": 8, "evaluation_timeout": 7}, "unsupported_import_modules": {}, "mean_rubric_score": 7.773333333333333, "rubric_maximum": [10]}

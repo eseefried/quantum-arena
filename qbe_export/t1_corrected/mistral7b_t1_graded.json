@@ -1,0 +1,520 @@
+{
+  "model": "mistral7b",
+  "samples": 85,
+  "had_generated_code": 85,
+  "passed_under_graded_test": 0,
+  "pass_rate_graded": 0.0,
+  "mean_resource_closeness_among_passing": null,
+  "rows": [
+    {
+      "task_id": "t1_0",
+      "sample_index": 0,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    },
+    {
+      "task_id": "t1_0",
+      "sample_index": 1,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_0",
+      "sample_index": 2,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_0",
+      "sample_index": 3,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    },
+    {
+      "task_id": "t1_0",
+      "sample_index": 4,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_1",
+      "sample_index": 0,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_1",
+      "sample_index": 1,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_1",
+      "sample_index": 2,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_1",
+      "sample_index": 3,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    },
+    {
+      "task_id": "t1_1",
+      "sample_index": 4,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_10",
+      "sample_index": 0,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_10",
+      "sample_index": 1,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_10",
+      "sample_index": 2,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_10",
+      "sample_index": 3,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_10",
+      "sample_index": 4,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    },
+    {
+      "task_id": "t1_11",
+      "sample_index": 0,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_11",
+      "sample_index": 1,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_11",
+      "sample_index": 2,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_11",
+      "sample_index": 3,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_11",
+      "sample_index": 4,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    },
+    {
+      "task_id": "t1_12",
+      "sample_index": 0,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    },
+    {
+      "task_id": "t1_12",
+      "sample_index": 1,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_12",
+      "sample_index": 2,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_12",
+      "sample_index": 3,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_12",
+      "sample_index": 4,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_13",
+      "sample_index": 0,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_13",
+      "sample_index": 1,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_13",
+      "sample_index": 2,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    },
+    {
+      "task_id": "t1_13",
+      "sample_index": 3,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    },
+    {
+      "task_id": "t1_13",
+      "sample_index": 4,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_14",
+      "sample_index": 0,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    },
+    {
+      "task_id": "t1_14",
+      "sample_index": 1,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    },
+    {
+      "task_id": "t1_14",
+      "sample_index": 2,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_14",
+      "sample_index": 3,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    },
+    {
+      "task_id": "t1_14",
+      "sample_index": 4,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    },
+    {
+      "task_id": "t1_15",
+      "sample_index": 0,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_15",
+      "sample_index": 1,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    },
+    {
+      "task_id": "t1_15",
+      "sample_index": 2,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    },
+    {
+      "task_id": "t1_15",
+      "sample_index": 3,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    },
+    {
+      "task_id": "t1_15",
+      "sample_index": 4,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    },
+    {
+      "task_id": "t1_16",
+      "sample_index": 0,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_16",
+      "sample_index": 1,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    },
+    {
+      "task_id": "t1_16",
+      "sample_index": 2,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_16",
+      "sample_index": 3,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_16",
+      "sample_index": 4,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_2",
+      "sample_index": 0,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_2",
+      "sample_index": 1,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_2",
+      "sample_index": 2,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    },
+    {
+      "task_id": "t1_2",
+      "sample_index": 3,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_2",
+      "sample_index": 4,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_3",
+      "sample_index": 0,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_3",
+      "sample_index": 1,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    },
+    {
+      "task_id": "t1_3",
+      "sample_index": 2,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    },
+    {
+      "task_id": "t1_3",
+      "sample_index": 3,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_3",
+      "sample_index": 4,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_4",
+      "sample_index": 0,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_4",
+      "sample_index": 1,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_4",
+      "sample_index": 2,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_4",
+      "sample_index": 3,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_4",
+      "sample_index": 4,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_5",
+      "sample_index": 0,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_5",
+      "sample_index": 1,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_5",
+      "sample_index": 2,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_5",
+      "sample_index": 3,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_5",
+      "sample_index": 4,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_6",
+      "sample_index": 0,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_6",
+      "sample_index": 1,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_6",
+      "sample_index": 2,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_6",
+      "sample_index": 3,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    },
+    {
+      "task_id": "t1_6",
+      "sample_index": 4,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    },
+    {
+      "task_id": "t1_7",
+      "sample_index": 0,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_7",
+      "sample_index": 1,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_7",
+      "sample_index": 2,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    },
+    {
+      "task_id": "t1_7",
+      "sample_index": 3,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_7",
+      "sample_index": 4,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_8",
+      "sample_index": 0,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_8",
+      "sample_index": 1,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_8",
+      "sample_index": 2,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_8",
+      "sample_index": 3,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_8",
+      "sample_index": 4,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_9",
+      "sample_index": 0,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_9",
+      "sample_index": 1,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_9",
+      "sample_index": 2,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_9",
+      "sample_index": 3,
+      "original_status": "candidate_unsupported_import",
+      "graded_status": "candidate_unsupported_import"
+    },
+    {
+      "task_id": "t1_9",
+      "sample_index": 4,
+      "original_status": "candidate_error",
+      "graded_status": "candidate_error"
+    }
+  ]
+}

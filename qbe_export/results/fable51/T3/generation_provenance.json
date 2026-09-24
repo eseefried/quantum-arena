@@ -1,0 +1,34 @@
+{
+  "events": [
+    {
+      "kind": "provider_transition",
+      "at_utc": "2026-09-24T14:49:21Z",
+      "provider_before": "anthropic",
+      "provider_after": "perplexity",
+      "model": "claude-fable-5-1",
+      "topic": "T3",
+      "requested_api_model": "anthropic/claude-fable-5-1",
+      "base_url": "https://api.perplexity.ai/v1",
+      "max_tokens": 65536,
+      "unchanged": "assistants.claude_assistant.ClaudeAssistant executed as-is: system prompt, user prompt, max_tokens, Fable no-temperature rule, stop_reason check and runner classification are unchanged; only the transport differs",
+      "samples_generated_before": {
+        "anthropic": 70
+      },
+      "transport_module_sha256": "e1260ffc17c1b2b87b5c101d9a5468268bbaa83892e18f283924cba090f48ce5",
+      "reason": "Anthropic credits exhausted; finishing t3_14 (5 samples) of fable51 T3",
+      "serving_note": "Generated via Perplexity under an Anthropic-style model ID. Identical serving behaviour to Anthropic's own API is not claimed; compare generation_model_returned and usage, not the ID."
+    },
+    {
+      "kind": "session",
+      "started_utc": "2026-09-24T14:49:21Z",
+      "provider": "perplexity",
+      "ended_utc": "2026-09-24T15:11:48Z",
+      "generated_by_provider_after": {
+        "anthropic": 70,
+        "perplexity": 5
+      },
+      "generated_this_session": 5
+    }
+  ],
+  "current_provider": "perplexity"
+}

@@ -1,0 +1,136 @@
+{
+  "model": "astra",
+  "topics": {
+    "T1": {
+      "counts": {
+        "incorrect": 85
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "incorrect": 85
+      },
+      "unsupported_import_modules": {}
+    },
+    "T2": {
+      "counts": {
+        "incorrect": 67,
+        "evaluation_crash": 1,
+        "passed": 3,
+        "candidate_error": 4
+      },
+      "pass_at_k": {
+        "1": 0.04,
+        "5": 0.06666666666666667
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "passed": 3,
+        "incorrect": 67,
+        "candidate_error": 4,
+        "evaluation_crash": 1
+      },
+      "unsupported_import_modules": {}
+    },
+    "T3": {
+      "counts": {
+        "judged": 75
+      },
+      "pass_at_k": null,
+      "mean_rubric_score": 6.48,
+      "rubric_maximum": [
+        10
+      ],
+      "execution_status_counts": {
+        "executed": 42,
+        "candidate_unsupported_import": 27,
+        "candidate_error": 6
+      },
+      "unsupported_import_modules": {
+        "pyscf": 19,
+        "openfermion": 8
+      },
+      "generation_providers": {
+        "vendor_api": 75
+      },
+      "judge_providers": {
+        "perplexity": 75
+      },
+      "evaluator_note": "T3 ran as run-id astra-t3-v2 from a code copy whose only difference is qbe/eval_child_v2.py following __cause__/__context__ so a candidate re-raising a missing module as ImportError(...) from exc is candidate_unsupported_import; the earlier astra-full-v1 T3 attempt aborted at t3_2 on that case and was discarded (11 partial samples)."
+    },
+    "T4": {
+      "counts": {
+        "evaluation_crash": 6,
+        "passed": 10,
+        "candidate_error": 42,
+        "incorrect": 12,
+        "candidate_unsupported_import": 2,
+        "evaluation_timeout": 3
+      },
+      "pass_at_k": {
+        "1": 0.13333333333333333,
+        "5": 0.2
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "incorrect": 12,
+        "candidate_error": 42,
+        "passed": 10,
+        "evaluation_timeout": 3,
+        "evaluation_crash": 6,
+        "candidate_unsupported_import": 2
+      },
+      "unsupported_import_modules": {
+        "qiskiskit_aer": 2
+      }
+    },
+    "T5": {
+      "counts": {
+        "candidate_error": 50,
+        "passed": 34,
+        "candidate_unsupported_import": 1
+      },
+      "pass_at_k": {
+        "1": 0.39999999999999997,
+        "5": 0.6470588235294118
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "passed": 34,
+        "candidate_error": 50,
+        "candidate_unsupported_import": 1
+      },
+      "unsupported_import_modules": {
+        "qiskiskit": 1
+      }
+    },
+    "T6": {
+      "counts": {
+        "candidate_error": 83,
+        "candidate_unsupported_import": 1,
+        "passed": 1
+      },
+      "pass_at_k": {
+        "1": 0.01176470588235294,
+        "5": 0.058823529411764705
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "candidate_error": 83,
+        "candidate_unsupported_import": 1,
+        "passed": 1
+      },
+      "unsupported_import_modules": {
+        "qiskiskit_placeholder": 1
+      }
+    }
+  }
+}

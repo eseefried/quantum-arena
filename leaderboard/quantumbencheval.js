@@ -21,7 +21,7 @@
     el('status').textContent = 'Loading QuantumBenchEval…';
     try {
       if (!payload) {
-        loading ||= fetch('./quantumbencheval.json?v=corrected-t1-4').then(r => { if (!r.ok) throw Error('QBE export unavailable'); return r.json(); });
+        loading ||= fetch('./quantumbencheval.json?v=multi-model-1').then(r => { if (!r.ok) throw Error('QBE export unavailable'); return r.json(); });
         payload = await loading;
       }
     } catch (error) {
@@ -30,22 +30,33 @@
       return;
     }
     if (state.collection !== 'qbe') return;
-    const data = payload.topics.find(t => t.topic === state.topic) || payload.topics[0];
+    const models = payload.models || [{key: 'gemini36-flash', topics: payload.topics, corrected: payload.corrected}];
+    const active = models.find(m => m.key === state.qbeModel) || models[0];
+    state.qbeModel = active.key;
+    const data = active.topics.find(t => t.topic === state.topic) || active.topics[0];
     const rubric = data.topic === 'T3';
     const corrected = data.topic === 'T1';
-    const result = corrected ? payload.corrected : data;
+    const result = corrected ? active.corrected : data;
     const tasks = data.task_details;
     const metric = state.metric === 'pass_at_5' ? '5' : '1';
     const taskValue = t => rubric ? t.mean_rubric_score : (corrected ? t.corrected_pass_at_k : t.pass_at_k)[metric];
     const notes = el('qbe-notes');
     notes.innerHTML = `<h2>${esc(data.title)}${corrected ? ' · corrected scoring' : ''}</h2>${data.samples < data.expected_samples ? '<p class="footnote">Incomplete recorded coverage.</p>' : ''}`;
+    notes.innerHTML += `<label>Inspect model <select id="qbe-model-select">${models.map(m => `<option value="${esc(m.key)}" ${m.key===active.key?'selected':''}>${esc(m.topics[0].identity)}</option>`).join('')}</select></label><p class="footnote">T1 uses corrected tests; original outcomes are retained in sample details. T2 evaluation_cost and T6 reproducibility scoring issues remain uncorrected. T3 is a rubric score, not a pass rate.</p>`;
+    el('qbe-model-select').onchange = e => { state.qbeModel=e.target.value; state.selected=null; state.attempt=0; refresh(); };
     el('status').hidden = true;
     const headers = rubric ? '<th>Mean rubric score</th><th>Scale</th><th>Judge</th>' : '<th class="sortable" data-metric="pass_at_1">Pass@1</th><th class="sortable" data-metric="pass_at_5">Pass@5</th>';
     const cells = rubric ? `<td>${score(data.mean_rubric_score)}</td><td>0–${esc(data.rubric_maximum.join('/'))}</td><td>${esc(data.judge.model)}</td>` : `<td class="metric-value">${pct(result.pass_at_k['1'])}</td><td class="metric-value">${pct(result.pass_at_k['5'])}</td>`;
-    const model = `<td class="model-name">Gemini 3.6 Flash${corrected ? '<small> · corrected T1</small>' : ''}</td>`;
+    const model = `<td class="model-name">${esc(data.identity)}${corrected ? '<small> · corrected T1</small>' : ''}</td>`;
     if (state.view === 'leaderboard') {
       el('board-head').innerHTML = `<th>Model</th>${headers}<th>Tasks</th><th>Samples${rubric ? ' / scored' : ''}</th>`;
-      el('board-body').innerHTML = `<tr>${model}${cells}<td>${data.recorded_tasks}/${data.tasks}</td><td>${data.samples}/${data.expected_samples}${rubric ? ` · ${data.judged_samples} scored` : ''}</td></tr>`;
+      const tableRows = models.map(m => {
+        const t=m.topics.find(t=>t.topic===data.topic), r=corrected?m.corrected:t;
+        const value=rubric?t.mean_rubric_score:r.pass_at_k[metric];
+        const values=rubric?`<td>${score(t.mean_rubric_score)}</td><td>0–${esc(t.rubric_maximum.join('/'))}</td><td>${esc(t.judge.model)}</td>`:`<td>${pct(r.pass_at_k['1'])}</td><td>${pct(r.pass_at_k['5'])}</td>`;
+        return {value,html:`<tr><td>${esc(t.identity)}</td>${values}<td>${t.recorded_tasks}/${t.tasks}</td><td>${t.samples}/${t.expected_samples}${rubric?` · ${t.judged_samples} scored`:''}</td></tr>`};
+      }).sort((a,b)=>(b.value??-1)-(a.value??-1));
+      el('board-body').innerHTML = tableRows.map(r=>r.html).join('');
       el('board').hidden = false;
       return;
     }

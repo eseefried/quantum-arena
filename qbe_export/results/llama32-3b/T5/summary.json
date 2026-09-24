@@ -1,0 +1,41 @@
+{
+  "status": "completed",
+  "counts": {
+    "candidate_unsupported_import": 30,
+    "candidate_error": 55
+  },
+  "expected_samples": 85,
+  "fingerprint": "4a2ae6d39061a208a237aed56c7408f104b8a79ae65b989f481ba898f9dff9ad",
+  "execution_status_counts": {
+    "candidate_unsupported_import": 30,
+    "candidate_error": 55
+  },
+  "unsupported_import_modules": {
+    "networkx.algorithms.maximum_weight_clique": 1,
+    "dwavebinaryimport": 2,
+    "dwave_neal": 3,
+    "neal.SimulatedAnnealing": 1,
+    "dwave_neural_networks": 1,
+    "networkx.algorithms.maximum_weightIndependentSet": 1,
+    "dwave_networkx": 6,
+    "dwave.system": 1,
+    "neal.DWaveSampler": 2,
+    "dimod.Collection": 1,
+    "neal.LBFGS_B": 1,
+    "qiskit.algorithms": 1,
+    "qiskit.BasicAer": 1,
+    "qiskit_optimization.QuadraticUnconstrainedBinaryQuadraticProgram": 1,
+    "dwave.neural_networks": 1,
+    "dimod.GridGraph": 1,
+    "dimod.load": 1,
+    "neal.LocalDMCGrover": 1,
+    "dwave_binary": 1,
+    "qiskit_aqua": 1,
+    "neal.Simannea": 1
+  },
+  "pass_at_k": {
+    "1": 0.0,
+    "5": 0.0
+  },
+  "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."
+}

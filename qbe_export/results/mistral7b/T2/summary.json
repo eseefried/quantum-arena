@@ -1,0 +1,39 @@
+{
+  "status": "completed",
+  "counts": {
+    "candidate_unsupported_import": 40,
+    "candidate_error": 35
+  },
+  "expected_samples": 75,
+  "fingerprint": "22c26798d8fc28ed4905858c2ec742e5713c2ee7348350c8d0e63e75014a93c0",
+  "execution_status_counts": {
+    "candidate_error": 35,
+    "candidate_unsupported_import": 40
+  },
+  "unsupported_import_modules": {
+    "dimod.QuboModel": 2,
+    "qiskit.Aer": 11,
+    "pennylane.numpy_qfunc": 4,
+    "pennylane.qchem.QubitEmbedding": 3,
+    "dwave.system": 4,
+    "pennylane.qchem.Fermion": 1,
+    "pennylane.qfunc": 3,
+    "pennylane.qchem.qc_vqe": 1,
+    "dimod.Simulator": 1,
+    "pennylane.qpu": 1,
+    "pennylane.numpy_qfun": 1,
+    "pennylane.qchem.quadratic": 1,
+    "pennylane.QubitOperator": 1,
+    "dwave.ocean": 1,
+    "pennylane.napoleon": 1,
+    "pennylane.qnn.QubitQubitCoupledIsing": 1,
+    "dimod.objective": 1,
+    "qiskit_ocean_provider_dwave_system": 1,
+    "dwave_networkx": 1
+  },
+  "pass_at_k": {
+    "1": 0.0,
+    "5": 0.0
+  },
+  "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."
+}

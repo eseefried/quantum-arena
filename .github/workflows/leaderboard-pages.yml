@@ -27,6 +27,9 @@ jobs:
       - name: Export leaderboard data from experiment results
         run: python3 scripts/export_leaderboard.py
 
+      - name: Export QuantumBenchEval data
+        run: python3 scripts/export_quantumbencheval.py
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: leaderboard

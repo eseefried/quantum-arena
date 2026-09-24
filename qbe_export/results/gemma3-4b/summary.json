@@ -1,0 +1,211 @@
+{
+  "model": "gemma3-4b",
+  "topics": {
+    "T1": {
+      "counts": {
+        "candidate_unsupported_import": 77,
+        "candidate_error": 8
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "candidate_unsupported_import": 77,
+        "candidate_error": 8
+      },
+      "unsupported_import_modules": {
+        "qiskit.algorithms": 29,
+        "qiskit.circuit.library.MaxCut": 5,
+        "qiskit.Aer": 28,
+        "dimod.BasisStateSampler": 1,
+        "qiskit.execute": 12,
+        "dimod.SimpleSampler": 1,
+        "dimod.BasisDigraph": 1
+      }
+    },
+    "T2": {
+      "counts": {
+        "candidate_unsupported_import": 71,
+        "candidate_error": 3,
+        "incorrect": 1
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "candidate_unsupported_import": 71,
+        "candidate_error": 3,
+        "incorrect": 1
+      },
+      "unsupported_import_modules": {
+        "qiskit.Aer": 29,
+        "qiskit.algorithms": 24,
+        "qiskit_optimization.QOOptimizer": 2,
+        "dwave.system": 5,
+        "qiskit_optimization.algorithms.QAOA": 6,
+        "qiskit.providers.aer": 1,
+        "qiskit_optimization.QWalkSat": 1,
+        "dimod.algorithms": 1,
+        "dimod.api": 1,
+        "dimod.knapsack": 1
+      }
+    },
+    "T3": {
+      "counts": {
+        "judged": 75
+      },
+      "pass_at_k": null,
+      "mean_rubric_score": 1.5866666666666667,
+      "rubric_maximum": [
+        10
+      ],
+      "execution_status_counts": {
+        "candidate_unsupported_import": 59,
+        "candidate_error": 15,
+        "executed": 1
+      },
+      "unsupported_import_modules": {
+        "qiskit.algorithms": 20,
+        "qiskit_optimizer": 4,
+        "qiskit.chemistry": 6,
+        "qiskit.opcodes": 1,
+        "qiskit.Aer": 14,
+        "qiskit_optimization.QOXPO": 1,
+        "qiskit.opflow": 2,
+        "qutip": 2,
+        "qiskit_optimization.QOOptimizer": 1,
+        "pennylane.PauliMap": 1,
+        "qiskit.circuit.library.ZZNoise": 2,
+        "qiskit_algorithms.VQESolver": 1,
+        "qiskit_algorithms.EstimationTask": 1,
+        "qiskit_algorithms.EstimationOptimizer": 1,
+        "qiskit.quantum_info.PauliExpectation": 1,
+        "qiskit.circuit.library.ZZGate": 1
+      }
+    },
+    "T4": {
+      "counts": {
+        "candidate_error": 14,
+        "candidate_unsupported_import": 61
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "candidate_unsupported_import": 61,
+        "candidate_error": 14
+      },
+      "unsupported_import_modules": {
+        "qiskit.Aer": 50,
+        "qiskit.circuit.library.ZZNoiseModel": 1,
+        "qiskit.algorithms": 3,
+        "qiskit.circuit.library.ZZNoise": 1,
+        "qiskit.execute": 1,
+        "qiskit.circuit.library.Hamiltonian": 1,
+        "qiskit.circuit.library.FrozenStateAmplitude": 1,
+        "qiskit.circuit.library.HNoiseModel": 1,
+        "qiskit_algorithms.EstimationOptimizer": 1,
+        "qiskit.circuit.library.SingleShot": 1
+      }
+    },
+    "T5": {
+      "counts": {
+        "candidate_unsupported_import": 78,
+        "candidate_error": 7
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "candidate_unsupported_import": 78,
+        "candidate_error": 7
+      },
+      "unsupported_import_modules": {
+        "qiskit_algorithms.Algorithm": 1,
+        "dimod.dm_satisfy": 3,
+        "dimod.Encore": 9,
+        "ddt": 1,
+        "qiskit.algorithms": 14,
+        "dwave.system": 4,
+        "qiskit.Aer": 9,
+        "dimod.BasisState": 3,
+        "dimod.dm": 2,
+        "qiskit.execute": 4,
+        "dimod.BasisStateSampler": 3,
+        "dimod.dm_max_independent_set": 1,
+        "dimod.dm_sat": 2,
+        "dimod.dm_rose_annealer": 4,
+        "dimod.dm_py": 1,
+        "dimod.dm_rose_dqalm": 1,
+        "dimod.interfaces": 1,
+        "dimod.ConstraintSatisfactionProblem": 1,
+        "dimod.dm_example": 2,
+        "dimod.dm_bin_sat": 1,
+        "dwave.quilting": 1,
+        "dimod.dm_bin_embedding": 3,
+        "qiskit.circuit.library.NumberTagCircuit": 1,
+        "qiskit.circuit.library.Embedding": 2,
+        "dimod.dm_psi": 1,
+        "dimod.SimpleSolver": 1,
+        "dimod.dm_satisfiability": 1,
+        "dwave.qaop": 1
+      }
+    },
+    "T6": {
+      "counts": {
+        "candidate_unsupported_import": 70,
+        "candidate_error": 15
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "candidate_unsupported_import": 70,
+        "candidate_error": 15
+      },
+      "unsupported_import_modules": {
+        "qiskit.algorithms": 10,
+        "dimod.dm_events": 1,
+        "dimod.dm_cube": 2,
+        "dimod.dm_garage": 3,
+        "qiskit.Aer": 20,
+        "dimod.ConstraintSatisfactionProblem": 3,
+        "dimod.dm_psi": 2,
+        "dimod.dm": 3,
+        "dimod.dm_satisfiability": 1,
+        "qiskit.execute": 4,
+        "dimod.Encore": 5,
+        "dimod.minimum_weight_matching": 1,
+        "qiskit_algorithms.MinimumWeight\u0acd\u0ab0\u0abeCircuit": 1,
+        "dimod.BasisState": 1,
+        "dimod.BasisGraph": 1,
+        "dimod.qubits": 1,
+        "qiskit.circuit.library.ParameterizedPulse": 1,
+        "dimod.ConstraintProgram": 1,
+        "qiskit_algorithms.EstimationAlgorithms": 1,
+        "dwave.system": 2,
+        "dimod.dm_rose_annealer": 1,
+        "dimod.LegacySampler": 1,
+        "dimod.dm_satisfy": 1,
+        "dimod.ConfiguredSampler": 1,
+        "dimod.BasisDigraph": 1,
+        "dimod.Encoding": 1
+      }
+    }
+  }
+}

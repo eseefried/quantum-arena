@@ -1,0 +1,46 @@
+{
+  "status": "completed",
+  "counts": {
+    "candidate_unsupported_import": 70,
+    "candidate_error": 15
+  },
+  "expected_samples": 85,
+  "fingerprint": "cdb5dd06e7b50d05f509489f54de6b565ebe599d1809fa0852db78820b6502f9",
+  "execution_status_counts": {
+    "candidate_unsupported_import": 70,
+    "candidate_error": 15
+  },
+  "unsupported_import_modules": {
+    "qiskit.algorithms": 10,
+    "dimod.dm_events": 1,
+    "dimod.dm_cube": 2,
+    "dimod.dm_garage": 3,
+    "qiskit.Aer": 20,
+    "dimod.ConstraintSatisfactionProblem": 3,
+    "dimod.dm_psi": 2,
+    "dimod.dm": 3,
+    "dimod.dm_satisfiability": 1,
+    "qiskit.execute": 4,
+    "dimod.Encore": 5,
+    "dimod.minimum_weight_matching": 1,
+    "qiskit_algorithms.MinimumWeight\u0acd\u0ab0\u0abeCircuit": 1,
+    "dimod.BasisState": 1,
+    "dimod.BasisGraph": 1,
+    "dimod.qubits": 1,
+    "qiskit.circuit.library.ParameterizedPulse": 1,
+    "dimod.ConstraintProgram": 1,
+    "qiskit_algorithms.EstimationAlgorithms": 1,
+    "dwave.system": 2,
+    "dimod.dm_rose_annealer": 1,
+    "dimod.LegacySampler": 1,
+    "dimod.dm_satisfy": 1,
+    "dimod.ConfiguredSampler": 1,
+    "dimod.BasisDigraph": 1,
+    "dimod.Encoding": 1
+  },
+  "pass_at_k": {
+    "1": 0.0,
+    "5": 0.0
+  },
+  "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."
+}

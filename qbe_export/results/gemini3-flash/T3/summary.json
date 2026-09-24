@@ -1,0 +1,23 @@
+{
+  "status": "completed",
+  "counts": {
+    "judged": 75
+  },
+  "expected_samples": 75,
+  "fingerprint": "29d5abf6cdada827deafd9891f9712194644cf42569956f84e1b89555ba4baaa",
+  "execution_status_counts": {
+    "candidate_error": 16,
+    "candidate_unsupported_import": 16,
+    "executed": 43
+  },
+  "unsupported_import_modules": {
+    "pyscf": 13,
+    "qiskit_algorithms.utils.EstimatorResult": 1,
+    "qiskit.transpiler.passes.Unroller": 1,
+    "qiskit_algorithms.utils.AlgorithmGlobals": 1
+  },
+  "mean_rubric_score": 4.986666666666666,
+  "rubric_maximum": [
+    10
+  ]
+}

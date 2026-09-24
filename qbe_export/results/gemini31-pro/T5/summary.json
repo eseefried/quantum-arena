@@ -1,0 +1,21 @@
+{
+  "status": "completed",
+  "counts": {
+    "incorrect": 8,
+    "passed": 71,
+    "candidate_error": 6
+  },
+  "expected_samples": 85,
+  "fingerprint": "55049276c188c3723a2e898c17d188d68e6d59ab9094d6a4da81425337191f71",
+  "execution_status_counts": {
+    "passed": 71,
+    "incorrect": 8,
+    "candidate_error": 6
+  },
+  "unsupported_import_modules": {},
+  "pass_at_k": {
+    "1": 0.8352941176470587,
+    "5": 1.0
+  },
+  "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."
+}

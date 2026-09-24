@@ -1,0 +1,36 @@
+{
+  "status": "completed",
+  "counts": {
+    "candidate_unsupported_import": 22,
+    "candidate_error": 59,
+    "truncated": 4
+  },
+  "expected_samples": 85,
+  "fingerprint": "ff03b74e47975aea5ac05039ad9b21ae221ee2d2aa686a2622bfb44242b8a193",
+  "execution_status_counts": {
+    "candidate_error": 59,
+    "candidate_unsupported_import": 22,
+    "not_executed": 4
+  },
+  "unsupported_import_modules": {
+    "dwave_networkx": 5,
+    "networkx.algorithms.spectral_clustering": 1,
+    "dimod.LBFGS": 2,
+    "dimod.PartitionProblem": 1,
+    "dwave.neural_network": 1,
+    "dwave_neal": 4,
+    "dimod.AllPossibleBipartiteMatching": 1,
+    "dimod.JWGraph": 1,
+    "dimod.Model": 1,
+    "dimod.DiscreteVariationalFactory": 1,
+    "dimod.GridGraph": 1,
+    "neal.DWaveSampler": 1,
+    "neal.annealing": 1,
+    "dimod.ContinuousBinary": 1
+  },
+  "pass_at_k": {
+    "1": 0.0,
+    "5": 0.0
+  },
+  "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."
+}

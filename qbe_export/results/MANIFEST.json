@@ -1,0 +1,758 @@
+{
+  "generated_utc": "2026-09-24T22:18:58Z",
+  "sample_expectation": {
+    "T1": 85,
+    "T2": 75,
+    "T3": 75,
+    "T4": 75,
+    "T5": 85,
+    "T6": 85
+  },
+  "models": {
+    "astra": {
+      "topics_complete": 6,
+      "samples": 480,
+      "topics": {
+        "T1": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "incorrect": 85
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          },
+          "graded_variant": {
+            "file": "t1_corrected/astra_t1_graded.json",
+            "passed": 80,
+            "of": 85,
+            "pass_rate": 0.9411764705882353,
+            "mean_resource_closeness_among_passing": 0.18140038605714137
+          }
+        },
+        "T2": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "incorrect": 67,
+            "evaluation_crash": 1,
+            "passed": 3,
+            "candidate_error": 4
+          },
+          "pass_at_k": {
+            "1": 0.04,
+            "5": 0.06666666666666667
+          }
+        },
+        "T3": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "judged": 75
+          },
+          "mean_rubric_score": 6.48,
+          "rubric_maximum": [
+            10
+          ],
+          "generation_providers": {
+            "vendor_api": 75
+          },
+          "judge_providers": {
+            "perplexity": 75
+          },
+          "evaluator_note": "T3 ran as run-id astra-t3-v2 from a code copy whose only difference is qbe/eval_child_v2.py following __cause__/__context__ so a candidate re-raising a missing module as ImportError(...) from exc is candidate_unsupported_import; the earlier astra-full-v1 T3 attempt aborted at t3_2 on that case and was discarded (11 partial samples).",
+          "note": "Judge: all 75 via Perplexity. Evaluator: astra_t3_fix/eval_child_v2.py (chained-ImportError classification); earlier astra T3 attempt discarded."
+        },
+        "T4": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "evaluation_crash": 6,
+            "passed": 10,
+            "candidate_error": 42,
+            "incorrect": 12,
+            "candidate_unsupported_import": 2,
+            "evaluation_timeout": 3
+          },
+          "pass_at_k": {
+            "1": 0.13333333333333333,
+            "5": 0.2
+          }
+        },
+        "T5": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "candidate_error": 50,
+            "passed": 34,
+            "candidate_unsupported_import": 1
+          },
+          "pass_at_k": {
+            "1": 0.39999999999999997,
+            "5": 0.6470588235294118
+          }
+        },
+        "T6": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "candidate_error": 83,
+            "candidate_unsupported_import": 1,
+            "passed": 1
+          },
+          "pass_at_k": {
+            "1": 0.01176470588235294,
+            "5": 0.058823529411764705
+          }
+        }
+      }
+    },
+    "fable51": {
+      "topics_complete": 6,
+      "samples": 480,
+      "topics": {
+        "T1": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "incorrect": 85
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          },
+          "graded_variant": {
+            "file": "t1_corrected/fable51_t1_graded.json",
+            "passed": 80,
+            "of": 85,
+            "pass_rate": 0.9411764705882353,
+            "mean_resource_closeness_among_passing": 0.4588928575805132
+          }
+        },
+        "T2": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "incorrect": 73,
+            "passed": 1,
+            "candidate_error": 1
+          },
+          "pass_at_k": {
+            "1": 0.01333333333333333,
+            "5": 0.06666666666666667
+          }
+        },
+        "T3": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "judged": 75
+          },
+          "mean_rubric_score": 7.773333333333333,
+          "rubric_maximum": [
+            10
+          ],
+          "generation_providers": {
+            "vendor_api": 70,
+            "perplexity": 5
+          },
+          "judge_providers": {
+            "anthropic": 70,
+            "perplexity": 5
+          },
+          "note": "Generation mixed: 70 samples from Anthropic API, 5 (all of t3_14) via Perplexity (anthropic/claude-fable-5-1). Judge mixed: 70 Anthropic (claude-sonnet-4-6), 5 Perplexity. Read per-sample generation.metadata.generation_provider / judge.judge_provider."
+        },
+        "T4": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "evaluation_crash": 4,
+            "passed": 15,
+            "candidate_error": 22,
+            "incorrect": 15,
+            "evaluation_timeout": 19
+          },
+          "pass_at_k": {
+            "1": 0.2,
+            "5": 0.4666666666666667
+          }
+        },
+        "T5": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "passed": 70,
+            "candidate_error": 15
+          },
+          "pass_at_k": {
+            "1": 0.8235294117647058,
+            "5": 1.0
+          }
+        },
+        "T6": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "candidate_error": 17,
+            "passed": 60,
+            "incorrect": 8
+          },
+          "pass_at_k": {
+            "1": 0.7058823529411765,
+            "5": 1.0
+          }
+        }
+      }
+    },
+    "gemini3-flash": {
+      "topics_complete": 6,
+      "samples": 480,
+      "topics": {
+        "T1": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "candidate_error": 65,
+            "incorrect": 16,
+            "candidate_unsupported_import": 4
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          },
+          "graded_variant": {
+            "file": "t1_corrected/gemini3-flash_t1_graded.json",
+            "passed": 13,
+            "of": 85,
+            "pass_rate": 0.15294117647058825,
+            "mean_resource_closeness_among_passing": 0.3786623821126084
+          }
+        },
+        "T2": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "candidate_error": 43,
+            "incorrect": 28,
+            "candidate_unsupported_import": 3,
+            "empty_output": 1
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          }
+        },
+        "T3": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "judged": 75
+          },
+          "mean_rubric_score": 4.986666666666666,
+          "rubric_maximum": [
+            10
+          ],
+          "generation_providers": {
+            "vendor_api": 75
+          },
+          "judge_providers": {
+            "perplexity": 74,
+            "anthropic": 1
+          },
+          "note": "Judge: 74 samples via Perplexity (anthropic/claude-sonnet-4-6), 1 via Anthropic. Generation: Gemini API."
+        },
+        "T4": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "incorrect": 31,
+            "passed": 19,
+            "candidate_error": 14,
+            "evaluation_timeout": 10,
+            "candidate_unsupported_import": 1
+          },
+          "pass_at_k": {
+            "1": 0.2533333333333333,
+            "5": 0.4666666666666667
+          }
+        },
+        "T5": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "incorrect": 27,
+            "candidate_unsupported_import": 37,
+            "passed": 12,
+            "candidate_error": 9
+          },
+          "pass_at_k": {
+            "1": 0.1411764705882353,
+            "5": 0.4117647058823529
+          }
+        },
+        "T6": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "candidate_unsupported_import": 21,
+            "candidate_error": 28,
+            "passed": 24,
+            "incorrect": 12
+          },
+          "pass_at_k": {
+            "1": 0.2823529411764706,
+            "5": 0.7647058823529411
+          }
+        }
+      }
+    },
+    "gemini31-pro": {
+      "topics_complete": 6,
+      "samples": 480,
+      "topics": {
+        "T1": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "candidate_error": 23,
+            "incorrect": 61,
+            "passed": 1
+          },
+          "pass_at_k": {
+            "1": 0.01176470588235294,
+            "5": 0.058823529411764705
+          },
+          "graded_variant": {
+            "file": "t1_corrected/gemini31-pro_t1_graded.json",
+            "passed": 52,
+            "of": 85,
+            "pass_rate": 0.611764705882353,
+            "mean_resource_closeness_among_passing": 0.48727046489968073
+          }
+        },
+        "T2": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "incorrect": 70,
+            "candidate_error": 5
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          }
+        },
+        "T3": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "judged": 75
+          },
+          "mean_rubric_score": 4.866666666666666,
+          "rubric_maximum": [
+            10
+          ]
+        },
+        "T4": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "evaluation_crash": 2,
+            "incorrect": 19,
+            "passed": 24,
+            "candidate_error": 21,
+            "evaluation_timeout": 9
+          },
+          "pass_at_k": {
+            "1": 0.32,
+            "5": 0.4666666666666667
+          }
+        },
+        "T5": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "incorrect": 8,
+            "passed": 71,
+            "candidate_error": 6
+          },
+          "pass_at_k": {
+            "1": 0.8352941176470587,
+            "5": 1.0
+          }
+        },
+        "T6": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "incorrect": 41,
+            "candidate_error": 23,
+            "passed": 18,
+            "candidate_unsupported_import": 2,
+            "evaluation_timeout": 1
+          },
+          "pass_at_k": {
+            "1": 0.2117647058823529,
+            "5": 0.7058823529411765
+          }
+        }
+      }
+    },
+    "gemini36-flash": {
+      "topics_complete": 6,
+      "samples": 480,
+      "topics": {
+        "T1": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "incorrect": 82,
+            "candidate_error": 2,
+            "candidate_unsupported_import": 1
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          },
+          "graded_variant": {
+            "file": "t1_corrected/gemini36-flash_t1_graded.json",
+            "passed": 71,
+            "of": 85,
+            "pass_rate": 0.8352941176470589,
+            "mean_resource_closeness_among_passing": 0.4749503216916904
+          }
+        },
+        "T2": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "incorrect": 50,
+            "candidate_error": 21,
+            "truncated": 1,
+            "candidate_unsupported_import": 1,
+            "passed": 2
+          },
+          "pass_at_k": {
+            "1": 0.02666666666666666,
+            "5": 0.13333333333333333
+          }
+        },
+        "T3": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "judged": 43,
+            "truncated": 32
+          },
+          "mean_rubric_score": 5.674418604651163,
+          "rubric_maximum": [
+            10
+          ]
+        },
+        "T4": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "incorrect": 25,
+            "passed": 22,
+            "truncated": 22,
+            "candidate_error": 3,
+            "evaluation_timeout": 3
+          },
+          "pass_at_k": {
+            "1": 0.29333333333333333,
+            "5": 0.4666666666666667
+          }
+        },
+        "T5": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "candidate_unsupported_import": 4,
+            "incorrect": 48,
+            "candidate_error": 23,
+            "passed": 10
+          },
+          "pass_at_k": {
+            "1": 0.11764705882352941,
+            "5": 0.29411764705882354
+          }
+        },
+        "T6": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "candidate_error": 7,
+            "passed": 65,
+            "incorrect": 7,
+            "candidate_unsupported_import": 3,
+            "truncated": 3
+          },
+          "pass_at_k": {
+            "1": 0.7647058823529411,
+            "5": 1.0
+          }
+        }
+      }
+    },
+    "gemma3-4b": {
+      "topics_complete": 6,
+      "samples": 480,
+      "topics": {
+        "T1": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "candidate_unsupported_import": 77,
+            "candidate_error": 8
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          },
+          "graded_variant": {
+            "file": "t1_corrected/gemma3-4b_t1_graded.json",
+            "passed": 0,
+            "of": 85,
+            "pass_rate": 0.0,
+            "mean_resource_closeness_among_passing": null
+          }
+        },
+        "T2": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "candidate_unsupported_import": 71,
+            "candidate_error": 3,
+            "incorrect": 1
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          }
+        },
+        "T3": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "judged": 75
+          },
+          "mean_rubric_score": 1.5866666666666667,
+          "rubric_maximum": [
+            10
+          ]
+        },
+        "T4": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "candidate_error": 14,
+            "candidate_unsupported_import": 61
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          }
+        },
+        "T5": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "candidate_unsupported_import": 78,
+            "candidate_error": 7
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          }
+        },
+        "T6": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "candidate_unsupported_import": 70,
+            "candidate_error": 15
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          }
+        }
+      }
+    },
+    "llama32-3b": {
+      "topics_complete": 6,
+      "samples": 480,
+      "topics": {
+        "T1": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "candidate_error": 48,
+            "truncated": 2,
+            "candidate_unsupported_import": 35
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          },
+          "graded_variant": {
+            "file": "t1_corrected/llama32-3b_t1_graded.json",
+            "passed": 0,
+            "of": 85,
+            "pass_rate": 0.0,
+            "mean_resource_closeness_among_passing": null
+          }
+        },
+        "T2": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "truncated": 2,
+            "candidate_error": 53,
+            "candidate_unsupported_import": 20
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          }
+        },
+        "T3": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "judged": 70,
+            "truncated": 5
+          },
+          "mean_rubric_score": 1.1428571428571428,
+          "rubric_maximum": [
+            10
+          ]
+        },
+        "T4": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "candidate_error": 52,
+            "candidate_unsupported_import": 18,
+            "truncated": 5
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          }
+        },
+        "T5": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "candidate_unsupported_import": 30,
+            "candidate_error": 55
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          }
+        },
+        "T6": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "candidate_unsupported_import": 22,
+            "candidate_error": 59,
+            "truncated": 4
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          }
+        }
+      }
+    },
+    "mistral7b": {
+      "topics_complete": 6,
+      "samples": 480,
+      "topics": {
+        "T1": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "candidate_error": 24,
+            "candidate_unsupported_import": 61
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          },
+          "graded_variant": {
+            "file": "t1_corrected/mistral7b_t1_graded.json",
+            "passed": 0,
+            "of": 85,
+            "pass_rate": 0.0,
+            "mean_resource_closeness_among_passing": null
+          }
+        },
+        "T2": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "candidate_unsupported_import": 40,
+            "candidate_error": 35
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          }
+        },
+        "T3": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "judged": 75
+          },
+          "mean_rubric_score": 1.4,
+          "rubric_maximum": [
+            10
+          ]
+        },
+        "T4": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "candidate_unsupported_import": 39,
+            "candidate_error": 36
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          }
+        },
+        "T5": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "candidate_error": 34,
+            "candidate_unsupported_import": 51
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          }
+        },
+        "T6": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "candidate_unsupported_import": 59,
+            "candidate_error": 26
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          }
+        }
+      }
+    }
+  }
+}

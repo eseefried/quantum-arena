@@ -1,0 +1,130 @@
+{
+  "model": "gemini31-pro",
+  "topics": {
+    "T1": {
+      "counts": {
+        "candidate_error": 23,
+        "incorrect": 61,
+        "passed": 1
+      },
+      "pass_at_k": {
+        "1": 0.01176470588235294,
+        "5": 0.058823529411764705
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "incorrect": 61,
+        "candidate_error": 23,
+        "passed": 1
+      },
+      "unsupported_import_modules": {}
+    },
+    "T2": {
+      "counts": {
+        "incorrect": 70,
+        "candidate_error": 5
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "incorrect": 70,
+        "candidate_error": 5
+      },
+      "unsupported_import_modules": {}
+    },
+    "T3": {
+      "counts": {
+        "judged": 75
+      },
+      "pass_at_k": null,
+      "mean_rubric_score": 4.866666666666666,
+      "rubric_maximum": [
+        10
+      ],
+      "execution_status_counts": {
+        "candidate_error": 25,
+        "executed": 29,
+        "candidate_unsupported_import": 13,
+        "evaluation_timeout": 8
+      },
+      "unsupported_import_modules": {
+        "openfermion": 3,
+        "qiskit_algorithms.optimizers.BFGS": 1,
+        "pyscf": 9
+      }
+    },
+    "T4": {
+      "counts": {
+        "evaluation_crash": 2,
+        "incorrect": 19,
+        "passed": 24,
+        "candidate_error": 21,
+        "evaluation_timeout": 9
+      },
+      "pass_at_k": {
+        "1": 0.32,
+        "5": 0.4666666666666667
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "incorrect": 19,
+        "candidate_error": 21,
+        "passed": 24,
+        "evaluation_timeout": 9,
+        "evaluation_crash": 2
+      },
+      "unsupported_import_modules": {}
+    },
+    "T5": {
+      "counts": {
+        "incorrect": 8,
+        "passed": 71,
+        "candidate_error": 6
+      },
+      "pass_at_k": {
+        "1": 0.8352941176470587,
+        "5": 1.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "passed": 71,
+        "incorrect": 8,
+        "candidate_error": 6
+      },
+      "unsupported_import_modules": {}
+    },
+    "T6": {
+      "counts": {
+        "incorrect": 41,
+        "candidate_error": 23,
+        "passed": 18,
+        "candidate_unsupported_import": 2,
+        "evaluation_timeout": 1
+      },
+      "pass_at_k": {
+        "1": 0.2117647058823529,
+        "5": 0.7058823529411765
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "incorrect": 41,
+        "candidate_error": 23,
+        "passed": 18,
+        "evaluation_timeout": 1,
+        "candidate_unsupported_import": 2
+      },
+      "unsupported_import_modules": {
+        "networkx.community": 1,
+        "qiskit_algorithms.QAOAAnsatz": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "status": "completed",
+  "counts": {
+    "candidate_unsupported_import": 78,
+    "candidate_error": 7
+  },
+  "expected_samples": 85,
+  "fingerprint": "f03a619f7bda38ea0723e26c5434ba2c0ca6bcfce681bdac8e76586aa4e533d7",
+  "execution_status_counts": {
+    "candidate_unsupported_import": 78,
+    "candidate_error": 7
+  },
+  "unsupported_import_modules": {
+    "qiskit_algorithms.Algorithm": 1,
+    "dimod.dm_satisfy": 3,
+    "dimod.Encore": 9,
+    "ddt": 1,
+    "qiskit.algorithms": 14,
+    "dwave.system": 4,
+    "qiskit.Aer": 9,
+    "dimod.BasisState": 3,
+    "dimod.dm": 2,
+    "qiskit.execute": 4,
+    "dimod.BasisStateSampler": 3,
+    "dimod.dm_max_independent_set": 1,
+    "dimod.dm_sat": 2,
+    "dimod.dm_rose_annealer": 4,
+    "dimod.dm_py": 1,
+    "dimod.dm_rose_dqalm": 1,
+    "dimod.interfaces": 1,
+    "dimod.ConstraintSatisfactionProblem": 1,
+    "dimod.dm_example": 2,
+    "dimod.dm_bin_sat": 1,
+    "dwave.quilting": 1,
+    "dimod.dm_bin_embedding": 3,
+    "qiskit.circuit.library.NumberTagCircuit": 1,
+    "qiskit.circuit.library.Embedding": 2,
+    "dimod.dm_psi": 1,
+    "dimod.SimpleSolver": 1,
+    "dimod.dm_satisfiability": 1,
+    "dwave.qaop": 1
+  },
+  "pass_at_k": {
+    "1": 0.0,
+    "5": 0.0
+  },
+  "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."
+}
