@@ -70,6 +70,8 @@
   async function loadSummary() {
     const res = await fetch("./leaderboard_summary.json");
     state.summary = await res.json();
+    const categoryRes = await fetch("./leaderboard_category_statistics.json");
+    state.categoryStatistics = await categoryRes.json();
   }
 
   async function loadDetails() {
@@ -169,6 +171,9 @@
 
   function rowsForCurrentDataset() {
     if (state.category !== "All") {
+      if (state.dataset !== "Overall") {
+        return (state.categoryStatistics || []).filter(r => r.dataset === state.dataset && r.category === state.category);
+      }
       const agg = aggregateDetailRows(detailRowsFor(state.dataset, state.category));
       return [...agg.entries()].map(([model, a]) => ({
         model,
@@ -362,7 +367,8 @@
 
     const ciLo = row[`${metricKey}_ci_lo`];
     const ciHi = row[`${metricKey}_ci_hi`];
-    const ciText = fmtCi(ciLo, ciHi);
+    const std = row[`${metricKey}_std`];
+    const ciText = fmtCi(ciLo, ciHi) + (std !== null && std !== undefined ? ` · SD ${(std * 100).toFixed(1)} pp` : "");
 
     let bar = "";
     if (isActive) {

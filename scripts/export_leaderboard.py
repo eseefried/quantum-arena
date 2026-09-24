@@ -12,6 +12,9 @@ JS on the site only sorts/filters/renders these precomputed numbers.
 from __future__ import annotations
 
 import json
+import math
+import hashlib
+from leaderboard_statistics import summarize, REPLICATES, SEED
 import re
 import sys
 from collections import defaultdict
@@ -40,6 +43,7 @@ DATASET_CI_KEY = {
 MODEL_DISPLAY_NAMES = {
     "gpt-5": "GPT-5",
     "gpt-6-astra": "GPT-6 Astra",
+    "meta-models/muse-glimmer-30b": "Muse-Glimmer-30B",
     "claude-opus-4-6": "Claude Opus 4.6",
     "claude-fable-5-1": "Claude Fable 5.1",
     "gemini-3-flash-preview": "Gemini 3 Flash",
@@ -67,6 +71,8 @@ EXCLUDED_MODELS = {"LLaMA-4-Scout-17B"}
 # the QCoder judge is itself a Claude model, so scoring another Claude model
 # on QCoder is a same-family judge conflict of interest and will never run.
 QCODER_EXEMPT_MODELS = {"Claude Opus 4.6"}
+# Owner-authorized partial display while Muse QCoder is still running.
+QCODER_PENDING_MODELS = {"Muse-Glimmer-30B"}
 
 TS_RE = re.compile(r"(\d{8}_\d{6})")
 
@@ -195,7 +201,7 @@ def collect_latest_result_files() -> tuple[dict[tuple[str, str], tuple[str, Path
 
 def main() -> None:
     task_lookup = load_task_metadata()
-    ci_data = load_json(CI_PATH) if CI_PATH.exists() else {}
+    ci_data = {}  # Statistics are recomputed from selected samples, never stale CI files.
 
     best_files, skipped = collect_latest_result_files()
 
@@ -208,7 +214,7 @@ def main() -> None:
     for model in sorted({model for model, _ in best_files}):
         missing = []
         for dataset, count in expected_tasks.items():
-            if dataset == "QCoder" and model in QCODER_EXEMPT_MODELS:
+            if dataset == "QCoder" and model in (QCODER_EXEMPT_MODELS | QCODER_PENDING_MODELS):
                 continue
             run = best_files.get((model, dataset))
             if run is None:
@@ -246,7 +252,10 @@ def main() -> None:
             n_runtime_err = sum(1 for s in task_samples if isinstance(s, dict) and s.get("runtime_error") is True)
 
             tinfo = task_lookup.get((dataset_label, str(task_id)), {})
-            tpak = per_task_pak.get(task_id) or per_task_pak.get(str(task_id)) or {}
+            # Recompute unbiased pass@k from scored samples, including legacy files missing k.
+            tpak = {str(k): 1.0 - (math.comb(n_total-n_passed, k) / math.comb(n_total, k)
+                                  if n_total-n_passed >= k else 0.0)
+                    for k in (1, 3, 5) if n_total >= k}
 
             detail_rows.append({
                 "model": model,
@@ -307,6 +316,44 @@ def main() -> None:
             "pass_at_5_ci_lo": lo5,
             "pass_at_5_ci_hi": hi5,
         })
+
+    category_rows = []
+    grouped = defaultdict(list)
+    by_category = defaultdict(list)
+    for row in detail_rows:
+        grouped[(row["model"], row["dataset"])].append(row)
+        by_category[(row["model"], row["dataset"], row["category"])].append(row)
+    for row in summary_rows:
+        key = (row["model"], row["dataset"])
+        row.update(summarize(grouped[key], key))
+    for key, rows in sorted(by_category.items()):
+        row = dict(zip(("model", "dataset", "category"), key), n_tasks=len(rows))
+        for k in (1, 3, 5):
+            values = [r[f"pass_at_{k}"] for r in rows if r[f"pass_at_{k}"] is not None]
+            row[f"pass_at_{k}"] = sum(values)/len(values) if values else None
+        row.update(summarize(rows, key))
+        category_rows.append(row)
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    (OUT_DIR / "leaderboard_category_statistics.json").write_text(json.dumps(category_rows, indent=2))
+    manifest = {"replicates": REPLICATES, "seed": SEED, "confidence": .95,
+                "method": "Percentile bootstrap of task-level pass@k; sample SD across tasks (ddof=1)",
+                "limitations": "Conditional on recorded outcomes; no infra-error correction or independent rerun validation. Singleton CIs unavailable; constant scores yield degenerate intervals. No Overall CI across overlapping suites.",
+                "numpy": __import__("numpy").__version__,
+                "sources": [{"model": model, "dataset": ds, "path": str(path.relative_to(REPO_ROOT)),
+                             "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+                            for (model, ds), (_, path, _, _) in sorted(best_files.items())]}
+    (OUT_DIR / "statistics_manifest.json").write_text(json.dumps(manifest, indent=2))
+
+    # Refresh the legacy CI artifact for downstream consumers as well.
+    refreshed_ci = {}
+    for row in summary_rows:
+        entry = refreshed_ci.setdefault(row["model"], {}).setdefault(DATASET_CI_KEY[row["dataset"]], {})
+        for k in (1, 3, 5):
+            key = f"pass_at_{k}"
+            entry[str(k)] = {"mean": row[key], "ci_lo": row[key+"_ci_lo"],
+                             "ci_hi": row[key+"_ci_hi"], "std": row[key+"_std"],
+                             "n_tasks": row[key+"_n_tasks"]}
+    CI_PATH.write_text(json.dumps(refreshed_ci, indent=2))
 
     summary_rows.sort(key=lambda r: (r["dataset"], -(r["pass_at_1"] or 0)))
     detail_rows.sort(key=lambda r: (r["dataset"], r["model"], r["task_id"]))

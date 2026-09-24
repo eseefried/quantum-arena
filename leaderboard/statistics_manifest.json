@@ -1,0 +1,448 @@
+{
+  "replicates": 10000,
+  "seed": 20260922,
+  "confidence": 0.95,
+  "method": "Percentile bootstrap of task-level pass@k; sample SD across tasks (ddof=1)",
+  "limitations": "Conditional on recorded outcomes; no infra-error correction or independent rerun validation. Singleton CIs unavailable; constant scores yield degenerate intervals. No Overall CI across overlapping suites.",
+  "numpy": "2.2.6",
+  "sources": [
+    {
+      "model": "Claude Fable 5.1",
+      "dataset": "QCoder",
+      "path": "data/results/claude-fable-5-1/qcoder_claude_judge/results_20260916_101457.json",
+      "sha256": "bd32359a3e440462e35b772e5fd6ba11c80f3b6f7341e090a71e56c0efd9bd68"
+    },
+    {
+      "model": "Claude Fable 5.1",
+      "dataset": "QiskitHumanEval",
+      "path": "data/results/claude-fable-5-1/qiskit_humaneval_standard/results_20260910_090144.json",
+      "sha256": "d4e16f8f7de1ef4e08ee7bd5b10bf1605eeca26945cb4b46848bd47178206866"
+    },
+    {
+      "model": "Claude Fable 5.1",
+      "dataset": "QiskitHumanEvalHard",
+      "path": "data/results/claude-fable-5-1/qiskit_humaneval_hard/results_20260910_090152.json",
+      "sha256": "f41a0f6bb70a3e6149f04ccff58a3756626ed2a9939df3097de59cd57669c12d"
+    },
+    {
+      "model": "Claude Fable 5.1",
+      "dataset": "QuanBench117",
+      "path": "data/results/claude-fable-5-1/quanbench/results_20260910_090206.json",
+      "sha256": "f788d105c99fc937916531841178b7bec088fb8cb8a26f5125bc26e7bc9bfad6"
+    },
+    {
+      "model": "Claude Fable 5.1",
+      "dataset": "QuanBench44",
+      "path": "data/results/claude-fable-5-1/quanbench/results_20260910_090159.json",
+      "sha256": "f68fa022baa295fc488a48220c05ac0200f815f8a995300ce51fbc8be6709676"
+    },
+    {
+      "model": "Claude Opus 4.6",
+      "dataset": "QiskitHumanEval",
+      "path": "data/results/claude-opus-4-6/qiskit_humaneval_standard/results_20260209_154603.json",
+      "sha256": "ad22793e8b633e951b87ceb23a7d2eba9fbd1a5f39d4a690cd6608b0638200c7"
+    },
+    {
+      "model": "Claude Opus 4.6",
+      "dataset": "QiskitHumanEvalHard",
+      "path": "data/results/claude-opus-4-6/qiskit_humaneval_hard/results_20260209_180320.json",
+      "sha256": "a81992285bf51369b9f1b8d1bc9cae68b82c24ad849c70921a7ab2fb67327ff2"
+    },
+    {
+      "model": "Claude Opus 4.6",
+      "dataset": "QuanBench117",
+      "path": "data/results/claude-opus-4-6/quanbench/results_20260209_210333-117.json",
+      "sha256": "01d011b0d6cb56507eba5e977e59afe7051f4c777cd3e589186d7d7c9d085775"
+    },
+    {
+      "model": "Claude Opus 4.6",
+      "dataset": "QuanBench44",
+      "path": "data/results/claude-opus-4-6/quanbench/results_20260209_185855-44.json",
+      "sha256": "8f296402ce385d6fb0d1dccec00abaa88b931d78ae7c3164b44859df47405c68"
+    },
+    {
+      "model": "GPT-5",
+      "dataset": "QCoder",
+      "path": "data/results/gpt-5/qcoder_claude_judge/results_20260329_120510.json",
+      "sha256": "ecdd568a5c1097df9e968dfdad68e1521f5dd93ac98aaaf2d21388236f8cb03f"
+    },
+    {
+      "model": "GPT-5",
+      "dataset": "QiskitHumanEval",
+      "path": "data/results/gpt-5/qiskit_humaneval_standard/results_20251217_020511.json",
+      "sha256": "5591be8af025940dcd8d245c4404b5b7baef6f9f6e071b0c5e7065bdabfa97c5"
+    },
+    {
+      "model": "GPT-5",
+      "dataset": "QiskitHumanEvalHard",
+      "path": "data/results/gpt-5/qiskit_humaneval_hard/results_20251216_170947.json",
+      "sha256": "e4a5ca37a853ca6ef6fbd1395191b744c50e7b7c630a2f59c0ebeb13b22f3c6d"
+    },
+    {
+      "model": "GPT-5",
+      "dataset": "QuanBench117",
+      "path": "data/results/gpt-5/quanbench/results_20251217_181157-117.json",
+      "sha256": "0f083e658cf7ba932f07f7e7eb3c3868968fcb7ccc44a06ce34d843aab2af2a7"
+    },
+    {
+      "model": "GPT-5",
+      "dataset": "QuanBench44",
+      "path": "data/results/gpt-5/quanbench/results_20251217_135903-44.json",
+      "sha256": "4edd2a1cd84ff841e08d2145074d1f380f581cbffd8c20690c717dc533426189"
+    },
+    {
+      "model": "GPT-6 Astra",
+      "dataset": "QCoder",
+      "path": "data/results/gpt-6-astra/qcoder_claude_judge/results_20260923_043949.json",
+      "sha256": "4d07e4bf87f8cd9acb3897d3d66504437848aa308b625791663702798e063c8c"
+    },
+    {
+      "model": "GPT-6 Astra",
+      "dataset": "QiskitHumanEval",
+      "path": "data/results/gpt-6-astra/qiskit_humaneval_standard/results_20260922_192103.json",
+      "sha256": "fa6b890175bb3c95ce9e9040dd06e25582936511ebc01ca202db31c9544e83d4"
+    },
+    {
+      "model": "GPT-6 Astra",
+      "dataset": "QiskitHumanEvalHard",
+      "path": "data/results/gpt-6-astra/qiskit_humaneval_hard/results_20260922_210142.json",
+      "sha256": "18dcbc88cec37ec8223f094dc2f0f8337f23ae4f2865c5f921948f3baff780e1"
+    },
+    {
+      "model": "GPT-6 Astra",
+      "dataset": "QuanBench117",
+      "path": "data/results/gpt-6-astra/quanbench/results_20260923_002014.json",
+      "sha256": "bbd2e8d2ac6836ad30923f40f958c11c97ea7bbf6fa68c9047ff68d4c8bc3d27"
+    },
+    {
+      "model": "GPT-6 Astra",
+      "dataset": "QuanBench44",
+      "path": "data/results/gpt-6-astra/quanbench/results_20260922_215359.json",
+      "sha256": "aee57a04e42b29af9e57426741883297e547f15a0c81acfccb2390095b96344a"
+    },
+    {
+      "model": "Gemini 3 Flash",
+      "dataset": "QCoder",
+      "path": "data/results/gemini-3-flash-preview/qcoder_claude_judge/results_20260331_121305.json",
+      "sha256": "621918aa9ddcea27d6034a156c84eb45e2fc18a7d8c0b5d87844b5c461edc9ed"
+    },
+    {
+      "model": "Gemini 3 Flash",
+      "dataset": "QiskitHumanEval",
+      "path": "data/results/gemini-3-flash-preview/qiskit_humaneval_standard/results_20260209_161757.json",
+      "sha256": "01835885415278ef9897dd64f3bd108abd6f21ee3b315acdaa870163c7c6e0a4"
+    },
+    {
+      "model": "Gemini 3 Flash",
+      "dataset": "QiskitHumanEvalHard",
+      "path": "data/results/gemini-3-flash-preview/qiskit_humaneval_hard/results_20260209_181625.json",
+      "sha256": "31e502c7bb7d68735849d3ee501a47dc8bf7db854be3bb335c752eab66d114bf"
+    },
+    {
+      "model": "Gemini 3 Flash",
+      "dataset": "QuanBench117",
+      "path": "data/results/gemini-3-flash-preview/quanbench/results_20260209_203933-117.json",
+      "sha256": "cfadcf8eed01330076353c3720298fc4815eee98da068106039785831b672c6e"
+    },
+    {
+      "model": "Gemini 3 Flash",
+      "dataset": "QuanBench44",
+      "path": "data/results/gemini-3-flash-preview/quanbench/results_20260209_185538-44.json",
+      "sha256": "9d2ef01e5d9fe2bfeb6be1c0ce6b0ec888607702c899418dc35864aef7949685"
+    },
+    {
+      "model": "Gemini 3.1 Pro Preview",
+      "dataset": "QCoder",
+      "path": "data/results/gemini-3.1-pro-preview/qcoder_claude_judge/results_20260910_172510.json",
+      "sha256": "38fcaeba4e9b62cc94aceaa9a74c0b230b94b8df86de81ea8d63598e92768176"
+    },
+    {
+      "model": "Gemini 3.1 Pro Preview",
+      "dataset": "QiskitHumanEval",
+      "path": "data/results/gemini-3.1-pro-preview/qiskit_humaneval_standard/results_20260910_090149.json",
+      "sha256": "aa07640b0c867c75e44896adf0caa5520374e93bab6bf158fb95ae499c7227db"
+    },
+    {
+      "model": "Gemini 3.1 Pro Preview",
+      "dataset": "QiskitHumanEvalHard",
+      "path": "data/results/gemini-3.1-pro-preview/qiskit_humaneval_hard/results_20260910_090155.json",
+      "sha256": "e92ada3acec427a60b913d06ec9edc9ed4cff9ecdfecd1d7912e266186336b20"
+    },
+    {
+      "model": "Gemini 3.1 Pro Preview",
+      "dataset": "QuanBench117",
+      "path": "data/results/gemini-3.1-pro-preview/quanbench/results_20260910_153018.json",
+      "sha256": "d0b25cbed24b15e13648652e775a015d65f867d6901390e1206cfb680a4db0d9"
+    },
+    {
+      "model": "Gemini 3.1 Pro Preview",
+      "dataset": "QuanBench44",
+      "path": "data/results/gemini-3.1-pro-preview/quanbench/results_20260910_103736.json",
+      "sha256": "08743aef1eec0f3eff9cc2f4c81f4991d23093354362441f40f9d7fca0ae7040"
+    },
+    {
+      "model": "Gemini 3.6 Flash",
+      "dataset": "QCoder",
+      "path": "data/results/gemini-3.6-flash/qcoder_claude_judge/results_20260909_174158.json",
+      "sha256": "0c9d0fb058830839e81e8c12e4b9b505a2024e41e8320934e1d0c4ed8988eacd"
+    },
+    {
+      "model": "Gemini 3.6 Flash",
+      "dataset": "QiskitHumanEval",
+      "path": "data/results/gemini-3.6-flash/qiskit_humaneval_standard/results_20260909_123801.json",
+      "sha256": "56e952aa0ba50cc106e6d584554269baedd880c416305ec4371637906f9dfaa1"
+    },
+    {
+      "model": "Gemini 3.6 Flash",
+      "dataset": "QiskitHumanEvalHard",
+      "path": "data/results/gemini-3.6-flash/qiskit_humaneval_hard/results_20260909_142431.json",
+      "sha256": "daf7867787e1c784ddd453848c3173144c4af08a91995ece21e676b720bf8140"
+    },
+    {
+      "model": "Gemini 3.6 Flash",
+      "dataset": "QuanBench117",
+      "path": "data/results/gemini-3.6-flash/quanbench/results_20260909_155815.json",
+      "sha256": "0f6e5a1d69f20179b186f0297706510a6e5a3106d78c08a056f1583e3ece22e4"
+    },
+    {
+      "model": "Gemini 3.6 Flash",
+      "dataset": "QuanBench44",
+      "path": "data/results/gemini-3.6-flash/quanbench/results_20260909_163135.json",
+      "sha256": "a65abd6de0685314c48fba3e34d96c541fa00c3a374136da5297d0a107fcc34a"
+    },
+    {
+      "model": "Gemma-3-4B-IT",
+      "dataset": "QCoder",
+      "path": "data/results/google/gemma-3-4b-it/qcoder_claude_judge/results_20260330_182240.json",
+      "sha256": "b14dc5bf029de83475c349e00af9c2c7fe0965236ca3939a3b7e7e15d6a4fb89"
+    },
+    {
+      "model": "Gemma-3-4B-IT",
+      "dataset": "QiskitHumanEval",
+      "path": "data/results/google/gemma-3-4b-it/qiskit_humaneval_standard/results_20260114_130329.json",
+      "sha256": "c242333921ab88744b902a8a8ec114a6cbbcfa168b4613140733c3d37a0f8488"
+    },
+    {
+      "model": "Gemma-3-4B-IT",
+      "dataset": "QiskitHumanEvalHard",
+      "path": "data/results/google/gemma-3-4b-it/qiskit_humaneval_hard/results_20260115_110850.json",
+      "sha256": "4db5a23a93a70c2f78d93a44daa94ba51ed7ebc79a4be2ad3121c5226904cdd3"
+    },
+    {
+      "model": "Gemma-3-4B-IT",
+      "dataset": "QuanBench117",
+      "path": "data/results/google/gemma-3-4b-it/quanbench/results_20260115_154348-117.json",
+      "sha256": "59238473fb19947f74a8d19ecd7f915c839269814f2952c5ca02291115d59a38"
+    },
+    {
+      "model": "Gemma-3-4B-IT",
+      "dataset": "QuanBench44",
+      "path": "data/results/google/gemma-3-4b-it/quanbench/results_20260115_164020-44.json",
+      "sha256": "64d2095dfcb5a3970fa31634f88a3030f535cb1e589172ae1eefed3cc9cea232"
+    },
+    {
+      "model": "Granite-3.2-8B-Qiskit",
+      "dataset": "QCoder",
+      "path": "data/results/Qiskit/granite-3.2-8b-qiskit/qcoder_claude_judge/results_20260331_064439.json",
+      "sha256": "78ad86abedbe7403080af854dc1d9f6e63f4508d616ac9330f60a921361b96c9"
+    },
+    {
+      "model": "Granite-3.2-8B-Qiskit",
+      "dataset": "QiskitHumanEval",
+      "path": "data/results/qiskit/granite-8b-qiskit/qiskit_humaneval_standard/results_20251216_154711.json",
+      "sha256": "e3ddefe648c2d3f59c61c495b418f1a9a190bfbb3f6d9ab1a03cef37733f44f5"
+    },
+    {
+      "model": "Granite-3.2-8B-Qiskit",
+      "dataset": "QiskitHumanEvalHard",
+      "path": "data/results/qiskit/granite-8b-qiskit/qiskit_humaneval_hard/results_20260324_125130.json",
+      "sha256": "48f732b9d2817c3df26bd7c16cf38031ec5adf8ef80a83e0622bc12906b39342"
+    },
+    {
+      "model": "Granite-3.2-8B-Qiskit",
+      "dataset": "QuanBench117",
+      "path": "data/results/qiskit/granite-8b-qiskit/quanbench/results_20251217_165957-117.json",
+      "sha256": "b3d540cdbed38fb4f59e105ee05e5b5a694513430254a8956d5fe764aead9997"
+    },
+    {
+      "model": "Granite-3.2-8B-Qiskit",
+      "dataset": "QuanBench44",
+      "path": "data/results/qiskit/granite-8b-qiskit/quanbench/results_20251217_151208-44.json",
+      "sha256": "ba9217f949e95922b3e382597c3d4062c64dc9845da1de1f34c579c8b67003fd"
+    },
+    {
+      "model": "LLaMA-3.1-8B",
+      "dataset": "QCoder",
+      "path": "data/results/meta-llama/Llama-3.1-8B/qcoder_claude_judge/results_20260909_004951.json",
+      "sha256": "5beabaaa43aa6ec56e3eaac099eebb36f1951293e4578f487c350f23d2d8f821"
+    },
+    {
+      "model": "LLaMA-3.1-8B",
+      "dataset": "QiskitHumanEval",
+      "path": "data/results/meta-llama/Llama-3.1-8B/qiskit_humaneval_standard/results_20260106_174811.json",
+      "sha256": "2d9326be8f4e301fe4fb6a5a66a401166f0d3a3f61cdb8fd8a29eb8bfec73bc3"
+    },
+    {
+      "model": "LLaMA-3.1-8B",
+      "dataset": "QiskitHumanEvalHard",
+      "path": "data/results/meta-llama/Llama-3.1-8B/qiskit_humaneval_hard/results_20260106_151614.json",
+      "sha256": "9b60f0d655845be2e713a33302fe196f5908631d947db4165706098c97b0ae65"
+    },
+    {
+      "model": "LLaMA-3.1-8B",
+      "dataset": "QuanBench117",
+      "path": "data/results/meta-llama/Llama-3.1-8B/quanbench/results_20260107_121933-117.json",
+      "sha256": "b403d642a6617f761fff65a8a61b4186d41d497190ed1f68b7876de52395b2ff"
+    },
+    {
+      "model": "LLaMA-3.1-8B",
+      "dataset": "QuanBench44",
+      "path": "data/results/meta-llama/Llama-3.1-8B/quanbench/results_20260107_143323-44.json",
+      "sha256": "4d747e73ab48a52fc5217a28909adc79aa0fd129cdda33292e4f234535fdf6de"
+    },
+    {
+      "model": "Mistral-3.2-24B-Qiskit",
+      "dataset": "QCoder",
+      "path": "data/results/mistral3/qcoder_claude_judge/results_20260331_145401.json",
+      "sha256": "1b42c172a10a5ba2a0bf26155c719271061f7551f47e5abc1dfa14fde1c1a887"
+    },
+    {
+      "model": "Mistral-3.2-24B-Qiskit",
+      "dataset": "QiskitHumanEval",
+      "path": "data/results/mistral-small-3.2-24b-qiskit/qiskit_humaneval_standard/results_20260209_204020.json",
+      "sha256": "84b045cc52ae5b68e25652c46d953eac7c7ad4854df1a393d206549b47fcd8ac"
+    },
+    {
+      "model": "Mistral-3.2-24B-Qiskit",
+      "dataset": "QiskitHumanEvalHard",
+      "path": "data/results/mistral-small-3.2-24b-qiskit/qiskit_humaneval_hard/results_20260210_074529.json",
+      "sha256": "39c2f27541b3357f10834f9ba29633c4ca0d2b497f3d42ec34c5b6ffd340ece2"
+    },
+    {
+      "model": "Mistral-3.2-24B-Qiskit",
+      "dataset": "QuanBench117",
+      "path": "data/results/mistral-small-3.2-24b-qiskit/quanbench/results_20260210_231846-117.json",
+      "sha256": "38d32f0051bdbc35ac1f105e43307ed1a0a4f02fdf28afc3906c60d9706a2bc1"
+    },
+    {
+      "model": "Mistral-3.2-24B-Qiskit",
+      "dataset": "QuanBench44",
+      "path": "data/results/mistral-small-3.2-24b-qiskit/quanbench/results_20260211_001438-44.json",
+      "sha256": "2586d212d747664aec78b59e904628b42dc2c184bbc8783222b84cabf9e1f9c9"
+    },
+    {
+      "model": "Mistral-7B-Instruct-v0.3",
+      "dataset": "QCoder",
+      "path": "data/results/mistralai/Mistral-7B-Instruct-v0.3/qcoder_claude_judge/results_20260331_154118.json",
+      "sha256": "45a93b75b9d2f87bdadbad20f683e639374d72f2ccae5c300035ee581d663e27"
+    },
+    {
+      "model": "Mistral-7B-Instruct-v0.3",
+      "dataset": "QiskitHumanEval",
+      "path": "data/results/mistralai/Mistral-7B-Instruct-v0.3/qiskit_humaneval_standard/results_20260112_142813.json",
+      "sha256": "ee2f7b32444c301eb16fdc3d938faa21f6ef4433da64b0e35324131bc7e56278"
+    },
+    {
+      "model": "Mistral-7B-Instruct-v0.3",
+      "dataset": "QiskitHumanEvalHard",
+      "path": "data/results/mistralai/Mistral-7B-Instruct-v0.3/qiskit_humaneval_hard/results_20260112_202524.json",
+      "sha256": "bd628c961a631850bf5684683141772a1918ec21316ea08fd91e47a4e425dfab"
+    },
+    {
+      "model": "Mistral-7B-Instruct-v0.3",
+      "dataset": "QuanBench117",
+      "path": "data/results/mistralai/Mistral-7B-Instruct-v0.3/quanbench/results_20260113_131121-117.json",
+      "sha256": "02b906bc5c8f5115d7eda19c3fa4dcfe895db9c1c27e239ff4aab5c8bfcf7b2f"
+    },
+    {
+      "model": "Mistral-7B-Instruct-v0.3",
+      "dataset": "QuanBench44",
+      "path": "data/results/mistralai/Mistral-7B-Instruct-v0.3/quanbench/results_20260113_103014-44.json",
+      "sha256": "7e53ef9bb970a72ba72665df18987bffdc842622a727e6896974d46bfe250a48"
+    },
+    {
+      "model": "Muse-Glimmer-30B",
+      "dataset": "QiskitHumanEval",
+      "path": "data/results/meta-models/Muse-Glimmer-30B/qiskit_humaneval_standard/results_20260921_091424.json",
+      "sha256": "9fe6f4de21789c44582836064f4ce7c41d948486950a3e9c7dec685834ba3838"
+    },
+    {
+      "model": "Muse-Glimmer-30B",
+      "dataset": "QiskitHumanEvalHard",
+      "path": "data/results/meta-models/Muse-Glimmer-30B/qiskit_humaneval_hard/results_20260921_091530.json",
+      "sha256": "edd98ea92d579601e1d9fc2117a768ade6f4d3a6e62502a2e20f680718e0eed6"
+    },
+    {
+      "model": "Muse-Glimmer-30B",
+      "dataset": "QuanBench117",
+      "path": "data/results/meta-models/Muse-Glimmer-30B/quanbench/results_20260921_091745.json",
+      "sha256": "ddc5925d0c9aaa8e1ba1453f2c7ae749594751eb181f57a78000195a95f29251"
+    },
+    {
+      "model": "Muse-Glimmer-30B",
+      "dataset": "QuanBench44",
+      "path": "data/results/meta-models/Muse-Glimmer-30B/quanbench/results_20260921_091635.json",
+      "sha256": "be586e73f2ed023126217e2d7c3b16bd9d0cd4224cc71915420cda0968073f8a"
+    },
+    {
+      "model": "Quantum RAG",
+      "dataset": "QCoder",
+      "path": "data/results/quantum-rag/qcoder_claude_judge/results_20260910_112729.json",
+      "sha256": "630f4e6b302b371aed1f7e4788319a0a2b8bf1d934b19b3aa128a7e55f6c8afd"
+    },
+    {
+      "model": "Quantum RAG",
+      "dataset": "QiskitHumanEval",
+      "path": "data/results/quantum-rag/qiskit_humaneval_standard/results_20260213_044107.json",
+      "sha256": "33c582c105f82a758ab6f31a024dc806d13e080f0de0a76ca39a5d78583d45f1"
+    },
+    {
+      "model": "Quantum RAG",
+      "dataset": "QiskitHumanEvalHard",
+      "path": "data/results/quantum-rag/qiskit_humaneval_hard/results_20260213_054602.json",
+      "sha256": "6569cdca5efd7cbd90f6faef9fa2cc425e9205532fa09152aa375afc00286b60"
+    },
+    {
+      "model": "Quantum RAG",
+      "dataset": "QuanBench117",
+      "path": "data/results/quantum-rag/quanbench/results_20260213_151757-117.json",
+      "sha256": "ee9f22ea62385baefc39bf04df1f8d5d7feb19663213edaf540dfbd97b33a337"
+    },
+    {
+      "model": "Quantum RAG",
+      "dataset": "QuanBench44",
+      "path": "data/results/quantum-rag/quanbench/results_20260213_125337-44.json",
+      "sha256": "84ae495d4bf724477674000933c495215cf03d47a86ee38c6fb0a5d626894cfa"
+    },
+    {
+      "model": "Qwen2.5-Coder-14B-Qiskit",
+      "dataset": "QCoder",
+      "path": "data/results/qwen/qcoder_claude_judge/results_20260330_222224.json",
+      "sha256": "d55a406183149d2d274a8fcb92eea4e88924ad8e402d1f9a48924b36ae448a4e"
+    },
+    {
+      "model": "Qwen2.5-Coder-14B-Qiskit",
+      "dataset": "QiskitHumanEval",
+      "path": "data/results/qwen2.5-coder-14b-qiskit/qiskit_humaneval_standard/results_20260212_131551.json",
+      "sha256": "2722003426692645facd8404168520842a46bbc1249bd77c50311f1680b31e43"
+    },
+    {
+      "model": "Qwen2.5-Coder-14B-Qiskit",
+      "dataset": "QiskitHumanEvalHard",
+      "path": "data/results/qwen2.5-coder-14b-qiskit/qiskit_humaneval_hard/results_20260327_225103.json",
+      "sha256": "63ca2eeff6c0f14bf99c9f4d65e5fc886c9abf04356cc7b9a8bee416934a3e70"
+    },
+    {
+      "model": "Qwen2.5-Coder-14B-Qiskit",
+      "dataset": "QuanBench117",
+      "path": "data/results/qwen2.5-coder-14b-qiskit/quanbench/results_20260329_213107-117.json",
+      "sha256": "5100504826be826785f975a90acca9403bf69189e0c39def917aecb536a7539a"
+    },
+    {
+      "model": "Qwen2.5-Coder-14B-Qiskit",
+      "dataset": "QuanBench44",
+      "path": "data/results/qwen2.5-coder-14b-qiskit/quanbench/results_20260330_161515-44.json",
+      "sha256": "077be1e61a76ab7c8b01907b1c3ea4f7ef8cfbb09ea74c683314e22b39ef876c"
+    }
+  ]
+}
