@@ -367,8 +367,7 @@
 
     const ciLo = row[`${metricKey}_ci_lo`];
     const ciHi = row[`${metricKey}_ci_hi`];
-    const std = row[`${metricKey}_std`];
-    const ciText = fmtCi(ciLo, ciHi) + (std !== null && std !== undefined ? ` · SD ${(std * 100).toFixed(1)} pp` : "");
+    const ciText = fmtCi(ciLo, ciHi);
 
     let bar = "";
     if (isActive) {
