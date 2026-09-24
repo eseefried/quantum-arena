@@ -104,3 +104,7 @@ Generated preview JSON is retained locally; deployment automation is unchanged. 
 The Datasets navigation link opens an inventory table with problem counts and links
 to six explanatory pages. Rebuild them with `python3 scripts/export_dataset_pages.py`;
 counts come from local problem-content files and QuantumBenchEval task files.
+
+CI/SD are precomputed in the benchmark repository and transferred as
+`data/statistics/original_collection.json`. The standard-library-only exporter
+validates the source hashes and refuses stale statistics. See `scripts/STATISTICS.md`.

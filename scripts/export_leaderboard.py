@@ -14,7 +14,6 @@ from __future__ import annotations
 import json
 import math
 import hashlib
-from leaderboard_statistics import summarize, REPLICATES, SEED
 import re
 import sys
 from collections import defaultdict
@@ -199,7 +198,7 @@ def collect_latest_result_files() -> tuple[dict[tuple[str, str], tuple[str, Path
     return {k: (v[0], v[1], v[2], v[3]) for k, v in best.items()}, skipped
 
 
-def main() -> None:
+def main(require_statistics: bool = True) -> None:
     task_lookup = load_task_metadata()
     ci_data = {}  # Statistics are recomputed from selected samples, never stale CI files.
 
@@ -317,43 +316,37 @@ def main() -> None:
             "pass_at_5_ci_hi": hi5,
         })
 
-    category_rows = []
-    grouped = defaultdict(list)
-    by_category = defaultdict(list)
-    for row in detail_rows:
-        grouped[(row["model"], row["dataset"])].append(row)
-        by_category[(row["model"], row["dataset"], row["category"])].append(row)
-    for row in summary_rows:
-        key = (row["model"], row["dataset"])
-        row.update(summarize(grouped[key], key))
-    for key, rows in sorted(by_category.items()):
-        row = dict(zip(("model", "dataset", "category"), key), n_tasks=len(rows))
-        for k in (1, 3, 5):
-            values = [r[f"pass_at_{k}"] for r in rows if r[f"pass_at_{k}"] is not None]
-            row[f"pass_at_{k}"] = sum(values)/len(values) if values else None
-        row.update(summarize(rows, key))
-        category_rows.append(row)
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-    (OUT_DIR / "leaderboard_category_statistics.json").write_text(json.dumps(category_rows, indent=2))
-    manifest = {"replicates": REPLICATES, "seed": SEED, "confidence": .95,
-                "method": "Percentile bootstrap of task-level pass@k; sample SD across tasks (ddof=1)",
-                "limitations": "Conditional on recorded outcomes; no infra-error correction or independent rerun validation. Singleton CIs unavailable; constant scores yield degenerate intervals. No Overall CI across overlapping suites.",
-                "numpy": __import__("numpy").__version__,
-                "sources": [{"model": model, "dataset": ds, "path": str(path.relative_to(REPO_ROOT)),
-                             "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
-                            for (model, ds), (_, path, _, _) in sorted(best_files.items())]}
-    (OUT_DIR / "statistics_manifest.json").write_text(json.dumps(manifest, indent=2))
-
-    # Refresh the legacy CI artifact for downstream consumers as well.
-    refreshed_ci = {}
-    for row in summary_rows:
-        entry = refreshed_ci.setdefault(row["model"], {}).setdefault(DATASET_CI_KEY[row["dataset"]], {})
-        for k in (1, 3, 5):
-            key = f"pass_at_{k}"
-            entry[str(k)] = {"mean": row[key], "ci_lo": row[key+"_ci_lo"],
-                             "ci_hi": row[key+"_ci_hi"], "std": row[key+"_std"],
-                             "n_tasks": row[key+"_n_tasks"]}
-    CI_PATH.write_text(json.dumps(refreshed_ci, indent=2))
+    if require_statistics:
+        # CI/SD are computed in the benchmark project, not on the Pages runner.
+        stats_path = REPO_ROOT / "data" / "statistics" / "original_collection.json"
+        if not stats_path.exists():
+            raise ValueError("Missing precomputed statistics: transfer data/statistics/original_collection.json")
+        bundle = load_json(stats_path)
+        canonical = json.dumps(sorted(detail_rows, key=lambda r: (r["model"], r["dataset"], r["task_id"])), sort_keys=True)
+        if hashlib.sha256(canonical.encode()).hexdigest() != bundle["details_sha256"]:
+            raise ValueError("Stale statistics: recompute locally with scripts/compute_leaderboard_statistics.py and transfer the new bundle")
+        sources = {(x["model"], x["dataset"]): x for x in bundle["manifest"]["sources"]}
+        if set(sources) != set(best_files):
+            raise ValueError("Statistics model/dataset coverage does not match selected results")
+        for key, (_, path, _, _) in best_files.items():
+            if hashlib.sha256(path.read_bytes()).hexdigest() != sources[key]["sha256"]:
+                raise ValueError(f"Stale statistics source: {key}")
+        statistics = {(r["model"], r["dataset"]): r for r in bundle["scores"]}
+        if set(statistics) != set(best_files):
+            raise ValueError("Statistics rows do not match selected results")
+        for row in summary_rows:
+            stats = statistics[(row["model"], row["dataset"])]
+            if stats["n_tasks"] != row["n_tasks"]:
+                raise ValueError("Statistics task count mismatch")
+            for k in (1, 3, 5):
+                key = f"pass_at_{k}"
+                if stats[key] != row[key]:
+                    raise ValueError("Statistics point estimate mismatch")
+                for suffix in ("_n_tasks", "_std", "_constant_scores", "_ci_lo", "_ci_hi"):
+                    row[key+suffix] = stats[key+suffix]
+        OUT_DIR.mkdir(parents=True, exist_ok=True)
+        (OUT_DIR / "leaderboard_category_statistics.json").write_text(json.dumps(bundle["categories"], indent=2))
+        (OUT_DIR / "statistics_manifest.json").write_text(json.dumps(bundle["manifest"], indent=2))
 
     summary_rows.sort(key=lambda r: (r["dataset"], -(r["pass_at_1"] or 0)))
     detail_rows.sort(key=lambda r: (r["dataset"], r["model"], r["task_id"]))

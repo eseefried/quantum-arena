@@ -2,9 +2,9 @@
   "replicates": 10000,
   "seed": 20260922,
   "confidence": 0.95,
-  "method": "Percentile bootstrap of task-level pass@k; sample SD across tasks (ddof=1)",
-  "limitations": "Conditional on recorded outcomes; no infra-error correction or independent rerun validation. Singleton CIs unavailable; constant scores yield degenerate intervals. No Overall CI across overlapping suites.",
   "numpy": "2.2.6",
+  "method": "Percentile task bootstrap; task sample SD ddof=1",
+  "limitations": "Conditional on saved outcomes; no rerun validation or infra correction. No cross-suite Overall CI. Singleton intervals unavailable; constant scores may have zero-width CI.",
   "sources": [
     {
       "model": "Claude Fable 5.1",

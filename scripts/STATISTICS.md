@@ -1,21 +1,23 @@
-# Leaderboard statistics
+# Precomputed statistics
 
-Run `python scripts/export_leaderboard.py` in an environment with NumPy installed.
-The benchmark repository's `.venv/bin/python` has the required dependency.
-The exporter recomputes pass@1/3/5 from five scored samples per task, then exports
-10,000-replicate task-percentile 95% CIs and sample standard deviations (ddof=1).
-Both dataset and category views show CI and SD (percentage points). Legacy
-`data/results/confidence_intervals.json` is regenerated, not used as an input.
-`leaderboard/statistics_manifest.json` records seed, method, versions and source hashes.
+Pages runs `python3 scripts/export_leaderboard.py` with the Python standard library only.
+It does not install NumPy or compute bootstrap intervals.
 
-These intervals condition on recorded evaluation outcomes; they do not correct
-infrastructure failures, measure independent generation reruns, or quantify judge
-variation. Constant scores yield degenerate intervals; singleton categories have
-no CI/SD. Intervals are pointwise, not simultaneous. Overall CIs are deliberately
-omitted because benchmark suites overlap. The six-topic QuantumBenchEval collection
-has separate scoring and is not changed by this original-collection analysis.
+After results change, run from the sibling benchmark repository:
 
-The benchmark notebook's final section exports current paired sign-flip tests
-(global Holm correction) and bootstrap rank intervals to
-`experiments/statistics/leaderboard_current/`. These use common task panels per
-suite and average ranks for ties; no aggregate rank across suites is claimed.
+```bash
+.venv/bin/python scripts/compute_leaderboard_statistics.py --leaderboard ../quantum-leaderboard
+```
+
+This computes statistics locally and copies `data/statistics/original_collection.json`
+and the legacy `data/results/confidence_intervals.json` into this repository.
+Commit those files together with the results. Then run the exporter to generate the site.
+The exporter validates exact source-file hashes, selected model/dataset coverage,
+task-level data/metadata hash, task counts and point estimates. Stale bundles fail
+with an instruction to recompute locally rather than publishing mismatched intervals.
+
+Statistics: 10,000 task bootstrap replicates; percentile 95% CIs; sample SD across
+tasks (ddof=1). Conditional on saved evaluations, not infrastructure-error repairs
+or independent rerun validation. Singleton intervals unavailable; constant scores
+can yield zero-width CIs. No Overall CI across overlapping suites. QuantumBenchEval
+is separate and unchanged. Paired/rank analyses remain in the benchmark notebook.
