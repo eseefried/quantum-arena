@@ -1,0 +1,164 @@
+[T4 1/15] t4_0 sample 1/5
+Fetching 16 files:   0%|          | 0/16 [00:00<?, ?it/s]Fetching 16 files: 100%|██████████| 16/16 [00:00<00:00, 1276.13it/s]
+INFO:assistants.base_assistant:Initialized GraniteQiskitAssistant with model /mnt/zgx2-shared/AS-HybridQuantumBench/runs/quantumbencheval_t1-6/granite32-v3/cache/hub/models--Qiskit--granite-3.2-8b-qiskit/snapshots/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188
+INFO:assistants.granite_qiskit_assistant:Loading tokenizer from /mnt/zgx2-shared/AS-HybridQuantumBench/runs/quantumbencheval_t1-6/granite32-v3/cache/hub/models--Qiskit--granite-3.2-8b-qiskit/snapshots/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188
+INFO:assistants.granite_qiskit_assistant:Loading model on cuda:0 with bfloat16 precision
+`torch_dtype` is deprecated! Use `dtype` instead!
+/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:283: UserWarning: 
+    Found GPU0 NVIDIA GB10 which is of cuda capability 12.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (8.0) - (12.0)
+    
+  warnings.warn(
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   0%|          | 1/362 [00:00<00:41,  8.72it/s]Loading weights:   4%|▍         | 14/362 [00:00<00:04, 72.99it/s]Loading weights:   8%|▊         | 30/362 [00:00<00:03, 92.49it/s]Loading weights:  13%|█▎        | 48/362 [00:00<00:02, 114.91it/s]Loading weights:  18%|█▊        | 66/362 [00:00<00:02, 117.11it/s]Loading weights:  23%|██▎       | 84/362 [00:00<00:02, 129.72it/s]Loading weights:  27%|██▋       | 98/362 [00:00<00:02, 131.24it/s]Loading weights:  31%|███       | 112/362 [00:00<00:01, 128.82it/s]Loading weights:  36%|███▌      | 129/362 [00:01<00:01, 135.96it/s]Loading weights:  40%|███▉      | 144/362 [00:01<00:01, 136.91it/s]Loading weights:  44%|████▎     | 158/362 [00:01<00:01, 119.92it/s]Loading weights:  48%|████▊     | 174/362 [00:01<00:01, 129.91it/s]Loading weights:  52%|█████▏    | 188/362 [00:01<00:02, 77.01it/s] Loading weights:  56%|█████▌    | 201/362 [00:01<00:01, 81.74it/s]Loading weights:  59%|█████▉    | 214/362 [00:02<00:01, 90.50it/s]Loading weights:  63%|██████▎   | 228/362 [00:02<00:01, 100.02it/s]Loading weights:  67%|██████▋   | 243/362 [00:02<00:01, 108.15it/s]Loading weights:  71%|███████   | 256/362 [00:02<00:00, 106.97it/s]Loading weights:  76%|███████▌  | 274/362 [00:02<00:00, 122.35it/s]Loading weights:  81%|████████  | 292/362 [00:02<00:00, 132.08it/s]Loading weights:  85%|████████▍ | 306/362 [00:02<00:00, 133.43it/s]Loading weights:  88%|████████▊ | 320/362 [00:02<00:00, 132.28it/s]Loading weights:  93%|█████████▎| 336/362 [00:02<00:00, 133.56it/s]Loading weights:  98%|█████████▊| 354/362 [00:03<00:00, 135.48it/s]Loading weights: 100%|██████████| 362/362 [00:03<00:00, 117.04it/s]
+INFO:assistants.granite_qiskit_assistant:Successfully initialized Granite-8B-Qiskit on cuda:0
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 1/15] t4_0 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 1/15] t4_0 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 1/15] t4_0 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 1/15] t4_0 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 2/15] t4_1 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 2/15] t4_1 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 2/15] t4_1 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 2/15] t4_1 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 2/15] t4_1 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 3/15] t4_2 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 3/15] t4_2 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 3/15] t4_2 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 3/15] t4_2 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 3/15] t4_2 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 4/15] t4_3 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 4/15] t4_3 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 4/15] t4_3 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 4/15] t4_3 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 4/15] t4_3 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 5/15] t4_4 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 5/15] t4_4 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 5/15] t4_4 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 5/15] t4_4 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 5/15] t4_4 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 6/15] t4_5 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 6/15] t4_5 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 6/15] t4_5 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 6/15] t4_5 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 6/15] t4_5 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 7/15] t4_6 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 7/15] t4_6 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 7/15] t4_6 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 7/15] t4_6 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 7/15] t4_6 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 8/15] t4_7 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 8/15] t4_7 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 8/15] t4_7 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 8/15] t4_7 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 8/15] t4_7 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 9/15] t4_8 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 9/15] t4_8 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 9/15] t4_8 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 9/15] t4_8 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 9/15] t4_8 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 10/15] t4_9 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 10/15] t4_9 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 10/15] t4_9 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 10/15] t4_9 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 10/15] t4_9 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 11/15] t4_10 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 11/15] t4_10 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 11/15] t4_10 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 11/15] t4_10 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 11/15] t4_10 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 12/15] t4_11 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 12/15] t4_11 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 12/15] t4_11 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 12/15] t4_11 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 12/15] t4_11 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 13/15] t4_12 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 13/15] t4_12 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 13/15] t4_12 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 13/15] t4_12 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 13/15] t4_12 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 14/15] t4_13 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 14/15] t4_13 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 14/15] t4_13 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 14/15] t4_13 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 14/15] t4_13 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 15/15] t4_14 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 15/15] t4_14 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 15/15] t4_14 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 15/15] t4_14 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T4 15/15] t4_14 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+{"status": "completed", "counts": {"candidate_unsupported_import": 36, "candidate_error": 30, "truncated": 9}, "expected_samples": 75, "fingerprint": "c245aff8b98d71296d3598958f6b0c0b390ea4432cf1ee997c9d3a6c24520bbf", "execution_status_counts": {"not_executed": 9, "candidate_unsupported_import": 36, "candidate_error": 30}, "unsupported_import_modules": {"qiskit.transpiler.preset_passmanagers.generate_ai_pass_manager": 1, "qiskit_algorithms.converters": 2, "qiskit.Aer": 5, "qiskit_ibm_runtime": 3, "qiskit.providers.aer": 5, "qiskit_algorithms.algorithms": 3, "qiskit_aer.Estimator": 1, "qiskit_algorithms.utils.QuantumInstance": 1, "qiskit.algorithms": 7, "qiskit.primitives.EstimatorV2": 1, "qiskit.execute": 1, "qiskit.AerSimulator": 1, "qiskit.primitives.SamplerV2": 1, "qiskit_algorithms.problems": 1, "qiskit.transpiler.passes.CollectOperations": 1, "qiskit.aqua": 1, "qiskit_nature": 1}, "pass_at_k": {"1": 0.0, "5": 0.0}, "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."}

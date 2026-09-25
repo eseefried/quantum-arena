@@ -1,0 +1,229 @@
+[T3 1/15] t3_0 sample 1/5
+Fetching 18 files:   0%|          | 0/18 [00:00<?, ?it/s]Fetching 18 files: 100%|██████████| 18/18 [00:00<00:00, 1733.90it/s]
+INFO:assistants.base_assistant:Initialized Qwen25QiskitAssistant with model /mnt/zgx2-shared/AS-HybridQuantumBench/runs/quantumbencheval_t1-6/qwen-qiskit-v3/cache/hub/models--Qiskit--Qwen2.5-Coder-14B-Qiskit/snapshots/9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a
+`torch_dtype` is deprecated! Use `dtype` instead!
+/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:283: UserWarning: 
+    Found GPU0 NVIDIA GB10 which is of cuda capability 12.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (8.0) - (12.0)
+    
+  warnings.warn(
+Loading weights:   0%|          | 0/579 [00:00<?, ?it/s]Loading weights:   0%|          | 1/579 [00:00<02:14,  4.30it/s]Loading weights:   0%|          | 2/579 [00:00<02:03,  4.67it/s]Loading weights:   4%|▍         | 22/579 [00:00<00:09, 57.83it/s]Loading weights:   7%|▋         | 40/579 [00:00<00:06, 80.44it/s]Loading weights:  11%|█         | 64/579 [00:00<00:04, 117.56it/s]Loading weights:  13%|█▎        | 78/579 [00:00<00:04, 121.37it/s]Loading weights:  16%|█▌        | 94/579 [00:01<00:04, 119.08it/s]Loading weights:  20%|█▉        | 114/579 [00:01<00:03, 128.49it/s]Loading weights:  23%|██▎       | 136/579 [00:01<00:03, 146.46it/s]Loading weights:  26%|██▋       | 152/579 [00:01<00:02, 149.74it/s]Loading weights:  29%|██▉       | 168/579 [00:01<00:03, 134.20it/s]Loading weights:  32%|███▏      | 186/579 [00:01<00:02, 137.68it/s]Loading weights:  36%|███▌      | 208/579 [00:01<00:02, 140.25it/s]Loading weights:  39%|███▉      | 226/579 [00:01<00:02, 138.48it/s]Loading weights:  42%|████▏     | 241/579 [00:02<00:02, 136.23it/s]Loading weights:  45%|████▍     | 259/579 [00:02<00:02, 143.50it/s]Loading weights:  48%|████▊     | 280/579 [00:02<00:02, 134.53it/s]Loading weights:  51%|█████▏    | 298/579 [00:02<00:01, 144.98it/s]Loading weights:  56%|█████▌    | 324/579 [00:02<00:01, 172.15it/s]Loading weights:  59%|█████▉    | 342/579 [00:02<00:01, 154.71it/s]Loading weights:  62%|██████▏   | 359/579 [00:02<00:01, 149.17it/s]Loading weights:  65%|██████▍   | 376/579 [00:02<00:01, 143.14it/s]Loading weights:  69%|██████▉   | 400/579 [00:03<00:01, 145.36it/s]Loading weights:  72%|███████▏  | 418/579 [00:03<00:01, 152.97it/s]Loading weights:  75%|███████▌  | 436/579 [00:03<00:00, 146.81it/s]Loading weights:  78%|███████▊  | 454/579 [00:03<00:00, 144.44it/s]Loading weights:  82%|████████▏ | 473/579 [00:03<00:00, 145.73it/s]Loading weights:  84%|████████▍ | 488/579 [00:03<00:00, 139.79it/s]Loading weights:  88%|████████▊ | 508/579 [00:03<00:00, 144.69it/s]Loading weights:  90%|█████████ | 523/579 [00:03<00:00, 142.17it/s]Loading weights:  93%|█████████▎| 540/579 [00:04<00:00, 141.23it/s]Loading weights:  96%|█████████▌| 556/579 [00:04<00:00, 139.13it/s]Loading weights: 100%|██████████| 579/579 [00:04<00:00, 134.48it/s]
+INFO:assistants.qwen25_qiskit_assistant:Initialized HF Qwen2.5 Qiskit model: /mnt/zgx2-shared/AS-HybridQuantumBench/runs/quantumbencheval_t1-6/qwen-qiskit-v3/cache/hub/models--Qiskit--Qwen2.5-Coder-14B-Qiskit/snapshots/9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 1/15] t3_0 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 1/15] t3_0 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 1/15] t3_0 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 1/15] t3_0 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 2/15] t3_1 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 2/15] t3_1 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 2/15] t3_1 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 2/15] t3_1 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 2/15] t3_1 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 3/15] t3_2 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 3/15] t3_2 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 3/15] t3_2 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 3/15] t3_2 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 3/15] t3_2 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 4/15] t3_3 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T3 4/15] t3_3 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 4/15] t3_3 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 4/15] t3_3 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 4/15] t3_3 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 5/15] t3_4 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 5/15] t3_4 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 5/15] t3_4 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 5/15] t3_4 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 5/15] t3_4 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 6/15] t3_5 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 6/15] t3_5 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 6/15] t3_5 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 6/15] t3_5 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 6/15] t3_5 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 7/15] t3_6 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 7/15] t3_6 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 7/15] t3_6 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 7/15] t3_6 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 7/15] t3_6 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 8/15] t3_7 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 8/15] t3_7 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 8/15] t3_7 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 8/15] t3_7 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 8/15] t3_7 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 9/15] t3_8 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T3 9/15] t3_8 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T3 9/15] t3_8 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 9/15] t3_8 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 9/15] t3_8 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 10/15] t3_9 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T3 10/15] t3_9 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T3 10/15] t3_9 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 10/15] t3_9 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T3 10/15] t3_9 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 11/15] t3_10 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 11/15] t3_10 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 11/15] t3_10 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 11/15] t3_10 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 11/15] t3_10 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 12/15] t3_11 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 12/15] t3_11 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 12/15] t3_11 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T3 12/15] t3_11 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 12/15] t3_11 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 13/15] t3_12 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 13/15] t3_12 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 13/15] t3_12 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 13/15] t3_12 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 13/15] t3_12 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 14/15] t3_13 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 14/15] t3_13 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T3 14/15] t3_13 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 14/15] t3_13 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 14/15] t3_13 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 15/15] t3_14 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 15/15] t3_14 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 15/15] t3_14 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 15/15] t3_14 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 15/15] t3_14 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+{"status": "completed", "counts": {"judged": 67, "truncated": 8}, "expected_samples": 75, "fingerprint": "2de7e59c365fb764b68a48c1fb9608649ae4ada4458f38e1ba50228dcc5da4a3", "execution_status_counts": {"candidate_unsupported_import": 61, "not_executed": 8, "candidate_error": 6}, "unsupported_import_modules": {"qiskit.Aer": 31, "qiskit_algorithms.Estimator": 8, "qiskit_nature": 7, "qiskit.opflow": 3, "qiskit_circuit": 3, "qiskit_optimization.applications.ising": 1, "qiskit_algorithms.operators": 1, "qiskit.algorithms": 3, "openfermion": 2, "qiskit_circuit_library": 1, "qiskit_algorithms.IQPE": 1}, "mean_rubric_score": 1.9850746268656716, "rubric_maximum": [10]}

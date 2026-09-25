@@ -1,0 +1,41 @@
+{
+  "status": "completed",
+  "counts": {
+    "candidate_error": 36,
+    "candidate_unsupported_import": 44,
+    "empty_output": 1,
+    "truncated": 4
+  },
+  "expected_samples": 85,
+  "fingerprint": "3e6b80fbb15b596ebda89c723494bb6398e42e88898510aa834c01b05f662933",
+  "execution_status_counts": {
+    "candidate_unsupported_import": 44,
+    "candidate_error": 36,
+    "not_executed": 5
+  },
+  "unsupported_import_modules": {
+    "qiskit.Aer": 5,
+    "qiskit.circuit.library.QAOA": 5,
+    "qiskit_algorithms.algorithms": 4,
+    "qiskit.utils.QuantumInstance": 1,
+    "qiskit.providers.aer": 1,
+    "qiskit.algorithms": 7,
+    "qiskit_algorithms.optimization": 4,
+    "qiskit_optimization.algorithms.QAOA": 4,
+    "qiskit_algorithms.MinimumVertexCover": 1,
+    "qiskit.execute": 1,
+    "qiskit_optimization.algorithms.MaximumCut": 1,
+    "qiskit_algorithms.converters": 2,
+    "qiskit_optimization.operators": 1,
+    "qiskit_algorithms.problems": 3,
+    "qiskit_algorithms.partition": 1,
+    "dwave.neal": 1,
+    "qiskit.optimization": 1,
+    "qiskit.aqua": 1
+  },
+  "pass_at_k": {
+    "1": 0.0,
+    "5": 0.0
+  },
+  "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."
+}

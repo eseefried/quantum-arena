@@ -1,0 +1,210 @@
+{
+  "model": "granite32",
+  "topics": {
+    "T1": {
+      "counts": {
+        "candidate_unsupported_import": 60,
+        "candidate_error": 19,
+        "truncated": 6
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "candidate_unsupported_import": 60,
+        "not_executed": 6,
+        "candidate_error": 19
+      },
+      "unsupported_import_modules": {
+        "qiskit.algorithms": 27,
+        "qiskit.Aer": 4,
+        "qiskit_optimization.algorithms.QAOA": 12,
+        "qiskit_optimization.algorithms.QAOAOptimizer": 1,
+        "qiskit_algorithms.optimization": 1,
+        "matplotlib": 1,
+        "qiskit.primitives.SamplerV2": 2,
+        "qiskit_optimization.algorithms.MaximumCutoff": 1,
+        "qiskit.optimization": 4,
+        "dwave.system": 1,
+        "qiskit.circuit.library.QAOAPartition": 1,
+        "qiskit_optimization.algorithms.MaximumCut": 2,
+        "qiskit_optimize": 1,
+        "qiskit.utils.QuantumInstance": 1,
+        "qiskit_algorithms.problems": 1
+      }
+    },
+    "T2": {
+      "counts": {
+        "candidate_unsupported_import": 39,
+        "candidate_error": 32,
+        "truncated": 4
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "candidate_error": 32,
+        "candidate_unsupported_import": 39,
+        "not_executed": 4
+      },
+      "unsupported_import_modules": {
+        "qiskit.optimization": 11,
+        "dwave.system": 1,
+        "qiskit.Aer": 4,
+        "qiskit_optimization.algorithms.QUBOSolver": 2,
+        "qiskit_optimization.algorithms.MaximumCutAlgorithm": 2,
+        "qiskit_optimization.converters.PenaltyModel": 1,
+        "qiskit_algorithms.equivalence": 1,
+        "qiskit_optimization.algorithms.QuboSolver": 1,
+        "qiskit_optimization.algorithms.QAOA": 2,
+        "qiskit.providers.aer": 2,
+        "qiskit_optimization.algorithms.MinimumEntropyAlgorithm": 2,
+        "qiskit_optimization.algorithms.MinimumVertexCover": 1,
+        "qiskit_optimization.converters.LinearConstraintToPenalty": 1,
+        "qiskit_optimization.algorithms.HybridVQE": 1,
+        "qiskit.algorithms": 2,
+        "qiskit_optimization.algorithms.PenaltyModeler": 1,
+        "qiskit_optimization.algorithms.VQEUAN": 1,
+        "qiskit_optimization.QUBO": 1,
+        "qiskit_optimization.Problem": 1,
+        "qiskit.aqua": 1
+      }
+    },
+    "T4": {
+      "counts": {
+        "candidate_unsupported_import": 36,
+        "candidate_error": 30,
+        "truncated": 9
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "not_executed": 9,
+        "candidate_unsupported_import": 36,
+        "candidate_error": 30
+      },
+      "unsupported_import_modules": {
+        "qiskit.transpiler.preset_passmanagers.generate_ai_pass_manager": 1,
+        "qiskit_algorithms.converters": 2,
+        "qiskit.Aer": 5,
+        "qiskit_ibm_runtime": 3,
+        "qiskit.providers.aer": 5,
+        "qiskit_algorithms.algorithms": 3,
+        "qiskit_aer.Estimator": 1,
+        "qiskit_algorithms.utils.QuantumInstance": 1,
+        "qiskit.algorithms": 7,
+        "qiskit.primitives.EstimatorV2": 1,
+        "qiskit.execute": 1,
+        "qiskit.AerSimulator": 1,
+        "qiskit.primitives.SamplerV2": 1,
+        "qiskit_algorithms.problems": 1,
+        "qiskit.transpiler.passes.CollectOperations": 1,
+        "qiskit.aqua": 1,
+        "qiskit_nature": 1
+      }
+    },
+    "T5": {
+      "counts": {
+        "candidate_unsupported_import": 47,
+        "truncated": 6,
+        "candidate_error": 32
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "candidate_error": 32,
+        "candidate_unsupported_import": 47,
+        "not_executed": 6
+      },
+      "unsupported_import_modules": {
+        "qiskit_algorithms.converters": 2,
+        "qiskit.algorithms": 9,
+        "qiskit.circuit.library.QAOA": 6,
+        "qiskit.Aer": 3,
+        "qiskit_algorithms.problems": 5,
+        "qiskit_algorithms.optimization": 1,
+        "qiskit_optimization.algorithms.MaximumIndependentSet": 4,
+        "qiskit.transpiler.passes.Unroller": 1,
+        "qiskit_algorithms.circuit": 1,
+        "qiskit_optimization.algorithms.MinimumVertexCover": 1,
+        "qiskit_optimization.algorithms.QAOA": 2,
+        "qiskit_optimization.QiskitOptimization": 1,
+        "qiskit.providers.aer": 1,
+        "pennylane.qaoa.QAOA": 1,
+        "qiskit_algorithms.GroverOperator": 1,
+        "qiskit.optimization": 2,
+        "qiskit_algorithms.converter": 1,
+        "qiskit_optimization.algorithms.MinimumVertexCoverAlgorithm": 1,
+        "PennyLane": 1,
+        "qiskit_algorithms.templates": 1,
+        "qiskit.aqua": 1,
+        "qiskit_ibm_runtime": 1
+      }
+    },
+    "T6": {
+      "counts": {
+        "candidate_error": 36,
+        "candidate_unsupported_import": 44,
+        "empty_output": 1,
+        "truncated": 4
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "candidate_unsupported_import": 44,
+        "candidate_error": 36,
+        "not_executed": 5
+      },
+      "unsupported_import_modules": {
+        "qiskit.Aer": 5,
+        "qiskit.circuit.library.QAOA": 5,
+        "qiskit_algorithms.algorithms": 4,
+        "qiskit.utils.QuantumInstance": 1,
+        "qiskit.providers.aer": 1,
+        "qiskit.algorithms": 7,
+        "qiskit_algorithms.optimization": 4,
+        "qiskit_optimization.algorithms.QAOA": 4,
+        "qiskit_algorithms.MinimumVertexCover": 1,
+        "qiskit.execute": 1,
+        "qiskit_optimization.algorithms.MaximumCut": 1,
+        "qiskit_algorithms.converters": 2,
+        "qiskit_optimization.operators": 1,
+        "qiskit_algorithms.problems": 3,
+        "qiskit_algorithms.partition": 1,
+        "dwave.neal": 1,
+        "qiskit.optimization": 1,
+        "qiskit.aqua": 1
+      }
+    },
+    "T3": {
+      "status": "not_run",
+      "samples_generated": 15,
+      "expected_samples": 75,
+      "partial_statuses": {
+        "judged": 13,
+        "judge_failure": 1,
+        "truncated": 1
+      },
+      "partial_dir": "T3_partial_not_scored",
+      "reason": "Operator decision 2026-09-25 to proceed without granite32 T3 after the run stopped at 15/75 when Anthropic credits ran out (judge failure). No records were fabricated for the missing samples; they are not scored as zero and not counted as failures. Report T3 as n/a."
+    }
+  }
+}

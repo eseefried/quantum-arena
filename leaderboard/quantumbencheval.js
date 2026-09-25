@@ -45,7 +45,7 @@
     const taskValue = t => rubric ? t.mean_rubric_score : (corrected ? t.corrected_pass_at_k : t.pass_at_k)[metric];
     const notes = el('qbe-notes');
     notes.innerHTML = `<h2>${esc(data.title)}${corrected ? ' · corrected scoring' : ''}</h2>${data.samples < data.expected_samples ? '<p class="footnote">Incomplete recorded coverage.</p>' : ''}`;
-    notes.innerHTML += `<p class="footnote">T1 uses corrected tests; original outcomes are retained in sample details. T2 evaluation_cost and T6 reproducibility scoring issues remain uncorrected. T3 is a rubric score, not a pass rate.</p>`;
+    notes.innerHTML += `<p class="footnote">T1 uses corrected tests; original outcomes are retained in sample details. T2 evaluation_cost and T6 reproducibility scoring issues remain uncorrected. T3 is a rubric score, not a pass rate. Granite T3 is unavailable; partial records are excluded. T3 judged samples: Gemini 3.6 43/75, Llama 3.2 70/75, Qwen-Qiskit 67/75; other completed models 75/75.</p>`;
     if (rubric) notes.innerHTML += `<p class="footnote">Rubric scale 0–${esc(data.rubric_maximum.join('/'))}, judged by ${esc(data.judge.model)}.</p>`;
     if (state.view === 'leaderboard') notes.innerHTML += '<p class="footnote">Shaded ranges are pointwise 95% task-bootstrap CIs (10,000 resamples), conditional on saved evaluations.</p>';
     el('status').hidden = true;
@@ -62,7 +62,7 @@
         const t = m.topics.find(t => t.topic === data.topic), r = corrected ? m.corrected : t;
         const values = rubric ? {rubric: {value: t.mean_rubric_score, ci: t.ci}} : Object.fromEntries(metricKeys.map(k => [k, {value: r.pass_at_k[k], ci: r.ci?.[k]}]));
         return {name: t.name, tasks: t.recorded_tasks, values, sortVal: values[activeKey].value};
-      }).filter(row => row.sortVal != null).sort((a, b) => b.sortVal - a.sortVal);
+      }).sort((a, b) => (b.sortVal ?? -1) - (a.sortVal ?? -1));
       const maxVal = Math.max(...boardRows.map(row => row.sortVal));
       const metricCell = (row, key) => {
         const isActive = key === activeKey, {value, ci} = row.values[key];
@@ -72,7 +72,7 @@
         const bar = isActive ? `<div class="bar-track">${ci ? `<div class="bar-ci" style="left:${scaled(ci[0])}%;width:${scaled(ci[1]-ci[0])}%"></div>` : ''}<div class="bar-fill" style="width:${scaled(value)}%"></div></div>` : '';
         return `<td class="metric-value${isActive ? ' metric-active' : ''}">${fmt(value)}${ciText ? `<span class="metric-ci">${ciText}</span>` : ''}${bar}</td>`;
       };
-      el('board-body').innerHTML = boardRows.map((row, i) => `<tr class="row"><td class="rank-num">${i+1}</td><td class="model-name">${esc(row.name)}</td>${columns.map(c => metricCell(row, c.key)).join('')}<td class="col-n">${row.tasks}</td></tr>`).join('');
+      el('board-body').innerHTML = boardRows.map((row, i) => `<tr class="row"><td class="rank-num">${row.sortVal == null ? '—' : i+1}</td><td class="model-name">${esc(row.name)}</td>${columns.map(c => metricCell(row, c.key)).join('')}<td class="col-n">${row.tasks}</td></tr>`).join('');
       el('board').hidden = false;
       return;
     }
@@ -84,7 +84,7 @@
       const topic = m.topics.find(t => t.topic === data.topic);
       const summary = corrected ? m.corrected : topic;
       const value = rubric ? topic.mean_rubric_score : summary.pass_at_k[metric];
-      const cells = rubric ? `<td class="metric-value metric-active">${score(topic.mean_rubric_score)} / ${esc(topic.rubric_maximum.join('/'))}</td>` : metricKeys.map(k => `<td class="metric-value${k === metric ? ' metric-active' : ''}">${pct(summary.pass_at_k[k])}</td>`).join('');
+      const cells = rubric ? `<td class="metric-value metric-active">${topic.mean_rubric_score == null ? 'N/A' : `${score(topic.mean_rubric_score)} / ${esc(topic.rubric_maximum.join('/'))}`} </td>` : metricKeys.map(k => `<td class="metric-value${k === metric ? ' metric-active' : ''}">${pct(summary.pass_at_k[k])}</td>`).join('');
       const byId = new Map(topic.task_details.map(t => [t.task_id, t]));
       const html = `<tr><td class="model-name problem-sticky">${esc(topic.name)}</td>${cells}${tasks.map(column => {
         const t = byId.get(column.task_id);

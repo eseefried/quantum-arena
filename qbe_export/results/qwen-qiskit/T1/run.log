@@ -1,0 +1,197 @@
+[T1 1/17] t1_0 sample 1/5
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/Qiskit/Qwen2.5-Coder-14B-Qiskit/tree/9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a?recursive=true&expand=false "HTTP/1.1 200 OK"
+Fetching 18 files:   0%|          | 0/18 [00:00<?, ?it/s]INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qiskit/Qwen2.5-Coder-14B-Qiskit/resolve/9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a/README.md "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qiskit/Qwen2.5-Coder-14B-Qiskit/9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a/README.md?%2FQiskit%2FQwen2.5-Coder-14B-Qiskit%2Fresolve%2F9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a%2FREADME.md=&etag=%2251c4a9469b1e226a388e620b7d013fc353cb1fb3%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qiskit/Qwen2.5-Coder-14B-Qiskit/resolve/9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a/chat_template.jinja "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qiskit/Qwen2.5-Coder-14B-Qiskit/resolve/9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a/merges.txt "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qiskit/Qwen2.5-Coder-14B-Qiskit/9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a/chat_template.jinja?%2FQiskit%2FQwen2.5-Coder-14B-Qiskit%2Fresolve%2F9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a%2Fchat_template.jinja=&etag=%223fb50ec10e9acdf32f1dea279e311d770a4d6299%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qiskit/Qwen2.5-Coder-14B-Qiskit/9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a/README.md?%2FQiskit%2FQwen2.5-Coder-14B-Qiskit%2Fresolve%2F9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a%2FREADME.md=&etag=%2251c4a9469b1e226a388e620b7d013fc353cb1fb3%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qiskit/Qwen2.5-Coder-14B-Qiskit/9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a/merges.txt?%2FQiskit%2FQwen2.5-Coder-14B-Qiskit%2Fresolve%2F9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a%2Fmerges.txt=&etag=%2231349551d90c7606f325fe0f11bbb8bd5fa0d7c7%22 "HTTP/1.1 200 OK"
+Fetching 18 files:   6%|▌         | 1/18 [00:00<00:02,  7.92it/s]INFO:httpx:HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qiskit/Qwen2.5-Coder-14B-Qiskit/9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a/chat_template.jinja?%2FQiskit%2FQwen2.5-Coder-14B-Qiskit%2Fresolve%2F9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a%2Fchat_template.jinja=&etag=%223fb50ec10e9acdf32f1dea279e311d770a4d6299%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qiskit/Qwen2.5-Coder-14B-Qiskit/resolve/9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a/.gitattributes "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qiskit/Qwen2.5-Coder-14B-Qiskit/9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a/merges.txt?%2FQiskit%2FQwen2.5-Coder-14B-Qiskit%2Fresolve%2F9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a%2Fmerges.txt=&etag=%2231349551d90c7606f325fe0f11bbb8bd5fa0d7c7%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qiskit/Qwen2.5-Coder-14B-Qiskit/9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a/.gitattributes?%2FQiskit%2FQwen2.5-Coder-14B-Qiskit%2Fresolve%2F9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a%2F.gitattributes=&etag=%22c4cb545ce9c9bbbff6607aa2f92b4a57a0851402%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/Qiskit/Qwen2.5-Coder-14B-Qiskit/xet-read-token/9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qiskit/Qwen2.5-Coder-14B-Qiskit/9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a/.gitattributes?%2FQiskit%2FQwen2.5-Coder-14B-Qiskit%2Fresolve%2F9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a%2F.gitattributes=&etag=%22c4cb545ce9c9bbbff6607aa2f92b4a57a0851402%22 "HTTP/1.1 200 OK"
+Fetching 18 files:  22%|██▏       | 4/18 [00:00<00:00, 16.47it/s]Fetching 18 files:  33%|███▎      | 6/18 [00:00<00:01,  9.74it/s]Fetching 18 files:  44%|████▍     | 8/18 [00:04<00:07,  1.25it/s]Fetching 18 files:  50%|█████     | 9/18 [00:04<00:05,  1.52it/s]Fetching 18 files:  56%|█████▌    | 10/18 [00:28<00:49,  6.22s/it]Fetching 18 files:  61%|██████    | 11/18 [00:29<00:33,  4.86s/it]Fetching 18 files:  67%|██████▋   | 12/18 [00:41<00:40,  6.76s/it]Fetching 18 files:  72%|███████▏  | 13/18 [04:47<06:00, 72.14s/it]Fetching 18 files:  78%|███████▊  | 14/18 [04:47<03:27, 51.89s/it]Fetching 18 files:  83%|████████▎ | 15/18 [05:18<02:18, 46.05s/it]Fetching 18 files:  89%|████████▉ | 16/18 [06:33<01:48, 54.34s/it]Fetching 18 files:  94%|█████████▍| 17/18 [07:07<00:48, 48.28s/it]Fetching 18 files: 100%|██████████| 18/18 [07:13<00:00, 36.01s/it]Fetching 18 files: 100%|██████████| 18/18 [07:13<00:00, 24.10s/it]
+INFO:assistants.base_assistant:Initialized Qwen25QiskitAssistant with model /mnt/zgx2-shared/AS-HybridQuantumBench/runs/quantumbencheval_t1-6/qwen-qiskit-v3/cache/hub/models--Qiskit--Qwen2.5-Coder-14B-Qiskit/snapshots/9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a
+`torch_dtype` is deprecated! Use `dtype` instead!
+/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:283: UserWarning: 
+    Found GPU0 NVIDIA GB10 which is of cuda capability 12.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (8.0) - (12.0)
+    
+  warnings.warn(
+Loading weights:   0%|          | 0/579 [00:00<?, ?it/s]Loading weights:   0%|          | 1/579 [00:04<45:19,  4.71s/it]Loading weights:   0%|          | 2/579 [00:05<20:39,  2.15s/it]Loading weights:  11%|█         | 64/579 [00:05<00:25, 19.88it/s]Loading weights:  13%|█▎        | 76/579 [00:06<00:24, 20.55it/s]Loading weights:  15%|█▌        | 88/579 [00:06<00:22, 21.51it/s]Loading weights:  17%|█▋        | 100/579 [00:07<00:21, 22.15it/s]Loading weights:  19%|█▉        | 112/579 [00:07<00:20, 22.61it/s]Loading weights:  21%|██▏       | 124/579 [00:08<00:19, 23.37it/s]Loading weights:  23%|██▎       | 136/579 [00:08<00:20, 21.75it/s]Loading weights:  26%|██▌       | 148/579 [00:09<00:19, 22.66it/s]Loading weights:  28%|██▊       | 160/579 [00:09<00:19, 21.25it/s]Loading weights:  30%|██▉       | 172/579 [00:10<00:17, 22.66it/s]Loading weights:  32%|███▏      | 184/579 [00:10<00:16, 23.51it/s]Loading weights:  34%|███▍      | 196/579 [00:11<00:17, 22.43it/s]Loading weights:  36%|███▌      | 208/579 [00:11<00:16, 22.57it/s]Loading weights:  38%|███▊      | 220/579 [00:12<00:15, 23.68it/s]Loading weights:  40%|████      | 232/579 [00:12<00:14, 23.47it/s]Loading weights:  42%|████▏     | 244/579 [00:13<00:13, 24.60it/s]Loading weights:  44%|████▍     | 256/579 [00:13<00:13, 24.71it/s]Loading weights:  46%|████▋     | 268/579 [00:14<00:12, 24.94it/s]Loading weights:  48%|████▊     | 280/579 [00:14<00:12, 24.65it/s]Loading weights:  50%|█████     | 292/579 [00:14<00:08, 31.89it/s]Loading weights:  51%|█████▏    | 298/579 [00:15<00:08, 32.96it/s]Loading weights:  57%|█████▋    | 328/579 [00:15<00:03, 65.10it/s]Loading weights:  59%|█████▉    | 342/579 [00:15<00:03, 74.60it/s]Loading weights:  62%|██████▏   | 360/579 [00:15<00:02, 89.47it/s]Loading weights:  65%|██████▍   | 376/579 [00:15<00:02, 99.56it/s]Loading weights:  67%|██████▋   | 390/579 [00:15<00:01, 100.34it/s]Loading weights:  71%|███████▏  | 413/579 [00:15<00:01, 124.01it/s]Loading weights:  74%|███████▍  | 428/579 [00:15<00:01, 127.53it/s]Loading weights:  78%|███████▊  | 449/579 [00:16<00:00, 138.94it/s]Loading weights:  82%|████████▏ | 472/579 [00:16<00:00, 152.58it/s]Loading weights:  84%|████████▍ | 489/579 [00:16<00:00, 154.63it/s]Loading weights:  88%|████████▊ | 508/579 [00:16<00:00, 76.64it/s] Loading weights:  90%|████████▉ | 521/579 [00:17<00:01, 53.32it/s]Loading weights:  92%|█████████▏| 532/579 [00:17<00:00, 48.13it/s]Loading weights:  94%|█████████▍| 544/579 [00:18<00:00, 37.20it/s]Loading weights:  96%|█████████▌| 556/579 [00:18<00:00, 33.91it/s]Loading weights:  98%|█████████▊| 568/579 [00:19<00:00, 30.59it/s]Loading weights: 100%|██████████| 579/579 [00:19<00:00, 30.39it/s]
+INFO:assistants.qwen25_qiskit_assistant:Initialized HF Qwen2.5 Qiskit model: /mnt/zgx2-shared/AS-HybridQuantumBench/runs/quantumbencheval_t1-6/qwen-qiskit-v3/cache/hub/models--Qiskit--Qwen2.5-Coder-14B-Qiskit/snapshots/9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 1/17] t1_0 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 1/17] t1_0 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 1/17] t1_0 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 1/17] t1_0 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 2/17] t1_1 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 2/17] t1_1 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 2/17] t1_1 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 2/17] t1_1 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 2/17] t1_1 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 3/17] t1_2 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 3/17] t1_2 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 3/17] t1_2 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 3/17] t1_2 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 3/17] t1_2 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 4/17] t1_3 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 4/17] t1_3 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 4/17] t1_3 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 4/17] t1_3 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 4/17] t1_3 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 5/17] t1_4 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 5/17] t1_4 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 5/17] t1_4 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 5/17] t1_4 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 5/17] t1_4 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 6/17] t1_5 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 6/17] t1_5 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 6/17] t1_5 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 6/17] t1_5 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 6/17] t1_5 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 7/17] t1_6 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 7/17] t1_6 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 7/17] t1_6 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 7/17] t1_6 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 7/17] t1_6 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 8/17] t1_7 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 8/17] t1_7 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 8/17] t1_7 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 8/17] t1_7 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 8/17] t1_7 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 9/17] t1_8 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 9/17] t1_8 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 9/17] t1_8 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 9/17] t1_8 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 9/17] t1_8 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 10/17] t1_9 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 10/17] t1_9 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 10/17] t1_9 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 10/17] t1_9 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 10/17] t1_9 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 11/17] t1_10 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 11/17] t1_10 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 11/17] t1_10 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 11/17] t1_10 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 11/17] t1_10 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 12/17] t1_11 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 12/17] t1_11 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 12/17] t1_11 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 12/17] t1_11 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 12/17] t1_11 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 13/17] t1_12 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 13/17] t1_12 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 13/17] t1_12 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 13/17] t1_12 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 13/17] t1_12 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 14/17] t1_13 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 14/17] t1_13 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 14/17] t1_13 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 14/17] t1_13 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 14/17] t1_13 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 15/17] t1_14 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 15/17] t1_14 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 15/17] t1_14 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 15/17] t1_14 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 15/17] t1_14 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 16/17] t1_15 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 16/17] t1_15 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 16/17] t1_15 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 16/17] t1_15 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 16/17] t1_15 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 17/17] t1_16 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 17/17] t1_16 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 17/17] t1_16 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 17/17] t1_16 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T1 17/17] t1_16 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+{"status": "completed", "counts": {"candidate_error": 31, "candidate_unsupported_import": 50, "truncated": 4}, "expected_samples": 85, "fingerprint": "5335982878ef54bda23798c27c07e0d630b5c2cfbee32b2087e2013a2005aea9", "execution_status_counts": {"candidate_unsupported_import": 50, "not_executed": 4, "candidate_error": 31}, "unsupported_import_modules": {"qiskit_optimization.translators.from_networkx": 18, "qiskit.Aer": 15, "qiskit.algorithms": 3, "qiskit_optimization.applications.MaxCut": 5, "qiskit_optimization.translators.from_networkx_graph": 2, "qiskit_optimization.problems.constraint.LinearEqualityConstraint": 1, "qiskit_optimization.algorithms.NumPyMinimumEigensolverFactory": 1, "qiskit_algorithms.minimum_eigen_solvers": 2, "qiskit_optimization.converters.QuadraticProgramToIsing": 1, "qiskit_optimization.translators.from_docplex": 1, "networkx.nx": 1}, "pass_at_k": {"1": 0.0, "5": 0.0}, "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."}

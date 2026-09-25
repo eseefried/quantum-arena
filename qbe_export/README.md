@@ -1,15 +1,16 @@
 # QuantumBenchEval leaderboard export
 
-Eight finished models (all 6 topics, 480/480 samples each), plus everything needed to score/reproduce
-without the rest of the AS-HybridQuantumBench repo: `astra`, `fable51`, `gemini3-flash`, `gemini31-pro`,
-`gemini36-flash`, `gemma3-4b`, `llama32-3b`, `mistral7b`. `results/MANIFEST.json` lists per-model, per-topic
+Ten models, plus everything needed to score/reproduce without the rest of the AS-HybridQuantumBench repo.
+Nine have all 6 topics (480/480 samples): `astra`, `fable51`, `gemini3-flash`, `gemini31-pro`, `gemini36-flash`,
+`gemma3-4b`, `llama32-3b`, `mistral7b`, `qwen-qiskit`. `granite32` has T1, T2, T4, T5, T6 (405 samples) and **no T3**
+(see below). **`gemini36-flash` is provisional**: it was run at the default 16,384-token budget and 58 samples were truncated
+by hidden thinking (T3 32, T4 22, T6 3, T2 1); a rerun at 65,536 is planned and will replace it. `results/MANIFEST.json` lists per-model, per-topic
 completeness, headline numbers, T3 provider splits and the corrected-T1 numbers -- read it first.
 
 Files here are copies of files still in use in the source repo (`datasets/`, `configs/`, `qbe/`,
 `judges/`, `requirements-qbe.lock.txt`), and `results/<model>/` for every model except `gemini36-flash`
 is a byte-verified copy of `runs/quantumbencheval_t1-6/<model>/` (`gemini36-flash` was moved here and lives
-only here). Models still running (granite32, qwen-qiskit) and not yet started (mistral-qiskit, opus46, ...)
-are deliberately absent. Not yet corrected: the T2 `evaluation_cost` and T6 `reproducibility` scoring artifacts
+only here). Models not yet started (mistral-qiskit, opus46, ...) are deliberately absent. Not yet corrected: the T2 `evaluation_cost` and T6 `reproducibility` scoring artifacts
 (see the source repo's docs); T2/T6 numbers here are the original scoring.
 
 ## Layout
@@ -92,17 +93,27 @@ output, not inferred from the judge).
 | gemma3-4b | 0/85 | 0/85 |
 | llama32-3b | 0/85 | 0/85 |
 | mistral7b | 0/85 | 0/85 |
+| qwen-qiskit | 0/85 | 0/85 |
+| granite32 | 0/85 | 0/85 |
 
 The three small local models are 0 under both scorings because their code never reaches the shots/optimizer
 check (syntax errors, removed APIs such as `from qiskit import Aer`); the graded statuses equal the originals.
-For llama32-3b, 2 samples were originally `truncated`; their partial code was replayed and reported
-`candidate_error` -- pass counts are unaffected.
+Samples originally `truncated` (llama32-3b 2, qwen-qiskit 4, granite32 6) had their partial code replayed and reported
+as `candidate_error`/`candidate_unsupported_import`; none passed, so pass counts are unaffected, but treat those rows as truncated.
+The local models fail on removed/undocumented APIs (`from qiskit import Aer`, `execute`, ...) and syntax errors from loops to the token cap.
 
 ## T3 provenance you must show alongside the number
 
 - `fable51` T3: generation 70 Anthropic API + 5 Perplexity (all of `t3_14`); judge 70 Anthropic + 5 Perplexity.
 - `gemini3-flash` T3: judge 74 Perplexity + 1 Anthropic.
 - `astra` T3: judge 75 Perplexity; evaluated with `astra_t3_fix/eval_child_v2.py`.
+- `qwen-qiskit` T3: 67 judged by Anthropic, 8 truncated (unjudged; count as 0 in the all-samples mean).
+- `granite32` T3: **not run**. It stopped at 15/75 when Anthropic credits ran out and the operator chose to proceed without it.
+  Show T3 as n/a, not 0. The 15 partial samples are kept in `results/granite32/T3_partial_not_scored/` and must not be scored;
+  no records were fabricated for the missing samples.
+- T3 headline: `summary.json` `mean_rubric_score` is over judged samples only. `results/MANIFEST.json` -> `t3_coverage` also gives the
+  all-samples mean (unjudged = 0, consistent with pass@k counting truncation as a fail); show the judged/of denominator (`gemini36-flash` 43/75,
+  `qwen-qiskit` 67/75, `llama32-3b` 70/75).
 - All other T3 results: Anthropic `claude-sonnet-4-6` judge, vendor-API generation.
 Perplexity-served judgments are NOT claimed identical to Anthropic's own API (a two-sample live check moved individual
 criteria by up to a point); read `judge.judge_provider` per sample and do not silently pool across providers.

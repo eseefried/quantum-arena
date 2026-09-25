@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "counts": {
+    "candidate_unsupported_import": 47,
+    "truncated": 6,
+    "candidate_error": 32
+  },
+  "expected_samples": 85,
+  "fingerprint": "37b51888bc456b243565384ebe7ac7e6e58fa4a1ee9d8f0d74efc00875eff09a",
+  "execution_status_counts": {
+    "candidate_error": 32,
+    "candidate_unsupported_import": 47,
+    "not_executed": 6
+  },
+  "unsupported_import_modules": {
+    "qiskit_algorithms.converters": 2,
+    "qiskit.algorithms": 9,
+    "qiskit.circuit.library.QAOA": 6,
+    "qiskit.Aer": 3,
+    "qiskit_algorithms.problems": 5,
+    "qiskit_algorithms.optimization": 1,
+    "qiskit_optimization.algorithms.MaximumIndependentSet": 4,
+    "qiskit.transpiler.passes.Unroller": 1,
+    "qiskit_algorithms.circuit": 1,
+    "qiskit_optimization.algorithms.MinimumVertexCover": 1,
+    "qiskit_optimization.algorithms.QAOA": 2,
+    "qiskit_optimization.QiskitOptimization": 1,
+    "qiskit.providers.aer": 1,
+    "pennylane.qaoa.QAOA": 1,
+    "qiskit_algorithms.GroverOperator": 1,
+    "qiskit.optimization": 2,
+    "qiskit_algorithms.converter": 1,
+    "qiskit_optimization.algorithms.MinimumVertexCoverAlgorithm": 1,
+    "PennyLane": 1,
+    "qiskit_algorithms.templates": 1,
+    "qiskit.aqua": 1,
+    "qiskit_ibm_runtime": 1
+  },
+  "pass_at_k": {
+    "1": 0.0,
+    "5": 0.0
+  },
+  "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."
+}

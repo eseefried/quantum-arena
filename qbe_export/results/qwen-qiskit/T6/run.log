@@ -1,0 +1,182 @@
+[T6 1/17] t6_0 sample 1/5
+Fetching 18 files:   0%|          | 0/18 [00:00<?, ?it/s]Fetching 18 files: 100%|██████████| 18/18 [00:00<00:00, 2203.98it/s]
+INFO:assistants.base_assistant:Initialized Qwen25QiskitAssistant with model /mnt/zgx2-shared/AS-HybridQuantumBench/runs/quantumbencheval_t1-6/qwen-qiskit-v3/cache/hub/models--Qiskit--Qwen2.5-Coder-14B-Qiskit/snapshots/9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a
+`torch_dtype` is deprecated! Use `dtype` instead!
+/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:283: UserWarning: 
+    Found GPU0 NVIDIA GB10 which is of cuda capability 12.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (8.0) - (12.0)
+    
+  warnings.warn(
+Loading weights:   0%|          | 0/579 [00:00<?, ?it/s]Loading weights:   0%|          | 1/579 [00:00<03:11,  3.01it/s]Loading weights:   0%|          | 2/579 [00:00<02:40,  3.60it/s]Loading weights:   3%|▎         | 18/579 [00:00<00:14, 39.75it/s]Loading weights:   7%|▋         | 40/579 [00:00<00:07, 74.50it/s]Loading weights:   9%|▉         | 55/579 [00:00<00:05, 90.97it/s]Loading weights:  12%|█▏        | 70/579 [00:01<00:04, 105.59it/s]Loading weights:  15%|█▌        | 88/579 [00:01<00:04, 113.02it/s]Loading weights:  19%|█▊        | 108/579 [00:01<00:03, 131.45it/s]Loading weights:  21%|██▏       | 124/579 [00:01<00:03, 136.25it/s]Loading weights:  24%|██▍       | 139/579 [00:01<00:03, 138.18it/s]Loading weights:  27%|██▋       | 154/579 [00:01<00:03, 139.24it/s]Loading weights:  30%|██▉       | 172/579 [00:01<00:02, 137.63it/s]Loading weights:  33%|███▎      | 192/579 [00:01<00:02, 146.44it/s]Loading weights:  36%|███▌      | 207/579 [00:01<00:02, 143.12it/s]Loading weights:  38%|███▊      | 222/579 [00:02<00:02, 125.93it/s]Loading weights:  42%|████▏     | 246/579 [00:02<00:02, 147.28it/s]Loading weights:  46%|████▋     | 268/579 [00:02<00:02, 148.39it/s]Loading weights:  49%|████▉     | 284/579 [00:02<00:01, 149.50it/s]Loading weights:  53%|█████▎    | 304/579 [00:02<00:01, 147.68it/s]Loading weights:  55%|█████▌    | 319/579 [00:02<00:01, 146.05it/s]Loading weights:  58%|█████▊    | 334/579 [00:02<00:01, 135.65it/s]Loading weights:  61%|██████    | 352/579 [00:02<00:01, 144.52it/s]Loading weights:  64%|██████▍   | 370/579 [00:03<00:01, 142.97it/s]Loading weights:  67%|██████▋   | 390/579 [00:03<00:01, 157.75it/s]Loading weights:  71%|███████   | 412/579 [00:03<00:01, 160.51it/s]Loading weights:  74%|███████▍  | 429/579 [00:03<00:01, 142.70it/s]Loading weights:  77%|███████▋  | 448/579 [00:03<00:00, 154.09it/s]Loading weights:  80%|████████  | 464/579 [00:03<00:00, 137.48it/s]Loading weights:  84%|████████▎ | 484/579 [00:03<00:00, 140.16it/s]Loading weights:  86%|████████▌ | 499/579 [00:03<00:00, 138.11it/s]Loading weights:  90%|████████▉ | 520/579 [00:04<00:00, 140.01it/s]Loading weights:  92%|█████████▏| 535/579 [00:04<00:00, 136.03it/s]Loading weights:  95%|█████████▌| 552/579 [00:04<00:00, 141.52it/s]Loading weights: 100%|██████████| 579/579 [00:04<00:00, 129.66it/s]
+INFO:assistants.qwen25_qiskit_assistant:Initialized HF Qwen2.5 Qiskit model: /mnt/zgx2-shared/AS-HybridQuantumBench/runs/quantumbencheval_t1-6/qwen-qiskit-v3/cache/hub/models--Qiskit--Qwen2.5-Coder-14B-Qiskit/snapshots/9dbc517d40b6baa7c20bfa0d7ca1a988c99fba2a
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 1/17] t6_0 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 1/17] t6_0 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 1/17] t6_0 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 1/17] t6_0 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 2/17] t6_1 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 2/17] t6_1 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 2/17] t6_1 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 2/17] t6_1 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 2/17] t6_1 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 3/17] t6_2 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 3/17] t6_2 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 3/17] t6_2 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 3/17] t6_2 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 3/17] t6_2 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 4/17] t6_3 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 4/17] t6_3 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 4/17] t6_3 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 4/17] t6_3 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 4/17] t6_3 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 5/17] t6_4 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 5/17] t6_4 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 5/17] t6_4 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 5/17] t6_4 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 5/17] t6_4 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 6/17] t6_5 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 6/17] t6_5 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 6/17] t6_5 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 6/17] t6_5 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 6/17] t6_5 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 7/17] t6_6 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 7/17] t6_6 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 7/17] t6_6 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 7/17] t6_6 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 7/17] t6_6 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 8/17] t6_7 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 8/17] t6_7 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 8/17] t6_7 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 8/17] t6_7 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 8/17] t6_7 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 9/17] t6_8 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 9/17] t6_8 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 9/17] t6_8 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 9/17] t6_8 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 9/17] t6_8 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 10/17] t6_9 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 10/17] t6_9 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 10/17] t6_9 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 10/17] t6_9 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 10/17] t6_9 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 11/17] t6_10 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 11/17] t6_10 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 11/17] t6_10 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 11/17] t6_10 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 11/17] t6_10 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 12/17] t6_11 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 12/17] t6_11 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 12/17] t6_11 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 12/17] t6_11 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 12/17] t6_11 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 13/17] t6_12 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 13/17] t6_12 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 13/17] t6_12 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 13/17] t6_12 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 13/17] t6_12 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 14/17] t6_13 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 14/17] t6_13 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 14/17] t6_13 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 14/17] t6_13 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 14/17] t6_13 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 15/17] t6_14 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 15/17] t6_14 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 15/17] t6_14 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 15/17] t6_14 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 15/17] t6_14 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 16/17] t6_15 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 16/17] t6_15 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 16/17] t6_15 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 16/17] t6_15 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 16/17] t6_15 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 17/17] t6_16 sample 1/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 17/17] t6_16 sample 2/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 17/17] t6_16 sample 3/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 17/17] t6_16 sample 4/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+[T6 17/17] t6_16 sample 5/5
+INFO:assistants.qwen25_qiskit_assistant:Generated sample 1/1 successfully
+{"status": "completed", "counts": {"candidate_error": 24, "truncated": 14, "candidate_unsupported_import": 47}, "expected_samples": 85, "fingerprint": "59df0d6f4fa43bff4b22b4829010a51b13c98ac13ac98ed4a5db474618015aed", "execution_status_counts": {"candidate_unsupported_import": 47, "not_executed": 14, "candidate_error": 24}, "unsupported_import_modules": {"qiskit_optimization.translators.from_networkx": 14, "qiskit_algorithms.minimum_eigen_solvers": 4, "qiskit.utils.QuantumInstance": 1, "qiskit.Aer": 14, "qiskit_optimization.applications.MaxCut": 2, "qiskit.algorithms": 4, "qiskit_optimization.applications.Partition": 2, "qiskit_optimization.translators.from_networkx_graph": 1, "dwave_neal": 1, "qiskit_optimization.converters.QuadraticProgramToIsing": 2, "qiskit_circuit_library": 1, "qiskit_optimization.algorithms.QAOA": 1}, "pass_at_k": {"1": 0.0, "5": 0.0}, "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."}

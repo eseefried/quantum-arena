@@ -1,0 +1,42 @@
+{
+  "status": "completed",
+  "counts": {
+    "candidate_unsupported_import": 39,
+    "candidate_error": 32,
+    "truncated": 4
+  },
+  "expected_samples": 75,
+  "fingerprint": "5f9dc8169c447fc9da8a7b38d0e1adaf8dcf1e3ce9b7beb2b26cb77368a3f6ca",
+  "execution_status_counts": {
+    "candidate_error": 32,
+    "candidate_unsupported_import": 39,
+    "not_executed": 4
+  },
+  "unsupported_import_modules": {
+    "qiskit.optimization": 11,
+    "dwave.system": 1,
+    "qiskit.Aer": 4,
+    "qiskit_optimization.algorithms.QUBOSolver": 2,
+    "qiskit_optimization.algorithms.MaximumCutAlgorithm": 2,
+    "qiskit_optimization.converters.PenaltyModel": 1,
+    "qiskit_algorithms.equivalence": 1,
+    "qiskit_optimization.algorithms.QuboSolver": 1,
+    "qiskit_optimization.algorithms.QAOA": 2,
+    "qiskit.providers.aer": 2,
+    "qiskit_optimization.algorithms.MinimumEntropyAlgorithm": 2,
+    "qiskit_optimization.algorithms.MinimumVertexCover": 1,
+    "qiskit_optimization.converters.LinearConstraintToPenalty": 1,
+    "qiskit_optimization.algorithms.HybridVQE": 1,
+    "qiskit.algorithms": 2,
+    "qiskit_optimization.algorithms.PenaltyModeler": 1,
+    "qiskit_optimization.algorithms.VQEUAN": 1,
+    "qiskit_optimization.QUBO": 1,
+    "qiskit_optimization.Problem": 1,
+    "qiskit.aqua": 1
+  },
+  "pass_at_k": {
+    "1": 0.0,
+    "5": 0.0
+  },
+  "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."
+}

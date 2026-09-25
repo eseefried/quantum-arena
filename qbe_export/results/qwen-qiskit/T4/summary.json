@@ -1,0 +1,33 @@
+{
+  "status": "completed",
+  "counts": {
+    "candidate_unsupported_import": 51,
+    "candidate_error": 10,
+    "truncated": 14
+  },
+  "expected_samples": 75,
+  "fingerprint": "38e4b8dfd854be188bf82897552207d04dc3cb5bf329e160f2fe3f854ab938c2",
+  "execution_status_counts": {
+    "candidate_unsupported_import": 51,
+    "not_executed": 14,
+    "candidate_error": 10
+  },
+  "unsupported_import_modules": {
+    "qiskit.opflow": 14,
+    "qiskit.utils.QuantumInstance": 1,
+    "qiskit.Aer": 18,
+    "qiskit.algorithms": 11,
+    "qiskit_aer.noise.decoherence_error": 1,
+    "qiskit.circuit.library.IsingHamiltonian": 1,
+    "qiskit.transpiler.passes.DepolarizingNoiseAdaptive": 1,
+    "qiskit_circuit_library": 1,
+    "qiskit_circuit": 1,
+    "qiskit.circuit.library.EigenstatePreparation": 1,
+    "matplotlib": 1
+  },
+  "pass_at_k": {
+    "1": 0.0,
+    "5": 0.0
+  },
+  "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."
+}

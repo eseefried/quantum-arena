@@ -1,0 +1,2 @@
+granite32 T3 was abandoned at 15/75 samples (Anthropic credits exhausted; operator chose to proceed without it).
+These files are preserved as generated. Do not include them in any T3 score.

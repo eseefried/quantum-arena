@@ -1,0 +1,223 @@
+[T1 1/17] t1_0 sample 1/5
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/Qiskit/granite-3.2-8b-qiskit/tree/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188?recursive=true&expand=false "HTTP/1.1 200 OK"
+Fetching 16 files:   0%|          | 0/16 [00:00<?, ?it/s]INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qiskit/granite-3.2-8b-qiskit/resolve/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/.gitattributes "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/.gitattributes?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2F.gitattributes=&etag=%22a6344aac8c09253b3b630fb776ae94478aa0275b%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qiskit/granite-3.2-8b-qiskit/resolve/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/added_tokens.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qiskit/granite-3.2-8b-qiskit/resolve/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qiskit/granite-3.2-8b-qiskit/resolve/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/Qiskit/granite-3.2-8b-qiskit/xet-read-token/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qiskit/granite-3.2-8b-qiskit/resolve/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/merges.txt "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/.gitattributes?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2F.gitattributes=&etag=%22a6344aac8c09253b3b630fb776ae94478aa0275b%22 "HTTP/1.1 200 OK"
+Fetching 16 files:   6%|▋         | 1/16 [00:00<00:01,  9.62it/s]INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/added_tokens.json?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2Fadded_tokens.json=&etag=%22183eb810668f005a1ed0e0c8be060e5f47c23f2f%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/generation_config.json?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2Fgeneration_config.json=&etag=%222a37b0d226711f77d273e64a1ea8cbef0d342b2c%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/config.json?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2Fconfig.json=&etag=%22cc168c28ebb8b624f3bf50b38aee6ecc090903ec%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qiskit/granite-3.2-8b-qiskit/resolve/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/README.md "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qiskit/granite-3.2-8b-qiskit/resolve/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/chat_template.jinja "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/merges.txt?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2Fmerges.txt=&etag=%22f8479fb696fe07332c55300a6accf8cc191acc6a%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/generation_config.json?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2Fgeneration_config.json=&etag=%222a37b0d226711f77d273e64a1ea8cbef0d342b2c%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/added_tokens.json?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2Fadded_tokens.json=&etag=%22183eb810668f005a1ed0e0c8be060e5f47c23f2f%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/config.json?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2Fconfig.json=&etag=%22cc168c28ebb8b624f3bf50b38aee6ecc090903ec%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/README.md?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2FREADME.md=&etag=%22e229025677d97755bda3e10f11a6147b5c494a9e%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/chat_template.jinja?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2Fchat_template.jinja=&etag=%2294833140458581cad941075b040b5669ab387cb8%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/merges.txt?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2Fmerges.txt=&etag=%22f8479fb696fe07332c55300a6accf8cc191acc6a%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/README.md?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2FREADME.md=&etag=%22e229025677d97755bda3e10f11a6147b5c494a9e%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/chat_template.jinja?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2Fchat_template.jinja=&etag=%2294833140458581cad941075b040b5669ab387cb8%22 "HTTP/1.1 200 OK"
+Fetching 16 files:  38%|███▊      | 6/16 [00:00<00:00, 32.09it/s]INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qiskit/granite-3.2-8b-qiskit/resolve/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qiskit/granite-3.2-8b-qiskit/resolve/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/model.safetensors.index.json?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2Fmodel.safetensors.index.json=&etag=%22ab42946d270bd8ff2ff19bd94e0ec75c1d22b444%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/special_tokens_map.json?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2Fspecial_tokens_map.json=&etag=%22386500a5040da66c6db3d8b9c44ccd1ee202c744%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qiskit/granite-3.2-8b-qiskit/resolve/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/model.safetensors.index.json?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2Fmodel.safetensors.index.json=&etag=%22ab42946d270bd8ff2ff19bd94e0ec75c1d22b444%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/special_tokens_map.json?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2Fspecial_tokens_map.json=&etag=%22386500a5040da66c6db3d8b9c44ccd1ee202c744%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/tokenizer.json?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2Ftokenizer.json=&etag=%2211f3f2c66235d30bc9bf04ad7e1b4a19d80e84da%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/tokenizer.json?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2Ftokenizer.json=&etag=%2211f3f2c66235d30bc9bf04ad7e1b4a19d80e84da%22 "HTTP/1.1 200 OK"
+Fetching 16 files:  62%|██████▎   | 10/16 [00:00<00:00, 25.67it/s]INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qiskit/granite-3.2-8b-qiskit/resolve/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qiskit/granite-3.2-8b-qiskit/resolve/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/vocab.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/tokenizer_config.json?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2Ftokenizer_config.json=&etag=%227700f66293d35563bbf2c24ed2fcd6f2b9200dc3%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/vocab.json?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2Fvocab.json=&etag=%220a11f2016e660fd490f7bf168e6d1f9c86a8f744%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/tokenizer_config.json?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2Ftokenizer_config.json=&etag=%227700f66293d35563bbf2c24ed2fcd6f2b9200dc3%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qiskit/granite-3.2-8b-qiskit/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188/vocab.json?%2FQiskit%2Fgranite-3.2-8b-qiskit%2Fresolve%2F8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188%2Fvocab.json=&etag=%220a11f2016e660fd490f7bf168e6d1f9c86a8f744%22 "HTTP/1.1 200 OK"
+Fetching 16 files:  75%|███████▌  | 12/16 [00:20<00:00, 25.67it/s]Fetching 16 files:  81%|████████▏ | 13/16 [01:02<00:21,  7.21s/it]Fetching 16 files:  88%|████████▊ | 14/16 [02:19<00:34, 17.21s/it]Fetching 16 files: 100%|██████████| 16/16 [02:20<00:00, 12.34s/it]Fetching 16 files: 100%|██████████| 16/16 [02:20<00:00,  8.77s/it]
+INFO:assistants.base_assistant:Initialized GraniteQiskitAssistant with model /mnt/zgx2-shared/AS-HybridQuantumBench/runs/quantumbencheval_t1-6/granite32-v3/cache/hub/models--Qiskit--granite-3.2-8b-qiskit/snapshots/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188
+INFO:assistants.granite_qiskit_assistant:Loading tokenizer from /mnt/zgx2-shared/AS-HybridQuantumBench/runs/quantumbencheval_t1-6/granite32-v3/cache/hub/models--Qiskit--granite-3.2-8b-qiskit/snapshots/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188
+INFO:assistants.granite_qiskit_assistant:Loading model on cuda:0 with bfloat16 precision
+`torch_dtype` is deprecated! Use `dtype` instead!
+/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:283: UserWarning: 
+    Found GPU0 NVIDIA GB10 which is of cuda capability 12.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (8.0) - (12.0)
+    
+  warnings.warn(
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   1%|          | 3/362 [00:00<00:12, 28.64it/s]Loading weights:   5%|▍         | 18/362 [00:00<00:03, 94.04it/s]Loading weights:   8%|▊         | 30/362 [00:00<00:03, 100.26it/s]Loading weights:  13%|█▎        | 48/362 [00:00<00:02, 118.33it/s]Loading weights:  18%|█▊        | 66/362 [00:00<00:02, 130.95it/s]Loading weights:  22%|██▏       | 80/362 [00:00<00:02, 128.85it/s]Loading weights:  26%|██▌       | 95/362 [00:00<00:02, 132.79it/s]Loading weights:  31%|███       | 111/362 [00:00<00:01, 129.81it/s]Loading weights:  36%|███▌      | 129/362 [00:01<00:01, 137.00it/s]Loading weights:  41%|████      | 147/362 [00:01<00:01, 145.65it/s]Loading weights:  45%|████▍     | 162/362 [00:01<00:01, 143.78it/s]Loading weights:  49%|████▉     | 177/362 [00:01<00:01, 134.25it/s]Loading weights:  53%|█████▎    | 192/362 [00:01<00:01, 120.35it/s]Loading weights:  58%|█████▊    | 211/362 [00:01<00:01, 131.56it/s]Loading weights:  63%|██████▎   | 229/362 [00:01<00:00, 143.23it/s]Loading weights:  68%|██████▊   | 246/362 [00:01<00:00, 138.46it/s]Loading weights:  72%|███████▏  | 261/362 [00:01<00:00, 141.41it/s]Loading weights:  76%|███████▌  | 276/362 [00:02<00:00, 137.35it/s]Loading weights:  81%|████████  | 293/362 [00:02<00:00, 145.31it/s]Loading weights:  85%|████████▌ | 309/362 [00:02<00:00, 146.82it/s]Loading weights:  90%|████████▉ | 324/362 [00:02<00:00, 138.62it/s]Loading weights:  94%|█████████▎| 339/362 [00:02<00:00, 138.03it/s]Loading weights:  98%|█████████▊| 354/362 [00:02<00:00, 139.52it/s]Loading weights: 100%|██████████| 362/362 [00:02<00:00, 135.46it/s]
+INFO:assistants.granite_qiskit_assistant:Successfully initialized Granite-8B-Qiskit on cuda:0
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 1/17] t1_0 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 1/17] t1_0 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 1/17] t1_0 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 1/17] t1_0 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 2/17] t1_1 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 2/17] t1_1 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 2/17] t1_1 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 2/17] t1_1 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 2/17] t1_1 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 3/17] t1_2 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 3/17] t1_2 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 3/17] t1_2 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 3/17] t1_2 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 3/17] t1_2 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 4/17] t1_3 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 4/17] t1_3 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 4/17] t1_3 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 4/17] t1_3 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 4/17] t1_3 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 5/17] t1_4 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 5/17] t1_4 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 5/17] t1_4 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 5/17] t1_4 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 5/17] t1_4 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 6/17] t1_5 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 6/17] t1_5 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 6/17] t1_5 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 6/17] t1_5 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 6/17] t1_5 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 7/17] t1_6 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 7/17] t1_6 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 7/17] t1_6 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 7/17] t1_6 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 7/17] t1_6 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 8/17] t1_7 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 8/17] t1_7 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 8/17] t1_7 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 8/17] t1_7 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 8/17] t1_7 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 9/17] t1_8 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 9/17] t1_8 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 9/17] t1_8 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 9/17] t1_8 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 9/17] t1_8 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 10/17] t1_9 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 10/17] t1_9 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 10/17] t1_9 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 10/17] t1_9 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 10/17] t1_9 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 11/17] t1_10 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 11/17] t1_10 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 11/17] t1_10 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 11/17] t1_10 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 11/17] t1_10 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 12/17] t1_11 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 12/17] t1_11 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 12/17] t1_11 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 12/17] t1_11 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 12/17] t1_11 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 13/17] t1_12 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 13/17] t1_12 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 13/17] t1_12 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 13/17] t1_12 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 13/17] t1_12 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 14/17] t1_13 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 14/17] t1_13 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 14/17] t1_13 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 14/17] t1_13 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 14/17] t1_13 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 15/17] t1_14 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 15/17] t1_14 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 15/17] t1_14 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 15/17] t1_14 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 15/17] t1_14 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 16/17] t1_15 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 16/17] t1_15 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 16/17] t1_15 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 16/17] t1_15 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 16/17] t1_15 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 17/17] t1_16 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 17/17] t1_16 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 17/17] t1_16 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 17/17] t1_16 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T1 17/17] t1_16 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+{"status": "completed", "counts": {"candidate_unsupported_import": 60, "candidate_error": 19, "truncated": 6}, "expected_samples": 85, "fingerprint": "d0d04b3f8ea12c5fabf17c944dd2096c4b1497b1f55693d929edf4f4db3f718e", "execution_status_counts": {"candidate_unsupported_import": 60, "not_executed": 6, "candidate_error": 19}, "unsupported_import_modules": {"qiskit.algorithms": 27, "qiskit.Aer": 4, "qiskit_optimization.algorithms.QAOA": 12, "qiskit_optimization.algorithms.QAOAOptimizer": 1, "qiskit_algorithms.optimization": 1, "matplotlib": 1, "qiskit.primitives.SamplerV2": 2, "qiskit_optimization.algorithms.MaximumCutoff": 1, "qiskit.optimization": 4, "dwave.system": 1, "qiskit.circuit.library.QAOAPartition": 1, "qiskit_optimization.algorithms.MaximumCut": 2, "qiskit_optimize": 1, "qiskit.utils.QuantumInstance": 1, "qiskit_algorithms.problems": 1}, "pass_at_k": {"1": 0.0, "5": 0.0}, "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."}

@@ -1,0 +1,37 @@
+{
+  "status": "completed",
+  "counts": {
+    "candidate_unsupported_import": 60,
+    "candidate_error": 19,
+    "truncated": 6
+  },
+  "expected_samples": 85,
+  "fingerprint": "d0d04b3f8ea12c5fabf17c944dd2096c4b1497b1f55693d929edf4f4db3f718e",
+  "execution_status_counts": {
+    "candidate_unsupported_import": 60,
+    "not_executed": 6,
+    "candidate_error": 19
+  },
+  "unsupported_import_modules": {
+    "qiskit.algorithms": 27,
+    "qiskit.Aer": 4,
+    "qiskit_optimization.algorithms.QAOA": 12,
+    "qiskit_optimization.algorithms.QAOAOptimizer": 1,
+    "qiskit_algorithms.optimization": 1,
+    "matplotlib": 1,
+    "qiskit.primitives.SamplerV2": 2,
+    "qiskit_optimization.algorithms.MaximumCutoff": 1,
+    "qiskit.optimization": 4,
+    "dwave.system": 1,
+    "qiskit.circuit.library.QAOAPartition": 1,
+    "qiskit_optimization.algorithms.MaximumCut": 2,
+    "qiskit_optimize": 1,
+    "qiskit.utils.QuantumInstance": 1,
+    "qiskit_algorithms.problems": 1
+  },
+  "pass_at_k": {
+    "1": 0.0,
+    "5": 0.0
+  },
+  "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."
+}

@@ -1,0 +1,31 @@
+{
+  "status": "completed",
+  "counts": {
+    "judged": 67,
+    "truncated": 8
+  },
+  "expected_samples": 75,
+  "fingerprint": "2de7e59c365fb764b68a48c1fb9608649ae4ada4458f38e1ba50228dcc5da4a3",
+  "execution_status_counts": {
+    "candidate_unsupported_import": 61,
+    "not_executed": 8,
+    "candidate_error": 6
+  },
+  "unsupported_import_modules": {
+    "qiskit.Aer": 31,
+    "qiskit_algorithms.Estimator": 8,
+    "qiskit_nature": 7,
+    "qiskit.opflow": 3,
+    "qiskit_circuit": 3,
+    "qiskit_optimization.applications.ising": 1,
+    "qiskit_algorithms.operators": 1,
+    "qiskit.algorithms": 3,
+    "openfermion": 2,
+    "qiskit_circuit_library": 1,
+    "qiskit_algorithms.IQPE": 1
+  },
+  "mean_rubric_score": 1.9850746268656716,
+  "rubric_maximum": [
+    10
+  ]
+}

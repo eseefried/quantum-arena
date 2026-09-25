@@ -1,0 +1,39 @@
+{
+  "status": "completed",
+  "counts": {
+    "candidate_unsupported_import": 36,
+    "candidate_error": 30,
+    "truncated": 9
+  },
+  "expected_samples": 75,
+  "fingerprint": "c245aff8b98d71296d3598958f6b0c0b390ea4432cf1ee997c9d3a6c24520bbf",
+  "execution_status_counts": {
+    "not_executed": 9,
+    "candidate_unsupported_import": 36,
+    "candidate_error": 30
+  },
+  "unsupported_import_modules": {
+    "qiskit.transpiler.preset_passmanagers.generate_ai_pass_manager": 1,
+    "qiskit_algorithms.converters": 2,
+    "qiskit.Aer": 5,
+    "qiskit_ibm_runtime": 3,
+    "qiskit.providers.aer": 5,
+    "qiskit_algorithms.algorithms": 3,
+    "qiskit_aer.Estimator": 1,
+    "qiskit_algorithms.utils.QuantumInstance": 1,
+    "qiskit.algorithms": 7,
+    "qiskit.primitives.EstimatorV2": 1,
+    "qiskit.execute": 1,
+    "qiskit.AerSimulator": 1,
+    "qiskit.primitives.SamplerV2": 1,
+    "qiskit_algorithms.problems": 1,
+    "qiskit.transpiler.passes.CollectOperations": 1,
+    "qiskit.aqua": 1,
+    "qiskit_nature": 1
+  },
+  "pass_at_k": {
+    "1": 0.0,
+    "5": 0.0
+  },
+  "denominator_policy": "All completed requested sample slots; empty/truncated/incomplete count as unsuccessful and retain distinct statuses. Infrastructure failures abort and are not scored."
+}

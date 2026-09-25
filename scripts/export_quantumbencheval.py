@@ -134,6 +134,11 @@ def topic_data(model, topic):
 
 def build_model(model):
     topics = [topic_data(model, f'T{i}') for i in range(1,7)]
+    for topic in topics:
+        if not topic['verified'] and not topic['samples']:
+            topic['identity'] = topics[0]['identity']
+            topic['name'] = topics[0]['name']
+            topic['unavailable_reason'] = 'Not completed; partial records excluded from scoring.'
     corrected = read(SOURCE / 't1_corrected' / f'{model.name}_t1_graded.json')
     original = {(r['task_id'],r['sample_index']):r['status'] for r in topics[0]['rows']}
     replay = {(r['task_id'],r['sample_index']):r['original_status'] for r in corrected['rows']}

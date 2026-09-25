@@ -1,0 +1,90 @@
+[T3 1/15] t3_0 sample 1/5
+Fetching 16 files:   0%|          | 0/16 [00:00<?, ?it/s]INFO:httpx:HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+Fetching 16 files:  62%|██████▎   | 10/16 [00:00<00:00, 93.83it/s]INFO:httpx:HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+Fetching 16 files: 100%|██████████| 16/16 [00:00<00:00, 95.17it/s]
+INFO:assistants.base_assistant:Initialized GraniteQiskitAssistant with model /mnt/zgx2-shared/AS-HybridQuantumBench/runs/quantumbencheval_t1-6/granite32-v3/cache/hub/models--Qiskit--granite-3.2-8b-qiskit/snapshots/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188
+INFO:assistants.granite_qiskit_assistant:Loading tokenizer from /mnt/zgx2-shared/AS-HybridQuantumBench/runs/quantumbencheval_t1-6/granite32-v3/cache/hub/models--Qiskit--granite-3.2-8b-qiskit/snapshots/8b0f1cd27b6a15fbacb8d6e9ad11fbcf328f3188
+INFO:assistants.granite_qiskit_assistant:Loading model on cuda:0 with bfloat16 precision
+`torch_dtype` is deprecated! Use `dtype` instead!
+/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:283: UserWarning: 
+    Found GPU0 NVIDIA GB10 which is of cuda capability 12.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (8.0) - (12.0)
+    
+  warnings.warn(
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   0%|          | 1/362 [00:00<01:29,  4.04it/s]Loading weights:   6%|▌         | 21/362 [00:00<00:05, 59.93it/s]Loading weights:   8%|▊         | 30/362 [00:00<00:05, 65.41it/s]Loading weights:  11%|█         | 40/362 [00:00<00:04, 68.93it/s]Loading weights:  14%|█▎        | 49/362 [00:00<00:04, 74.44it/s]Loading weights:  16%|█▌        | 58/362 [00:00<00:03, 76.52it/s]Loading weights:  19%|█▊        | 67/362 [00:00<00:03, 79.71it/s]Loading weights:  21%|██        | 76/362 [00:01<00:03, 81.61it/s]Loading weights:  25%|██▍       | 90/362 [00:01<00:02, 96.88it/s]Loading weights:  28%|██▊       | 100/362 [00:01<00:02, 97.73it/s]Loading weights:  31%|███       | 111/362 [00:01<00:02, 84.71it/s]Loading weights:  33%|███▎      | 120/362 [00:01<00:02, 81.75it/s]Loading weights:  36%|███▌      | 130/362 [00:01<00:02, 84.51it/s]Loading weights:  40%|███▉      | 144/362 [00:01<00:02, 98.98it/s]Loading weights:  43%|████▎     | 155/362 [00:01<00:02, 100.21it/s]Loading weights:  46%|████▌     | 166/362 [00:02<00:02, 81.03it/s] Loading weights:  49%|████▊     | 176/362 [00:02<00:02, 84.01it/s]Loading weights:  52%|█████▏    | 189/362 [00:02<00:01, 94.24it/s]Loading weights:  56%|█████▌    | 201/362 [00:02<00:01, 84.96it/s]Loading weights:  58%|█████▊    | 211/362 [00:02<00:01, 83.83it/s]Loading weights:  63%|██████▎   | 227/362 [00:02<00:01, 101.77it/s]Loading weights:  66%|██████▌   | 238/362 [00:02<00:01, 84.12it/s] Loading weights:  69%|██████▊   | 248/362 [00:03<00:01, 86.80it/s]Loading weights:  71%|███████▏  | 258/362 [00:03<00:01, 89.52it/s]Loading weights:  75%|███████▍  | 271/362 [00:03<00:00, 98.80it/s]Loading weights:  78%|███████▊  | 282/362 [00:03<00:00, 81.20it/s]Loading weights:  81%|████████  | 292/362 [00:03<00:00, 85.05it/s]Loading weights:  83%|████████▎ | 302/362 [00:03<00:00, 87.86it/s]Loading weights:  88%|████████▊ | 318/362 [00:03<00:00, 90.24it/s]Loading weights:  91%|█████████ | 328/362 [00:03<00:00, 89.78it/s]Loading weights:  93%|█████████▎| 338/362 [00:03<00:00, 91.16it/s]Loading weights:  98%|█████████▊| 354/362 [00:04<00:00, 92.55it/s]Loading weights: 100%|██████████| 362/362 [00:04<00:00, 86.47it/s]
+INFO:assistants.granite_qiskit_assistant:Successfully initialized Granite-8B-Qiskit on cuda:0
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 1/15] t3_0 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 1/15] t3_0 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 1/15] t3_0 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 1/15] t3_0 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 2/15] t3_1 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 2/15] t3_1 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 2/15] t3_1 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 2/15] t3_1 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 2/15] t3_1 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 3/15] t3_2 sample 1/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 3/15] t3_2 sample 2/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 3/15] t3_2 sample 3/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+[T3 3/15] t3_2 sample 4/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+[T3 3/15] t3_2 sample 5/5
+INFO:assistants.granite_qiskit_assistant:Generated sample 1/1 successfully
+INFO:httpx2:HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+Traceback (most recent call last):
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/scripts/run_quantumbencheval.py", line 8, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/qbe/runner.py", line 222, in main
+    if args.worker: worker(args.worker); return 0
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/qbe/runner.py", line 154, in worker
+    rec['judge'] = judge_t3(task, rec['generation']['code'], rec['execution'], config['judge'])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/qbe/evaluate.py", line 75, in judge_t3
+    response = Anthropic(timeout=120, max_retries=2).messages.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/lib/python3.12/site-packages/anthropic/_utils/_utils.py", line 294, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/lib/python3.12/site-packages/anthropic/resources/messages/messages.py", line 978, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/lib/python3.12/site-packages/anthropic/_base_client.py", line 1511, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/zgx2-shared/AS-HybridQuantumBench/.venv/lib/python3.12/site-packages/anthropic/_base_client.py", line 1195, in request
+    raise self._make_status_error_from_response(response) from None
+anthropic.BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CfLxygYS2K4nXgR5FAJNZ'}

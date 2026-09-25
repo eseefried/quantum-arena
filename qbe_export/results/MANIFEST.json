@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-24T22:18:58Z",
+  "generated_utc": "2026-09-25T12:54:44Z",
   "sample_expectation": {
     "T1": 85,
     "T2": 75,
@@ -62,7 +62,15 @@
             "perplexity": 75
           },
           "evaluator_note": "T3 ran as run-id astra-t3-v2 from a code copy whose only difference is qbe/eval_child_v2.py following __cause__/__context__ so a candidate re-raising a missing module as ImportError(...) from exc is candidate_unsupported_import; the earlier astra-full-v1 T3 attempt aborted at t3_2 on that case and was discarded (11 partial samples).",
-          "note": "Judge: all 75 via Perplexity. Evaluator: astra_t3_fix/eval_child_v2.py (chained-ImportError classification); earlier astra T3 attempt discarded."
+          "note": "Judge: all 75 via Perplexity. Evaluator: astra_t3_fix/eval_child_v2.py (chained-ImportError classification); earlier astra T3 attempt discarded.",
+          "t3_coverage": {
+            "judged": 75,
+            "of": 75,
+            "unjudged_by_status": {},
+            "mean_judged_only": 6.48,
+            "mean_all_samples_unjudged_as_zero": 6.48,
+            "note": "summary.json mean_rubric_score is judged-only; unjudged (truncated) samples score 0 in the all-samples mean, matching how pass@k counts truncation as a failure"
+          }
         },
         "T4": {
           "samples": 75,
@@ -161,7 +169,15 @@
             "anthropic": 70,
             "perplexity": 5
           },
-          "note": "Generation mixed: 70 samples from Anthropic API, 5 (all of t3_14) via Perplexity (anthropic/claude-fable-5-1). Judge mixed: 70 Anthropic (claude-sonnet-4-6), 5 Perplexity. Read per-sample generation.metadata.generation_provider / judge.judge_provider."
+          "note": "Generation mixed: 70 samples from Anthropic API, 5 (all of t3_14) via Perplexity (anthropic/claude-fable-5-1). Judge mixed: 70 Anthropic (claude-sonnet-4-6), 5 Perplexity. Read per-sample generation.metadata.generation_provider / judge.judge_provider.",
+          "t3_coverage": {
+            "judged": 75,
+            "of": 75,
+            "unjudged_by_status": {},
+            "mean_judged_only": 7.773333333333333,
+            "mean_all_samples_unjudged_as_zero": 7.773333333333333,
+            "note": "summary.json mean_rubric_score is judged-only; unjudged (truncated) samples score 0 in the all-samples mean, matching how pass@k counts truncation as a failure"
+          }
         },
         "T4": {
           "samples": 75,
@@ -260,7 +276,15 @@
             "perplexity": 74,
             "anthropic": 1
           },
-          "note": "Judge: 74 samples via Perplexity (anthropic/claude-sonnet-4-6), 1 via Anthropic. Generation: Gemini API."
+          "note": "Judge: 74 samples via Perplexity (anthropic/claude-sonnet-4-6), 1 via Anthropic. Generation: Gemini API.",
+          "t3_coverage": {
+            "judged": 75,
+            "of": 75,
+            "unjudged_by_status": {},
+            "mean_judged_only": 4.986666666666666,
+            "mean_all_samples_unjudged_as_zero": 4.986666666666666,
+            "note": "summary.json mean_rubric_score is judged-only; unjudged (truncated) samples score 0 in the all-samples mean, matching how pass@k counts truncation as a failure"
+          }
         },
         "T4": {
           "samples": 75,
@@ -352,7 +376,15 @@
           "mean_rubric_score": 4.866666666666666,
           "rubric_maximum": [
             10
-          ]
+          ],
+          "t3_coverage": {
+            "judged": 75,
+            "of": 75,
+            "unjudged_by_status": {},
+            "mean_judged_only": 4.866666666666666,
+            "mean_all_samples_unjudged_as_zero": 4.866666666666666,
+            "note": "summary.json mean_rubric_score is judged-only; unjudged (truncated) samples score 0 in the all-samples mean, matching how pass@k counts truncation as a failure"
+          }
         },
         "T4": {
           "samples": 75,
@@ -448,7 +480,17 @@
           "mean_rubric_score": 5.674418604651163,
           "rubric_maximum": [
             10
-          ]
+          ],
+          "t3_coverage": {
+            "judged": 43,
+            "of": 75,
+            "unjudged_by_status": {
+              "truncated": 32
+            },
+            "mean_judged_only": 5.674418604651163,
+            "mean_all_samples_unjudged_as_zero": 3.2533333333333334,
+            "note": "summary.json mean_rubric_score is judged-only; unjudged (truncated) samples score 0 in the all-samples mean, matching how pass@k counts truncation as a failure"
+          }
         },
         "T4": {
           "samples": 75,
@@ -494,6 +536,10 @@
             "5": 1.0
           }
         }
+      },
+      "flags": {
+        "provisional": true,
+        "reason": "Run at the 16,384-token default; 58 samples truncated by hidden thinking (T2 1, T3 32, T4 22, T6 3), e.g. one T3 sample used ~15.7k thinking tokens for ~650 visible. Rerun planned at 65,536 (configs/quantumbencheval.gemini36-flash-v2.json) and will replace it. T3/T4/T6 scores understate the model."
       }
     },
     "gemma3-4b": {
@@ -541,7 +587,15 @@
           "mean_rubric_score": 1.5866666666666667,
           "rubric_maximum": [
             10
-          ]
+          ],
+          "t3_coverage": {
+            "judged": 75,
+            "of": 75,
+            "unjudged_by_status": {},
+            "mean_judged_only": 1.5866666666666667,
+            "mean_all_samples_unjudged_as_zero": 1.5866666666666667,
+            "note": "summary.json mean_rubric_score is judged-only; unjudged (truncated) samples score 0 in the all-samples mean, matching how pass@k counts truncation as a failure"
+          }
         },
         "T4": {
           "samples": 75,
@@ -579,6 +633,100 @@
             "5": 0.0
           }
         }
+      }
+    },
+    "granite32": {
+      "topics_complete": 5,
+      "samples": 405,
+      "topics": {
+        "T1": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "candidate_unsupported_import": 60,
+            "candidate_error": 19,
+            "truncated": 6
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          },
+          "graded_variant": {
+            "file": "t1_corrected/granite32_t1_graded.json",
+            "passed": 0,
+            "of": 85,
+            "pass_rate": 0.0,
+            "mean_resource_closeness_among_passing": null
+          }
+        },
+        "T2": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "candidate_unsupported_import": 39,
+            "candidate_error": 32,
+            "truncated": 4
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          }
+        },
+        "T3": {
+          "samples": 0,
+          "complete": false,
+          "status": "not_run",
+          "samples_generated": 15,
+          "reason": "Operator decision 2026-09-25 to proceed without granite32 T3 after the run stopped at 15/75 when Anthropic credits ran out (judge failure). No records were fabricated for the missing samples; they are not scored as zero and not counted as failures. Report T3 as n/a.",
+          "partial_dir": "T3_partial_not_scored"
+        },
+        "T4": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "candidate_unsupported_import": 36,
+            "candidate_error": 30,
+            "truncated": 9
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          }
+        },
+        "T5": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "candidate_unsupported_import": 47,
+            "truncated": 6,
+            "candidate_error": 32
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          }
+        },
+        "T6": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "candidate_error": 36,
+            "candidate_unsupported_import": 44,
+            "empty_output": 1,
+            "truncated": 4
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          }
+        }
+      },
+      "flags": {
+        "incomplete": true,
+        "missing_topics": [
+          "T3"
+        ],
+        "reason": "T3 not run (15/75 partial in T3_partial_not_scored/, not scored). Show T3 as n/a."
       }
     },
     "llama32-3b": {
@@ -628,7 +776,17 @@
           "mean_rubric_score": 1.1428571428571428,
           "rubric_maximum": [
             10
-          ]
+          ],
+          "t3_coverage": {
+            "judged": 70,
+            "of": 75,
+            "unjudged_by_status": {
+              "truncated": 5
+            },
+            "mean_judged_only": 1.1428571428571428,
+            "mean_all_samples_unjudged_as_zero": 1.0666666666666667,
+            "note": "summary.json mean_rubric_score is judged-only; unjudged (truncated) samples score 0 in the all-samples mean, matching how pass@k counts truncation as a failure"
+          }
         },
         "T4": {
           "samples": 75,
@@ -714,7 +872,15 @@
           "mean_rubric_score": 1.4,
           "rubric_maximum": [
             10
-          ]
+          ],
+          "t3_coverage": {
+            "judged": 75,
+            "of": 75,
+            "unjudged_by_status": {},
+            "mean_judged_only": 1.4,
+            "mean_all_samples_unjudged_as_zero": 1.4,
+            "note": "summary.json mean_rubric_score is judged-only; unjudged (truncated) samples score 0 in the all-samples mean, matching how pass@k counts truncation as a failure"
+          }
         },
         "T4": {
           "samples": 75,
@@ -746,6 +912,112 @@
           "counts": {
             "candidate_unsupported_import": 59,
             "candidate_error": 26
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          }
+        }
+      }
+    },
+    "qwen-qiskit": {
+      "topics_complete": 6,
+      "samples": 480,
+      "topics": {
+        "T1": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "candidate_error": 31,
+            "candidate_unsupported_import": 50,
+            "truncated": 4
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          },
+          "graded_variant": {
+            "file": "t1_corrected/qwen-qiskit_t1_graded.json",
+            "passed": 0,
+            "of": 85,
+            "pass_rate": 0.0,
+            "mean_resource_closeness_among_passing": null
+          }
+        },
+        "T2": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "candidate_error": 38,
+            "candidate_unsupported_import": 32,
+            "truncated": 5
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          }
+        },
+        "T3": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "judged": 67,
+            "truncated": 8
+          },
+          "mean_rubric_score": 1.9850746268656716,
+          "rubric_maximum": [
+            10
+          ],
+          "generation_providers": {
+            "local_hf": 75
+          },
+          "judge_providers": {
+            "anthropic": 67
+          },
+          "t3_coverage": {
+            "judged": 67,
+            "of": 75,
+            "unjudged_by_status": {
+              "truncated": 8
+            },
+            "mean_judged_only": 1.9850746268656716,
+            "mean_all_samples_unjudged_as_zero": 1.7733333333333334,
+            "note": "summary.json mean_rubric_score is judged-only; unjudged (truncated) samples score 0 in the all-samples mean, matching how pass@k counts truncation as a failure"
+          }
+        },
+        "T4": {
+          "samples": 75,
+          "complete": true,
+          "counts": {
+            "candidate_unsupported_import": 51,
+            "candidate_error": 10,
+            "truncated": 14
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          }
+        },
+        "T5": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "candidate_error": 26,
+            "candidate_unsupported_import": 56,
+            "truncated": 3
+          },
+          "pass_at_k": {
+            "1": 0.0,
+            "5": 0.0
+          }
+        },
+        "T6": {
+          "samples": 85,
+          "complete": true,
+          "counts": {
+            "candidate_error": 24,
+            "truncated": 14,
+            "candidate_unsupported_import": 47
           },
           "pass_at_k": {
             "1": 0.0,

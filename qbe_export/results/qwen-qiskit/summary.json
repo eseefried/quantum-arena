@@ -1,0 +1,198 @@
+{
+  "model": "qwen-qiskit",
+  "topics": {
+    "T1": {
+      "counts": {
+        "candidate_error": 31,
+        "candidate_unsupported_import": 50,
+        "truncated": 4
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "candidate_unsupported_import": 50,
+        "not_executed": 4,
+        "candidate_error": 31
+      },
+      "unsupported_import_modules": {
+        "qiskit_optimization.translators.from_networkx": 18,
+        "qiskit.Aer": 15,
+        "qiskit.algorithms": 3,
+        "qiskit_optimization.applications.MaxCut": 5,
+        "qiskit_optimization.translators.from_networkx_graph": 2,
+        "qiskit_optimization.problems.constraint.LinearEqualityConstraint": 1,
+        "qiskit_optimization.algorithms.NumPyMinimumEigensolverFactory": 1,
+        "qiskit_algorithms.minimum_eigen_solvers": 2,
+        "qiskit_optimization.converters.QuadraticProgramToIsing": 1,
+        "qiskit_optimization.translators.from_docplex": 1,
+        "networkx.nx": 1
+      }
+    },
+    "T2": {
+      "counts": {
+        "candidate_error": 38,
+        "candidate_unsupported_import": 32,
+        "truncated": 5
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "candidate_error": 38,
+        "candidate_unsupported_import": 32,
+        "not_executed": 5
+      },
+      "unsupported_import_modules": {
+        "qiskit.aer": 1,
+        "qiskit_algorithms.optimization": 7,
+        "qiskit.optimization": 1,
+        "qiskit_circuit_library": 2,
+        "qiskit.primitives.AerSimulator": 1,
+        "qiskit.algorithms": 5,
+        "qiskit_algorithms.minimum_eigen_solvers": 3,
+        "qiskit.Aer": 5,
+        "qiskit_circuit": 4,
+        "qiskit_optimization.algorithms.VQEAdapter": 1,
+        "qiskit_optimization.translators.to_qubo": 1,
+        "qiskit_algorithms.optimization_algorithms": 1
+      }
+    },
+    "T3": {
+      "counts": {
+        "judged": 67,
+        "truncated": 8
+      },
+      "pass_at_k": null,
+      "mean_rubric_score": 1.9850746268656716,
+      "rubric_maximum": [
+        10
+      ],
+      "execution_status_counts": {
+        "candidate_unsupported_import": 61,
+        "not_executed": 8,
+        "candidate_error": 6
+      },
+      "unsupported_import_modules": {
+        "qiskit.Aer": 31,
+        "qiskit_algorithms.Estimator": 8,
+        "qiskit_nature": 7,
+        "qiskit.opflow": 3,
+        "qiskit_circuit": 3,
+        "qiskit_optimization.applications.ising": 1,
+        "qiskit_algorithms.operators": 1,
+        "qiskit.algorithms": 3,
+        "openfermion": 2,
+        "qiskit_circuit_library": 1,
+        "qiskit_algorithms.IQPE": 1
+      },
+      "generation_providers": {
+        "local_hf": 75
+      },
+      "judge_providers": {
+        "anthropic": 67
+      }
+    },
+    "T4": {
+      "counts": {
+        "candidate_unsupported_import": 51,
+        "candidate_error": 10,
+        "truncated": 14
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "candidate_unsupported_import": 51,
+        "not_executed": 14,
+        "candidate_error": 10
+      },
+      "unsupported_import_modules": {
+        "qiskit.opflow": 14,
+        "qiskit.utils.QuantumInstance": 1,
+        "qiskit.Aer": 18,
+        "qiskit.algorithms": 11,
+        "qiskit_aer.noise.decoherence_error": 1,
+        "qiskit.circuit.library.IsingHamiltonian": 1,
+        "qiskit.transpiler.passes.DepolarizingNoiseAdaptive": 1,
+        "qiskit_circuit_library": 1,
+        "qiskit_circuit": 1,
+        "qiskit.circuit.library.EigenstatePreparation": 1,
+        "matplotlib": 1
+      }
+    },
+    "T5": {
+      "counts": {
+        "candidate_error": 26,
+        "candidate_unsupported_import": 56,
+        "truncated": 3
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "candidate_unsupported_import": 56,
+        "candidate_error": 26,
+        "not_executed": 3
+      },
+      "unsupported_import_modules": {
+        "qiskit_optimization.translators.to_qubo": 2,
+        "qiskit_optimization.algorithms.QAOA": 1,
+        "qiskit.Aer": 19,
+        "qiskit_optimization.translators.from_networkx": 18,
+        "networkx.nx": 1,
+        "qiskit_optimization.applications.MaxCut": 4,
+        "qiskit_algorithms.minimum_eigen_solvers": 3,
+        "qiskit_optimization.converters.QuadraticProgramToIsing": 3,
+        "qiskit_circuit_library": 2,
+        "qiskit_optimization.translators.from_networkx_graph": 1,
+        "qiskit.algorithms": 1,
+        "qiskit_optimization.applications.max_cut.MaxCut": 1
+      }
+    },
+    "T6": {
+      "counts": {
+        "candidate_error": 24,
+        "truncated": 14,
+        "candidate_unsupported_import": 47
+      },
+      "pass_at_k": {
+        "1": 0.0,
+        "5": 0.0
+      },
+      "mean_rubric_score": null,
+      "rubric_maximum": null,
+      "execution_status_counts": {
+        "candidate_unsupported_import": 47,
+        "not_executed": 14,
+        "candidate_error": 24
+      },
+      "unsupported_import_modules": {
+        "qiskit_optimization.translators.from_networkx": 14,
+        "qiskit_algorithms.minimum_eigen_solvers": 4,
+        "qiskit.utils.QuantumInstance": 1,
+        "qiskit.Aer": 14,
+        "qiskit_optimization.applications.MaxCut": 2,
+        "qiskit.algorithms": 4,
+        "qiskit_optimization.applications.Partition": 2,
+        "qiskit_optimization.translators.from_networkx_graph": 1,
+        "dwave_neal": 1,
+        "qiskit_optimization.converters.QuadraticProgramToIsing": 2,
+        "qiskit_circuit_library": 1,
+        "qiskit_optimization.algorithms.QAOA": 1
+      }
+    }
+  }
+}
