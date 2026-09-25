@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    qc.h(0)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # Ry(pi/2) |0> = cos(pi/4)|0> + sin(pi/4)|1> = (|0> + |1>)/sqrt(2)\n    qc.ry(math.pi / 2, 0)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # U(pi/2,0,0) |0> = cos(pi/4)|0> + e^{i0} sin(pi/4)|1> = (|0>+|1>)/sqrt2\n    # This is a different construction from H or Ry\n    qc.u(math.pi / 2, 0, 0, 0)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # Rx(pi/2) |0> = (|0> - i|1>)/sqrt2\n    # S = diag(1,i) removes the -i phase on |1>\n    # S Rx(pi/2) |0> = (|0> + |1>)/sqrt2 = |+>\n    qc.rx(math.pi / 2, 0)\n    qc.s(0)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # H = i * Ry(pi/2) Rz(pi)  up to global phase\n    # Rz(pi) |0> = -i |0>\n    # Ry(pi/2) |0> = |+>\n    # So Rz(pi) followed by Ry(pi/2) prepares |+> up to a global phase\n    qc.rz(math.pi, 0)\n    qc.ry(math.pi / 2, 0)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  }
+]

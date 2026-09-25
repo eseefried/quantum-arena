@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # start with one excitation on qubit 0\n    qc.x(0)\n\n    for i in range(1, n):\n        denom = n - i + 1\n        c = 1.0 / math.sqrt(denom)\n        s = math.sqrt(max(0.0, 1.0 - c * c))\n\n        # Givens rotation in the {|01>,|10>} subspace, little endian\n        # qubits are [i-1, i] with i-1 as least significant\n        mat = np.eye(4, dtype=complex)\n        mat[1, 1] = c\n        mat[2, 1] = s\n        mat[1, 2] = -s\n        mat[2, 2] = c\n\n        qc.unitary(mat, [i - 1, i])\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # start with one excitation on the most significant qubit\n    qc.x(n - 1)\n\n    # successive Givens rotations on (k, k-1)\n    for k in range(n - 1, 0, -1):\n        c = 1.0 / math.sqrt(k + 1)\n        s = math.sqrt(max(0.0, 1.0 - c * c))\n\n        # matrix in the basis |00>,|01>,|10>,|11> with first qubit = k\n        mat = np.eye(4, dtype=complex)\n        mat[1, 1] = c\n        mat[1, 2] = s\n        mat[2, 1] = -s\n        mat[2, 2] = c\n\n        qc.unitary(mat, [k, k - 1])\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    dim = 1 << n\n    amp = 1.0 / math.sqrt(n)\n    # W state = sum_i |0...010...0> / sqrt(n)\n    state = [0.0] * dim\n    for i in range(n):\n        state[1 << i] = amp          # qubit i = 1\n    qc.initialize(state, range(n))\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport numpy as np\nimport math\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    dim = 1 << n\n    amp = 1.0 / math.sqrt(n)\n    state = np.zeros(dim, dtype=complex)\n    # |10..0> , |010..0> , ... , |0..01>\n    # in Qiskit little endian the i-th term from the left is qubit n-1-i = 1\n    for i in range(n):\n        idx = 1 << (n - 1 - i)\n        state[idx] = amp\n    qc.initialize(state, range(n))\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import WState\n\ndef solve(n: int) -> QuantumCircuit:\n    # WState prepares 1/sqrt(n) (|100...0> + |010...0> + ... + |000...1>)\n    # which is exactly the required |psi>.\n    return WState(n)",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  }
+]

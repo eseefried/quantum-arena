@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # |00> -> X on qubit 1 -> |01>\n    qc.x(1)\n    # H on control\n    qc.h(0)\n    # CNOT creates (|01> + |10>)/sqrt2\n    qc.cx(0, 1)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # |00> --H0--> (|00>+|01>)/sqrt2\n    qc.h(0)\n    # CNOT 0->1 creates (|00>+|11>)/sqrt2\n    qc.cx(0, 1)\n    # X on qubit 0 maps |00>->|01>, |11>->|10>\n    qc.x(0)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # prepare (|00> + |11>)/sqrt2 on qubits 1,0\n    qc.h(1)\n    qc.cx(1, 0)\n    # X on qubit 0 maps |00> -> |01> and |11> -> |10>\n    qc.x(0)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # |00> --H0--> (|00>+|01>)/sqrt2\n    qc.h(0)\n    # CNOT 0->1 creates (|00>+|11>)/sqrt2\n    qc.cx(0, 1)\n    # X on qubit 1 maps |00> -> |10> and |11> -> |01>\n    qc.x(1)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # |00> --H0--> (|00>+|01>)/sqrt2\n    qc.h(0)\n    # flip qubit 1 to get odd parity\n    qc.x(1)\n    # |10> + |11>  ->  CNOT 0->1  ->  |10> + |01>\n    qc.cx(0, 1)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  }
+]

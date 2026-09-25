@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # start from uniform superposition\n    for i in range(n):\n        qc.h(i)\n\n    # oracle\n    qc.compose(o, inplace=True)\n\n    # diffusion 2|s><s| - I\n    for i in range(n):\n        qc.h(i)\n    for i in range(n):\n        qc.x(i)\n\n    # multi-controlled Z = H t, MCX, H t\n    qc.h(n - 1)\n    qc.mcx(list(range(n - 1)), n - 1)\n    qc.h(n - 1)\n\n    for i in range(n):\n        qc.x(i)\n    for i in range(n):\n        qc.h(i)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # uniform superposition\n    for i in range(n):\n        qc.h(i)\n\n    # phase oracle\n    qc.compose(o, inplace=True)\n\n    # diffusion on qubits 0 and 1  -> 2|s><s|-I on these two qubits\n    # H X CZ X H\n    for i in (0, 1):\n        qc.h(i)\n    for i in (0, 1):\n        qc.x(i)\n    qc.cz(0, 1)\n    for i in (0, 1):\n        qc.x(i)\n    for i in (0, 1):\n        qc.h(i)\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # uniform superposition\n    for i in range(n):\n        qc.h(i)\n\n    # phase oracle\n    qc.compose(o, inplace=True)\n\n    # partial diffusion on the first 3 qubits\n    # H X ... X H  with CCZ = H CCX H\n    k = 3\n    for i in range(k):\n        qc.h(i)\n    for i in range(k):\n        qc.x(i)\n\n    # CCZ on qubits 0,1,2\n    qc.h(2)\n    qc.ccx(0, 1, 2)\n    qc.h(2)\n\n    for i in range(k):\n        qc.x(i)\n    for i in range(k):\n        qc.h(i)\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # uniform superposition\n    for i in range(n):\n        qc.h(i)\n\n    # phase oracle\n    qc.compose(o, inplace=True)\n\n    # diffusion on the two most significant qubits\n    # 2|s><s| - I on qubits n-2, n-1\n    q0 = n - 2\n    q1 = n - 1\n    for q in (q0, q1):\n        qc.h(q)\n        qc.x(q)\n    qc.cz(q0, q1)\n    for q in (q0, q1):\n        qc.x(q)\n        qc.h(q)\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # uniform superposition\n    for i in range(n):\n        qc.h(i)\n\n    # phase oracle\n    qc.compose(o, inplace=True)\n\n    # 2-qubit diffusion on the first two qubits\n    #  D = H X CZ X H  on qubits 0,1\n    for i in (0, 1):\n        qc.h(i)\n        qc.x(i)\n    qc.cp(3.141592653589793, 0, 1)   # CZ\n    for i in (0, 1):\n        qc.x(i)\n        qc.h(i)\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # theta, phi chosen so that a0, a1, a2 are all non-zero and |11> = 0\n    theta = math.pi / 4\n    phi = math.pi / 4\n\n    qc.ry(theta, 0)\n    qc.x(0)\n    qc.cry(phi, 0, 1)   # controlled-Ry with active |1> on qubit 0\n    qc.x(0)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Prepare qubit 1 in a superposition\n    qc.ry(1.0, 1)\n    # Conditional rotation of qubit 0 only when qubit 1 == 0\n    qc.x(1)\n    qc.cry(1.2, 1, 0)\n    qc.x(1)\n\n    # The state is\n    # cos(t1/2)cos(t0/2)|00> + cos(t1/2)sin(t0/2)|01> + sin(t1/2)|10>\n    # with |11> = 0 and all three amplitudes non-zero\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # rotate the least significant qubit first\n    qc.ry(0.7, 0)\n    # make the controlled rotation active on |0> of qubit 0\n    qc.x(0)\n    qc.cry(1.2, 0, 1)\n    qc.x(0)\n\n    # The circuit creates\n    # |00> : cos(t/2)cos(p/2)\n    # |01> : sin(t/2)\n    # |10> : cos(t/2)sin(p/2)\n    # |11> : 0\n    # with t = 0.7 , p = 1.2, so all three amplitudes are non-zero\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit import Parameter\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n\n    # two free parameters give a non-trivial 3-dimensional subspace\n    theta = Parameter('theta')\n    phi   = Parameter('phi')\n\n    # |0> -> cos(theta/2)|0> + sin(theta/2)|1> on qubit 1\n    qc.ry(theta, 1)\n\n    # negative control on qubit 1\n    qc.x(1)\n    qc.cry(phi, 1, 0)\n    qc.x(1)\n\n    # Up to a global phase the state is\n    # cos(theta/2)cos(phi/2) |00> + sin(theta/2) |01> + cos(theta/2)sin(phi/2) |10>\n    # |11> is identically zero and the three amplitudes are non-zero for\n    # generic theta,phi.\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\nimport cmath\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n\n    # try to build a state for the given amplitudes a0,a1,a2\n    # if they are not present we fall back to a fixed non-zero example\n    try:\n        a0 = globals()['a0']\n        a1 = globals()['a1']\n        a2 = globals()['a2']\n\n        norm = math.sqrt(abs(a0)**2 + abs(a1)**2 + abs(a2)**2)\n        m0 = abs(a0) / norm\n        m1 = abs(a1) / norm\n        m2 = abs(a2) / norm\n\n        m1 = min(1.0, max(0.0, m1))\n        alpha = 2.0 * math.asin(m1)                # Ry on qubit 0\n        beta  = 2.0 * math.atan2(m2, m0)           # controlled Ry\n\n        qc.ry(alpha, 0)\n        qc.x(0)\n        qc.cry(beta, 0, 1)\n        qc.x(0)\n\n        # relative phases, global phase is irrelevant\n        p0 = cmath.phase(a1) - cmath.phase(a0)\n        p1 = cmath.phase(a2) - cmath.phase(a0)\n        qc.rz(p0, 0)\n        qc.rz(p1, 1)\n    except Exception:\n        # fixed example with all three amplitudes non-zero and |11>=0\n        qc.ry(0.8, 0)\n        qc.x(0)\n        qc.cry(1.0, 0, 1)\n        qc.x(0)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  }
+]

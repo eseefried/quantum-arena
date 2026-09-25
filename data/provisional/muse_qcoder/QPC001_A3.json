@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Bell state |\u03a6+> = (|00> + |11>)/sqrt2\n    qc.h(0)\n    qc.cx(0, 1)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Ry(pi/2)|0> = (|0> + |1>)/sqrt2  up to global phase, equivalent to H\n    qc.ry(math.pi / 2, 0)\n    qc.cx(0, 1)\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Bell state |\u03a6+> = (|00> + |11>)/sqrt2 using the second qubit as control\n    qc.h(1)\n    qc.cx(1, 0)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Rz(pi) Ry(pi/2) = H up to global phase\n    qc.rz(math.pi, 0)\n    qc.ry(math.pi / 2, 0)\n    qc.cx(0, 1)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # U3(pi/2,0,pi) is H up to a global phase\n    qc.u3(math.pi / 2, 0, math.pi, 0)\n    qc.cx(0, 1)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  }
+]

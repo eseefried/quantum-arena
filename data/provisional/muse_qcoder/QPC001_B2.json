@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    # parity of x into y : y <- y xor x1 xor ... xor xn\n    for i in range(n):\n        qc.cx(x[i], y[0])\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    if n <= 1:\n        qc.cx(x[0], y[0])\n        return qc\n\n    # accumulate parity of x into x[n-1]\n    for i in range(n - 1):\n        qc.cx(x[i], x[i + 1])\n\n    # copy the accumulated parity to y\n    qc.cx(x[n - 1], y[0])\n\n    # uncompute the accumulation so x is restored\n    for i in range(n - 2, -1, -1):\n        qc.cx(x[i], x[i + 1])\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    # y <- y XOR x0 XOR x1 ... XOR x{n-1}\n    # a CNOT from each x[i] to y accumulates the parity\n    i = 0\n    while i < n:\n        qc.cx(x[i], y[0])\n        i += 1\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    # parity of x into y : y <- y xor x0 xor x1 ... xor x_{n-1}\n    # iterating over the register in the opposite direction gives the\n    # same unitary but a different construction from the attempts\n    for i in range(n - 1, -1, -1):\n        qc.cx(x[i], y[0])\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    # |x>|y> -> |x>|y xor parity(x)>\n    # H_y  CZ(x_i,y)  H_y  = X^{parity(x)} on y\n    qc.h(y[0])\n    for i in range(n):\n        qc.cz(x[i], y[0])\n    qc.h(y[0])\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  }
+]

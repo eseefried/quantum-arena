@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x = QuantumRegister(n)\n    y = QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    # |0> -> X -> |1> -> H -> |->\n    qc.x(y[0])\n    qc.h(y[0])\n\n    # oracle gives phase kickback\n    qc.compose(o, inplace=True)\n\n    # H -> X to return ancilla to |0>\n    qc.h(y[0])\n    qc.x(y[0])\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    # |0> --H--> |+> --Z--> |->\n    qc.h(y[0])\n    qc.z(y[0])\n\n    # phase kickback\n    qc.compose(o, inplace=True)\n\n    # undo |- > preparation: Z then H brings |- > back to |0>\n    qc.z(y[0])\n    qc.h(y[0])\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x = QuantumRegister(n)\n    y = QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    # |0> --H--> |+> --Z--> |->\n    qc.h(y[0])\n    qc.z(y[0])\n\n    # apply the given oracle with an explicit qubit mapping\n    # this avoids register duplication from compose\n    qargs = [x[i] for i in range(n)] + [y[0]]\n    qc.append(o, qargs=qargs)\n\n    # unprepare |- > : Z then H brings it back to |0>\n    qc.z(y[0])\n    qc.h(y[0])\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x = QuantumRegister(n)\n    y = QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    # |0> -> |->  with H and Z\n    qc.h(y[0])\n    qc.z(y[0])\n\n    # explicit qubit mapping, ancilla is used as the first qubit of o\n    # this is a different mapping from the compose-based attempts\n    qargs = [y[0]] + [x[i] for i in range(n)]\n    qc.append(o, qargs=qargs)\n\n    # unprepare |->\n    qc.z(y[0])\n    qc.h(y[0])\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x = QuantumRegister(n)\n    y = QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    # |0> --H--> |+> --Z--> |->\n    qc.h(y[0])\n    qc.z(y[0])\n\n    # oracle with reversed x ordering to match the little-endian convention\n    # qargs = [x[n-1],...,x[0], y[0]]  ->  first n wires of o are the x wires\n    qargs = [x[n - 1 - i] for i in range(n)] + [y[0]]\n    qc.append(o, qargs=qargs)\n\n    # unprepare |->\n    qc.z(y[0])\n    qc.h(y[0])\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  }
+]

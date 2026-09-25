@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\nimport numpy as np\nfrom qiskit.circuit.library import ZGate\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    if L >= 1 << n:          # flipping all states is a global phase\n        return qc\n\n    # for each set bit of L we create the dyadic interval\n    # x < L  <=>  for some i with L_i=1 : higher bits = L, bit i =0\n    for i in range(n):\n        if ((L >> i) & 1) == 0:\n            continue\n\n        target = n - 1\n        # X on qubits where desired value is 0\n        for j in range(i, n):\n            desired = 0 if j == i else ((L >> j) & 1)\n            if desired == 0:\n                qc.x(j)\n\n        controls = [j for j in range(i, n) if j != target]\n        if len(controls) == 0:\n            qc.z(target)\n        else:\n            qc.mcp(np.pi, controls, target)\n\n        # uncompute X\n        for j in range(i, n):\n            desired = 0 if j == i else ((L >> j) & 1)\n            if desired == 0:\n                qc.x(j)\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import ZGate\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    if L <= 0 or L >= 1 << n:\n        return qc\n\n    for i in range(n):\n        if ((L >> i) & 1) == 0:\n            continue\n\n        # X on j>i where L_j == 0  -> map x_j = L_j to 1\n        for j in range(i + 1, n):\n            if ((L >> j) & 1) == 0:\n                qc.x(j)\n\n        # map x_i = 0 to 1\n        qc.x(i)\n\n        controls = list(range(i + 1, n))\n        if len(controls) == 0:\n            qc.z(i)\n        else:\n            gate = ZGate().control(len(controls))\n            qc.append(gate, controls + [i])\n\n        # uncompute\n        qc.x(i)\n        for j in range(i + 1, n):\n            if ((L >> j) & 1) == 0:\n                qc.x(j)\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import MCPhaseGate\nimport numpy as np\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    if L <= 0 or L >= 1 << n:\n        return qc\n\n    for i in range(n):\n        if ((L >> i) & 1) == 0:\n            continue\n\n        # controls are the qubits i .. n-1\n        controls = list(range(i, n))\n        # map desired pattern to all 1s\n        for j in controls:\n            desired = 0 if j == i else (L >> j) & 1\n            if desired == 0:\n                qc.x(j)\n\n        # multi controlled phase \u03c0 on the whole interval\n        gate = MCPhaseGate(np.pi, len(controls))\n        qc.append(gate, controls)\n\n        # uncompute\n        for j in controls:\n            desired = 0 if j == i else (L >> j) & 1\n            if desired == 0:\n                qc.x(j)\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import PhaseOracle\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    if L <= 0 or L >= 1 << n:\n        return qc\n\n    # PhaseOracle works on a list of bit strings.  In little endian the\n    # k-th character of the string is the value of qubit k.\n    # 0 .. L-1 are exactly the states that have to acquire a -1 phase.\n    bitstrings = []\n    for i in range(L):\n        # little endian string, qubit 0 is the first character\n        bits = ''.join(str((i >> k) & 1) for k in range(n))\n        bitstrings.append(bits)\n\n    oracle = PhaseOracle(bitstrings)\n    # to_circuit returns a circuit with the same number of qubits\n    qc = oracle.to_circuit()\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import DiagonalGate\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # flipping all or none is a global phase\n    if L <= 0 or L >= 1 << n:\n        return qc\n\n    size = 1 << n\n    # diagonal with -1 on the first L computational basis states\n    diag = [-1.0 if i < L else 1.0 for i in range(size)]\n    qc.append(DiagonalGate(diag), range(n))\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # GHZ state (|00..0> + |11..1>) / sqrt2\n    qc.h(0)\n    for i in range(1, n):\n        qc.cx(0, i)\n    # introduce minus sign on |11..1>\n    qc.z(0)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # prepare (|0> - |1>)/sqrt2 on qubit 0\n    qc.h(0)\n    qc.z(0)          # H Z |0> = (|0> - |1>)/sqrt2\n    # fan-out to create the GHZ-type superposition\n    for i in range(1, n):\n        qc.cx(0, i)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # |-> on qubit 0 : X then H gives (|0> - |1>)/sqrt2\n    qc.x(0)\n    qc.h(0)\n    # propagate the value through a linear chain, giving the GHZ state\n    # (|00..0> - |11..1>)/sqrt2\n    for i in range(n - 1):\n        qc.cx(i, i + 1)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # start with |-> on the last qubit\n    qc.x(n - 1)\n    qc.h(n - 1)\n    # fan-out to obtain the GHZ superposition\n    for i in range(n - 1):\n        qc.cx(n - 1, i)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # use a different source qubit than the examples\n    src = n // 2\n    # prepare |-> on the source qubit\n    qc.x(src)\n    qc.h(src)\n    # fan-out the source to all other qubits\n    for i in range(n):\n        if i != src:\n            qc.cx(src, i)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  }
+]

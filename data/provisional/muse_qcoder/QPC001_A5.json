@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom math import asin, sqrt\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # |q1 q0> = 1/sqrt3 (|00> + |01> + |10>)\n    # p(q1=1)=1/3\n    theta = 2 * asin(sqrt(1 / 3))\n    qc.ry(theta, 1)          # prepare q1\n    qc.x(1)                  # flip control to get control=0\n    qc.ch(1, 0)              # H on q0 iff q1==0\n    qc.x(1)                  # unflip\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom math import asin, sqrt, pi\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n\n    # marginal of qubit 0 : p0 = |00|^2+|10|^2 = 2/3\n    theta = 2 * asin(sqrt(1 / 3))          # cos(theta/2)=sqrt(2/3), sin(theta/2)=sqrt(1/3)\n    qc.ry(theta, 0)\n\n    # for q0 = 0 we need (|0>+|1>)/sqrt2 on qubit 1, for q0 = 1 we need |0>\n    # a negative control is realised with X - CRY - X\n    qc.x(0)\n    qc.cry(pi / 2, 0, 1)   # Ry(pi/2) on qubit 1 iff q0 == 1\n    qc.x(0)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom math import asin, sqrt, pi\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n\n    # Ry(a) on q0, Ry(b) on q1, CX 0->1, Ry(c) on q1\n    # with sin(a/2)=1/sqrt3 , b - c = pi , sin b = -cos b\n    a = 2 * asin(sqrt(1 / 3))          # sin(a/2)=1/\u221a3 , cos(a/2)=\u221a(2/3)\n    b = 3 * pi / 4                     # sin b = -cos b = \u221a2/2\n    c = -pi / 4                        # c = b - pi\n\n    qc.ry(a, 0)\n    qc.ry(b, 1)\n    qc.cx(0, 1)\n    qc.ry(c, 1)\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    amp = 1 / math.sqrt(3)\n    # Qiskit little-endian ordering: |q1 q0> -> index = q1*2 + q0\n    # |00> = 0, |01> = 1, |10> = 2, |11> = 3\n    qc.initialize([amp, amp, amp, 0.0], [0, 1])\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n\n    # Ry(a) on q1, Ry(b) on q0, CX 1->0, Ry(c) on q0\n    # sin(a/2)=1/sqrt3 , b-c = pi/2 , b+c = pi/4\n    a = 2 * math.asin(1 / math.sqrt(3))\n    b = 3 * math.pi / 8\n    c = -math.pi / 8\n\n    qc.ry(a, 1)\n    qc.ry(b, 0)\n    qc.cx(1, 0)\n    qc.ry(c, 0)\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  }
+]

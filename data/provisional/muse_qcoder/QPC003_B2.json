@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x, y = QuantumRegister(n), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    # |0> -> X -> H -> |->\n    qc.x(y)\n    qc.h(y)\n\n    # phase kickback\n    qc.compose(o, inplace=True)\n\n    # H -> X restores ancilla to |0>\n    qc.h(y)\n    qc.x(y)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x = QuantumRegister(n)\n    y = QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    # |- > = Z H |0>\n    qc.h(y[0])\n    qc.z(y[0])\n\n    # phase kickback\n    qc.append(o, qargs=list(x) + [y[0]])\n\n    # undo Z H  ->  H Z\n    qc.z(y[0])\n    qc.h(y[0])\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x = QuantumRegister(n)\n    y = QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    # |x>|0> -> |x>|f(x)>\n    qc.compose(o, inplace=True)\n\n    # phase kickback via Z on the computed bit\n    qc.z(y)\n\n    # uncompute |x>|f(x)> -> |x>|0>\n    qc.compose(o, inplace=True)\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x = QuantumRegister(n)\n    y = QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    # |0> -> X -> H  = |->\n    qc.x(y[0])\n    qc.h(y[0])\n\n    # phase kickback.  The oracle is used with an explicit qubit mapping\n    # to keep the little-endian ordering of x.  Reversing x makes the\n    # mapping robust against a big-endian construction of the oracle.\n    qargs = list(reversed(x)) + [y[0]]\n    qc.append(o, qargs=qargs)\n\n    # undo |->\n    qc.h(y[0])\n    qc.x(y[0])\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve(n: int, o: QuantumCircuit) -> QuantumCircuit:\n    x = QuantumRegister(n)\n    y = QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n\n    # |0> --X--H--> |->\n    qc.x(y[0])\n    qc.h(y[0])\n\n    # phase kick-back, explicit qubit mapping keeps the little-endian\n    # ordering of the statement |x>_n|y>_1\n    qargs = list(x) + [y[0]]\n    qc.append(o, qargs=qargs)\n\n    # unprepare |- > -> |0>\n    qc.h(y[0])\n    qc.x(y[0])\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  }
+]

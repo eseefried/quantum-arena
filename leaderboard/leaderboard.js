@@ -337,8 +337,31 @@
     });
   }
 
+  const musePanel = document.createElement('section');
+  musePanel.id = 'muse-provisional';
+  musePanel.className = 'footnote';
+  musePanel.hidden = true;
+  el('leaderboard-footnote').after(musePanel);
+  let museSnapshot;
+  async function renderMuseProvisional() {
+    const visible = () => state.collection !== 'qbe' && state.dataset === 'QCoder' && state.view === 'leaderboard';
+    musePanel.hidden = !visible();
+    if (!visible()) return;
+    try {
+      if (!museSnapshot) {
+        const response = await fetch('./muse_qcoder_provisional.json');
+        if (!response.ok) throw Error('Snapshot unavailable');
+        museSnapshot = await response.json();
+      }
+      if (!visible()) return;
+      const d = museSnapshot, percent = x => (100*x).toFixed(1)+'%';
+      musePanel.innerHTML = `<h3>Muse-Glimmer-30B · provisional, unranked</h3><p>${d.completed_tasks}/${d.total_tasks} completed QCoder tasks · ${d.judged_samples} judged samples. Entire completed subset, independent of category filters.</p><table><thead><tr><th>Metric</th><th>Completed-subset score</th><th>Full-dataset bounds</th></tr></thead><tbody>${['1','3','5'].map(k => { const v=d.scores[k]; return `<tr><td>Pass@${k}</td><td>${percent(v.observed)}</td><td>${percent(v.lower)}–${percent(v.upper)}</td></tr>`; }).join('')}</tbody></table><p>Unfinished tasks are not imputed. Bounds assume all remaining tasks fail or pass; they are not confidence intervals. The completed subset may not represent the full benchmark. Excluded from full-dataset ranking. Snapshot: ${escapeHtml(d.snapshot_utc)}.</p>`;
+    } catch (_) { musePanel.hidden = true; }
+  }
+
   const originalHead = el("board-head").innerHTML;
   function renderCurrentView() {
+    renderMuseProvisional();
     el("qbe-notes").hidden = state.collection !== "qbe";
     if (state.collection === "qbe") { window.renderQBE(state, renderCurrentView); return; }
     el("board-head").innerHTML = originalHead;

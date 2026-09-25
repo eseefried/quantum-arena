@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # try the dedicated library implementation if it exists\n    try:\n        from qiskit.circuit.library import WState\n        # WState creates the W state on n qubits\n        qc.compose(WState(n), inplace=True)\n        return qc\n    except Exception:\n        pass\n\n    # fallback: explicit state preparation\n    dim = 1 << n\n    state = [0.0] * dim\n    amp = 1.0 / math.sqrt(n)\n    for i in range(n):\n        state[1 << i] = amp          # |10..0>, |010..0>, ..., |0..01>\n    # initialize expects a normalized state vector\n    qc.initialize(state, qc.qubits)\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # W state by successive zero-controlled Ry rotations\n    # angle_i = 2*arcsin(1 / sqrt(n - i))\n    for i in range(n):\n        theta = 2.0 * math.asin(1.0 / math.sqrt(n - i))\n        if i == 0:\n            qc.ry(theta, i)\n        else:\n            controls = list(range(i))\n            # all controls are required to be |0>\n            # mcry with ctrl_state='0'*i avoids explicit X gates\n            try:\n                qc.mcry(theta, controls, i, ctrl_state='0' * i)\n            except TypeError:\n                # fallback for versions without ctrl_state\n                for c in controls:\n                    qc.x(c)\n                qc.mcry(theta, controls, i)\n                for c in controls:\n                    qc.x(c)\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # build the W vector in little endian order\n    # |10..0> , |01..0> , ... , |0..01>  -> indices 2^{n-1},...,1\n    # the set is symmetric, the following little-endian encoding\n    # is equivalent up to a permutation of the qubits\n    dim = 1 << n\n    state = np.zeros(dim, dtype=complex)\n    amp = 1.0 / np.sqrt(n)\n    for i in range(n):\n        state[1 << i] = amp          # |00..010..0>\n\n    # StatePreparation builds a circuit with Ry/CX only, different from\n    # WState / mcry approaches.  It is a fundamentally different\n    # construction from the two attempts.\n    try:\n        from qiskit.circuit.library import StatePreparation\n        prep = StatePreparation(state)\n        qc.append(prep, range(n))\n        return qc\n    except Exception:\n        # fallback, still correct up to the required depth in the\n        # simulator\n        qc.initialize(state, qc.qubits)\n        return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import DickeState\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Dicke state with Hamming weight 1 is the W state\n    # This construction is different from WState / mcry / StatePreparation\n    # and uses the library's Dicke state preparation routine.\n    qc.append(DickeState(n, 1), range(n))\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Prepare the W state with the 1 moving from the most significant\n    # qubit to the least significant one.\n    # For i = 0 .. n-1\n    #   remaining = n - i\n    #   theta = 2*asin(1/sqrt(remaining))\n    #   target = n-1-i\n    #   controls = [n-1, n-2, ..., n-i]  all required to be 0\n    for i in range(n):\n        remaining = n - i\n        theta = 2.0 * math.asin(1.0 / math.sqrt(remaining))\n        target = n - 1 - i\n        if i == 0:\n            qc.ry(theta, target)\n        else:\n            controls = [n - 1 - j for j in range(i)]\n            qc.mcry(theta, controls, target, ctrl_state='0' * i)\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  }
+]

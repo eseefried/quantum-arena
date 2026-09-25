@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # |-> on qubit 0, then copy to the rest\n    qc.h(0)\n    qc.z(0)                     # H|0> -> |+>, Z|+> = |->\n    \n    available = [0]\n    i = 1\n    while i < n:\n        parents = available[:]          # snapshot for this layer\n        new_nodes = []\n        for p in parents:\n            if i >= n:\n                break\n            qc.cx(p, i)\n            new_nodes.append(i)\n            i += 1\n        available.extend(new_nodes)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # |-> on qubit 0  -> X then H gives the minus sign\n    qc.x(0)\n    qc.h(0)\n\n    # binary fan-out, depth O(log n)\n    frontier = [0]\n    next_idx = 1\n    while next_idx < n:\n        # controls for this layer are a snapshot of the frontier\n        controls = frontier[:]\n        new_nodes = []\n        for ctrl in controls:\n            if next_idx >= n:\n                break\n            qc.cx(ctrl, next_idx)\n            new_nodes.append(next_idx)\n            next_idx += 1\n        frontier.extend(new_nodes)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # create |- > on qubit 0\n    qc.h(0)\n\n    # binary fan-out, each node creates up to two children\n    # depth O(log n) <= 10 for n <= 15\n    level = [0]\n    next_target = 1\n    while next_target < n:\n        new_level = []\n        for ctrl in level:\n            # two children per node\n            for _ in range(2):\n                if next_target >= n:\n                    break\n                qc.cx(ctrl, next_target)\n                new_level.append(next_target)\n                next_target += 1\n            if next_target >= n:\n                break\n        level = new_level\n\n    # flip the sign of |1...1>\n    qc.z(0)\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # |- > on qubit 0\n    qc.h(0)\n    qc.z(0)\n\n    # binary tree fan-out, depth O(log n)\n    frontier = [0]\n    while frontier:\n        next_frontier = []\n        for ctrl in frontier:\n            left = 2 * ctrl + 1\n            if left < n:\n                qc.cx(ctrl, left)\n                next_frontier.append(left)\n            right = 2 * ctrl + 2\n            if right < n:\n                qc.cx(ctrl, right)\n                next_frontier.append(right)\n        frontier = next_frontier\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # prepare |- > on qubit 0  : X then H\n    qc.x(0)\n    qc.h(0)\n\n    # logarithmic fan-out.  Each level is processed in parallel\n    # on disjoint controls, so the depth stays O(log n) <= 10 for n<=15\n    level = [0]\n    nxt = 1\n    while nxt < n:\n        next_level = []\n        for ctrl in level:\n            if nxt < n:\n                qc.cx(ctrl, nxt)\n                next_level.append(nxt)\n                nxt += 1\n            if nxt < n:\n                qc.cx(ctrl, nxt)\n                next_level.append(nxt)\n                nxt += 1\n        level = next_level\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Swap = CNOT(a,b) CNOT(b,a) CNOT(a,b)\n    qc.cx(0, 1)\n    qc.cx(1, 0)\n    qc.cx(0, 1)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # SWAP = CX(1,0) CX(0,1) CX(1,0)\n    qc.cx(1, 0)\n    qc.cx(0, 1)\n    qc.cx(1, 0)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # SWAP = CNOT(0,1) CNOT(1,0) CNOT(0,1)\n    # CNOT(a,b) = H(b) CZ(a,b) H(b)\n    # first CNOT(0,1)\n    qc.h(1)\n    qc.cz(0, 1)\n    qc.h(1)\n    # second CNOT(1,0)\n    qc.h(0)\n    qc.cz(0, 1)\n    qc.h(0)\n    # third CNOT(0,1)\n    qc.h(1)\n    qc.cz(0, 1)\n    qc.h(1)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # SWAP = CX(b,a) CX(a,b) CX(b,a)\n    # This is a different gate ordering from the attempts above\n    qc.cx(1, 0)\n    qc.cx(0, 1)\n    qc.cx(1, 0)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # SWAP = exp(i pi/4 (XX + YY + ZZ)) up to a global phase\n    # RXX(theta) = exp(-i theta/2 XX)  etc.\n    # Hence theta = -pi/2 gives exp(i pi/4 XX)\n    qc.rxx(-np.pi / 2, 0, 1)\n    qc.ryy(-np.pi / 2, 0, 1)\n    qc.rzz(-np.pi / 2, 0, 1)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  }
+]

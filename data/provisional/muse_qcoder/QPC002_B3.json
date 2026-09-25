@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Swap decomposition using three CNOTs: CX 0-1, CX 1-0, CX 0-1\n    qc.cx(0, 1)\n    qc.cx(1, 0)\n    qc.cx(0, 1)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # SWAP = CNOT 1->0, CNOT 0->1, CNOT 1->0\n    # This is the same unitary as the standard 3-CNOT decomposition,\n    # just written in the opposite control/target order.\n    qc.cx(1, 0)\n    qc.cx(0, 1)\n    qc.cx(1, 0)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # SWAP matrix in the computational basis |00>,|01>,|10>,|11>\n    swap = np.array([\n        [1, 0, 0, 0],\n        [0, 0, 1, 0],\n        [0, 1, 0, 0],\n        [0, 0, 0, 1]\n    ], dtype=complex)\n    qc.unitary(swap, [0, 1])\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # SWAP = CNOT01 \u00b7 CNOT10 \u00b7 CNOT01\n    # CNOT c\u2192t = H(t) CZ(c,t) H(t)\n    # CNOT 0 \u2192 1\n    qc.h(1)\n    qc.cz(0, 1)\n    qc.h(1)\n    # CNOT 1 \u2192 0\n    qc.h(0)\n    qc.cz(1, 0)\n    qc.h(0)\n    # CNOT 0 \u2192 1\n    qc.h(1)\n    qc.cz(0, 1)\n    qc.h(1)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # SWAP up to global phase = (S\u2020\u2297S\u2020) iSWAP (S\u2297S)\n    qc.s(0)\n    qc.s(1)\n    qc.iswap(0, 1)\n    qc.sdg(0)\n    qc.sdg(1)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  }
+]

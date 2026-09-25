@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Qiskit uses little-endian ordering, so T[i] is mapped to physical qubit n-1-i\n    # to obtain the big-endian product shown in the statement.\n    for i, ti in enumerate(T):\n        qc.ry(2.0 * ti, n - 1 - i)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Ry(2*Ti) |0> = cos(Ti)|0> + sin(Ti)|1>\n    for i, ti in enumerate(T):\n        qc.ry(2.0 * ti, i)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # precompute cos/sin for all angles\n    cos_vals = [math.cos(t) for t in T]\n    sin_vals = [math.sin(t) for t in T]\n\n    dim = 1 << n\n    state = [0.0] * dim\n    for idx in range(dim):\n        amp = 1.0\n        # qubit i (LSB) corresponds to T_{n-1-i}\n        for i in range(n):\n            ti_idx = n - 1 - i\n            if (idx >> i) & 1:\n                amp *= sin_vals[ti_idx]\n            else:\n                amp *= cos_vals[ti_idx]\n        state[idx] = amp\n\n    # numerical normalisation, the product is already unit norm\n    norm = math.sqrt(sum(v * v for v in state))\n    if norm > 0:\n        state = [v / norm for v in state]\n\n    qc.initialize(state, qc.qubits)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # The mathematical product (T0,T1,... ) is the tensor product\n    # T0 \u2297 T1 \u2297 ... \u2297 T_{n-1}.  In Qiskit qubit 0 is the least\n    # significant bit, therefore Ti has to be applied to physical\n    # qubit n-1-i.  A real single qubit state cos Ti|0>+sin Ti|1>\n    # is obtained with U(2Ti,0,0) which is equivalent to Ry(2Ti).\n    for i, ti in enumerate(T):\n        qubit = n - 1 - i\n        theta = 2.0 * ti\n        # U(theta,phi,lambda)|0> = cos(theta/2)|0> + e^{i phi} sin(theta/2)|1>\n        qc.u(theta, 0.0, 0.0, qubit)\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # build the separable real state |psi> = \u2297_i (cos Ti|0>+sin Ti|1>)\n    # with T0 the most significant qubit, i.e. the Qiskit little-endian order\n    state = np.array([1.0], dtype=complex)\n    for ti in reversed(T):                     # least significant first\n        vec = np.array([np.cos(ti), np.sin(ti)], dtype=complex)\n        state = np.kron(vec, state)\n\n    # numerical safety\n    norm = np.linalg.norm(state)\n    if norm > 0:\n        state = state / norm\n\n    qc.initialize(state, range(n))\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  }
+]

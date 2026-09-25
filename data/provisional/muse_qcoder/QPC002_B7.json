@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import QFT\nimport math\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x = QuantumRegister(n)\n    y = QuantumRegister(m)\n    qc = QuantumCircuit(x, y)\n\n    # QFT on the target register\n    qft = QFT(m, do_swaps=False)\n    qc.append(qft, y[:])\n\n    # controlled phase rotations  exp(2\u03c0 i y c /2^m)\n    N = 1 << m\n    for k in range(n):\n        c = S[k] % N\n        if c == 0:\n            continue\n        # angle for qubit i = 2\u03c0 c 2^i / 2^m\n        for i in range(m):\n            angle = 2.0 * math.pi * c * (1 << i) / N\n            if angle % (2 * math.pi) != 0:\n                qc.crz(angle, x[k], y[i])\n\n    # inverse QFT\n    iqft = QFT(m, do_swaps=False).inverse()\n    qc.append(iqft, y[:])\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import PermutationGate\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x = QuantumRegister(n)\n    y = QuantumRegister(m)\n    qc = QuantumCircuit(x, y)\n\n    mod = 1 << m\n    size = 1 << (n + m)\n    perm = [0] * size\n\n    # f(x) for all x\n    n_x = 1 << n\n    f_vals = [0] * n_x\n    for xv in range(n_x):\n        s = 0\n        # little endian: bit k is x_k\n        for k in range(n):\n            if (xv >> k) & 1:\n                s += S[k]\n        f_vals[xv] = s % mod\n\n    for xv in range(n_x):\n        f = f_vals[xv]\n        # index = xv + (yv << n)\n        for yv in range(1 << m):\n            idx_in = xv + (yv << n)\n            yout = yv + f\n            if yout >= mod:\n                yout %= mod\n            idx_out = xv + (yout << n)\n            perm[idx_in] = idx_out\n\n    gate = PermutationGate(perm)\n    qc.append(gate, x[:] + y[:])\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import QFT\nimport math\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x = QuantumRegister(n)\n    y = QuantumRegister(m)\n    qc = QuantumCircuit(x, y)\n\n    N = 1 << m\n    # QFT works with MSB first\n    y_q = [y[m - 1 - i] for i in range(m)]\n\n    qft = QFT(m, do_swaps=True)\n    qc.append(qft, y_q)\n\n    for k in range(n):\n        c = S[k] % N\n        if c == 0:\n            continue\n        # weight = 2^{m-1-j} for qubit j in MSB-first order\n        for j in range(m):\n            weight = 1 << (m - 1 - j)\n            angle = 2.0 * math.pi * c * weight / N\n            # remove multiples of 2pi\n            ang_mod = angle % (2.0 * math.pi)\n            if abs(ang_mod) < 1e-12:\n                continue\n            qc.cp(ang_mod, x[k], y_q[j])\n\n    qc.append(qft.inverse(), y_q)\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x = QuantumRegister(n)\n    y = QuantumRegister(m)\n    qc = QuantumCircuit(x, y)\n\n    N = 1 << (n + m)\n    mod = 1 << m\n    n_x = 1 << n\n\n    f_vals = [0] * n_x\n    for xv in range(n_x):\n        s = 0\n        # little endian: bit k of xv is x_k\n        for k in range(n):\n            if (xv >> k) & 1:\n                s += S[k]\n        f_vals[xv] = s % mod\n\n    mat = np.zeros((N, N), dtype=complex)\n    for xv in range(n_x):\n        f = f_vals[xv]\n        for yv in range(1 << m):\n            idx_in = xv + (yv << n)                 # |x>|y>\n            yout = (yv + f) % mod\n            idx_out = xv + (yout << n)              # |x>|y+f>\n            mat[idx_out, idx_in] = 1.0\n\n    qc.unitary(mat, x[:] + y[:])\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import QFT\nimport math\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x = QuantumRegister(n)\n    y = QuantumRegister(m)\n    qc = QuantumCircuit(x, y)\n\n    N = 1 << m\n    # QFT expects most significant qubit first.\n    # y_q[0] is the most significant bit of the target register.\n    y_q = [y[m - 1 - i] for i in range(m)]\n\n    qft = QFT(m, do_swaps=False)\n    qc.append(qft, y_q)\n\n    for k in range(n):\n        c = S[k] % N\n        if c == 0:\n            continue\n        for j in range(m):\n            weight = 1 << (m - 1 - j)          # 2^{m-1-j}\n            angle = 2.0 * math.pi * c * weight / N\n            angle = angle % (2.0 * math.pi)\n            if abs(angle) < 1e-12:\n                continue\n            qc.cp(angle, x[k], y_q[j])\n\n    qc.append(qft.inverse(), y_q)\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  }
+]

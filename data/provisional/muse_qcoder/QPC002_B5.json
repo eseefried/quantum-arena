@@ -1,0 +1,32 @@
+[
+  {
+    "code": "import sys, math\nfrom qiskit import QuantumCircuit\n\ndef build_oracle(n: int, m: int, S):\n    qc = QuantumCircuit(n)\n    denom = 1 << m\n    for k, s in enumerate(S):\n        angle = 2.0 * math.pi * (s % denom) / denom\n        # P(lambda) |1> = exp(i lambda) |1>\n        qc.p(angle, k)\n    return qc\n\ndef main():\n    data = list(map(int, sys.stdin.read().strip().split()))\n    if not data:\n        return\n    n, m = data[0], data[1]\n    S = data[2:2 + n]\n    # pad if needed\n    if len(S) < n:\n        S += [0] * (n - len(S))\n    qc = build_oracle(n, m, S)\n    # output QASM so the circuit can be inspected\n    sys.stdout.write(qc.qasm())\n\nif __name__ == \"__main__\":\n    main()",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "import sys\nimport math\nfrom qiskit import QuantumCircuit\n\ndef build_oracle(n: int, m: int, S):\n    qc = QuantumCircuit(n)\n    denom = 1 << m\n    # little-endian: S[k] belongs to qubit n-1-k\n    for k, s in enumerate(S):\n        s = s % denom\n        lam = 2.0 * math.pi * s / denom          # desired phase on |1>\n        qubit = n - 1 - k\n        # Rz(2*lam)|1> = e^{i lam}|1> up to global phase\n        qc.rz(2.0 * lam, qubit)\n    return qc\n\ndef main():\n    data = list(map(int, sys.stdin.read().strip().split()))\n    if not data:\n        return\n    n, m = data[0], data[1]\n    S = data[2:2 + n]\n    if len(S) < n:\n        S += [0] * (n - len(S))\n    qc = build_oracle(n, m, S)\n    sys.stdout.write(qc.qasm())\n\nif __name__ == \"__main__\":\n    main()",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "import sys\nimport math\nfrom qiskit import QuantumCircuit\n\ndef build_oracle(n: int, m: int, S):\n    qc = QuantumCircuit(n)\n    denom = 1 << m\n    # little endian: S[k] -> qubit n-1-k\n    for k, s in enumerate(S):\n        s_mod = s % denom\n        angle = 2.0 * math.pi * s_mod / denom   # P(angle)|1> = e^{i angle}|1>\n        qubit = n - 1 - k\n        qc.p(angle, qubit)          # same as Rz(angle) up to global phase\n    return qc\n\ndef main():\n    data = list(map(int, sys.stdin.read().strip().split()))\n    if not data:\n        return\n    n, m = data[0], data[1]\n    S = data[2:2 + n]\n    if len(S) < n:\n        S += [0] * (n - len(S))\n    qc = build_oracle(n, m, S)\n    sys.stdout.write(qc.qasm())\n\nif __name__ == \"__main__\":\n    main()",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "import sys\nimport cmath\nfrom qiskit import QuantumCircuit\nfrom qiskit.circuit.library import Diagonal\n\ndef build_oracle(n: int, m: int, S):\n    qc = QuantumCircuit(n)\n    denom = 1 << m\n    diag = []\n    # Qiskit index idx = sum q_i 2^i\n    # problem bit x_k = q_{n-1-k}\n    for idx in range(1 << n):\n        f = 0\n        # sum S_k * x_k\n        for k in range(n):\n            if (idx >> (n - 1 - k)) & 1:\n                f += S[k]\n        phase = cmath.exp(2j * cmath.pi * f / denom)\n        diag.append(phase)\n    qc.append(Diagonal(diag), range(n))\n    return qc\n\ndef main():\n    data = list(map(int, sys.stdin.read().strip().split()))\n    if not data:\n        return\n    n, m = data[0], data[1]\n    S = data[2:2 + n]\n    if len(S) < n:\n        S += [0] * (n - len(S))\n    qc = build_oracle(n, m, S)\n    sys.stdout.write(qc.qasm())\n\nif __name__ == \"__main__\":\n    main()",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "import sys\nimport cmath\nfrom qiskit import QuantumCircuit\nfrom qiskit.circuit.library import Diagonal\n\ndef build_oracle(n: int, m: int, S):\n    qc = QuantumCircuit(n)\n    denom = 1 << m\n    # diagonal phase = exp(2 pi i * f(x) / 2^m)\n    # f(x) = sum_k S[k] * x_k   with x_k = bit k of x\n    # little endian left = LSB  -> Qiskit qubit n-1-k holds x_k\n    diag = []\n    for idx in range(1 << n):\n        f = 0\n        # sum S[k] * bit_k of idx with reversed mapping\n        # bit k of the problem variable corresponds to Qiskit qubit n-1-k\n        # i.e. use bit n-1-k of idx\n        for k in range(n):\n            if (idx >> (n - 1 - k)) & 1:\n                f += S[k]\n        phase = cmath.exp(2j * cmath.pi * (f % denom) / denom)\n        diag.append(phase)\n    qc.append(Diagonal(diag), range(n))\n    return qc\n\ndef main():\n    data = list(map(int, sys.stdin.read().strip().split()))\n    if not data:\n        return\n    n, m = data[0], data[1]\n    S = data[2:2 + n]\n    if len(S) < n:\n        S = S + [0] * (n - len(S))\n    else:\n        S = S[:n]\n    qc = build_oracle(n, m, S)\n    sys.stdout.write(qc.qasm())\n\nif __name__ == \"__main__\":\n    main()",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  }
+]

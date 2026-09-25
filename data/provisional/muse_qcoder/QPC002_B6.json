@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import QuantumROM\n\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x = QuantumRegister(n, name=\"x\")\n    y = QuantumRegister(m, name=\"y\")\n    qc = QuantumCircuit(x, y)\n\n    mod = 1 << m\n    # f(x) = sum_k S_k x_k  (mod 2^m)\n    f_vals = []\n    for xv in range(1 << n):\n        s = 0\n        # little endian: bit k is x_k\n        for k in range(n):\n            if (xv >> k) & 1:\n                s += S[k]\n        f_vals.append(s % mod)\n\n    rom = QuantumROM(f_vals)\n    data_qubits = rom.num_qubits - n\n    # use only the needed part of y, the remaining high bits stay |0>\n    data_qubits = min(data_qubits, m)\n    qubits = list(x) + list(y[:data_qubits])\n    qc.compose(rom, qubits=qubits, inplace=True)\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport numpy as np\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x = QuantumRegister(n)\n    y = QuantumRegister(m)\n    qc = QuantumCircuit(x, y)\n\n    mod = 1 << m\n    # f(x) for all x\n    f_vals = [0] * (1 << n)\n    for xv in range(1 << n):\n        s = 0\n        # little endian: bit k is x_k\n        for k in range(n):\n            if (xv >> k) & 1:\n                s += S[k]\n        f_vals[xv] = s % mod\n\n    N = 1 << (n + m)\n    mat = np.zeros((N, N), dtype=complex)\n    # |x>|y> -> |x>|y + f(x) mod 2^m>\n    # qubit order = x0..x_{n-1}, y0..y_{m-1}\n    # index = x + (y << n)\n    for xv in range(1 << n):\n        f = f_vals[xv]\n        base = xv\n        for yv in range(1 << m):\n            in_idx = base + (yv << n)\n            y_out = (yv + f) % mod\n            out_idx = base + (y_out << n)\n            mat[out_idx, in_idx] = 1.0\n\n    qc.unitary(mat, list(x) + list(y))\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import QFT\nimport math\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x = QuantumRegister(n)\n    y = QuantumRegister(m)\n    qc = QuantumCircuit(x, y)\n\n    # |y> = |0> -> H^\u2297m |y>\n    qc.h(y)\n\n    # phase kick back :  exp(2\u03c0i S_k y / 2^m )\n    # with qubit 0 = most significant\n    for k in range(n):\n        s = S[k] % (1 << m)\n        if s == 0:\n            continue\n        for j in range(m):\n            angle = 2.0 * math.pi * s / (1 << (j + 1))\n            angle %= 2.0 * math.pi\n            if angle != 0:\n                qc.cp(angle, x[k], y[j])\n\n    # inverse QFT on y\n    qft_inv = QFT(m, do_swaps=False, inverse=True)\n    qc.append(qft_inv, y[:])\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\nimport math\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x = QuantumRegister(n)\n    y = QuantumRegister(m)\n    qc = QuantumCircuit(x, y)\n\n    # QFT on y, little endian: y[0] is LSB\n    for i in range(m):\n        qc.h(y[i])\n        for j in range(i + 1, m):\n            angle = 2 * math.pi / (2 ** (j - i + 1))\n            qc.cp(angle, y[j], y[i])\n\n    # controlled phases for f(x) = sum_k S_k x_k\n    mod = 1 << m\n    for k in range(n):\n        s = S[k] % mod\n        if s == 0:\n            continue\n        for j in range(m):\n            denom = 1 << (m - j)          # 2^{m-j}\n            angle = 2 * math.pi * s / denom\n            angle = angle % (2 * math.pi)\n            if angle < 1e-12:\n                continue\n            qc.cp(angle, x[k], y[j])\n\n    # inverse QFT on y\n    for i in range(m - 1, -1, -1):\n        for j in range(i + 1, m):\n            angle = -2 * math.pi / (2 ** (j - i + 1))\n            qc.cp(angle, y[j], y[i])\n        qc.h(y[i])\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\nfrom qiskit.circuit.library import QuantumROM\n\ndef solve(n: int, m: int, S: list[int]) -> QuantumCircuit:\n    x = QuantumRegister(n, name=\"x\")\n    y = QuantumRegister(m, name=\"y\")\n    qc = QuantumCircuit(x, y)\n\n    mod = 1 << m\n    f_vals = [0] * (1 << n)\n    for xv in range(1 << n):\n        s = 0\n        # little endian : bit k of xv is x_k\n        for k in range(n):\n            if (xv >> k) & 1:\n                s += S[k]\n        f_vals[xv] = s % mod\n\n    # QuantumROM implements |addr>|0> -> |addr>|value(addr)>\n    # address_bits=n, data_bits=m guarantees an exact m-qubit output\n    rom = QuantumROM(f_vals, address_bits=n, data_bits=m)\n    qc.append(rom, qubits=list(x) + list(y))\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  }
+]

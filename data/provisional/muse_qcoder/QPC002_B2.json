@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import MCPhaseGate\n\ndef solve(n: int, L: int, theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # map |L> -> |0...0>\n    for i in range(n):\n        if (L >> i) & 1:\n            qc.x(i)\n\n    # |0...0> -> |1...1>\n    for i in range(n):\n        qc.x(i)\n\n    if n == 1:\n        qc.p(theta, 0)\n    else:\n        gate = MCPhaseGate(theta, num_ctrl_qubits=n - 1)\n        qc.append(gate, list(range(n)))   # controls 0..n-2, target n-1\n\n    # |1...1> -> |0...0>\n    for i in range(n):\n        qc.x(i)\n\n    # undo the mapping |0...0> -> |L>\n    for i in range(n):\n        if (L >> i) & 1:\n            qc.x(i)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import UnitaryGate\nimport numpy as np\n\ndef solve(n: int, L: int, theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    dim = 1 << n\n    # diagonal oracle |y> -> e^{i theta}|y> if y == L else |y>\n    mat = np.eye(dim, dtype=np.complex128)\n    mat[L, L] = np.exp(1j * theta)\n    qc.append(UnitaryGate(mat), list(range(n)))\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import DiagonalGate\nimport numpy as np\n\ndef solve(n: int, L: int, theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    dim = 1 << n\n    diag = np.ones(dim, dtype=np.complex128)\n    diag[L] = np.exp(1j * theta)\n    qc.append(DiagonalGate(diag), list(range(n)))\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, L: int, theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    if theta == 0.0:\n        return qc\n\n    size = 1 << n\n    factor = -2.0 * theta / size          # angle = factor * sign\n\n    for k in range(1, size):\n        # sign = (-1)^{popcount(L & k)}\n        parity = bin(L & k).count(\"1\") & 1\n        sign = -1.0 if parity else 1.0\n        angle = factor * sign\n\n        # qubits where k has a 1, little endian\n        qubits = [i for i in range(n) if (k >> i) & 1]\n        if not qubits:\n            continue\n        target = qubits[0]\n        for ctrl in qubits[1:]:\n            qc.cx(ctrl, target)\n        qc.rz(angle, target)\n        for ctrl in qubits[1:]:\n            qc.cx(ctrl, target)\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import MCPhaseGate\n\ndef solve(n: int, L: int, theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    if theta == 0:\n        return qc\n\n    # choose qubit 0 as the target, the remaining n-1 qubits are controls\n    t = 0\n    ctrl_qubits = [i for i in range(n) if i != t]\n\n    # control pattern = bits of L on the control qubits\n    control_state = ''.join('1' if (L >> i) & 1 else '0' for i in ctrl_qubits)\n\n    # if the target bit of L is 0 we flip it so that the MCPhaseGate,\n    # which acts on |1> of the target, fires on the correct state\n    if ((L >> t) & 1) == 0:\n        qc.x(t)\n\n    if n == 1:\n        qc.p(theta, t)\n    else:\n        gate = MCPhaseGate(theta, num_ctrl_qubits=n-1, control_state=control_state)\n        qc.append(gate, ctrl_qubits + [t])\n\n    if ((L >> t) & 1) == 0:\n        qc.x(t)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  }
+]

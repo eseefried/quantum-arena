@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # A = |1><0| + |0><1| = [[0,1],[1,0]] = X\n    qc.x(0)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # X = H Z H\n    # H Z H = |1><0| + |0><1|\n    qc.h(0)\n    qc.z(0)\n    qc.h(0)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # A = |1><0| + |0><1| = [[0,1],[1,0]]\n    A = np.array([[0, 1],\n                  [1, 0]], dtype=complex)\n    qc.unitary(A, [0])\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # X = U3(pi, 0, pi) = [[0, 1],[1, 0]]\n    qc.u(np.pi, 0, np.pi, 0)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # RX(pi) = [[0, -i], [-i, 0]] = -i X\n    # e^{i pi/2} * RX(pi) = i * (-i X) = X\n    qc.rx(np.pi, 0)\n    qc.global_phase = np.pi / 2\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  }
+]

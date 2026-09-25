@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # |00> -> H on qubit 0 -> (|00>+|01>)/sqrt2\n    qc.h(0)\n    # CNOT 0 -> 1 -> (|00>+|11>)/sqrt2\n    qc.cx(0, 1)\n    # flip sign of |11>\n    qc.z(1)   # Z on either qubit gives the same |00> - |11> up to global phase\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # create (|00> + |11>)/sqrt2\n    qc.h(0)\n    qc.cx(0, 1)\n    # CZ adds a -1 phase only to |11>\n    qc.cz(0, 1)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # Prepare (|00> + |11>)/sqrt2 with the Hadamard on qubit 1\n    qc.h(1)\n    qc.cx(1, 0)\n    # Flip the sign of the |11> component\n    qc.z(0)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # |00> --X0--> |01> --H0--> (|00>-|01>)/sqrt2 --CX0,1--> (|00>-|11>)/sqrt2\n    qc.x(0)\n    qc.h(0)\n    qc.cx(0, 1)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(2)\n    # |00> --H0--> (|00>+|01>)/sqrt2\n    # Z on the control puts a minus on the |01> term\n    qc.h(0)\n    qc.z(0)\n    # CNOT maps |01> -> |11>, giving (|00>-|11>)/sqrt2\n    qc.cx(0, 1)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  }
+]

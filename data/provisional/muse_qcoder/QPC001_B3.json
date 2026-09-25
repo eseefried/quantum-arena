@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # global phase is irrelevant\n    if L <= 0 or L >= 2 ** n:\n        return qc\n\n    target = n - 1\n    controls = list(range(n - 1))\n\n    for i in range(L):\n        # map |i> to |11..1>\n        for j in range(n):\n            if ((i >> j) & 1) == 0:\n                qc.x(j)\n\n        if n == 1:\n            qc.z(0)\n        else:\n            qc.mcphase(math.pi, controls, target)\n\n        # unmap\n        for j in range(n):\n            if ((i >> j) & 1) == 0:\n                qc.x(j)\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import UnitaryGate\nimport numpy as np\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    size = 1 << n\n    # global phase is irrelevant\n    if L <= 0 or L >= size:\n        return qc\n\n    # diagonal phase oracle: -1 on |0>..|L-1>\n    diag = np.ones(size, dtype=complex)\n    diag[:L] = -1.0\n    U = np.diag(diag)\n    qc.append(UnitaryGate(U), range(n))\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import DiagonalGate\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    size = 1 << n\n    if L <= 0 or L >= size:\n        # empty or global phase\n        return qc\n\n    # diagonal phase -1 on |0> .. |L-1> in little-endian order\n    diag = [1.0] * size\n    for i in range(L):\n        diag[i] = -1.0\n\n    qc.append(DiagonalGate(diag), range(n))\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import QuantumPhaseOracle\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    size = 1 << n\n    # flipping all states is a global phase, flipping none is the identity\n    if L <= 0 or L >= size:\n        return qc\n\n    # mark the first L computational basis states in little-endian order\n    # QuantumPhaseOracle builds a -1 phase oracle for the given set\n    marked = list(range(L))          # 0 .. L-1\n    oracle = QuantumPhaseOracle(marked)\n    qc.append(oracle, range(n))\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve(n: int, L: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    size = 1 << n\n    if L <= 0 or L >= size:\n        # empty or global phase\n        return qc\n\n    for k in range(n):\n        if ((L >> k) & 1) == 0:\n            continue\n\n        # make x_k = 0 correspond to target = 1\n        qc.x(k)\n\n        control_qubits = []\n        # higher bits j>k must equal L_j\n        for j in range(k + 1, n):\n            if ((L >> j) & 1) == 0:\n                qc.x(j)                 # turn 0-control into 1-control\n            control_qubits.append(j)\n\n        if control_qubits:\n            qc.mcp(math.pi, control_qubits, k)\n        else:\n            qc.p(math.pi, k)            # Z on k\n\n        # undo the X on the higher bits\n        for j in range(k + 1, n):\n            if ((L >> j) & 1) == 0:\n                qc.x(j)\n\n        qc.x(k)                         # undo target flip\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  }
+]

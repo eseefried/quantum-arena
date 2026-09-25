@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # rotate right by one: x0..x_{n-1} -> x_{n-1} x0..x_{n-2}\n    # bubble the last qubit to the front with adjacent swaps\n    # swap i, i-1 can be done with 3 CNOTs\n    for i in range(n - 1, 0, -1):\n        # swap qubits i and i-1\n        qc.cx(i, i - 1)\n        qc.cx(i - 1, i)\n        qc.cx(i, i - 1)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import Permutation\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # right rotation: output[i] <- input[(i-1) mod n]\n    perm = [(i - 1) % n for i in range(n)]\n    qc.append(Permutation(perm), range(n))\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import UnitaryGate\nimport numpy as np\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    size = 1 << n\n    mat = np.zeros((size, size), dtype=np.complex128)\n\n    # right rotation:  y_k = x_{(k-1) mod n}\n    for i in range(size):\n        j = 0\n        for k in range(n):\n            bit = (i >> ((k - 1) % n)) & 1\n            j |= bit << k\n        mat[j, i] = 1.0\n\n    qc.append(UnitaryGate(mat), range(n))\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # left rotation of Qiskit wires = right rotation of the mathematical string\n    # q_k -> q_{k+1}  (mod n)\n    # bubble qubit 0 to the end with adjacent swaps\n    for i in range(n - 1):\n        # swap i and i+1 with 3 CNOTs\n        qc.cx(i, i + 1)\n        qc.cx(i + 1, i)\n        qc.cx(i, i + 1)\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # right cyclic shift  x0..x_{n-1} -> x_{n-1} x0..x_{n-2}\n    # bubble the last qubit to the front with adjacent swaps\n    # a swap of wires a,b can be done with three CNOTs\n    for i in range(n - 1, 0, -1):\n        a = i - 1\n        b = i\n        qc.cx(a, b)\n        qc.cx(b, a)\n        qc.cx(a, b)\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  }
+]

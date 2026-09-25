@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # X^{\\otimes n} ( -1 on |11..1> ) X^{\\otimes n}\n    # = diag(-1, +1, +1, ...) which is the desired operator up to global phase\n    qc.x(range(n))\n    qc.h(n - 1)\n    qc.mcx(list(range(n - 1)), n - 1)\n    qc.h(n - 1)\n    qc.x(range(n))\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import DiagonalGate\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # diag[0] = 1, diag[i>0] = -1  ->  2|0...0><0...0| - I\n    dim = 1 << n\n    diag = [1] + [-1] * (dim - 1)\n    qc.append(DiagonalGate(diag), range(n))\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # map |0...0> <-> |1...1>\n    qc.x(range(n))\n    # multi-controlled Z = phase -1 on |1...1>\n    qc.mcz(range(n))\n    # undo the basis change\n    qc.x(range(n))\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # |0...0> -> |1...1>\n    qc.x(range(n))\n    # multi-controlled phase pi = -1 on |1...1>\n    # mcp(theta, controls, target)\n    qc.mcp(math.pi, list(range(n - 1)), n - 1)\n    # undo basis change\n    qc.x(range(n))\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import MCPhaseGate\nimport numpy as np\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # flip the computational basis so that |0\u20260> becomes |1\u20261>\n    qc.x(range(n))\n    # multi-controlled phase \u03c0 on the last qubit\n    # after the basis change this is a phase flip on |1\u20261>\n    gate = MCPhaseGate(np.pi, num_ctrl_qubits=n - 1)\n    qc.append(gate, range(n))\n    # undo the basis change\n    qc.x(range(n))\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  }
+]

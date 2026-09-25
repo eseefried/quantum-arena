@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve() -> QuantumCircuit:\n    x, y = QuantumRegister(1), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    # |x>|y> -> |x>|y xor x>  is a CNOT with control x and target y\n    qc.cx(x[0], y[0])\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve() -> QuantumCircuit:\n    x, y = QuantumRegister(1), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    # |x>|y> -> |x>|y xor x>  in the mathematical ordering\n    # corresponds to a CNOT with control on the mathematically first\n    # register and target on the mathematically second register.\n    # With the Qiskit little-endian ordering this is control = y[0], target = x[0].\n    qc.cx(y[0], x[0])\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve() -> QuantumCircuit:\n    x, y = QuantumRegister(1), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    # CNOT_{x->y} = (I \u2297 H) CZ_{x,y} (I \u2297 H)\n    qc.h(y[0])\n    qc.cz(x[0], y[0])\n    qc.h(y[0])\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve() -> QuantumCircuit:\n    x, y = QuantumRegister(1), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    # CNOT x -> y implemented via a swap-conjugated CNOT.\n    # SWAP \u2218 CNOT_{y\u2192x} \u2218 SWAP  =  CNOT_{x\u2192y}\n    qc.swap(x[0], y[0])\n    qc.cx(y[0], x[0])\n    qc.swap(x[0], y[0])\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit, QuantumRegister\n\ndef solve() -> QuantumCircuit:\n    x, y = QuantumRegister(1), QuantumRegister(1)\n    qc = QuantumCircuit(x, y)\n    # |x>|y> -> |x>|y xor x> is a CNOT with x as control and y as target\n    qc.cx(x[0], y[0])\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  }
+]

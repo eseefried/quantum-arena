@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # U\u2020 = \u2297 Ry(-2 Ti)\n    for i in range(n):\n        qc.ry(-2.0 * T[i], i)\n\n    # reflection about |0...0> : 2|0><0| - I  up to global phase\n    if n == 1:\n        qc.z(0)\n    else:\n        qc.x(range(n))\n        qc.h(n - 1)\n        qc.mcx(list(range(n - 1)), n - 1)\n        qc.h(n - 1)\n        qc.x(range(n))\n\n    # U = \u2297 Ry(2 Ti)\n    for i in range(n):\n        qc.ry(2.0 * T[i], i)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # U = \u2297 Ry(2 Ti) ,  U|0> = |psi>\n    for i in range(n):\n        qc.ry(2.0 * T[i], i)\n\n    # reflection about |0...0> :  X... H MCX H X\n    # 2|0><0|-I  up to a global phase\n    qc.x(range(n))\n    qc.h(n - 1)\n    # no-ancilla decomposition is deterministic for n<=10\n    qc.mcx(list(range(n - 1)), n - 1, mode='noancilla')\n    qc.h(n - 1)\n    qc.x(range(n))\n\n    # U\u2020\n    for i in range(n):\n        qc.ry(-2.0 * T[i], i)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport numpy as np\nfrom qiskit.circuit.library import UnitaryGate\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # U = \u2297 Ry(2 Ti)   with Ry(\u03b8)|0> = cos(\u03b8/2)|0> + sin(\u03b8/2)|1>\n    U = np.eye(1, dtype=complex)\n    for ti in T:\n        theta = 2.0 * ti\n        c = np.cos(theta / 2.0)\n        s = np.sin(theta / 2.0)\n        ry = np.array([[c, -s],\n                       [s,  c]], dtype=complex)\n        U = np.kron(U, ry)\n\n    dim = 1 << n\n    R0 = np.diag([1.0] + [-1.0] * (dim - 1)).astype(complex)\n\n    # A = U (2|0><0| - I) U\u2020\n    A = U @ R0 @ U.conj().T\n\n    qc.append(UnitaryGate(A), range(n))\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import UnitaryGate\nimport numpy as np\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    dim = 1 << n\n    psi = np.zeros(dim, dtype=complex)\n\n    # little-endian amplitude of the product state\n    for idx in range(dim):\n        amp = 1.0\n        for i in range(n):\n            if (idx >> i) & 1:\n                amp *= np.sin(T[i])\n            else:\n                amp *= np.cos(T[i])\n        psi[idx] = amp\n\n    # numerical normalisation, the analytic norm is 1\n    norm = np.linalg.norm(psi)\n    if norm > 0:\n        psi /= norm\n\n    A = 2.0 * np.outer(psi, np.conj(psi)) - np.eye(dim, dtype=complex)\n    qc.append(UnitaryGate(A), range(n))\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import MCZGate\n\ndef solve(n: int, T: list[float]) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    # U\u2020 = \u2297 Ry(-2 Ti)   |0> -> |psi>\n    for i in range(n):\n        qc.ry(-2.0 * T[i], i)\n\n    # 2|0><0| - I  on the computational basis\n    if n == 1:\n        qc.z(0)\n    else:\n        qc.x(range(n))\n        qc.append(MCZGate(n - 1), range(n))\n        qc.x(range(n))\n\n    # U = \u2297 Ry(2 Ti)\n    for i in range(n):\n        qc.ry(2.0 * T[i], i)\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  }
+]

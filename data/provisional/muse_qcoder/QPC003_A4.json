@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    dim = 1 << n\n    state = [0.0] * dim\n    amp = 1.0 / math.sqrt(n)\n    # |1...0> with the 1 on qubit i  -> index 1<<i  (little endian)\n    for i in range(n):\n        state[1 << i] = amp\n    qc.initialize(state, qc.qubits)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # prepare |W_n> = 1/sqrt(n) sum_i |0...010...0>\n    for i in range(n):\n        theta = 2.0 * math.asin(1.0 / math.sqrt(n - i))\n        if i == 0:\n            qc.ry(theta, i)\n        else:\n            controls = list(range(i))\n            for c in controls:\n                qc.x(c)\n            # multi-controlled Ry with controls = 1  <=>  zero control after X\n            qc.mcry(theta, controls, i)\n            for c in controls:\n                qc.x(c)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import WState\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # WState prepares |W_n> = 1/sqrt(n) sum_i |0...010...0>\n    # from the |0>^n state, which is a fundamentally different\n    # construction from the manual Ry / initialize approaches.\n    qc.compose(WState(n), inplace=True)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import DickeState\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Dicke(n, k=1) == W_n = 1/sqrt(n) sum_i |0...010...0>\n    # The state is symmetric under permutation of the qubits, so it\n    # coincides with\n    # 1/sqrt(n)(|10..0> + |010..0> + ... + |0..01>).\n    qc.append(DickeState(n, 1), qc.qubits)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import StatePreparation\nimport math\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n\n    amp = 1.0 / math.sqrt(n)\n    dim = 1 << n\n    # little endian: basis |1 0 ... 0> is index 1<<i\n    state = [0.0] * dim\n    for i in range(n):\n        state[1 << i] = amp\n\n    prep = StatePreparation(state)\n    qc.compose(prep, inplace=True)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  }
+]

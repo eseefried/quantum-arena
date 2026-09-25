@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(3)\n    amp = 1 / np.sqrt(3)\n    # |001> = 1, |010> = 2, |100> = 4  in little-endian ordering\n    vec = np.zeros(8, dtype=complex)\n    vec[1] = amp   # |001>\n    vec[2] = amp   # |010>\n    vec[4] = amp   # |100>\n    qc.initialize(vec, [0, 1, 2])\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(3)\n\n    # W state preparation for qubits 2,1,0\n    # |100> + |010> + |001>\n    theta1 = 2 * np.arcsin(1 / np.sqrt(3))      # sin(theta1/2)=1/sqrt3\n    theta2 = np.pi / 2                          # sin(theta2/2)=1/sqrt2\n\n    qc.ry(theta1, 2)\n\n    # Ry on qubit 1 controlled by qubit 2 == 0\n    qc.x(2)\n    qc.cry(theta2, 2, 1)\n    qc.x(2)\n\n    # X on qubit 0 controlled by qubit 2 == 0 and qubit 1 == 0\n    # Ry(pi) = X up to phase\n    qc.x(2)\n    qc.x(1)\n    qc.ccx(2, 1, 0)\n    qc.x(1)\n    qc.x(2)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(3)\n\n    # W state  |001> + |010> + |100>  / sqrt(3)\n    # first split on qubit 0\n    theta1 = 2 * math.asin(1 / math.sqrt(3))   # sin(theta1/2)=1/sqrt3\n    theta2 = math.pi / 2                       # sin(theta2/2)=1/sqrt2\n\n    qc.ry(theta1, 0)\n\n    # controlled Ry on qubit 1 with control qubit 0 == 0\n    # CRY decomposed as Ry(theta/2) - CX - Ry(-theta/2) - CX\n    qc.x(0)\n    qc.ry(theta2 / 2, 1)\n    qc.cx(0, 1)\n    qc.ry(-theta2 / 2, 1)\n    qc.cx(0, 1)\n    qc.x(0)\n\n    # move the remaining |000> amplitude to |100>\n    # Toffoli with controls 0==0 and 1==0 on target 2\n    qc.x(0)\n    qc.x(1)\n    qc.ccx(0, 1, 2)\n    qc.x(1)\n    qc.x(0)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import WState\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(3)\n    # The 3-qubit W state is 1/sqrt(3)(|001> + |010> + |100>)\n    # which is exactly 1/sqrt(3)(|100> + |010> + |001>) up to ordering\n    qc.compose(WState(3), inplace=True)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(3)\n\n    # W state on qubits 0,1,2\n    # sin(theta1/2)=1/sqrt(3)  -> first rotation on qubit 0\n    theta1 = 2 * np.arcsin(1 / np.sqrt(3))\n    # sin(theta2/2)=1/sqrt(2)  -> conditional rotation on qubit 1\n    theta2 = np.pi / 2\n\n    qc.ry(theta1, 0)\n\n    # CRY on qubit 1 controlled by qubit 0 == 0\n    qc.x(0)\n    qc.cry(theta2, 0, 1)\n    qc.x(0)\n\n    # flip qubit 2 iff qubit 0 == 0 and qubit 1 == 0\n    qc.x(0)\n    qc.x(1)\n    qc.ccx(0, 1, 2)\n    qc.x(1)\n    qc.x(0)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  }
+]

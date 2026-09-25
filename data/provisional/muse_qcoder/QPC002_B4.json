@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # QFT with little-endian ordering, most significant first\n    for i in range(n - 1, -1, -1):\n        qc.h(i)\n        for j in range(i):\n            # R_{i-j+1} = diag(1,1,1, exp(2\u03c0i/2^{i-j+1}))\n            angle = 2 * math.pi / (2 ** (i - j + 1))\n            qc.cp(angle, j, i)          # control j, target i\n    # reverse order\n    for i in range(n // 2):\n        qc.swap(i, n - 1 - i)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    dim = 1 << n\n    j = np.arange(dim, dtype=np.int64)\n    k = np.arange(dim, dtype=np.int64)\n    # U[k, j] = exp(2\u03c0i j k / 2^n) / sqrt(2^n)\n    phase = np.exp(2j * np.pi * np.outer(j, k) / dim) / np.sqrt(dim)\n    U = phase.T  # transpose to get the correct index ordering\n    qc.unitary(U, range(n))\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # QFT for little-endian qubits, LSB = qubit 0\n    for i in range(n):\n        qc.h(i)\n        for j in range(i + 1, n):\n            # R_{j-i+1} = diag(1,1,1,exp(2\u03c0i/2^{j-i+1}))\n            angle = math.pi / (2 ** (j - i))   # = 2\u03c0 / 2^{j-i+1}\n            qc.cp(angle, j, i)                 # control j, target i\n    # final reversal\n    for i in range(n // 2):\n        qc.swap(i, n - 1 - i)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # standard QFT on qubits n-1 .. 0, most significant first\n    for i in range(n - 1, -1, -1):\n        qc.h(i)\n        for j in range(i):\n            # R_{i-j+1} = diag(1,1,1,exp(2\u03c0i/2^{i-j+1}))\n            angle = 2 * math.pi / (2 ** (i - j + 1))\n            qc.cp(angle, j, i)\n    # logical bit reversal instead of physical swaps\n    qc = qc.reverse_bits()\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import QFT\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # QFT from the library is a different implementation from the manual\n    # H / CP construction used in the attempts.  do_swaps=True gives the\n    # mathematical QFT defined in the statement.\n    qft = QFT(n, do_swaps=True, approximation_degree=0)\n    qc.compose(qft, inplace=True)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  }
+]

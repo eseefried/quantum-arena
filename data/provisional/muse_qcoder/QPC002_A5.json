@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Ry(-pi/2) |0> = (|0> - |1>)/sqrt2\n    qc.ry(-np.pi / 2, 0)\n\n    # choose k so that a 2-level tree fits into 5 CNOT layers\n    if n <= 6:\n        k = 1\n    elif n <= 10:\n        k = 2\n    elif n <= 13:\n        k = 3\n    else:\n        k = 4\n\n    # slots 1 .. 5 for CNOTs\n    slots = [[] for _ in range(6)]          # 1-indexed\n    next_q = 1\n    level1 = []\n    for i in range(1, k + 1):\n        node = next_q\n        next_q += 1\n        level1.append(node)\n        slots[i].append((0, node))        # root -> child in slot i\n\n    remaining = n - 1 - k\n    for idx, node in enumerate(level1):\n        i = idx + 1\n        capacity = 5 - i\n        if capacity < 0:\n            capacity = 0\n        m = min(capacity, remaining)\n        for j in range(1, m + 1):\n            slot = i + j\n            child = next_q\n            next_q += 1\n            slots[slot].append((node, child))\n        remaining -= m\n        if remaining <= 0:\n            break\n\n    for s in range(1, 6):\n        for ctrl, tgt in slots[s]:\n            qc.cx(ctrl, tgt)\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # (|0> - |1>)/sqrt2 on qubit 0\n    qc.ry(-math.pi / 2, 0)\n\n    next_q = 1\n    active = [0]                     # qubits that can still spawn children\n    while next_q < n:\n        current = active.copy()      # one CNOT per active qubit per layer\n        for node in current:\n            if next_q >= n:\n                break\n            child = next_q\n            next_q += 1\n            qc.cx(node, child)\n            active.append(child)\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\nfrom collections import deque\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # (|0> - |1>)/sqrt2 on qubit 0\n    qc.ry(-math.pi / 2, 0)\n\n    q = deque([0])\n    nxt = 1\n    while nxt < n:\n        node = q.popleft()\n        qc.cx(node, nxt)\n        q.append(node)      # node stays available\n        q.append(nxt)       # new node becomes available\n        nxt += 1\n\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # (|0> - |1>)/sqrt2 on qubit 0\n    qc.ry(-math.pi / 2, 0)\n\n    informed = [0]\n    next_q = 1\n    while next_q < n:\n        cur_len = len(informed)          # nodes that can broadcast this step\n        for i in range(cur_len):\n            if next_q >= n:\n                break\n            node = informed[i]\n            child = next_q\n            next_q += 1\n            qc.cx(node, child)           # copy the root value\n            informed.append(child)\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # Prepare (|0...0> - |1...1>) / sqrt(2) directly\n    dim = 1 << n\n    state = np.zeros(dim, dtype=complex)\n    state[0] = 1.0 / np.sqrt(2.0)\n    state[-1] = -1.0 / np.sqrt(2.0)\n    qc.initialize(state, range(n))\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  }
+]

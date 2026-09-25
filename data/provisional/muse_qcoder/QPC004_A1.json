@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # Write your code here:\n    qc.x(0)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # Ry(pi) |0> = |1> up to a global phase\n    qc.ry(math.pi, 0)\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # Y |0> = i |1>  -> |1> up to a global phase\n    qc.y(0)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # H Z H = X  up to global phase\n    # H|0> = |+>, Z|+> = |->, H|-> = |1>\n    qc.h(0)\n    qc.z(0)\n    qc.h(0)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # Rx(pi) |0> = -i |1>  -> |1> up to a global phase\n    qc.rx(math.pi, 0)\n\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  }
+]

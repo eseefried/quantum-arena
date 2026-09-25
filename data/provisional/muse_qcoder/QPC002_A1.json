@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # X Z X |0> = X Z |1> = X (-|1>) = -|0>\n    qc.x(0)\n    qc.z(0)\n    qc.x(0)\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # rz(2\u03c0) = -I, so |0> -> -|0>\n    qc.rz(2 * math.pi, 0)\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\nfrom qiskit.circuit.library import GlobalPhaseGate\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # A global phase of pi implements -I on the whole circuit\n    # |0> -> e^{i pi} |0> = -|0>\n    qc.append(GlobalPhaseGate(math.pi), [])\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nimport math\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # A global phase of pi makes |0> -> e^{i pi}|0> = -|0>\n    qc.global_phase = math.pi\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import UnitaryGate\n\ndef solve() -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # diag(-1, 1) maps |0> -> -|0> and leaves |1> unchanged\n    U = [[-1, 0],\n         [ 0, 1]]\n    qc.append(UnitaryGate(U), [0])\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  }
+]

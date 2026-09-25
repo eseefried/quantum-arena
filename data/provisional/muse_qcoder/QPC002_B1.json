@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve(theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # global phase e^{i theta} on |0>\n    qc.global_phase = theta\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import UnitaryGate\nimport numpy as np\n\ndef solve(theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # e^{i theta} |0> = e^{i theta} I |0>\n    # The unitary e^{i theta} I has first column [e^{i theta},0]^T\n    phase = np.exp(1j * theta)\n    mat = np.array([[phase, 0.0],\n                    [0.0, phase]], dtype=complex)\n    qc.append(UnitaryGate(mat), [0])\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve(theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # X P(theta) X = diag(e^{i theta}, 1)\n    # Acting on |0> this gives e^{i theta}|0>\n    qc.x(0)\n    qc.p(theta, 0)\n    qc.x(0)\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import GlobalPhaseGate\n\ndef solve(theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # A true global phase can be applied with GlobalPhaseGate.\n    # It leaves |0> unchanged up to the overall factor e^{i theta}.\n    qc.append(GlobalPhaseGate(theta), [])\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve(theta: float) -> QuantumCircuit:\n    qc = QuantumCircuit(1)\n    # RZ(phi)|0> = e^{-i phi/2}|0>\n    # choose phi = -2*theta  =>  e^{-i phi/2}=e^{i theta}\n    qc.rz(-2.0 * theta, 0)\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "anthropic"
+  }
+]

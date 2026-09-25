@@ -1,0 +1,32 @@
+[
+  {
+    "code": "from qiskit import QuantumCircuit\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # H^{\u2297n} (2|0><0| - I) H^{\u2297n}\n    qc.h(range(n))\n    qc.x(range(n))\n    # multi-controlled Z on |11...1>\n    # H target - MCX - H target = MCZ\n    qc.h(n - 1)\n    qc.mcx(list(range(n - 1)), n - 1)\n    qc.h(n - 1)\n    qc.x(range(n))\n    qc.h(range(n))\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import UnitaryGate\nimport numpy as np\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    dim = 1 << n\n    val = 2.0 / dim\n    # A = 2|psi><psi| - I = val * J - I\n    A = np.full((dim, dim), val, dtype=np.complex128)\n    np.fill_diagonal(A, val - 1.0)\n    qc.append(UnitaryGate(A), range(n))\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import GroverOperator\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # GroverOperator implements 2|psi><psi| - I with |psi> = H^{\u2297n}|0>\n    # up to an irrelevant global phase\n    qc.compose(GroverOperator(n), inplace=True)\n    return qc",
+    "passed": false,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import MCPhaseGate\nimport math\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # H^{\u2297n}\n    qc.h(range(n))\n    # X^{\u2297n}  -> |0> <-> |11..1>\n    qc.x(range(n))\n    # multi-controlled phase pi on |11..1>\n    # MCPhaseGate(num_ctrl_qubits, phase) acts on num_ctrl_qubits+1 wires\n    qc.append(MCPhaseGate(math.pi, n - 1), range(n))\n    # X^{\u2297n}\n    qc.x(range(n))\n    # H^{\u2297n}\n    qc.h(range(n))\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  },
+  {
+    "code": "from qiskit import QuantumCircuit\nfrom qiskit.circuit.library import DiagonalGate\n\n\ndef solve(n: int) -> QuantumCircuit:\n    qc = QuantumCircuit(n)\n    # A = H^{\u2297n} (2|0><0| - I) H^{\u2297n}\n    qc.h(range(n))\n    # 2|0><0| - I = diag(1, -1, -1, ..., -1)\n    diag = [1] + [-1] * ((1 << n) - 1)\n    qc.append(DiagonalGate(diag), range(n))\n    qc.h(range(n))\n    return qc",
+    "passed": true,
+    "judge_model": "claude-sonnet-4-6",
+    "judge_provider": "perplexity"
+  }
+]
