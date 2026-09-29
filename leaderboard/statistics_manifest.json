@@ -362,6 +362,12 @@
     },
     {
       "model": "Muse-Glimmer-30B",
+      "dataset": "QCoder",
+      "path": "data/results/meta-models/Muse-Glimmer-30B/qcoder_claude_judge/results_20260929_122711.json",
+      "sha256": "2fd70a2f6fe07f34094d7847388edc87e2ca41ae9431ef5057176e2ec255a208"
+    },
+    {
+      "model": "Muse-Glimmer-30B",
       "dataset": "QiskitHumanEval",
       "path": "data/results/meta-models/Muse-Glimmer-30B/qiskit_humaneval_standard/results_20260921_091424.json",
       "sha256": "9fe6f4de21789c44582836064f4ce7c41d948486950a3e9c7dec685834ba3838"

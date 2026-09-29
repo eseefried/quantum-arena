@@ -70,8 +70,6 @@ EXCLUDED_MODELS = {"LLaMA-4-Scout-17B"}
 # the QCoder judge is itself a Claude model, so scoring another Claude model
 # on QCoder is a same-family judge conflict of interest and will never run.
 QCODER_EXEMPT_MODELS = {"Claude Opus 4.6"}
-# Owner-authorized partial display while Muse QCoder is still running.
-QCODER_PENDING_MODELS = {"Muse-Glimmer-30B"}
 
 TS_RE = re.compile(r"(\d{8}_\d{6})")
 
@@ -213,7 +211,7 @@ def main(require_statistics: bool = True) -> None:
     for model in sorted({model for model, _ in best_files}):
         missing = []
         for dataset, count in expected_tasks.items():
-            if dataset == "QCoder" and model in (QCODER_EXEMPT_MODELS | QCODER_PENDING_MODELS):
+            if dataset == "QCoder" and model in QCODER_EXEMPT_MODELS:
                 continue
             run = best_files.get((model, dataset))
             if run is None:

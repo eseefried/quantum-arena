@@ -1,5 +1,5 @@
 {
-  "details_sha256": "3c229ae0c75e3d827a88a052a3358d406ccf56b8191fc0923f9f2346794aaed8",
+  "details_sha256": "e8ebdbd760b65bac8ccdda32f651c00e77297395c9600cb4440fca4dc9db5ecd",
   "manifest": {
     "replicates": 10000,
     "seed": 20260922,
@@ -364,6 +364,12 @@
       },
       {
         "model": "Muse-Glimmer-30B",
+        "dataset": "QCoder",
+        "path": "data/results/meta-models/Muse-Glimmer-30B/qcoder_claude_judge/results_20260929_122711.json",
+        "sha256": "2fd70a2f6fe07f34094d7847388edc87e2ca41ae9431ef5057176e2ec255a208"
+      },
+      {
+        "model": "Muse-Glimmer-30B",
         "dataset": "QiskitHumanEval",
         "path": "data/results/meta-models/Muse-Glimmer-30B/qiskit_humaneval_standard/results_20260921_091424.json",
         "sha256": "9fe6f4de21789c44582836064f4ce7c41d948486950a3e9c7dec685834ba3838"
@@ -449,6 +455,30 @@
     ]
   },
   "scores": [
+    {
+      "model": "Muse-Glimmer-30B",
+      "dataset": "QCoder",
+      "last_run": "2026-09-29",
+      "n_tasks": 67,
+      "pass_at_1": 0.45970149253731335,
+      "pass_at_1_ci_lo": 0.364179104477612,
+      "pass_at_1_ci_hi": 0.5522388059701494,
+      "pass_at_3": 0.6402985074626866,
+      "pass_at_3_ci_lo": 0.5343283582089552,
+      "pass_at_3_ci_hi": 0.7402985074626866,
+      "pass_at_5": 0.7164179104477612,
+      "pass_at_5_ci_lo": 0.6119402985074627,
+      "pass_at_5_ci_hi": 0.8208955223880597,
+      "pass_at_1_n_tasks": 67,
+      "pass_at_1_std": 0.39237416492522653,
+      "pass_at_1_constant_scores": false,
+      "pass_at_3_n_tasks": 67,
+      "pass_at_3_std": 0.4292557694473066,
+      "pass_at_3_constant_scores": false,
+      "pass_at_5_n_tasks": 67,
+      "pass_at_5_std": 0.4541382164873988,
+      "pass_at_5_constant_scores": false
+    },
     {
       "model": "Claude Fable 5.1",
       "dataset": "QCoder",
@@ -812,7 +842,7 @@
     {
       "model": "Muse-Glimmer-30B",
       "dataset": "QiskitHumanEval",
-      "last_run": "2026-09-21",
+      "last_run": "2026-09-29",
       "n_tasks": 151,
       "pass_at_1": 0.9509933774834438,
       "pass_at_1_ci_lo": 0.9245033112582781,
@@ -1268,7 +1298,7 @@
     {
       "model": "Muse-Glimmer-30B",
       "dataset": "QiskitHumanEvalHard",
-      "last_run": "2026-09-21",
+      "last_run": "2026-09-29",
       "n_tasks": 151,
       "pass_at_1": 0.2834437086092715,
       "pass_at_1_ci_lo": 0.22119205298013248,
@@ -1580,7 +1610,7 @@
     {
       "model": "Muse-Glimmer-30B",
       "dataset": "QuanBench117",
-      "last_run": "2026-09-21",
+      "last_run": "2026-09-29",
       "n_tasks": 117,
       "pass_at_1": 0.8188034188034186,
       "pass_at_1_ci_lo": 0.7504273504273505,
@@ -1964,7 +1994,7 @@
     {
       "model": "Muse-Glimmer-30B",
       "dataset": "QuanBench44",
-      "last_run": "2026-09-21",
+      "last_run": "2026-09-29",
       "n_tasks": 44,
       "pass_at_1": 0.45909090909090905,
       "pass_at_1_ci_lo": 0.3318181818181818,
@@ -11106,6 +11136,30 @@
       "pass_at_5_constant_scores": false,
       "pass_at_5_ci_lo": 0.0,
       "pass_at_5_ci_hi": 0.3
+    },
+    {
+      "model": "Muse-Glimmer-30B",
+      "dataset": "QCoder",
+      "category": "Uncategorized",
+      "n_tasks": 67,
+      "pass_at_1": 0.45970149253731335,
+      "pass_at_3": 0.6402985074626866,
+      "pass_at_5": 0.7164179104477612,
+      "pass_at_1_n_tasks": 67,
+      "pass_at_1_std": 0.39237416492522653,
+      "pass_at_1_constant_scores": false,
+      "pass_at_1_ci_lo": 0.36716417910447763,
+      "pass_at_1_ci_hi": 0.5552238805970149,
+      "pass_at_3_n_tasks": 67,
+      "pass_at_3_std": 0.4292557694473066,
+      "pass_at_3_constant_scores": false,
+      "pass_at_3_ci_lo": 0.5373134328358209,
+      "pass_at_3_ci_hi": 0.7402985074626866,
+      "pass_at_5_n_tasks": 67,
+      "pass_at_5_std": 0.4541382164873988,
+      "pass_at_5_constant_scores": false,
+      "pass_at_5_ci_lo": 0.6119402985074627,
+      "pass_at_5_ci_hi": 0.8208955223880597
     },
     {
       "model": "Muse-Glimmer-30B",
