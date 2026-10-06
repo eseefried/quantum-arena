@@ -16,10 +16,12 @@ scripts/
 leaderboard/
   leaderboard_summary.json   one row per (model, dataset): pass@1/3/5, CI, task count, last run date
   leaderboard_details.json   one row per (model, dataset, task): for the category drill-down / problem view
-  index.html / leaderboard.js   the Arena page: leaderboard + per-problem heatmap (reads the two JSON files)
+  index.html                project home page
+  about.html                team biographies and profile placeholders
+  arena.html / leaderboard.js   the Arena page: leaderboard + per-problem heatmap (reads the two JSON files)
   models.html / models.js    the Models page: provider/openness/parameter-count reference table
   styles.css                 shared styling for both pages
-  assets/ornl-logo.png       logo shown in the shared top nav bar
+  assets/QSCLogo_Color_H_SM.jpg       logo shown in the shared top nav bar
 .github/workflows/leaderboard-pages.yml   runs the export script and deploys leaderboard/ to Pages
 ```
 
@@ -85,7 +87,7 @@ Other incomplete models retain their source files but are hidden by the filter.
 
 Run `python3 scripts/export_quantumbencheval.py`, then serve `leaderboard/` with
 `python3 -m http.server 8000 --bind 127.0.0.1 --directory leaderboard` and open
-http://localhost:8000/index.html?collection=qbe. Generate the original Arena data using
+http://localhost:8000/arena.html?collection=qbe. Generate the original Arena data using
 `python3 scripts/export_leaderboard.py` as before. These commands do not publish.
 
 The six-topic collection in Arena’s shared Leaderboard / Problem views bypasses Arena's completeness filter, displays

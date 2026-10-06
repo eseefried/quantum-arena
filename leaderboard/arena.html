@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quantum Arena</title>
+  <link rel="icon" type="image/jpeg" href="./assets/qsc-logo.jpeg" />
+  <link rel="stylesheet" href="./styles.css?v=qsc-home-20261006" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="./index.html">
+        <span class="brand-logo-wrap"><img class="brand-logo" src="./assets/QSCLogo_Color_H_SM.jpg" alt="Quantum Science Center" /></span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a class="site-nav-link" href="./index.html">Home</a>
+        <a class="site-nav-link active" aria-current="page" href="./arena.html">Arena</a>
+        <a class="site-nav-link" href="./models.html">Models</a>
+        <a class="site-nav-link" href="./datasets.html">Datasets</a>
+        <a class="site-nav-link" href="./about.html">About Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <header class="page-header">
+    <h1>Quantum Arena</h1>
+    <p class="subtitle">Benchmarking LLMs and quantum-specific coding assistants on Qiskit code generation</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <div class="control-group" role="tablist" aria-label="View">
+        <span class="control-label">View</span>
+        <div id="view-tabs" class="segmented"></div>
+      </div>
+      <div class="control-group" role="tablist" aria-label="Dataset">
+        <span class="control-label">Dataset</span>
+        <div id="dataset-tabs" class="segmented"></div>
+      </div>
+      <div id="collection-control" class="control-group" hidden><span class="control-label">Collection</span><div id="collection-tabs" class="segmented" aria-label="QuantumBenchEval topics"></div></div>
+      <div class="control-group">
+        <span class="control-label">Category</span>
+        <div class="dropdown" id="category-dropdown">
+          <button type="button" class="dropdown-toggle" id="category-toggle" aria-haspopup="listbox" aria-expanded="false">
+            <span id="category-toggle-label">All</span>
+            <span class="dropdown-caret" aria-hidden="true">&#9662;</span>
+          </button>
+          <ul class="dropdown-menu" id="category-menu" role="listbox" aria-label="Category" hidden></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="qbe-notes" hidden></section>
+    <section class="board-wrap">
+      <div id="status" class="status">Loading results…</div>
+      <table id="board" class="board" hidden>
+        <thead>
+          <tr id="board-head">
+            <th class="col-rank">#</th>
+            <th class="col-model">Model</th>
+            <th class="col-metric sortable" data-metric="pass_at_1">Pass@1</th>
+            <th class="col-metric sortable" data-metric="pass_at_3">Pass@3</th>
+            <th class="col-metric sortable" data-metric="pass_at_5">Pass@5</th>
+            <th class="col-n">Tasks</th>
+          </tr>
+        </thead>
+        <tbody id="board-body"></tbody>
+      </table>
+      <div id="problem-wrap" class="table-scroll" hidden>
+        <table id="problem-board" class="board problem-board">
+          <thead>
+            <tr id="problem-head"></tr>
+          </thead>
+          <tbody id="problem-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="problem-detail" class="problem-detail" aria-label="Problem inspection" hidden></section>
+
+    <p id="leaderboard-footnote" class="footnote">
+      Dataset/category intervals are pointwise 95% task-bootstrap CIs (10,000 resamples). Conditional on saved evaluations. Singleton intervals are unavailable; constant scores may yield zero-width intervals. Overall intervals are omitted because suites overlap. <br>
+      Muse-Glimmer-30B currently covers four suites; QCoder is pending. Its Overall score uses only those four suites. <br>
+      Select a Pass@k heading to sort the rankings, or a model row to explore results by category.
+      Shaded ranges show 95% confidence intervals where available.
+    </p>
+    <p id="problem-footnote" class="footnote" hidden>
+      Select a problem cell to explore its prompt and model attempts. Select a Pass@k heading to sort
+      the models and update cell colors. Hover over a cell to see its score.
+    </p>
+  </main>
+
+  <script src="./quantumbencheval.js?v=qbe-grid-3"></script>
+  <script src="./leaderboard.js?v=muse-complete-20260929"></script>
+
+  <!-- Cloudflare Web Analytics -->
+  <script
+    type="module"
+    src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "2cf05fab28254a7ca02fe173ff9916fa"}'>
+  </script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+</html>
