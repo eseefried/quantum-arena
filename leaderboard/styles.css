@@ -614,7 +614,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .team-card { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface); }
 .team-photo { aspect-ratio: 4 / 3; background: var(--bar-track); display: grid; place-items: center; border-bottom: 1px solid var(--border); color: var(--text-muted); font-size: .8rem; }
 .team-copy { padding: 22px; }
-.team-copy h2 { font-size: 1.1rem; margin: 0 0 14px; }
+.team-copy h3 { font-size: 1.1rem; margin: 0 0 14px; }
 .team-copy p, .profile-links { font-size: .84rem; line-height: 1.7; color: var(--text-muted); }
 .profile-links { margin: 20px 0 0; }
 .profile-links div { padding: 8px 0; border-top: 1px solid var(--border); }
@@ -626,3 +626,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
   .home-callout { padding: 22px; }
   .team-photo { aspect-ratio: 16 / 9; }
 }
+
+.team-group > h2 { margin: 0 0 22px; font-size: 1.4rem; letter-spacing: -.02em; }
+.team-divider { border: 0; border-top: 1px solid var(--border); margin: 40px 0; }
+.team-copy .team-role { color: var(--accent); font-weight: 600; margin: -4px 0 16px; }
