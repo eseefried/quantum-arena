@@ -1,28 +1,33 @@
+/* QSC palette: Force Blue #131e29, Wave Gray #cfd2d3.
+   Quark Red uses the guide's RGB 170,30,46 (#aa1e2e);
+   its printed red HEX value is inconsistent with that RGB and swatch. */
 :root {
-  --bg: #f7f7f9;
+  --bg: #f5f6f6;
   --surface: #ffffff;
-  --border: #e2e2e6;
-  --text: #1a1a1e;
-  --text-muted: #6b6b72;
-  --accent: #31875a;
-  --accent-soft: #e9f6ef;
-  --bar: #60a983;
-  --bar-track: #eaf5ef;
-  --ci: #c3dfd0;
+  --border: #cfd2d3;
+  --text: #131e29;
+  --text-muted: #58636c;
+  --accent: #aa1e2e;
+  --accent-soft: #f8ecee;
+  --bar: #131e29;
+  --bar-track: #edf0f1;
+  --ci: #aeb8bf;
+  --selection: #131e29;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #16161a;
-    --surface: #1f1f24;
-    --border: #303038;
-    --text: #f0f0f2;
-    --text-muted: #9a9aa2;
-    --accent: #399364;
-    --accent-soft: #284837;
-    --bar: #6cac8b;
-    --bar-track: #22392d;
-    --ci: #37624c;
+    --bg: #101820;
+    --surface: #192632;
+    --border: #3e4b56;
+    --text: #f2f4f5;
+    --text-muted: #b2bcc3;
+    --accent: #f18c99;
+    --accent-soft: #38262f;
+    --bar: #cfd2d3;
+    --bar-track: #2a3946;
+    --ci: #647684;
+    --selection: #cfd2d3;
   }
 }
 
@@ -68,7 +73,8 @@ main {
   align-items: center;
   background: #ffffff;
   border-radius: 8px;
-  padding: 8px 20px;
+  padding: 10px 12px;
+  max-width: 100%;
 }
 
 .brand-logo-wrap--square {
@@ -77,8 +83,9 @@ main {
 
 .brand-logo {
   display: block;
-  height: 56px;
-  width: auto;
+  width: 260px;
+  max-width: 100%;
+  height: auto;
 }
 
 .brand-logo--square {
@@ -107,7 +114,7 @@ main {
 
 .site-nav-link.active {
   color: white;
-  background: var(--accent);
+  background: #aa1e2e;
 }
 
 .page-header {
@@ -175,7 +182,7 @@ main {
 }
 
 .segmented button.active {
-  background: var(--accent);
+  background: #aa1e2e;
   color: white;
 }
 
@@ -250,7 +257,7 @@ main {
 }
 
 .dropdown-option.selected {
-  background: var(--accent);
+  background: #aa1e2e;
   color: white;
   font-weight: 600;
 }
@@ -508,9 +515,9 @@ tr.detail-row td {
 /* Problem inspection stays outside the horizontally scrolling matrix. */
 .problem-board td.cell-task { padding: 0; }
 .problem-cell { display: block; width: 100%; min-width: 22px; height: 29px; border: 0; cursor: pointer; }
-.problem-cell[aria-pressed="true"] { box-shadow: inset 0 0 0 3px #1e4936, inset 0 0 0 5px white; }
-.problem-cell:focus-visible { outline: 3px solid #172d49; outline-offset: -3px; }
-.problem-detail { margin-top: 24px; padding: 24px; border: 1px solid var(--border); border-radius: 16px; background: var(--surface); box-shadow: 0 3px 12px #182a2010; }
+.problem-cell[aria-pressed="true"] { box-shadow: inset 0 0 0 3px var(--selection), inset 0 0 0 5px white; }
+.problem-cell:focus-visible { outline: 3px solid var(--selection); outline-offset: -3px; }
+.problem-detail { margin-top: 24px; padding: 24px; border: 1px solid var(--border); border-radius: 16px; background: var(--surface); box-shadow: 0 3px 12px #131e2910; }
 .problem-detail[hidden] { display: none; }
 .inspection-header { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 22px; }
 .inspection-header h2 { margin: 0 0 12px; font-size: 1.3rem; }
@@ -554,7 +561,7 @@ tr.detail-row td {
 .qbe-panel .muted { color: var(--text-muted); font-size: .8rem; }
 .qbe-badge { font-size: .75rem; vertical-align: middle; padding: 5px 9px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); }
 .qbe-topics a { padding: 7px 16px; text-decoration: none; color: var(--text-muted); border-radius: 6px; }
-.qbe-topics a[aria-current] { background: var(--accent); color: white; }
+.qbe-topics a[aria-current] { background: #aa1e2e; color: white; }
 .qbe-metrics { display: flex; gap: 48px; flex-wrap: wrap; margin: 24px 0; }
 .qbe-metrics span { display: block; color: var(--text-muted); font-size: .85rem; margin-bottom: 6px; }
 .qbe-metrics strong { font-size: 2rem; font-variant-numeric: tabular-nums; }
@@ -575,6 +582,6 @@ tr.detail-row td {
   .problem-detail .rubric-score { background: hsl(var(--score-hue) 30% 20%); color: hsl(var(--score-hue) 55% 78%); }
 }
 
-/* In-page links (dataset tables, back links) use the ORNL accent green, not browser-default blue. */
+/* Shared QSC accent for dataset links and navigation. */
 main a { color: var(--accent); text-decoration: none; font-weight: 600; }
 main a:hover { text-decoration: underline; }
