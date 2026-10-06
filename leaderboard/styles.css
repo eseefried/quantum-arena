@@ -632,7 +632,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .team-copy .team-role { color: var(--accent); font-weight: 600; margin: -4px 0 16px; }
 
 /* Crop portraits in the page while retaining the original image files. */
-.team-photo--portrait { position: relative; overflow: hidden; aspect-ratio: 4 / 3; }
-.team-photo--portrait img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
-/* Ethan's wide event photo: frame his head and shoulders on the right. */
-.team-photo--ethan img { position: absolute; width: 302%; max-width: none; height: auto; left: -202%; top: -71%; }
+.team-photo--portrait { position: relative; overflow: hidden; aspect-ratio: 4 / 5; }
+.team-photo--portrait img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
+/* Ethan's wide event photo: keep his head and upper torso in the portrait frame. */
+.team-photo--ethan img { position: absolute; width: 302%; max-width: none; height: auto; left: -202%; top: -42%; }
